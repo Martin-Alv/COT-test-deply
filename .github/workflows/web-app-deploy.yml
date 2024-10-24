@@ -41,7 +41,7 @@ jobs:
     # Step 4: Create Web App
     - name: 'Create Web App'
       run: |
-        az webapp create --name ${{ env.WEB_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --plan ${{ env.SERVICE_PLAN }} --net-framework-version "v6.0"
+        az webapp create --name ${{ env.WEB_APP_NAME }} --resource-group ${{ env.RESOURCE_GROUP }} --plan ${{ env.SERVICE_PLAN }} --linux-fx-version "DOTNETCORE|6.0"
 
     # Step 5: Refresh BD with Code On Time
     - name: Refresh BD with Code On Time
