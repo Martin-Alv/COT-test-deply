@@ -1,0 +1,66 @@
+name: Build and Deploy Code On Time with Azure CLI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: self-hosted
+
+    env:
+      SOLUTION: 'CooperReplenishmentSystem.sln'
+      BUILD_PLATFORM: 'Any CPU'
+      BUILD_CONFIGURATION: 'Release'
+      AZURE_REGION: 'eastus'  # Cambia a tu región de Azure preferida
+      RESOURCE_GROUP: 'github-actions'  # Nombre del grupo de recursos
+      WEB_APP_NAME: 'test-cot-web-app'  # Nombre de la Web App
+      SERVICE_PLAN: 'test-cot-plan'  # Nombre del Plan de Servicio para App Service
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 1: Login to Azure using Service Principal
+    - name: 'Login to Azure'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}  # Credenciales SP almacenadas en secretos
+
+    # Step 2: Create Resource Group
+    - name: 'Create Resource Group'
+      run: |
+        az group create --name $RESOURCE_GROUP --location $AZURE_REGION
+
+    # Step 3: Create App Service Plan
+    - name: 'Create App Service Plan'
+      run: |
+        az appservice plan create --name $SERVICE_PLAN --resource-group $RESOURCE_GROUP --sku B1 --is-linux
+
+    # Step 4: Create Web App
+    - name: 'Create Web App'
+      run: |
+        az webapp create --name $WEB_APP_NAME --resource-group $RESOURCE_GROUP --plan $SERVICE_PLAN --runtime "DOTNETCORE|6.0"
+
+    # Step 5: Refresh BD with Code On Time
+    - name: Refresh BD with Code On Time
+      run: |
+        codeontime -refresh C:\bwd-cooper\_work\1\s -DbConnection "Data Source=sergralesrsn.database.windows.net;Initial Catalog=sergralesrsdb_qa;Persist Security Info=True;User ID=EatonSysAdmin;Password=3@T0N!_5y54M1n!_8479341!_;" -dbprovider "sqlclient"
+      working-directory: 'C:\Program Files (x86)\Code OnTime LLC\Code On Time Generator'
+
+    # Step 6: Copy NReco.PdfGenerator.dll to WebSite bin
+    - name: Copy NReco.PdfGenerator.dll to WebSite bin
+      run: |
+        cp $(AGENT_WORKFOLDER)/utileria/NReco.PdfGenerator.dll C:\bwd-cooper\_work\1\s\WebSite\bin
+
+    # Step 7: Publish the website using ASP.NET Compiler
+    - name: Publish WebSite
+      run: |
+        aspnet_compiler.exe -nologo -f -v / -p /bwd-cooper/_work/1/s/WebSite C:\bwd-cooper\_work\1\a
+      working-directory: 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319'
+
+    # Step 8: Deploy application to Azure Web App using Azure CLI
+    - name: 'Deploy to Azure Web App'
+      run: |
+        az webapp deployment source config-zip --name $WEB_APP_NAME --resource-group $RESOURCE_GROUP --src C:\bwd-cooper\_work\1\a
