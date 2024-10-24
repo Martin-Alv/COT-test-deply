@@ -31,7 +31,7 @@ jobs:
     # Step 2: Create Resource Group
     - name: 'Create Resource Group'
       run: |
-        az group create --name $RESOURCE_GROUP --location $AZURE_REGION
+        az group create --resource-group $RESOURCE_GROUP --location $AZURE_REGION
 
     # Step 3: Create App Service Plan
     - name: 'Create App Service Plan'
