@@ -3,7 +3,7 @@ name: Build and Deploy Code On Time with Azure CLI
 on:
   push:
     branches:
-      - master
+      - dev
 
 jobs:
   build_and_deploy:
