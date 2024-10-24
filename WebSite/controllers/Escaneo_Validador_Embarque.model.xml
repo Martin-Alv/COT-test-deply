@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Escaneo_Validador_Embarque" alias="Escaneo_Validador_Embarque" created="2022-03-08T21:31:39" modified="2022-05-22T18:45:33" x="20" y="22" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Etiqueta_Embarque_Detalle_" parentTableSchema="APP" parentTableName="Etiqueta_Embarque_Detalle" x="562" y="20">
+      <foreignKeyColumn columnName="Etiqueta_Embarque_Detalle_Id" parentColumnName="Etiqueta_Embarque_Detalle_Id" />
+    </foreignKey>
+    <foreignKey id="Delivery_" parentTableSchema="APP" parentTableName="Delivery" x="1024" y="20">
+      <foreignKeyColumn columnName="Delivery_Id" parentColumnName="Delivery_Id" />
+    </foreignKey>
+    <foreignKey id="Resultado_Validacion_Embarque_" parentTableSchema="APP" parentTableName="Resultado_Validacion_Embarque" x="1250" y="301">
+      <foreignKeyColumn columnName="Resultado_Validacion_Embarque_Id" parentColumnName="Resultado_Validacion_Embarque_Id" />
+    </foreignKey>
+    <foreignKey id="Mensaje_Sistema_" parentTableSchema="dbo" parentTableName="Mensaje_Sistema" x="927" y="396">
+      <foreignKeyColumn columnName="Mensaje_Sistema_Id" parentColumnName="Mensaje_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="627" y="774">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="641" y="538">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="637" y="668">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Escaneo_Validador_Embarque_Id" fieldName="Escaneo_Validador_Embarque_Id" label="Escaneo Validador Embarque Id" />
+    <column name="Seccion_Capturada" fieldName="Seccion_Capturada" label="Sección Capturada" />
+    <column name="Material_Tarima" fieldName="Material_Tarima" label="Material (Tarima)" />
+    <column name="SOrde_SItem_Tarima" fieldName="SOrde_SItem_Tarima" label="SOrder/SItem (Tarima)" />
+    <column name="Etiqueta_Embarque_Detalle_Id" fieldName="Etiqueta_Embarque_Detalle_Id" label="Etiqueta Embarque Detalle Id" aliasColumnName="Folio_Etiqueta_Embarque_Detalle" aliasForeignKey="Etiqueta_Embarque_Detalle_" />
+    <column name="Folio_Etiqueta_Embarque_Detalle" fieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" label="Etiqueta Embarque Detalle Folio Etiqueta Embarque Detalle" foreignKey="Etiqueta_Embarque_Detalle_" />
+    <column name="Folio_Etiqueta_Embarque_Detalle" fieldName="Folio_Etiqueta_Embarque_Detalle" label="Folio Etiqueta Embarque Detalle" />
+    <column name="Material_Embarque" fieldName="Material_Embarque" label="Material (Embarque)" />
+    <column name="SOrde_SItem_Emabarque" fieldName="SOrde_SItem_Emabarque" label="SOrde/SItem (Emabarque)" />
+    <column name="Delivery_Id" fieldName="Delivery_Id" label="Delivery Id" aliasColumnName="Delivery" aliasForeignKey="Delivery_" />
+    <column name="Delivery" fieldName="Delivery" label="Delivery" foreignKey="Delivery_" />
+    <column name="Delivery_Delivery" fieldName="Delivery_Delivery" label="Delivery (Delivery)" />
+    <column name="Material_Delivery" fieldName="Material_Delivery" label="Material (Delivery)" />
+    <column name="SOrde_SItem_Delivery" fieldName="SOrde_SItem_Delivery" label="SOrder/SItem (Delivery)" />
+    <column name="Delivery_Packing_List" fieldName="Delivery_Packing_List" label="Delivery (Packing List)" />
+    <column name="SOrder_SItem_Packing_List" fieldName="Sorder_Sitem_Packing_List" label="Sorder Sitem Packing List" />
+    <column name="Cantidad_Material" fieldName="Cantidad_Material" label="Cantidad de Material" />
+    <column name="Resultado_Validacion_Embarque_Id" fieldName="Resultado_Validacion_Embarque_Id" label="Resultado Validacion Embarque Id" aliasColumnName="Estatus_Validacion_Embarque" aliasForeignKey="Resultado_Validacion_Embarque_" />
+    <column name="Estatus_Validacion_Embarque" fieldName="Resultado_Validacion_Embarque" label="Resultado Validación Embarque" foreignKey="Resultado_Validacion_Embarque_" />
+    <column name="Es_Correcto" fieldName="Es_Correcto" label="Es Correcto" foreignKey="Resultado_Validacion_Embarque_" />
+    <column name="Es_Incorrecto" fieldName="Es_Incorrecto" label="Es Incorrecto" foreignKey="Resultado_Validacion_Embarque_" />
+    <column name="Es_Correcto_En_Progreso" fieldName="Es_Correcto_En_Progreso" label="Es Correcto En Progreso" foreignKey="Resultado_Validacion_Embarque_" />
+    <column name="Es_Incorrecto_En_Progreso" fieldName="Es_Incorrecto_En_Progreso" label="Es Incorrecto En Progreso" foreignKey="Resultado_Validacion_Embarque_" />
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" aliasColumnName="Mensaje_Sistema" aliasForeignKey="Mensaje_Sistema_" />
+    <column name="Transaccion_Escaneo" fieldName="Transaccion_Escaneo" label="Transaccion Escaneo" />
+    <column name="Mensaje_Sistema" fieldName="Mensaje_Sistema" label="Mensaje de Sistema" foreignKey="Mensaje_Sistema_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Mensaje_Validacion_Aplicada" fieldName="MensajeValidacionAplicada" label="Mensaje Validacion Aplicada" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+  </columns>
+</dataModel>

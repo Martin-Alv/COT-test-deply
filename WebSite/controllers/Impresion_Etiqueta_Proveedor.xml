@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Impresion_Etiqueta_Proveedor" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <fields>
+    <field name="Tipo_Etiqueta_Id" type="Int64" allowNulls="false" default="((0))" label="Tipo Etiqueta" causesCalculate="true">
+      <items style="Lookup" dataController="Tipo_Etiqueta" dataValueField="Tipo_Etiqueta_Id" dataTextField="Tipo_Etiqueta" dataView="Tipo_Etiqueta_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tamanio_Etiqueta_Id" type="Int64" allowNulls="false" default="((0))" label="Tamaño Etiqueta" causesCalculate="true">
+      <items style="Lookup" dataController="Tamanio_Etiqueta" pageSize="15" dataView="TamanioEtiquetaProveedor_LookUp_List" dataTextField="Tamanio_Etiqueta" dataValueField="Tamanio_Etiqueta_Id" />
+    </field>
+  </fields>
+</dataController>

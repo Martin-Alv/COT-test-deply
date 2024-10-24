@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Tipo_Ubicacion" alias="Tipo_Ubicacion" created="2021-04-06T18:54:58" modified="2021-04-06T18:59:42" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="405" y="20">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Registrado_Desde_" parentTableSchema="APP" parentTableName="Registrado_Desde" x="405" y="183">
+      <foreignKeyColumn columnName="Registrado_Desde_Id" parentColumnName="Registrado_Desde_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Tipo_Ubicacion_Id" fieldName="Tipo_Ubicacion_Id" label="Tipo Ubicacion Id" />
+    <column name="Clave_Tipo_Ubicacion" fieldName="Clave_Tipo_Ubicacion" label="Clave Tipo Ubicacion" />
+    <column name="Descripcion_Tipo_Ubicacion" fieldName="Descripcion_Tipo_Ubicacion" label="Descripcion Tipo Ubicacion" />
+    <column name="Es_Almacen" fieldName="Es_Almacen" label="Es Almacen" />
+    <column name="Es_Piso" fieldName="Es_Piso" label="Es Piso" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Actualizado_Por_Id" fieldName="Actualizado_Por_Id" label="Actualizado Por Id" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro_Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Registrado_Desde_Id" fieldName="Registrado_Desde_Id" label="Registrado Desde Id" aliasColumnName="Registrado_Desde" aliasForeignKey="Registrado_Desde_" />
+    <column name="Registrado_Desde" fieldName="Registrado_Desde" label="Registrado Desde" foreignKey="Registrado_Desde_" />
+  </columns>
+</dataModel>

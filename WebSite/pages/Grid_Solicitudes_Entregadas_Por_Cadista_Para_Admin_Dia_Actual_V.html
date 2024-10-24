@@ -1,0 +1,16 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Solicitudes Entregadas</title>
+    <meta name="description" content="Está página permite administrar toda la información relacionada con las Solicitudes Entregadas">
+  </head>
+  <body data-authorize-roles="administrador,SupervisorAlmacen">
+    <div data-flow="row">
+      <div id="view1" data-controller="Grid_Solicitudes_Entregadas_Por_Cadista_Para_Admin_Dia_Actual_V" data-view="Solicitudes_Entregadas_Dia_Actual" data-show-in-summary="true" data-selection-mode="multiple" data-tag="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none "> </div>
+    </div>
+    <div data-flow="row">
+      <div id="view2" data-controller="Documento_Comentario1" data-view="Documento_Comentario_Solicitud_Entregado" data-filter-source="view1" data-filter-fields="Solicitud_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none "> </div>
+    </div>
+  </body>
+</html>

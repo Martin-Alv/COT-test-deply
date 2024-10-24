@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Usuario_Aplicacion_Rol_Logico" alias="Usuario_Aplicacion_Rol_Logico" created="2020-12-01T19:45:52" modified="2020-12-01T22:34:58" x="615" y="46" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Usuario_Aplicacion_" parentTableSchema="APP" parentTableName="Usuario_Aplicacion" x="1191" y="20">
+      <foreignKeyColumn columnName="Usuario_Aplicacion_Id" parentColumnName="Usuario_Aplicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Rol_Logico_" parentTableSchema="MRO" parentTableName="Rol_Logico" x="20" y="26">
+      <foreignKeyColumn columnName="Rol_Logico_Id" parentColumnName="Rol_Logico_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="1163" y="421">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="44" y="262">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="67" y="433">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Usuario_Sistema" parentTableSchema="dbo" parentTableName="Usuario_V" x="357" y="345">
+      <foreignKeyColumn columnName="Usuario_Sistema_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Usuario_Aplicacion_Rol_Logico_Id" fieldName="Usuario_Aplicacion_Rol_Logico_Id" label="Usuario Aplicacion Rol Logico Id" />
+    <column name="Usuario_Sistema_Id" fieldName="Usuario_Sistema_Id" label="Usuario Sistema Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Usuario_Sistema" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" foreignKey="Usuario_Sistema" />
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicacion Id" aliasColumnName="Nombre_Completo" aliasForeignKey="Usuario_Aplicacion_" />
+    <column name="Nombre_Completo" fieldName="Nombre_Completo" label="Nombre Completo" foreignKey="Usuario_Aplicacion_" />
+    <column name="Rol_Logico_Id" fieldName="Rol_Logico_Id" label="Rol Logico Id" aliasColumnName="Rol_Logico" aliasForeignKey="Rol_Logico_" />
+    <column name="Rol_Logico" fieldName="Rol_Logico" label="Rol Lógico" foreignKey="Rol_Logico_" />
+    <column name="Usuario_Sistema" fieldName="CreadoPor" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="ActualizadoPor" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

@@ -1,0 +1,9 @@
+﻿*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Transferencia_Material_Upload_V.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^Import^Importar^Import^
+

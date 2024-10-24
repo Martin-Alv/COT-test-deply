@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Usuario_Aplicacion" alias="Usuario_Aplicacion" created="2018-10-11T00:30:07" modified="2019-01-04T12:19:29" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="36" y="599">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="892" y="138">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="681" y="115">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Usuario" parentTableSchema="APP" parentTableName="Tipo_Usuario" x="1213" y="34">
+      <foreignKeyColumn columnName="Tipo_Usuario_Id" parentColumnName="Tipo_Usuario_Id" />
+    </foreignKey>
+    <foreignKey id="Genero_Persona" parentTableSchema="APP" parentTableName="Genero_Persona" x="474" y="33">
+      <foreignKeyColumn columnName="Genero_Persona_Id" parentColumnName="Genero_Persona_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Usuario" parentTableSchema="APP" parentTableName="Estatus_Usuario" x="454" y="417">
+      <foreignKeyColumn columnName="Estatus_Usuario_Id" parentColumnName="Estatus_Usuario_Id" />
+    </foreignKey>
+    <foreignKey id="Usuario_Id" parentTableSchema="dbo" parentTableName="Usuario_Aplicacion_V" x="488" y="248">
+      <foreignKeyColumn columnName="Usuario_Id" parentColumnName="Usuario_Aplicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Area_Servicio" parentTableSchema="APP" parentTableName="Area_Servicio" x="929" y="275">
+      <foreignKeyColumn columnName="Area_Servicio_Id" parentColumnName="Area_Servicio_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicacion Id" />
+    <column name="Apellido_Paterno" fieldName="Apellido_Paterno" label="Apellido Paterno" />
+    <column name="Apellido_Materno" fieldName="Apellido_Materno" label="Apellido Materno" />
+    <column name="Nombre_Completo" fieldName="Nombre_Completo" label="Nombre Completo" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Tipo_Usuario" fieldName="Tipo_Usuario" label="Tipo de Usuario" foreignKey="Tipo_Usuario" />
+    <column name="Tipo_Usuario_Id" fieldName="Tipo_Usuario_Id" label="Tipo Usuario Id" />
+    <column name="Primer_Nombre" fieldName="Primer_Nombre" label="Primer Nombre" />
+    <column name="Segundo_Nombre" fieldName="Segundo_Nombre" label="Segundo Nombre" />
+    <column name="Telefono_Celular" fieldName="Telefono_Celular" label="Teléfono Celular" />
+    <column name="Telefono_Oficina" fieldName="Telefono_Oficina" label="Teléfono Oficina" />
+    <column name="Numero_Empleado" fieldName="Numero_Empleado" label="Número Empleado" />
+    <column name="Genero_Persona_Id" fieldName="Genero_Persona_Id" label="Genero Persona Id" aliasColumnName="Genero_Persona" aliasForeignKey="Genero_Persona" />
+    <column name="Genero_Persona" fieldName="Genero_Persona" label="Género Persona" foreignKey="Genero_Persona" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Usuario_Id" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" foreignKey="Usuario_Id" />
+    <column name="Estatus_Usuario_Id" fieldName="Estatus_Usuario_Id" label="Estatus Usuario Id" aliasColumnName="Estatus_Usuario" aliasForeignKey="Estatus_Usuario" />
+    <column name="Estatus_Usuario" fieldName="Estatus_Usuario" label="Estatus de Usuario" foreignKey="Estatus_Usuario" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Área de Servicio" foreignKey="Area_Servicio" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" />
+  </columns>
+</dataModel>

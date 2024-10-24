@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Estatus_Surtido" alias="Estatus_Surtido" created="2019-01-26T03:25:46" modified="2019-01-26T03:28:20" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="433" y="369">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="468" y="24">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="801" y="162">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Estatus_Surtido_Id" fieldName="Estatus_Surtido_Id" label="Estatus Surtido Id" />
+    <column name="Estatus_Surtido" fieldName="Estatus_Surtido" label="Estatus Surtido" />
+    <column name="Significa_Completo" fieldName="Significa_Completo" label="Significa Completo?" />
+    <column name="Significa_Parcial" fieldName="Significa_Parcial" label="Significa Parcial?" />
+    <column name="Significa_Cancelado" fieldName="Significa_Cancelado" label="Significa Cancelado?" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+  </columns>
+</dataModel>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Consulta_Tiempo_Atencion_Entrega_Solicitud_V" alias="Grid_Consulta_Tiempo_Atencion_Entrega_Solicitud_V" created="2019-05-08T16:08:01" modified="2019-05-08T17:49:42" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" />
+    <column name="Categoria_Id" fieldName="Categoria_Id" label="Categoria Id" />
+    <column name="Categoria_Clave" fieldName="Categoria_Clave" label="Categoria Clave" />
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Material_Solicitado_Id" fieldName="Material_Solicitado_Id" label="Material Solicitado Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Estatus_Solicitud_Id" fieldName="Estatus_Solicitud_Id" label="Estatus Solicitud Id" />
+    <column name="Estatus_Solicitud" fieldName="Estatus_Solicitud" label="Estatus Solicitud" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha Solicitud" format="g" />
+    <column name="Fecha_Entrega" fieldName="Fecha_Entrega" label="Fecha Entrega" format="g" />
+    <column name="Solicitud_Fecha_Ultima_Actualizacion" fieldName="Solicitud_Fecha_Ultima_Actualizacion" label="Solicitud Fecha Ultima Actualizacion" format="g" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido_Id" label="Material Surtido Id" />
+    <column name="Tiempo_Atencion_Solicitud" fieldName="Tiempo_Atencion_Solicitud" label="Tiempo Atencion Solicitud" />
+    <column name="Tiempo_Surtido_Solicitud" fieldName="Tiempo_Surtido_Solicitud" label="Tiempo Surtido Solicitud" />
+    <column name="Tiempo_Entrega_Solicitud" fieldName="Tiempo_Entrega_Solicitud" label="Tiempo Entrega Solicitud" />
+    <column name="Tiempo_Transcurrido" fieldName="Tiempo_Transcurrido" label="Tiempo Transcurrido" />
+    <column name="Entregado_Por_Id" fieldName="Entregado_Por_Id" label="Entregado Por Id" />
+    <column name="Entregado_Por" fieldName="Entregado_Por" label="Entregado Por" />
+    <column name="Motivo_Cancelacion" fieldName="Motivo_Cancelacion" label="Motivo Cancelacion" />
+    <column name="Ultimo_Comentario_Surtidor" fieldName="Ultimo_Comentario_Surtidor" label="Ultimo Comentario Surtidor" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Area Entrega" />
+    <column name="Surtidor_Responsable_Id" fieldName="Surtidor_Responsable_Id" label="Surtidor Responsable Id" />
+    <column name="Surtidor_Responsable" fieldName="Surtidor_Responsable" label="Surtidor Responsable" />
+    <column name="Solicitado_Por_Id" fieldName="Solicitado_Por_Id" label="Solicitado Por Id" />
+    <column name="Solicitado_Por" fieldName="Solicitado_Por" label="Solicitado Por" />
+    <column name="Ultimo_Comentario_Solicitante" fieldName="Ultimo_Comentario_Solicitante" label="Ultimo Comentario Solicitante" />
+    <column name="Tipo_Solicitud_Id" fieldName="Tipo_Solicitud_Id" label="Tipo Solicitud Id" />
+    <column name="Tipo_Solicitud" fieldName="Tipo_Solicitud" label="Tipo Solicitud" />
+    <column name="Surtido_Fecha_Creacion" fieldName="Surtido_Fecha_Creacion" label="Surtido Fecha Creacion" format="g" />
+    <column name="Surtido_Fecha_Ultima_Actualizacion" fieldName="Surtido_Fecha_Ultima_Actualizacion" label="Surtido Fecha Ultima Actualizacion" format="g" />
+  </columns>
+</dataModel>

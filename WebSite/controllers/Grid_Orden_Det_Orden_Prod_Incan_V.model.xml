@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Orden_Det_Orden_Prod_Incan_V" alias="Grid_Orden_Det_Orden_Prod_Incan_V" created="2019-08-26T00:53:34" modified="2019-08-26T00:53:44" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Fecha_Produccion" fieldName="Fecha_Produccion" label="Fecha Produccion" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" />
+    <column name="Cantidad_Producto" fieldName="Cantidad_Producto" label="Cantidad Producto" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Produccion Detalle Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripcion" />
+    <column name="Categoria_Id" fieldName="Categoria_Id" label="Categoria Id" />
+    <column name="Categoria_Clave" fieldName="Categoria_Clave" label="Categoria Clave" />
+    <column name="Categoria_Descripcion" fieldName="Categoria_Descripcion" label="Categoria Descripcion" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" />
+    <column name="Familia_Descripcion" fieldName="Familia_Descripcion" label="Familia Descripcion" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Area Entrega" />
+    <column name="Cantidad_Mat_Total_Para_Producir" fieldName="Cantidad_Mat_Total_Para_Producir" label="Cantidad Mat Total Para Producir" />
+    <column name="Cantidad_Mat_Para_Producir_Un_Prod" fieldName="Cantidad_Mat_Para_Producir_Un_Prod" label="Cantidad Mat Para Producir Un Prod" />
+    <column name="Cantidad_Mat_Solicitado_Previamente" fieldName="Cantidad_Mat_Solicitado_Previamente" label="Cantidad Mat Solicitado Previamente" />
+    <column name="Cantidad_Mat_Restante_Por_Solicitar" fieldName="Cantidad_Mat_Restante_Por_Solicitar" label="Cantidad Mat Restante Por Solicitar" />
+    <column name="Cantidad_Mat_A_Solicitar" fieldName="Cantidad_Mat_A_Solicitar" label="Cantidad Mat A Solicitar" />
+    <column name="Folio_Desviacion" fieldName="Folio_Desviacion" label="Folio Desviacion" />
+    <column name="Nota_Folio_Desviacion" fieldName="Nota_Folio_Desviacion" label="Nota Folio Desviacion" />
+    <column name="Material_Ubicacion_Almacen" fieldName="Material_Ubicacion_Almacen" label="Material Ubicacion Almacen" />
+    <column name="Ubicacion_Kanban_Id" fieldName="Ubicacion_Kanban_Id" label="Ubicacion Kanban Id" />
+    <column name="Material_Ubicacion_Piso" fieldName="Material_Ubicacion_Piso" label="Material Ubicacion Piso" />
+  </columns>
+</dataModel>

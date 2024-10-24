@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Ubicacion_Origen_Transfer_V" conflictDetection="overwriteChanges" label="Ubicacion Origen Transfer V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Ubicacion_Origen_Transfer_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Ubicacion_Origen_Transfer_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Ubicacion_Origen_Transfer_V"."Tipo_Ubicacion_Id" "Tipo_Ubicacion_Id"
+	,"Ubicacion_Origen_Transfer_V"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Ubicacion_Origen_Transfer_V"."Aplica_Para_Ruta_Optima" "Aplica_Para_Ruta_Optima"
+	,"Ubicacion_Origen_Transfer_V"."Creado_Por" "Creado_Por"
+	,"Ubicacion_Origen_Transfer_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Ubicacion_Origen_Transfer_V"."Actualizado_Por" "Actualizado_Por"
+	,"Ubicacion_Origen_Transfer_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Ubicacion_Origen_Transfer_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Ubicacion_Origen_Transfer_V"."Estatus_Registro" "Estatus_Registro"
+from "dbo"."Ubicacion_Origen_Transfer_V" "Ubicacion_Origen_Transfer_V"
+]]></text>
+    </command>
+    <command id="Tipo_Ubicacion_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Tipo_Ubicacion_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Ubicacion Almacenamiento Id" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicación de Almacenamiento" length="150" showInSummary="true" />
+    <field name="Tipo_Ubicacion_Id" type="Int32" allowNulls="false" label="Tipo Ubicacion Id" readOnly="true" showInSummary="true" />
+    <field name="Clave_Tipo_Ubicacion" type="Int32" label="Clave del Tipo de Ubicación" showInSummary="true" />
+    <field name="Aplica_Para_Ruta_Optima" type="Boolean" allowNulls="false" label="¿Aplica Para Ruta Óptima?" showInSummary="true" />
+    <field name="Creado_Por" type="String" label="Creado Por" length="256" showInSummary="true" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" label="Estatus Registro Id" />
+    <field name="Estatus_Registro" type="String" label="Estatus de Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Ubicacion Origen Transfer V" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Aplica_Para_Ruta_Optima" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" />
+        <dataField fieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="Ubicacion_Origen_Transferencia_LookUp_List" type="Grid" commandId="command1" label="Ubicación Origen Transferencia" showInSelector="false" sortExpression="Ubicacion_Almacenamiento asc" tags="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Ubicacion Origen Transfer V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Ubicacion Origen Transfer V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Tipo_Ubicacion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+            <dataField fieldName="Aplica_Para_Ruta_Optima" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Ubicacion Origen Transfer V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Tipo_Ubicacion_Id" columns="15" />
+            <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+            <dataField fieldName="Aplica_Para_Ruta_Optima" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" />
+            <dataField fieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="Administrators,administrador" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a2" commandName="Delete" roles="Administrators,administrador" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="Administrators,administrador" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="Administrators,administrador" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

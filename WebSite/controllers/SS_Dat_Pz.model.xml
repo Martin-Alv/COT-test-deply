@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="SS_Dat_Pz" alias="SS_Dat_Pz" created="2019-06-17T15:52:02" modified="2019-07-01T22:09:13" x="20" y="24" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="370" y="369">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="796" y="192">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="780" y="339">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Celda" parentTableSchema="APP" parentTableName="Celda" x="563" y="20">
+      <foreignKeyColumn columnName="Celda_Id" parentColumnName="Celda_Id" />
+    </foreignKey>
+    <foreignKey id="Turno_Laboral" parentTableSchema="APP" parentTableName="Turno_Laboral" x="489" y="142">
+      <foreignKeyColumn columnName="Turno_Laboral_Id" parentColumnName="Turno_Laboral_Id" />
+    </foreignKey>
+    <foreignKey id="Orden_Produccion" parentTableSchema="dbo" parentTableName="Orden_Produccion" x="1060" y="30">
+      <foreignKeyColumn columnName="Orden_Produccion_Id" parentColumnName="Orden_Produccion_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="SS_Dat_Pz_Id" fieldName="SS_Dat_Pz_Id" label="SS Dat Pz Id" />
+    <column name="Fecha_Inicio" fieldName="Fecha_Inicio" label="Fecha de Inicio" format="g" />
+    <column name="Fecha_Fin" fieldName="Fecha_Fin" label="Fecha Fin" format="g" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" aliasColumnName="Numero_Orden_Produccion" aliasForeignKey="Orden_Produccion" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Número Orden Producción" foreignKey="Orden_Produccion" />
+    <column name="Celda_Id" fieldName="Celda_Id" label="Celda Id" aliasColumnName="Celda_Descripcion" aliasForeignKey="Celda" />
+    <column name="Celda_Descripcion" fieldName="Celda_Descripcion" label="Celda Descripción" foreignKey="Celda" />
+    <column name="Turno_Laboral_Id" fieldName="Turno_Laboral_Id" label="Turno Laboral Id" aliasColumnName="Turno_Laboral" aliasForeignKey="Turno_Laboral" />
+    <column name="Turno_Laboral" fieldName="Turno_Laboral" label="Turno Laboral" foreignKey="Turno_Laboral" />
+  </columns>
+</dataModel>

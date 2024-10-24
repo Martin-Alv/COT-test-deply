@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Log_eaton_app" alias="Log_eaton_app" created="2019-04-08T17:24:03" modified="2019-04-08T17:24:05" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Id" fieldName="Id" label="Id" />
+    <column name="Comando" fieldName="Comando" label="Comando" />
+    <column name="Proceso" fieldName="Proceso" label="Proceso" />
+    <column name="Mensaje" fieldName="Mensaje" label="Mensaje" />
+    <column name="Fecha" fieldName="Fecha" label="Fecha" format="g" />
+    <column name="Duracion" fieldName="Duracion" label="Duracion" />
+    <column name="Log_id" fieldName="Log_id" label="Logid" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+  </columns>
+</dataModel>

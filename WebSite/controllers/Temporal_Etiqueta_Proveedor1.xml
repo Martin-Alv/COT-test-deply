@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Temporal_Etiqueta_Proveedor1" label="Temporal_Etiqueta_Proveedor1" conflictDetection="overwriteChanges" handler="eaton.Rules.Handler_Ultima_Carga" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Temporal_Etiqueta_Proveedor"."Temporal_Etiqueta_Proveedor_Id" "Temporal_Etiqueta_Proveedor_Id"
+	,"Temporal_Etiqueta_Proveedor"."Temporal_Etiqueta_Proveedor" "Temporal_Etiqueta_Proveedor"
+	,"Temporal_Etiqueta_Proveedor"."Tipo_Factura" "Tipo_Factura"
+	,"Temporal_Etiqueta_Proveedor"."Factura" "Factura"
+	,"Temporal_Etiqueta_Proveedor"."Fecha" "Fecha"
+	,"Temporal_Etiqueta_Proveedor"."Referencia" "Referencia"
+	,"Temporal_Etiqueta_Proveedor"."Comprador" "Comprador"
+	,"Temporal_Etiqueta_Proveedor"."Parte" "Parte"
+	,"Temporal_Etiqueta_Proveedor"."Clase" "Clase"
+	,"Temporal_Etiqueta_Proveedor"."Descripcion" "Descripcion"
+	,"Temporal_Etiqueta_Proveedor"."Desc_Ingles" "Desc_Ingles"
+	,"Temporal_Etiqueta_Proveedor"."Fracccion" "Fracccion"
+	,"Temporal_Etiqueta_Proveedor"."Tipo_Tasa" "Tipo_Tasa"
+	,"Temporal_Etiqueta_Proveedor"."Tasa" "Tasa"
+	,"Temporal_Etiqueta_Proveedor"."Pais_Origen" "Pais_Origen"
+	,"Temporal_Etiqueta_Proveedor"."HTS" "HTS"
+	,"Temporal_Etiqueta_Proveedor"."Orden_Compra" "Orden_Compra"
+	,"Temporal_Etiqueta_Proveedor"."Clave_Proveedor" "Clave_Proveedor"
+	,"Temporal_Etiqueta_Proveedor"."Nombre_Proveedor" "Nombre_Proveedor"
+	,"Temporal_Etiqueta_Proveedor"."Cantidad_Piezas" "Cantidad_Piezas"
+	,"Temporal_Etiqueta_Proveedor"."Unidad_De_Medida" "Unidad_De_Medida"
+	,"Temporal_Etiqueta_Proveedor"."Peso" "Peso"
+	,"Temporal_Etiqueta_Proveedor"."Peso_Bruto" "Peso_Bruto"
+	,"Temporal_Etiqueta_Proveedor"."Costo_Unitario" "Costo_Unitario"
+	,"Temporal_Etiqueta_Proveedor"."Total_DLLS" "Total_DLLS"
+	,"Temporal_Etiqueta_Proveedor"."Cantidad_En_UMC" "Cantidad_En_UMC"
+	,"Temporal_Etiqueta_Proveedor"."UM_Comercial" "UM_Comercial"
+	,"Temporal_Etiqueta_Proveedor"."Cant_Bultos" "Cant_Bultos"
+	,"Temporal_Etiqueta_Proveedor"."Desc_Bultos" "Desc_Bultos"
+	,"Temporal_Etiqueta_Proveedor"."Tipo" "Tipo"
+	,"Temporal_Etiqueta_Proveedor"."Permiso_Regla_8" "Permiso_Regla_8"
+	,"Temporal_Etiqueta_Proveedor"."Clave_Proveedor_Mx" "Clave_Proveedor_Mx"
+	,"Temporal_Etiqueta_Proveedor"."Nombre_Proveedor_Mx" "Nombre_Proveedor_Mx"
+	,"Temporal_Etiqueta_Proveedor"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Temporal_Etiqueta_Proveedor"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Temporal_Etiqueta_Proveedor"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Temporal_Etiqueta_Proveedor"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Temporal_Etiqueta_Proveedor"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Temporal_Etiqueta_Proveedor"."Error" "Error"
+	,"Temporal_Etiqueta_Proveedor"."Carga" "Carga"
+	,"Temporal_Etiqueta_Proveedor"."Creado_Por_Id" "Creado_Por_Id"
+from "APP"."Temporal_Etiqueta_Proveedor" "Temporal_Etiqueta_Proveedor"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Temporal_Etiqueta_Proveedor"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Temporal_Etiqueta_Proveedor"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Temporal_Etiqueta_Proveedor"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento" on "Temporal_Etiqueta_Proveedor"."Estatus_Procesamiento_Id" = "Estatus_Procesamiento"."Estatus_Procesamiento_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema" on "Temporal_Etiqueta_Proveedor"."Mensaje_Sistema_Id" = "Mensaje_Sistema"."Mensaje_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Temporal_Etiqueta_Proveedor_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Temporal_Etiqueta_Proveedor_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Temporal_Etiqueta_Proveedor_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Temporal Etiqueta Proveedor Id" readOnly="true" />
+    <field name="Temporal_Etiqueta_Proveedor" type="String" default="(NULL)" label="Temporal Etiqueta Proveedor" length="250" showInSummary="true" roles="hidden" writeRoles="hidden" />
+    <field name="Tipo_Factura" type="String" label="Tipo Factura" length="300" showInSummary="true" roles="hidden" writeRoles="hidden" />
+    <field name="Factura" type="String" label="Factura" length="300" showInSummary="true" />
+    <field name="Fecha" type="DateTime" dataFormatString="g" default="(NULL)" label="Fecha" showInSummary="true" roles="hidden" writeRoles="hidden" />
+    <field name="Referencia" type="String" label="Referencia" length="300" showInSummary="true" />
+    <field name="Comprador" type="String" label="Comprador" length="300" />
+    <field name="Parte" type="String" label="Parte" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Clase" type="String" label="Clase" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Descripcion" type="String" label="Material" length="300" />
+    <field name="Desc_Ingles" type="String" label="Desc Ingles" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Fracccion" type="Decimal" label="Fracccion" roles="hidden" writeRoles="hidden" />
+    <field name="Tipo_Tasa" type="String" label="Tipo Tasa" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Tasa" type="Decimal" label="Tasa" roles="hidden" writeRoles="hidden" />
+    <field name="Pais_Origen" type="String" label="Pais Origen" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="HTS" type="String" label="Hts" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Orden_Compra" type="Decimal" label="Orden Compra" />
+    <field name="Clave_Proveedor" type="Decimal" label="Clave Proveedor" roles="hidden" writeRoles="hidden" />
+    <field name="Nombre_Proveedor" type="String" label="Proveedor" length="300" />
+    <field name="Cantidad_Piezas" type="Decimal" label="Cantidad Total" />
+    <field name="Unidad_De_Medida" type="String" label="Unidad De Medida" length="300" />
+    <field name="Peso" type="Decimal" label="Peso" roles="hidden" writeRoles="hidden" />
+    <field name="Peso_Bruto" type="Decimal" label="Peso Bruto" roles="hidden" writeRoles="hidden" />
+    <field name="Costo_Unitario" type="Decimal" dataFormatString="c" label="Costo Unitario" roles="hidden" writeRoles="hidden" />
+    <field name="Total_DLLS" type="Decimal" label="Total DLLS" roles="hidden" writeRoles="hidden" />
+    <field name="Cantidad_En_UMC" type="Decimal" label="Cantidad En UMC" roles="hidden" writeRoles="hidden" />
+    <field name="UM_Comercial" type="String" label="UM Comercial" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Cant_Bultos" type="Decimal" label="Cantidad por  Bulto" />
+    <field name="Desc_Bultos" type="Decimal" label="Desc Bultos" roles="hidden" writeRoles="hidden" />
+    <field name="Tipo" type="Decimal" label="Tipo" roles="hidden" writeRoles="hidden" />
+    <field name="Permiso_Regla_8" type="String" label="Permiso Regla8" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Clave_Proveedor_Mx" type="String" label="Clave Proveedor Mx" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Nombre_Proveedor_Mx" type="String" label="Nombre Proveedor Mx" length="300" roles="hidden" writeRoles="hidden" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" default="((0))" label="Estatus Procesamiento Id">
+      <items style="Lookup" dataController="Estatus_Procesamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Procesamiento_Id" dataTextField="Estatus_Procesamiento" />
+    </field>
+    <field name="Estatus_Procesamiento" type="String" readOnly="true" label="Estatus Procesamiento" length="150" />
+    <field name="Mensaje_Sistema_Id" type="Int32" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" newDataView="createForm1" searchOnStart="true" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" />
+    </field>
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje Sistema" length="250" roles="hidden" />
+    <field name="Error" type="String" label="Error" length="500" roles="hidden" />
+    <field name="Carga" type="Int32" default="((0))" label="Carga" roles="hidden" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Creado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Creado_Por=Usuario_Sistema" />
+    </field>
+  </fields>
+  <views>
+    <view id="gridUltimaCarga" type="Grid" commandId="command1" label="Ultima Carga" filter="Estatus_Registro_Id = 1 AND Creado_Por_Id =  @BusinessRules_UserId&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" showInSelector="false" reportTemplate="true">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Temporal_Etiqueta_Proveedor" hidden="true" />
+        <dataField fieldName="Tipo_Factura" hidden="true" />
+        <dataField fieldName="Factura" />
+        <dataField fieldName="Fecha" columns="20" hidden="true" />
+        <dataField fieldName="Referencia" />
+        <dataField fieldName="Comprador" />
+        <dataField fieldName="Parte" hidden="true" />
+        <dataField fieldName="Clase" hidden="true" />
+        <dataField fieldName="Descripcion" />
+        <dataField fieldName="Desc_Ingles" hidden="true" />
+        <dataField fieldName="Fracccion" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Tasa" hidden="true" />
+        <dataField fieldName="Tasa" columns="15" hidden="true" />
+        <dataField fieldName="Pais_Origen" hidden="true" />
+        <dataField fieldName="HTS" hidden="true" />
+        <dataField fieldName="Orden_Compra" columns="15" />
+        <dataField fieldName="Clave_Proveedor" columns="15" hidden="true" />
+        <dataField fieldName="Nombre_Proveedor" hidden="true" />
+        <dataField fieldName="Cantidad_Piezas" columns="15" />
+        <dataField fieldName="Unidad_De_Medida" />
+        <dataField fieldName="Peso" columns="15" hidden="true" />
+        <dataField fieldName="Peso_Bruto" columns="15" hidden="true" />
+        <dataField fieldName="Costo_Unitario" columns="15" hidden="true" />
+        <dataField fieldName="Total_DLLS" columns="15" hidden="true" />
+        <dataField fieldName="Cantidad_En_UMC" columns="15" hidden="true" />
+        <dataField fieldName="UM_Comercial" hidden="true" />
+        <dataField fieldName="Cant_Bultos" columns="15" />
+        <dataField fieldName="Desc_Bultos" columns="15" hidden="true" />
+        <dataField fieldName="Tipo" columns="15" hidden="true" />
+        <dataField fieldName="Permiso_Regla_8" hidden="true" />
+        <dataField fieldName="Clave_Proveedor_Mx" hidden="true" />
+        <dataField fieldName="Nombre_Proveedor_Mx" hidden="true" />
+        <dataField fieldName="Error" hidden="true" />
+        <dataField fieldName="Carga" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Temporal Etiqueta Proveedor">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Temporal Etiqueta Proveedor" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Temporal_Etiqueta_Proveedor" />
+            <dataField fieldName="Tipo_Factura" />
+            <dataField fieldName="Factura" />
+            <dataField fieldName="Fecha" columns="20" />
+            <dataField fieldName="Referencia" />
+            <dataField fieldName="Comprador" />
+            <dataField fieldName="Parte" />
+            <dataField fieldName="Clase" />
+            <dataField fieldName="Descripcion" />
+            <dataField fieldName="Desc_Ingles" />
+            <dataField fieldName="Fracccion" columns="15" />
+            <dataField fieldName="Tipo_Tasa" />
+            <dataField fieldName="Tasa" columns="15" />
+            <dataField fieldName="Pais_Origen" />
+            <dataField fieldName="HTS" />
+            <dataField fieldName="Orden_Compra" columns="15" />
+            <dataField fieldName="Clave_Proveedor" columns="15" />
+            <dataField fieldName="Nombre_Proveedor" />
+            <dataField fieldName="Cantidad_Piezas" columns="15" />
+            <dataField fieldName="Unidad_De_Medida" />
+            <dataField fieldName="Peso" columns="15" />
+            <dataField fieldName="Peso_Bruto" columns="15" />
+            <dataField fieldName="Costo_Unitario" columns="15" />
+            <dataField fieldName="Total_DLLS" columns="15" />
+            <dataField fieldName="Cantidad_En_UMC" columns="15" />
+            <dataField fieldName="UM_Comercial" />
+            <dataField fieldName="Cant_Bultos" columns="15" />
+            <dataField fieldName="Desc_Bultos" columns="15" />
+            <dataField fieldName="Tipo" columns="15" />
+            <dataField fieldName="Permiso_Regla_8" />
+            <dataField fieldName="Clave_Proveedor_Mx" />
+            <dataField fieldName="Nombre_Proveedor_Mx" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Error" />
+            <dataField fieldName="Carga" columns="15" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Temporal Etiqueta Proveedor">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Temporal Etiqueta Proveedor" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Temporal_Etiqueta_Proveedor" />
+            <dataField fieldName="Tipo_Factura" />
+            <dataField fieldName="Factura" />
+            <dataField fieldName="Fecha" columns="20" />
+            <dataField fieldName="Referencia" />
+            <dataField fieldName="Comprador" />
+            <dataField fieldName="Parte" />
+            <dataField fieldName="Clase" />
+            <dataField fieldName="Descripcion" />
+            <dataField fieldName="Desc_Ingles" />
+            <dataField fieldName="Fracccion" columns="15" />
+            <dataField fieldName="Tipo_Tasa" />
+            <dataField fieldName="Tasa" columns="15" />
+            <dataField fieldName="Pais_Origen" />
+            <dataField fieldName="HTS" />
+            <dataField fieldName="Orden_Compra" columns="15" />
+            <dataField fieldName="Clave_Proveedor" columns="15" />
+            <dataField fieldName="Nombre_Proveedor" hidden="true" />
+            <dataField fieldName="Cantidad_Piezas" columns="15" />
+            <dataField fieldName="Unidad_De_Medida" />
+            <dataField fieldName="Peso" columns="15" />
+            <dataField fieldName="Peso_Bruto" columns="15" />
+            <dataField fieldName="Costo_Unitario" columns="15" />
+            <dataField fieldName="Total_DLLS" columns="15" />
+            <dataField fieldName="Cantidad_En_UMC" columns="15" />
+            <dataField fieldName="UM_Comercial" />
+            <dataField fieldName="Cant_Bultos" columns="15" />
+            <dataField fieldName="Desc_Bultos" columns="15" />
+            <dataField fieldName="Tipo" columns="15" />
+            <dataField fieldName="Permiso_Regla_8" />
+            <dataField fieldName="Clave_Proveedor_Mx" />
+            <dataField fieldName="Nombre_Proveedor_Mx" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hidden="true" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Error" />
+            <dataField fieldName="Carga" columns="15" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Etiqueta_Proveedor SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="gridUltimaCarga" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Etiqueta_Proveedor SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta_Proveedor_Id
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Hidden" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="&quot;Procesar&quot;" id="a101" cssClass="cloud-upload" roles="hidden" />
+      <action commandName="Import" commandArgument="createForm1" headerText="&quot;Carga Masiva&quot;" id="a102" roles="hidden" />
+      <action commandName="SQL" headerText="&quot;Borrar pendientes de procesar&quot;" cssClass="material-icon-delete" id="a100" roles="hidden">
+        <data><![CDATA[UPDATE tep SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+FROM APP.Temporal_Etiqueta_Proveedor tep 
+INNER JOIN dbo.Estatus_Procesamiento ep 
+ON tep.Estatus_Procesamiento_Id = ep.Estatus_Procesamiento_Id
+WHERE ep.Significa_Pendiente_Por_Procesar=1
+
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="gridUltimaCarga" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="gridUltimaCarga" headerText="&quot;Borrar&quot;" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Etiqueta_Proveedor SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta_Proveedor_Id
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" roles="Hidden" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Etiqueta_Proveedor SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta_Proveedor_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag101" scope="ActionBar" headerText="Archivos" flat="false">
+      <action id="a3" commandName="ReportAsExcel" headerText="&quot;Descargar Archivo de carga&quot;" cssClass="material-icon-cloud-download">
+        <data />
+      </action>
+      <action commandName="Import" commandArgument="createForm1" headerText="&quot;Importar Archivo&quot;" id="a102" cssClass="material-icon-cloud-upload" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Procesamiento" flat="true">
+      <action commandName="Custom" commandArgument="ExecCS01, ExecJS02" headerText="&quot;Procesar&quot;" id="a101" cssClass="material-icon-settings" />
+      <action commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" id="a100" whenLastCommandName="Select" roles="hidden">
+        <data><![CDATA[UPDATE APP.Temporal_Etiqueta_Proveedor SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta_Proveedor_Id]]></data>
+      </action>
+      <action commandName="SQL" headerText="&quot;Eliminar Pendientes de procesar&quot;" id="a103" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE tep SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+FROM APP.Temporal_Etiqueta_Proveedor tep 
+INNER JOIN dbo.Estatus_Procesamiento ep 
+ON tep.Estatus_Procesamiento_Id = ep.Estatus_Procesamiento_Id
+WHERE ep.Significa_Pendiente_Por_Procesar=1
+
+]]></data>
+      </action>
+      <action commandName="SQL" whenLastCommandName="Import" whenLastCommandArgument="createForm1" id="a104">
+        <data><![CDATA[-- debug
+DECLARE @Session_Carga INT
+-- end debug
+
+SET @Session_Carga = 100
+
+set @Result_ShowAlert = 
+    'Primary key of supplier "' + @Session_Carga + 
+    '" has been stored in the user session. ' +
+    'You will be redirected to products.']]></data>
+      </action>
+      <action commandName="Report" commandArgument="ExecCS03" headerText="&quot;Generar Etiquetas de Última Carga&quot;" id="a105" cssClass="material-icon-archive" confirmation="_controller=Impresion_Etiqueta_Proveedor&#xD;&#xA;_title=Impresion Etiqueta Proveedor" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Temporal_Etiqueta_Proveedor
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_Etiqueta_Proveedor_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_Etiqueta_Proveedor_Id))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1325,1,10,@Temporal_Etiqueta_Proveedor_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1325,1,10,@Temporal_Etiqueta_Proveedor_Id)
+   RETURN
+END
+-----------------------------------------------------
+
+
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Temporal_Etiqueta_Proveedor
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Carga = @Session_Carga
+   ,Transaccion_Procesamiento = @Session_Transaccion_Procesamiento
+WHERE
+   Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta_Proveedor_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Temporal_Etiqueta_Proveedor
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_Etiqueta_Proveedor_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_Etiqueta_Proveedor_Id))
+AND Temporal_Etiqueta_Proveedor_Id <> @Temporal_Etiqueta_Proveedor_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1326,1,10,@Temporal_Etiqueta_Proveedor_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1326,1,10,@Temporal_Etiqueta_Proveedor_Id)
+   RETURN
+END
+
+]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Temporal_Etiqueta_Proveedor
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_Etiqueta_Proveedor_Id = @Temporal_Etiqueta_Proveedor_Id]]></rule>
+    <rule id="r104" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="Execute" name="Procesar" />
+    <rule id="r105" commandName="Custom" type="JavaScript" phase="After" name="Actualizar" commandArgument="ExecJS02"><![CDATA[$appfactory.find('Temporal_Etiqueta_Proveedor1', 'Controller').sync(),
+$appfactory.find('Temporal_Etiqueta_Proveedor1_1', 'Controller').sync(),
+$appfactory.find('Temporal_Etiqueta_Proveedor1_2', 'Controller').sync(),
+$appfactory.find('Etiqueta_Proveedor1_1', 'Controller').sync()]]></rule>
+    <rule id="r106" commandName="Limpiar" type="Sql" phase="Before" commandArgument="ExecCS04"><![CDATA[UPDATE APP.Temporal_Etiqueta_Proveedor
+SET Carga = 0
+WHERE Estatus_Procesamiento_Id = 0]]></rule>
+    <rule id="r107" commandName="Import" type="Sql" phase="Before"><![CDATA[-- debug
+--DECLARE @Session_Carga INT
+-- end debug
+
+-- SET @Session_Carga = 100]]></rule>
+    <rule id="r108" commandName="Select" view="gridUltimaCarga" type="Sql" phase="After" name="Declarar_Carga"><![CDATA[-- debug
+DECLARE @Session_Carga INT
+DECLARE @Session_Transaccion_Procesamiento UNIQUEIDENTIFIER
+-- end debug
+
+SET @Session_Carga = ISNULL((
+   SELECT TOP 1 MAX(Carga)
+   FROM APP.Temporal_Etiqueta_Proveedor
+   WHERE Creado_Por_Id =  @BusinessRules_UserId
+),0)
+
+SET @Session_Carga = @Session_Carga + 1
+
+SET @Session_Transaccion_Procesamiento = NEWID()
+
+
+
+]]></rule>
+    <rule id="r109" commandName="Report" commandArgument="ExecCS03" type="Code" phase="Execute" name="Generar_Todas_Etiquetas" />
+  </businessRules>
+</dataController>

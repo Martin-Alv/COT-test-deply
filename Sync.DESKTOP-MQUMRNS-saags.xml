@@ -1,0 +1,3681 @@
+<?xml version="1.0" encoding="utf-8"?><logs><log type="Controllers"><c y="NodeSet" t="2020-05-18T21:03:03"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="createForm1" />
+<dataField fieldName="Transaccion_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:03:13"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="createForm1" />
+<dataField fieldName="Creado_Por" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:03:27"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="createForm1" />
+<dataField fieldName="Fecha_Creacion" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:03:35"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="createForm1" />
+<dataField fieldName="Actualizado_Por" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:24:25"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="createForm1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:37:43"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="editForm1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:37:52"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="editForm1" />
+<dataField fieldName="Actualizado_Por" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:38:09"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="editForm1" />
+<dataField fieldName="Fecha_Creacion" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:38:20"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="editForm1" />
+<dataField fieldName="Creado_Por" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:38:29"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="editForm1" />
+<dataField fieldName="Transaccion_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T21:59:34"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="createForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T22:00:15"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SUBCATEGORIA_DESCRIPCION_DEFAULT" />
+<update>
+  <Label>SubCategoria Default</Label>
+</update></c><c y="NodeSet" t="2020-05-18T22:06:15"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.SS_Valor_Buqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Buqueda_Orden_Id = @SS_Valor_Buqueda_Orden_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2020-05-18T22:07:17"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.SS_Valor_Buqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Buqueda_Orden_Id = @SS_Valor_Buqueda_Orden_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2020-05-18T22:08:28"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.SS_Valor_Buqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Buqueda_Orden_Id = @SS_Valor_Buqueda_Orden_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2020-05-18T22:09:06"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.SS_Valor_Buqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Buqueda_Orden_Id = @SS_Valor_Buqueda_Orden_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2020-05-18T22:12:41"><controller name="SS_Valor_Busqueda_Orden" />
+<copy>
+  <controller name="Planeador" />
+  <rule id="r100" />
+</copy></c><c y="NodeSet" t="2020-05-18T22:12:41"><controller name="SS_Valor_Busqueda_Orden" />
+<copy>
+  <controller name="Planeador" />
+  <rule id="r102" />
+</copy></c><c y="NodeSet" t="2020-05-18T22:12:41"><controller name="SS_Valor_Busqueda_Orden" />
+<copy>
+  <controller name="Planeador" />
+  <rule id="r103" />
+</copy></c><c y="NodeSet" t="2020-05-18T22:12:41"><controller name="SS_Valor_Busqueda_Orden" />
+<copy>
+  <controller name="Planeador" />
+  <rule id="r101" />
+</copy></c><c y="NodeSet" t="2020-05-18T22:35:58"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<update>
+  <FilterExpression>Estatus_Registro_Id&lt;&gt;0</FilterExpression>
+</update></c><c y="NodeSet" t="2020-05-18T22:36:28"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SubCategoria_Id" />
+<update>
+  <ItemsDataView>Rate_Subcategoria_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2020-05-18T22:36:49"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SubCategoria_Default_Id" />
+<update>
+  <ItemsDataView>Rate_Subcategoria_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2020-05-18T22:37:03"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2020-05-18T22:39:52"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND SubCategoria_Id=@SubCategoria_Id
+	AND SubCategoria_Default_Id=@SubCategoria_Default_Id
+	AND Estatus_Registro_Id=1
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:41:06"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	
+    AND SS_Valor_Busqueda_Orden_Id &lt;&gt; @SS_Valor_Busqueda_Orden_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](531,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:41:34"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND SubCategoria_Id=@SubCategoria_Id
+	AND SubCategoria_Default_Id=@SubCategoria_Default_Id
+	AND Estatus_Registro_Id=1
+    AND SS_Valor_Busqueda_Orden_Id &lt;&gt; @SS_Valor_Busqueda_Orden_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](531,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:42:24"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:43:12"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r101" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:43:30"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r101" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:47:44"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r101" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Script>
+</update></c><c y="NodeSet" t="2020-05-18T22:55:23"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<update>
+  <FilterExpression>Estatus_Registro_Id IN (0,1)</FilterExpression>
+</update></c><c y="NodeSet" t="2020-05-18T22:58:35"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T22:58:55"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="Transaccion_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T22:59:23"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="Valor_Busqueda" />
+<update>
+  <Rows />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T23:02:53"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="SubCategoria_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T23:03:05"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="SubCategoria_Default_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T23:03:26"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="Valor_Busqueda" />
+<update>
+  <Rows>2</Rows>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T23:06:28"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<dataField fieldName="Valor_Busqueda" />
+<update>
+  <Rows />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-18T23:40:10"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1
+    AND SS_Valor_Busqueda_Orden_Id &lt;&gt; @SS_Valor_Busqueda_Orden_Id)
+OR
+(Orden=@Orden
+	AND Estatus_Registro_Id=1
+    AND SS_Valor_Busqueda_Orden_Id &lt;&gt; @SS_Valor_Busqueda_Orden_Id)
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](531,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-05-18T23:43:01"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T01:01:31"><controller name="SS_Valor_Busqueda_Orden" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert|Update</CommandName>
+  <Phase>Before</Phase>
+  <Script>DECLARE @ValorMAX INT ;
+
+</Script>
+</insert></c><c y="NodeSet" t="2020-05-19T01:28:33"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden &amp;&amp; @SubCategoria&lt;&gt;'')
+BEGIN 
+  
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T01:30:12"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden &amp;&amp; @SubCategoria&lt;&gt;'')
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'No se puede porque debes ingresar en default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T01:34:52"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria&lt;&gt;'')
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'No se puede porque debes ingresar en default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T01:35:17"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria&lt;&gt;0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'No se puede porque debes ingresar en default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T01:35:41"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Id&lt;&gt;0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'No se puede porque debes ingresar en default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T01:37:23"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Id&lt;&gt;0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'No se puede porque debes ingresar en default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T11:49:53"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+DECLARE @ValorDefault INT;
+
+IF (@SubCategoria_Default_Id='')
+BEGIN
+SET @Subcategoria_Default_Id=0;
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Id&lt;&gt;0 AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T11:50:43"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SubCategoria_Default_Id" />
+<update>
+  <Default>((0))</Default>
+</update></c><c y="NodeSet" t="2020-05-19T12:22:47"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+DECLARE @ValorDefault INT;
+
+IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0;
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Id&lt;&gt;0 AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T12:22:59"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0;
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Id&lt;&gt;0 AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T12:23:24"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0;
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Id&lt;&gt;0 AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T12:28:21"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SubCategoria_Default_Id" />
+<update>
+  <Default />
+</update></c><c y="NodeSet" t="2020-05-19T13:10:29"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0;
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:10:55"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:14:56"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+/*IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0
+END*/ 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id='')
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:17:34"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SubCategoria_Default_Id" />
+<update>
+  <Default>((0))</Default>
+</update></c><c y="NodeSet" t="2020-05-19T13:28:38"><controller name="SS_Valor_Busqueda_Orden" />
+<field name="SubCategoria_Default_Id" />
+<update>
+  <AllowNulls>true</AllowNulls>
+</update></c><c y="NodeSet" t="2020-05-19T13:31:15"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+/*IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0
+END*/ 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id='')
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:31:27"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+/*IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0
+END*/ 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id='')
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:33:54"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+/*IF(@SubCategoria_Default_Id='')
+BEGIN
+SET @SubCategoria_Default_Id=0
+END*/ 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id='')
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:37:01"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de ingresar SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T13:48:50"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-19T14:47:21"><controller name="SS_Valor_Busqueda_Orden" />
+<insert type="rule">
+  <Type>JavaScript</Type>
+  <CommandName>Insert|Update</CommandName>
+  <Phase>Execute</Phase>
+  <Script>
+var Valor=[Valor_Busqueda];
+if( !(/^\[A-Za-z0-9]+(,\[A-Za-z0-9]+)*$/.test(Valor)) )
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}</Script>
+</insert></c><c y="NodeSet" t="2020-05-19T14:59:12"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)?$/.test(Valor)) )
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T14:59:25"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)?$/.test(Valor)) )
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T15:15:48"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)) )
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T16:55:46"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)) || !(/^[A-Za-z0-9]?$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T16:56:24"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)) || !(/^[A-Za-z0-9]?$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T17:26:01"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]?$/.test(Valor))){
+
+  $app.alert("Aqui Entra porque entra");
+  
+}else 
+{
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T17:43:57"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]?$/.test(Valor))){
+
+  $app.alert("Aqui Entra porque entra");
+  
+}else 
+{
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T17:44:01"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]?$/.test(Valor))){
+
+  $app.alert("Aqui Entra porque entra");
+  
+}else 
+{
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T17:48:33"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]?$/.test(Valor))){
+
+  $app.alert("Aqui Entra porque entra");
+  
+}else 
+{
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T17:48:48"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+  $app.alert("Aqui Entra porque entra");
+  
+}else 
+{
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T17:56:52"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+  $app.alert("Aqui Entra porque entra");
+  
+}else 
+{
+if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:17:55"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (/^[A-Za-z0-9]?$/.test(Valor)){
+
+  if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+  
+  
+  
+}else 
+{
+$app.alert("Aqui Entra porque entra");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:18:24"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (/^[A-Za-z0-9]?$/.test(Valor)){
+
+  if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+  
+  
+  
+}else 
+{
+$app.alert("Aqui Entra porque entra");
+}
+}
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:39:00"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+$app.alert("Aqui Entra porque entra no deberia entrar si tiene caracteres raros ");
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:39:47"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+$app.alert("Aqui Entra porque entra no deberia entrar si tiene caracteres raros ");
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:43:15"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+  if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:43:21"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+  if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+  // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:47:16"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+  if( (/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+ 
+}else 
+{
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+
+}
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:47:29"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor))){
+
+  if( (/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+ 
+}else 
+{
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+
+}
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T19:55:24"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]?$/.test(Valor))){
+
+  if( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor)))
+{
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no lleva comas");
+}
+  
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T20:07:21"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor)) ){
+  {
+  
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T20:10:07"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Za-z0-9]?$/.test(Valor)) )
+  {
+  
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T20:13:05"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if (!(/^[A-Z0-9]?$/.test(Valor)) )
+  {
+  
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T21:09:12"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Z0-9]?$/.test(Valor)) )
+  {
+  
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T21:49:44"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Z0-9]+$/.test(Valor)) )
+  {
+  
+
+
+}
+else
+{
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T21:50:14"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Z0-9]+$/.test(Valor)) )
+  {
+  
+
+
+}
+else
+{
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T21:57:57"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]+$/.test(Valor)) )
+  {
+  
+ $app.alert("PASO 1");
+
+}
+else
+{
+  
+  if ( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("No se permite porque no esta correcto");}else{
+    
+      $app.alert("PASO 2");
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T22:13:44"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]+$/.test(Valor)) )
+  {
+ $app.alert("Caracteres Validos");
+}
+else
+{
+  if ( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      $app.alert("Caracteres Validos");
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T22:14:45"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]+$/.test(Valor)) )
+  {
+ $app.alert("Caracteres Validos");
+}
+else
+{
+  if ( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      $app.alert("Caracteres Validos");
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T22:27:50"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]+$/.test(Valor)) )
+  {
+ $app.alert("Caracteres Validos");
+}
+else
+{
+  if ( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      $app.alert("Caracteres Validos");
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-19T22:46:56"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Valor_Busqueda=UPPER(Valor_Busqueda)
+	,Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Script>
+</update></c><c y="NodeSet" t="2020-05-19T22:47:38"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r101" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+	Valor_Busqueda=UPPER(Valor_Busqueda)
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Script>
+</update></c><c y="NodeSet" t="2020-05-20T10:41:51"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE APP.SS_Valor_Busqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Data>
+</update></c><c y="NodeSet" t="2020-05-20T10:42:11"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Data>UPDATE APP.SS_Valor_Busqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Data>
+</update></c><c y="NodeSet" t="2020-05-20T10:42:33"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Data>UPDATE APP.SS_Valor_Busqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Data>
+</update></c><c y="NodeSet" t="2020-05-20T10:42:48"><controller name="SS_Valor_Busqueda_Orden" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <Data>UPDATE APP.SS_Valor_Busqueda_Orden SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) WHERE SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id</Data>
+</update></c><c y="NodeSet" t="2020-05-20T10:59:04"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T11:03:19"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9]+(,[A-Za-z0-9]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T16:20:11"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag1" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:20:22"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:20:44"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag1" />
+<action id="a7" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:20:59"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag1" />
+<action id="a8" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:21:18"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag1" />
+<action id="a10" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:21:32"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag2" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:21:44"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:22:03"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag3" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:22:26"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag4" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:22:40"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:23:02"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag9" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:23:16"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:42:30"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SubCategoria_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T16:42:42"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SubCategoria_Before_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T16:42:59"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SubCategoria_Default_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T16:48:47"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SubCategoria_Default_Before_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T16:49:00"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T16:54:40"><controller name="SS_Valor_Busqueda_Orden" />
+<view id="grid1" />
+<update>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt;0</FilterExpression>
+</update></c><c y="NodeSet" t="2020-05-20T16:55:36"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<actionGroup id="ag5" />
+<action id="a6" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:56:23"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<update>
+  <FilterExpression>Estatus_Registro_Id&lt;&gt;0</FilterExpression>
+</update></c><c y="NodeSet" t="2020-05-20T17:32:05"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+IF @Already_Exists = 0
+BEGIN 
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ 
+  
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SuCategoria_Id
+ ,@SuCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+)
+
+
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T17:37:12"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+IF @Already_Exists = 0
+BEGIN 
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SuCategoria_Id
+ ,@SuCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T17:37:59"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+IF @Already_Exists = 0
+BEGIN 
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SuCategoria_Id
+ ,@SuCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T17:40:46"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+IF @Already_Exists = 0
+BEGIN 
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T17:45:35"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="SubCategoria_Id" />
+<update>
+  <AllowNulls>true</AllowNulls>
+</update></c><c y="NodeSet" t="2020-05-20T17:45:58"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="SubCategoria_Default_Id" />
+<update>
+  <AllowNulls>true</AllowNulls>
+</update></c><c y="NodeSet" t="2020-05-20T17:52:05"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+IF @Already_Exists = 0
+BEGIN 
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+IF @SubCategoria_Default_Before_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Before_Id=0
+END 
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T17:52:32"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+IF @Already_Exists = 0
+BEGIN 
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+
+END 
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T17:58:36"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.SS_Valor_Busqueda_Orden
+WHERE
+	(Valor_Busqueda=@Valor_Busqueda
+	AND Orden=@Orden
+	AND Estatus_Registro_Id=1)
+	OR
+	(Orden=@Orden
+	AND Estatus_Registro_Id=1)
+
+
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](530,1,146,@Valor_Busqueda)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+
+
+
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:01:54"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:03:50"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <CommandName>Insert</CommandName>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:04:14"><controller name="SS_Valor_Busqueda_Orden" />
+<copy>
+  <controller name="SS_Valor_Busqueda_Orden" />
+  <rule id="r104" />
+</copy></c><c y="NodeSet" t="2020-05-20T18:04:19"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<move>
+  <controller name="SS_Valor_Busqueda_Orden" />
+  <rule id="r106" />
+</move></c><c y="NodeSet" t="2020-05-20T18:05:08"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <CommandName>Update</CommandName>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+/*
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+*/
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:07:18"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="Valor_Busqueda" />
+<update>
+  <Rows />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T18:07:36"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="Valor_Busqueda_Before" />
+<update>
+  <Rows />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T18:10:16"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="Orden_Before" />
+<update>
+  <Label>Orden Anterior</Label>
+</update></c><c y="NodeSet" t="2020-05-20T18:11:02"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="SubCategoria_Before" />
+<update>
+  <Label>Sub Categoria Anterior</Label>
+</update></c><c y="NodeSet" t="2020-05-20T18:11:48"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="SubCategoria_Default_Before" />
+<update>
+  <Label>Sub Categoria Default Anterior</Label>
+</update></c><c y="NodeSet" t="2020-05-20T18:26:55"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda Varchar(MAX)
+,@Orden INT
+,@SubCategoria_Id INT
+,@SubCategoria_Default_Id INT
+,@Creado_Por_Id UNIQUEIDENTIFIER
+;
+
+
+
+/*
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+*/
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:26:58"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda Varchar(MAX)
+,@Orden INT
+,@SubCategoria_Id INT
+,@SubCategoria_Default_Id INT
+,@Creado_Por_Id UNIQUEIDENTIFIER
+;
+
+
+
+/*
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+*/
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:44:16"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda_A Varchar(MAX)
+,@Orden_A INT
+,@SubCategoria_Id_A INT
+,@SubCategoria_Default_Id_A INT
+,@Creado_Por_Id_A UNIQUEIDENTIFIER
+,@Transaccion_Id_A UNIQUEIDENTIFIER
+,@Fecha_Creacion_A DATETIME;
+
+
+SELECT  @Valor_Busqueda_A=Valor_Busqueda, @Orden_A=Orden, @SubCategoria_Id_A=SubCategoria_Id,  @SubCategoria_Default_Id_A=SubCategoria_Default_Id
+		,@Creado_Por_Id_A=Creado_Por_Id, @Transaccion_Id_A=Transaccion_Id, @Fecha_Creacion_A=Fecha_Creacion FROM APP.SS_Valor_Busqueda_Orden WHERE SS_Valor_Busqueda_Orden_Id=@SS_Valor_Busqueda_Orden_Id
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+,Creado_Por_Id 
+,Fecha_Creacion 
+,Actualizado_Por_Id 
+,Fecha_Ultima_Actualizacion 
+,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda_A
+ ,@Orden
+ ,@Orden_A
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id_A
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id_A
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@Creado_Por_Id_A
+ ,@Fecha_Creacion_A
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@Transaccion_Id_A
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:46:13"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda_A Varchar(MAX)
+,@Orden_A INT
+,@SubCategoria_Id_A INT
+,@SubCategoria_Default_Id_A INT
+,@Creado_Por_Id_A UNIQUEIDENTIFIER
+,@Transaccion_Id_A UNIQUEIDENTIFIER
+,@Fecha_Creacion_A DATETIME;
+
+
+SELECT  @Valor_Busqueda_A=Valor_Busqueda, @Orden_A=Orden, @SubCategoria_Id_A=SubCategoria_Id,  @SubCategoria_Default_Id_A=SubCategoria_Default_Id
+		,@Creado_Por_Id_A=Creado_Por_Id, @Transaccion_Id_A=Transaccion_Id, @Fecha_Creacion_A=Fecha_Creacion FROM APP.SS_Valor_Busqueda_Orden WHERE SS_Valor_Busqueda_Orden_Id=@SS_Valor_Busqueda_Orden_Id
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+,Creado_Por_Id 
+,Fecha_Creacion 
+,Actualizado_Por_Id 
+,Fecha_Ultima_Actualizacion 
+,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda_A
+ ,@Orden
+ ,@Orden_A
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id_A
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id_A
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@Creado_Por_Id_A
+ ,@Fecha_Creacion_A
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@Transaccion_Id_A
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:49:29"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda_A Varchar(MAX)
+,@Orden_A INT
+,@SubCategoria_Id_A INT
+,@SubCategoria_Default_Id_A INT
+,@Creado_Por_Id_A UNIQUEIDENTIFIER
+,@Transaccion_Id_A UNIQUEIDENTIFIER
+,@Fecha_Creacion_A DATETIME;
+
+
+SELECT  @Valor_Busqueda_A=Valor_Busqueda, @Orden_A=Orden, @SubCategoria_Id_A=SubCategoria_Id,  @SubCategoria_Default_Id_A=SubCategoria_Default_Id
+		,@Creado_Por_Id_A=Creado_Por_Id, @Transaccion_Id_A=Transaccion_Id, @Fecha_Creacion_A=Fecha_Creacion FROM APP.SS_Valor_Busqueda_Orden WHERE SS_Valor_Busqueda_Orden_Id=@SS_Valor_Busqueda_Orden_Id
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+,Creado_Por_Id 
+,Fecha_Creacion 
+,Actualizado_Por_Id 
+,Fecha_Ultima_Actualizacion 
+,Transaccion_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda_A
+ ,@Orden
+ ,@Orden_A
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id_A
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id_A
+ ,'Registro Actualizado'
+ /*Campos Control*/
+ ,@Creado_Por_Id_A
+ ,@Fecha_Creacion_A
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@Transaccion_Id_A
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T18:59:13"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,UPPER(@Valor_Busqueda)
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:32:27"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda_A Varchar(MAX)
+,@Orden_A INT
+,@SubCategoria_Id_A INT
+,@SubCategoria_Default_Id_A INT
+,@Creado_Por_Id_A UNIQUEIDENTIFIER
+,@Transaccion_Id_A UNIQUEIDENTIFIER
+,@Fecha_Creacion_A DATETIME;
+
+
+SELECT  @Valor_Busqueda_A=Valor_Busqueda, @Orden_A=Orden, @SubCategoria_Id_A=SubCategoria_Id,  @SubCategoria_Default_Id_A=SubCategoria_Default_Id
+		,@Creado_Por_Id_A=Creado_Por_Id, @Transaccion_Id_A=Transaccion_Id, @Fecha_Creacion_A=Fecha_Creacion FROM APP.SS_Valor_Busqueda_Orden WHERE SS_Valor_Busqueda_Orden_Id=@SS_Valor_Busqueda_Orden_Id
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+,Creado_Por_Id 
+,Fecha_Creacion 
+,Actualizado_Por_Id 
+,Fecha_Ultima_Actualizacion 
+,Transaccion_Id
+ ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(@Valor_Busqueda
+ ,@Valor_Busqueda_A
+ ,@Orden
+ ,@Orden_A
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id_A
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id_A
+ ,'Registro Actualizado'
+ /*Campos Control*/
+ ,@Creado_Por_Id_A
+ ,@Fecha_Creacion_A
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@Transaccion_Id_A
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:33:49"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:34:38"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,UPPER(@Valor_Busqueda)
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+)
+
+END
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:35:18"><controller name="SS_Valor_Busqueda_Orden" />
+<copy>
+  <controller name="SS_Valor_Busqueda_Orden" />
+  <rule id="r102" />
+</copy></c><c y="NodeSet" t="2020-05-20T19:35:53"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r107" />
+<delete /></c><c y="NodeSet" t="2020-05-20T19:36:22"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:37:32"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Valor_Busqueda=UPPER(Valor_Busqueda)
+	,Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id
+   
+   
+   
+   
+   
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+  ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,UPPER(@Valor_Busqueda)
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:37:57"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Valor_Busqueda=UPPER(Valor_Busqueda)
+	,Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id
+   
+   
+   
+   
+   
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+  ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,UPPER(@Valor_Busqueda)
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T19:38:16"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Valor_Busqueda=UPPER(Valor_Busqueda)
+	,Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id
+   
+   
+   
+   
+   
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+  ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,UPPER(@Valor_Busqueda)
+ ,@Orden
+ ,@Orden
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-20T20:04:21"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SS_Valor_Busqueda_Orden_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T20:04:30"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SS_Valor_Busqueda_Orden_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T20:27:21"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SS_Valor_Busqueda_Orden_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-20T22:15:06"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r106" />
+<update>
+  <Script>DECLARE @ValorMAX INT ;
+
+
+IF @SubCategoria_Default_Id IS NULL
+BEGIN
+SET @SubCategoria_Default_Id=0
+END 
+
+SET @ValorMAX=ISNULL((
+		select TOP 1 Orden from APP.SS_Valor_Busqueda_Orden order by Orden desc
+		),0);
+
+
+IF (@ValorMAX&lt;@Orden AND @SubCategoria_Default_Id=0)
+BEGIN 
+  
+    SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = 'Favor de Seleccionar una opcion en el campo SubCategoria Default'
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+END
+ELSE 
+BEGIN
+
+DECLARE @Valor_Busqueda_A Varchar(MAX)
+,@Orden_A INT
+,@SubCategoria_Id_A INT
+,@SubCategoria_Default_Id_A INT
+,@Creado_Por_Id_A UNIQUEIDENTIFIER
+,@Transaccion_Id_A UNIQUEIDENTIFIER
+,@Fecha_Creacion_A DATETIME;
+
+
+SELECT  @Valor_Busqueda_A=Valor_Busqueda, @Orden_A=Orden, @SubCategoria_Id_A=SubCategoria_Id,  @SubCategoria_Default_Id_A=SubCategoria_Default_Id
+		,@Creado_Por_Id_A=Creado_Por_Id, @Transaccion_Id_A=Transaccion_Id, @Fecha_Creacion_A=Fecha_Creacion FROM APP.SS_Valor_Busqueda_Orden WHERE SS_Valor_Busqueda_Orden_Id=@SS_Valor_Busqueda_Orden_Id
+
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+,Creado_Por_Id 
+,Fecha_Creacion 
+,Actualizado_Por_Id 
+,Fecha_Ultima_Actualizacion 
+,Transaccion_Id
+ ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,UPPER(@Valor_Busqueda_A)
+ ,@Orden
+ ,@Orden_A
+ ,@SubCategoria_Id
+ ,@SubCategoria_Id_A
+ ,@SubCategoria_Default_Id
+ ,@SubCategoria_Default_Id_A
+ ,'Registro Actualizado'
+ /*Campos Control*/
+ ,@Creado_Por_Id_A
+ ,@Fecha_Creacion_A
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@Transaccion_Id_A
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+END</Script>
+</update></c><c y="NodeSet" t="2020-05-21T12:14:52"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<view id="grid1" />
+<dataField fieldName="SS_Valor_Busqueda_Orden_Id" />
+<update>
+  <ReadOnly>true</ReadOnly>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-05-21T12:27:31"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="Valor_Busqueda" />
+<update>
+  <AllowQBE>true</AllowQBE>
+  <AllowSorting>true</AllowSorting>
+</update></c><c y="NodeSet" t="2020-05-21T12:27:51"><controller name="Bitacora_Movimientos_Valor_Busqueda" />
+<field name="Valor_Busqueda_Before" />
+<update>
+  <AllowQBE>true</AllowQBE>
+  <AllowSorting>true</AllowSorting>
+</update></c><c y="NodeSet" t="2020-05-21T13:08:52"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Valor_Busqueda=UPPER(Valor_Busqueda)
+	,Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id
+   
+   
+   
+   
+   
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+  ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,''
+ ,@Orden
+ ,null
+ ,@SubCategoria_Id
+ ,null
+ ,@SubCategoria_Default_Id
+ ,null
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+</Script>
+</update></c><c y="NodeSet" t="2020-05-21T13:50:26"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.SS_Valor_Busqueda_Orden
+SET
+    Valor_Busqueda=UPPER(Valor_Busqueda)
+	,Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   SS_Valor_Busqueda_Orden_Id = @SS_Valor_Busqueda_Orden_Id
+   
+   
+   
+   
+   
+
+INSERT INTO [APP].[Bitacora_Movimientos_Valor_Busqueda]
+(
+Valor_Busqueda
+,Valor_Busqueda_Before
+,Orden
+,Orden_Before
+,SubCategoria_Id
+,SubCategoria_Before_Id
+,SubCategoria_Default_Id
+,SubCategoria_Default_Before_Id
+,Tipo_Accion
+ ,Creado_Por_Id 
+   ,Fecha_Creacion 
+   ,Actualizado_Por_Id 
+   ,Fecha_Ultima_Actualizacion 
+  ,Transaccion_Id
+  ,SS_Valor_Busqueda_Orden_Id
+)
+VALUES 
+(UPPER(@Valor_Busqueda)
+ ,''
+ ,@Orden
+ ,0
+ ,@SubCategoria_Id
+ ,0
+ ,@SubCategoria_Default_Id
+ ,0
+ ,'Nuevo Registro'
+ /*Campos Control*/
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,@BusinessRules_UserId
+ ,dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ ,NEWID()
+ ,@SS_Valor_Busqueda_Orden_Id
+)
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-04T17:14:52"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9_]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9_]+(,[A-Za-z0-9_]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-04T17:20:12"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9_]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9_]+(,[A-Za-z0-9_]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-05T10:18:49"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-05T10:18:56"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-05T21:13:44"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211 \n Caracteres Permitidos: 1. &amp;\n2. /");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-05T21:18:43"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211 \n Caracteres Permitidos:  &amp;  /");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-05T21:19:46"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211 \n\n Caracteres Permitidos:  &amp;  /");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-06T17:55:26"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211 \n\n Caracteres Permitidos:  &amp;  / \nEl Separador Es Mediante Comas &lt;&lt; , &gt;&gt;");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-06T17:55:40"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n Ejemplo: LWIPD,FSP211 \n\nCaracteres Permitidos:  &amp;  / \nEl Separador Es Mediante Comas &lt;&lt; , &gt;&gt;");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-06T18:11:10"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n\nCaracteres Permitidos:  &amp;  / \nEl Separador Es Mediante Comas &lt;&lt; , &gt;&gt;\n Ejemplo: LWIPD,FSP211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-06T18:12:51"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \nCaracteres Permitidos:  &amp;  / \nEl Separador Es Mediante Comas &lt; , &gt;\n\n Ejemplo: LWI/PD,FSP&amp;211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c><c y="NodeSet" t="2020-06-06T18:34:37"><controller name="SS_Valor_Busqueda_Orden" />
+<rule id="r105" />
+<update>
+  <Script>var Valor=[Valor_Busqueda];
+
+
+if ((/^[A-Za-z0-9/&amp;]+$/.test(Valor)) )
+  {
+ 
+}
+else
+{
+  if ( !(/^[A-Za-z0-9/&amp;]+(,[A-Za-z0-9/&amp;]+)+$/.test(Valor))){
+ // prevent the default action processing
+	this.preventDefault();
+      // set the focus on the field and display an error
+	$app.alert("El Campo Valor Busqueda tiene Formato incorrecto. \n-Caracteres Permitidos:  &amp;  / \n-El Separador Es Mediante Comas &lt; , &gt;\n\n Ejemplo: LWI/PD,FSP&amp;211");
+  }
+  else
+  {
+      
+    }
+
+}
+
+</Script>
+</update></c></log><log type="Application"><c y="NodeSet" t="2020-05-18T21:39:18"><page name="modulostartstop" />
+<move>
+  <page name="SS_Valor_Busqueda_Orden" />
+</move></c><c y="NodeSet" t="2020-05-18T21:47:53"><page name="SS_Valor_Busqueda_Orden" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <About>Está página permite administrar toda la información relacionada con el {Título de la página}.</About>
+</update></c><c y="NodeSet" t="2020-05-18T21:50:37"><page name="SS_Valor_Busqueda_Orden" />
+<dataView id="view1" />
+<update>
+  <Tag>view-style-grid,
+view-style-list,
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none</Tag>
+</update></c><c y="NodeSet" t="2020-05-18T21:51:07"><page name="SS_Valor_Busqueda_Orden" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2020-05-18T21:53:25"><page name="SS_Valor_Busqueda_Orden" />
+<update>
+  <Roles>Adminstartstop</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:10:18"><page name="modulostartstop" />
+<move>
+  <page name="Bitacora_Movimientos_Valor_Busqueda" />
+</move></c><c y="NodeSet" t="2020-05-20T16:30:04"><page name="Bitacora_Movimientos_Valor_Busqueda" />
+<dataView id="view1" />
+<update>
+  <Tag>view-style-grid,
+view-style-list,
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none</Tag>
+</update></c><c y="NodeSet" t="2020-05-20T16:34:54"><page name="Bitacora_Movimientos_Valor_Busqueda" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>Adminstartstop</Roles>
+</update></c><c y="NodeSet" t="2020-05-20T16:42:09"><page name="Bitacora_Movimientos_Valor_Busqueda" />
+<update>
+  <About>Está página permite administrar toda la información relacionada con el|la {Título de la página}.</About>
+</update></c><c y="NodeSet" t="2020-05-24T15:35:25"><page name="SS_Valor_Busqueda_Orden" />
+<update>
+  <Roles>Adminstartstop,Userstartstop</Roles>
+</update></c></log></logs>

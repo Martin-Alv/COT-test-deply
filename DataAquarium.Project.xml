@@ -1,0 +1,48 @@
+<!-- 
+  This file is provided to store the settings for your Data Aquarium project. 
+  You can safely delete this file if no further code generation is planned.
+-->
+<project compatibility="20111118" dataModel="required" subscriptionLevel="Unlimited" name="CooperReplenishmentSystem" prettyName="Cooper Replenishment System" type="Web Site Factory" codeDomProvider="CSharp" targetFramework="4.7.2" userInterface="TouchUI" pageImplementation="html" sourceControl="git" displayName="" group="" databaseChanged="false" appGenVersion="8.9.23.0" xmlns="urn:schemas-codeontime-com:data-aquarium-project">
+  <connectionString hostDatabaseSharing="false" sessionStateMode="None">Data Source=sergralesrsn.database.windows.net;Initial Catalog=sergralesrsdb_qa;Persist Security Info=True;User ID=EatonSysAdmin;Password=3@T0N!_5y54M1n!_8479341!_;</connectionString>
+  <providerName>System.Data.SqlClient</providerName>
+  <namespace>eaton</namespace>
+  <webServer run="true" port="9709" preview="Browser" client="">
+    <webConfig></webConfig>
+  </webServer>
+  <features useSaveAndNew="true" pageHeader="&lt;div class=&quot;app-name-under-logo&quot;&gt;COOPER - Replenishment System&lt;/div&gt;" copyright="COOPER 2020" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="100" multiSelect="true" batchEdit="true" advancedSearch="false" advancedLookup="true" relationshipExplorer="true" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="false" tabViewSelection="0">
+    <navigation detectUnderscoreSeparatedSchema="" />
+    <blob allowUploadOnInsert="true" />
+    <framework scriptOnly="true" useExtenders="false" />
+    <grid actionColumn="true" />
+    <touch desktopDisplayDensity="Comfortable" mobileDisplayDensity="Comfortable" transitions="" sidebar="Landscape" labelsInList="DisplayedBelow" initialListMode="SeeAll" menu="toolbar" promoteActions="true" smartDates="false" mapApiIdentifier="" mapApiIdentifierMobile="" />
+    <cms searchEngine="" analysisEngine="" analysisOnDataPages="false" />
+    <ease urlHashing="false">
+      <auditing></auditing>
+    </ease>
+    <packageProperties></packageProperties>
+    <smtp deliveryMethod="Network" deliveryFormat="" from="" clientDomain="" targetName="" host="" port="" defaultCredentials="true" enableSsl="false" username="" password="" />
+    <addons OfflineSync="" ContentMaker="" />
+  </features>
+  <reports enabled="true" version="15" />
+  <host path="" url="" />
+  <databaseObjectFilter generate="ControllersAndPages"></databaseObjectFilter>
+  <bll normalizeModelNames="false" discoveryDepth="3" labelFormatExpression="" selectMethod="Select" selectSingleMethod="SelectSingle" insertMethod="Insert" updateMethod="Update" deleteMethod="Delete" generateSharedBusinessRules="true" includeViews="true" tabViewSelection="0">
+    <fieldMap></fieldMap>
+    <keys></keys>
+    <fieldsToIgnore></fieldsToIgnore>
+    <fieldsToHide></fieldsToHide>
+    <customLabels></customLabels>
+  </bll>
+  <membership enabled="true" providerName="System.Data.SqlClient" connectionString="" windowsAuthentication="false" activeDirectory="false" customSecurity="false" dedicatedLogin="false" displayRememberMe="true" rememberMeSet="true" displaySignUp="false" displayPasswordRecovery="true" displayMyAccount="true" displayHelp="true" idleUserDetectionTimeout="60" tabViewSelection="3" validationKey="87F6A225F3FD4F93B4352D64A3250F1DD480816E60BAD78DB6F69BC72929CE6C4948AF59CE2BE95EAD93E4A3A20C3A6E372AA522C6796DB12EBDCE9464F019B1">
+    <adConfig></adConfig>
+    <config></config>
+  </membership>
+  <globalization uiCulture="es-MX" culture="es-MX" enableClientBasedCulture="false" supportedCultures="en-US,en-US; es-MX,es-MX; " googleTranslateApiKey="" />
+  <layout name="Classic" menuStyle="MultiLevel" />
+  <theme name="Bittersweet" />
+  <publish mode="FileSystem">
+    <fileSystem external="false">{"path":"","previewUrl":"","webConfigCustomizations":{}}</fileSystem>
+    <azure external="false">{"webConfigCustomizations":{"production":{"CustomErrors":"On"},"private":{}},"TenantID":"e8bb36ac-8e7a-4e24-9cb2-d5904fec1265","ClientID":"68a24f41-9d63-4786-9683-0a6682440426","ClientSecret":"KvuU/cL:@+WOZZun6o0fgyMddAxjJx56","AccessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSIsImtpZCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2U4YmIzNmFjLThlN2EtNGUyNC05Y2IyLWQ1OTA0ZmVjMTI2NS8iLCJpYXQiOjE1ODAyMTY1ODcsIm5iZiI6MTU4MDIxNjU4NywiZXhwIjoxNTgwMjIwNDg3LCJhY3IiOiIxIiwiYWlvIjoiQVNRQTIvOE9BQUFBZGxmN2JlMGFRVzFxOSt1aHFFby9ETlhQb0dDQmlId2dUK1d0dTByUDFKQT0iLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNjhhMjRmNDEtOWQ2My00Nzg2LTk2ODMtMGE2NjgyNDQwNDI2IiwiYXBwaWRhY3IiOiIxIiwiZmFtaWx5X25hbWUiOiJPcnRlZ2EiLCJnaXZlbl9uYW1lIjoiTGlkaWEiLCJncm91cHMiOlsiMTFlNDVlZjItNGY5OS00MzQwLWJjMDUtY2Y2ZmEyM2M0OTRjIl0sImlwYWRkciI6IjE4OS4yMjQuMTg1LjIxMCIsIm5hbWUiOiJMaWRpYSIsIm9pZCI6ImQ4ZTA4YmFjLTk0NTktNDBhNi04OWQwLTZjMGE3MGIzYzJhOCIsInB1aWQiOiIxMDAzMDAwMDlGQzgyNEJBIiwicHdkX2V4cCI6IjcxMTU1NCIsInB3ZF91cmwiOiJodHRwczovL3BvcnRhbC5taWNyb3NvZnRvbmxpbmUuY29tL0NoYW5nZVBhc3N3b3JkLmFzcHgiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiI0ZzVyLTh6bjFIb1J6aF9QeF9XZmFJVmZ4M2RXMW1lT3kzblB3UV9sYkMwIiwidGlkIjoiZThiYjM2YWMtOGU3YS00ZTI0LTljYjItZDU5MDRmZWMxMjY1IiwidW5pcXVlX25hbWUiOiJsaWRpYS5vcnRlZ2FAYmlnd2F2ZWRhdGEubXgiLCJ1cG4iOiJsaWRpYS5vcnRlZ2FAYmlnd2F2ZWRhdGEubXgiLCJ1dGkiOiJMNnN3YkJzd1UwLUJsYVFMSFpmTkFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyJmZTkzMGJlNy01ZTYyLTQ3ZGItOTFhZi05OGMzYTQ5YTM4YjEiXX0.BBHspQs8gDtc-4Lo_zc4d6AF2tDUaN-m4l3r-2rju5EvnenC8WFqbI-wr6FAGRbKsoFIw09D_D5hKbuauG1xdBJEqi2VE_Zitnkqsix_li6lTYpSfQAf-YR2RNljpmpxinPTCbqrrW7EEPxtY7kfkcEwQE7TMmT1AvyRWZygZxUErguI8RG1lTcsMw64X_niBP2RZTAMJsPWQsp-wShAIcp-MBsnfaobz3mZvldr9n6fp1dL71L4d6ctzNtaxmAjvWsqrsWfF3ps9MTAGaSt2P7X2LkneSzG95tOnjfHK9stfqbh4KR_IZO3iLxHAKmlBBI-vsbSiyqLhRinFQoFFw","RefreshToken":"AQABAAAAAABeAFzDwllzTYGDLh_qYbH85_R3BLKw3-QQ-0mbQDOVppH3OuK0RaPex-pCaLpQOviGPjXrdRoZRDIfxpju5ShRrjYd82K2X7K4xuj32ykjLFVWBo5-Idk8KQ6DcbyhIGMAYwx8p3AkP2OsK7wkUIY4ixcE-2Hh7vLYr0jwF2thMESLlsVSNbMWI_FeLX9joDDwy2JCe6qU-UXJEcHv4UO89JzjJ5qscm8lzq_VgMGJ37z4tihNqJ2294k80MvI91h1Kvra7JVha-CfRKB3OabLWmw3YHw_u96rUHmfsqxFGaPL6eNO9rFze-HTo76dKEESt1QWXvY2ck_Dpqdt5TPGSm8TZhsneurPar0TtyBLC79iIOFdLejY_IXrRl8NbDXWmFL9UNC0hdotKkCdKLhdY977bZ9hL-fiQnLA2QxT-FKOeFAdFI4Trvswei7uOTiC8O0RbQCsXA5kQobxuOEVAm22Q90WRa-mVX33XQRZCfPqwuQGphj1seiWa-xEpf12KM4c_NDUX7KAYyzL7nYoJoi5pV7d4B6D3GwoOkGrf5NslmEA-OWCFqhHXojL24lY977VqmCU38K9VnyAEWBcPSHnspCmilSin2qdlWZGZr8i5U2qCt5GNq6nFRlN8Di8cebmalGWT1kvktcbG41Q7s5L3jkMfiJA0QtKxMPUqgTdEkCV3cFKzLTu7CNnuG2_3Kc_VK17VpypYK-tKCWgVdME7EOo79ff5pmhu9XeG8uOGcSawdd4EYfVdpIwuNZmj719e2zR2RlxyOFyKsxGyUAyRpjLpbXc-PSrJq-EeRQeC2BA3oP9FJoNSmgoQ68gAA","subscription":"8ec6b905-1e31-49e9-accf-5aebd4d970ff","appService":"/subscriptions/8ec6b905-1e31-49e9-accf-5aebd4d970ff/resourceGroups/EatonRg/providers/Microsoft.Web/sites/erslqa","productionUrl":"https://erslqa.azurewebsites.net","stagingUrl":null,"privateUrl":null,"deleteStaging":true,"overrideUrl":"","lastDeployMode":"production","previewUrl":"https://erslqa.azurewebsites.net"}</azure>
+    <ftp external="false">{"url":"ftp://waws-prod-dm1-085.ftp.azurewebsites.windows.net","username":"erslqa\\$erslqa","password":"jzcmsjPfi4H2bDh5b9lG2PSoWwYde6iBWryWcAzWotoYjBnCi0kMdB0px82k","previewUrl":"","webConfigCustomizations":{}}</ftp>
+  </publish>
+</project>

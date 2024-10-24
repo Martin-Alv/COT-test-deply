@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Estatus_Movimiento" conflictDetection="overwriteChanges" label="Estatus Movimiento" handler="eaton.Rules.Estatus_MovimientoBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Estatus_Movimiento"."Estatus_Movimiento_Id" "Estatus_Movimiento_Id"
+	,"Estatus_Movimiento"."Estatus_Movimiento" "Estatus_Movimiento"
+	,"Estatus_Movimiento"."Significa_Pendiente" "Significa_Pendiente"
+	,"Estatus_Movimiento"."Significa_Cancelado" "Significa_Cancelado"
+	,"Estatus_Movimiento"."Significa_Recibido_En_Proceso_Dev" "Significa_Recibido_En_Proceso_Dev"
+	,"Estatus_Movimiento"."Es_Devolucion_Completa" "Es_Devolucion_Completa"
+	,"Estatus_Movimiento"."Es_Devolucion_Parcial" "Es_Devolucion_Parcial"
+	,"Estatus_Movimiento"."Es_Devolucion_Cancelado" "Es_Devolucion_Cancelado"
+	,"Estatus_Movimiento"."Significa_Devuelto" "Significa_Devuelto"
+	,"Estatus_Movimiento"."Significa_Recibido_En_Proceso_Transf" "Significa_Recibido_En_Proceso_Transf"
+	,"Estatus_Movimiento"."Es_Transferencia_Completa" "Es_Transferencia_Completa"
+	,"Estatus_Movimiento"."Es_Transferencia_Parcial" "Es_Transferencia_Parcial"
+	,"Estatus_Movimiento"."Es_Transferencia_Cancelado" "Es_Transferencia_Cancelado"
+	,"Estatus_Movimiento"."Significa_Enviado_A_Transferir" "SignificaEnviadoATransferir"
+	,"Estatus_Movimiento"."En_Proceso_Enviado_A_Transferencia" "En_Proceso_Enviado_A_Transferencia"
+	,"Estatus_Movimiento"."Significa_Transferido" "Significa_Transferido"
+	,"Estatus_Movimiento"."Aplica_A_Devolucion" "Aplica_A_Devolucion"
+	,"Estatus_Movimiento"."Aplica_A_Transferencia" "Aplica_A_Transferencia"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Estatus_Movimiento"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Estatus_Movimiento"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Estatus_Movimiento"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Estatus_Movimiento" "Estatus_Movimiento"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Estatus_Movimiento"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Estatus_Movimiento"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Estatus_Movimiento"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Estatus_Movimiento_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Estatus_Movimiento_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Estatus_Movimiento_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Estatus Movimiento Id" readOnly="true" />
+    <field name="Estatus_Movimiento" type="String" allowNulls="false" label="Estatus De Movimiento" length="250" showInSummary="true" />
+    <field name="Significa_Pendiente" type="Boolean" allowNulls="false" default="((0))" label="Significa Pendiente?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Cancelado" type="Boolean" allowNulls="false" default="((0))" label="Significa Cancelado?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Recibido_En_Proceso_Dev" type="Boolean" allowNulls="false" default="((0))" label="Significa Recibido En Proceso Dev?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Devolucion_Completa" type="Boolean" allowNulls="false" default="((0))" label="Es Devolución Completa?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Devolucion_Parcial" type="Boolean" allowNulls="false" default="((0))" label="Es Devolución Parcial?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Devolucion_Cancelado" type="Boolean" allowNulls="false" default="((0))" label="Es Devolución Cancelado?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Devuelto" type="Boolean" allowNulls="false" default="((0))" label="Significa Devuelto?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Recibido_En_Proceso_Transf" type="Boolean" allowNulls="false" default="((0))" label="Significa Recibido En Proceso Transf?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Transferencia_Completa" type="Boolean" allowNulls="false" default="((0))" label="Es Transferencia Completa?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Transferencia_Parcial" type="Boolean" allowNulls="false" default="((0))" label="Es Transferencia Parcial?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Transferencia_Cancelado" type="Boolean" allowNulls="false" default="((0))" label="Es Transferencia Cancelado?">
+      <items style="CheckBox" />
+    </field>
+    <field name="SignificaEnviadoATransferir" type="Boolean" allowNulls="false" default="((0))" label="Significa Enviado A Transferir">
+      <items style="CheckBox" />
+    </field>
+    <field name="En_Proceso_Enviado_A_Transferencia" type="Boolean" allowNulls="false" default="((0))" label="En Proceso Enviado A Transferencia">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Transferido" type="Boolean" allowNulls="false" default="((0))" label="Significa Transferido?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Aplica_A_Devolucion" type="Boolean" allowNulls="false" default="((0))" label="Aplica A Devolución?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Aplica_A_Transferencia" type="Boolean" allowNulls="false" default="((0))" label="Aplica A Transferencia?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha De Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus De Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Estatus Movimiento" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Movimiento" />
+        <dataField fieldName="Significa_Pendiente" />
+        <dataField fieldName="Significa_Cancelado" />
+        <dataField fieldName="Significa_Recibido_En_Proceso_Dev" />
+        <dataField fieldName="Es_Devolucion_Completa" />
+        <dataField fieldName="Es_Devolucion_Parcial" />
+        <dataField fieldName="Es_Devolucion_Cancelado" />
+        <dataField fieldName="Significa_Devuelto" />
+        <dataField fieldName="Significa_Recibido_En_Proceso_Transf" />
+        <dataField fieldName="Es_Transferencia_Completa" />
+        <dataField fieldName="Es_Transferencia_Parcial" />
+        <dataField fieldName="Es_Transferencia_Cancelado" />
+        <dataField fieldName="SignificaEnviadoATransferir" />
+        <dataField fieldName="En_Proceso_Enviado_A_Transferencia" />
+        <dataField fieldName="Significa_Transferido" />
+        <dataField fieldName="Aplica_A_Devolucion" />
+        <dataField fieldName="Aplica_A_Transferencia" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="Estatus_Movimiento_LookUp_List" type="Grid" commandId="command1" label="Estatus Movimiento" filter="Estatus_Registro_Id IN (0,1) " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Movimiento" />
+        <dataField fieldName="Significa_Pendiente" />
+        <dataField fieldName="Significa_Cancelado" />
+        <dataField fieldName="Significa_Recibido_En_Proceso_Dev" />
+        <dataField fieldName="Es_Devolucion_Completa" />
+        <dataField fieldName="Es_Devolucion_Parcial" />
+        <dataField fieldName="Es_Devolucion_Cancelado" />
+        <dataField fieldName="Significa_Devuelto" />
+        <dataField fieldName="Significa_Recibido_En_Proceso_Transf" />
+        <dataField fieldName="Es_Transferencia_Completa" />
+        <dataField fieldName="Es_Transferencia_Parcial" />
+        <dataField fieldName="Es_Transferencia_Cancelado" />
+        <dataField fieldName="SignificaEnviadoATransferir" />
+        <dataField fieldName="En_Proceso_Enviado_A_Transferencia" />
+        <dataField fieldName="Significa_Transferido" />
+        <dataField fieldName="Aplica_A_Devolucion" />
+        <dataField fieldName="Aplica_A_Transferencia" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Registro de Estatus Movimiento">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Registro de Estatus Movimiento" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Estatus_Movimiento" />
+            <dataField fieldName="Significa_Pendiente" />
+            <dataField fieldName="Significa_Cancelado" />
+            <dataField fieldName="Significa_Recibido_En_Proceso_Dev" />
+            <dataField fieldName="Es_Devolucion_Completa" />
+            <dataField fieldName="Es_Devolucion_Parcial" />
+            <dataField fieldName="Es_Devolucion_Cancelado" />
+            <dataField fieldName="Significa_Devuelto" />
+            <dataField fieldName="Significa_Recibido_En_Proceso_Transf" />
+            <dataField fieldName="Es_Transferencia_Completa" />
+            <dataField fieldName="Es_Transferencia_Parcial" />
+            <dataField fieldName="Es_Transferencia_Cancelado" />
+            <dataField fieldName="SignificaEnviadoATransferir" />
+            <dataField fieldName="En_Proceso_Enviado_A_Transferencia" />
+            <dataField fieldName="Significa_Transferido" />
+            <dataField fieldName="Aplica_A_Devolucion" />
+            <dataField fieldName="Aplica_A_Transferencia" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Registro de Estatus Movimiento">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Registro de Estatus Movimiento" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Estatus_Movimiento" />
+            <dataField fieldName="Significa_Pendiente" />
+            <dataField fieldName="Significa_Cancelado" />
+            <dataField fieldName="Significa_Recibido_En_Proceso_Dev" />
+            <dataField fieldName="Es_Devolucion_Completa" />
+            <dataField fieldName="Es_Devolucion_Parcial" />
+            <dataField fieldName="Es_Devolucion_Cancelado" />
+            <dataField fieldName="Significa_Devuelto" />
+            <dataField fieldName="Significa_Recibido_En_Proceso_Transf" />
+            <dataField fieldName="Es_Transferencia_Completa" />
+            <dataField fieldName="Es_Transferencia_Parcial" />
+            <dataField fieldName="Es_Transferencia_Cancelado" />
+            <dataField fieldName="SignificaEnviadoATransferir" />
+            <dataField fieldName="En_Proceso_Enviado_A_Transferencia" />
+            <dataField fieldName="Significa_Transferido" />
+            <dataField fieldName="Aplica_A_Devolucion" />
+            <dataField fieldName="Aplica_A_Transferencia" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Estatus_Mov_Dev_LookUp_List" type="Grid" commandId="command1" label="Estatus Movimiento" filter="Estatus_Registro_Id IN (0,1) AND Aplica_A_Devolucion = 1" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Movimiento" />
+        <dataField fieldName="Significa_Pendiente" hidden="true" />
+        <dataField fieldName="Significa_Cancelado" hidden="true" />
+        <dataField fieldName="Significa_Recibido_En_Proceso_Dev" hidden="true" />
+        <dataField fieldName="Es_Devolucion_Completa" hidden="true" />
+        <dataField fieldName="Es_Devolucion_Parcial" hidden="true" />
+        <dataField fieldName="Es_Devolucion_Cancelado" hidden="true" />
+        <dataField fieldName="Significa_Devuelto" hidden="true" />
+        <dataField fieldName="SignificaEnviadoATransferir" hidden="true" />
+        <dataField fieldName="En_Proceso_Enviado_A_Transferencia" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="Estatus_Mov_Transf_LookUp_List" type="Grid" commandId="command1" label="Estatus Movimiento" filter="Estatus_Registro_Id IN (0,1) AND Aplica_A_Transferencia = 1" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Movimiento" />
+        <dataField fieldName="Significa_Pendiente" hidden="true" />
+        <dataField fieldName="Significa_Cancelado" hidden="true" />
+        <dataField fieldName="Significa_Recibido_En_Proceso_Transf" hidden="true" />
+        <dataField fieldName="Es_Transferencia_Completa" hidden="true" />
+        <dataField fieldName="Es_Transferencia_Parcial" hidden="true" />
+        <dataField fieldName="Es_Transferencia_Cancelado" hidden="true" />
+        <dataField fieldName="SignificaEnviadoATransferir" hidden="true" />
+        <dataField fieldName="En_Proceso_Enviado_A_Transferencia" hidden="true" />
+        <dataField fieldName="Significa_Transferido" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE APP.Estatus_Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Movimiento_Id = @Estatus_Movimiento_Id
+
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="Administrators,administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="Administrators,administrador" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE APP.Estatus_Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Movimiento_Id = @Estatus_Movimiento_Id
+
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="Administrators,administrador" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE APP.Estatus_Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Movimiento_Id = @Estatus_Movimiento_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" roles="Administrators,administrador" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" roles="Administrators,administrador" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="Administrators,administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE APP.Estatus_Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Movimiento_Id = @Estatus_Movimiento_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Estatus_Movimiento  
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Estatus_Movimiento_Id = @Estatus_Movimiento_Id ]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+AND Estatus_Movimiento_Id <> @Estatus_Movimiento_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](253,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](253,1,71,@Estatus_Movimiento) 
+   RETURN 
+END ]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Estatus_Movimiento  
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+   Estatus_Movimiento_Id = @Estatus_Movimiento_Id ]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Log_Delivery_Procesamiento" alias="Log_Delivery_Procesamiento" created="2022-03-08T22:28:22" modified="2022-03-08T22:29:01" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Id" fieldName="Id" label="Id" />
+    <column name="Comando" fieldName="Comando" label="Comando" />
+    <column name="Proceso" fieldName="Proceso" label="Proceso" />
+    <column name="Mensaje" fieldName="Mensaje" label="Mensaje" />
+    <column name="Fecha" fieldName="Fecha" label="Fecha" format="g" />
+    <column name="Duracion" fieldName="Duracion" label="Duración" />
+    <column name="Log_id" fieldName="Log_id" label="Log" />
+    <column name="Nombre_Equipo" fieldName="Nombre_Equipo" label="Nómbre Equipo" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transacción" />
+  </columns>
+</dataModel>

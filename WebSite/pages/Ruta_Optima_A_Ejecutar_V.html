@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ruta Óptima A Ejecutar</title>
+  </head>
+  <body data-authorize-roles="administrador,Surtidor">
+    <div data-flow="row">
+      <div id="view1" data-controller="Grid_Ruta_Optima_A_Ejecutar_V" data-view="grid1" data-show-in-summary="true" data-selection-mode="multiple" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select-none" data-auto-highlight-first-row="true"> </div>
+    </div>
+    <div data-flow="row">
+      <div id="view2" data-controller="Grid_Solicitud_Material_V" data-view="grid1" data-filter-source="view1" data-filter-fields="Material_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none&#xD;&#xA;" data-roles="hidden"> </div>
+      <div data-activator="Tab|Comentarios de Solicitudes">
+        <div id="view4" data-controller="Grid_Ruta_Optima_Solic_Coment_V" data-view="grid1" data-filter-source="view1" data-filter-fields="Ruta_Optima_Id,Material_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select-none"> </div>
+      </div>
+      <div data-activator="Tab|Mat Ubicación Almacenamiento">
+        <div id="view3" data-controller="Material_Ubicacion_Almacenamiento_De_Surtido2" data-view="Mat_Ub_Almac_De_Surtido_RO" data-filter-source="view1" data-filter-fields="Ruta_Optima_Id,Material_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select-none"> </div>
+      </div>
+    </div>
+  </body>
+</html>

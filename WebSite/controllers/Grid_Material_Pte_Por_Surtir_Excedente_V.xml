@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Material_Pte_Por_Surtir_Excedente_V" conflictDetection="overwriteChanges" label="Grid Material Pte Por Surtir Excedente V" handler="eaton.Rules.Grid_Material_Pte_Por_Surtir_Excedente_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Material_Pte_Por_Surtir_Excedente_V"."Material_Id" "Material_Id"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Material" "Material"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Material_Unidad_Material_Id" "Material_Unidad_Material_Id"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Unidad_Material_Id" "Unidad_Material_Id"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Unidad_Material" "Unidad_Material"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Orden_Produccion_Solicitud_Material" "Orden_Produccion_Solicitud_Material"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Usuario_Id" "Usuario_Id"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Cantidad_Excedente" "Cantidad_Excedente"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Material_Pte_Por_Surtir_Excedente_V"."Area_Entrega" "Area_Entrega"
+from "dbo"."Grid_Material_Pte_Por_Surtir_Excedente_V" "Grid_Material_Pte_Por_Surtir_Excedente_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" showInSummary="true" />
+    <field name="Cantidad_Solicitado" type="Decimal" label="Cantidad Solicitado" showInSummary="true" />
+    <field name="Material_Unidad_Material_Id" type="Int64" allowNulls="false" label="Material Unidad Material Id" readOnly="true" showInSummary="true" />
+    <field name="Unidad_Material_Id" type="Int32" allowNulls="false" label="Unidad Material Id" readOnly="true" />
+    <field name="Unidad_Material" type="String" allowNulls="false" label="Unidad Material" readOnly="true" length="250" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" label="Ubicacion Almacenamiento Id" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Orden_Produccion_Solicitud_Material" type="String" allowQBE="false" allowSorting="false" label="Orden Produccion Solicitud Material" />
+    <field name="Usuario_Id" type="Guid" label="Usuario Id" />
+    <field name="Cantidad_Excedente" type="Decimal" label="Cantidad Excedente" />
+    <field name="Area_Entrega_Id" type="Int32" label="Area Entrega Id">
+      <items style="Lookup" dataController="Area_Entrega" dataView="Area_Entrega_LookUp_List" dataTextField="Area_Entrega" dataValueField="Area_Entrega_Id" pageSize="15" />
+    </field>
+    <field name="Area_Entrega" type="String" label="Area Entrega" length="250" />
+    <field name="Orden_Produccion_Id" type="Int64" label="Orden Produccion Id" isVirtual="true" contextFields="Material_Solicitado_Id=Material_Id">
+      <items style="Lookup" dataController="Orden_Produccion_Solicitud_Material_V" dataView="grid1" dataTextField="Numero_Orden_Produccion" dataValueField="Orden_Produccion_Id" pageSize="15" copy="Orden_Produccion_Id=Orden_Produccion_Id&#xD;&#xA;,Numero_Orden_Produccion=Numero_Orden_Produccion&#xD;&#xA;,Producto_Id=Producto_Id&#xD;&#xA;,Producto_Clave=Producto_Clave&#xD;&#xA;,Producto_Descripcion=Producto_Descripcion&#xD;&#xA;,Area_Servicio_Id=Area_Servicio_Id&#xD;&#xA;,Familia_Id=Familia_Id" />
+    </field>
+    <field name="Numero_Orden_Produccion" type="Int64" label="Numero Orden Produccion" isVirtual="true" />
+    <field name="Orden_Produccion_Id_1" type="Int64" label="Orden Produccion Id" isVirtual="true">
+      <items style="Lookup" dataController="Grid_Orden_Produccion_Con_Material_Pte_Por_Surtir_V" dataView="grid1" dataTextField="Numero_Orden_Produccion" dataValueField="Orden_Produccion_Id" pageSize="15" copy="Orden_Produccion_Id_1=Orden_Produccion_Id&#xD;&#xA;,Numero_Orden_Produccion_1=Numero_Orden_Produccion&#xD;&#xA;,Producto_Id=Producto_Id&#xD;&#xA;,Producto_Clave=Producto_Clave&#xD;&#xA;,Producto_Descripcion=Producto_Descripcion" />
+    </field>
+    <field name="Numero_Orden_Produccion_1" type="Int64" label="Numero Orden Produccion" isVirtual="true" />
+    <field name="Material_Id_1" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" isVirtual="true" contextFields="Orden_Produccion_Id=Orden_Produccion_Id_1">
+      <formula />
+      <items style="Lookup" dataController="Grid_Orden_Produccion_Material_Pte_Por_Surtir_V" dataView="grid1" dataTextField="Material" dataValueField="Material_Id" copy="Material_Id=Material_Id&#xD;&#xA;,Material=Material&#xD;&#xA;,Material_Descripcion=Material_Descripcion&#xD;&#xA;,Area_Entrega_Id=Area_Entrega_Id&#xD;&#xA;,Area_Entrega=Area_Entrega" />
+    </field>
+    <field name="Material_1" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" readOnly="true">
+      <formula />
+    </field>
+    <field name="Material_Descripcion_1" type="String" allowNulls="false" label="Material Descripcion" length="250" showInSummary="true" readOnly="true">
+      <formula />
+    </field>
+    <field name="Producto_Id" type="Int32" label="Producto Id" isVirtual="true">
+      <items style="Lookup" dataController="Producto" dataView="Producto_LookUp_List" dataTextField="Producto_Clave" dataValueField="Producto_Id" pageSize="15" />
+    </field>
+    <field name="Producto_Clave" type="String" label="Producto Clave" length="50" readOnly="true" />
+    <field name="Producto_Descripcion" type="String" allowNulls="false" label="Producto Descripcion" length="250" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" isVirtual="true" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Pendiente por Surtir" filter="Usuario_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Orden_Produccion_Solicitud_Material" rows="5" />
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+        <dataField fieldName="Cantidad_Excedente" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" aliasFieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Material Pendiente por Solicitar">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Material Pendiente por Solicitar" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Solicitud_Material" rows="5">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Orden_Produccion_Id" columns="15" aliasFieldName="Numero_Orden_Produccion" tag="lookup-distinct" />
+            <dataField fieldName="Producto_Id" columns="15" aliasFieldName="Producto_Clave">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Producto_Descripcion" rows="5">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Material">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Material_Id" columns="15" hidden="true">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Material_Descripcion">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Cantidad_Solicitado" columns="15">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+            <dataField fieldName="Cantidad_Excedente" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" aliasFieldName="Area_Entrega" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Solicitud de Excedente">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Solicitud de Excedente" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id_1" columns="15" aliasFieldName="Numero_Orden_Produccion_1" />
+            <dataField fieldName="Producto_Id" columns="15" aliasFieldName="Producto_Clave">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Producto_Descripcion" rows="5" />
+            <dataField fieldName="Material_Id_1" columns="15" aliasFieldName="Material_1" />
+            <dataField fieldName="Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Material_Descripcion">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Cantidad_Solicitado" columns="15" hidden="true" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Solicitud_Material" rows="5" hidden="true" />
+            <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+            <dataField fieldName="Cantidad_Excedente" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" aliasFieldName="Area_Entrega" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a101" commandName="Select" commandArgument="editForm1" headerText="Agregar Excedente" />
+      <action id="a1" commandName="Select" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" roles="hidden" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" roles="hidden" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="Solicitar" cssClass="material-icon-edit" whenLastCommandName="Edit" id="a100" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecCS02" headerText="Solicitar" whenLastCommandName="New" id="a101" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="hidden" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Crear_Solicitud_Excedente" />
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="Crear_Solicitud_Excedente" />
+  </businessRules>
+</dataController>

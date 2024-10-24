@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Usuario_Aplicacion_Area_Entrega" conflictDetection="overwriteChanges" label="Usuario Aplicacion Area Entrega" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Usuario_Aplicacion_Area_Entrega"."Usuario_Aplicacion_Area_Entrega_Id" "Usuario_Aplicacion_Area_Entrega_Id"
+	,"Usuario_Aplicacion_Area_Entrega"."Usuario_Aplicacion_Id" "Usuario_Aplicacion_Id"
+	,"Usuario_Aplicacion_"."Nombre_Completo" "Usuario_Aplicacion_Nombre_Completo"
+	,"Usuario_Aplicacion_Area_Entrega"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Area_Entrega_"."Area_Entrega" "Area_Entrega"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Usuario_Aplicacion_Area_Entrega"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Usuario_Aplicacion_Area_Entrega"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Usuario_Aplicacion_Area_Entrega"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Usuario_Aplicacion_Area_Entrega" "Usuario_Aplicacion_Area_Entrega"
+	left join "APP"."Usuario_Aplicacion" "Usuario_Aplicacion_" on "Usuario_Aplicacion_Area_Entrega"."Usuario_Aplicacion_Id" = "Usuario_Aplicacion_"."Usuario_Aplicacion_Id"
+	left join "APP"."Area_Entrega" "Area_Entrega_" on "Usuario_Aplicacion_Area_Entrega"."Area_Entrega_Id" = "Area_Entrega_"."Area_Entrega_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Usuario_Aplicacion_Area_Entrega"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Usuario_Aplicacion_Area_Entrega"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Usuario_Aplicacion_Area_Entrega"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Usuario_Aplicacion_Area_Entrega_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Usuario_Aplicacion_Area_Entrega_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Usuario_Aplicacion_Area_Entrega_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Usuario Aplicacion Area Entrega Id" readOnly="true" />
+    <field name="Usuario_Aplicacion_Id" type="Int32" allowNulls="false" default="((0))" label="Usuario Aplicacion Id" showInSummary="true">
+      <items style="Lookup" dataController="Usuario_Aplicacion" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Aplicacion_Id" dataTextField="Nombre_Completo" />
+    </field>
+    <field name="Usuario_Aplicacion_Nombre_Completo" type="String" label="Usuario Aplicacion Nombre Completo" readOnly="true" length="1003" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" default="((0))" label="Area Entrega Id" showInSummary="true">
+      <items style="Lookup" dataController="Area_Entrega" newDataView="createForm1" searchOnStart="true" dataValueField="Area_Entrega_Id" dataTextField="Area_Entrega" />
+    </field>
+    <field name="Area_Entrega" type="String" readOnly="true" label="Área de Entrega" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Registro" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Usuario Aplicacion Area Entrega">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Usuario_Aplicacion_Id" aliasFieldName="Usuario_Aplicacion_Nombre_Completo" />
+        <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" hyperlinkFormatString="~/pages/Area_Entrega?Area_Entrega_Id={Area_Entrega_Id}&amp;_controller=Area_Entrega&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review APP Usuario_Aplicacion_Area_Entrega">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="APP Usuario_Aplicacion_Area_Entrega" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Usuario_Aplicacion_Id" aliasFieldName="Usuario_Aplicacion_Nombre_Completo" hyperlinkFormatString="~/pages/Usuario_Aplicacion?Usuario_Aplicacion_Id={Usuario_Aplicacion_Id}&amp;_controller=Usuario_Aplicacion&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" hyperlinkFormatString="~/pages/Area_Entrega?Area_Entrega_Id={Area_Entrega_Id}&amp;_controller=Area_Entrega&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New APP Usuario_Aplicacion_Area_Entrega">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Usuario_Aplicacion_Id" aliasFieldName="Usuario_Aplicacion_Nombre_Completo" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

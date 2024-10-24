@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Movimiento_Desglose" alias="Movimiento_Desglose" created="2020-04-26T18:53:54" modified="2021-04-11T21:53:54" x="20" y="29" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="604" y="404">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Material" parentTableSchema="APP" parentTableName="Material" x="579" y="20">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Ubicacion_Almacenamiento" parentTableSchema="APP" parentTableName="Ubicacion_Almacenamiento" x="741" y="228">
+      <foreignKeyColumn columnName="Ubicacion_Almacenamiento_De_Surtido_Id" parentColumnName="Ubicacion_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Unidad_Material" parentTableSchema="APP" parentTableName="Unidad_Material" x="585" y="132">
+      <foreignKeyColumn columnName="Unidad_Material_Entregado_Id" parentColumnName="Unidad_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="37" y="598">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="382" y="572">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Movimiento_Desglose_Id" fieldName="Movimiento_Desglose_Id" label="Movimiento Desglose Id" />
+    <column name="Material_Ubicacion_Almacenamiento_De_Surtido_Id" fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" label="Material Ubicacion Almacenamiento De Surtido Id" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido_Id" label="Material Surtido Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" foreignKey="Material" />
+    <column name="Material_Ubicacion_Stock_Origen_Id" fieldName="Material_Ubicacion_Stock_Origen_Id" label="Folio Material Ubicación Stock Origen" />
+    <column name="Ubicacion_Almacenamiento_De_Surtido_Id" fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" label="Ubicacion Almacenamiento De Surtido Id" aliasColumnName="Ubicacion_Almacenamiento" aliasForeignKey="Ubicacion_Almacenamiento" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" foreignKey="Ubicacion_Almacenamiento" />
+    <column name="Cantidad" fieldName="Cantidad" label="Cantidad" />
+    <column name="Unidad_Material_Entregado_Id" fieldName="Unidad_Material_Entregado_Id" label="Unidad Material Entregado Id" aliasColumnName="Unidad_Material" aliasForeignKey="Unidad_Material" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" foreignKey="Unidad_Material" />
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Material_Ubicacion_Stock_Destino_Id" fieldName="Material_Ubicacion_Stock_Destino_Id" label="Folio Material Ubicación Stock Destino" />
+    <column name="Destino_Id" fieldName="Destino_Id" label="Destino Id" />
+    <column name="Destino" fieldName="Destino" label="Destino" />
+    <column name="Caso" fieldName="Caso" label="Caso" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Usuario V Usuario Sistema" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

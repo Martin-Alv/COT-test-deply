@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Material Surtido A Ejecutar</title>
+    <meta name="description" content="This page allows grid material surtido a ejecutar v management.">
+  </head>
+  <body data-authorize-roles="administrador,SurtidorMaterialConAreaAsignada">
+    <div data-flow="row">
+      <div id="view1" data-controller="Grid_Material_Surtido_A_Ejecutar_V" data-view="grid1" data-show-in-summary="true" data-selection-mode="multiple" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select-none"> </div>
+    </div>
+    <div data-flow="row">
+      <div data-activator="Tab|Comentarios de Solicitudes">
+        <div id="view3" data-controller="Grid_Mat_Surtido_Coment_V" data-view="grid1" data-filter-source="view1" data-filter-fields="Material_Surtido_Id,Material_Id"> </div>
+      </div>
+      <div data-activator="Tab|Mat Ubicacion Almacenamiento">
+        <div id="view2" data-controller="Material_Ubicacion_Almacenamiento_De_Surtido1" data-view="grid1" data-filter-source="view1" data-filter-fields="Material_Surtido_Id,Material_Id"> </div>
+      </div>
+    </div>
+  </body>
+</html>

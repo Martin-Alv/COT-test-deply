@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Prueba_Generado_From_SQL" conflictDetection="overwriteChanges" label="Prueba_Generado_From_SQL" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands />
+  <fields>
+    <field name="Orden" type="Int64" label="Orden" showInSummary="true" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion#" showInSummary="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Fecha_Produccion" type="DateTime" label="Fecha Produccion" showInSummary="true" />
+    <field name="Orden_Produccion_Detalle_Id" type="Int64" allowNulls="false" label="Orden Produccion Detalle#" showInSummary="true" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto#" />
+    <field name="Producto_Clave" type="String" label="Producto Clave" length="50" />
+    <field name="Producto_Descripcion" type="String" label="Producto Descripcion" length="250" />
+    <field name="Cantidad_Producto" type="Decimal" label="Cantidad Producto" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material#" />
+    <field name="Material" type="String" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" label="Material Descripcion" length="250" />
+    <field name="Unidad_Material_Id" type="Int32" allowNulls="false" label="Unidad Material#" />
+    <field name="Unidad_Material" type="String" label="Unidad Material" length="250" />
+    <field name="Cantidad_Material" type="Decimal" allowNulls="false" label="Cantidad Material" />
+    <field name="Permitir_Desviacion" type="Boolean" label="Permitir Desviacion" />
+    <field name="Folio_Desviacion" type="Int32" allowNulls="false" label="Folio Desviacion" />
+    <field name="Nota_Folio_Desviacion" type="String" allowQBE="false" allowSorting="false" label="Nota Folio Desviacion" />
+    <field name="Material_Ubicacion_Almacen" type="String" allowQBE="false" allowSorting="false" label="Material Ubicacion Almacen" />
+    <field name="Material_Ubicacion_Piso" type="String" allowQBE="false" allowSorting="false" label="Material Ubicacion Piso" />
+    <field name="Valida_Existencia_En_Piso" type="String" allowQBE="false" allowSorting="false" label="Valida Existencia En Piso" />
+    <field name="No_Valida_Existencia_En_Piso" type="String" allowQBE="false" allowSorting="false" label="No Valida Existencia En Piso" />
+    <field name="Valida_Existencia_En_Almacen" type="String" allowQBE="false" allowSorting="false" label="Valida Existencia En Almacen" />
+    <field name="No_Valida_Existencia_En_Almacen" type="String" allowQBE="false" allowSorting="false" label="No Valida Existencia En Almacen" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Prueba Generado From SQL">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Orden" columns="15" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Fecha_Produccion" columns="10" />
+        <dataField fieldName="Orden_Produccion_Detalle_Id" columns="15" />
+        <dataField fieldName="Producto_Id" columns="15" />
+        <dataField fieldName="Producto_Clave" columns="50" />
+        <dataField fieldName="Producto_Descripcion" />
+        <dataField fieldName="Cantidad_Producto" columns="15" />
+        <dataField fieldName="Material_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Unidad_Material_Id" columns="15" />
+        <dataField fieldName="Unidad_Material" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Permitir_Desviacion" />
+        <dataField fieldName="Folio_Desviacion" columns="15" />
+        <dataField fieldName="Nota_Folio_Desviacion" rows="5" />
+        <dataField fieldName="Material_Ubicacion_Almacen" rows="5" />
+        <dataField fieldName="Material_Ubicacion_Piso" rows="5" />
+        <dataField fieldName="Valida_Existencia_En_Piso" rows="5" />
+        <dataField fieldName="No_Valida_Existencia_En_Piso" rows="5" />
+        <dataField fieldName="Valida_Existencia_En_Almacen" rows="5" />
+        <dataField fieldName="No_Valida_Existencia_En_Almacen" rows="5" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Prueba Generado From SQL">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Prueba Generado From SQL" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Fecha_Produccion" columns="10" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" columns="15" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Producto_Clave" columns="50" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Cantidad_Producto" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+            <dataField fieldName="Permitir_Desviacion" />
+            <dataField fieldName="Folio_Desviacion" columns="15" />
+            <dataField fieldName="Nota_Folio_Desviacion" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Almacen" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Piso" rows="5" />
+            <dataField fieldName="Valida_Existencia_En_Piso" rows="5" />
+            <dataField fieldName="No_Valida_Existencia_En_Piso" rows="5" />
+            <dataField fieldName="Valida_Existencia_En_Almacen" rows="5" />
+            <dataField fieldName="No_Valida_Existencia_En_Almacen" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Prueba Generado From SQL">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New Prueba Generado From SQL" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Fecha_Produccion" columns="10" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" columns="15" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Producto_Clave" columns="50" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Cantidad_Producto" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+            <dataField fieldName="Permitir_Desviacion" />
+            <dataField fieldName="Folio_Desviacion" columns="15" />
+            <dataField fieldName="Nota_Folio_Desviacion" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Almacen" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Piso" rows="5" />
+            <dataField fieldName="Valida_Existencia_En_Piso" rows="5" />
+            <dataField fieldName="No_Valida_Existencia_En_Piso" rows="5" />
+            <dataField fieldName="Valida_Existencia_En_Almacen" rows="5" />
+            <dataField fieldName="No_Valida_Existencia_En_Almacen" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Delete" />
+      <action id="a6" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenKeySelected="true" whenClientScript="this.hasDetails()" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule type="Sql" id="enableResultSet" commandName="Select" phase="Before"><![CDATA[set @BusinessRules_EnableResultSet = 1
+-- Enable caching of the result set. Duration is specified in seconds.
+-- set @BusinessRules_ResultSetCacheDuration = 30 ]]></rule>
+    <rule type="Sql" id="getData" commandName="Select" phase="Before"><![CDATA[SELECT [Orden]
+      ,[Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Fecha_Produccion]
+      ,[Orden_Produccion_Detalle_Id]
+      ,[Producto_Id]
+      ,[Producto_Clave]
+      ,[Producto_Descripcion]
+      ,[Cantidad_Producto]
+      ,[Material_Id]
+      ,[Material]
+      ,[Material_Descripcion]
+      ,[Unidad_Material_Id]
+      ,[Unidad_Material]
+      ,[Cantidad_Material]
+      ,[Permitir_Desviacion]
+      ,[Folio_Desviacion]
+      ,[Nota_Folio_Desviacion]
+      ,[Material_Ubicacion_Almacen]
+      ,[Material_Ubicacion_Piso]
+      ,[Valida_Existencia_En_Piso]
+      ,[No_Valida_Existencia_En_Piso]
+      ,[Valida_Existencia_En_Almacen]
+      ,[No_Valida_Existencia_En_Almacen]
+  FROM [dbo].[Grid_Orden_Detalle_De_Orden_Produccion_V]
+WHERE 
+	Orden_Produccion_Id IN (1,2,5,4)]]></rule>
+    <rule type="Sql" id="insert" commandName="Insert" phase="Before"><![CDATA[set @BusinessRules_PreventDefault = 1
+-- implement insert here]]></rule>
+    <rule type="Sql" id="update" commandName="Update" phase="Before"><![CDATA[set @BusinessRules_PreventDefault = 1
+-- implement update here]]></rule>
+    <rule type="Sql" id="delete" commandName="Delete" phase="Before"><![CDATA[set @BusinessRules_PreventDefault = 1
+-- implement delete here]]></rule>
+  </businessRules>
+</dataController>

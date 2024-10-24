@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Motivo_Solicitud" alias="Motivo_Solicitud" created="2019-05-24T14:39:41" modified="2019-05-24T14:47:53" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="610" y="412">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="493" y="25">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="631" y="226">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Motivo_Solicitud_Id" fieldName="Motivo_Solicitud_Id" label="Motivo Solicitud Id" />
+    <column name="Motivo_Solicitud" fieldName="Motivo_Solicitud" label="Motivo de Solicitud" />
+    <column name="Es_Otro" fieldName="Es_Otro" label="Es Otro?" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Es_Frame" fieldName="Es_Frame" label="Es Frame?" />
+    <column name="Es_Error_De_Aplicacion" fieldName="Es_Error_De_Aplicacion" label="Es Error De Aplicacion?" />
+    <column name="Es_Material_Danado_Almacen" fieldName="Es_Material_Danado_Almacen" label="Es Material Danado Almacen?" />
+    <column name="Es_Material_Danado_En_Proceso" fieldName="Es_Material_Danado_En_Proceso" label="Es Material Danado En Proceso?" />
+    <column name="Es_Material_Incompleto" fieldName="Es_Material_Incompleto" label="Es Material Incompleto?" />
+    <column name="Es_Material_No_Aparece_En_Sistema" fieldName="Es_Material_No_Aparece_En_Sistema" label="Es Material No Aparece En Sistema?" />
+    <column name="Es_Material_Rechazado_Calidad" fieldName="Es_Material_Rechazado_Calidad" label="Es Material Rechazado Calidad?" />
+    <column name="Es_Motivo_De_Prueba" fieldName="Es_Motivo_De_Prueba" label="Es Motivo De Prueba?" />
+    <column name="Es_No_Aparece_En_Orden" fieldName="Es_No_Aparece_En_Orden" label="Es No Aparece En Orden?" />
+    <column name="Es_No_Viene_En_Boom_Coois" fieldName="Es_No_Viene_En_Boom_Coois" label="Es No Viene En Boom Coois?" />
+    <column name="Es_Error_De_Boom" fieldName="Es_Error_De_Boom" label="Es Error De Boom?" />
+    <column name="Es_Phantom" fieldName="Es_Phantom" label="Es Phantom?" />
+    <column name="Es_Refrescado_De_Ordenes" fieldName="Es_Refrescado_De_Ordenes" label="Es Refrescado De Ordenes?" />
+    <column name="Es_Kanban" fieldName="Es_Kanban" label="Es Kanban?" />
+    <column name="Es_Material_No_Aparece_En_Orden" fieldName="Es_Material_No_Aparece_En_Orden" label="Es Material No Aparece En Orden?" />
+    <column name="Es_Material_Orden_Pdr" fieldName="Es_Material_Orden_Pdr" label="Es Material Orden PDR?" />
+  </columns>
+</dataModel>

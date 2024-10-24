@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Orden_Produccion_Detalle" alias="Orden_Produccion_Detalle" created="2018-10-15T13:40:49" modified="2021-03-26T13:32:01" x="20" y="45" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Orden_Produccion_" parentTableSchema="dbo" parentTableName="Orden_Produccion" x="3524" y="20">
+      <foreignKeyColumn columnName="Orden_Produccion_Id" parentColumnName="Orden_Produccion_Id" />
+    </foreignKey>
+    <foreignKey id="Material_" parentTableSchema="APP" parentTableName="Material" x="2947" y="135">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Familia_" parentTableSchema="APP" parentTableName="Familia" x="2655" y="192">
+      <foreignKeyColumn columnName="Familia_Id" parentColumnName="Familia_Id" />
+    </foreignKey>
+    <foreignKey id="Area_Servicio_" parentTableSchema="APP" parentTableName="Area_Servicio" x="2370" y="245">
+      <foreignKeyColumn columnName="Area_Servicio_Id" parentColumnName="Area_Servicio_Id" />
+    </foreignKey>
+    <foreignKey id="Unidad_Material_" parentTableSchema="APP" parentTableName="Unidad_Material" x="2084" y="299">
+      <foreignKeyColumn columnName="Unidad_Material_Id" parentColumnName="Unidad_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="833" y="574">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="1413" y="421">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="1124" y="497">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Orden_Produccion_Detalle" parentTableSchema="APP" parentTableName="Estatus_Orden_Produccion_Detalle" x="1700" y="353">
+      <foreignKeyColumn columnName="Estatus_Orden_Produccion_Detalle_Id" parentColumnName="Estatus_Orden_Produccion_Detalle_Id" />
+    </foreignKey>
+    <foreignKey id="Producto" parentTableSchema="APP" parentTableName="Producto" x="3235" y="79">
+      <foreignKeyColumn columnName="Producto_Id" parentColumnName="Producto_Id" />
+    </foreignKey>
+    <foreignKey id="Area_Entrega" parentTableSchema="APP" parentTableName="Area_Entrega" x="820" y="695">
+      <foreignKeyColumn columnName="Area_Entrega_Id" parentColumnName="Area_Entrega_Id" />
+    </foreignKey>
+    <foreignKey id="Registrado_Desde" parentTableSchema="APP" parentTableName="Registrado_Desde" x="432" y="738">
+      <foreignKeyColumn columnName="Registrado_Desde_Id" parentColumnName="Registrado_Desde_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Produccion Detalle Id" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Producción Id" aliasColumnName="Numero_Orden_Produccion" aliasForeignKey="Orden_Produccion_" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Producción" foreignKey="Orden_Produccion_" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material_" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material_" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" aliasColumnName="Familia_Descripcion" aliasForeignKey="Familia_" />
+    <column name="Familia_Descripcion" fieldName="Familia_Descripcion" label="Familia Descripción" foreignKey="Familia_" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" foreignKey="Familia_" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Área Servicio Id" aliasColumnName="Area_Servicio" aliasForeignKey="Area_Servicio_" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Área de Servicio" foreignKey="Area_Servicio_" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" aliasColumnName="Unidad_Material" aliasForeignKey="Unidad_Material_" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad de Material" foreignKey="Unidad_Material_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Estatus_Orden_Produccion_Detalle_Id" fieldName="Estatus_Orden_Produccion_Detalle_Id" label="Estatus Orden Producción Detalle Id" aliasColumnName="Estatus_Orden_Produccion_Detalle" aliasForeignKey="Estatus_Orden_Produccion_Detalle" />
+    <column name="Estatus_Orden_Produccion_Detalle" fieldName="Estatus_Orden_Produccion_Detalle" label="Estatus de Orden Producción Detalle" foreignKey="Estatus_Orden_Produccion_Detalle" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" aliasColumnName="Producto_Clave" aliasForeignKey="Producto" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Terminado" foreignKey="Producto" />
+    <column name="Cantidad_Para_Producir" fieldName="Cantidad_Para_Producir" label="Cantidad Para Producir" />
+    <column name="Cantidad_A_Solicitar" fieldName="Cantidad_A_Solicitar" label="Cantidad A Solicitar" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Área Entrega Id" aliasColumnName="Area_Entrega" aliasForeignKey="Area_Entrega" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Área de Entrega" foreignKey="Area_Entrega" />
+    <column name="Clasificacion" fieldName="Clasificacion" label="Clasificacion" />
+    <column name="Registrado_Desde" fieldName="Registrado_Desde" label="Registrado Desde" foreignKey="Registrado_Desde" />
+    <column name="Registrado_Desde_Id" fieldName="Registrado_Desde_Id" label="Registrado Desde Id" />
+  </columns>
+</dataModel>

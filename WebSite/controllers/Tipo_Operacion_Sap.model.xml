@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Tipo_Operacion_Sap" alias="Tipo_Operacion_Sap" created="2019-07-12T01:42:05" modified="2019-07-31T11:26:34" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="418" y="20">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="435" y="160">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="474" y="303">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Tipo_Operacion_Sap_Id" fieldName="Tipo_Operacion_Sap_Id" label="Tipo Operacion Sap Id" />
+    <column name="Tipo_Operacion_Sap" fieldName="Tipo_Operacion_Sap" label="Tipo Operacion Sap" />
+    <column name="Es_Captura_De_Surtido" fieldName="Es_Captura_De_Surtido" label="¿Es Captura De Surtido?" />
+    <column name="Es_Devolucion_De_Material" fieldName="Es_Devolucion_De_Material" label="¿Es Devolucion De Material?" />
+    <column name="Es_Transferencia_De_Material" fieldName="Es_Transferencia_De_Material" label="¿Es Transferencia De Material?" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Es_Cuadre_Inventario_Devolucion" fieldName="Es_Cuadre_Inventario_Devolucion" label="Es Cuadre Inventario Devolucion" />
+    <column name="Es_Cuadre_Inventario_Transferencia" fieldName="Es_Cuadre_Inventario_Transferencia" label="Es Cuadre Inventario Transferencia" />
+  </columns>
+</dataModel>

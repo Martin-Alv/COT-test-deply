@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Temporal_Material_Clasificacion1" label="Temporal_Material_Clasificacion1" conflictDetection="overwriteChanges" handler="eaton.Rules.Temporal_Material_Clasificacion1BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Temporal_Material_Clasificacion"."Temporal_Material_Clasificacion_Id" "Temporal_Material_Clasificacion_Id"
+	,"Temporal_Material_Clasificacion"."Temporal_Material_Clasificacion" "Temporal_Material_Clasificacion"
+	,"Temporal_Material_Clasificacion"."Materal_Descripcion" "Materal_Descripcion"
+	,"Temporal_Material_Clasificacion"."MRP_Type_Id" "MRP_Type_Id"
+	,"Temporal_Material_Clasificacion"."Clasificacion" "Clasificacion"
+	,"Temporal_Material_Clasificacion"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema"."Mensaje_Amigable_Usuario" "Mensaje_Sistema"
+	,"Temporal_Material_Clasificacion"."Carga" "Carga"
+	,"Temporal_Material_Clasificacion"."Fecha_Procesamiento" "Fecha_Procesamiento"
+	,"Temporal_Material_Clasificacion"."Transaccion_Procesamiento" "Transaccion_Procesamiento"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Temporal_Material_Clasificacion"."Fecha_Creacion" "Fecha_Creacion"
+	,"Temporal_Material_Clasificacion"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Temporal_Material_Clasificacion"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Temporal_Material_Clasificacion"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento" "Estatus_Procesamiento"
+from "dbo"."Temporal_Material_Clasificacion" "Temporal_Material_Clasificacion"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Temporal_Material_Clasificacion"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Temporal_Material_Clasificacion"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Temporal_Material_Clasificacion"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento" on "Temporal_Material_Clasificacion"."Estatus_Procesamiento_Id" = "Estatus_Procesamiento"."Estatus_Procesamiento_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema" on "Temporal_Material_Clasificacion"."Mensaje_Sistema_Id" = "Mensaje_Sistema"."Mensaje_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Temporal_Material_Clasificacion_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Temporal_Material_Clasificacion_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Temporal_Material_Clasificacion_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Temporal Material Clasificacion Id" readOnly="true" />
+    <field name="Temporal_Material_Clasificacion" type="String" label="Material" length="300" showInSummary="true" />
+    <field name="Materal_Descripcion" type="String" label="Materal Descripcion" length="300" showInSummary="true" />
+    <field name="MRP_Type_Id" type="Int32" default="((0))" label="MRP Type Id" showInSummary="true" />
+    <field name="Clasificacion" type="String" allowNulls="false" label="Clasificacion" length="300" showInSummary="true" />
+    <field name="Mensaje_Sistema_Id" type="Int32" label="Mensaje Sistema Id" showInSummary="true">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Amigable_Usuario" dataView="Mensaje_Sistema_Lookup_List_Etiqueta" pageSize="15" />
+    </field>
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje Sistema" length="250" />
+    <field name="Carga" type="Int32" default="((0))" label="Carga" />
+    <field name="Fecha_Procesamiento" type="DateTime" dataFormatString="g" label="Fecha Procesamiento" />
+    <field name="Transaccion_Procesamiento" type="Guid" label="Transaccion Procesamiento" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" default="((0))" label="Estatus Procesamiento Id">
+      <items style="Lookup" dataController="Estatus_Procesamiento" dataValueField="Estatus_Procesamiento_Id" dataTextField="Estatus_Procesamiento" dataView="Estatus_Procesamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Procesamiento" type="String" readOnly="true" label="Estatus Procesamiento" length="150" />
+  </fields>
+  <views>
+    <view id="Archivo_Carga" type="Grid" commandId="command1" label="Temporal Material Clasificacion" filter="Estatus_Registro_Id = 1 " showInSelector="false" reportTemplate="true">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Temporal_Material_Clasificacion" />
+        <dataField fieldName="Materal_Descripcion" hidden="true" />
+        <dataField fieldName="MRP_Type_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clasificacion" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="Carga" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Procesamiento" columns="20" hidden="true" />
+        <dataField fieldName="Transaccion_Procesamiento" columns="15" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Actualizado_Por" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Temporal Material Clasificacion">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Temporal Material Clasificacion" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Temporal_Material_Clasificacion" />
+            <dataField fieldName="Materal_Descripcion" />
+            <dataField fieldName="MRP_Type_Id" columns="15" hidden="true" />
+            <dataField fieldName="Clasificacion" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Carga" columns="15" />
+            <dataField fieldName="Fecha_Procesamiento" columns="20" />
+            <dataField fieldName="Transaccion_Procesamiento" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Temporal Material Clasificacion">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Temporal_Material_Clasificacion" />
+            <dataField fieldName="Materal_Descripcion" textMode="Static" hidden="true" />
+            <dataField fieldName="MRP_Type_Id" columns="15" hidden="true" />
+            <dataField fieldName="Clasificacion" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Carga" columns="15" hidden="true" />
+            <dataField fieldName="Fecha_Procesamiento" columns="20" hidden="true" />
+            <dataField fieldName="Transaccion_Procesamiento" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Temporal_Material_Clasificacion_LookUp_List" type="Grid" commandId="command1" label="Temporal Material Clasificacion" filter="Estatus_Registro_Id IN (0,1)" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Temporal_Material_Clasificacion" />
+        <dataField fieldName="Materal_Descripcion" />
+        <dataField fieldName="MRP_Type_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clasificacion" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Carga" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Procesamiento" columns="20" hidden="true" />
+        <dataField fieldName="Transaccion_Procesamiento" columns="15" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Material_Clasificacion SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Material_Clasificacion_Id = @Temporal_Material_Clasificacion_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="Archivo_Carga" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Material_Clasificacion SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Material_Clasificacion_Id = @Temporal_Material_Clasificacion_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="Archivo_Carga" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="Archivo_Carga" headerText="&quot;Borrar&quot;" roles="administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Material_Clasificacion SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Material_Clasificacion_Id = @Temporal_Material_Clasificacion_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" roles="hidden" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE APP.Temporal_Material_Clasificacion SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_Material_Clasificacion_Id = @Temporal_Material_Clasificacion_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Archivos" flat="false">
+      <action id="a3" commandName="ReportAsExcel" headerText="&quot;Descargar Archivo de carga&quot;" cssClass="material-icon-cloud-download" />
+      <action commandName="Import" commandArgument="createForm1" headerText="&quot;Importar Archivo&quot;" id="a100" cssClass="material-icon-cloud-upload" />
+    </actionGroup>
+    <actionGroup id="ag101" scope="ActionBar" headerText="Procesamiento" flat="true">
+      <action commandName="Custom" commandArgument="ExecCS01, ExecJS02" headerText="&quot;Procesar&quot;" cssClass="material-icon-settings" id="a100" />
+      <action commandName="SQL" id="a101" headerText="&quot;Eliminar Pendientes de Procesar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE tmc SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+FROM dbo.Temporal_Material_Clasificacion tmc 
+INNER JOIN dbo.Estatus_Procesamiento ep 
+ON tmc.Estatus_Procesamiento_Id = ep.Estatus_Procesamiento_Id
+WHERE ep.Significa_Pendiente_Por_Procesar=1]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Temporal_Material_Clasificacion
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_Material_Clasificacion_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_Material_Clasificacion_Id))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1385,1,10,@Temporal_Material_Clasificacion_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1385,1,10,@Temporal_Material_Clasificacion_Id)
+   RETURN
+END]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   dbo.Temporal_Material_Clasificacion
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_Material_Clasificacion_Id = @Temporal_Material_Clasificacion_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Temporal_Material_Clasificacion
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_Material_Clasificacion_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_Material_Clasificacion_Id))
+AND Temporal_Material_Clasificacion_Id <> @Temporal_Material_Clasificacion_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1386,1,10,@Temporal_Material_Clasificacion_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1386,1,10,@Temporal_Material_Clasificacion_Id)
+   RETURN
+END]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   dbo.Temporal_Material_Clasificacion
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_Material_Clasificacion_Id = @Temporal_Material_Clasificacion_Id]]></rule>
+    <rule id="r104" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="Execute" name="Procesar" />
+    <rule id="r105" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="After" name="Actualizar"><![CDATA[$appfactory.find('Material1_1', 'Controller').sync()]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Material_Ubicacion_Almacen_V" conflictDetection="overwriteChanges" label="Material Ubicacion Almacen V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Material_Ubicacion_Almacen_V"."Material_Ubicacion_Stock_Id" "Material_Ubicacion_Stock_Id"
+	,"Material_Ubicacion_Almacen_V"."Material_Id" "Material_Id"
+	,"Material_Ubicacion_Almacen_V"."Material" "Material"
+	,"Material_Ubicacion_Almacen_V"."Tipo_Ubicacion_Id" "Tipo_Ubicacion_Id"
+	,"Material_Ubicacion_Almacen_V"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Material_Ubicacion_Almacen_V"."Total_Stock" "Total_Stock"
+	,"Material_Ubicacion_Almacen_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Material_Ubicacion_Almacen_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Material_Ubicacion_Almacen_V"."Til" "Til"
+	,"Material_Ubicacion_Almacen_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+from "dbo"."Material_Ubicacion_Almacen_V" "Material_Ubicacion_Almacen_V"
+]]></text>
+    </command>
+    <command id="Material_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Id" />
+      </output>
+    </command>
+    <command type="Text" id="Material_Ubicacion_Almacen_Con_Stock_V" custom="false">
+      <text><![CDATA[SELECT [Material_Ubicacion_Stock_Id]
+      ,[Material_Id]
+      ,[Material]
+      ,[Tipo_Ubicacion_Id]
+      ,[Clave_Tipo_Ubicacion]
+      ,[Total_Stock]
+      ,[Ubicacion_Almacenamiento_Id]
+      ,[Ubicacion_Almacenamiento]
+      ,[Til]
+  FROM [dbo].[Material_Ubicacion_Almacen_Con_Stock_V]]]></text>
+    </command>
+    <command type="Text" id="Material_Ubicacion_Movimiento_V" custom="false">
+      <text><![CDATA[SELECT     [Material_Ubicacion_Stock_Id]
+          ,[Material_Id]
+		  ,[Material]
+		  ,[Tipo_Ubicacion_Id]
+		  ,[Clave_Tipo_Ubicacion]
+		  ,[Ubicacion_Almacenamiento_Id]
+		  ,[Ubicacion_Almacenamiento]
+		  ,[Total_Stock]
+		  ,[Til]
+FROM [dbo].[Material_Ubicacion_Movimiento_V]
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Ubicacion_Stock_Id" type="Int64" allowNulls="false" label="Folio Material Ubicación Stock " showInSummary="true" isPrimaryKey="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" readOnly="true" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Tipo_Ubicacion_Id" type="Int32" allowNulls="false" label="Tipo Ubicacion Id" showInSummary="true" />
+    <field name="Clave_Tipo_Ubicacion" type="Int32" allowNulls="false" label="Clave Tipo Ubicacion" showInSummary="true" />
+    <field name="Total_Stock" type="Decimal" allowNulls="false" label="Total Stock" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento Id" isPrimaryKey="true" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Til" type="Int32" allowNulls="false" label="Til" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" label="Estatus Registro Id" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Ubicación en Almacén" showInSelector="false" filter="Estatus_Registro_Id = 1 ">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" textMode="Static" />
+        <dataField fieldName="Material_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Total_Stock" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Til" columns="15" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Material Ubicacion Almacen V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material Ubicacion Almacen V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" textMode="Static" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Tipo_Ubicacion_Id" columns="15" />
+            <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+            <dataField fieldName="Total_Stock" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Til" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Material Ubicacion Almacen V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" textMode="Static" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Tipo_Ubicacion_Id" columns="15" />
+            <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+            <dataField fieldName="Total_Stock" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Til" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Material_Ubicacion_Almacen_LookUp_List" type="Grid" commandId="command1" label="Material Ubicación en Almacén" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Total_Stock" columns="15" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="Material_Ubicacion_Almacen_Con_Stock" type="Grid" commandId="Material_Ubicacion_Almacen_Con_Stock_V" label="Material Ubicación en Almacén" showInSelector="false" sortExpression="Til DESC">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Total_Stock" columns="15" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Til" columns="15" />
+      </dataFields>
+    </view>
+    <view id="Material_Ubicacion_Movimiento_V" type="Grid" commandId="Material_Ubicacion_Movimiento_V" label="Ubicaciones con stock (almacen) y sin stock" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Total_Stock" columns="15" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Til" textMode="Text" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+  </actions>
+</dataController>

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Etiqueta_Proveedor_V" conflictDetection="overwriteChanges" label="Grid Etiqueta Proveedor V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text" custom="false">
+      <text><![CDATA[select
+	"Grid_Etiqueta_Proveedor_V"."Etiqueta_Proveedor_Id" "Etiqueta_Proveedor_Id"
+	,"Grid_Etiqueta_Proveedor_V"."Folio" "Folio"
+	,"Grid_Etiqueta_Proveedor_V"."Proveedor_ERSL_Id" "Proveedor_ERSL_Id"
+	,"Proveedor_ERSL"."Proveedor_ERSL" "Proveedor_Ersl"
+	,"Grid_Etiqueta_Proveedor_V"."Orden_Compra" "Orden_Compra"
+	,"Grid_Etiqueta_Proveedor_V"."Factura" "Factura"
+	,"Grid_Etiqueta_Proveedor_V"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material"
+	,"Material"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Etiqueta_Proveedor_V"."Cantidad_Total" "Cantidad_Total"
+	,"Grid_Etiqueta_Proveedor_V"."Cantidad_Entrega" "Cantidad_Entrega"
+	,"Grid_Etiqueta_Proveedor_V"."Unidad_Material_Entrega_Id" "Unidad_Material_Entrega_Id"
+	,"Unidad_Entrega"."Unidad_Material" "Unidad_Material_Entrega"
+	,"Grid_Etiqueta_Proveedor_V"."Cantidad_Por_Unidad_Entrega" "Cantidad_Por_Unidad_Entrega"
+	,"Grid_Etiqueta_Proveedor_V"."Numero_Referencia" "Numero_Referencia"
+	,"Grid_Etiqueta_Proveedor_V"."Ubicacion_Id" "Ubicacion_Id"
+	,"Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Etiqueta_Proveedor_V"."Transfer" "Transfer"
+	,"Grid_Etiqueta_Proveedor_V"."Usuario_Sistema_Comprador_Id" "Usuario_Sistema_Comprador_Id"
+	,"Usuario_Sistema_Comprador"."Usuario_Sistema" "Usuario_Sistema_Comprador"
+	,"Grid_Etiqueta_Proveedor_V"."Comentarios" "Comentarios"
+	,"Grid_Etiqueta_Proveedor_V"."Es_Cargado_Por_Excel" "Es_Cargado_Por_Excel"
+	,"Grid_Etiqueta_Proveedor_V"."Es_Creado_Por_Formulario" "Es_Creado_Por_Formulario"
+	,"Grid_Etiqueta_Proveedor_V"."Fecha_Etiqueta" "Fecha_Etiqueta"
+	,"Grid_Etiqueta_Proveedor_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Etiqueta_Proveedor_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Grid_Etiqueta_Proveedor_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro"."Estatus_Registro" "Estatus_Registro"
+from "dbo"."Grid_Etiqueta_Proveedor_V" "Grid_Etiqueta_Proveedor_V"
+	left join "APP"."Proveedor_ERSL" "Proveedor_ERSL" on "Grid_Etiqueta_Proveedor_V"."Proveedor_ERSL_Id" = "Proveedor_ERSL"."Proveedor_ERSL_Id"
+	left join "APP"."Material" "Material" on "Grid_Etiqueta_Proveedor_V"."Material_Id" = "Material"."Material_Id"
+	left join "APP"."Unidad_Material" "Unidad_Entrega" on "Grid_Etiqueta_Proveedor_V"."Unidad_Material_Entrega_Id" = "Unidad_Entrega"."Unidad_Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento" on "Grid_Etiqueta_Proveedor_V"."Ubicacion_Id" = "Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro" on "Grid_Etiqueta_Proveedor_V"."Estatus_Registro_Id" = "Estatus_Registro"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Usuario_Sistema_Comprador" on "Grid_Etiqueta_Proveedor_V"."Usuario_Sistema_Comprador_Id" = "Usuario_Sistema_Comprador"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Proveedor_ERSL_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Proveedor_ERSL_Id" />
+      </output>
+    </command>
+    <command id="Material_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Id" />
+      </output>
+    </command>
+    <command type="Text" id="Etiqueta_Provedor" tableName="APP.Etiqueta_Proveedor" custom="false">
+      <text><![CDATA[select
+	"Grid_Etiqueta_Proveedor_V"."Etiqueta_Proveedor_Id" "Etiqueta_Proveedor_Id"
+	,"Grid_Etiqueta_Proveedor_V"."Folio" "Folio"
+	,"Grid_Etiqueta_Proveedor_V"."Proveedor_ERSL_Id" "Proveedor_ERSL_Id"
+	,"Proveedor_ERSL"."Proveedor_ERSL" "Proveedor_Ersl"
+	,"Grid_Etiqueta_Proveedor_V"."Orden_Compra" "Orden_Compra"
+	,"Grid_Etiqueta_Proveedor_V"."Factura" "Factura"
+	,"Grid_Etiqueta_Proveedor_V"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material"
+	,"Material"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Etiqueta_Proveedor_V"."Unidad_Total_Id" "Unidad_Total_Id"
+	,"Unidad_Total"."Unidad_Material" "Unidad_Total"
+	,"Grid_Etiqueta_Proveedor_V"."Cantidad_Total" "Cantidad_Total"
+	,"Grid_Etiqueta_Proveedor_V"."Cantidad_Entrega" "Cantidad_Entrega"
+	,"Grid_Etiqueta_Proveedor_V"."Unidad_Material_Entrega_Id" "Unidad_Material_Entrega_Id"
+	,"Unidad_Entrega"."Unidad_Material" "Unidad_Material_Entrega"
+	,"Grid_Etiqueta_Proveedor_V"."Cantidad_Por_Unidad_Entrega" "Cantidad_Por_Unidad_Entrega"
+	,"Grid_Etiqueta_Proveedor_V"."Numero_Referencia" "Numero_Referencia"
+	,"Grid_Etiqueta_Proveedor_V"."Ubicacion_Id" "Ubicacion_Id"
+	,"Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Etiqueta_Proveedor_V"."Transfer" "Transfer"
+	,"Grid_Etiqueta_Proveedor_V"."Usuario_Sistema_Comprador_Id" "Usuario_Sistema_Comprador_Id"
+	,"Usuario_Sistema_Comprador"."Usuario_Sistema" "Usuario_Sistema_Comprador"
+	,"Grid_Etiqueta_Proveedor_V"."Comentarios" "Comentarios"
+	,"Grid_Etiqueta_Proveedor_V"."Es_Cargado_Por_Excel" "Es_Cargado_Por_Excel"
+	,"Grid_Etiqueta_Proveedor_V"."Es_Creado_Por_Formulario" "Es_Creado_Por_Formulario"
+	,"Grid_Etiqueta_Proveedor_V"."Fecha_Etiqueta" "Fecha_Etiqueta"
+	,"Grid_Etiqueta_Proveedor_V"."Usuario_Etiqueta" "Usuario_Etiqueta"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Grid_Etiqueta_Proveedor_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Grid_Etiqueta_Proveedor_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Grid_Etiqueta_Proveedor_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro"."Estatus_Registro" "Estatus_Registro"
+	--,"Grid_Etiqueta_Proveedor_V"."Usuario_Sistema_Id" "Usuario_Sistema_Id"
+from "APP"."Etiqueta_proveedor" "Grid_Etiqueta_Proveedor_V"
+	left join "APP"."Proveedor_ERSL" "Proveedor_ERSL" on "Grid_Etiqueta_Proveedor_V"."Proveedor_ERSL_Id" = "Proveedor_ERSL"."Proveedor_ERSL_Id"
+	left join "APP"."Material" "Material" on "Grid_Etiqueta_Proveedor_V"."Material_Id" = "Material"."Material_Id"
+	left join "APP"."Unidad_Material" "Unidad_Entrega" on "Grid_Etiqueta_Proveedor_V"."Unidad_Material_Entrega_Id" = "Unidad_Entrega"."Unidad_Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento" on "Grid_Etiqueta_Proveedor_V"."Ubicacion_Id" = "Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro" on "Grid_Etiqueta_Proveedor_V"."Estatus_Registro_Id" = "Estatus_Registro"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Grid_Etiqueta_Proveedor_V"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Grid_Etiqueta_Proveedor_V"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Usuario_Sistema_Comprador" on "Grid_Etiqueta_Proveedor_V"."Usuario_Sistema_Comprador_Id" = "Usuario_Sistema_Comprador"."Usuario_Sistema_Id"
+	left join "APP"."Unidad_Material" "Unidad_Total" on "Grid_Etiqueta_Proveedor_V"."Unidad_Total_Id" = "Unidad_Total"."Unidad_Material_Id"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Etiqueta_Proveedor_Id" type="Int32" allowNulls="false" label="Etiqueta Proveedor Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Folio" type="Int32" allowNulls="false" label="Folio" readOnly="true" showInSummary="true" />
+    <field name="Proveedor_ERSL_Id" type="Int32" allowNulls="false" label="Proveedor ERSL Id" readOnly="true" showInSummary="true">
+      <items style="Lookup" dataController="Proveedor_ERSL" newDataView="createForm1" searchOnStart="true" dataValueField="Proveedor_ERSL_Id" dataTextField="Proveedor_ERSL" />
+    </field>
+    <field name="Proveedor_Ersl" type="String" readOnly="true" label="Proveedor Ersl" length="450" />
+    <field name="Orden_Compra" type="String" allowNulls="false" label="Orden de Compra" length="250" showInSummary="true" />
+    <field name="Factura" type="String" allowNulls="false" label="Factura" length="250" showInSummary="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" readOnly="true">
+      <items style="Lookup" dataController="Material" newDataView="createForm1" searchOnStart="true" dataValueField="Material_Id" dataTextField="Material" copy="Material_Descripcion=Material_Descripcion" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" readOnly="true" label="Material Descripción" length="250" />
+    <field name="Cantidad_Total" type="Decimal" allowNulls="false" label="Cantidad Total" />
+    <field name="Cantidad_Entrega" type="Decimal" allowNulls="false" label="Cantidad de Entrega" />
+    <field name="Unidad_Material_Entrega_Id" type="Int32" allowNulls="false" label="Unidad Material Entrega Id">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" searchOnStart="true" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" />
+    </field>
+    <field name="Unidad_Material_Entrega" type="String" readOnly="true" label="Unidad Material Entrega" length="250" />
+    <field name="Cantidad_Por_Unidad_Entrega" type="Decimal" label="Cantidad Por Unidad Entrega" />
+    <field name="Numero_Referencia" type="String" label="Número de Referencia" length="250" />
+    <field name="Ubicacion_Id" type="Int32" allowNulls="false" label="Ubicacion Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Ubicacion_Almacenamiento" type="String" readOnly="true" label="Ubicación Almacenamiento" length="150" />
+    <field name="Transfer" type="String" allowNulls="false" label="Transfer" length="50" />
+    <field name="Usuario_Sistema_Comprador_Id" type="Guid" label="Usuario Sistema Comprador Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" />
+    </field>
+    <field name="Usuario_Sistema_Comprador" type="String" readOnly="true" label="Usuario Sistema Comprador" length="256" />
+    <field name="Comentarios" type="String" allowQBE="false" allowSorting="false" label="Comentarios" />
+    <field name="Es_Cargado_Por_Excel" type="Boolean" allowNulls="false" label="Es Cargado Por Excel" />
+    <field name="Es_Creado_Por_Formulario" type="Boolean" allowNulls="false" label="Es Creado Por Formulario" />
+    <field name="Fecha_Etiqueta" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Etiqueta" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Creación" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" searchOnStart="true" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Grid Etiqueta Proveedor V">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Etiqueta_Proveedor_Id" columns="15" />
+        <dataField fieldName="Folio" columns="15" />
+        <dataField fieldName="Proveedor_ERSL_Id" aliasFieldName="Proveedor_Ersl" hyperlinkFormatString="~/pages/Proveedor_ERSL?Proveedor_ERSL_Id={Proveedor_ERSL_Id}&amp;_controller=Proveedor_ERSL&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Orden_Compra" />
+        <dataField fieldName="Factura" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Cantidad_Total" columns="15" />
+        <dataField fieldName="Cantidad_Entrega" columns="15" />
+        <dataField fieldName="Unidad_Material_Entrega_Id" aliasFieldName="Unidad_Material_Entrega" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Entrega_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Cantidad_Por_Unidad_Entrega" columns="15" />
+        <dataField fieldName="Numero_Referencia" />
+        <dataField fieldName="Ubicacion_Id" aliasFieldName="Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Ubicacion_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Transfer" columns="50" />
+        <dataField fieldName="Usuario_Sistema_Comprador_Id" aliasFieldName="Usuario_Sistema_Comprador" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Comentarios" rows="5" />
+        <dataField fieldName="Es_Cargado_Por_Excel" />
+        <dataField fieldName="Es_Creado_Por_Formulario" />
+        <dataField fieldName="Fecha_Etiqueta" columns="20" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Etiqueta Proveedor V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Etiqueta Proveedor V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Proveedor_Id" columns="15" />
+            <dataField fieldName="Folio" columns="15" />
+            <dataField fieldName="Proveedor_ERSL_Id" aliasFieldName="Proveedor_Ersl" hyperlinkFormatString="~/pages/Proveedor_ERSL?Proveedor_ERSL_Id={Proveedor_ERSL_Id}&amp;_controller=Proveedor_ERSL&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Orden_Compra" />
+            <dataField fieldName="Factura" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Total" columns="15" />
+            <dataField fieldName="Cantidad_Entrega" columns="15" />
+            <dataField fieldName="Unidad_Material_Entrega_Id" aliasFieldName="Unidad_Material_Entrega" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Entrega_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Cantidad_Por_Unidad_Entrega" columns="15" />
+            <dataField fieldName="Numero_Referencia" />
+            <dataField fieldName="Ubicacion_Id" aliasFieldName="Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Ubicacion_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Transfer" columns="50" />
+            <dataField fieldName="Usuario_Sistema_Comprador_Id" aliasFieldName="Usuario_Sistema_Comprador" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Comentarios" rows="5" />
+            <dataField fieldName="Es_Cargado_Por_Excel" />
+            <dataField fieldName="Es_Creado_Por_Formulario" />
+            <dataField fieldName="Fecha_Etiqueta" columns="20" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="Etiqueta_Provedor" label="New Grid Etiqueta Proveedor V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Proveedor_Id" columns="15" />
+            <dataField fieldName="Folio" columns="15" />
+            <dataField fieldName="Proveedor_ERSL_Id" aliasFieldName="Proveedor_Ersl" />
+            <dataField fieldName="Orden_Compra" />
+            <dataField fieldName="Factura" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Total" columns="15" />
+            <dataField fieldName="Cantidad_Entrega" columns="15" />
+            <dataField fieldName="Unidad_Material_Entrega_Id" aliasFieldName="Unidad_Material_Entrega" />
+            <dataField fieldName="Cantidad_Por_Unidad_Entrega" columns="15" />
+            <dataField fieldName="Numero_Referencia" />
+            <dataField fieldName="Ubicacion_Id" aliasFieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Transfer" columns="50" />
+            <dataField fieldName="Usuario_Sistema_Comprador_Id" aliasFieldName="Usuario_Sistema_Comprador" />
+            <dataField fieldName="Comentarios" rows="5" />
+            <dataField fieldName="Es_Cargado_Por_Excel" />
+            <dataField fieldName="Es_Creado_Por_Formulario" />
+            <dataField fieldName="Fecha_Etiqueta" columns="20" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

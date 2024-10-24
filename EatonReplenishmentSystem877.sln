@@ -1,0 +1,16 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EatonReplenishmentSystem877", "WebSite\", "69C11ACA-33FB-4C71-BBDC-D4537C282816"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code On Time Items", "Code On Time Items", "{007C458D-673B-4A58-98B3-E05D2BDB9689}"
+	ProjectSection(SolutionItems) = preProject
+		ClientLibrary.en-US.txt = ClientLibrary.en-US.txt
+		ClientLibrary.es-MX.txt = ClientLibrary.es-MX.txt
+		DataAquarium.Project.xml = DataAquarium.Project.xml
+		DataAquarium.Version.xml = DataAquarium.Version.xml
+		Sync.BWD05-lidia.xml = Sync.BWD05-lidia.xml
+		Sync.DESKTOP-F84MGT6-luisc.xml = Sync.DESKTOP-F84MGT6-luisc.xml
+	EndProjectSection
+EndProject

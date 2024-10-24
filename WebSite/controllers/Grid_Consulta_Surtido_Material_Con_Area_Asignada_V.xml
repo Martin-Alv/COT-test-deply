@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Consulta_Surtido_Material_Con_Area_Asignada_V" conflictDetection="overwriteChanges" label="Grid Consulta Surtido Material Con Area Asignada V" handler="eaton.Rules.Grid_Consulta_Surtido_Material_Con_Area_Asignada_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Estatus_Material_Surtido" "Estatus_Material_Surtido"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Material" "Material"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Unidad_Material_Solicitado_Id" "Unidad_Material_Solicitado_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Unidad_Material_Solicitado" "Unidad_Material_Solicitado"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Unidad_Material_Entregado" "Unidad_Material_Entregado"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Estatus_Surtido_Id" "Estatus_Surtido_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Estatus_Surtido" "Estatus_Surtido"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Ubicacion_Almacenamiento_De_Surtido_Id" "Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Ubicacion_Almacenamiento_De_Surtido" "Ubicacion_Almacenamiento_De_Surtido"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Surtido_Por_Id" "Surtido_Por_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Tmp_Material_Surtido_Transaccion_Id" "Tmp_Material_Surtido_Transaccion_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Usuario_Sistema" "Usuario_Sistema"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Significa_Pendiente" "Significa_Pendiente"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Significa_Surtido" "Significa_Surtido"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Significa_Entregado" "Significa_Entregado"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Significa_Cancelado" "Significa_Cancelado"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Estatus_Material_Surtido_Id" "Estatus_Material_Surtido_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Material_Ubicacion_Almacenamiento_De_Surtido_Id" "Material_Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"."Folio_Solicitud" "Folio_Solicitud"
+from "dbo"."Grid_Consulta_Surtido_Material_Con_Area_Asignada_V" "Grid_Consulta_Surtido_Material_Con_Area_Asignada_V"
+]]></text>
+    </command>
+    <command id="Ubicacion_Almacenamiento_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Ubicacion_Almacenamiento_Id" />
+      </output>
+    </command>
+    <command id="Estatus_Surtido_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Estatus_Surtido_Id" />
+      </output>
+    </command>
+    <command type="Text" id="Grid_Consulta_Surtido_Material_Con_Area_Asignada_Hoja_Pdf_V" custom="false">
+      <text><![CDATA[SELECT
+      [Material_Surtido_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Material_QR]
+      ,[Cantidad_Entregado]
+      ,[Cantidad_Entregado_QR]
+      ,[Ubicacion_Almacenamiento]
+      ,[Ubicacion_Origen_QR]
+      ,[Clave_Tipo_Ubicacion]
+      ,[Ubicacion_Destino_QR]
+      ,[Surtido_Por_Id]
+  FROM [dbo].[Grid_Consulta_Surtido_Material_Con_Area_Asignada_Hoja_Pdf_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Mat_Ubic_Almacenamto_Surtido_Captura_Sap_V" custom="false">
+      <text><![CDATA[SELECT [Surtido_Por_Id]
+      ,[Material]
+      ,[Cantidad_Entregado]
+      ,[Ubicacion_Almacenamiento]
+      ,[Clave_Tipo_Ubicacion]
+      ,[Material_Surtido_Id]
+      ,[Material_Solicitado_Id]
+  FROM [dbo].[Grid_Mat_Ubic_Almacenamto_Surtido_Captura_Sap_V]]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" label="Material Surtido Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Estatus_Material_Surtido" type="String" allowNulls="false" label="Estatus Material Surtido" length="250" showInSummary="true" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" showInSummary="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" showInSummary="true" />
+    <field name="Cantidad_Solicitado" type="Decimal" allowNulls="false" label="Cantidad Solicitado" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Unidad_Material_Solicitado_Id" type="Int32" allowNulls="false" label="Unidad Material Solicitado Id" />
+    <field name="Unidad_Material_Solicitado" type="String" allowNulls="false" label="Unidad Material Solicitado" length="250" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" label="Unidad Material Entregado Id" />
+    <field name="Unidad_Material_Entregado" type="String" allowNulls="false" label="Unidad Material Entregado" length="250" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento Id" readOnly="true" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Estatus_Surtido_Id" type="Int32" allowNulls="false" label="Estatus Surtido Id" readOnly="true" />
+    <field name="Estatus_Surtido" type="String" allowNulls="false" label="Estatus Surtido" length="250" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento De Surtido Id" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido" type="String" label="Ubicacion Almacenamiento De Surtido" length="150" />
+    <field name="Surtido_Por_Id" type="Guid" allowNulls="false" label="Surtido Por Id" />
+    <field name="Tmp_Material_Surtido_Transaccion_Id" type="Guid" label="Tmp Material Surtido Transaccion Id" />
+    <field name="Usuario_Sistema" type="String" label="Usuario Sistema" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Entrega" />
+    <field name="Significa_Pendiente" type="Boolean" allowNulls="false" label="Significa Pendiente" />
+    <field name="Significa_Surtido" type="Boolean" allowNulls="false" label="Significa Surtido" />
+    <field name="Significa_Entregado" type="Boolean" allowNulls="false" label="Significa Entregado" />
+    <field name="Material_QR" type="String" label="Material QR" htmlEncode="false" isVirtual="true" />
+    <field name="Cantidad_Entregado_QR" type="String" label="Cantidad Entregado QR" isVirtual="true" htmlEncode="false" />
+    <field name="Ubicacion_Origen_QR" type="String" label="Ubicacion Origen QR" isVirtual="true" htmlEncode="false" />
+    <field name="Ubicacion_Destino_QR" type="String" label="Ubicacion Destino QR" isVirtual="true" htmlEncode="false" />
+    <field name="Significa_Cancelado" type="Boolean" allowNulls="false" label="Significa Cancelado" />
+    <field name="Estatus_Material_Surtido_Id" type="Int32" allowNulls="false" label="Estatus Material Surtido Id" />
+    <field name="Material_Ubicacion_Almacenamiento_De_Surtido_Id" type="Int64" label="Material Ubicacion Almacenamiento De Surtido Id" />
+    <field name="Area_Servicio" type="String" allowNulls="false" label="Area Servicio" length="250" />
+    <field name="Solicitado_Por" type="String" allowNulls="false" label="Solicitado Por" length="256" />
+    <field name="Folio_Solicitud" type="Int64" allowNulls="false" label="Folio de Solicitud" />
+    <field name="Clave_Tipo_Ubicacion" type="Int32" label="Clave Tipo Ubicacion" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Surtido" filter="Surtido_Por_Id = @BusinessRules_UserId AND Significa_Surtido = 1">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Folio_Solicitud" columns="15" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Estatus_Material_Surtido" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Estatus_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Surtido" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Sistema" hidden="true" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+        <dataField fieldName="Significa_Pendiente" hidden="true" />
+        <dataField fieldName="Significa_Surtido" hidden="true" />
+        <dataField fieldName="Significa_Entregado" hidden="true" />
+        <dataField fieldName="Significa_Cancelado" hidden="true" />
+        <dataField fieldName="Estatus_Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Consulta Surtido Material Con Area Asignada V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Consulta Surtido Material Con Area Asignada V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Solicitud" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Estatus_Material_Surtido" hidden="true" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Estatus_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Surtido" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Surtido_Por_Id" columns="15" />
+            <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="15" />
+            <dataField fieldName="Usuario_Sistema" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Significa_Pendiente" hidden="true" />
+            <dataField fieldName="Significa_Surtido" hidden="true" />
+            <dataField fieldName="Significa_Entregado" hidden="true" />
+            <dataField fieldName="Significa_Cancelado" hidden="true" />
+            <dataField fieldName="Estatus_Material_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Consulta Surtido Material Con Area Asignada V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Estatus_Material_Surtido" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Estatus_Surtido_Id" columns="15" />
+            <dataField fieldName="Estatus_Surtido" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Surtido_Por_Id" columns="15" />
+            <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="15" />
+            <dataField fieldName="Usuario_Sistema" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Significa_Pendiente" />
+            <dataField fieldName="Significa_Surtido" />
+            <dataField fieldName="Significa_Entregado" />
+            <dataField fieldName="Significa_Cancelado" />
+            <dataField fieldName="Estatus_Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Folio_Solicitud" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="gridHojaPdf" type="Grid" commandId="Grid_Consulta_Surtido_Material_Con_Area_Asignada_Hoja_Pdf_V" label="Hoja para Captura PDF de Material Surtido" filter="Surtido_Por_Id = @BusinessRules_UserId " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Folio_Solicitud" columns="15" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" rows="5" />
+        <dataField fieldName="Material_QR" rows="5" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+        <dataField fieldName="Ubicacion_Almacenamiento" rows="5" />
+        <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" rows="5" hidden="true" />
+        <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+      </dataFields>
+    </view>
+    <view id="gridMatUbicAlmaSurtCapSap" type="Grid" commandId="Grid_Mat_Ubic_Almacenamto_Surtido_Captura_Sap_V" label="Material Surtido para Captura en SAP" filter="Surtido_Por_Id = @BusinessRules_UserId " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Folio_Solicitud" columns="15" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" rows="5" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento" rows="5" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+      </dataFields>
+    </view>
+    <view id="gridMaterialEntregado" type="Grid" commandId="command1" label="Material Entregado" filter="Surtido_Por_Id = @BusinessRules_UserId AND Significa_Entregado = 1">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Folio_Solicitud" columns="15" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Material_Surtido" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Estatus_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Surtido" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Sistema" hidden="true" />
+        <dataField fieldName="Significa_Pendiente" hidden="true" />
+        <dataField fieldName="Significa_Surtido" hidden="true" />
+        <dataField fieldName="Significa_Entregado" hidden="true" />
+        <dataField fieldName="Significa_Cancelado" hidden="true" />
+        <dataField fieldName="Estatus_Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editFormHojaPdf" type="Form" commandId="Grid_Consulta_Surtido_Material_Con_Area_Asignada_Hoja_Pdf_V" label="Actualizar Surtido Material" filter="Surtido_Por_Id = @BusinessRules_UserId" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Surtido Material" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Solicitud" columns="15" />
+            <dataField fieldName="Surtido_Por_Id" columns="15" />
+            <dataField fieldName="Material_QR" rows="5" />
+            <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+            <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+            <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" whenView="grid1" />
+      <action id="a100" commandName="Select" commandArgument="editFormHojaPdf" whenView="gridHojaPdf" />
+      <action id="a101" commandName="Select" commandArgument="editForm1" whenView="gridMaterialEntregado" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Report" commandArgument="ExecCS01" headerText="Imprimir Hoja PDF" cssClass="material-icon-print" id="a100" whenClientScript="$app.touch.dataView()._totalRowCount &gt; 0" whenView="gridHojaPdf" />
+      <action commandName="Custom" commandArgument="ExecCS02" headerText="Iniciar Captura Local Sap" id="a101" whenView="gridMatUbicAlmaSurtCapSap" cssClass="material-icon-devices" />
+      <action commandName="Custom" commandArgument="ExecCS03" headerText="Capturar Remotamente" cssClass="material-icon-dvr" whenView="gridMatUbicAlmaSurtCapSap" id="a102" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Report" commandArgument="ExecCS01" type="Code" phase="Execute" name="Imprimir_PDF" />
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="IniciarCapturaLocalSap" />
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS03" type="Code" phase="After" name="IniciarCapturaRemota" />
+  </businessRules>
+</dataController>

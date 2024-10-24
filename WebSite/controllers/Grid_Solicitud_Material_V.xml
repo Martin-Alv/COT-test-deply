@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Solicitud_Material_V" conflictDetection="overwriteChanges" label="Grid Solicitud Material V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Solicitud_Material_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Solicitud_Material_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Solicitud_Material_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Solicitud_Material_V"."Folio_Solicitud" "Folio_Solicitud"
+	,"Grid_Solicitud_Material_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Solicitud_Material_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Solicitud_Material_V"."Usuario_Id" "Usuario_Id"
+	,"Grid_Solicitud_Material_V"."Material_Id" "Material_Id"
+	,"Grid_Solicitud_Material_V"."Material" "Material"
+	,"Grid_Solicitud_Material_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Solicitud_Material_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_Solicitud_Material_V"."Familia_Id" "Familia_Id"
+	,"Grid_Solicitud_Material_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Solicitud_Material_V"."Familia_Descripcion" "Familia_Descripcion"
+	,"Grid_Solicitud_Material_V"."Material_Unidad_Material_Id" "Material_Unidad_Material_Id"
+	,"Grid_Solicitud_Material_V"."Unidad_Material_Id" "Unidad_Material_Id"
+	,"Grid_Solicitud_Material_V"."Unidad_Material" "Unidad_Material"
+	,"Grid_Solicitud_Material_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Grid_Solicitud_Material_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Solicitud_Material_V"."Nivel_Prioridad_Surtido_Id" "Nivel_Prioridad_Surtido_Id"
+	,"Grid_Solicitud_Material_V"."Nivel_Prioridad_Surtido" "Nivel_Prioridad_Surtido"
+	,"Grid_Solicitud_Material_V"."Nivel_Prioridad_Surtido_Valor" "Nivel_Prioridad_Surtido_Valor"
+	,"Grid_Solicitud_Material_V"."Caso" "Caso"
+from "dbo"."Grid_Solicitud_Material_V" "Grid_Solicitud_Material_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Solicitud_Id" type="Int64" label="Solicitud Id" showInSummary="true" />
+    <field name="Orden_Produccion_Id" type="Int64" label="Orden Produccion Id" showInSummary="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Folio_Solicitud" type="Int64" label="Folio Solicitud" showInSummary="true" />
+    <field name="Solicitado_Por" type="String" allowNulls="false" label="Solicitado Por" length="256" showInSummary="true" />
+    <field name="Fecha_Solicitud" type="DateTime" dataFormatString="g" label="Fecha Solicitud" />
+    <field name="Usuario_Id" type="Guid" label="Usuario Id" />
+    <field name="Material_Id" type="Int64" label="Material Id" />
+    <field name="Material" type="String" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" label="Material Descripcion" length="250" />
+    <field name="Cantidad_Solicitado" type="Decimal" label="Cantidad Solicitado" />
+    <field name="Familia_Id" type="Int32" label="Familia Id" />
+    <field name="Familia_Clave" type="String" label="Familia Clave" length="250" />
+    <field name="Familia_Descripcion" type="String" allowNulls="false" label="Familia Descripcion" length="250" />
+    <field name="Material_Unidad_Material_Id" type="Int64" label="Material Unidad Material Id" />
+    <field name="Unidad_Material_Id" type="Int32" label="Unidad Material Id" />
+    <field name="Unidad_Material" type="String" label="Unidad Material" length="250" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" label="Ubicacion Almacenamiento Id" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Nivel_Prioridad_Surtido_Id" type="Int32" label="Nivel Prioridad Surtido Id" />
+    <field name="Nivel_Prioridad_Surtido" type="String" label="Nivel Prioridad Surtido" length="150" />
+    <field name="Nivel_Prioridad_Surtido_Valor" type="Int32" label="Nivel Prioridad Surtido Valor" />
+    <field name="Caso" type="String" allowNulls="false" label="Caso" length="6" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Solicitud de Material" filter="Usuario_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Folio_Solicitud" columns="15" />
+        <dataField fieldName="Solicitado_Por" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" hidden="true" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" />
+        <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" hidden="true" />
+        <dataField fieldName="Nivel_Prioridad_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Nivel_Prioridad_Surtido" hidden="true" />
+        <dataField fieldName="Nivel_Prioridad_Surtido_Valor" columns="15" hidden="true" />
+        <dataField fieldName="Caso" columns="6" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Solicitud Material V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Solicitud Material V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Folio_Solicitud" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Id" columns="15" />
+            <dataField fieldName="Nivel_Prioridad_Surtido" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Valor" columns="15" />
+            <dataField fieldName="Caso" columns="6" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Solicitud Material V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Folio_Solicitud" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Id" columns="15" />
+            <dataField fieldName="Nivel_Prioridad_Surtido" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Valor" columns="15" />
+            <dataField fieldName="Caso" columns="6" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

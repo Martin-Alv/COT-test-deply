@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Documento_Material" alias="Documento_Material" created="2021-07-21T17:40:19" modified="2021-08-18T16:25:42" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="375" y="464">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="514" y="35">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="527" y="191">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Material" parentTableSchema="APP" parentTableName="Material" x="489" y="294">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Documento_Material_Id" fieldName="Documento_Material_Id" label="Documento Material Id" />
+    <column name="PictureFileName" fieldName="PictureFileName" label="Picture File Name" />
+    <column name="PictureContentType" fieldName="PictureContentType" label="Picture Content Type" />
+    <column name="PictureLength" fieldName="PictureLength" label="Picture Length" />
+    <column name="Notas" fieldName="Notas" label="Notas" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material" />
+    <column name="Nombre_Documento" fieldName="Nombre_Documento" label="Nombre de archivo" />
+  </columns>
+</dataModel>

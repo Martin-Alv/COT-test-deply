@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Rol_Logico" conflictDetection="overwriteChanges" label="Rol Logico" handler="eaton.Rules.Rol_LogicoBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Rol_Logico"."Rol_Logico_Id" "Rol_Logico_Id"
+	,"Rol_Logico"."Rol_Logico" "Rol_Logico"
+	,"Rol_Logico"."Es_Supervisor_Lider" "Es_Supervisor_Lider"
+	,"Rol_Logico"."Es_Gerente_Area" "Es_Gerente_Area"
+	,"Rol_Logico"."Es_Gerente_Planta" "Es_Gerente_Planta"
+	,"Rol_Logico"."Es_Contralor" "Es_Contralor"
+	,"Rol_Logico"."Es_Administrador_It" "Es_Administrador_It"
+	,"Rol_Logico"."Es_Administrador_Almacen" "Es_Administrador_Almacen"
+	,"Rol_Logico"."Es_Despachador" "Es_Despachador"
+	,"Rol_Logico"."Es_Empleado_Planta" "Es_Empleado_Planta"
+	,"Rol_Logico"."Es_Cadista" "Es_Cadista"
+	,"Rol_Logico"."Es_Personal_QA" "Es_Personal_QA"
+	,"Rol_Logico"."Es_Comprador" "Es_Comprador"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Rol_Logico"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Rol_Logico"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Rol_Logico"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Rol_Logico"."Comprador_ERSL" "Comprador_ERSL"
+from "MRO"."Rol_Logico" "Rol_Logico"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Rol_Logico"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Rol_Logico"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Rol_Logico"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Rol_Logico_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Rol_Logico_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Rol_Logico_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Rol Logico Id" readOnly="true" />
+    <field name="Rol_Logico" type="String" allowNulls="false" label="Rol Logico" length="250" showInSummary="true" />
+    <field name="Es_Supervisor_Lider" type="Boolean" allowNulls="false" default="((0))" label="Es Supervisor Líder" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Gerente_Area" type="Boolean" allowNulls="false" default="((0))" label="Es Gerente de Área" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Gerente_Planta" type="Boolean" allowNulls="false" default="((0))" label="Es Gerente de Planta" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Contralor" type="Boolean" allowNulls="false" default="((0))" label="Es Contralor" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Administrador_It" type="Boolean" allowNulls="false" default="((0))" label="Es Administrador It">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Administrador_Almacen" type="Boolean" allowNulls="false" default="((0))" label="Es Administrador Almacén">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Despachador" type="Boolean" allowNulls="false" default="((0))" label="Es Despachador">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Empleado_Planta" type="Boolean" allowNulls="false" default="((0))" label="Es Empleado de Planta">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Cadista" type="Boolean" allowNulls="false" default="((0))" label="Es Cadista">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Personal_QA" type="Boolean" allowNulls="false" default="((0))" label="Es Personal QA">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Comprador" type="Boolean" allowNulls="false" default="((0))" label="Es Comprador">
+      <items style="CheckBox" />
+    </field>
+    <field name="Comprador_ERSL" type="Boolean" allowNulls="false" default="((0))" label="Comprador ERSL">
+      <items style="CheckBox" />
+    </field>
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Rol Lógico" tags="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none " showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Rol_Logico" />
+        <dataField fieldName="Es_Supervisor_Lider" />
+        <dataField fieldName="Es_Gerente_Area" />
+        <dataField fieldName="Es_Gerente_Planta" />
+        <dataField fieldName="Es_Contralor" />
+        <dataField fieldName="Es_Administrador_It" />
+        <dataField fieldName="Es_Administrador_Almacen" />
+        <dataField fieldName="Es_Despachador" />
+        <dataField fieldName="Es_Empleado_Planta" />
+        <dataField fieldName="Es_Cadista" />
+        <dataField fieldName="Es_Personal_QA" />
+        <dataField fieldName="Es_Comprador" />
+        <dataField fieldName="Comprador_ERSL" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Rol Lógico">
+      <headerText>Rol Lógico</headerText>
+      <categories>
+        <category id="c1" headerText="Rol Lógico" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Rol_Logico" />
+            <dataField fieldName="Es_Supervisor_Lider" />
+            <dataField fieldName="Es_Gerente_Area" />
+            <dataField fieldName="Es_Gerente_Planta" />
+            <dataField fieldName="Es_Contralor" />
+            <dataField fieldName="Es_Administrador_It" />
+            <dataField fieldName="Es_Administrador_Almacen" />
+            <dataField fieldName="Es_Despachador" />
+            <dataField fieldName="Es_Empleado_Planta" />
+            <dataField fieldName="Es_Cadista" />
+            <dataField fieldName="Es_Personal_QA" />
+            <dataField fieldName="Es_Comprador" />
+            <dataField fieldName="Comprador_ERSL" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Rol Lógico">
+      <headerText>Nuevo Rol Lógico</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Rol Lógico" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Rol_Logico" />
+            <dataField fieldName="Es_Supervisor_Lider" />
+            <dataField fieldName="Es_Gerente_Area" />
+            <dataField fieldName="Es_Gerente_Planta" />
+            <dataField fieldName="Es_Contralor" />
+            <dataField fieldName="Es_Administrador_It" />
+            <dataField fieldName="Es_Administrador_Almacen" />
+            <dataField fieldName="Es_Despachador" />
+            <dataField fieldName="Es_Empleado_Planta" />
+            <dataField fieldName="Es_Cadista" />
+            <dataField fieldName="Es_Personal_QA" />
+            <dataField fieldName="Es_Comprador" />
+            <dataField fieldName="Comprador_ERSL" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Rol_Logico_LookUp_List" type="Grid" commandId="command1" label="Rol Lógico" tags="view-style-grid-none, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none " showInSelector="false" filter="Estatus_Registro_Id IN (0,1) ">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Rol_Logico" />
+        <dataField fieldName="Comprador_ERSL" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[-- "Borrar"
+UPDATE MRO.Rol_Logico 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Rol_Logico_Id = @Rol_Logico_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[-- "Borrar"
+UPDATE MRO.Rol_Logico 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Rol_Logico_Id = @Rol_Logico_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators">
+        <data><![CDATA[-- "Borrar"
+UPDATE MRO.Rol_Logico 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Rol_Logico_Id = @Rol_Logico_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[-- "Borrar"
+UPDATE MRO.Rol_Logico 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Rol_Logico_Id = @Rol_Logico_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[-- Insert/Before
+DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   MRO.Rol_Logico 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Rol_Logico)) = dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Rol_Logico)) -- Verificar si aplica campo
+   
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1286,1,185,@Rol_Logico) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1286,1,185,@Rol_Logico) 
+   RETURN 
+END]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[-- Insert/After
+UPDATE  
+   MRO.Rol_Logico 
+SET 
+   Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Rol_Logico_Id = @Rol_Logico_Id
+--]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[-- Update/Before
+DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   MRO.Rol_Logico 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Rol_Logico)) = dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Rol_Logico)) -- Verificar si aplica campo
+   
+AND Rol_Logico_Id <> @Rol_Logico_Id 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1286,1,185,@Rol_Logico) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1286,1,185,@Rol_Logico) 
+   RETURN 
+END
+--]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[--- Update/After
+UPDATE  
+   MRO.Rol_Logico 
+SET 
+   Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Rol_Logico_Id = @Rol_Logico_Id
+--]]></rule>
+  </businessRules>
+</dataController>

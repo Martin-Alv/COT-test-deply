@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Mov_Dev_Ruta_Optima_A_Ejecutar_V" alias="Mov_Dev_Ruta_Optima_A_Ejecutar_V" created="2021-07-20T21:08:59" modified="2021-07-20T21:09:27" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Tmp_Ruta_Optima_Transaccion_Id" fieldName="Tmp_Ruta_Optima_Transaccion_Id" label="Tmp Ruta Optima Transaccion Id" />
+    <column name="Numero_Grupo_Ruta_Optima" fieldName="Numero_Grupo_Ruta_Optima" label="Numero Grupo Ruta Optima" />
+    <column name="Movimiento_Ruta_Optima_Id" fieldName="Movimiento_Ruta_Optima_Id" label="Movimiento Ruta Optima Id" />
+    <column name="Tipo_Movimiento_Id" fieldName="Tipo_Movimiento_Id" label="Tipo Movimiento Id" />
+    <column name="Devolucion_Material_Id" fieldName="Devolucion_Material_Id" label="Devolucion Material Id" />
+    <column name="Devolucion_Material" fieldName="Devolucion_Material" label="Devolucion Material" />
+    <column name="Devolucion_Material_Desc" fieldName="Devolucion_Material_Desc" label="Devolucion Material Desc" />
+    <column name="Cantidad_A_Devolver" fieldName="Cantidad_A_Devolver" label="Cantidad A Devolver" />
+    <column name="Devolucion_En_Ubicacion_Almacenamiento_Id" fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" label="Devolucion En Ubicacion Almacenamiento Id" />
+    <column name="Devolucion_En_Ubicacion_Almacenamiento" fieldName="Devolucion_En_Ubicacion_Almacenamiento" label="Devolucion En Ubicacion Almacenamiento" />
+    <column name="Devolucion_Ubicacion_Almacenamiento_Id" fieldName="Devolucion_Ubicacion_Almacenamiento_Id" label="Devolucion Ubicacion Almacenamiento Id" />
+    <column name="Devolucion_Ubicacion_Almacenamiento" fieldName="Devolucion_Ubicacion_Almacenamiento" label="Devolucion Ubicacion Almacenamiento" />
+    <column name="Cantidad_Devuelto" fieldName="Cantidad_Devuelto" label="Cantidad Devuelto" />
+    <column name="Unidad_Material_Devuelto_Id" fieldName="Unidad_Material_Devuelto_Id" label="Unidad Material Devuelto Id" />
+    <column name="Unidad_Material_Devuelto" fieldName="Unidad_Material_Devuelto" label="Unidad Material Devuelto" />
+    <column name="Movimiento" fieldName="Movimiento" label="Movimiento" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+    <column name="Material_Ubicacion_Stock_Id" fieldName="Material_Ubicacion_Stock_Id" label="Material Ubicacion Stock Id" />
+  </columns>
+</dataModel>

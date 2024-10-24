@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Bitacora_Validador_Embarques" conflictDetection="overwriteChanges" label="Bitacora Validador Embarques" handler="eaton.Rules.Bitacora_Validador_EmbarquesBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Bitacora_Validador_Embarques"."Bitacora_Validador_Embarques_Id" "Bitacora_Validador_Embarques_Id"
+	,"Bitacora_Validador_Embarques"."Seccion_Capturada" "Seccion_Capturada"
+	,"Bitacora_Validador_Embarques"."Material_Tarima" "Material_Tarima"
+	,"Bitacora_Validador_Embarques"."SOrder_SItem_Tarima" "SOrder_SItem_Tarima"
+	,"Bitacora_Validador_Embarques"."Material_Embarque" "Material_Embarque"
+	,"Bitacora_Validador_Embarques"."SOrder_SItem_Embarque" "SOrder_SItem_Embarque"
+	,"Bitacora_Validador_Embarques"."Folio_Etiqueta_Embarque_Detalle" "Folio_Etiqueta_Embarque_Detalle"
+	,"Bitacora_Validador_Embarques"."Delivery_Delivery" "Delivery_Delivery"
+	,"Bitacora_Validador_Embarques"."Material_Delivery" "Material_Delivery"
+	,"Bitacora_Validador_Embarques"."SOrder_SItem_Delivery" "SOrder_SItem_Delivery"
+	,"Bitacora_Validador_Embarques"."Delivery_Packing_List" "Delivery_Packing_List"
+	,"Bitacora_Validador_Embarques"."SOrder_SItem_Packing_List" "Sorder_Sitem_Packing_List"
+	,"Bitacora_Validador_Embarques"."Cantidad_Material" "Cantidad_Material"
+	,"Bitacora_Validador_Embarques"."Resultado_Validacion_Embarque_Id" "Resultado_Validacion_Embarque_Id"
+	,"Resultado_Validacion_Embarque_"."Estatus_Validacion_Embarque" "Resultado_Validacion_Embarque"
+	,"Bitacora_Validador_Embarques"."Escaneo_Validador_Embarque_Id" "Escaneo_Validador_Embarque_Id"
+	,"Escaneo_Validador_Embarque"."Seccion_Capturada" "Escaneo_Validador_Embarque"
+	,"Bitacora_Validador_Embarques"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema_Mensaje_Sistema"
+	,"Bitacora_Validador_Embarques"."Fecha_Hora_Bitacora" "Fecha_Hora_Bitacora"
+	,"Bitacora_Validador_Embarques"."Creado_Por_Id" "Creado_Por_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Bitacora_Validador_Embarques"."Fecha_Creacion" "Fecha_Creacion"
+	,"Bitacora_Validador_Embarques"."Actualizado_Por_Id" "Actualizado_Por_Id"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Bitacora_Validador_Embarques"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Bitacora_Validador_Embarques"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Bitacora_Validador_Embarques"."Folio_Bitacora_Validador_Embarques" "FolioBitacoraValidadorEmbarques"
+	,"Bitacora_Validador_Embarques"."Mensaje_Validacion_Aplicada" "MensajeValidacionAplicada"
+from "APP"."Bitacora_Validador_Embarques" "Bitacora_Validador_Embarques"
+	left join "APP"."Resultado_Validacion_Embarque" "Resultado_Validacion_Embarque_" on "Bitacora_Validador_Embarques"."Resultado_Validacion_Embarque_Id" = "Resultado_Validacion_Embarque_"."Resultado_Validacion_Embarque_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Bitacora_Validador_Embarques"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Bitacora_Validador_Embarques"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Bitacora_Validador_Embarques"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Bitacora_Validador_Embarques"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Escaneo_Validador_Embarque" "Escaneo_Validador_Embarque" on "Bitacora_Validador_Embarques"."Escaneo_Validador_Embarque_Id" = "Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id"
+]]></text>
+    </command>
+    <command id="Bitacora_Validador_Embarques_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Bitacora_Validador_Embarques_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Bitacora_Validador_Embarques_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Bitacora Validador Embarques Id" readOnly="true" />
+    <field name="Seccion_Capturada" type="Int16" allowNulls="false" label="Sección Capturada" showInSummary="true" />
+    <field name="Material_Tarima" type="String" allowNulls="false" label="Material (Taríma)" length="250" showInSummary="true" />
+    <field name="SOrder_SItem_Tarima" type="String" allowNulls="false" label="SOrder/SItem (Taríma)" length="250" showInSummary="true" />
+    <field name="Material_Embarque" type="String" allowNulls="false" label="Material (Embarque)" length="250" showInSummary="true" />
+    <field name="SOrder_SItem_Embarque" type="String" allowNulls="false" label="SOrder/SItem (Embarque)" length="250" showInSummary="true" />
+    <field name="Folio_Etiqueta_Embarque_Detalle" type="String" label="Folio Etiqueta Embarque Detalle" length="250" />
+    <field name="Delivery_Delivery" type="String" label="Delivery (Delivery)" length="250" />
+    <field name="Material_Delivery" type="String" label="Material (Delivery)" length="250" />
+    <field name="SOrder_SItem_Delivery" type="String" label="SOrder/SItem (Delivery)" length="250" />
+    <field name="Delivery_Packing_List" type="String" label="Delivery (Packing List)" length="250" />
+    <field name="Sorder_Sitem_Packing_List" type="String" label="Sorder Sitem Packing List" length="250" />
+    <field name="Cantidad_Material" type="Decimal" label="Cantidad Material" />
+    <field name="Resultado_Validacion_Embarque_Id" type="Int32" allowNulls="false" default="((0))" label="Resultado Validacion Embarque Id">
+      <items style="Lookup" dataController="Resultado_Validacion_Embarque" newDataView="createForm1" dataValueField="Resultado_Validacion_Embarque_Id" dataTextField="Estatus_Validacion_Embarque" dataView="Resultado_Validacion_Embarque_LookupList" pageSize="15" />
+    </field>
+    <field name="Resultado_Validacion_Embarque" type="String" readOnly="true" label="Resultado Validación Embarque" length="250" />
+    <field name="Escaneo_Validador_Embarque_Id" type="Int64" allowNulls="false" default="((0))" label="Escaneo Validador Embarque Id">
+      <items style="Lookup" dataController="Escaneo_Validador_Embarque" newDataView="createForm1" searchOnStart="true" dataValueField="Escaneo_Validador_Embarque_Id" dataTextField="Seccion_Capturada" />
+    </field>
+    <field name="Escaneo_Validador_Embarque" type="Int16" readOnly="true" label="Escaneo Validador Embarque" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" dataView="Mensaje_Sistema_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Mensaje_Sistema_Mensaje_Sistema" type="String" readOnly="true" label="Mensaje Sistema" length="250" />
+    <field name="Fecha_Hora_Bitacora" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha y Hora de Bitácora" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Creado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" />
+    </field>
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Actualizado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" />
+    </field>
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="FolioBitacoraValidadorEmbarques" type="Int64" allowNulls="false" label="Folio Bitacora Validador Embarques" readOnly="true" />
+    <field name="MensajeValidacionAplicada" type="String" allowQBE="false" allowSorting="false" label="Mensaje Validacion Aplicada" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Bitácora Validador Embarques" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0" reportLabel="Bitácora Validador Embarques">
+      <headerText>Bitácora Validador Embarques</headerText>
+      <dataFields>
+        <dataField fieldName="FolioBitacoraValidadorEmbarques" columns="15" />
+        <dataField fieldName="Escaneo_Validador_Embarque_Id">
+          <headerText>Folio Escaneo Validador Embarque</headerText>
+        </dataField>
+        <dataField fieldName="Seccion_Capturada" columns="15" />
+        <dataField fieldName="Material_Tarima" />
+        <dataField fieldName="SOrder_SItem_Tarima" />
+        <dataField fieldName="Material_Embarque" />
+        <dataField fieldName="SOrder_SItem_Embarque" />
+        <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+        <dataField fieldName="Delivery_Delivery" />
+        <dataField fieldName="Material_Delivery" />
+        <dataField fieldName="SOrder_SItem_Delivery" />
+        <dataField fieldName="Delivery_Packing_List" />
+        <dataField fieldName="Sorder_Sitem_Packing_List" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema_Mensaje_Sistema" />
+        <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+        <dataField fieldName="Fecha_Hora_Bitacora" columns="20" />
+        <dataField fieldName="Creado_Por_Id" aliasFieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por_Id" aliasFieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="Bitacora_Validador_Embarque_LookUp_List" type="Grid" commandId="command1" label="Bitácora Validador Embarques" showInSelector="false" filter="Estatus_Registro_Id IN (0,1) " reportLabel="Bitácora Validador Embarques">
+      <headerText>Bitácora Validador Embarques</headerText>
+      <dataFields>
+        <dataField fieldName="Seccion_Capturada" columns="15" />
+        <dataField fieldName="Material_Tarima" />
+        <dataField fieldName="SOrder_SItem_Tarima" />
+        <dataField fieldName="Material_Embarque" />
+        <dataField fieldName="SOrder_SItem_Embarque" />
+        <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+        <dataField fieldName="Delivery_Delivery" />
+        <dataField fieldName="Material_Delivery" />
+        <dataField fieldName="SOrder_SItem_Delivery" />
+        <dataField fieldName="Delivery_Packing_List" />
+        <dataField fieldName="Sorder_Sitem_Packing_List" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Escaneo_Validador_Embarque_Id" aliasFieldName="Escaneo_Validador_Embarque" hyperlinkFormatString="~/pages/Escaneo_Validador_Embarque?Escaneo_Validador_Embarque_Id={Escaneo_Validador_Embarque_Id}&amp;_controller=Escaneo_Validador_Embarque&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Hora_Bitacora" columns="20" />
+        <dataField fieldName="FolioBitacoraValidadorEmbarques" columns="15" />
+        <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Bitácora validador embarque">
+      <headerText>Bitácora validador embarque</headerText>
+      <categories>
+        <category id="c1" headerText="Bitácora validador embarque" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Seccion_Capturada" columns="15" />
+            <dataField fieldName="Material_Tarima" />
+            <dataField fieldName="SOrder_SItem_Tarima" />
+            <dataField fieldName="Material_Embarque" />
+            <dataField fieldName="SOrder_SItem_Embarque" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Material_Delivery" />
+            <dataField fieldName="SOrder_SItem_Delivery" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hyperlinkFormatString="~/pages/Resultado_Validacion_Embarque?Resultado_Validacion_Embarque_Id={Resultado_Validacion_Embarque_Id}&amp;_controller=Resultado_Validacion_Embarque&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Escaneo_Validador_Embarque_Id" aliasFieldName="Escaneo_Validador_Embarque" hyperlinkFormatString="~/pages/Escaneo_Validador_Embarque?Escaneo_Validador_Embarque_Id={Escaneo_Validador_Embarque_Id}&amp;_controller=Escaneo_Validador_Embarque&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema_Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Hora_Bitacora" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="FolioBitacoraValidadorEmbarques" columns="15" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Bitácora validador embarque" showInSelector="false">
+      <headerText>Nueva Bitácora validador embarque</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Bitácora validador embarque" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Seccion_Capturada" columns="15" />
+            <dataField fieldName="Material_Tarima" />
+            <dataField fieldName="SOrder_SItem_Tarima" />
+            <dataField fieldName="Material_Embarque" />
+            <dataField fieldName="SOrder_SItem_Embarque" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Material_Delivery" />
+            <dataField fieldName="SOrder_SItem_Delivery" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" />
+            <dataField fieldName="Escaneo_Validador_Embarque_Id" aliasFieldName="Escaneo_Validador_Embarque" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema_Mensaje_Sistema" />
+            <dataField fieldName="Fecha_Hora_Bitacora" columns="20" />
+            <dataField fieldName="FolioBitacoraValidadorEmbarques" columns="15" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Bitacora_Validador_Embarques 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Validador_Embarques_Id = @Bitacora_Validador_Embarques_Id
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Bitacora_Validador_Embarques 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Validador_Embarques_Id = @Bitacora_Validador_Embarques_Id
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="DeleteIcon" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Bitacora_Validador_Embarques 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Validador_Embarques_Id = @Bitacora_Validador_Embarques_Id
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Bitacora_Validador_Embarques 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Validador_Embarques_Id = @Bitacora_Validador_Embarques_Id
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="After"><![CDATA[-- Insert/After
+UPDATE  
+   APP.Bitacora_Validador_Embarques 
+SET 
+   Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Validador_Embarques_Id = @Bitacora_Validador_Embarques_Id
+--]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[--- Update/After
+UPDATE  
+   APP.Bitacora_Validador_Embarques 
+SET 
+   Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Validador_Embarques_Id = @Bitacora_Validador_Embarques_Id
+--]]></rule>
+  </businessRules>
+</dataController>

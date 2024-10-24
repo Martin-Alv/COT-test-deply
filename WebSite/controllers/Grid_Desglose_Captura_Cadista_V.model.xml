@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Desglose_Captura_Cadista_V" alias="Grid_Desglose_Captura_Cadista_V" created="2020-12-03T20:18:24" modified="2020-12-03T20:30:33" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Bitacora_Captura_Sap_Id" fieldName="Bitacora_Captura_Sap_Id" label="Bitacora Captura Sap Id" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido_Id" label="Material Surtido Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material_Surtido" fieldName="Material_Surtido" label="Material Surtido" />
+    <column name="Ubicacion_Origen" fieldName="Ubicacion_Origen" label="Ubicación Origen" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Ubicacion_Destino" fieldName="Ubicacion_Destino" label="Ubicación Destino" />
+    <column name="Fecha_Captura" fieldName="Fecha_Captura" label="Fecha de Captura" format="g" />
+    <column name="Estatus_Captura_Sap" fieldName="Estatus_Captura_Sap" label="Estatus de Captura Sap" />
+    <column name="Tipo_Operacion_Sap" fieldName="Tipo_Operacion_Sap" label="Tipo de Operación Sap" />
+    <column name="Usuario_Surtidor_Id" fieldName="Usuario_Surtidor_Id" label="Usuario Surtidor Id" />
+    <column name="Usuario_Surtidor" fieldName="Usuario_Surtidor" label="Usuario Surtidor" />
+    <column name="Usuario_Cadista_Id" fieldName="Usuario_Cadista_Id" label="Usuario Cadista Id" />
+    <column name="Usuario_Cadista" fieldName="Usuario_Cadista" label="Usuario Cadista" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Área de Entrega" />
+  </columns>
+</dataModel>

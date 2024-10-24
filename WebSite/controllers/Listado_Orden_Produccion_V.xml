@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Listado_Orden_Produccion_V" conflictDetection="overwriteChanges" label="Listado Orden Produccion V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Listado_Orden_Produccion_V"."Orden_produccion_Id" "Orden_produccion_Id"
+	,"Listado_Orden_Produccion_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Listado_Orden_Produccion_V"."Producto_Descripcion" "Producto_Descripcion"
+	,"Listado_Orden_Produccion_V"."Cantidad_Producido" "Cantidad_Producido"
+	,"Listado_Orden_Produccion_V"."Cantidad_Total" "Cantidad_Total"
+	,"Listado_Orden_Produccion_V"."Tiempo_Muerto" "Tiempo_Muerto"
+	,"Listado_Orden_Produccion_V"."Categoria_descripcion" "Categoria_descripcion"
+	,"Listado_Orden_Produccion_V"."Estatus_Orden_Produccion" "Estatus_Orden_Produccion"
+	,"Listado_Orden_Produccion_V"."Label_Estatus_Orden_Produccion" "Label_Estatus_Orden_Produccion"
+from "dbo"."Listado_Orden_Produccion_V" "Listado_Orden_Produccion_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_produccion_Id" type="Int64" allowNulls="false" label="Orden producción Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Número Orden Producción" showInSummary="true" readOnly="true" />
+    <field name="Producto_Descripcion" type="String" allowNulls="false" label="Producto " length="250" showInSummary="true" readOnly="true" />
+    <field name="Cantidad_Producido" type="Decimal" allowNulls="false" label="Cantidad Producido" showInSummary="true" readOnly="true" />
+    <field name="Cantidad_Total" type="Decimal" allowNulls="false" label="Cantidad Total" showInSummary="true" readOnly="true" />
+    <field name="Tiempo_Muerto" type="String" allowNulls="false" label="Tiempo Muerto" length="8" readOnly="true" />
+    <field name="Categoria_descripcion" type="String" label="Categoría" length="250" readOnly="true" />
+    <field name="Estatus_Orden_Produccion" type="Int32" allowNulls="false" label="Estatus Orden Producción" readOnly="true" />
+    <field name="Label_Estatus_Orden_Produccion" type="String" label="Estatus Orden Producción" readOnly="true" length="10" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Reporte Orden Producción ">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Producto_Descripcion" />
+        <dataField fieldName="Cantidad_Producido" columns="15" />
+        <dataField fieldName="Cantidad_Total" columns="15" />
+        <dataField fieldName="Tiempo_Muerto" columns="8" />
+        <dataField fieldName="Categoria_descripcion" />
+        <dataField fieldName="Estatus_Orden_Produccion" columns="15" hidden="true" />
+        <dataField fieldName="Label_Estatus_Orden_Produccion" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Reporte Orden Producción">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Reporte Orden Producción " flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_produccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Cantidad_Producido" columns="15" />
+            <dataField fieldName="Cantidad_Total" columns="15" />
+            <dataField fieldName="Tiempo_Muerto" columns="8" />
+            <dataField fieldName="Categoria_descripcion" />
+            <dataField fieldName="Estatus_Orden_Produccion" columns="15" hidden="true" />
+            <dataField fieldName="Label_Estatus_Orden_Produccion" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Reporte Orden Producción ">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Cantidad_Producido" columns="15" />
+            <dataField fieldName="Cantidad_Total" columns="15" />
+            <dataField fieldName="Tiempo_Muerto" columns="8" />
+            <dataField fieldName="Categoria_descripcion" />
+            <dataField fieldName="Estatus_Orden_Produccion" columns="15" hidden="true" />
+            <dataField fieldName="Label_Estatus_Orden_Produccion" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action commandName="Select" commandArgument="editForm1" id="a1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

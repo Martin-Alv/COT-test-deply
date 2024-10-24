@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Material_Ubicacion_Stock_Historial" conflictDetection="overwriteChanges" label="Material Ubicacion Stock Historial" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Material_Ubicacion_Stock_Historial"."Material_Ubicacion_Stock_Historial_Id" "Material_Ubicacion_Stock_Historial_Id"
+	,"Material_Ubicacion_Stock_Historial"."Material_Ubicacion_Stock_Id" "Material_Ubicacion_Stock_Id"
+	,"Material_Ubicacion_Stock_Historial"."Material_Id" "Material_Id"
+	,"Material_"."Material" "Material_Material"
+	,"Material_Ubicacion_Stock_Historial"."Material" "Material"
+	,"Material_Ubicacion_Stock_Historial"."Tipo_Almacenamiento_Id" "Tipo_Almacenamiento_Id"
+	,"Tipo_Almacenamiento_"."Tipo_Almacenamiento" "Tipo_Almacenamiento"
+	,"Ubicacion_Almacenamiento_"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Material_Ubicacion_Stock_Historial"."Tipo_Ubicacion_Id" "Tipo_Ubicacion_Id"
+	,"Tipo_Ubicacion_"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Material_Ubicacion_Stock_Historial"."Total_Stock_Before" "Total_Stock_Before"
+	,"Material_Ubicacion_Stock_Historial"."Total_Stock" "Total_Stock"
+	,"Material_Ubicacion_Stock_Historial"."Til" "Til"
+	,"Material_Ubicacion_Stock_Historial"."Registrado_Desde_Id" "Registrado_Desde_Id"
+	,"Registrado_Desde_"."Registrado_Desde" "Registrado_Desde"
+	,"Material_Ubicacion_Stock_Historial"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Ruta_Optima_"."Transaccion_Id" "Ruta_Optima_Transaccion_Id"
+	,"Material_Ubicacion_Stock_Historial"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Material_Surtido_"."Transaccion_Id" "Material_Surtido_TransaccionId"
+	,"Material_Ubicacion_Stock_Historial"."Cantidad" "Cantidad"
+	,"Material_Ubicacion_Stock_Historial"."Operacion" "Operacion"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Material_Ubicacion_Stock_Historial"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Material_Ubicacion_Stock_Historial"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Material_Ubicacion_Stock_Historial"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Material_Ubicacion_Stock_Historial"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Material_Ubicacion_Stock_Historial"."Movimiento_Ruta_Optima_Id" "Movimiento_Ruta_Optima_Id"
+	,"Material_Ubicacion_Stock_Historial"."PO" "PO"
+from "APP"."Material_Ubicacion_Stock_Historial" "Material_Ubicacion_Stock_Historial"
+	left join "APP"."Material" "Material_" on "Material_Ubicacion_Stock_Historial"."Material_Id" = "Material_"."Material_Id"
+	left join "APP"."Tipo_Almacenamiento" "Tipo_Almacenamiento_" on "Material_Ubicacion_Stock_Historial"."Tipo_Almacenamiento_Id" = "Tipo_Almacenamiento_"."Tipo_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_" on "Material_Ubicacion_Stock_Historial"."Ubicacion_Almacenamiento_Id" = "Ubicacion_Almacenamiento_"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Tipo_Ubicacion" "Tipo_Ubicacion_" on "Material_Ubicacion_Stock_Historial"."Tipo_Ubicacion_Id" = "Tipo_Ubicacion_"."Tipo_Ubicacion_Id"
+	left join "APP"."Registrado_Desde" "Registrado_Desde_" on "Material_Ubicacion_Stock_Historial"."Registrado_Desde_Id" = "Registrado_Desde_"."Registrado_Desde_Id"
+	left join "APP"."Ruta_Optima" "Ruta_Optima_" on "Material_Ubicacion_Stock_Historial"."Ruta_Optima_Id" = "Ruta_Optima_"."Ruta_Optima_Id"
+	left join "APP"."Material_Surtido" "Material_Surtido_" on "Material_Ubicacion_Stock_Historial"."Material_Surtido_Id" = "Material_Surtido_"."Material_Surtido_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Material_Ubicacion_Stock_Historial"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Material_Ubicacion_Stock_Historial"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Material_Ubicacion_Stock_Historial"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Material_Ubicacion_Stock_Historial_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Ubicacion_Stock_Historial_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Ubicacion_Stock_Historial_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Material Ubicacion Stock Historial Id" readOnly="true" />
+    <field name="Material_Ubicacion_Stock_Id" type="Int64" allowNulls="false" label="Material Ubicacion Stock Id" showInSummary="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material_Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Material" type="String" allowNulls="false" default="('')" label="Material" length="250" showInSummary="true" />
+    <field name="Tipo_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Almacenamiento Id" showInSummary="true">
+      <items style="Lookup" dataController="Tipo_Almacenamiento" dataValueField="Tipo_Almacenamiento_Id" dataTextField="Tipo_Almacenamiento" dataView="Tipo_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Almacenamiento" type="String" readOnly="true" label="Storage Type" length="150" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Almacenamiento Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" copy="Ubicacion_Almacenamiento=Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Ubicacion_Almacenamiento" type="String" readOnly="true" label="Storage Bin" length="150" />
+    <field name="Tipo_Ubicacion_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Ubicacion Id" showInSummary="true">
+      <items style="Lookup" dataController="Tipo_Ubicacion" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" dataView="Tipo_Ubicacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Storage Location" />
+    <field name="Total_Stock_Before" type="Decimal" allowNulls="false" default="((0))" label="Total Stock Anterior" dataFormatString="n4" />
+    <field name="Total_Stock" type="Decimal" allowNulls="false" default="((0))" label="Total Stock Actual" dataFormatString="n4" />
+    <field name="Til" type="Int32" allowNulls="false" default="((0))" label="Til" />
+    <field name="Registrado_Desde_Id" type="Int16" label="Registrado Desde Id">
+      <items style="Lookup" dataController="Registrado_Desde" dataValueField="Registrado_Desde_Id" dataTextField="Registrado_Desde" dataView="Registrado_Desde_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Registrado_Desde" type="String" readOnly="true" label="Registrado Desde" length="250" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Ruta Optima Id">
+      <items style="Lookup" dataController="Ruta_Optima" dataValueField="Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" dataView="Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Ruta_Optima_Transaccion_Id" type="String" readOnly="true" label="Ruta Optima Transaccion Id" length="50" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" default="((0))" label="Material Surtido Id">
+      <items style="Lookup" dataController="Material_Surtido" dataValueField="Material_Surtido_Id" dataView="Material_Surtidor_LookUp_List" dataTextField="Material_Solicitado" pageSize="15" />
+    </field>
+    <field name="Material_Surtido_TransaccionId" type="String" readOnly="true" label="Material Surtido Transaccionid" length="50" />
+    <field name="Cantidad" type="Decimal" label="Cantidad" dataFormatString="n" />
+    <field name="Operacion" type="String" allowNulls="false" default="('')" label="Operacion" length="500" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Movimiento_Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Movimiento Ruta Optima" />
+    <field name="PO" type="Decimal" label="PO" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Ubicacion Stock Historial" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+        <dataField fieldName="Material" hidden="true" />
+        <dataField fieldName="Tipo_Almacenamiento_Id" aliasFieldName="Tipo_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+        <dataField fieldName="Total_Stock_Before" columns="15" />
+        <dataField fieldName="Cantidad" columns="15" />
+        <dataField fieldName="Total_Stock" columns="15" />
+        <dataField fieldName="Til" columns="15" />
+        <dataField fieldName="PO" columns="15" />
+        <dataField fieldName="Ruta_Optima_Id" />
+        <dataField fieldName="Material_Surtido_Id" />
+        <dataField fieldName="Movimiento_Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Operacion" />
+        <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Material Ubicacion Stock Historial">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material Ubicacion Stock Historial" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material" hidden="true" />
+            <dataField fieldName="Tipo_Almacenamiento_Id" aliasFieldName="Tipo_Almacenamiento" hyperlinkFormatString="~/pages/Tipo_Almacenamiento?Tipo_Almacenamiento_Id={Tipo_Almacenamiento_Id}&amp;_controller=Tipo_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" aliasFieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" hyperlinkFormatString="~/pages/Tipo_Ubicacion?Tipo_Ubicacion_Id={Tipo_Ubicacion_Id}&amp;_controller=Tipo_Ubicacion&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Total_Stock_Before" columns="15" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Total_Stock" columns="15" />
+            <dataField fieldName="Til" columns="15" />
+            <dataField fieldName="PO" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" hyperlinkFormatString="~/pages/Ruta_Optima?Ruta_Optima_Id={Ruta_Optima_Id}&amp;_controller=Ruta_Optima&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" hyperlinkFormatString="~/pages/Material_Surtido?Material_Surtido_Id={Material_Surtido_Id}&amp;_controller=Material_Surtido&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Operacion" textMode="Static" />
+            <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hyperlinkFormatString="~/pages/Registrado_Desde?Registrado_Desde_Id={Registrado_Desde_Id}&amp;_controller=Registrado_Desde&amp;_command=Select&amp;_argument=editForm1" textMode="Static" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Material Ubicacion Stock Historial">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+            <dataField fieldName="Material" hidden="true" />
+            <dataField fieldName="Tipo_Almacenamiento_Id" aliasFieldName="Tipo_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Total_Stock_Before" columns="15" />
+            <dataField fieldName="Total_Stock" columns="15" />
+            <dataField fieldName="Til" columns="15" />
+            <dataField fieldName="PO" columns="15" />
+            <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hidden="true" />
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Ruta_Optima_Transaccion_Id" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" aliasFieldName="Material_Surtido_TransaccionId" hidden="true" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Operacion" hidden="true" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Material_Ubicacion_Stock_Historial SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Material_Ubicacion_Stock_Historial_Id = @Material_Ubicacion_Stock_Historial_Id]]></data>
+      </action>
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" cssClass="material-icon-delete" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE APP.Material_Ubicacion_Stock_Historial SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Material_Ubicacion_Stock_Historial_Id = @Material_Ubicacion_Stock_Historial_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Administrators" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE APP.Material_Ubicacion_Stock_Historial SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Material_Ubicacion_Stock_Historial_Id = @Material_Ubicacion_Stock_Historial_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Material_Ubicacion_Stock_Historial SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Material_Ubicacion_Stock_Historial_Id = @Material_Ubicacion_Stock_Historial_Id
+
+
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Material_Ubicacion_Stock_Historial
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material_Ubicacion_Stock_Historial_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material_Ubicacion_Stock_Historial_Id))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1397,1,10,@Material_Ubicacion_Stock_Historial_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1397,1,10,@Material_Ubicacion_Stock_Historial_Id)
+   RETURN
+END
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Material_Ubicacion_Stock_Historial
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Ubicacion_Stock_Historial_Id = @Material_Ubicacion_Stock_Historial_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Material_Ubicacion_Stock_Historial
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material_Ubicacion_Stock_Historial_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material_Ubicacion_Stock_Historial_Id))
+AND Material_Ubicacion_Stock_Historial_Id <> @Material_Ubicacion_Stock_Historial_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1398,1,10,@Material_Ubicacion_Stock_Historial_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1398,1,10,@Material_Ubicacion_Stock_Historial_Id)
+   RETURN
+END
+
+]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Material_Ubicacion_Stock_Historial
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Ubicacion_Stock_Historial_Id = @Material_Ubicacion_Stock_Historial_Id
+
+
+]]></rule>
+  </businessRules>
+</dataController>

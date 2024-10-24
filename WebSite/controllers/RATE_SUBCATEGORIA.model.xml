@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="RATE_SUBCATEGORIA" alias="RATE_SUBCATEGORIA" created="2019-08-21T13:41:46" modified="2020-04-16T22:21:36" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="419" y="20">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="470" y="168">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="410" y="316">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="ID_SUBCATEGORIA" fieldName="ID_SUBCATEGORIA" label="Id Subcategoria" />
+    <column name="SUBCATEGORIA_DESCRIPCION" fieldName="SUBCATEGORIA_DESCRIPCION" label="Subcategoria Descripcion" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro" />
+    <column name="Es_Emergencia" fieldName="Es_Emergencia" label="Es Emergencia" />
+    <column name="Es_Estandar" fieldName="Es_Estandar" label="Es Estandar" />
+    <column name="Es_Cord_Pi" fieldName="Es_CordPi" label="Es Cordpi" />
+    <column name="Es_Sensor" fieldName="Es_Sensor" label="Es Sensor" />
+    <column name="Es_Emergencia_Sensor" fieldName="Es_Emergencia_Sensor" label="Es Emergencia Sensor" />
+  </columns>
+</dataModel>

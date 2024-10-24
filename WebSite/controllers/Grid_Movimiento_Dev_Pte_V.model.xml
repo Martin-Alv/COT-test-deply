@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Movimiento_Dev_Pte_V" alias="Grid_Movimiento_Dev_Pte_V" created="2019-07-10T18:30:17" modified="2019-07-10T18:30:24" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Fila" fieldName="Fila" label="Fila" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Area Entrega" />
+    <column name="Nivel_Prioridad_Surtido_Id" fieldName="Nivel_Prioridad_Surtido_Id" label="Nivel Prioridad Surtido Id" />
+    <column name="Nivel_Prioridad_Surtido" fieldName="Nivel_Prioridad_Surtido" label="Nivel Prioridad Surtido" />
+    <column name="Nivel_Prioridad_Surtido_Valor" fieldName="Nivel_Prioridad_Surtido_Valor" label="Nivel Prioridad Surtido Valor" />
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicacion Id" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" />
+    <column name="Movimiento_Id" fieldName="Movimiento_Id" label="Movimiento Id" />
+    <column name="Movimiento_Folio" fieldName="Movimiento_Folio" label="Movimiento Folio" />
+    <column name="Tipo_Movimiento_Id" fieldName="Tipo_Movimiento_Id" label="Tipo Movimiento Id" />
+    <column name="Tipo_Movimiento" fieldName="Tipo_Movimiento" label="Tipo Movimiento" />
+    <column name="Movimiento_Material" fieldName="Movimiento_Material" label="Movimiento Material" />
+    <column name="Movimiento_Solicitado_Por_Id" fieldName="Movimiento_Solicitado_Por_Id" label="Movimiento Solicitado Por Id" />
+    <column name="Movimiento_Solicitado_Por" fieldName="Movimiento_Solicitado_Por" label="Movimiento Solicitado Por" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Area Servicio" />
+  </columns>
+</dataModel>

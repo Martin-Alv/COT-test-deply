@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Movimiento_Ruta_Optima" conflictDetection="overwriteChanges" label="Movimiento Ruta Optima" handler="eaton.Rules.Movimiento_Ruta_OptimaBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Movimiento_Ruta_Optima"."Movimiento_Ruta_Optima_Id" "Movimiento_Ruta_Optima_Id"
+	,"Movimiento_Ruta_Optima"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Tipo_Movimiento"."Tipo_Movimiento" "Tipo_Movimiento"
+	,"Movimiento_Ruta_Optima"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Movimiento_Ruta_Optima"."Movimiento" "Movimiento"
+	,"Movimiento_Ruta_Optima"."Devolucion_Material_Id" "Devolucion_Material_Id"
+	,"Dev_Material"."Material" "Dev_Material"
+	,"Dev_Material"."Material_Descripcion" "Dev_Material_Descripcion"
+	,"Movimiento_Ruta_Optima"."Devolucion_En_Ubicacion_Almacenamiento_Id" "Devolucion_En_Ubicacion_Almacenamiento_Id"
+	,"Dev_En_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Devolucion_En_Ubicacion_Almacenamiento"
+	,"Movimiento_Ruta_Optima"."Devolucion_Ubicacion_Almacenamiento_Id" "Devolucion_Ubicacion_Almacenamiento_Id"
+	,"Dev_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Devolucion_Ubicacion_Almacenamiento"
+	,"Movimiento_Ruta_Optima"."Cantidad_A_Devolver" "Cantidad_A_Devolver"
+	,"Movimiento_Ruta_Optima"."Cantidad_Devuelto" "Cantidad_Devuelto"
+	,"Movimiento_Ruta_Optima"."Unidad_Material_A_Devolver_Id" "Unidad_Material_A_Devolver_Id"
+	,"Unidad_Material_A_Dev"."Unidad_Material" "Unidad_Material_A_Devolver"
+	,"Movimiento_Ruta_Optima"."Unidad_Material_Devuelto_Id" "Unidad_Material_Devuelto_Id"
+	,"Unidad_Material_Dev"."Unidad_Material" "Unidad_Material_Devuelto"
+	,"Movimiento_Ruta_Optima"."Fecha_Devolucion" "Fecha_Devolucion"
+	,"Movimiento_Ruta_Optima"."Transferencia_Material_Id" "Transferencia_Material_Id"
+	,"Trans_Material"."Material" "Transferencia_Material"
+	,"Trans_Material"."Material_Descripcion" "Transferencia_Material_Descripcion"
+	,"Movimiento_Ruta_Optima"."Transferencia_En_Ubicacion_Almacenamiento_Id" "Transferencia_En_Ubicacion_Almacenamiento_Id"
+	,"Trans_En_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Transferencia_En_Ubicacion_Almacenamiento"
+	,"Movimiento_Ruta_Optima"."Transferencia_Ubicacion_Almacenamiento_Id" "Transferencia_Ubicacion_Almacenamiento_Id"
+	,"Trans_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Transferencia_Ubicacion_Almacenamiento"
+	,"Movimiento_Ruta_Optima"."Unidad_Material_A_Transferir_Id" "Unidad_Material_A_Transferir_Id"
+	,"Unidad_Material_A_Trans"."Unidad_Material" "Unidad_Material_A_Transferir"
+	,"Movimiento_Ruta_Optima"."Unidad_Material_Transferido_Id" "Unidad_Material_Transferido_Id"
+	,"Unidad_Material_Trans"."Unidad_Material" "Unidad_Material_Transferido"
+	,"Movimiento_Ruta_Optima"."Fecha_Transferencia" "Fecha_Transferencia"
+	,"Movimiento_Iniciado_Por"."Usuario_Sistema" "Movimiento_Iniciado_Por"
+	,"Movimiento_Ruta_Optima"."Estatus_Movimiento_Ruta_Optima_Id" "Estatus_Movimiento_Ruta_Optima_Id"
+	,"Estatus_Movimiento_Ruta_Optima"."Estatus_Movimiento_Ruta_Optima" "Estatus_Movimiento_Ruta_Optima"
+	,"Movimiento_Ruta_Optima"."Estatus_Movimiento_Id" "Estatus_Movimiento_Id"
+	,"Estatus_Movimiento"."Estatus_Movimiento" "Estatus_Movimiento"
+	,"Movimiento_Capturado_Por"."Usuario_Sistema" "Movimiento_Capturado_Por"
+	,"Movimiento_Ruta_Optima"."Es_Capturado" "Es_Capturado"
+	,"Movimiento_Ruta_Optima"."Fecha_Captura_Movimiento_Ruta_Optima" "Fecha_Captura_Movimiento_Ruta_Optima"
+	,"Movimiento_Ruta_Optima"."Captura_Transaccion_Id" "Captura_Transaccion_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Movimiento_Ruta_Optima"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Movimiento_Ruta_Optima"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Movimiento_Ruta_Optima"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro"."Estatus_Registro" "Estatus_Registro"
+	,"Movimiento_Ruta_Optima"."Movimiento_Iniciado_Por_Id" "Movimiento_Iniciado_Por_Id"
+	,"Movimiento_Ruta_Optima"."Movimiento_Capturado_Por_Id" "Movimiento_Capturado_Por_Id"
+	,"Movimiento_Ruta_Optima"."Tmp_Mov_Ruta_Optima_Transaccion_Id" "Tmp_Mov_Ruta_Optima_Transaccion_Id"
+from "APP"."Movimiento_Ruta_Optima" "Movimiento_Ruta_Optima"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Movimiento_Ruta_Optima"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Movimiento_Ruta_Optima"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Tipo_Movimiento" "Tipo_Movimiento" on "Movimiento_Ruta_Optima"."Tipo_Movimiento_Id" = "Tipo_Movimiento"."Tipo_Movimiento_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro" on "Movimiento_Ruta_Optima"."Estatus_Registro_Id" = "Estatus_Registro"."Estatus_Registro_Id"
+	left join "APP"."Material" "Dev_Material" on "Movimiento_Ruta_Optima"."Devolucion_Material_Id" = "Dev_Material"."Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Dev_En_Ubicacion_Almacenamiento" on "Movimiento_Ruta_Optima"."Devolucion_En_Ubicacion_Almacenamiento_Id" = "Dev_En_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Dev_Ubicacion_Almacenamiento" on "Movimiento_Ruta_Optima"."Devolucion_Ubicacion_Almacenamiento_Id" = "Dev_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_A_Dev" on "Movimiento_Ruta_Optima"."Unidad_Material_A_Devolver_Id" = "Unidad_Material_A_Dev"."Unidad_Material_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Dev" on "Movimiento_Ruta_Optima"."Unidad_Material_Devuelto_Id" = "Unidad_Material_Dev"."Unidad_Material_Id"
+	left join "APP"."Material" "Trans_Material" on "Movimiento_Ruta_Optima"."Transferencia_Material_Id" = "Trans_Material"."Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Trans_En_Ubicacion_Almacenamiento" on "Movimiento_Ruta_Optima"."Transferencia_En_Ubicacion_Almacenamiento_Id" = "Trans_En_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Trans_Ubicacion_Almacenamiento" on "Movimiento_Ruta_Optima"."Transferencia_Ubicacion_Almacenamiento_Id" = "Trans_Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_A_Trans" on "Movimiento_Ruta_Optima"."Unidad_Material_A_Transferir_Id" = "Unidad_Material_A_Trans"."Unidad_Material_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Trans" on "Movimiento_Ruta_Optima"."Unidad_Material_Transferido_Id" = "Unidad_Material_Trans"."Unidad_Material_Id"
+	left join "APP"."Estatus_Movimiento_Ruta_Optima" "Estatus_Movimiento_Ruta_Optima" on "Movimiento_Ruta_Optima"."Estatus_Movimiento_Ruta_Optima_Id" = "Estatus_Movimiento_Ruta_Optima"."Estatus_Movimiento_Ruta_Optima_Id"
+	left join "APP"."Estatus_Movimiento" "Estatus_Movimiento" on "Movimiento_Ruta_Optima"."Estatus_Movimiento_Id" = "Estatus_Movimiento"."Estatus_Movimiento_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Iniciado_Por" on "Movimiento_Ruta_Optima"."Movimiento_Iniciado_Por_Id" = "Movimiento_Iniciado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Capturado_Por" on "Movimiento_Ruta_Optima"."Movimiento_Capturado_Por_Id" = "Movimiento_Capturado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Movimiento_Ruta_Optima_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Movimiento_Ruta_Optima_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Movimiento_Ruta_Optima_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Movimiento Ruta Optima Id" readOnly="true" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Movimiento Id">
+      <items style="Lookup" dataController="Tipo_Movimiento" newDataView="createForm1" dataValueField="Tipo_Movimiento_Id" dataTextField="Tipo_Movimiento" dataView="Tipo_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Movimiento" type="String" readOnly="true" label="Tipo De Movimiento" length="250" />
+    <field name="Numero_Grupo_Ruta_Optima" type="Decimal" allowNulls="false" default="((0))" label="Numero Grupo Ruta Optima" showInSummary="true" />
+    <field name="Movimiento" type="String" allowQBE="false" allowSorting="false" label="Movimiento" showInSummary="true" />
+    <field name="Devolucion_Material_Id" type="Int64" allowNulls="false" default="((0))" label="Devolucion Material Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" copy="Dev_Material_Descripcion=Material_Descripcion" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Dev_Material" type="String" readOnly="true" label="Devolución Material" length="250" />
+    <field name="Dev_Material_Descripcion" type="String" readOnly="true" label="Devolución Material Descripcion" length="250" />
+    <field name="Devolucion_En_Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion En Ubicacion Almacenamiento Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Devolucion_En_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Devolución En Ubicación Almacenamiento" length="150" />
+    <field name="Devolucion_Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Ubicacion Almacenamiento Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Devolucion_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Devolución Ubicación Almacenamiento" length="150" />
+    <field name="Cantidad_A_Devolver" type="Decimal" allowNulls="false" default="((0))" label="Cantidad A Devolver" />
+    <field name="Cantidad_Devuelto" type="Decimal" allowNulls="false" default="((0))" label="Cantidad Devuelto" />
+    <field name="Unidad_Material_A_Devolver_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material A Devolver Id">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_A_Devolver" type="String" readOnly="true" label="Unidad Material A Devolver" length="250" />
+    <field name="Unidad_Material_Devuelto_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material Devuelto Id">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Devuelto" type="String" readOnly="true" label="Unidad Material Devuelto" length="250" />
+    <field name="Fecha_Devolucion" type="DateTime" dataFormatString="g" label="Fecha De Devolución" />
+    <field name="Transferencia_Material_Id" type="Int64" allowNulls="false" default="((0))" label="Transferencia Material Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" copy="Transferencia_Material_Descripcion=Material_Descripcion" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_Material" type="String" readOnly="true" label="Transferencia Material" length="250" />
+    <field name="Transferencia_Material_Descripcion" type="String" readOnly="true" label="Transferencia Material Descripción" length="250" />
+    <field name="Transferencia_En_Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia En Ubicacion Almacenamiento Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_En_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transferencia En Ubicación De Almacenamiento" length="150" />
+    <field name="Transferencia_Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Ubicacion Almacenamiento Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transferencia Ubicación De Almacenamiento" length="150" />
+    <field name="Unidad_Material_A_Transferir_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material A Transferir Id">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_A_Transferir" type="String" readOnly="true" label="Unidad Material A Transferir" length="250" />
+    <field name="Unidad_Material_Transferido_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material Transferido Id">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Transferido" type="String" readOnly="true" label="Unidad Material Transferido" length="250" />
+    <field name="Fecha_Transferencia" type="DateTime" dataFormatString="g" label="Fecha De Transferencia" />
+    <field name="Movimiento_Iniciado_Por" type="String" readOnly="true" label="Movimiento Iniciado Por" length="256" />
+    <field name="Estatus_Movimiento_Ruta_Optima_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Movimiento Ruta Optima Id">
+      <items style="Lookup" dataController="Estatus_Movimiento_Ruta_Optima" newDataView="createForm1" dataValueField="Estatus_Movimiento_Ruta_Optima_Id" dataTextField="Estatus_Movimiento_Ruta_Optima" dataView="Estatus_Movimiento_Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Movimiento_Ruta_Optima" type="String" readOnly="true" label="Estatus De Movimiento Ruta Optima" length="250" />
+    <field name="Estatus_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Movimiento Id">
+      <items style="Lookup" dataController="Estatus_Movimiento" newDataView="createForm1" dataValueField="Estatus_Movimiento_Id" dataTextField="Estatus_Movimiento" dataView="Estatus_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Movimiento" type="String" readOnly="true" label="Estatus De Movimiento" length="250" />
+    <field name="Movimiento_Capturado_Por" type="String" readOnly="true" label="Movimiento Capturado Por" length="256" />
+    <field name="Es_Capturado" type="Boolean" allowNulls="false" default="((0))" label="Es Capturado?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Fecha_Captura_Movimiento_Ruta_Optima" type="DateTime" dataFormatString="g" label="Fecha De Captura Movimiento Ruta Optima" />
+    <field name="Captura_Transaccion_Id" type="String" allowNulls="false" default="(newid())" label="Captura Transaccion Id" length="50" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha De Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Movimiento_Iniciado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Iniciado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" copy="Movimiento_Iniciado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Movimiento_Capturado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Capturado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" copy="Movimiento_Capturado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Tmp_Mov_Ruta_Optima_Transaccion_Id" type="String" allowNulls="false" default="(newid())" label="Tmp Mov Ruta Optima Transaccion Id" length="50" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Movimiento Ruta Optima" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" />
+        <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+        <dataField fieldName="Movimiento" rows="5" />
+        <dataField fieldName="Devolucion_Material_Id" aliasFieldName="Dev_Material" />
+        <dataField fieldName="Dev_Material_Descripcion" />
+        <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_En_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+        <dataField fieldName="Cantidad_Devuelto" columns="15" />
+        <dataField fieldName="Unidad_Material_A_Devolver_Id" aliasFieldName="Unidad_Material_A_Devolver" />
+        <dataField fieldName="Unidad_Material_Devuelto_Id" aliasFieldName="Unidad_Material_Devuelto" />
+        <dataField fieldName="Fecha_Devolucion" columns="20" />
+        <dataField fieldName="Transferencia_Material_Id" aliasFieldName="Transferencia_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Transferencia_Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Transferencia_Material_Descripcion" />
+        <dataField fieldName="Transferencia_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_En_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Transferencia_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Unidad_Material_A_Transferir_Id" aliasFieldName="Unidad_Material_A_Transferir" />
+        <dataField fieldName="Unidad_Material_Transferido_Id" aliasFieldName="Unidad_Material_Transferido" />
+        <dataField fieldName="Fecha_Transferencia" columns="20" />
+        <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+        <dataField fieldName="Estatus_Movimiento_Ruta_Optima_Id" aliasFieldName="Estatus_Movimiento_Ruta_Optima" />
+        <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" />
+        <dataField fieldName="Es_Capturado" />
+        <dataField fieldName="Fecha_Captura_Movimiento_Ruta_Optima" columns="20" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+        <dataField fieldName="Tmp_Mov_Ruta_Optima_Transaccion_Id" columns="50" />
+      </dataFields>
+    </view>
+    <view id="Movimiento_Ruta_Optima_LookUp_List" type="Grid" commandId="command1" label="Movimiento Ruta Optima" filter="Estatus_Registro_Id IN (0,1) " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" />
+        <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+        <dataField fieldName="Movimiento" rows="5" />
+        <dataField fieldName="Devolucion_Material_Id" aliasFieldName="Dev_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Devolucion_Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Dev_Material_Descripcion" />
+        <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_En_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Devolucion_En_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Devolucion_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+        <dataField fieldName="Cantidad_Devuelto" columns="15" />
+        <dataField fieldName="Unidad_Material_A_Devolver_Id" aliasFieldName="Unidad_Material_A_Devolver" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_A_Devolver_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Unidad_Material_Devuelto_Id" aliasFieldName="Unidad_Material_Devuelto" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Devuelto_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Devolucion" columns="20" />
+        <dataField fieldName="Transferencia_Material_Id" aliasFieldName="Transferencia_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Transferencia_Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Transferencia_Material_Descripcion" />
+        <dataField fieldName="Transferencia_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_En_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_En_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Transferencia_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Unidad_Material_A_Transferir_Id" aliasFieldName="Unidad_Material_A_Transferir" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_A_Transferir_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Unidad_Material_Transferido_Id" aliasFieldName="Unidad_Material_Transferido" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Transferido_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Transferencia" columns="20" />
+        <dataField fieldName="Estatus_Movimiento_Ruta_Optima_Id" aliasFieldName="Estatus_Movimiento_Ruta_Optima" hyperlinkFormatString="~/pages/Estatus_Movimiento_Ruta_Optima?Estatus_Movimiento_Ruta_Optima_Id={Estatus_Movimiento_Ruta_Optima_Id}&amp;_controller=Estatus_Movimiento_Ruta_Optima&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Movimiento_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Es_Capturado" />
+        <dataField fieldName="Fecha_Captura_Movimiento_Ruta_Optima" columns="20" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+        <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+        <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+        <dataField fieldName="Tmp_Mov_Ruta_Optima_Transaccion_Id" columns="50" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Registro de Movimiento Ruta Optima">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Registro de Movimiento Ruta Optima" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hyperlinkFormatString="~/pages/Tipo_Movimiento?Tipo_Movimiento_Id={Tipo_Movimiento_Id}&amp;_controller=Tipo_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Movimiento" rows="5" />
+            <dataField fieldName="Devolucion_Material_Id" aliasFieldName="Dev_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Devolucion_Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Dev_Material_Descripcion" />
+            <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_En_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Devolucion_En_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Devolucion_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+            <dataField fieldName="Cantidad_Devuelto" columns="15" />
+            <dataField fieldName="Unidad_Material_A_Devolver_Id" aliasFieldName="Unidad_Material_A_Devolver" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_A_Devolver_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Unidad_Material_Devuelto_Id" aliasFieldName="Unidad_Material_Devuelto" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Devuelto_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Devolucion" columns="20" />
+            <dataField fieldName="Transferencia_Material_Id" aliasFieldName="Transferencia_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Transferencia_Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Transferencia_Material_Descripcion" />
+            <dataField fieldName="Transferencia_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_En_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_En_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Transferencia_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Ubicacion_Almacenamiento_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Unidad_Material_A_Transferir_Id" aliasFieldName="Unidad_Material_A_Transferir" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_A_Transferir_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Unidad_Material_Transferido_Id" aliasFieldName="Unidad_Material_Transferido" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Transferido_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Transferencia" columns="20" />
+            <dataField fieldName="Movimiento_Iniciado_Por" hidden="true" />
+            <dataField fieldName="Estatus_Movimiento_Ruta_Optima_Id" aliasFieldName="Estatus_Movimiento_Ruta_Optima" hyperlinkFormatString="~/pages/Estatus_Movimiento_Ruta_Optima?Estatus_Movimiento_Ruta_Optima_Id={Estatus_Movimiento_Ruta_Optima_Id}&amp;_controller=Estatus_Movimiento_Ruta_Optima&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Movimiento_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Movimiento_Capturado_Por" hidden="true" />
+            <dataField fieldName="Es_Capturado" />
+            <dataField fieldName="Fecha_Captura_Movimiento_Ruta_Optima" columns="20" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tmp_Mov_Ruta_Optima_Transaccion_Id" columns="50" />
+            <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+            <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Registro de Movimiento Ruta Optima">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Registro de Movimiento Ruta Optima" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Movimiento" rows="5" />
+            <dataField fieldName="Devolucion_Material_Id" aliasFieldName="Dev_Material" />
+            <dataField fieldName="Dev_Material_Descripcion" />
+            <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_En_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" aliasFieldName="Devolucion_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+            <dataField fieldName="Cantidad_Devuelto" columns="15" />
+            <dataField fieldName="Unidad_Material_A_Devolver_Id" aliasFieldName="Unidad_Material_A_Devolver" />
+            <dataField fieldName="Unidad_Material_Devuelto_Id" aliasFieldName="Unidad_Material_Devuelto" />
+            <dataField fieldName="Fecha_Devolucion" columns="20" />
+            <dataField fieldName="Transferencia_Material_Id" aliasFieldName="Transferencia_Material" />
+            <dataField fieldName="Transferencia_Material_Descripcion" />
+            <dataField fieldName="Transferencia_En_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_En_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Transferencia_Ubicacion_Almacenamiento_Id" aliasFieldName="Transferencia_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Unidad_Material_A_Transferir_Id" aliasFieldName="Unidad_Material_A_Transferir" />
+            <dataField fieldName="Unidad_Material_Transferido_Id" aliasFieldName="Unidad_Material_Transferido" />
+            <dataField fieldName="Fecha_Transferencia" columns="20" />
+            <dataField fieldName="Movimiento_Iniciado_Por" hidden="true" />
+            <dataField fieldName="Estatus_Movimiento_Ruta_Optima_Id" aliasFieldName="Estatus_Movimiento_Ruta_Optima" />
+            <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" />
+            <dataField fieldName="Movimiento_Capturado_Por" hidden="true" />
+            <dataField fieldName="Es_Capturado" />
+            <dataField fieldName="Fecha_Captura_Movimiento_Ruta_Optima" columns="20" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+            <dataField fieldName="Tmp_Mov_Ruta_Optima_Transaccion_Id" columns="50" />
+            <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+            <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Movimiento_Ruta_Optima
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Ruta_Optima_Id = @Movimiento_Ruta_Optima_Id
+
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Movimiento_Ruta_Optima
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Ruta_Optima_Id = @Movimiento_Ruta_Optima_Id
+
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE APP.Movimiento_Ruta_Optima
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Ruta_Optima_Id = @Movimiento_Ruta_Optima_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Movimiento_Ruta_Optima
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Ruta_Optima_Id = @Movimiento_Ruta_Optima_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[/*DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Ruta_Optima), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Ruta_Optima), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](262,1,76,@Movimiento_Ruta_Optima) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](262,1,76,@Movimiento_Ruta_Optima) 
+   RETURN 
+END*/]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Movimiento_Ruta_Optima 
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Movimiento_Ruta_Optima_Id = @Movimiento_Ruta_Optima_Id ]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[/*DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Ruta_Optima), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Ruta_Optima), NULL) 
+AND Movimiento_Ruta_Optima_Id <> @Movimiento_Ruta_Optima_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](263,1,76,,@Movimiento_Ruta_Optima) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](263,1,76,,@Movimiento_Ruta_Optima) 
+   RETURN 
+END
+*/]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Movimiento_Ruta_Optima 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+   Movimiento_Ruta_Optima_Id = @Movimiento_Ruta_Optima_Id]]></rule>
+  </businessRules>
+</dataController>

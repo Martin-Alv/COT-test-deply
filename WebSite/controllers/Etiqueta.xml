@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Etiqueta" conflictDetection="overwriteChanges" label="Etiqueta" handler="eaton.Rules.EtiquetaBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Etiqueta"."Etiqueta_Id" "Etiqueta_Id"
+	,"Etiqueta"."Numero_Etiqueta" "Numero_Etiqueta"
+	,"Etiqueta"."Bitacora_Captura_Sap_Id" "Bitacora_Captura_Sap_Id"
+	,"Bitacora_Captura_Sap"."Bitacora_Captura_Sap_Id" "Bitacora_Captura_Sap"
+	,"Etiqueta"."Captura_Id" "Captura_Id"
+	,"Etiqueta"."Material" "Material"
+	,"Etiqueta"."Cantidad" "Cantidad"
+	,"Etiqueta"."Ubicacion_Almacenamiento_Origen_Id" "Ubicacion_Almacenamiento_Origen_Id"
+	,"Ubicacion_Almacenamiento_Origen"."Ubicacion_Almacenamiento" "Origen"
+	,"Etiqueta"."Ubicacion_Almacenamiento_Origen" "Ubicacion_Almacenamiento_Origen"
+	,"Etiqueta"."Ubicacion_Almacenamiento_Destino_Id" "Ubicacion_Almacenamiento_Destino_Id"
+	,"Ubicacion_Almacenamiento_Destino"."Ubicacion_Almacenamiento" "Destino"
+	,"Etiqueta"."Ubicacion_Almacenamiento_Destino" "Ubicacion_Almacenamiento_Destino"
+	,"Etiqueta"."Html_QR" "Html_QR"
+	,"Etiqueta"."Codigo_De_Barra" "Codigo_De_Barra"
+	,"Etiqueta"."Estatus_Etiqueta_Id" "Estatus_Etiqueta_Id"
+	,"Estatus_Etiqueta"."Estatus_Etiqueta" "Estatus_Etiqueta"
+	,"Impreso_Por"."Usuario_Sistema" "Impreso_Por"
+	,"Etiqueta"."Fecha_Impresion" "Fecha_Impresion"
+	,"Etiqueta"."Equipo_Impresion" "Equipo_Impresion"
+	,"Etiqueta"."Error" "Error"
+	,"Etiqueta"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Usuario_Surtidor"."Usuario_Sistema" "Usuario_Surtidor"
+	,"Etiqueta"."Transaccion_Captura" "Transaccion_Captura"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Etiqueta"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Etiqueta"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Etiqueta"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Etiqueta"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material_Material"
+	,"Etiqueta"."Usuario_Surtidor" "UsuarioSurtidor"
+	,"Etiqueta"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Orden_Produccion"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Etiqueta"."Tipo_Material_Id" "Tipo_Material_Id"
+	,"Tipo_Material"."Tipo_Material" "Tipo_Material"
+	,"Etiqueta"."Clase_Material_Id" "Clase_Material_Id"
+	,"Clase_Material"."Clase_Material" "Clase_Material"
+	,"Etiqueta"."Material_Empaque_Id" "Material_Empaque_Id"
+	,"Material_Empaque"."Material_Empaque" "Material_Empaque"
+	,"Etiqueta"."Solicitud_Id" "SolicitudId"
+from "APP"."Etiqueta" "Etiqueta"
+	left join "APP"."Estatus_Etiqueta" "Estatus_Etiqueta" on "Etiqueta"."Estatus_Etiqueta_Id" = "Estatus_Etiqueta"."Estatus_Etiqueta_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Etiqueta"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Etiqueta"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Etiqueta"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Etiqueta"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Impreso_Por" on "Etiqueta"."Impreso_Por" = "Impreso_Por"."Usuario_Sistema_Id"
+ and "Etiqueta"."Usuario_Surtidor" = "Impreso_Por"."Aplicacion_Id"
+	left join "dbo"."Usuario_V" "Usuario_Surtidor" on "Etiqueta"."Usuario_Surtidor" = "Usuario_Surtidor"."Usuario_Sistema_Id"
+	left join "APP"."Material" "Material" on "Etiqueta"."Material_Id" = "Material"."Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_Origen" on "Etiqueta"."Ubicacion_Almacenamiento_Origen_Id" = "Ubicacion_Almacenamiento_Origen"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_Destino" on "Etiqueta"."Ubicacion_Almacenamiento_Destino_Id" = "Ubicacion_Almacenamiento_Destino"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Bitacora_Captura_Sap" "Bitacora_Captura_Sap" on "Etiqueta"."Bitacora_Captura_Sap_Id" = "Bitacora_Captura_Sap"."Bitacora_Captura_Sap_Id"
+	left join "dbo"."Orden_Produccion" "Orden_Produccion" on "Etiqueta"."Orden_Produccion_Id" = "Orden_Produccion"."Orden_Produccion_Id"
+	left join "APP"."Tipo_Material" "Tipo_Material" on "Etiqueta"."Tipo_Material_Id" = "Tipo_Material"."Tipo_Material_Id"
+	left join "APP"."Clase_Material" "Clase_Material" on "Etiqueta"."Clase_Material_Id" = "Clase_Material"."Clase_Material_Id"
+	left join "APP"."Material_Empaque" "Material_Empaque" on "Etiqueta"."Material_Empaque_Id" = "Material_Empaque"."Material_Empaque_Id"
+]]></text>
+    </command>
+    <command id="Etiqueta_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Etiqueta_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Etiqueta_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Etiqueta Id" readOnly="true" />
+    <field name="Numero_Etiqueta" type="Int32" allowNulls="false" label="Número de Etiqueta" readOnly="true" showInSummary="true" />
+    <field name="Bitacora_Captura_Sap_Id" type="Int64" allowNulls="false" default="((0))" label="Bitacora Captura Sap Id" showInSummary="true">
+      <items style="Lookup" dataController="Bitacora_Captura_Sap" newDataView="createForm1" dataValueField="Bitacora_Captura_Sap_Id" dataTextField="Bitacora_Captura_Sap_Id" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Bitacora_Captura_Sap" type="Int64" label="Bitacora Captura Sap" readOnly="true" />
+    <field name="Captura_Id" type="Int64" allowNulls="false" label="Captura Id" readOnly="true" showInSummary="true" roles="hidden" writeRoles="hidden" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" causesCalculate="true">
+      <items style="Lookup" dataController="Material" newDataView="createForm1" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" copy="Material_Material=Material" />
+    </field>
+    <field name="Material_Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Material" type="String" allowNulls="false" default="('')" label="Material" length="250" showInSummary="true" />
+    <field name="Cantidad" type="Decimal" allowNulls="false" default="((0))" label="Cantidad" showInSummary="true" />
+    <field name="Ubicacion_Almacenamiento_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Almacenamiento Origen Id" causesCalculate="true">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" copy="Ubicacion_Almacenamiento_Origen=Origen" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Origen" type="String" readOnly="true" label="Origen" length="150" />
+    <field name="Ubicacion_Almacenamiento_Origen" type="String" allowNulls="false" default="('')" label="Ubicación Almacenamiento Origen" length="150" />
+    <field name="Ubicacion_Almacenamiento_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Almacenamiento Destino Id" causesCalculate="true">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" copy="Ubicacion_Almacenamiento_Destino=Destino" />
+    </field>
+    <field name="Destino" type="String" readOnly="true" label="Destino" length="150" />
+    <field name="Ubicacion_Almacenamiento_Destino" type="String" allowNulls="false" default="('')" label="Ubicación Almacenamiento Destino" length="150" />
+    <field name="Html_QR" type="String" allowNulls="false" default="('')" label="Html QR" length="250" />
+    <field name="Codigo_De_Barra" type="String" allowNulls="false" default="('')" label="Codigo De Barra" length="250" />
+    <field name="Estatus_Etiqueta_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Etiqueta Id">
+      <items style="Lookup" dataController="Estatus_Etiqueta" newDataView="createForm1" dataValueField="Estatus_Etiqueta_Id" dataTextField="Estatus_Etiqueta" dataView="Estatus_Etiqueta_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Etiqueta" type="String" readOnly="true" label="Estatus Etiqueta" length="250" />
+    <field name="Impreso_Por" type="String" readOnly="true" label="Impreso Por" length="256" />
+    <field name="Fecha_Impresion" type="DateTime" dataFormatString="g" default="(NULL)" label="Fecha de Impresión" />
+    <field name="Equipo_Impresion" type="String" allowNulls="false" default="('')" label="Equipo que solicitó impresión" length="250" />
+    <field name="Error" type="String" allowNulls="false" default="('')" label="Error" length="500" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" dataView="Mensaje_Sistema_Lookup_List_Etiqueta" pageSize="15" />
+    </field>
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje de Sistema" length="250" />
+    <field name="Usuario_Surtidor" type="String" readOnly="true" label="Usuario Surtidor" length="256" />
+    <field name="Transaccion_Captura" type="String" default="(NULL)" label="Transacción Captura" length="50" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" pageSize="15" dataView="Estatus_Registro_LookUp_List" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="UsuarioSurtidor" type="Guid" default="(NULL)" label="Usuario Surtidor" />
+    <field name="Orden_Produccion_Id" type="Int64" label="Orden Produccion Id">
+      <items style="Lookup" dataController="Orden_Produccion" dataValueField="Orden_Produccion_Id" dataTextField="Numero_Orden_Produccion" pageSize="15" dataView="Orden_Produccion_LookUp_List" />
+    </field>
+    <field name="Numero_Orden_Produccion" type="Int64" readOnly="true" label="Numero Orden Produccion" />
+    <field name="Tipo_Material_Id" type="Int32" label="Tipo Material Id">
+      <items style="Lookup" dataController="Tipo_Material" dataValueField="Tipo_Material_Id" dataTextField="Tipo_Material" dataView="Tipo_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Material" type="String" readOnly="true" label="Tipo Material" length="250" />
+    <field name="Clase_Material_Id" type="Int32" label="Clase Material Id">
+      <items style="Lookup" dataController="Clase_Material" dataValueField="Clase_Material_Id" dataTextField="Clase_Material" dataView="Clase_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clase_Material" type="String" readOnly="true" label="Clase Material" length="250" />
+    <field name="Material_Empaque_Id" type="Int32" label="Material Empaque Id">
+      <items style="Lookup" dataController="Material_Empaque" dataValueField="Material_Empaque_Id" dataTextField="Material_Empaque" dataView="Material_Empaque_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material_Empaque" type="String" readOnly="true" label="Material Empaque" length="500" />
+    <field name="SolicitudId" type="Int64" allowNulls="false" default="((0))" label="Folio Solicitud" readOnly="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Etiqueta" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Numero_Etiqueta" columns="15" />
+        <dataField fieldName="SolicitudId" columns="15" />
+        <dataField fieldName="Bitacora_Captura_Sap_Id" aliasFieldName="Bitacora_Captura_Sap" />
+        <dataField fieldName="Captura_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Cantidad" columns="15" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Material" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Origen_Id" aliasFieldName="Origen" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Origen" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Destino_Id" aliasFieldName="Destino" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Destino" />
+        <dataField fieldName="Html_QR" />
+        <dataField fieldName="Codigo_De_Barra" />
+        <dataField fieldName="Estatus_Etiqueta_Id" aliasFieldName="Estatus_Etiqueta" />
+        <dataField fieldName="Impreso_Por" />
+        <dataField fieldName="Fecha_Impresion" columns="20" />
+        <dataField fieldName="Equipo_Impresion" />
+        <dataField fieldName="Error" />
+        <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+        <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" />
+        <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" />
+        <dataField fieldName="Material_Empaque_Id" aliasFieldName="Material_Empaque" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="Usuario_Surtidor" />
+        <dataField fieldName="UsuarioSurtidor" textMode="Static" columns="15" hidden="true" />
+        <dataField fieldName="Transaccion_Captura" columns="50" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Etiqueta">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Etiqueta" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Numero_Etiqueta" columns="15" />
+            <dataField fieldName="SolicitudId" columns="15" />
+            <dataField fieldName="Bitacora_Captura_Sap_Id" aliasFieldName="Bitacora_Captura_Sap" hyperlinkFormatString="~/pages/Bitacora_Captura_Sap?Bitacora_Captura_Sap_Id={Bitacora_Captura_Sap_Id}&amp;_controller=Bitacora_Captura_Sap&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Captura_Id" columns="15" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Origen_Id" aliasFieldName="Origen" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Ubicacion_Almacenamiento_Origen_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Origen" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Destino_Id" aliasFieldName="Destino" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Ubicacion_Almacenamiento_Destino_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Destino" />
+            <dataField fieldName="Html_QR" />
+            <dataField fieldName="Codigo_De_Barra" />
+            <dataField fieldName="Estatus_Etiqueta_Id" aliasFieldName="Estatus_Etiqueta" hyperlinkFormatString="~/pages/Estatus_Etiqueta?Estatus_Etiqueta_Id={Estatus_Etiqueta_Id}&amp;_controller=Estatus_Etiqueta&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Impreso_Por" />
+            <dataField fieldName="Fecha_Impresion" columns="20" />
+            <dataField fieldName="Equipo_Impresion" />
+            <dataField fieldName="Error" />
+            <dataField fieldName="Usuario_Surtidor" />
+            <dataField fieldName="UsuarioSurtidor" textMode="Static" columns="15" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" hyperlinkFormatString="~/pages/Orden_Produccion?Orden_Produccion_Id={Orden_Produccion_Id}&amp;_controller=Orden_Produccion&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" hyperlinkFormatString="~/pages/Tipo_Material?Tipo_Material_Id={Tipo_Material_Id}&amp;_controller=Tipo_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" hyperlinkFormatString="~/pages/Clase_Material?Clase_Material_Id={Clase_Material_Id}&amp;_controller=Clase_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material_Empaque_Id" aliasFieldName="Material_Empaque" hyperlinkFormatString="~/pages/Material_Empaque?Material_Empaque_Id={Material_Empaque_Id}&amp;_controller=Material_Empaque&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Transaccion_Captura" columns="50" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Etiqueta">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Numero_Etiqueta" columns="15" hidden="true" />
+            <dataField fieldName="SolicitudId" columns="15" />
+            <dataField fieldName="Bitacora_Captura_Sap_Id" aliasFieldName="Bitacora_Captura_Sap" />
+            <dataField fieldName="Captura_Id" columns="15" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Origen_Id" aliasFieldName="Origen" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Origen" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Destino_Id" aliasFieldName="Destino" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Destino" />
+            <dataField fieldName="Html_QR" />
+            <dataField fieldName="Codigo_De_Barra" />
+            <dataField fieldName="Estatus_Etiqueta_Id" aliasFieldName="Estatus_Etiqueta" />
+            <dataField fieldName="Impreso_Por" />
+            <dataField fieldName="Fecha_Impresion" columns="20" />
+            <dataField fieldName="Equipo_Impresion" />
+            <dataField fieldName="Error" />
+            <dataField fieldName="Usuario_Surtidor" />
+            <dataField fieldName="UsuarioSurtidor" textMode="Static" columns="15" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+            <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" />
+            <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" />
+            <dataField fieldName="Material_Empaque_Id" aliasFieldName="Material_Empaque" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+            <dataField fieldName="Transaccion_Captura" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+APP.Etiqueta
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+  WHERE 
+Etiqueta_Id = @Etiqueta_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+APP.Etiqueta
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+  WHERE 
+Etiqueta_Id = @Etiqueta_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+APP.Etiqueta
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+  WHERE 
+Etiqueta_Id = @Etiqueta_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+APP.Etiqueta
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+  WHERE 
+Etiqueta_Id = @Etiqueta_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Etiqueta 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Numero_Etiqueta ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Numero_Etiqueta)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1248,1,180,@Numero_Etiqueta) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1248,1,180,@Numero_Etiqueta) 
+   RETURN 
+END]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[ UPDATE  
+   APP.Etiqueta
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Etiqueta_Id = @Etiqueta_Id ]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[ DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Etiqueta
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Numero_Etiqueta))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Numero_Etiqueta)) 
+AND Etiqueta_Id <> @Etiqueta_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1249,1,181,@Numero_Etiqueta) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1249,1,181,@Numero_Etiqueta) 
+   RETURN 
+END  ]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Etiqueta
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+  Etiqueta_Id = @Etiqueta_Id]]></rule>
+    <rule id="r104" commandName="Calculate" type="JavaScript" phase="Execute"><![CDATA[[Material] = [Material_Material];
+[Ubicacion_Almacenamiento_Origen] = [Origen];
+[Ubicacion_Almacenamiento_Destino] = [Destino];
+]]></rule>
+  </businessRules>
+</dataController>

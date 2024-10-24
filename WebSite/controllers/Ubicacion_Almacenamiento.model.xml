@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Ubicacion_Almacenamiento" alias="Ubicacion_Almacenamiento" created="2018-10-17T12:47:49" modified="2021-04-06T19:30:22" x="20" y="31" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="861" y="523">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="493" y="20">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="854" y="365">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Ubicacion" parentTableSchema="APP" parentTableName="Tipo_Ubicacion" x="850" y="20">
+      <foreignKeyColumn columnName="Tipo_Ubicacion_Id" parentColumnName="Tipo_Ubicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Registrado_Desde" parentTableSchema="APP" parentTableName="Registrado_Desde" x="500" y="175">
+      <foreignKeyColumn columnName="Registrado_Desde_Id" parentColumnName="Registrado_Desde_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicacion Almacenamiento Id" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Clave_Tipo_Ubicacion" fieldName="Clave_Tipo_Ubicacion" label="Clave Tipo Ubicacion" foreignKey="Tipo_Ubicacion" />
+    <column name="Tipo_Ubicacion_Id" fieldName="Tipo_Ubicacion_Id" label="Tipo Ubicacion Id" />
+    <column name="Aplica_Para_Ruta_Optima" fieldName="Aplica_Para_Ruta_Optima" label="Aplica Para Ruta Optima" />
+    <column name="Registrado_Desde" fieldName="Registrado_Desde" label="Registrado Desde" foreignKey="Registrado_Desde" />
+    <column name="Registrado_Desde_Id" fieldName="Registrado_Desde_Id" label="Registrado Desde Id" />
+  </columns>
+</dataModel>

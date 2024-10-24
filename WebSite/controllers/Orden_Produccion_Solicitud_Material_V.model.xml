@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Orden_Produccion_Solicitud_Material_V" alias="Orden_Produccion_Solicitud_Material_V" created="2019-02-14T15:15:53" modified="2019-03-28T22:37:24" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripcion" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" />
+    <column name="Material_Solicitado_Id" fieldName="Material_Solicitado_Id" label="Material Solicitado Id" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" />
+  </columns>
+</dataModel>

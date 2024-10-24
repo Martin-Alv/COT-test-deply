@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Modal_Actualizar_Ruta_Optima" conflictDetection="overwriteChanges" handler="eaton.Rules.Modal_Actualizar_Ruta_OptimaBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <fields>
+    <field name="Cantidad_Entregado" type="Decimal" label="Cantidad Entregado" allowNulls="false" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" label="Unidad Material Entregado Id" allowNulls="false">
+      <items style="DropDownList" dataController="Unidad_Material" dataView="Unidad_Material_LookUp_List" dataTextField="Unidad_Material" dataValueField="Unidad_Material_Id" />
+    </field>
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Orden Ruta Optima" showInSummary="true" isVirtual="true" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" isVirtual="true" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" label="Folio Solicitud" />
+  </fields>
+  <views>
+    <view id="editForm1" type="Form" label="Actualizar" showInSelector="false">
+      <categories>
+        <category id="c1" headerText="Actualizar Ruta Optima" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Cantidad_Entregado" columns="15" tag="focus-auto" rows="1" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" rows="1" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="Actualizar Surtido" id="a100" whenLastCommandName="New" whenView="editForm1" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r104" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Actualizar_Surtido" />
+  </businessRules>
+</dataController>

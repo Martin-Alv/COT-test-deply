@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Material_Surtido_A_Ejecutar_V" conflictDetection="overwriteChanges" label="Grid Material Surtido A Ejecutar V" handler="eaton.Rules.Grid_Material_Surtido_A_Ejecutar_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Material_Surtido_A_Ejecutar_V"."Tmp_Material_Surtido_Transaccion_Id" "Tmp_Material_Surtido_Transaccion_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Numero_Grupo_Material_Surtido" "Numero_Grupo_Material_Surtido"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Material_Id" "Material_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Material" "Material"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Unidad_Material_Solicitado_Id" "Unidad_Material_Solicitado_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Unidad_Material_Solicitado" "Unidad_Material_Solicitado"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Material_Unidad_Material_Id" "Material_Unidad_Material_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Unidad_Material_Id" "Unidad_Material_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Unidad_Material" "Unidad_Material"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Unidad_Material_Entregado" "Unidad_Material_Entregado"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Ubicacion_Almacenamiento_De_Surtido_Id" "Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Ubicacion_Almacenamiento_De_Surtido" "Ubicacion_Almacenamiento_De_Surtido"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Solicitud_Material" "Solicitud_Material"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Creado_Por_Id" "Creado_Por_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Transaccion_Id" "Transaccion_Id"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Material_Surtido_A_Ejecutar_V"."Material_Ubicacion_Stock_Id" "Material_Ubicacion_Stock_Id"
+from "dbo"."Grid_Material_Surtido_A_Ejecutar_V" "Grid_Material_Surtido_A_Ejecutar_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Tmp_Material_Surtido_Transaccion_Id" type="String" label="Tmp Material Surtido Transaccion Id" readOnly="true" length="50" showInSummary="true" isPrimaryKey="true" />
+    <field name="Numero_Grupo_Material_Surtido" type="Int32" allowNulls="false" label="Numero Grupo Material Surtido" showInSummary="true" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" label="Material Surtido Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" readOnly="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" />
+    <field name="Unidad_Material_Solicitado_Id" type="Int32" allowNulls="false" label="Unidad Material Solicitado Id" />
+    <field name="Unidad_Material_Solicitado" type="String" label="Unidad Material Solicitado" length="250" />
+    <field name="Material_Unidad_Material_Id" type="Int64" allowNulls="false" label="Material Unidad Material Id" readOnly="true" />
+    <field name="Unidad_Material_Id" type="Int32" allowNulls="false" label="Unidad Material Id" readOnly="true" />
+    <field name="Unidad_Material" type="String" allowNulls="false" label="Unidad Material" readOnly="true" length="250" />
+    <field name="Cantidad_Solicitado" type="Decimal" label="Cantidad Solicitado" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" label="Unidad Material Entregado Id">
+      <items style="Lookup" dataController="Unidad_Material" dataView="Unidad_Material_LookUp_List" dataTextField="Unidad_Material" dataValueField="Unidad_Material_Id" copy="Unidad_Material_Entregado_Id = Unidad_Material_Id&#xD;&#xA;,Unidad_Material_Entregado = Unidad_Material" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" label="Unidad Material Entregado" length="250" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento Id" contextFields="Material_Id=Material_Id" causesCalculate="true">
+      <items style="Lookup" dataController="Material_Ubicacion_Almacen_V" dataView="Material_Ubicacion_Almacen_Con_Stock" dataTextField="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" pageSize="15" copy="Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado=Total_Stock,&#xD;&#xA;Material_Ubicacion_Stock_Id = Material_Ubicacion_Stock_Id" />
+    </field>
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento De Surtido Id" contextFields="Material_Id=Material_Id">
+      <items style="Lookup" dataController="Material_Ubicacion_Almacen_V" dataView="Material_Ubicacion_Almacen_LookUp_List" dataTextField="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" pageSize="15" copy="Ubicacion_Almacenamiento_De_Surtido_Id = Ubicacion_Almacenamiento_Id, Ubicacion_Almacenamiento_De_Surtido=Ubicacion_Almacenamiento,&#xD;&#xA;Material_Ubicacion_Stock_Id = Material_Ubicacion_Stock_Id&#xD;&#xA;" />
+    </field>
+    <field name="Ubicacion_Almacenamiento_De_Surtido" type="String" label="Ubicacion Almacenamiento De Surtido" length="150" />
+    <field name="Solicitud_Material" type="String" allowQBE="false" allowSorting="false" label="Solicitud Material" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" label="Creado Por Id" />
+    <field name="Transaccion_Id" type="String" allowNulls="false" label="Transaccion Id" length="50" />
+    <field name="Tiempo_Transcurrido" type="Int32" label="Tiempo Transcurrido" readOnly="true" />
+    <field name="Material_Ubicacion_Stock_Id" type="Int64" label="Material Ubicacion Stock Id" />
+    <field name="Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado" type="Decimal" label="Total Stock En Ubicacion Almacenamiento Seleccionado" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material a Surtir">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" />
+        <dataField fieldName="Numero_Grupo_Material_Surtido" columns="15" />
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" columns="10" />
+        <dataField fieldName="Material_Descripcion" columns="15" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" columns="10" />
+        <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material" columns="10" />
+        <dataField fieldName="Cantidad_Solicitado" columns="10" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" columns="10" />
+        <dataField fieldName="Cantidad_Entregado" columns="10" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" columns="10" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" columns="10" />
+        <dataField fieldName="Solicitud_Material" rows="5" hidden="true" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="10" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Material Surtido A Ejecutar">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material Surtido A Ejecutar" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="50" hidden="true" />
+            <dataField fieldName="Numero_Grupo_Material_Surtido" columns="15" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" readOnly="true" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material_Solicitado" readOnly="true" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Unidad_Material" hidden="true" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" readOnly="true" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" aliasFieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" hidden="true" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" textMode="Static" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Material Surtido A Ejecutar V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tmp_Material_Surtido_Transaccion_Id" columns="50" />
+            <dataField fieldName="Numero_Grupo_Material_Surtido" columns="15" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Solicitud_Material" rows="5" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Custom" commandArgument="ExecJS02" headerText="Guardar" cssClass="material-icon-save" whenLastCommandName="Edit" id="a100" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" headerText="Actualizar" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Custom" commandArgument="ExecJS03" headerText="Definir Unidad de Material" whenKeySelected="true" whenClientScript="$app.touch.dataView()._selectedKeyList.length == 1 &amp;&amp; [Material_Unidad_Material_Id] == 0" id="a101" cssClass="material-icon-add-circle" />
+      <action commandName="Custom" commandArgument="ExecJS04" headerText="Actualizar Unidad de Material" whenKeySelected="true" whenView="grid1" whenClientScript="$app.touch.dataView()._selectedKeyList.length == 1 &amp;&amp; [Material_Unidad_Material_Id] &gt; 0" id="a102" cssClass="material-icon-add-circle-out" />
+      <action commandName="Custom" commandArgument="ExecCS02" headerText="Cancelar Surtido" cssClass="material-icon-cancel" id="a104" confirmation="_controller=Cancelar_Surtido_Custom_Dialog&#xD;&#xA;_title=Cancelar Surtido de Material" whenKeySelected="true" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Colocar Nota/Comentario/Doc/Img" cssClass="material-icon-note-add" id="a100" whenClientScript="$app.touch.dataView()._selectedKeyList.length == 1" whenKeySelected="true" />
+      <action commandName="Custom" commandArgument="ExecJS05" headerText="Cancelar Surtido" cssClass="material-icon-cancel" id="a103" whenKeySelected="true" whenClientScript="$app.touch.dataView()._selectedKeyList.length == 1" roles="hidden" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r102" commandName="Custom" commandArgument="ExecJS03" type="JavaScript" phase="After" name="Abrir_CreateForm1_Material_Unidad_Mat"><![CDATA[// Abrimos ventana
+
+this.preventDefault();
+$app.touch.show({
+    controller: 'Material_Unidad_Material',
+    startCommand: 'New',
+    startArgument: 'createForm1',
+    defaultValues: [
+        { name: 'Material_Id', value:[Material_Id]}
+      ,{name: 'Material',value:[Material]} 
+    ]
+  	,filter:[
+    {name: 'Material_Id',value:[Material_Id]}    
+    ,{name: 'Material',value:[Material]}    
+  ]
+});
+]]></rule>
+    <rule id="r103" commandName="Custom" commandArgument="ExecJS04" type="JavaScript" phase="After" name="Abrir_EditForm1_Material_Unidad_Mat"><![CDATA[// Abrimos ventana
+this.preventDefault();
+$app.touch.show({
+  controller: 'Material_Unidad_Material'
+  ,startCommand: 'Edit'
+  ,startArgument: 'editForm1'
+  ,filter:[
+    {name: 'Material_Unidad_Material_Id',value:[Material_Unidad_Material_Id]}    
+    ,{name: 'Material_Id',value:[Material_Id]}    
+    //,{name: 'Unidad_Material_Id',value:[Unidad_Material_Id]}    
+  ]
+});
+//[Es_Edit_Mat_Unidad_Mat] = 0;]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="After" name="Valida_Y_Llama_A_ExecCS01"><![CDATA[var material_A_Surtir = '';
+var Ubicacion_Formulario = '';
+
+var Material_Surtido_Id = [Material_Surtido_Id];
+var Material_Id = [Material_Id];
+var Cantidad_Solicitado = [Cantidad_Solicitado];
+var Cantidad_Entregado = [Cantidad_Entregado];
+var Unidad_Material_Entregado_Id = [Unidad_Material_Entregado_Id];
+var Ubicacion_Almacenamiento_Id = [Ubicacion_Almacenamiento_Id];
+var Material_Ubicacion_Stock_Id = [Material_Ubicacion_Stock_Id];
+
+
+//this.preventDefault();
+// Obtenemos el valor
+var valor = $("#Cantidad_Material_Entregado").val();
+if (valor > 0) {
+  [Cantidad_Entregado] = valor;
+  Cantidad_Entregado = [Cantidad_Entregado];
+  Ubicacion_Formulario = [Ubicacion_Almacenamiento] + '; ';
+  if (debug == 1) {
+    console.log("Valor: " + valor);
+    console.log("Cantidad_Entregado: " + [Cantidad_Entregado]);
+  }
+}
+
+if (valor < 0) {
+  this.preventDefault();
+  //alertify.alert("Ingrese cantidad de mat. válido para surtir").setHeader("Mensaje");   	
+  $app.alert("Ingrese cantidad de material válido para surtir");
+  $("#Cantidad_Material_Entregado").focus();
+}
+else{
+
+  if (valor > [Cantidad_Solicitado]) {
+    if (debug == 1) {
+      console.log("> Valor: " + valor);
+      console.log("Cantidad_Solicitado: " + [Cantidad_Solicitado]);
+    }
+    this.preventDefault();
+    //ertify.alert("La cantidad a surtir no debe ser mayor a la cantidad solicitado.").setHeader("Mensaje");
+    $app.alert("La cantidad a surtir no debe ser mayor a la cantidad solicitado.");
+    $("#Cantidad_Material_Entregado").focus();
+  }
+  else {
+
+    $app.execute({
+      controller: 'Material_Ubicacion_Almacenamiento_De_Surtido1'
+      , filter: [
+          { field: 'Material_Surtido_Id', operator: '=', value: [Material_Surtido_Id] },
+          { field: 'Material_Id', operator: '=', value: [Material_Id] }
+      ]
+      , dataType: 'json'
+      , done: function (result) {
+
+        if (debug === 1) {
+            console.log("result: ");
+            console.log(result.Material_Ubicacion_Almacenamiento_De_Surtido1);
+        }
+        
+        arregloUbicaciones = result.Material_Ubicacion_Almacenamiento_De_Surtido1;
+
+        var Ubicaciones_Origen = Ubicacion_Formulario;
+
+        arregloUbicaciones.forEach(function(elemento, indice, array){ Ubicaciones_Origen = Ubicaciones_Origen + elemento.Ubicacion_Almacenamiento_De_Surtido + '; '; });
+
+        $app.confirm(
+          "Dará salida del material " + material_A_Surtir + " de las siguientes ubicaciones: " + Ubicaciones_Origen + ". ¿Desea continuar?"
+        ).done( function(e) {
+          if(debug == true){
+            console.log("Se confirmó la operación");
+          } 
+                
+          // Ejecutamos BR ExecCS01
+          $app.execute({
+            controller: 'Grid_Material_Surtido_A_Ejecutar_V'
+            , command: 'Custom'
+            , argument: 'ExecCS01'
+            , values: [
+            { name: 'Material_Surtido_Id', newValue: Material_Surtido_Id }
+              , { name: 'Material_Id', newValue: Material_Id }
+              , { name: 'Cantidad_Solicitado', newValue: Cantidad_Solicitado }
+              , { name: 'Cantidad_Entregado', newValue: Cantidad_Entregado }
+              , { name: 'Unidad_Material_Entregado_Id', newValue: Unidad_Material_Entregado_Id }
+              , { name: 'Ubicacion_Almacenamiento_De_Surtido_Id', newValue: Ubicacion_Almacenamiento_Id }
+              , { name: 'Material_Ubicacion_Stock_Id', newValue: Material_Ubicacion_Stock_Id }
+              
+            ]
+            , done: function (result) {
+              eval(result.clientScript);
+              if (debug == 10) {
+                console.log("ExecCS01 result : ");
+                console.log(result);
+              }
+
+              // cerrar el modal que se se queda abierto
+              $app.touch.contextDataView().discard();
+              $app.touch.contextDataView().cancel();
+
+            } // END done Grid_Material_Surtido_A_Ejecutar_V
+          }); // END execute Grid_Material_Surtido_A_Ejecutar_V
+            
+        }); // END $app.confirm(
+
+      } // END done execute Material_Ubicacion_Almacenamiento_De_Surtido1
+    }); // END execute Material_Ubicacion_Almacenamiento_De_Surtido1
+
+    //------------------------------
+  }
+
+  this.preventDefault();
+}
+  
+
+
+]]></rule>
+    <rule id="r100" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Actualizar_Surtido" />
+    <rule id="r105" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="After" name="Abrir_CreateForm_Documento_Comentario"><![CDATA[this.preventDefault();
+$app.touch.show({
+    controller: 'Documento_Comentario',
+    startCommand: 'New',
+    startArgument: 'createForm2',
+    defaultValues: [     
+      { name: 'Tipo_Operacion_Id', value:4}      
+      ,{ name: 'Orden_Produccion_Id', value:0}      
+      ,{ name: 'Orden_Produccion_Detalle_Id', value:0}
+      ,{ name: 'Producto_Id', value:0}
+      ,{ name: 'Material_Id', value:[Material_Id]}
+      ,{ name: 'Ruta_Optima_Id', value:0}      
+      ,{ name: 'Material_Surtido_Id', value:[Material_Surtido_Id]}
+      ,{ name: 'Tipo_Comentario_Id', value:2}   // Comentario de surtidor
+      ,{ name: 'Registrado_Desde_Id', value: 8} // Registrado desde Material Surtido a Ejecutar
+      ,{name:'Solicitud_Material', value: [Solicitud_Material]}
+    ]
+  ,filter:[
+    { name: 'Tipo_Operacion_Id', value:4}      
+      ,{ name: 'Orden_Produccion_Id', value:0}      
+      ,{ name: 'Orden_Produccion_Detalle_Id', value:0}
+      ,{ name: 'Producto_Id', value:0}
+      ,{ name: 'Material_Id', value:[Material_Id]}
+      ,{ name: 'Ruta_Optima_Id', value:0}      
+      ,{ name: 'Material_Surtido_Id', value:[Material_Surtido_Id]}
+      ,{ name: 'Tipo_Comentario_Id', value:2}   // Comentario de surtidor
+      ,{ name: 'Registrado_Desde_Id', value: 8} // Registrado desde Material Surtido a Ejecutar
+      ,{name:'Solicitud_Material', value: [Solicitud_Material]}
+  ]
+});
+]]></rule>
+    <rule id="r104" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="Cancelar_Surtido" />
+    <rule id="r106" commandName="Calculate" type="JavaScript" phase="Execute" name="Valida_Stock_De_Ubi_Almac_Selecc"><![CDATA[var fieldValue = [Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado];
+var triggerFieldName = this.arguments().Trigger;
+var tryConversion = triggerFieldName == 'Ubicacion_Almacenamiento_Id';
+
+if (fieldValue != null && tryConversion) {
+	if (fieldValue < [Cantidad_Solicitado]){
+		fnDebug("El stock en la ubicación seleccionada es menor a cantidad solicitado.")
+    	this.preventDefault();    
+  		$app.alert('El stock en la ubicación seleccionada es menor a la cantidad solicitada. Seleccione otra ubicación o Agregué otras ubicaciones de surtido.');
+	}
+}
+]]></rule>
+    <rule id="r107" commandName="Custom" commandArgument="ExecJS05" type="JavaScript" phase="After"><![CDATA[//this.preventDefault();
+$app.touch.show({
+    controller: 'Documento_Comentario',
+    startCommand: 'New',
+    startArgument: 'createFormCancelarSurtidoDesdeMatSurtiAEjec',
+    defaultValues: [
+      { name: 'Orden_Produccion_Id', value:0}      
+      ,{ name: 'Orden_Produccion_Detalle_Id', value:0}
+      ,{ name: 'Producto_Id', value:0}
+      ,{ name: 'Material_Id', value:[Material_Id]}
+      ,{ name: 'Ruta_Optima_Id',value:0}      
+      ,{ name: 'Material_Surtido_Id',value:[Material_Surtido_Id]} 
+      ,{ name: 'Tipo_Comentario_Id', value:2}   // Comentario de surtidor
+      ,{ name: 'Registrado_Desde_Id', value: 8} // Registrado desde Material Surtido a Ejecutar
+    ]
+  ,filter:[
+    { name: 'Orden_Produccion_Id', value:0}    
+    ,{ name: 'Orden_Produccion_Detalle_Id', value:0}     
+    ,{ name: 'Producto_Id', value:0}        
+    ,{ name: 'Material_Id', value:[Material_Id]}
+      ,{ name: 'Ruta_Optima_Id',value:0}   
+    ,{ name: 'Material_Surtido_Id',value:[Material_Surtido_Id]} 
+      ,{ name: 'Tipo_Comentario_Id', value:2}   // Comentario de surtidor
+      ,{ name: 'Registrado_Desde_Id', value: 8} // Registrado desde Material Surtido a Ejecutar
+  ]
+});
+]]></rule>
+  </businessRules>
+</dataController>

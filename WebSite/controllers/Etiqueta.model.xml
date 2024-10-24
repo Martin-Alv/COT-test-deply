@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Etiqueta" alias="Etiqueta" created="2020-09-10T14:18:29" modified="2021-11-30T18:05:32" x="20" y="33" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Etiqueta" parentTableSchema="APP" parentTableName="Estatus_Etiqueta" x="967" y="389">
+      <foreignKeyColumn columnName="Estatus_Etiqueta_Id" parentColumnName="Estatus_Etiqueta_Id" />
+    </foreignKey>
+    <foreignKey id="Mensaje_Sistema_" parentTableSchema="dbo" parentTableName="Mensaje_Sistema" x="980" y="522">
+      <foreignKeyColumn columnName="Mensaje_Sistema_Id" parentColumnName="Mensaje_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="769" y="673">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="529" y="295">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="496" y="669">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Impreso_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="556" y="475">
+      <foreignKeyColumn columnName="Impreso_Por" parentColumnName="Usuario_Sistema_Id" />
+      <foreignKeyColumn columnName="Usuario_Surtidor" parentColumnName="Aplicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Usuario_Surtidor" parentTableSchema="dbo" parentTableName="Usuario_V" x="603" y="389">
+      <foreignKeyColumn columnName="Usuario_Surtidor" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Material" parentTableSchema="APP" parentTableName="Material" x="858" y="29">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Ubicacion_Almacenamiento_Origen" parentTableSchema="APP" parentTableName="Ubicacion_Almacenamiento" x="1307" y="44">
+      <foreignKeyColumn columnName="Ubicacion_Almacenamiento_Origen_Id" parentColumnName="Ubicacion_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Ubicacion_Almacenamiento_Destino" parentTableSchema="APP" parentTableName="Ubicacion_Almacenamiento" x="1367" y="355">
+      <foreignKeyColumn columnName="Ubicacion_Almacenamiento_Destino_Id" parentColumnName="Ubicacion_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Bitacora_Captura_Sap" parentTableSchema="APP" parentTableName="Bitacora_Captura_Sap" x="589" y="20">
+      <foreignKeyColumn columnName="Bitacora_Captura_Sap_Id" parentColumnName="Bitacora_Captura_Sap_Id" />
+    </foreignKey>
+    <foreignKey id="Orden_Produccion" parentTableSchema="dbo" parentTableName="Orden_Produccion" x="1417" y="657">
+      <foreignKeyColumn columnName="Orden_Produccion_Id" parentColumnName="Orden_Produccion_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Material" parentTableSchema="APP" parentTableName="Tipo_Material" x="1097" y="746">
+      <foreignKeyColumn columnName="Tipo_Material_Id" parentColumnName="Tipo_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Clase_Material" parentTableSchema="APP" parentTableName="Clase_Material" x="788" y="843">
+      <foreignKeyColumn columnName="Clase_Material_Id" parentColumnName="Clase_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Material_Empaque" parentTableSchema="APP" parentTableName="Material_Empaque" x="442" y="920">
+      <foreignKeyColumn columnName="Material_Empaque_Id" parentColumnName="Material_Empaque_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Etiqueta_Id" fieldName="Etiqueta_Id" label="Etiqueta Id" />
+    <column name="Numero_Etiqueta" fieldName="Numero_Etiqueta" label="Número de Etiqueta" />
+    <column name="Bitacora_Captura_Sap_Id" fieldName="Bitacora_Captura_Sap_Id" label="Bitacora Captura Sap Id" aliasColumnName="Bitacora_Captura_Sap_Id" aliasForeignKey="Bitacora_Captura_Sap" />
+    <column name="Bitacora_Captura_Sap_Id" fieldName="Bitacora_Captura_Sap" label="Bitacora Captura Sap" foreignKey="Bitacora_Captura_Sap" />
+    <column name="Captura_Id" fieldName="Captura_Id" label="Captura Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Cantidad" fieldName="Cantidad" label="Cantidad" />
+    <column name="Ubicacion_Almacenamiento_Origen_Id" fieldName="Ubicacion_Almacenamiento_Origen_Id" label="Ubicacion Almacenamiento Origen Id" aliasColumnName="Ubicacion_Almacenamiento" aliasForeignKey="Ubicacion_Almacenamiento_Origen" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Origen" label="Origen" foreignKey="Ubicacion_Almacenamiento_Origen" />
+    <column name="Ubicacion_Almacenamiento_Origen" fieldName="Ubicacion_Almacenamiento_Origen" label="Ubicación Almacenamiento Origen" />
+    <column name="Ubicacion_Almacenamiento_Destino_Id" fieldName="Ubicacion_Almacenamiento_Destino_Id" label="Ubicacion Almacenamiento Destino Id" aliasColumnName="Ubicacion_Almacenamiento" aliasForeignKey="Ubicacion_Almacenamiento_Destino" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Destino" label="Destino" foreignKey="Ubicacion_Almacenamiento_Destino" />
+    <column name="Ubicacion_Almacenamiento_Destino" fieldName="Ubicacion_Almacenamiento_Destino" label="Ubicación Almacenamiento Destino" />
+    <column name="Html_QR" fieldName="Html_QR" label="Html QR" />
+    <column name="Codigo_De_Barra" fieldName="Codigo_De_Barra" label="Codigo De Barra" />
+    <column name="Estatus_Etiqueta_Id" fieldName="Estatus_Etiqueta_Id" label="Estatus Etiqueta Id" aliasColumnName="Estatus_Etiqueta" aliasForeignKey="Estatus_Etiqueta" />
+    <column name="Estatus_Etiqueta" fieldName="Estatus_Etiqueta" label="Estatus Etiqueta" foreignKey="Estatus_Etiqueta" />
+    <column name="Usuario_Sistema" fieldName="Impreso_Por" label="Impreso Por" foreignKey="Impreso_Por" />
+    <column name="Fecha_Impresion" fieldName="Fecha_Impresion" label="Fecha de Impresión" format="g" />
+    <column name="Equipo_Impresion" fieldName="Equipo_Impresion" label="Equipo Impresión" />
+    <column name="Error" fieldName="Error" label="Error" />
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" aliasColumnName="Mensaje_Sistema" aliasForeignKey="Mensaje_Sistema_" />
+    <column name="Mensaje_Sistema" fieldName="Mensaje_Sistema" label="Mensaje de Sistema" foreignKey="Mensaje_Sistema_" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Surtidor" label="Usuario Surtidor" foreignKey="Usuario_Surtidor" />
+    <column name="Transaccion_Captura" fieldName="Transaccion_Captura" label="Transacción Captura" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material" />
+    <column name="Material" fieldName="Material_Material" label="Material" foreignKey="Material" />
+    <column name="Usuario_Surtidor" fieldName="UsuarioSurtidor" label="Usuario Surtidor" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" aliasColumnName="Numero_Orden_Produccion" aliasForeignKey="Orden_Produccion" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" foreignKey="Orden_Produccion" />
+    <column name="Tipo_Material_Id" fieldName="Tipo_Material_Id" label="Tipo Material Id" aliasColumnName="Tipo_Material" aliasForeignKey="Tipo_Material" />
+    <column name="Tipo_Material" fieldName="Tipo_Material" label="Tipo Material" foreignKey="Tipo_Material" />
+    <column name="Clase_Material_Id" fieldName="Clase_Material_Id" label="Clase Material Id" aliasColumnName="Clase_Material" aliasForeignKey="Clase_Material" />
+    <column name="Clase_Material" fieldName="Clase_Material" label="Clase Material" foreignKey="Clase_Material" />
+    <column name="Material_Empaque_Id" fieldName="Material_Empaque_Id" label="Material Empaque Id" aliasColumnName="Material_Empaque" aliasForeignKey="Material_Empaque" />
+    <column name="Material_Empaque" fieldName="Material_Empaque" label="Material Empaque" foreignKey="Material_Empaque" />
+    <column name="Solicitud_Id" fieldName="SolicitudId" label="Solicitud Id" />
+  </columns>
+</dataModel>

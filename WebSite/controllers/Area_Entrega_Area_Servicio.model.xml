@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Area_Entrega_Area_Servicio" alias="Area_Entrega_Area_Servicio" created="2019-03-12T10:35:04" modified="2019-03-18T16:23:40" x="20" y="40" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Area_Entrega_" parentTableSchema="APP" parentTableName="Area_Entrega" x="1063" y="20">
+      <foreignKeyColumn columnName="Area_Entrega_Id" parentColumnName="Area_Entrega_Id" />
+    </foreignKey>
+    <foreignKey id="Area_Servicio_" parentTableSchema="APP" parentTableName="Area_Servicio" x="775" y="97">
+      <foreignKeyColumn columnName="Area_Servicio_Id" parentColumnName="Area_Servicio_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="772" y="537">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="774" y="276">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="774" y="406">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Area_Entrega_Area_Servicio_Id" fieldName="Area_Entrega_Area_Servicio_Id" label="Área Entrega Área Servicio Id" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Área Entrega Id" aliasColumnName="Area_Entrega" aliasForeignKey="Area_Entrega_" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Área de Entrega" foreignKey="Area_Entrega_" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Área Servicio Id" aliasColumnName="Area_Servicio" aliasForeignKey="Area_Servicio_" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Área de Servicio" foreignKey="Area_Servicio_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

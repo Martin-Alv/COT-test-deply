@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Material_Exclusion" alias="Material_Exclusion" created="2019-02-06T18:25:25" modified="2022-01-11T15:59:37" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Material_" parentTableSchema="APP" parentTableName="Material" x="1400" y="23">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Exclusion_" parentTableSchema="APP" parentTableName="Tipo_Exclusion" x="1086" y="94">
+      <foreignKeyColumn columnName="Tipo_Exclusion_Id" parentColumnName="Tipo_Exclusion_Id" />
+    </foreignKey>
+    <foreignKey id="Excluido_Desde_" parentTableSchema="APP" parentTableName="Excluido_Desde" x="781" y="153">
+      <foreignKeyColumn columnName="Excluido_Desde_Id" parentColumnName="Excluido_Desde_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="32" y="381">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="429" y="217">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="428" y="366">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Material_Exclusion_Id" fieldName="Material_Exclusion_Id" label="Material Exclusion Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material_" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material_" />
+    <column name="Tipo_Exclusion_Id" fieldName="Tipo_Exclusion_Id" label="Tipo Exclusión Id" aliasColumnName="Tipo_Exclusion" aliasForeignKey="Tipo_Exclusion_" />
+    <column name="Tipo_Exclusion" fieldName="Tipo_Exclusion" label="Tipo de Exclusión" foreignKey="Tipo_Exclusion_" />
+    <column name="Excluido_Desde_Id" fieldName="Excluido_Desde_Id" label="Excluido Desde Id" aliasColumnName="Excluido_Desde" aliasForeignKey="Excluido_Desde_" />
+    <column name="Excluido_Desde" fieldName="Excluido_Desde" label="Excluido Desde" foreignKey="Excluido_Desde_" />
+    <column name="Motivo_Exclusion" fieldName="Motivo_Exclusion" label="Motivo de Exclusión" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Material_A_Excluir" fieldName="MaterialAExcluir" label="Material A Excluir" />
+  </columns>
+</dataModel>

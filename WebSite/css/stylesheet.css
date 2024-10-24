@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body, input, select, textarea, button, .ui-btn {
+    font-family: 'Montserrat' !important;   
+}
+
+/* Ajustes en background inicio*/
+/*Que no se repita la imagen*/
+.app-acc-space{
+	background-repeat: no-repeat;	
+}
+/* Campo Boton_Actualizar_Ruta_Optima con titulo en Grid "Accion"*/
+/*.btnActualizarRutaOptima{    
+    display: inline-block !important;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    z-index: 9999;
+}*/
+/*
+div [data-header-text="Actualizar Ruta Optima"] div [data-container="row"]{
+    color:red;
+    width:100%;
+    height:85px;
+}
+div [data-header-text="Actualizar Ruta Optima"] div [class="app-data-input-container"]{    
+    font-size:xx-large !important;
+}
+
+div [data-header-text="Actualizar Ruta Optima"] span [data-control="field"] [data-field="Cantidad_Entregado"]{
+    color:red !important;
+    width:85px !important;
+    height:85px !important;
+    font-size:xx-large !important;
+}
+
+
+div [data-header-text="Actualizar Ruta Optima"] span [data-control="field"] [data-field="Cantidad_Entregado"] span [class="app-field-Cantidad_Entregado"]{    
+    font-size:xx-large !important;
+}
+div [data-header-text="Actualizar Ruta Optima"] span [data-control="field"] [data-field="Cantidad_Entregado"] span [class="app-has-focus"]{    
+    font-size:xx-large !important;
+
+}
+
+div [data-header-text="Actualizar Ruta Optima"] span [data-control="field"] [data-field="Cantidad_Entregado"] span [class="app-control-inner app-field-data"]{    
+    font-size:xx-large !important;
+}
+
+/* Tama�o de texto en Modal_Actualizar_Ruta_Optima*/
+/*div [data-header-text="Actualizar Ruta Optima"] [data-container="row"] [data-control] .app-control-inner{
+       font-size:xx-large !important;
+}
+div [data-header-text="Actualizar Ruta Optima"] [data-container="row"] [data-control] .app-has-focus{
+       font-size:xx-large !important;
+}
+div [data-header-text="Actualizar Ruta Optima"] [data-container="row"] [data-control] .app-field-data{
+       font-size:xx-large !important;
+}
+*/
+
+/*div [data-header-text="Actualizar Ruta Optima"] span [data-control="field"] [data-field="Cantidad_Entregado"] [data-focus="true"] [data-required="true"] [class="app-field-Cantidad_Entregado"]
+[data-input="text"] [data-type="number"] span [class="app-control-inner app-field-data"]{    
+    font-size:xx-large !important;
+}*/
+
+/*span data-control="field" data-field="Cantidad_Entregado"*/
+
+/*.campoCantidadEntregado{
+color:red;
+width:100%;
+}*/
+
+
+/*Span en campo Qr_Code_Scan */
+/*div [data-visibility="f:Cantidad_Entregado"] [data-control="label"]{
+    font-weight:bolder !important;
+    font-size:25px !important;
+}*/
+/* Input en campo Qr_Code_Scan*/
+/*div [data-visibility="f:Qr_Code_Scan"] [data-control="field"]{    
+    font-size:25px !important;
+}*/
+
+/*Span en campo Qr_Code_Scan_1 */
+/*div [data-visibility="f:Qr_Code_Scan_1"] [data-control="label"]{
+    font-weight:bolder !important;
+    font-size:25px !important;
+}*/
+/* Input en campo Qr_Code_Scan_1*/
+/*div [data-visibility="f:Qr_Code_Scan_1"] [data-control="field"]{    
+    font-size:25px !important;
+}*/
+
+/*** START estilos para Alertify ***/
+
+/*Estilos generales para alertify*/
+/*Fondo y color de texto en encabezado*/
+.ajs-header{
+    background-color:#0072C6 !important;
+    color:white !important;
+}
+/*Boton cerrar en encabezado*/
+.ajs-close{    
+    width:90% !important;
+    height:90% !important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABJUlEQVRIid2VzU3DQBBGvwFqAKUBbwFpgAJmmuAQIVECSDnQAyQRqWKTAlIB9znSyHCx0Riv7VmfEHOy17vveX8+LfCviplfRWQPgBYMJ2Y+MvPWN157OIAXAOuU0kpVz5XwDwAPAO6bpoGqXgDg6qcH0W33bGYbEdkFZ+LhHetuMANVPaeUVgDWbVNkJiX4e875aSBYIJmCW1FQIQnBi4KAJAwHpjeRRGRnZhsHOpjZTRQ+JyhKeh9n4MDIEvkqLFcYDrgcTFW7LNU/F+k02FBXocRPCYqnhYg+URHGMcHoUVTVU03iS4LZc16T+N+CcIiiEi+oSmhU4u+DYw08IDkB/Rx81cLbspzzIxEdunfP6hUzb0XkDQuvTBHZi8jzgrF/uL4BO0/UXNfRTYgAAAAASUVORK5CYII=') !important;
+    /*background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUDSURBVEhLpZd7TNVlGMe/5xw4gNxFIFaCTdYAwSJRzNtsttJa/0irtcHW1rSLXdQiKzUIa6m1iYmNLZdlt63LWlub1RabpFw0DAU8GSkEkwnERe7nBn2f3+89HA7nAAf4/MN5v7/f733e93mf93keDGMEZOvJq/ih8iYQbpbh/BlyIGVJGCx7MpWgY86vhN0xhnHDwobj9fi9rhsIDVTKHLE6kRAbjLaCLCXoBNKowzrKH0YYv63tUjJQviMdyYnhwIhDKXPA5kRIWKCX0UX7L8Ax7NSMCsbHiy/D0jGsDYTGNzMRKu7mBLPGwd0YDRg6mK0EnfTDtejqGgGCTErha4gOQtq+8+gesisJGJAP5QBkIn9x8oMRJ/oPr1aCzqbSBjRc7wNCApSiQ2cbNDEmvxrO0fHjhuPDtdpZaRPOhIRJnw3/HspG2IRdbf/mGspq/vMZM7rDA/jHZEDQniptKJi4oBbZOSfEhAV5IUbbh1FdmIXEqCAlAkfOtOHj061AhO9bohsWeOhOHn7k3molAIs50cWilbpxd/C7Ea3Hiu9fvwerEsOUCHxZ04ndn1wFoqe+mm7DAt3U12ND6qE/lQBk3hGK717OALqtnsbl9y0bip5MxtaMGCUClc39yP2oAYjh7g08xinwNCzwvP9q6scDpVeUAOQsj0HJtlRtd+P02fHslkTsf3CxEoDrjNw1RTW6e6cxKphw39OF6rcbswlNXHmnfRSPpEVrkriyFwZUS4JhtG/JjsPXuXdpz4Rhvhv/SgUQRqOMl5nwbVig2y9c6kZIRCDW3RmhSZtTonDmxiDjgc92Ltc0F+aXzmoL1gLVDwzYXeEjahRyjr02fL5jGXJXxCrRG3N+Fexy9VRW8ofp35RzijIj73gDzjUxCfgg6UAN7CwIszEqzPy2GA+nu9+5qAQ3Gxm9LS0DQLA7afjLzIYleQw60H6UmWwSvz7DSDdzitmkVsX0hsUok4fl3VWIY8VxMcIIFswmI4aLuaBhunq67OaDqQ1rgWXFz/l3IyU+RIlAcXkbQl6tVCN6mWfbfJCFYXKCmYGpDXdZcfL5ZXgoRb/Hwtpj9dj12d907RgSGVQukhYG4WzhilkZ922YO32LqfCplXFKAPK+akRFHZsGKQQMpta2Iaw+WqeeclG866deSNeunz/GvQ3325GzIQFvb3anwoJfWvHFbzc8+7EFAahu6EHOpywGirysWBQ+sVQ3PgOemYv3cX3GQpzenqYEoLSiHa+dont5n73yLyPa0tiHLtbsh1P1I9mYHImbdidqrvR4dByTce+YfVbS7aEoF3cpyv65hedOWPTy5ivpi8aUWvJjM05UdSiRi31sKe7PXMRr6O5qJqMbZn8VybNr3nevNhQsHUPYJJXG104nIs9igrGNHepPsktFGQMzZQlz/BSNo9HVoPXyrroYYN5Ne+O8NuG0RifCdvbRDy6hVoqIwsIGIVRKpI/GkRnACceRNWqoE76T5Y1pUuvH/EUWGGlGZsEfaGOD4GLgPbZPUrFU0nFhuNw2OJaRsEANGW1MDqM2vjTLpD+Ok9/ye9uxdaye+sKliQx48Rzn5JjZTvD4TyKeq+2Y1P/OCdkd5x+TdKpo77fhtl3MeMqT49tKf78WHZ1s7OdrVBBv8YoFT+ha45kD6g64G0ej1Nn1JfVouObddM8LdiPWATsS5WYo0nmk5Xt5cwYd+B90r9BVftCoRAAAAABJRU5ErkJggg==') !important;*/
+}
+.ajs-ok{
+    width:30% !important;
+    font-weight:bolder !important;
+}
+.ajs-cancel{
+    width:30% !important;
+    font-weight:bolder !important;
+}
+
+/*** Modal Alertify: ModalActualizarRutaOptima***/
+.alertifyModalHeader{    
+    background-color: #0072C6;
+    border-color: #0072C6;
+}
+
+.alertifyModalDivContainer{
+    width:100% !important;
+}
+.alertifyModalDivRow{
+    width:100% !important;
+}
+.alertifyModalLabel{
+    font-size:xx-large !important;
+    height:30% !important;
+}
+.alertifyModalInput{
+    width:100% !important;
+    height:30% !important;
+    color:red;
+    font-size:xx-large !important;
+}
+.alertifyModalSelect{
+    width:100% !important;
+    height:30% !important;
+    color:red;
+    font-size:xx-large !important;
+}
+.alertifyModalLabelOk{
+    font-size:xx-large !important;
+    height:30% !important;
+}
+.alertifyModalLabelCancel{
+    font-size:xx-large !important;
+    height:30% !important;
+}
+/*** END estilos para Alertify ***/
+
+/*
+    #0072C6 - Azul Eaton
+*/
+/*START estilos de input y botones de incremento y decremento*/
+.btnIncrementar{    
+    width:10% !important;
+    height:10% !important;
+    /*background-image:url('data:image/png;base64,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')
+ !important;*/
+    background-color: #0072C6;
+    background-repeat: no-repeat;
+    /*border-radius: 50%;*/
+    border: 2px #0072C6 solid !important;
+    color: white !important;
+    font-size: xx-large !important;    
+    /*padding: 20px;*/
+}
+
+.inputValorIncrementarDecrementar{    
+    width:30% !important;    
+    font-size: xx-large !important;
+}
+/*END estilos de input y botones de incremento y decremento*/
+
+/*START estilos para numpad*/
+.nmpd-grid{
+    width:50% !important; 
+       
+}
+.inputvalue{
+    color: black;
+    font-size: xx-large;
+    font-weight:bolder;
+    width: 100% !important;
+}
+.tdinputvalue{
+    width:100% !important;
+}
+.trnumpad{
+    width:100% !important;
+}
+.btnnumpad{
+    color: white;
+    font-size: xx-large;
+    font-weight: bolder;
+    width: 100% !important;
+    background-color: #0072C6 !important;
+}
+/*END estilos para numpad*/
+
+/* START estilos Pantalla Custom Lista de Materiales Pendientes por Surtir de M�ltiples �rdenes de Prod Seleccionados */
+.divBtnAccionesListaMatPtePorSurtir{
+    width: auto !important;
+    text-align:right !important;
+    margin-top: 2% !important;
+}
+.btnAccionesListaMatPtePorSurtir {
+	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;	
+	background-color:#0074c6;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:12px 34px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1570cd;
+}
+
+.btnAccionesListaMatPtePorSurtir:hover {	
+	background-color:#0074c6;
+}
+.btnAccionesListaMatPtePorSurtir:active {
+	position:relative;
+	top:1px;
+}
+/* END estilos Pantalla Custom Lista de Materiales Pendientes por Surtir de M�ltiples �rdenes de Prod Seleccionados */
+
+/*** START DataTables***/
+.dt-checkboxes{
+    width: 50% !important;
+}
+.select-info{
+    visibility: hidden !important;
+}
+/*** END DataTables***/
+
+/*** START Posicionar ventanas COT ***/
+.app-page-modal-custom1{
+	z-index:1981 !important;
+}
+.app-page-modal-custom2{
+	z-index:1990 !important;
+}
+/*** END Posicionar ventanas COT ***/
+
+/* START responsive buttons*/
+/** Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .btnAccionesListaMatPtePorSurtir {
+        font-size: 16px;
+        width: 340px;
+    }
+
+    .divBtnAccionesListaMatPtePorSurtir {
+        text-align: center;
+    }
+}
+
+/** Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/** Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/** Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/** Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+/* END responsive buttons*/
+
+/* START css keyboard-master*/
+.ui-keyboard{
+    font-size: large !important;
+}
+.ui-keyboard-button{
+    font-size: xx-large !important;
+    font-weight: bolder !important;
+    background: #0072C6 !important;
+}
+
+.ui-keyboard-button span {
+    font-weight: bolder !important;
+}
+
+/* END css keyboard-master*/
+
+/*.rg_view1_v_grid1_f_Fecha_Produccion.rg_view1_v_grid1_scroll_.app-scroll{
+    font-weight: bolder !important;
+    color: black !important;
+}*/
+
+.app-desktop .app-hscrollbar2 .app-hscrollbar-handle{
+    height: 10px !important;
+}
+
+.app-desktop .app-vscrollbar .app-vscrollbar-handle{
+    height: 10px !important;
+}
+
+/* .app-bar-toolbar .app-logo {     
+	text-indent: -9999px;     
+	width: 190px;     
+	padding : 0;     
+	background-image: url("../images/LogoFinalOriginal.png");
+	background-color: #fff;     
+	background-size: auto 40px;     
+	background-position: center center; 
+} */
+
+
+div[id^='myprofile'] h2, div[id^='myprofile'] .app-text>span{
+	visibility: hidden;
+}
+
+div[id^='myprofile'] h2:before, div[id^='myprofile'] .app-text>span:before{
+	content: ' COOPER - Replenishment System';
+	visibility: visible;
+}
+
+.app-acc-inner .app-logo{
+    position: relative;
+    background-size: contain !important;
+    background-position: left;
+    /* padding-top: 0px; */
+    padding: 80px 0 50px;
+    
+}
+
+.app-item-tile .ui-btn {
+    height: 40px !important;
+    max-height: 40px !important;
+}
+
+.app-acc-inner .app-logo>.app-name-under-logo{
+    position: relative;
+    bottom: -80px;
+    text-indent: 0px;
+    font-size: 1.7rem;
+}
+
+.app-acc-list{
+    top: 210px !important;
+}
+
+@media (max-width: 470px){
+    .app-acc-inner .app-logo>.app-name-under-logo{
+        font-size: 1.1rem;
+    }
+}
+
+
+/*  Ajuste por error framwork en boton flotante */
+a.ui-btn.ui-btn-a.ui-btn-icon-notext.app-btn-float.app-btn-promo.app-has-icon.app-has-material-icon{
+    background-color:  #d65c26;
+}
+
+
+/* Estilos para el botom custom close */
+
+.app-page-modal-title .custom-btn {
+    position: absolute;
+    left: auto;
+    top: 50%;
+    margin-top: -12px;
+    margin-bottom: 0;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    right: 12px;
+    color: #555;
+}
+
+.app-page-modal-title .custom-btn {
+    color: #eee;
+}
+
+
+.app-page-modal-title .custom-btn.custom-btn4 {
+    right: 12px;
+}
+
+.app-desktop .app-page-modal-title .custom-btn:hover:not(.ui-btn-active) {
+    color: rgba(255,255,255,.65);
+}
+
+
+
+.app-page-modal-title .custom-btn-close::after {
+    content: 'close';
+}
+
+.custom-btn::after {
+    font-family: 'Material Icons' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    text-indent: 0;
+}
+
+
+.app-page-modal-title .custom-btn:after {
+    background-color: transparent;
+    left: 50%;
+    margin-left: -12px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+}
+

@@ -1,0 +1,2146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Escaneo_Validador_Embarque1" label="Escaneo_Validador_Embarque1" conflictDetection="overwriteChanges" handler="eaton.Rules.Escaneo_Validador_Embarque1BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id" "Escaneo_Validador_Embarque_Id"
+	,"Escaneo_Validador_Embarque"."Seccion_Capturada" "Seccion_Capturada"
+	,"Escaneo_Validador_Embarque"."Material_Tarima" "Material_Tarima"
+	,"Escaneo_Validador_Embarque"."SOrde_SItem_Tarima" "SOrde_SItem_Tarima"
+	,"Escaneo_Validador_Embarque"."Etiqueta_Embarque_Detalle_Id" "Etiqueta_Embarque_Detalle_Id"
+	,"Etiqueta_Embarque_Detalle_"."Folio_Etiqueta_Embarque_Detalle" "EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle"
+	,"Escaneo_Validador_Embarque"."Folio_Etiqueta_Embarque_Detalle" "Folio_Etiqueta_Embarque_Detalle"
+	,"Escaneo_Validador_Embarque"."Material_Embarque" "Material_Embarque"
+	,"Escaneo_Validador_Embarque"."SOrde_SItem_Emabarque" "SOrde_SItem_Emabarque"
+	,"Escaneo_Validador_Embarque"."Delivery_Id" "Delivery_Id"
+	,"Delivery_"."Delivery" "Delivery"
+	,"Escaneo_Validador_Embarque"."Delivery_Delivery" "Delivery_Delivery"
+	,"Escaneo_Validador_Embarque"."Material_Delivery" "Material_Delivery"
+	,"Escaneo_Validador_Embarque"."SOrde_SItem_Delivery" "SOrde_SItem_Delivery"
+	,"Escaneo_Validador_Embarque"."Delivery_Packing_List" "Delivery_Packing_List"
+	,"Escaneo_Validador_Embarque"."SOrder_SItem_Packing_List" "Sorder_Sitem_Packing_List"
+	,"Escaneo_Validador_Embarque"."Cantidad_Material" "Cantidad_Material"
+	,"Escaneo_Validador_Embarque"."Resultado_Validacion_Embarque_Id" "Resultado_Validacion_Embarque_Id"
+	,"Resultado_Validacion_Embarque_"."Estatus_Validacion_Embarque" "Resultado_Validacion_Embarque"
+	,"Resultado_Validacion_Embarque_"."Es_Correcto" "Es_Correcto"
+	,"Resultado_Validacion_Embarque_"."Es_Incorrecto" "Es_Incorrecto"
+	,"Resultado_Validacion_Embarque_"."Es_Correcto_En_Progreso" "Es_Correcto_En_Progreso"
+	,"Resultado_Validacion_Embarque_"."Es_Incorrecto_En_Progreso" "Es_Incorrecto_En_Progreso"
+	,"Escaneo_Validador_Embarque"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Escaneo_Validador_Embarque"."Transaccion_Escaneo" "Transaccion_Escaneo"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Escaneo_Validador_Embarque"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Escaneo_Validador_Embarque"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Escaneo_Validador_Embarque"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Escaneo_Validador_Embarque"."Mensaje_Validacion_Aplicada" "MensajeValidacionAplicada"
+	,"Escaneo_Validador_Embarque"."Creado_Por_Id" "Creado_Por_Id"
+from "APP"."Escaneo_Validador_Embarque" "Escaneo_Validador_Embarque"
+	left join "APP"."Etiqueta_Embarque_Detalle" "Etiqueta_Embarque_Detalle_" on "Escaneo_Validador_Embarque"."Etiqueta_Embarque_Detalle_Id" = "Etiqueta_Embarque_Detalle_"."Etiqueta_Embarque_Detalle_Id"
+	left join "APP"."Delivery" "Delivery_" on "Escaneo_Validador_Embarque"."Delivery_Id" = "Delivery_"."Delivery_Id"
+	left join "APP"."Resultado_Validacion_Embarque" "Resultado_Validacion_Embarque_" on "Escaneo_Validador_Embarque"."Resultado_Validacion_Embarque_Id" = "Resultado_Validacion_Embarque_"."Resultado_Validacion_Embarque_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Escaneo_Validador_Embarque"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Escaneo_Validador_Embarque"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Escaneo_Validador_Embarque"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Escaneo_Validador_Embarque"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Escaneo_Validador_Embarque_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Escaneo_Validador_Embarque_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Escaneo_Validador_Embarque_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Escaneo Validador Embarque Id" readOnly="true" />
+    <field name="Folio_Escaneo" type="Int64" allowNulls="false" label="Folio Escaneo" readOnly="true" computed="true">
+      <formula>"Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id"</formula>
+    </field>
+    <field name="Seccion_Capturada" type="Int16" label="Sección Capturada" showInSummary="true" causesCalculate="true" />
+    <field name="Material_Tarima" type="String" label="Número de material en la tarima." length="250" showInSummary="true" causesCalculate="true" />
+    <field name="SOrde_SItem_Tarima" type="String" label="SOrder/SItem (Tarima)" length="250" showInSummary="true" causesCalculate="true" />
+    <field name="Etiqueta_Embarque_Detalle_Id" type="Int32" allowNulls="false" default="((0))" label="Etiqueta Embarque Detalle Id" showInSummary="true">
+      <items style="Lookup" dataController="Etiqueta_Embarque_Detalle" dataValueField="Etiqueta_Embarque_Detalle_Id" dataTextField="Folio_Etiqueta_Embarque_Detalle" dataView="Etiqueta_Embarque_Detalle_LookUp" pageSize="15" />
+    </field>
+    <field name="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" type="Int32" label=" Folio Etiqueta Embarque" readOnly="true" />
+    <field name="Folio_Etiqueta_Embarque_Detalle" type="String" label="Folio Etiqueta Embarque Detalle" length="250" showInSummary="true" />
+    <field name="Material_Embarque" type="String" label="Material (Embarque)" length="250" />
+    <field name="SOrde_SItem_Emabarque" type="String" label="SOrder/SItem (Embarque)" length="250" />
+    <field name="Delivery_Id" type="Int64" allowNulls="false" default="((0))" label="Delivery Id">
+      <items style="Lookup" dataController="Delivery" dataValueField="Delivery_Id" dataTextField="Delivery" pageSize="15" dataView="Delivery_LookUp_List" />
+    </field>
+    <field name="Delivery" type="Int64" readOnly="true" label="Delivery" />
+    <field name="Delivery_Delivery" type="String" label="Delivery (Delivery)" length="250" causesCalculate="true" />
+    <field name="Material_Delivery" type="String" label="Material (Delivery)" length="250" />
+    <field name="SOrde_SItem_Delivery" type="String" label="SOrder/SItem (Delivery)" length="250" />
+    <field name="Delivery_Packing_List" type="String" label="Delivery (Packing List)" length="250" causesCalculate="true" />
+    <field name="Sorder_Sitem_Packing_List" type="String" label="Sorder/Sitem (Packing List)" length="250" />
+    <field name="Cantidad_Material" type="Decimal" label="Cantidad de Material" causesCalculate="true" />
+    <field name="Resultado_Validacion_Embarque_Id" type="Int32" allowNulls="false" default="((0))" label="Resultado Validacion Embarque Id">
+      <items style="Lookup" dataController="Resultado_Validacion_Embarque" dataValueField="Resultado_Validacion_Embarque_Id" dataTextField="Estatus_Validacion_Embarque" copy="" dataView="Resultado_Validacion_Embarque_LookupList" pageSize="15" />
+    </field>
+    <field name="Resultado_Validacion_Embarque" type="String" readOnly="true" label="Resultado Validación Embarque" length="250" />
+    <field name="Es_Correcto" type="Boolean" readOnly="true" label="Es Correcto" />
+    <field name="Es_Incorrecto" type="Boolean" readOnly="true" label="Es Incorrecto" />
+    <field name="Es_Correcto_En_Progreso" type="Boolean" readOnly="true" label="Es Correcto En Progreso" />
+    <field name="Es_Incorrecto_En_Progreso" type="Boolean" readOnly="true" label="Es Incorrecto En Progreso" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" dataView="Mensaje_Sistema_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transaccion_Escaneo" type="Guid" label="Transacción Escaneo" />
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje de Sistema" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="MensajeValidacionAplicada" type="String" allowQBE="false" allowSorting="false" label="Mensaje Validacion Aplicada" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Creado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Creado_Por=Usuario_Sistema" />
+    </field>
+    <field name="Folio_Etiqueta_Embarque" type="Int32" label=" Folio Etiqueta Embarque" isVirtual="true">
+      <items style="Lookup" dataController="Etiqueta_Embarque_Detalle" dataView="Etiqueta_Embarque_Detalle_LookUp" dataTextField="Folio_Etiqueta_Embarque_Detalle" dataValueField="Etiqueta_Embarque_Detalle_Id" />
+    </field>
+    <field name="Material_Tarima_Dos" type="String" label="Número de material en la tarima" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="SOrde_SItem_Tarima_Dos" type="String" label="SOrder SItem Tarima" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="SOrde_SItem_Packing_List" type="String" label="SOrder SItem Packing List" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="Folio_Etiqueta_Embarque_Tres" type="Int32" label=" Folio Etiqueta Embarque " isVirtual="true">
+      <items style="Lookup" dataController="Etiqueta_Embarque_Detalle" dataView="Etiqueta_Embarque_Detalle_LookUp" dataTextField="Folio_Etiqueta_Embarque_Detalle" dataValueField="Etiqueta_Embarque_Detalle_Id" />
+    </field>
+    <field name="Material_Tarima_Tres" type="String" label="Número de material en la tarima" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="SOrde_SItem_Tarima_Tres" type="String" label="SOrder SItem Tarima " isVirtual="true" length="250" causesCalculate="true" />
+    <field name="Delivery_Dos" type="Int64" label="Delivery " isVirtual="true">
+      <items style="Lookup" dataController="Delivery" dataView="Delivery_LookUp_List" dataTextField="Delivery" dataValueField="Delivery_Id" />
+    </field>
+    <field name="Resultado_Validacion" type="String" label="Resultado Validación" isVirtual="true" htmlEncode="false" />
+    <field name="Folio_Etiqueta_Embarque_SeccionUno" type="String" label="Folio Etiqueta" isVirtual="true" causesCalculate="true" />
+    <field name="Folio_Etiqueta_Embarque_SeccionDos" type="String" label="Folio Etiqueta Embarque Sección Dos" isVirtual="true" causesCalculate="true" />
+    <field name="Folio_Etiqueta_Embarque_SeccionTres" type="String" label="Folio Etiqueta Embarque Seccion Tres" causesCalculate="true" />
+    <field name="Delivery_SeccionTres" type="String" label="Delivery Seccion Tres" />
+    <field name="Evidencia_Escaneo_Validador_Embarque1" type="DataView" label="Evidencias y comentarios" contextFields="Transaccion_Escaneo = Transaccion_Escaneo">
+      <dataView controller="Evidencia_Escaneo_Validador_Embarque1" view="grid1" filterFields="Transaccion_Escaneo" />
+    </field>
+    <field name="Folio_Escaneo_Id" type="Int64" label="Folio Escaneo Id" isVirtual="true" />
+    <field name="Mostrar_Campos_Sistema" type="Boolean" label="Mostrar Campos Sistema" allowNulls="false" isVirtual="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Folio_Escaneo_Anterior" type="Int64" label="Folio Escaneo Anterior" isVirtual="true" />
+    <field name="Captura_Iniciada" type="Boolean" label="Captura Iniciada" isVirtual="true" allowNulls="false">
+      <items style="CheckBox" />
+    </field>
+    <field name="Sales_Order_Uno" type="String" label="Sales Order (Tarima)" isVirtual="true" causesCalculate="true" />
+    <field name="Sales_Item_Uno" type="String" label="línea de la sales order" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Order_Dos" type="String" label="Sales Order (Tarima)" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Item_Dos" type="String" label="línea de la sales order" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Order_Tres" type="String" label="Sales Order (Tarima)" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Item_Tres" type="String" label="línea de la sales order" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Order_Packing" type="String" label="Sales Order Packing" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Item_Packing" type="String" label="línea de la sales order Packing" causesCalculate="true" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Escaneo Validador Embarque" filter="Estatus_Registro_Id &lt;&gt; 0 AND Creado_Por_Id =  @BusinessRules_UserId AND Seccion_Capturada &gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Folio_Escaneo" columns="15" />
+        <dataField fieldName="Seccion_Capturada" columns="15" />
+        <dataField fieldName="Material_Tarima" />
+        <dataField fieldName="SOrde_SItem_Tarima" />
+        <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" />
+        <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+        <dataField fieldName="Material_Embarque" />
+        <dataField fieldName="SOrde_SItem_Emabarque" />
+        <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" />
+        <dataField fieldName="Delivery_Delivery" />
+        <dataField fieldName="Material_Delivery" />
+        <dataField fieldName="SOrde_SItem_Delivery" />
+        <dataField fieldName="Delivery_Packing_List" />
+        <dataField fieldName="Sorder_Sitem_Packing_List" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+        <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" />
+        <dataField fieldName="Transaccion_Escaneo" columns="15" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Es_Correcto" hidden="true" />
+        <dataField fieldName="Es_Incorrecto" hidden="true" />
+        <dataField fieldName="Es_Correcto_En_Progreso" hidden="true" />
+        <dataField fieldName="Es_Incorrecto_En_Progreso" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="Escaneo_Validador_Embarque_LookUp_List" type="Grid" commandId="command1" label="Escaneo Validador Embarque" filter="Estatus_Registro_Id IN (0,1) " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Escaneo_Validador_Embarque_Id" columns="15" />
+        <dataField fieldName="Seccion_Capturada" columns="15" />
+        <dataField fieldName="Material_Tarima" />
+        <dataField fieldName="SOrde_SItem_Tarima" />
+        <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" />
+        <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+        <dataField fieldName="Material_Embarque" />
+        <dataField fieldName="SOrde_SItem_Emabarque" />
+        <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" />
+        <dataField fieldName="Delivery_Delivery" />
+        <dataField fieldName="Material_Delivery" />
+        <dataField fieldName="SOrde_SItem_Delivery" />
+        <dataField fieldName="Delivery_Packing_List" />
+        <dataField fieldName="Sorder_Sitem_Packing_List" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+        <dataField fieldName="Transaccion_Escaneo" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Escaneo validador embarque">
+      <headerText>Escaneo validador embarque</headerText>
+      <categories>
+        <category id="c1" headerText="Escaneo validador embarque" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Tarima" />
+            <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" hyperlinkFormatString="~/pages/Etiqueta_Embarque_Detalle?Etiqueta_Embarque_Detalle_Id={Etiqueta_Embarque_Detalle_Id}&amp;_controller=Etiqueta_Embarque_Detalle&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Material_Embarque" />
+            <dataField fieldName="SOrde_SItem_Emabarque" />
+            <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" hyperlinkFormatString="~/pages/Delivery?Delivery_Id={Delivery_Id}&amp;_controller=Delivery&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" />
+            <dataField fieldName="Material_Delivery" />
+            <dataField fieldName="SOrde_SItem_Delivery" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="Es_Correcto" />
+            <dataField fieldName="Es_Incorrecto" />
+            <dataField fieldName="Es_Correcto_En_Progreso" />
+            <dataField fieldName="Es_Incorrecto_En_Progreso" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" />
+          </dataFields>
+          <visibility>
+            <expression test="false" type="ClientScript" />
+          </visibility>
+        </category>
+        <category headerText="Primera Validación" id="c2">
+          <dataFields>
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionUno" />
+            <dataField fieldName="Material_Tarima" />
+            <dataField fieldName="Sales_Order_Uno" columns="15" />
+            <dataField fieldName="Sales_Item_Uno" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Segunda Validación" id="c3">
+          <dataFields>
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionDos" />
+            <dataField fieldName="Material_Tarima_Dos" />
+            <dataField fieldName="SOrde_SItem_Tarima_Dos" hidden="true" />
+            <dataField fieldName="Sales_Order_Dos" />
+            <dataField fieldName="Sales_Item_Dos" />
+          </dataFields>
+        </category>
+        <category headerText="Tercera Validación" id="c5">
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Packing_List" hidden="true" />
+            <dataField fieldName="Sales_Order_Packing" />
+            <dataField fieldName="Sales_Item_Packing" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Delivery_SeccionTres" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionTres" />
+            <dataField fieldName="SOrde_SItem_Tarima_Tres" hidden="true" />
+            <dataField fieldName="Sales_Order_Tres" />
+            <dataField fieldName="Sales_Item_Tres" />
+            <dataField fieldName="Material_Tarima_Tres" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Resultado" id="c4">
+          <dataFields>
+            <dataField fieldName="Resultado_Validacion" rows="5" readOnly="true" textMode="Static" />
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hyperlinkFormatString="~/pages/Resultado_Validacion_Embarque?Resultado_Validacion_Embarque_Id={Resultado_Validacion_Embarque_Id}&amp;_controller=Resultado_Validacion_Embarque&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" readOnly="true" textMode="Static">
+              <visibility>
+                <expression test="$app.touch.contextDataView().get_isEditing() == false" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" readOnly="true" textMode="Static">
+              <visibility>
+                <expression test="$app.touch.contextDataView().get_isEditing() == false" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Mostrar_Campos_Sistema" hidden="true" />
+            <dataField fieldName="Seccion_Capturada" columns="15" readOnly="true" textMode="Static" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" readOnly="true" textMode="Static" />
+            <dataField fieldName="Folio_Escaneo_Anterior" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Folio_Escaneo_Id" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Captura_Iniciada">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+          </dataFields>
+        </category>
+        <category headerText="Evidencias" id="c6">
+          <dataFields>
+            <dataField fieldName="Evidencia_Escaneo_Validador_Embarque1" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Escaneo validador embarque">
+      <headerText>Nuevo Escaneo validador embarque</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Escaneo validador embarque" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Seccion_Capturada" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Material_Embarque" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Emabarque" hidden="true" />
+            <dataField fieldName="Material_Delivery" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Delivery" hidden="true" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" hidden="true" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" hidden="true" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+        <category headerText="Primera Validación" id="c2" collapsed="true">
+          <description><![CDATA[Se valida SO/Lin y Material de Etiqueta de Embarque y Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionUno" rows="5" />
+            <dataField fieldName="SOrde_SItem_Tarima" />
+            <dataField fieldName="Material_Tarima" />
+          </dataFields>
+        </category>
+        <category headerText="Segunda Validación" id="c3" collapsed="true">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" hidden="true" />
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Folio_Etiqueta_Embarque" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionDos" rows="5" />
+            <dataField fieldName="SOrde_SItem_Tarima_Dos" rows="5" />
+            <dataField fieldName="Material_Tarima_Dos" rows="5" />
+          </dataFields>
+        </category>
+        <category headerText="Tercera Validación" collapsed="true" id="c5">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Packing List Vs Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Packing_List" rows="5" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Delivery_Dos" columns="15" hidden="true" />
+            <dataField fieldName="Delivery_SeccionTres" rows="5" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Tres" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionTres" rows="5" />
+            <dataField fieldName="SOrde_SItem_Tarima_Tres" rows="5" />
+            <dataField fieldName="Material_Tarima_Tres" rows="5" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Resultado" id="c4">
+          <dataFields>
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hidden="true" />
+            <dataField fieldName="Resultado_Validacion" rows="5" />
+            <dataField fieldName="Evidencia_Escaneo_Validador_Embarque1" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="FormNuevo" type="Form" commandId="command1" label="Nuevo Escaneo validador embarque">
+      <headerText />
+      <categories>
+        <category headerText="Primera Validación" id="c2" collapsed="true" flow="NewColumn">
+          <description><![CDATA[Se valida SO/Lin y Material de Etiqueta de Embarque y Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionUno" />
+            <dataField fieldName="SOrde_SItem_Tarima" hidden="true" />
+            <dataField fieldName="Material_Tarima" />
+            <dataField fieldName="Sales_Order_Uno" columns="15" />
+            <dataField fieldName="Sales_Item_Uno" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Segunda Validación" id="c3" collapsed="true">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" hidden="true" />
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Folio_Etiqueta_Embarque" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionDos" />
+            <dataField fieldName="SOrde_SItem_Tarima_Dos" hidden="true" />
+            <dataField fieldName="Material_Tarima_Dos" />
+            <dataField fieldName="Sales_Order_Dos" />
+            <dataField fieldName="Sales_Item_Dos" />
+          </dataFields>
+        </category>
+        <category headerText="Tercera Validación" collapsed="true" id="c5">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Packing List Vs Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Packing_List" hidden="true" />
+            <dataField fieldName="Sales_Order_Packing" />
+            <dataField fieldName="Sales_Item_Packing" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Delivery_Dos" columns="15" hidden="true" />
+            <dataField fieldName="Delivery_SeccionTres" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Tres" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionTres" />
+            <dataField fieldName="SOrde_SItem_Tarima_Tres" hidden="true" />
+            <dataField fieldName="Sales_Order_Tres" />
+            <dataField fieldName="Sales_Item_Tres" />
+            <dataField fieldName="Material_Tarima_Tres" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Resultado" id="c4">
+          <dataFields>
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hidden="true" />
+            <dataField fieldName="Resultado_Validacion" rows="5" readOnly="true" textMode="Static" />
+            <dataField fieldName="Mostrar_Campos_Sistema" hidden="true" />
+            <dataField fieldName="Seccion_Capturada" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Transaccion_Escaneo" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Folio_Escaneo_Anterior" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Folio_Escaneo_Id" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Captura_Iniciada">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+          </dataFields>
+        </category>
+        <category headerText="Evidencias" id="c6" floating="true">
+          <dataFields>
+            <dataField fieldName="Evidencia_Escaneo_Validador_Embarque1" columns="15" tag="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none ">
+              <headerText>Evidencias y comentarios</headerText>
+            </dataField>
+          </dataFields>
+        </category>
+        <category id="c1" headerText="Nuevo Escaneo validador embarque">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Material_Embarque" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Emabarque" hidden="true" />
+            <dataField fieldName="Material_Delivery" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Delivery" hidden="true" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" hidden="true" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+          </dataFields>
+          <visibility>
+            <expression test="false" type="ClientScript" />
+          </visibility>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="SQL" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques,UsuarioEmpacador" headerText="&quot;Borrar&quot;" whenClientScript="[Es_Correcto_En_Progreso] == true || [Es_Incorrecto_En_Progreso] == true">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" whenLastCommandArgument="editForm1" whenClientScript="[Es_Correcto] == false" />
+      <action commandName="Custom" commandArgument="ExecCS001" headerText="&quot;Validar&quot;" id="a100" whenLastCommandName="New" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Validar&quot;" whenLastCommandName="New" id="a101" />
+      <action id="a2" commandName="SQL" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques, UsuarioEmpacador" headerText="&quot;Borrar&quot;" whenClientScript="[Es_Correcto] == false">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" roles="hidden" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="hidden" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="hidden" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" roles="hidden" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" roles="hidden" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" headerText="Guardar" roles="hidden" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS008" headerText="Guardar" whenLastCommandName="Edit" whenLastCommandArgument="FormNuevo" id="a106" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Validar&quot;" whenLastCommandName="Edit" id="a103" whenLastCommandArgument="FormNuevo" />
+      <action commandName="Custom" headerText="&quot;Nuevo Escaneo&quot;" id="a102" commandArgument="ExecJS006" whenLastCommandName="Edit" whenLastCommandArgument="FormNuevo" />
+      <action commandName="Custom" commandArgument="ExecJS007" headerText="&quot;Regresar&quot;" whenLastCommandName="Edit" whenLastCommandArgument="FormNuevo" id="a104" />
+      <action commandName="Custom" id="a105" headerText="&quot;regresar&quot;" whenLastCommandName="Select" whenLastCommandArgument="editForm1" commandArgument="ExecJS007" />
+      <action id="a107" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Validar&quot;" whenLastCommandName="Edit" id="a109" />
+      <action commandName="Custom" commandArgument="ExecJS007" headerText="&quot;Regresar&quot;" whenLastCommandName="Edit" id="a108" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS004" headerText="&quot;NUEVO&quot;" id="a300" whenView="grid1" causesValidation="false" />
+      <action commandName="Edit" commandArgument="FormNuevo" headerText="&quot;Abrir&quot;" id="a100" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="DeleteIcon" whenView="grid1" roles="Administrador,AdministradorEmbarques,UsuarioEmpacador" headerText="&quot;Borrar&quot;" whenClientScript="[Es_Correcto] == false">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" headerText="&quot;Guardar ag6a1&quot;" roles="hidden" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="SQL" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques, UsuarioEmpacador" headerText="&quot;Borrar&quot;" whenClientScript="[Es_Correcto] == false">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="After"><![CDATA[-- Insert/After
+UPDATE  
+   APP.Escaneo_Validador_Embarque 
+SET 
+   Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id
+--]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[--- Update/After
+UPDATE  
+   APP.Escaneo_Validador_Embarque 
+SET 
+   Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id
+--]]></rule>
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS001" type="Code" phase="After" />
+    <rule id="r103" commandName="Custom" commandArgument="ExecJS001" type="JavaScript" phase="Execute"><![CDATA[// Botón Mercedes
+
+this.preventDefault();
+fnDebug('Custom')
+var _Seccion_Capturada = [Seccion_Capturada];
+fnDebug('_Seccion_Capturada: ' + _Seccion_Capturada);
+// aun no se ah podido determinar la seccion capturada entonces tratar de obtenerla antes de la petición
+if (_Seccion_Capturada === undefined) {
+    agregarEventoValidadorEmbarques();
+    fnDebug('No se tiene el dato de la seccion capturada');
+
+    // sección capturada 1
+    var grupo = document.querySelector('div[data-category="c2"]');
+    var clase = grupo.getAttribute('class');
+    if (clase === undefined) clase = '';
+    if (!clase.includes('app-container-collapsed')) {
+        _Seccion_Capturada = 1;
+        $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 1);
+        fnDebug('Se detectó la sección 1 abierta');
+    } else {
+
+        // sección capturada 2
+        grupo = document.querySelector('div[data-category="c3"]');
+        clase = grupo.getAttribute('class');
+        if (clase === undefined) clase = '';
+        if (!clase.includes('app-container-collapsed')) {
+            _Seccion_Capturada = 2;
+            $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 2);
+            fnDebug('Se detectó la sección 2 abierta');
+        } else {
+
+            // sección capturada 3
+            grupo = document.querySelector('div[data-category="c5"]');
+            clase = grupo.getAttribute('class');
+            if (clase === undefined) clase = '';
+            if (!clase.includes('app-container-collapsed')) {
+                _Seccion_Capturada = 3;
+                $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 3);
+                fnDebug('Se detectó la sección 3 abierta');
+            } else {
+                fnDebug('NO fue posible detectar la sección');
+            }
+        }
+    }
+
+}
+
+var fnLimpiarFormulario = (escaneoId, vista, resultado) => {
+    if(vista == 'FormNuevo') {
+        $app.input.execute({
+            values: [
+                // Seccion 1
+                { name: 'Folio_Etiqueta_Embarque_SeccionUno', value: null }
+                , { name: 'SOrde_SItem_Tarima', value: null }
+                , { name: 'Material_Tarima', value: null }
+                , { name: 'Sales_Order_Uno', value: null }
+                , { name: 'Sales_Item_Uno', value: null }
+                // Seccion 2
+                , { name: 'Delivery_Delivery', value: null }
+                , { name: 'Folio_Etiqueta_Embarque_SeccionDos', value: null }
+                , { name: 'SOrde_SItem_Tarima_Dos', value: null }
+                , { name: 'Material_Tarima_Dos', value: null }
+                , { name: 'Sales_Order_Dos', value: null }
+                , { name: 'Sales_Item_Dos', value: null }
+                // Seccion 3
+                , { name: 'SOrde_SItem_Packing_List', value: null }
+                , { name: 'Delivery_Packing_List', value: null }
+                , { name: 'Delivery_SeccionTres', value: null }
+                , { name: 'Folio_Etiqueta_Embarque_SeccionTres', value: null }
+                , { name: 'SOrde_SItem_Tarima_Tres', value: null }
+                , { name: 'Material_Tarima_Tres', value: null }
+                , { name: 'Cantidad_Material', value: null }
+                , { name: 'Sales_Order_Tres', value: null }
+                , { name: 'Sales_Item_Tres', value: null }
+                , { name: 'Sales_Order_Packing', value: null }
+                , { name: 'Sales_Item_Packing', value: null }
+                // resultados
+                , { name: 'Resultado_Validacion', value: null }
+                //   ,{ name: 'Transaccion_Escaneo', value: null }
+                , { name: 'Folio_Escaneo_Id', value: null }
+                , { name: 'Folio_Escaneo_Anterior', value: escaneoId }
+                , { name: 'Captura_Iniciada', value: false }
+            ]
+            ,raiseCalculate: false
+        });
+    } else if (vista == 'editForm1') {
+        $app.input.execute({
+             values: [ { name: 'Resultado_Validacion', value: resultado } ]
+            ,raiseCalculate: false
+        });        
+    }
+}
+
+var fnAgregarEvidencia = (transaccion, folioEscaneo) => {
+    $app.touch.show({
+        controller: 'Evidencia_Escaneo_Validador_Embarque1',
+        startCommand: 'New',
+        startArgument: 'createForm2',
+        filter: [
+            { name: 'Transaccion_Escaneo', value: transaccion }
+        ],
+        defaultValues: [
+            { name: 'Transaccion_Escaneo', value: transaccion }
+            , { name: 'EscaneoValidadorEmbarqueId', value: folioEscaneo }
+    
+        ]
+    });
+}
+
+
+// Declaracion de variables sistema*
+var success = this.validateInput();
+var commandName = this.arguments().CommandName;
+var triggerFieldName = this.arguments().Trigger;
+var viewName = this.arguments().View;
+var _Validar = 1;
+// declaracion de variables finales
+
+
+// sección 1, 2, 3
+var _Folio_Etiqueta_Embarque;
+var _SOrden_SItem_Tarima;
+var _Sales_Order_Uno;
+var _Sales_Item_Uno;
+var _Sales_Order_Tres;
+var _Sales_Item_Tres;
+var _Sales_Order_Packing;
+var _Sales_Item_Packing;
+var _Material_Tarima;
+// Sección 2
+var _Delivery;
+// Exclusivos Sección 3
+var _SOrden_SItem_PackingLIst;
+var _Delivery_Packing_List;
+var _Cantidad;
+var soloNumeros = /^[0-9]+$/;
+var alfanumerico = /^[A-Za-z0-9]{2,18}$/;
+var _Folio_Escaneo_Id = [Folio_Escaneo_Id];
+var _Transaccion_Escaneo = [Transaccion_Escaneo];
+
+// dar valor por default delivery de sección 3 
+// [Delivery_SeccionTres] = [Delivery_Packing_List];
+$app.input.execute({
+    values: [ { name: 'Delivery_SeccionTres', value: [Delivery_Packing_List] } ]
+    ,raiseCalculate: false
+});
+
+
+if (_Seccion_Capturada !== undefined)
+{
+
+    if (_Seccion_Capturada === 1)
+    {
+        // Sección del paso uno Datos de sección
+        _Folio_Etiqueta_Embarque = [Folio_Etiqueta_Embarque_SeccionUno];
+        _SOrden_SItem_Tarima = [SOrde_SItem_Tarima];
+        _Material_Tarima = [Material_Tarima];
+        _Sales_Order_Uno=[Sales_Order_Uno];
+        _Sales_Item_Uno=[Sales_Item_Uno];
+        // El resto de campos queda null
+        if (_Folio_Etiqueta_Embarque == null || _Sales_Order_Uno == null || _Sales_Item_Uno == null || _Material_Tarima == null) {
+            // console.log("todo null");
+            $app.alert('Error para validación 1 complete los campos requeridos.');
+            _Validar = 0;
+        }// if(_Folio_Etiqueta_Embarque == null ||_Folio_Etiqueta_Embarque!== null && _SOrden_SItem_Tarima == null && _Material_Tarima==null)
+        else {
+            //console.log("algo capturaod");
+            //Validar formato de datos de sección.
+            if (_Folio_Etiqueta_Embarque !== undefined) { //console.log ("Variable sin definir");
+                if (_Folio_Etiqueta_Embarque.match(soloNumeros)) {
+                    fnDebug("Es numérico");
+                }
+                else {
+                    //console.log  ("No es numérico");
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El folio de embarque es númerico');
+                    $app.input.focus({ fieldName: 'Folio_Etiqueta_Embarque_SeccionUno' });
+                    //this.result.focus('Folio_Etiqueta_Embarque_SeccionUno', 'El tipo de dato requerido es númerico.');
+                }
+            } //if (_Folio_Etiqueta_Embarque !== undefined)
+
+            if (_Sales_Order_Uno !== undefined && _Sales_Order_Uno !==null) 
+            {
+                if (_Sales_Order_Uno.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Tarima es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Order' });  
+                }
+            }// if(_Sales_Order_Uno.match !== undefined)
+            if (_Sales_Item_Uno !== undefined && _Sales_Item_Uno !==null) 
+            {
+                if (_Sales_Item_Uno.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Tarima es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Itemo' });  
+                }
+            }// if (_Sales_Item_Uno !== undefined) 
+             if(_Sales_Order_Uno!== undefined && _Sales_Item_Uno !== undefined && _Validar == 1)
+             {
+                 _SOrden_SItem_Tarima=_Sales_Order_Uno+'/'+_Sales_Item_Uno;
+            }
+
+            if (_Material_Tarima !== undefined) {
+                // if (_Material_Tarima.match(alfanumerico) && _Material_Tarima.length <= 18) {
+                if (_Material_Tarima.length <= 18) {
+                    fnDebug("Material valido ");
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El Material consta de 18 caracteres máximo');
+                    $app.input.focus({ fieldName: 'Material_Tarima' });
+                    // this.result.focus('Material_Tarima', 'El tipo de dato requerido es alfanumérico y de 18 caracteres máximo.');
+                }
+            }//if(_Material_Tarima.match !== undefined)
+        }//else
+    }//if(_Seccion_Capturada === 1)
+
+    if (_Seccion_Capturada === 2) {
+        // Sección del paso dos
+        _Delivery = [Delivery_Delivery];
+        // Sección del paso uno pero en la sección dos
+        _Folio_Etiqueta_Embarque = [Folio_Etiqueta_Embarque_SeccionDos];
+        _SOrden_SItem_Tarima = [SOrde_SItem_Tarima_Dos];
+        _Sales_Item_Dos=[Sales_Item_Dos];
+        _Sales_Order_Dos=[Sales_Order_Dos];
+        _Material_Tarima = [Material_Tarima_Dos];
+
+
+        if (_Folio_Etiqueta_Embarque == null || _Delivery == null || _Sales_Order_Dos == null || _Sales_Item_Dos == null || _Material_Tarima == null) {
+            $app.alert('Error para validación 2 complete los campos requeridos.');
+            _Validar = 0;
+        }// if(_Folio_Etiqueta_Embarque ==null || _Delivery==null||_SOrden_SItem_Tarima==null ||_Material_Tarima==null)
+        else {
+            if (_Delivery !== undefined) { //console.log ("Variable sin definir");
+                if (_Delivery.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Delivery es dato númerico');
+                    $app.input.focus({ fieldName: 'Delivery_Delivery' });
+                    //  this.result.focus('Delivery_Delivery', 'El tipo de dato requerido es númerico.');
+                }
+            } //if ( _Delivery  !== undefined)
+            if (_Folio_Etiqueta_Embarque !== undefined) { //console.log ("Variable sin definir");
+                if (_Folio_Etiqueta_Embarque.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El folio de embarque es númerico');
+                    $app.input.focus({ fieldName: 'Folio_Etiqueta_Embarque_SeccionDos' });
+                    //this.result.focus('Folio_Etiqueta_Embarque_SeccionDos', 'El tipo de dato requerido es númerico.');
+                }
+            } //if (_Folio_Etiqueta_Embarque !== undefined)
+
+            if (_Sales_Order_Dos !== undefined && _Sales_Order_Dos !==null) 
+            {
+                if (_Sales_Order_Dos.match(soloNumeros)) {
+                  //  console.log("Es numérica la Sales Order");
+                    _Validar = 1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Tarima es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Order_Dos' });  
+                }
+            }// if(_Sales_Order_Uno.match !== undefined)
+            if (_Sales_Item_Dos !== undefined && _Sales_Item_Dos !==null) 
+            {
+                if (_Sales_Item_Dos.match(soloNumeros)) {
+                    _Validar=1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Tarima es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Item_Dos' });  
+                }
+            }// if (_Sales_Item_Uno !== undefined) 
+             if(_Sales_Order_Dos!== undefined && _Sales_Item_Dos !== undefined  && _Validar==1)
+             {
+                 _SOrden_SItem_Tarima=_Sales_Order_Dos+'/'+_Sales_Item_Dos;
+                 _Validar=1;
+            }
+    
+            if (_Material_Tarima !== undefined) {
+                // if(_Material_Tarima.match(alfanumerico) && _Material_Tarima.length <=18 ){
+                if (_Material_Tarima.length <= 18) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El Material consta de 18 caracteres máximo.');
+                    $app.input.focus({ fieldName: 'Material_Tarima_Dos' });
+                    // this.result.focus('Material_Tarima_Dos', 'El tipo de dato requerido es alfanumérico y de 18 caracteres máximo.');
+                }
+            }//if(_Material_Tarima.match !== undefined)
+
+        }//else
+
+
+    }//if(_Seccion_Capturada === 2){
+    
+    if (_Seccion_Capturada === 3) {
+        // obtener los datos del packing list
+        _SOrden_SItem_PackingLIst = [SOrde_SItem_Packing_List];
+        _Delivery_Packing_List = [Delivery_Packing_List];
+        _Cantidad = [Cantidad_Material];
+        // obtener datos del delivery en la seccion 3
+        //_Delivery = [Delivery_Packing_List]; // [Delivery_SeccionTres]; Se pidio por el usuario que este campo se omita en la sección tres
+        // obtener datos de la seccion1 pero en la seccion 3
+        // _Delivery = [Delivery_SeccionTres];
+        _Delivery = _Delivery_Packing_List;
+        _Folio_Etiqueta_Embarque = [Folio_Etiqueta_Embarque_SeccionTres];
+        _SOrden_SItem_Tarima = [SOrde_SItem_Tarima_Tres];
+        _Material_Tarima = [Material_Tarima_Tres];
+        _Sales_Item_Tres=[Sales_Item_Tres];
+        _Sales_Order_Tres=[Sales_Order_Tres];
+        _Sales_Order_Packing=[Sales_Order_Packing];
+        _Sales_Item_Packing=[Sales_Item_Packing];
+
+
+
+        if (_Cantidad==null||_Sales_Order_Packing == null ||_Sales_Item_Packing == null || _Delivery_Packing_List == null || _Delivery == null || _Folio_Etiqueta_Embarque == null || _Sales_Order_Tres == null ||_Sales_Item_Tres == null || _Material_Tarima == null) {
+            $app.alert('Error para validación 3 complete los campos requeridos.');
+            _Validar = 0;
+        }// if(_SOrden_SItem_PackingLIst==null||_Delivery_Packing_List==null||_Delivery==null||_Folio_Etiqueta_Embarque==null||_SOrden_SItem_Tarima==null||_Material_Tarima==null)
+        else {
+            if (_Sales_Order_Packing !== undefined && _Sales_Order_Packing !==null) 
+            {
+                if (_Sales_Order_Packing.match(soloNumeros)) {
+                  //  console.log("Es numérica la Sales Order");
+                    _Validar = 1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Packing es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Order_Packing' });  
+                }
+            }// if(_Sales_Order_Uno.match !== undefined)
+            if (_Sales_Item_Packing !== undefined && _Sales_Item_Packing !==null) 
+            {
+                if (_Sales_Item_Packing.match(soloNumeros)) {
+                    _Validar=1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Packing es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Item_Packing' });  
+                }
+            }// if (_Sales_Item_Uno !== undefined) 
+             if(_Sales_Order_Packing!== undefined && _Sales_Item_Packing !== undefined  && _Validar==1)
+             {
+                 _SOrden_SItem_PackingLIst=_Sales_Order_Packing+'/'+_Sales_Item_Packing;
+                 _Validar=1;
+            }
+
+            if (_Delivery_Packing_List !== undefined) { //console.log ("DElivery 1");
+                if (_Delivery_Packing_List.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El tipo de dato requerido para Delivery de Packing es númerico');
+                    $app.input.focus({ fieldName: 'Delivery_Packing_List' });
+                    //  this.result.focus('Delivery_Delivery', 'El tipo de dato requerido es númerico.');
+                }
+            } //if ( _Delivery  !== undefined)
+
+            if (_Delivery !== undefined) {
+                console.log("DElivery 2");
+                if (_Delivery.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    // console.log("no numerico");
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El tipo de dato requerido para Delivery es númerico');
+                    $app.input.focus({ fieldName: 'Delivery_SeccionTres' });
+                    //  this.result.focus('Delivery_Delivery', 'El tipo de dato requerido es númerico.');
+                }
+            } //if ( _Delivery  !== undefined)
+            if (_Folio_Etiqueta_Embarque !== undefined) { //console.log ("Variable sin definir");
+                if (_Folio_Etiqueta_Embarque.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El folio de embarque es númerico');
+                    $app.input.focus({ fieldName: 'Folio_Etiqueta_Embarque_SeccionTres' });
+                    //this.result.focus('Folio_Etiqueta_Embarque_SeccionDos', 'El tipo de dato requerido es númerico.');
+                }
+            } //if (_Folio_Etiqueta_Embarque !== undefined)
+
+            if (_Sales_Order_Tres !== undefined && _Sales_Order_Tres !==null) 
+            {
+                if (_Sales_Order_Tres.match(soloNumeros)) {
+                    _Validar = 1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Tarima es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Order_Tres' });  
+                }
+            }// if(_Sales_Order_Uno.match !== undefined)
+            if (_Sales_Item_Tres !== undefined && _Sales_Item_Tres !==null) 
+            {
+                if (_Sales_Item_Tres.match(soloNumeros)) {
+                    _Validar=1;
+                }
+                else 
+                {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Tarima es dato númerico.');
+                    $app.input.focus({ fieldName: 'Sales_Item_Tres' });  
+                }
+            }// if (_Sales_Item_Uno !== undefined) 
+            if(_Sales_Order_Tres!== undefined && _Sales_Item_Tres !== undefined  && _Validar==1)
+            {
+                _SOrden_SItem_Tarima=_Sales_Order_Tres+'/'+_Sales_Item_Tres;
+                _Validar=1;
+            }
+    
+            if (_Material_Tarima !== undefined) {
+                // if(_Material_Tarima.match(alfanumerico) && _Material_Tarima.length <=18){
+                if (_Material_Tarima.length <= 18) {
+                    _Validar = 1;
+                }
+                else {
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El Material consta de 18 caracteres máximo');
+                    $app.input.focus({ fieldName: 'Material_Tarima_Tres' });
+                    // this.result.focus('Material_Tarima_Dos', 'El tipo de dato requerido es alfanumérico y de 18 caracteres máximo.');
+                }
+            }//if(_Material_Tarima.match !== undefined)
+
+            if(_Cantidad==null||_Cantidad==0)
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Favor de especificar la cantidad de packing list');
+                $app.input.focus({ fieldName: 'Material_Tarima_Tres' });
+            }//
+        }//else
+
+    }//if(_Seccion_Capturada === 3){
+
+    //Pendiente ajustar parametros por cambios en el SP
+    if (_Validar == 1) {
+
+        validaretiquetas(
+            _Folio_Etiqueta_Embarque
+            , _Material_Tarima
+            , _SOrden_SItem_Tarima
+            , _Delivery
+            , _SOrden_SItem_PackingLIst
+            , _Delivery_Packing_List
+            //,[Delivery_Dos]
+            , _Cantidad
+            , 1
+            , _Seccion_Capturada
+            , _Folio_Escaneo_Id
+            , _Transaccion_Escaneo
+        ).done(function (data) {
+
+            // $appfactory.find('Selecion_Compresor_Estandar', 'Controller').sync();
+
+            if (data.rowsAffected == 1) {
+                fnDebug(data);
+
+                if (data.Escaneo_Validador_Embarque1.Mensaje_Sistema_Id === 1) {
+                    //Primero debe preguntar si desea generar evidencias--Aqui ya es un hecho que todo OK
+                    
+                    fnLimpiarFormulario(data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id, viewName, data.Escaneo_Validador_Embarque1.Resultado_Validacion);
+
+                    alertify.confirm(
+                        '<div class="alertifyModalHeader"><h1>Validación</h1></div>', 
+                        data.Escaneo_Validador_Embarque1.Resultado_Validacion + '<strong> ¿Desea capturar evidencia?</strong> ',
+                        function () {
+                            fnDebug('OK');
+                            fnAgregarEvidencia(data.Escaneo_Validador_Embarque1.Transaccion_Escaneo, data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id);
+                        }
+                        , function () {
+                            fnDebug('CANCEL');
+                        }).set('labels', { ok: 'SI', cancel: 'NO' });
+                }//  if(data.Escaneo_Validador_Embarque1.Mensaje_Sistema_Id===1)
+                else {
+
+                    if (data.Escaneo_Validador_Embarque1.Resultado_Validacion.includes('rincorrecto')) {//Significa que algo salio mal
+
+                        var txt;
+
+                        if(viewName == 'FormNuevo') {
+                            txt='<br><strong>Para generar un nuevo escaneo favor de dar clic en "Nuevo escaneo". </strong></br>'
+                        }
+                        else
+                        {
+                            txt='<br><strong>Para generar un nuevo escaneo cierre la ventana y vuelva a dar clic en "Nuevo escaneo". </strong></br>'
+                        }
+
+                        alertify.confirm('<div class="alertifyModalHeader"><h1>Validación</h1></div>', data.Escaneo_Validador_Embarque1.Resultado_Validacion +txt+ '<strong> ¿Desea capturar evidencia?</strong> ',
+                            function () {
+                                fnDebug('OK');
+                                fnAgregarEvidencia(data.Escaneo_Validador_Embarque1.Transaccion_Escaneo, data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id);
+                            }
+                            , function () {
+                                fnDebug('CANCEL');
+                            }
+                        ).set('labels', { ok: 'SI', cancel: 'NO' });
+
+                    }//if(data.Escaneo_Validador_Embarque1.Resultado_Validacion.includes('rincorrecto')
+                    else {
+                        alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', data.Escaneo_Validador_Embarque1.Resultado_Validacion,
+                            function () { fnDebug('OK'); });
+                    }
+                    //Si algo salio mal o aun no termina la captura permanecen estos datos para ligar escaneos.
+                    $app.input.execute({
+                        values: [
+                            { name: 'Resultado_Validacion', value: data.Escaneo_Validador_Embarque1.Resultado_Validacion }
+                            , { name: 'Transaccion_Escaneo', value: data.Escaneo_Validador_Embarque1.Transaccion_Escaneo }
+                            , { name: 'Folio_Escaneo_Id', value: data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id }
+                            , { name: 'Folio_Escaneo_Anterior', value: data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id }
+                            , { name: 'Captura_Iniciada', value: true }
+                        ]
+                        ,raiseCalculate: false
+                    });
+                }
+            }
+            else {
+                fnDebug("ELSE");
+            }
+        });
+    }//if(_Validar=1)
+}//if(_Seccion_Capturada !== undefined)
+else {
+    $app.alert('Indique la validación que desea aplicar.');
+}//boton]]></rule>
+    <rule id="r104" commandName="New" type="JavaScript" phase="After" view="createForm1"><![CDATA[const observer = new MutationObserver((mutationList) => {
+    mutationList.forEach((mutation) => {
+        // console.log(mutation.type);
+        // console.log(mutation.attributeName);
+        //console.log(mutation.target);
+        if(mutation.attributeName == 'class'){
+            var nodo = mutation.target;
+            var id_categoria = nodo.getAttribute('data-category');
+            var clase = nodo.getAttribute('class');
+            if(!clase.includes('app-container-collapsed')){
+                // significa que se descolapsó (se abrió)
+                var seccionCapturada;
+                var Num_Category = id_categoria.substring(1);
+                var cat
+                switch(Num_Category) {
+                    case '2':
+                        //seccionCapturada = 1;
+                        cat = document.querySelector('div[data-category="c3"]');
+                        cat.className = "app-container-collapsed";
+                        cat = document.querySelector('div[data-category="c5"]');
+                        cat.className = "app-container-collapsed";
+
+                        $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 1);
+                        $app.touch.contextDataView()._focus('Etiqueta_Embarque_Detalle_Id');
+                        break;
+                    case '3':
+                        //seccionCapturada = 2;
+                        cat = document.querySelector('div[data-category="c2"]');
+                        cat.className = "app-container-collapsed";
+                        cat = document.querySelector('div[data-category="c5"]');
+                        cat.className = "app-container-collapsed";
+
+                        $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 2);
+                        $app.touch.contextDataView()._focus('Delivery_Delivery');
+                        break;
+                    case '5':
+                        //seccionCapturada = 3;
+                        cat = document.querySelector('div[data-category="c2"]');
+                        cat.className = "app-container-collapsed";
+                        cat = document.querySelector('div[data-category="c3"]');
+                        cat.className = "app-container-collapsed";
+
+                        $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 3);
+                        $app.touch.contextDataView()._focus('SOrde_SItem_Packing_List');
+                        break;
+                    default:
+                        // seccionCapturada = null;
+                        break;
+                }
+                // if(seccionCapturada){
+                //     $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', seccionCapturada);
+                //     $app.touch.contextDataView()._focus('Seccion_Capturada');
+                // }
+            }
+        }
+    })
+
+});
+const categorias = document.querySelectorAll('div[data-category]');
+const observerOptions = {
+    attributes: true,
+    childList: false,
+    subtree: false
+}
+categorias.forEach((categoria) => {
+    observer.observe(categoria, observerOptions);
+});]]></rule>
+    <rule id="r105" commandName="Calculate" type="JavaScript" phase="Execute"><![CDATA[// calculate Mercedes
+
+this.preventDefault();
+fnDebug('Calculate');
+var _Seccion_Capturada = [Seccion_Capturada];
+fnDebug('_Seccion_Capturada: ' + _Seccion_Capturada);
+// aun no se ah podido determinar la seccion capturada entonces tratar de obtenerla antes de la petición
+if (_Seccion_Capturada === undefined) {
+    agregarEventoValidadorEmbarques();
+    fnDebug('No se tiene el dato de la seccion capturada');
+
+    // sección capturada 1
+    var grupo = document.querySelector('div[data-category="c2"]');
+    var clase = grupo.getAttribute('class');
+    if (clase === undefined) clase = '';
+    if (!clase.includes('app-container-collapsed')) {
+        _Seccion_Capturada = 1;
+        $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 1);
+        fnDebug('Se detectó la sección 1 abierta');
+    } else {
+
+        // sección capturada 2
+        grupo = document.querySelector('div[data-category="c3"]');
+        clase = grupo.getAttribute('class');
+        if (clase === undefined) clase = '';
+        if (!clase.includes('app-container-collapsed')) {
+            _Seccion_Capturada = 2;
+            $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 2);
+            fnDebug('Se detectó la sección 2 abierta');
+        } else {
+
+            // sección capturada 3
+            grupo = document.querySelector('div[data-category="c5"]');
+            clase = grupo.getAttribute('class');
+            if (clase === undefined) clase = '';
+            if (!clase.includes('app-container-collapsed')) {
+                _Seccion_Capturada = 3;
+                $app.touch.contextDataView().updateFieldValue('Seccion_Capturada', 3);
+                fnDebug('Se detectó la sección 3 abierta');
+            } else {
+                fnDebug('NO fue posible detectar la sección');
+            }
+        }
+    }
+
+}
+
+var fnLimpiarFormulario = (escaneoId) => {
+    $app.input.execute({
+        values: [
+            // Seccion 1
+            { name: 'Folio_Etiqueta_Embarque_SeccionUno', value: null }
+            , { name: 'SOrde_SItem_Tarima', value: null }
+            , { name: 'Material_Tarima', value: null }
+            , { name: 'Sales_Order_Uno', value: null }
+            , { name: 'Sales_Item_Uno', value: null }
+            // Seccion 2
+            , { name: 'Delivery_Delivery', value: null }
+            , { name: 'Folio_Etiqueta_Embarque_SeccionDos', value: null }
+            , { name: 'SOrde_SItem_Tarima_Dos', value: null }
+            , { name: 'Material_Tarima_Dos', value: null }
+            , { name: 'Sales_Order_Dos', value: null }
+            , { name: 'Sales_Item_Dos', value: null }
+            // Seccion 3
+            , { name: 'SOrde_SItem_Packing_List', value: null }
+            , { name: 'Delivery_Packing_List', value: null }
+            , { name: 'Delivery_SeccionTres', value: null }
+            , { name: 'Folio_Etiqueta_Embarque_SeccionTres', value: null }
+            , { name: 'SOrde_SItem_Tarima_Tres', value: null }
+            , { name: 'Material_Tarima_Tres', value: null }
+            , { name: 'Cantidad_Material', value: null }
+            , { name: 'Sales_Order_Tres', value: null }
+            , { name: 'Sales_Item_Tres', value: null }
+            , { name: 'Sales_Order_Packing', value: null }
+            , { name: 'Sales_Item_Packing', value: null }
+            // resultados
+            , { name: 'Resultado_Validacion', value: null }
+            //   ,{ name: 'Transaccion_Escaneo', value: null }
+            , { name: 'Folio_Escaneo_Id', value: null }
+            , { name: 'Folio_Escaneo_Anterior', value: escaneoId }
+            , { name: 'Captura_Iniciada', value: false }
+        ]
+        ,raiseCalculate: false
+    });
+}
+
+var fnAgregarEvidencia = (transaccion, folioEscaneo) => {
+    return $app.touch.show({
+        controller: 'Evidencia_Escaneo_Validador_Embarque1',
+        startCommand: 'New',
+        startArgument: 'createForm2',
+        filter: [
+            { name: 'Transaccion_Escaneo', value: transaccion }
+        ],
+        defaultValues: [
+            { name: 'Transaccion_Escaneo', value: transaccion }
+            , { name: 'EscaneoValidadorEmbarqueId', value: folioEscaneo }    
+        ]
+    });
+}
+
+
+
+// Declaracion de variables sistema*
+var success = this.validateInput();
+var commandName = this.arguments().CommandName;
+var triggerFieldName = this.arguments().Trigger;
+var viewName = this.arguments().View;
+var _Validar = 1;
+// declaracion de variables finales
+
+
+// sección 1, 2, 3
+var _Folio_Etiqueta_Embarque;
+var _SOrden_SItem_Tarima;
+var _Sales_Order_Uno;
+var _Sales_Item_Uno;
+var _Sales_Order_Tres;
+var _Sales_Item_Tres;
+var _Sales_Order_Packing;
+var _Sales_Item_Packing;
+var _Material_Tarima;
+// Sección 2
+var _Delivery;
+// Exclusivos Sección 3
+var _SOrden_SItem_PackingLIst;
+var _Delivery_Packing_List;
+var _Cantidad;
+var soloNumeros = /^[0-9]+$/;
+var alfanumerico = /^[A-Za-z0-9]{2,18}$/;
+var _Folio_Escaneo_Id = [Folio_Escaneo_Id];
+var _Transaccion_Escaneo = [Transaccion_Escaneo];
+
+// dar valor por default delivery de sección 3 
+// [Delivery_SeccionTres] = [Delivery_Packing_List];
+fnDebug('_Delivery_Packing_List: ' + [Delivery_Packing_List]);
+$app.input.execute({
+    values: [ { name: 'Delivery_SeccionTres', value: [Delivery_Packing_List] } ]
+    ,raiseCalculate: false
+});
+fnDebug('Delivery_SeccionTres: ' + [Delivery_SeccionTres]);
+
+
+if (_Seccion_Capturada !== undefined) 
+{
+
+    if (_Seccion_Capturada === 1)
+    {
+        // Sección del paso uno Datos de sección
+        _Folio_Etiqueta_Embarque = [Folio_Etiqueta_Embarque_SeccionUno];
+        _SOrden_SItem_Tarima = [SOrde_SItem_Tarima];
+        _Material_Tarima = [Material_Tarima];
+        _Sales_Order_Uno=[Sales_Order_Uno];
+        _Sales_Item_Uno=[Sales_Item_Uno];
+        //Validar formato de datos de sección.
+        if (_Folio_Etiqueta_Embarque !== undefined) { //console.log ("Variable sin definir");
+            if (_Folio_Etiqueta_Embarque.match(soloNumeros)) {
+                fnDebug("Es numérico");
+            }
+            else {
+                //console.log  ("No es numérico");
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El folio de embarque es númerico');
+                $app.input.focus({ fieldName: 'Folio_Etiqueta_Embarque_SeccionUno' });
+                //this.result.focus('Folio_Etiqueta_Embarque_SeccionUno', 'El tipo de dato requerido es númerico.');
+            }
+        } //if (_Folio_Etiqueta_Embarque !== undefined)
+        
+        if (_Sales_Order_Uno !== undefined && _Sales_Order_Uno !==null) 
+        {
+            if (_Sales_Order_Uno.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Tarima es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Order' });  
+            }
+        }// if(_Sales_Order_Uno.match !== undefined)
+        if (_Sales_Item_Uno !== undefined && _Sales_Item_Uno !==null) 
+        {
+            if (_Sales_Item_Uno.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Tarima es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Itemo' });  
+            }
+        }// if (_Sales_Item_Uno !== undefined) 
+        if(_Sales_Order_Uno!== undefined && _Sales_Item_Uno !== undefined && _Validar == 1)
+        {
+             _SOrden_SItem_Tarima=_Sales_Order_Uno+'/'+_Sales_Item_Uno;
+        }
+
+        if (_Material_Tarima !== undefined) {
+            // if(_Material_Tarima.match(alfanumerico) && _Material_Tarima.length <=18 ){
+            if (_Material_Tarima.length <= 18) {
+                fnDebug("Material valido ");
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El Material consta de 18 caracteres máximo');
+                $app.input.focus({ fieldName: 'Material_Tarima' });
+                // this.result.focus('Material_Tarima', 'El tipo de dato requerido es alfanumérico y de 18 caracteres máximo.');
+            }
+        }//if(_Material_Tarima.match !== undefined)
+        // El resto de campos queda null
+        if (_Folio_Etiqueta_Embarque == null || _Folio_Etiqueta_Embarque !== null && _SOrden_SItem_Tarima == null && _Material_Tarima == null) {
+            _Validar = 0;
+        }//  if(_Folio_Etiqueta_Embarque == null ||_Folio_Etiqueta_Embarque!== null && _SOrden_SItem_Tarima == null && _Material_Tarima==null)
+
+
+    }//if(_Seccion_Capturada === 1)
+
+    if (_Seccion_Capturada === 2) {
+        // Sección del paso dos
+        _Delivery = [Delivery_Delivery];
+        // Sección del paso uno pero en la sección dos
+        _Folio_Etiqueta_Embarque = [Folio_Etiqueta_Embarque_SeccionDos];
+        _SOrden_SItem_Tarima = [SOrde_SItem_Tarima_Dos];
+        _Sales_Item_Dos=[Sales_Item_Dos];
+        _Sales_Order_Dos=[Sales_Order_Dos];
+        _Material_Tarima = [Material_Tarima_Dos];
+        if (_Delivery !== undefined) { //console.log ("Variable sin definir");
+            if (_Delivery.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Delivery es dato númerico');
+                $app.input.focus({ fieldName: 'Delivery_Delivery' });
+                //  this.result.focus('Delivery_Delivery', 'El tipo de dato requerido es númerico.');
+            }
+        } //if ( _Delivery  !== undefined)
+        if (_Folio_Etiqueta_Embarque !== undefined) { //console.log ("Variable sin definir");
+            if (_Folio_Etiqueta_Embarque.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El folio de embarque es númerico');
+                $app.input.focus({ fieldName: 'Folio_Etiqueta_Embarque_SeccionDos' });
+                //this.result.focus('Folio_Etiqueta_Embarque_SeccionDos', 'El tipo de dato requerido es númerico.');
+            }
+        } //if (_Folio_Etiqueta_Embarque !== undefined)
+
+        if (_Sales_Order_Dos !== undefined && _Sales_Order_Dos !==null) 
+        {
+            if (_Sales_Order_Dos.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Tarima es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Order_Dos' });  
+            }
+        }// if(_Sales_Order_Uno.match !== undefined)
+        if (_Sales_Item_Dos !== undefined && _Sales_Item_Dos !==null) 
+        {
+            if (_Sales_Item_Dos.match(soloNumeros)) {
+                _Validar=1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Tarima es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Item_Dos' });  
+            }
+        }// if (_Sales_Item_Uno !== undefined) 
+         if(_Sales_Order_Dos!== undefined && _Sales_Item_Dos !== undefined  && _Validar==1)
+         {
+             _SOrden_SItem_Tarima=_Sales_Order_Dos+'/'+_Sales_Item_Dos;
+             _Validar=1;
+        }
+
+        if (_Material_Tarima !== undefined) {
+            // if(_Material_Tarima.match(alfanumerico) && _Material_Tarima.length <=18 ){
+            if (_Material_Tarima.length <= 18) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El Material consta de 18 caracteres máximo.');
+                $app.input.focus({ fieldName: 'Material_Tarima_Dos' });
+                // this.result.focus('Material_Tarima_Dos', 'El tipo de dato requerido es alfanumérico y de 18 caracteres máximo.');
+            }
+        }//if(_Material_Tarima.match !== undefined)
+        // El resto de campos queda null
+        if (_Delivery == null || _Folio_Etiqueta_Embarque == null && _Delivery !== null) {
+            fnDebug("null");
+            _Validar = 0;
+        }// if(_Folio_Etiqueta_Embarque == null)
+
+    }//if(_Seccion_Capturada === 2){
+
+    if (_Seccion_Capturada === 3) {
+        // obtener los datos del packing list
+        _SOrden_SItem_PackingLIst = [SOrde_SItem_Packing_List];
+        _Delivery_Packing_List = [Delivery_Packing_List];
+        fnDebug('_Delivery_Packing_List: ' + _Delivery_Packing_List);
+        _Cantidad = [Cantidad_Material];
+        // obtener datos del delivery en la seccion 3
+        //_Delivery = [Delivery_Packing_List]; // [Delivery_SeccionTres]; Se pidio por el usuario que este campo se omita en la sección tres
+        // obtener datos de la seccion1 pero en la seccion 3
+        _Delivery = _Delivery_Packing_List; // [Delivery_SeccionTres];
+        fnDebug('_Delivery: '+ _Delivery)
+        _Folio_Etiqueta_Embarque = [Folio_Etiqueta_Embarque_SeccionTres];
+        _SOrden_SItem_Tarima = [SOrde_SItem_Tarima_Tres];
+        _Material_Tarima = [Material_Tarima_Tres];
+        _Sales_Item_Tres=[Sales_Item_Tres];
+        _Sales_Order_Tres=[Sales_Order_Tres];
+        _Sales_Order_Packing=[Sales_Order_Packing];
+        _Sales_Item_Packing=[Sales_Item_Packing];
+
+        if (_Sales_Order_Packing !== undefined && _Sales_Order_Packing !==null) 
+        {
+            if (_Sales_Order_Packing.match(soloNumeros)) {
+              //  console.log("Es numérica la Sales Order");
+                _Validar = 1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Packing es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Order_Packing' });  
+            }
+        }// if(_Sales_Order_Uno.match !== undefined)
+        if (_Sales_Item_Packing !== undefined && _Sales_Item_Packing !==null) 
+        {
+            if (_Sales_Item_Packing.match(soloNumeros)) {
+                _Validar=1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Packing es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Item_Packing' });  
+            }
+        }// if (_Sales_Item_Uno !== undefined) 
+        if(_Sales_Order_Packing!== undefined && _Sales_Item_Packing !== undefined  && _Validar==1)
+        {
+             _SOrden_SItem_PackingLIst=_Sales_Order_Packing+'/'+_Sales_Item_Packing;
+             _Validar=1;
+        }
+
+        if (_Delivery_Packing_List !== undefined) { //console.log ("DElivery 1");
+            if (_Delivery_Packing_List.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El tipo de dato requerido para Delivery de Packing es númerico');
+                $app.input.focus({ fieldName: 'Delivery_Packing_List' });
+                //  this.result.focus('Delivery_Delivery', 'El tipo de dato requerido es númerico.');
+            }
+        } //if ( _Delivery  !== undefined)
+
+        if (_Delivery !== undefined) {
+            fnDebug("DElivery 2");
+            if (_Delivery.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El tipo de dato requerido para Delivery es númerico');
+                $app.input.focus({ fieldName: 'Delivery_SeccionTres' });
+                //  this.result.focus('Delivery_Delivery', 'El tipo de dato requerido es númerico.');
+            }
+        } //if ( _Delivery  !== undefined)
+        if (_Folio_Etiqueta_Embarque !== undefined) { //console.log ("Variable sin definir");
+            if (_Folio_Etiqueta_Embarque.match(soloNumeros)) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El folio de embarque es númerico');
+                $app.input.focus({ fieldName: 'Folio_Etiqueta_Embarque_SeccionTres' });
+            }
+        } //if (_Folio_Etiqueta_Embarque !== undefined)
+
+        if (_Sales_Order_Tres !== undefined && _Sales_Order_Tres !==null) 
+        {
+            if (_Sales_Order_Tres.match(soloNumeros)) {
+              //  console.log("Es numérica la Sales Order");
+                _Validar = 1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Order de Tarima es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Order_Tres' });  
+            }
+        }// if(_Sales_Order_Uno.match !== undefined)
+        if (_Sales_Item_Tres !== undefined && _Sales_Item_Tres !==null) 
+        {
+            if (_Sales_Item_Tres.match(soloNumeros)) {
+                _Validar=1;
+            }
+            else 
+            {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Sales Item de Tarima es dato númerico.');
+                $app.input.focus({ fieldName: 'Sales_Item_Tres' });  
+            }
+        }// if (_Sales_Item_Uno !== undefined) 
+        if(_Sales_Order_Tres!== undefined && _Sales_Item_Tres !== undefined  && _Validar==1)
+        {
+            _SOrden_SItem_Tarima=_Sales_Order_Tres+'/'+_Sales_Item_Tres;
+            _Validar=1;
+        }
+
+        if (_Material_Tarima !== undefined) {
+            // if(_Material_Tarima.match(alfanumerico) && _Material_Tarima.length <=18 ){
+            if (_Material_Tarima.length <= 18) {
+                _Validar = 1;
+            }
+            else {
+                _Validar = 0;
+                alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'El Material consta de 18 caracteres máximo');
+                $app.input.focus({ fieldName: 'Material_Tarima_Tres' });
+                // this.result.focus('Material_Tarima_Dos', 'El tipo de dato requerido es alfanumérico y de 18 caracteres máximo.');
+            }
+        }//if(_Material_Tarima.match !== undefined)
+
+        if (_SOrden_SItem_PackingLIst == null && _Delivery_Packing_List == null && _Delivery == null || 
+            _SOrden_SItem_PackingLIst !== null && _Delivery_Packing_List !== null && _Delivery == null) 
+        {//console.log("null pack");
+            fnDebug('_SOrden_SItem_PackingLIst: ' + _SOrden_SItem_PackingLIst);
+            fnDebug('_Delivery_Packing_List: ' + _Delivery_Packing_List);
+            fnDebug('_Delivery: ' + _Delivery);
+            _Validar = 0;
+        }// if(_Folio_Etiqueta_Embarque == null)
+
+        if(_Cantidad==!undefined && _Cantidad!==null)
+        {
+        if(_Cantidad==null||_Cantidad==0)
+        {
+            _Validar = 0;
+            alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Favor de especificar la cantidad de packing list');
+            $app.input.focus({ fieldName: 'Cantidad_Material' });
+        }//
+        }
+        if(_Cantidad==0)
+        {
+            _Validar = 0;
+            alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'La cantidad especificada no puede ser cero.');
+            $app.input.focus({ fieldName: 'Cantidad_Material' });
+        }//
+        //Ultimo filtro determinar si solo le falta capturar la cantidad
+        if(_Folio_Etiqueta_Embarque !==null && _Folio_Etiqueta_Embarque !==undefined
+            && _Material_Tarima !==null && _Material_Tarima!==undefined
+            &&  _SOrden_SItem_Tarima!==null && _SOrden_SItem_Tarima !==undefined
+            && _Delivery !==null && _Delivery!==undefined
+            && _SOrden_SItem_PackingLIst!==null && _SOrden_SItem_PackingLIst!==undefined 
+            && _Delivery_Packing_List !==null && _Delivery_Packing_List !==undefined
+            )
+            {
+               console.log('IF de todo completo?');
+                //Significa que ya todos los canmpos contienen info falta cantidad
+                if(_Cantidad==undefined ||_Cantidad==null )
+                {
+                
+                    _Validar = 0;
+                    alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', 'Favor de especificar la cantidad.');
+                    $app.input.focus({ fieldName: 'Cantidad_Material' });
+                
+
+                }
+            }
+
+            if(_SOrden_SItem_PackingLIst==null|| _SOrden_SItem_PackingLIst==undefined && _Delivery==null || _Delivery==undefined)
+            {
+                // si los datos no estan completos debe impedir que ejecute el sp 
+                _Validar = 0;
+            }
+    }//if(_Seccion_Capturada === 3){
+    
+    fnDebug('Validar: ' + _Validar);
+
+    if (_Validar == 1) {
+
+        validaretiquetasSinObligatoriedad(
+            _Folio_Etiqueta_Embarque
+            , _Material_Tarima
+            , _SOrden_SItem_Tarima
+            , _Delivery
+            , _SOrden_SItem_PackingLIst
+            , _Delivery_Packing_List
+            //,[Delivery_Dos]
+            , _Cantidad
+            , _Validar
+            , _Seccion_Capturada
+            , _Folio_Escaneo_Id
+            , _Transaccion_Escaneo
+        ).done(function (data) {
+
+            if (data.rowsAffected == 1) {
+                fnDebug(data);
+
+                if (data.Escaneo_Validador_Embarque1.Mensaje_Sistema_Id === 1) {
+                    //Primero debe preguntar si desea generar evidencias--Aqui ya es un hecho que todo OK
+                    alertify.confirm('<div class="alertifyModalHeader"><h1>Validación</h1></div>', data.Escaneo_Validador_Embarque1.Resultado_Validacion + '<strong> ¿Desea capturar evidencia?</strong> ',
+                        function () {
+                            fnDebug('OK');
+                            //Genera create de evidencias
+                            fnAgregarEvidencia(data.Escaneo_Validador_Embarque1.Transaccion_Escaneo, data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id);
+                            //Realiza limpieza de campos
+                            if(viewName == 'FormNuevo') {
+                                fnLimpiarFormulario(data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id);
+                            }
+                            
+                        }
+                        , function () {
+                            fnDebug('CANCEL');
+                            //No desea evidencias raliza limpieza de campos
+                            if(viewName == 'FormNuevo') {
+                                fnLimpiarFormulario(data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id);
+                            }
+                        }).set('labels', { ok: 'SI', cancel: 'NO' });
+                    //  alertify.confirm('labels changed!').set('labels', {ok:'Alright!', cancel:'Naa!'}); 
+                }//  if(data.Escaneo_Validador_Embarque1.Mensaje_Sistema_Id===1)
+                else {
+
+                    if (data.Escaneo_Validador_Embarque1.Resultado_Validacion.includes('rincorrecto')) {//Significa que algo salio mal
+
+                        var txt;
+
+                        if(viewName == 'FormNuevo') {
+                            txt='<br><strong>Para generar un nuevo escaneo favor de dar clic en "Nuevo escaneo". </strong></br>'
+                        }
+                        else
+                        {
+                            txt='<br><strong>Para generar un nuevo escaneo cierre la ventana y vuelva a dar clic en "Nuevo escaneo". </strong></br>'
+                        }
+
+                        alertify.confirm('<div class="alertifyModalHeader"><h1>Validación</h1></div>', data.Escaneo_Validador_Embarque1.Resultado_Validacion +txt+' <strong> ¿Desea capturar evidencia?</strong> ',
+                            function () {
+                                fnDebug('OK');
+                                fnAgregarEvidencia(data.Escaneo_Validador_Embarque1.Transaccion_Escaneo, data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id);
+                            }
+                            , function () {
+                                fnDebug('CANCEL');
+                            }
+                        ).set('labels', { ok: 'SI', cancel: 'NO' });
+
+                    }//if(data.Escaneo_Validador_Embarque1.Resultado_Validacion.includes('rincorrecto')
+                    else {
+                        
+                        alertify.alert('<div class="alertifyModalHeader"><h1>Validación</h1></div>', data.Escaneo_Validador_Embarque1.Resultado_Validacion, function () { fnDebug('OK'); });
+
+                    }
+                    //Si algo salio mal o aun no termina la captura permanecen estos datos para ligar escaneos.
+                    $app.input.execute({
+                        values: [
+                            { name: 'Resultado_Validacion', value: data.Escaneo_Validador_Embarque1.Resultado_Validacion }
+                            , { name: 'Transaccion_Escaneo', value: data.Escaneo_Validador_Embarque1.Transaccion_Escaneo }
+                            , { name: 'Folio_Escaneo_Id', value: data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id }
+                            , { name: 'Folio_Escaneo_Anterior', value: data.Escaneo_Validador_Embarque1.Folio_Escaneo_Id }
+                            , { name: 'Captura_Iniciada', value: true }
+                        ]
+                        ,raiseCalculate: false
+                    });
+
+                }
+
+
+            } else {
+                fnDebug("ELSE");
+            }
+
+        });
+    }//if(_Validar=1)\
+    else {
+        // No se invoca al SP, pero si se realizaron cambios en los primeros campos, se debe guardar en la base de datos
+
+        _Sales_Order_Uno = (_Sales_Order_Uno == undefined) ? '' : _Sales_Order_Uno;
+        _Sales_Item_Uno = (_Sales_Item_Uno == undefined) ? '' : _Sales_Item_Uno;
+
+        switch (_Seccion_Capturada) {
+            case 1:
+                $app.execute({
+                    controller: 'Escaneo_Validador_Embarque1',
+                    command: 'Update',
+                    values: [
+                        { name: 'Escaneo_Validador_Embarque_Id', value: _Folio_Escaneo_Id },
+                        { name: 'Seccion_Capturada', newValue: _Seccion_Capturada },
+                        // ------------
+                        { name: 'Folio_Etiqueta_Embarque_Detalle', newValue: _Folio_Etiqueta_Embarque },
+                        { name: 'Material_Tarima', newValue: _Material_Tarima },
+                        { name: 'SOrde_SItem_Tarima', newValue: _Sales_Order_Uno + '/' + _Sales_Item_Uno },
+                        // { name: 'Delivery_Delivery', newValue: _Delivery },
+                        // { name: 'Delivery_Packing_List', newValue: _Delivery_Packing_List },
+                        // { name: 'Cantidad_Material', newValue: _Cantidad },
+                        // { name: 'Sorder_Sitem_Packing_List', newValue: _Sales_Order_Packing + '/' + _Sales_Item_Packing },
+                    ],
+                    done: function (result) {
+                        fnDebug(result);
+                    }
+                })
+                
+                break;
+            case 2:
+                $app.execute({
+                    controller: 'Escaneo_Validador_Embarque1',
+                    command: 'Update',
+                    values: [
+                        { name: 'Escaneo_Validador_Embarque_Id', value: _Folio_Escaneo_Id },
+                        { name: 'Seccion_Capturada', newValue: _Seccion_Capturada },
+                        // ------------
+                        { name: 'Folio_Etiqueta_Embarque_Detalle', newValue: _Folio_Etiqueta_Embarque },
+                        { name: 'Material_Tarima', newValue: _Material_Tarima },
+                        { name: 'SOrde_SItem_Tarima', newValue: _Sales_Order_Uno + '/' + _Sales_Item_Uno },
+                        // ------------
+                        { name: 'Delivery_Delivery', newValue: _Delivery },
+                        // { name: 'Delivery_Packing_List', newValue: _Delivery_Packing_List },
+                        // { name: 'Cantidad_Material', newValue: _Cantidad },
+                        // { name: 'Sorder_Sitem_Packing_List', newValue: _Sales_Order_Packing + '/' + _Sales_Item_Packing },
+                    ],
+                    done: function (result) {
+                        fnDebug(result);
+                    }
+                })
+            
+                break;
+            case 3:
+                _Sales_Order_Packing = (_Sales_Order_Packing == undefined) ? '' : _Sales_Order_Packing;
+                _Sales_Item_Packing = (_Sales_Item_Packing == undefined) ? '' : _Sales_Item_Packing;
+
+                $app.execute({
+                    controller: 'Escaneo_Validador_Embarque1',
+                    command: 'Update',
+                    values: [
+                        { name: 'Escaneo_Validador_Embarque_Id', value: _Folio_Escaneo_Id },
+                        { name: 'Seccion_Capturada', newValue: _Seccion_Capturada },
+                        // ------------
+                        { name: 'Folio_Etiqueta_Embarque_Detalle', newValue: _Folio_Etiqueta_Embarque },
+                        { name: 'Material_Tarima', newValue: _Material_Tarima },
+                        { name: 'SOrde_SItem_Tarima', newValue: _Sales_Order_Uno + '/' + _Sales_Item_Uno },
+                        // ------------
+                        { name: 'Delivery_Delivery', newValue: _Delivery },
+                        // ------------
+                        { name: 'Sorder_Sitem_Packing_List', newValue: _Sales_Order_Packing + '/' + _Sales_Item_Packing },
+                        { name: 'Delivery_Packing_List', newValue: _Delivery_Packing_List },
+                        { name: 'Cantidad_Material', newValue: _Cantidad }
+                    ],
+                    done: function (result) {
+                        fnDebug(result);
+                    }
+                });
+            
+                break;
+        
+            default:
+                break;
+        }
+    }
+
+}
+]]></rule>
+    <rule id="r106" commandName="Custom" commandArgument="ExecCS002" type="Code" phase="After" name="ImplicaSinValidarObligatoriedad" />
+    <rule id="r107" commandName="Custom" type="JavaScript" phase="Execute" commandArgument="ExecJS004"><![CDATA[fnDebug('START ExecJS004 Before');
+
+[Transaccion_Escaneo] = null;
+fnDebug("Transaccion_Escaneo = null")
+
+fnOpenModalNuevoValidador([Transaccion_Escaneo]);
+
+fnDebug('END ExecJS004 Before');
+
+]]></rule>
+    <rule id="r109" commandName="Custom" type="JavaScript" phase="After" commandArgument="ExecJS006"><![CDATA[fnDebug('START ExecJS006');
+this.preventDefault();
+
+
+
+$app.execute({
+    controller: 'Escaneo_Validador_Embarque1'
+    , command: 'Insert'
+    , values: [
+        { name: 'Escaneo_Validador_Embarque_Id', value: null }
+        , { name: 'Transaccion_Escaneo', newValue: null }
+    ]
+    , done: function (result) {
+        fnDebug("Insert result : ");
+        fnDebug(result);
+
+        // Consultar la transacción del rgistro creado
+        $app.execute({
+            controller: 'Escaneo_Validador_Embarque1',
+            view: 'Escaneo_Validador_Embarque_LookUp_List',
+            pageSize: 1,
+            filter: [
+                { field: 'Escaneo_Validador_Embarque_Id', operator: '=', value: result.Escaneo_Validador_Embarque1.Escaneo_Validador_Embarque_Id }
+            ],
+            done: function (result) {
+                fnDebug("result select:");
+                fnDebug("result select Escaneo_Validador_Embarque_Id:" + result.Escaneo_Validador_Embarque1[0].Escaneo_Validador_Embarque_Id);
+                fnDebug("result select Transaccion_Escaneo:" + result.Escaneo_Validador_Embarque1[0].Transaccion_Escaneo);
+
+                $app.input.execute({
+                    values: [
+                        // Seccion 1
+                        { name: 'Folio_Etiqueta_Embarque_SeccionUno', value: null }
+                        , { name: 'SOrde_SItem_Tarima', value: null }
+                        , { name: 'Material_Tarima', value: null }
+                        , { name: 'Sales_Order_Uno', value: null }
+                        , { name: 'Sales_Item_Uno', value: null }
+                        // Seccion 2
+                        , { name: 'Delivery_Delivery', value: null }
+                        , { name: 'Folio_Etiqueta_Embarque_SeccionDos', value: null }
+                        , { name: 'SOrde_SItem_Tarima_Dos', value: null }
+                        , { name: 'Material_Tarima_Dos', value: null }
+                        , { name: 'Sales_Order_Dos', value: null }
+                        , { name: 'Sales_Item_Dos', value: null }
+                        // Seccion 3
+                        , { name: 'SOrde_SItem_Packing_List', value: null }
+                        , { name: 'Delivery_Packing_List', value: null }
+                        , { name: 'Delivery_SeccionTres', value: null }
+                        , { name: 'Folio_Etiqueta_Embarque_SeccionTres', value: null }
+                        , { name: 'SOrde_SItem_Tarima_Tres', value: null }
+                        , { name: 'Material_Tarima_Tres', value: null }
+                        , { name: 'Cantidad_Material', value: null }
+                        , { name: 'Sales_Order_Packing', value: null }
+                        , { name: 'Sales_Item_Packing', value: null }
+                        , { name: 'Sales_Order_Tres', value: null }
+                        , { name: 'Sales_Item_Tres', value: null }
+
+                        // resultados
+                        , { name: 'Resultado_Validacion', value: null }
+                        , { name: 'Transaccion_Escaneo', value: result.Escaneo_Validador_Embarque1[0].Transaccion_Escaneo }
+                        , { name: 'Folio_Escaneo_Id', value: result.Escaneo_Validador_Embarque1[0].Escaneo_Validador_Embarque_Id }
+                        , { name: 'Folio_Escaneo_Anterior', value:  result.Escaneo_Validador_Embarque1[0].Escaneo_Validador_Embarque_Id}
+                        , { name: 'Captura_Iniciada', value: false }
+                    ]
+                    ,raiseCalculate: false
+                });
+
+
+            }
+        });
+
+    }
+});
+
+
+// var Nueva_Transaccion = eaton.createGuid();
+// $app.touch.contextDataView().updateFieldValue('Transaccion_Escaneo', Nueva_Transaccion);
+
+
+
+fnDebug('END ExecJS006');]]></rule>
+    <rule id="r110" commandName="Custom" commandArgument="ExecJS007" type="JavaScript" phase="Execute"><![CDATA[fnDebug("Custom ExecJS007...");
+$app.touch.contextDataView().discard();
+//$app.touch.contextDataView().cancel();
+]]></rule>
+    <rule id="r111" commandName="Select" commandArgument="grid1" type="JavaScript" phase="After"><![CDATA[var r = $appfactory.find('Escaneo_Validador_Embarque1', 'Controller');
+if (r._multiSelect == false) {
+  	fnDebug("Activando la multiselección...");
+	r.multiSelect('Multiple');
+	r.refresh();
+}
+
+]]></rule>
+    <rule id="r108" commandName="Select" type="JavaScript" phase="After" commandArgument="editForm1" view="editForm1"><![CDATA[fnDebug("Edit After JS")
+
+
+var mostrarSeccionCapturada = (categoria, SeccionCapturada) => {
+    // colapsa las 3 secciones principales de captura
+    fnResetSeccion_Capturada();
+    // Descolapsar la seccion correcta
+    grupo = document.querySelector('div[data-category="' + categoria + '"]');
+    grupo.classList.remove("app-container-collapsed");
+    switch (SeccionCapturada) {
+        case 1:
+            // document.querySelector('div[data-category="c2"]').style.display = 'none';
+            document.querySelector('div[data-category="c3"]').style.display = 'none';
+            document.querySelector('div[data-category="c5"]').style.display = 'none';
+            break;
+        case 2:
+            document.querySelector('div[data-category="c2"]').style.display = 'none';
+            // document.querySelector('div[data-category="c3"]').style.display = 'none';
+            document.querySelector('div[data-category="c5"]').style.display = 'none';
+            break;
+        case 3:
+            document.querySelector('div[data-category="c2"]').style.display = 'none';
+            document.querySelector('div[data-category="c3"]').style.display = 'none';
+            // document.querySelector('div[data-category="c5"]').style.display = 'none';
+            break;
+        default:
+            break;
+    }
+}
+
+var fnPersonalizarBtnCloseEdit = () => {
+    fnDebug("Personalizando botón close...");
+    // identificar el botón natural de COT y removerlo
+    btn = document.querySelector('.app-btn.app-btn4.app-btn-close');
+    if(!btn) return;
+    padre = btn.parentNode;
+    padre.removeChild(btn);
+    // crear un nuevo botón muy parecido al original y agregarlo al html
+    var nuevoBtn = document.createElement("span");
+    nuevoBtn.className = 'custom-btn custom-btn4 custom-btn-close'
+    padre.appendChild(nuevoBtn);
+
+    var cerrar = () => {
+        fnDebug("Se dió clic en el botón [X]");
+        var actionPath;
+        if($app.touch.contextDataView().get_isEditing() == true){
+            actionPath = 'a[data-action-path="ag2/a108"]';
+        } else {
+            actionPath =  'a[data-action-path="ag2/a105"]'; // No se esta editando, solo visualizando la informacion
+        }
+        regresar = document.querySelector(actionPath);
+        regresar.click()
+    }
+
+    nuevoBtn.addEventListener('click', cerrar);
+    nuevoBtn.addEventListener('touchend', cerrar);
+
+}
+
+
+var _Seccion_Capturada = [Seccion_Capturada];
+var _CategoryId;
+
+var _SOrde_SItem_Tarima = [SOrde_SItem_Tarima];
+var arraySOEmbarque = _SOrde_SItem_Tarima.toString().split('/');
+var _Sales_Order_Tarima = (arraySOEmbarque.length > 0) ? parseInt(arraySOEmbarque[0]) : '';
+var _Sales_Item_Tarima = (arraySOEmbarque.length > 1) ? parseInt(arraySOEmbarque[1]) : '';
+_Sales_Order_Tarima = (isNaN(_Sales_Order_Tarima)) ? '' : _Sales_Order_Tarima ;
+_Sales_Item_Tarima = (isNaN(_Sales_Item_Tarima)) ? '' : _Sales_Item_Tarima;
+
+var _Folio_Etiqueta_Embarque_Detalle = [Folio_Etiqueta_Embarque_Detalle]
+_Folio_Etiqueta_Embarque_Detalle = (_Folio_Etiqueta_Embarque_Detalle == undefined) ? '' : _Folio_Etiqueta_Embarque_Detalle.toString();
+
+
+switch (_Seccion_Capturada) {
+    case 1:
+        $app.input.execute({
+            values: [
+                 { name: 'Folio_Etiqueta_Embarque_SeccionUno', value: _Folio_Etiqueta_Embarque_Detalle }
+                // ,{ name: 'Material_Tarima', value: [Material_Tarima] } este campo se guarda directamente en una columna de la tabla
+                ,{ name: 'Sales_Order_Uno', value: _Sales_Order_Tarima.toString() }
+                ,{ name: 'Sales_Item_Uno', value: _Sales_Item_Tarima.toString() }
+                // Campos de sistema
+                ,{ name: 'Folio_Escaneo_Anterior', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Folio_Escaneo_Id', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Captura_Iniciada', value: true }
+            ]
+            ,raiseCalculate: false
+        });
+        _CategoryId = 'c2';
+        break;
+    case 2:
+        $app.input.execute({
+            values: [
+                 //  { name: 'Delivery_Delivery', value: [] } Este valor se guarda directamente en un campo de la tabla
+                 { name: 'Folio_Etiqueta_Embarque_SeccionDos', value: _Folio_Etiqueta_Embarque_Detalle }
+                ,{ name: 'Material_Tarima_Dos', value: [Material_Tarima] }
+                ,{ name: 'Sales_Order_Dos', value: _Sales_Order_Tarima.toString() }
+                ,{ name: 'Sales_Item_Dos', value: _Sales_Item_Tarima.toString() }
+                // Campos de sistema
+                ,{ name: 'Folio_Escaneo_Anterior', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Folio_Escaneo_Id', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Captura_Iniciada', value: true }
+            ]
+            ,raiseCalculate: false
+        });
+        _CategoryId = 'c3';
+        break;
+    case 3:
+
+        // obtener datos de SalesOrder en packing list
+        var _SOrde_SItem_Packing = [Sorder_Sitem_Packing_List];
+        _SOrde_SItem_Packing = (_SOrde_SItem_Packing == undefined) ? '' : _SOrde_SItem_Packing ;
+        var arraySOPacking = _SOrde_SItem_Packing.toString().split('/');
+        var _Sales_Order_Packing = (arraySOPacking.length > 0) ? parseInt(arraySOPacking[0]) : '';
+        var _Sales_Item_Packing = (arraySOPacking.length > 1) ? parseInt(arraySOPacking[1]) : '';
+        _Sales_Order_Packing = (isNaN(_Sales_Order_Packing)) ? '' : _Sales_Order_Packing ;
+        _Sales_Item_Packing = (isNaN(_Sales_Item_Packing)) ? '' : _Sales_Item_Packing;
+
+        $app.input.execute({
+            values: [
+                 { name: 'Sales_Order_Packing', value: _Sales_Order_Packing.toString() }
+                ,{ name: 'Sales_Item_Packing', value: _Sales_Item_Packing.toString() }
+                // ,{ name: 'Delivery_Packing', value:  } // Se guarda directamente en un campo de la tabla
+                ,{ name: 'Folio_Etiqueta_Embarque_SeccionTres', value: _Folio_Etiqueta_Embarque_Detalle }
+                ,{ name: 'Sales_Order_Tres', value: _Sales_Order_Tarima.toString() }
+                ,{ name: 'Sales_Item_Tres', value: _Sales_Item_Tarima.toString() }
+                ,{ name: 'Material_Tarima_Tres', value: [Material_Tarima] }
+                // ,{ name: 'Cantida_Material', value:  } // se garda directamente en el campo
+                // Campos de sistema
+                ,{ name: 'Folio_Escaneo_Anterior', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Folio_Escaneo_Id', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Captura_Iniciada', value: true }
+            ]
+            ,raiseCalculate: false
+        });
+        _CategoryId = 'c5';
+        break;
+    default:
+        _CategoryId = '';
+        fnDebug('No se seleccionó la seccion capturada')
+        break;
+}
+
+
+mostrarSeccionCapturada(_CategoryId, _Seccion_Capturada);
+nuevoModal = fnPersonalizarBtnCloseEdit();
+if (nuevoModal != false) {
+  	// cuando la funcion devuevlve un false es porque ya se agrego el boton custo, y entonces tambien los eventos
+	addRemplazarValoresMaterial();
+}
+
+]]></rule>
+  </businessRules>
+</dataController>

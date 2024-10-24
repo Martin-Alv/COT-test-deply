@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite(10)", "WebSite\", "{A471F807-3CA5-463E-8D13-29789D34F346}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58355"
+		Debug.AspNetCompiler.PhysicalPath = "WebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58355\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58355"
+		Release.AspNetCompiler.PhysicalPath = "WebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58355\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58355"
+		SlnRelativePath = "WebSite\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code On Time Items", "Code On Time Items", "{EB62C7EA-B276-4266-A607-59E001B1210A}"
+	ProjectSection(SolutionItems) = preProject
+		ClientLibrary.en-US.txt = ClientLibrary.en-US.txt
+		ClientLibrary.es-MX.txt = ClientLibrary.es-MX.txt
+		DataAquarium.Project.xml = DataAquarium.Project.xml
+		DataAquarium.Version.xml = DataAquarium.Version.xml
+		Sync.BWD010-everardo-rodriguez.xml = Sync.BWD010-everardo-rodriguez.xml
+		Sync.BWD05-lidia.xml = Sync.BWD05-lidia.xml
+		Sync.BWD06-arturo.xml = Sync.BWD06-arturo.xml
+		Sync.DESKTOP-D0KKECA-Cruz.xml = Sync.DESKTOP-D0KKECA-Cruz.xml
+		Sync.DESKTOP-E855I77-Everardo.xml = Sync.DESKTOP-E855I77-Everardo.xml
+		Sync.DESKTOP-F84MGT6-luisc.xml = Sync.DESKTOP-F84MGT6-luisc.xml
+		Sync.DESKTOP-MQUMRNS-saags.xml = Sync.DESKTOP-MQUMRNS-saags.xml
+		Sync.LAPTOP-SPDO7LKS-LENOVO.xml = Sync.LAPTOP-SPDO7LKS-LENOVO.xml
+		Sync.MXMO4WHP6046996-E0449938.xml = Sync.MXMO4WHP6046996-E0449938.xml
+		Sync.YOSSA-Yosadara.xml = Sync.YOSSA-Yosadara.xml
+		Sync.LAPTOP-OD9HQS7T-Aigamy.xml = Sync.LAPTOP-OD9HQS7T-Aigamy.xml
+		Sync.LAPTOP-M0EEH109-Bernardo.xml = Sync.LAPTOP-M0EEH109-Bernardo.xml
+		Sync.IVAN-TREJO-Ivan-Trejo.xml = Sync.IVAN-TREJO-Ivan-Trejo.xml
+		Sync.DESKTOP-GHCRUMV-SAGITARIO.xml = Sync.DESKTOP-GHCRUMV-SAGITARIO.xml
+		Sync.DESKTOP-0R4QDT4-garci.xml = Sync.DESKTOP-0R4QDT4-garci.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A471F807-3CA5-463E-8D13-29789D34F346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A471F807-3CA5-463E-8D13-29789D34F346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E786284-E1D2-4C53-A3C3-6222A126DEDA}
+	EndGlobalSection
+EndGlobal

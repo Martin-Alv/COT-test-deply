@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Subtipo_Solicitud" alias="Subtipo_Solicitud" created="2019-08-26T16:03:37" modified="2019-08-26T16:07:41" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="458" y="190">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="453" y="37">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Subtipo_Solicitud_Id" fieldName="Subtipo_Solicitud_Id" label="Subtipo Solicitud Id" />
+    <column name="Subtipo_Solicitud" fieldName="Subtipo_Solicitud" label="Subtipo Solicitud" />
+    <column name="Es_Solicitud_Mat_Normal" fieldName="Es_Solicitud_Mat_Normal" label="Es Solicitud Mat Normal" />
+    <column name="Es_Solicitud_Mat_Pickeo_Incan" fieldName="Es_Solicitud_Mat_Pickeo_Incan" label="Es Solicitud Mat Pickeo Incan" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Creado_Por" />
+    <column name="Usuario_Sistema" fieldName="CreadoPorusuarioSistema" label="Creado Porusuario Sistema" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Actualizado_Por_Id" fieldName="Actualizado_Por_Id" label="Actualizado Por Id" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro_Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Semaforo_Rango_Valor" alias="Semaforo_Rango_Valor" created="2018-10-18T00:55:48" modified="2019-01-17T19:48:05" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Semaforo_" parentTableSchema="APP" parentTableName="Semaforo" x="1005" y="21">
+      <foreignKeyColumn columnName="Semaforo_Id" parentColumnName="Semaforo_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="49" y="444">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="858" y="516">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="452" y="520">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Color_Texto" parentTableSchema="APP" parentTableName="Color" x="595" y="87">
+      <foreignKeyColumn columnName="Color_Texto_Id" parentColumnName="Color_Id" />
+    </foreignKey>
+    <foreignKey id="Color_Fondo_Texto" parentTableSchema="APP" parentTableName="Color" x="649" y="278">
+      <foreignKeyColumn columnName="Color_Fondo_Texto_Id" parentColumnName="Color_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Semaforo_Rango_Valor_Id" fieldName="Semaforo_Rango_Valor_Id" label="Semáforo Rango Valor Id" />
+    <column name="Semaforo_Id" fieldName="Semaforo_Id" label="Semáforo Id" aliasColumnName="Semaforo" aliasForeignKey="Semaforo_" />
+    <column name="Semaforo" fieldName="Semaforo" label="Semáforo" foreignKey="Semaforo_" />
+    <column name="Rango_Inicio" fieldName="Rango_Inicio" label="Rango Inicio" />
+    <column name="Rango_Fin" fieldName="Rango_Fin" label="Rango Fin" />
+    <column name="Valor_Cuantitativo" fieldName="Valor_Cuantitativo" label="Valor Cuantitativo" />
+    <column name="Valor_Cualitativo" fieldName="Valor_Cualitativo" label="Valor Cualitativo" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Color_Texto_Id" fieldName="Color_Texto_Id" label="Color Texto Id" aliasColumnName="Nombre_Ingles" aliasForeignKey="Color_Texto" />
+    <column name="Nombre_Ingles" fieldName="Color_Texto" label="Color Texto" foreignKey="Color_Texto" />
+    <column name="Color_Fondo_Texto_Id" fieldName="Color_Fondo_Texto_Id" label="Color Fondo Texto Id" aliasColumnName="Nombre_Ingles" aliasForeignKey="Color_Fondo_Texto" />
+    <column name="Nombre_Ingles" fieldName="Color_Fondo_Texto" label="Color de Fondo Texto" foreignKey="Color_Fondo_Texto" />
+  </columns>
+</dataModel>

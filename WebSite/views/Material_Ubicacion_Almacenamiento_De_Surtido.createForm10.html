@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        //Obtenemos el valor para Cantidad_Material_A_Solicitar
+       /* setTimeout(function () {
+            var cant_Mat_Restante_Por_Solicitar = $('[data-field="Cantidad_Mat_Restante_Por_Solicitar"] .app-field-data').text();
+            if (debug === 1) {
+                console.log("cant_Mat_Restante_Por_Solicitar: " + cant_Mat_Restante_Por_Solicitar);
+            }
+            $("#Cantidad_Material_A_Solicitar").val(parseFloat(cant_Mat_Restante_Por_Solicitar));
+        }, 1000)*/
+
+        $(document).ready(function () {
+            $('#Cantidad_Material_Entregado').numpad({
+                hidePlusMinusButton: true,//ocultamos el negativo
+                hideDecimalButton: false
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid table-responsive">
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Ubicación de Surtido</span>
+            <span data-control="field" data-field="Ubicacion_Almacenamiento_De_Surtido_Id" class="form-control sp">[Ubicacion_Almacenamiento_De_Surtido_Id]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">* Cantidad de Material Entregado:</span>
+            <input type="number" min="0" max="99999" id="muas_Cantidad_Material_Entregado" value="0" class="inputValorIncrementarDecrementar" required />
+            <input type="button" class="btnIncrementar" id="incrementar" value="+" onclick="incrementarDecrementar('+', 'muas_Cantidad_Material_Entregado', 0)" />
+            <input type="button" class="btnIncrementar" id="decrementar" value="-" onclick="incrementarDecrementar('-', 'muas_Cantidad_Material_Entregado', 0)" />
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Unidad Material Entregado:</span>
+            <span data-control="field" data-field="Unidad_Material_Entregado_Id" class="form-control sp">[Unidad_Material_Entregado_Id]</span>
+        </div>
+
+        <!--div data-container="row">
+        <span data-control="label" class="label label-primary">Ubicación Almacenamiento de Surtido:</span>
+        <span data-control="field" data-field="Ubicacion_Almacenamiento_De_Surtido_Id" class="form-control sp">[Ubicacion_Almacenamiento_De_Surtido_Id]</span>
+    </div-->
+    </div>
+</body>
+</html>

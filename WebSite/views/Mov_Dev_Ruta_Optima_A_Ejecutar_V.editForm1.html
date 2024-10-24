@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+        $(document).ready(function () {
+            $('#Cantidad_Material_Devuelto').numpad({
+                hidePlusMinusButton: true,//ocultamos el negativo
+                hideDecimalButton: false
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid table-responsive">
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Material</span>
+            <span data-control="field" data-field="Devolucion_Material" class="form-control sp">[Devolucion_Material]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Descripción de Material</span>
+            <span data-control="field" data-field="Devolucion_Material_Desc" class="form-control sp">[Devolucion_Material_Desc]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Cantidad de Material a Devolver:</span>
+            <span data-control="field" data-field="Cantidad_A_Devolver" class="form-control sp">[Cantidad_A_Devolver]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Ubicación de Almacenamiento:</span>
+            <span data-control="field" data-field="Devolucion_En_Ubicacion_Almacenamiento_Id" class="form-control sp">[Devolucion_En_Ubicacion_Almacenamiento_Id]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">* Cantidad de Material Devuelto:</span>
+            <input type="number" min="0" max="99999" id="Cantidad_Material_Devuelto" value="0" class="inputValorIncrementarDecrementar" required />
+            <input type="button" class="btnIncrementar" id="incrementar" value="+" onclick="incrementarDecrementar('+', 'Cantidad_Material_Devuelto', 0)" />
+            <input type="button" class="btnIncrementar" id="decrementar" value="-" onclick="incrementarDecrementar('-', 'Cantidad_Material_Devuelto', 0)" />
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Unidad Material Devuelto:</span>
+            <span data-control="field" data-field="Unidad_Material_Devuelto_Id" class="form-control sp">[Unidad_Material_Devuelto_Id]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Folio Material Ubicación Stock:</span>
+            <span data-control="field" data-field="Material_Ubicacion_Stock_Id" class="form-control sp">[Material_Ubicacion_Stock_Id]</span>
+        </div>
+    </div>
+</body>
+</html>

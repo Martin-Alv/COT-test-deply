@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Movimiento_Ruta_Optima_Ubicacion_Almacenamiento" alias="Movimiento_Ruta_Optima_Ubicacion_Almacenamiento" created="2019-07-12T03:00:19" modified="2021-06-01T11:02:42" x="20" y="49" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Movimiento_Ruta_Optima" parentTableSchema="APP" parentTableName="Movimiento_Ruta_Optima" x="755" y="31">
+      <foreignKeyColumn columnName="Movimiento_Ruta_Optima_Id" parentColumnName="Movimiento_Ruta_Optima_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Movimiento_" parentTableSchema="APP" parentTableName="Tipo_Movimiento" x="408" y="651">
+      <foreignKeyColumn columnName="Tipo_Movimiento_Id" parentColumnName="Tipo_Movimiento_Id" />
+    </foreignKey>
+    <foreignKey id="Devolucion_Material_" parentTableSchema="APP" parentTableName="Material" x="483" y="907">
+      <foreignKeyColumn columnName="Devolucion_Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Devolucion_Ubicacion_Almacenamiento_" parentTableSchema="APP" parentTableName="Ubicacion_Almacenamiento" x="1252" y="20">
+      <foreignKeyColumn columnName="Devolucion_Ubicacion_Almacenamiento_Id" parentColumnName="Ubicacion_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Unidad_Material_Devuelto_" parentTableSchema="APP" parentTableName="Unidad_Material" x="423" y="107">
+      <foreignKeyColumn columnName="Unidad_Material_Devuelto_Id" parentColumnName="Unidad_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Transferencia_Material_" parentTableSchema="APP" parentTableName="Material" x="1168" y="564">
+      <foreignKeyColumn columnName="Transferencia_Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Transferencia_Ubicacion_Almacenamiento_" parentTableSchema="APP" parentTableName="Ubicacion_Almacenamiento" x="1168" y="818">
+      <foreignKeyColumn columnName="Transferencia_Ubicacion_Almacenamiento_Id" parentColumnName="Ubicacion_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Unidad_Material_Transferido_" parentTableSchema="APP" parentTableName="Unidad_Material" x="1601" y="57">
+      <foreignKeyColumn columnName="Unidad_Material_Transferido_Id" parentColumnName="Unidad_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="1631" y="295">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="179" y="793">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="40" y="637">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Capturado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="576" y="397">
+      <foreignKeyColumn columnName="Movimiento_Capturado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Movimiento_Ruta_Optima_Ubicacion_Almacenamiento_Id" fieldName="Movimiento_Ruta_Optima_Ubicacion_Almacenamiento_Id" label="Movimiento Ruta Optima Ubicacion Almacenamiento Id" />
+    <column name="Movimiento_Ruta_Optima_Id" fieldName="Movimiento_Ruta_Optima_Id" label="Movimiento Ruta Optima Id" aliasColumnName="Tmp_Mov_Ruta_Optima_Transaccion_Id" aliasForeignKey="Movimiento_Ruta_Optima" />
+    <column name="Tmp_Mov_Ruta_Optima_Transaccion_Id" fieldName="Movimiento_Ruta_OptimaTmp_Mov_Ruta_Optima_Transaccion_Id" label="Movimiento Ruta Optima Tmp Mov Ruta Optima Transaccion Id" foreignKey="Movimiento_Ruta_Optima" />
+    <column name="Tipo_Movimiento_Id" fieldName="Tipo_Movimiento_Id" label="Tipo Movimiento Id" aliasColumnName="Tipo_Movimiento" aliasForeignKey="Tipo_Movimiento_" />
+    <column name="Tipo_Movimiento" fieldName="Tipo_Movimiento" label="Tipo Movimiento" foreignKey="Tipo_Movimiento_" />
+    <column name="Devolucion_Material_Id" fieldName="Devolucion_Material_Id" label="Devolucion Material Id" aliasColumnName="Material" aliasForeignKey="Devolucion_Material_" />
+    <column name="Material" fieldName="Devolucion_Material" label="Devolucion Material" foreignKey="Devolucion_Material_" />
+    <column name="Devolucion_Ubicacion_Almacenamiento_Id" fieldName="Devolucion_Ubicacion_Almacenamiento_Id" label="Devolucion Ubicacion Almacenamiento Id" aliasColumnName="Ubicacion_Almacenamiento" aliasForeignKey="Devolucion_Ubicacion_Almacenamiento_" />
+    <column name="Cantidad_Devuelto" fieldName="Cantidad_Devuelto" label="Cantidad Devuelto" />
+    <column name="Unidad_Material_Devuelto_Id" fieldName="Unidad_Material_Devuelto_Id" label="Unidad Material Devuelto Id" aliasColumnName="Unidad_Material" aliasForeignKey="Unidad_Material_Devuelto_" />
+    <column name="Unidad_Material" fieldName="Unidad_Material_Devuelto" label="Unidad Material Devuelto" foreignKey="Unidad_Material_Devuelto_" />
+    <column name="Transferencia_Material_Id" fieldName="Transferencia_Material_Id" label="Transferencia Material Id" aliasColumnName="Material" aliasForeignKey="Transferencia_Material_" />
+    <column name="Material" fieldName="Transferencia_Material" label="Transferencia Material" foreignKey="Transferencia_Material_" />
+    <column name="Transferencia_Ubicacion_Almacenamiento_Id" fieldName="Transferencia_Ubicacion_Almacenamiento_Id" label="Transferencia Ubicacion Almacenamiento Id" aliasColumnName="Ubicacion_Almacenamiento" aliasForeignKey="Transferencia_Ubicacion_Almacenamiento_" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Transferencia_Ubicacion_Almacenamiento" label="Transferencia Ubicacion Almacenamiento" foreignKey="Transferencia_Ubicacion_Almacenamiento_" />
+    <column name="Cantidad_Transferido" fieldName="Cantidad_Transferido" label="Cantidad Transferido" />
+    <column name="Unidad_Material_Transferido_Id" fieldName="Unidad_Material_Transferido_Id" label="Unidad Material Transferido Id" aliasColumnName="Unidad_Material" aliasForeignKey="Unidad_Material_Transferido_" />
+    <column name="Unidad_Material" fieldName="Unidad_Material_Transferido" label="Unidad Material Transferido" foreignKey="Unidad_Material_Transferido_" />
+    <column name="Movimiento_Capturado_Por_Id" fieldName="Movimiento_Capturado_Por_Id" label="Movimiento Capturado Por Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Capturado_Por" />
+    <column name="Usuario_Sistema" fieldName="Capturado_Por" label="Capturado Por" foreignKey="Capturado_Por" />
+    <column name="Es_Capturado" fieldName="Es_Capturado" label="Es Capturado" />
+    <column name="Fecha_Captura_Movimiento" fieldName="Fecha_Captura_Movimiento" label="Fecha Captura Movimiento" format="g" />
+    <column name="Captura_Transaccion_Id" fieldName="Captura_Transaccion_Id" label="Captura Transaccion Id" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Devolucion_Ubicacion_Almacenamiento" label="Devolucion Ubicacion Almacenamiento" foreignKey="Devolucion_Ubicacion_Almacenamiento_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Material_Ubicacion_Stock_Id" fieldName="Material_Ubicacion_Stock_Id" label="Folio Material Ubicación Stock" />
+    <column name="Esta_En_BCSAP" fieldName="Esta_En_Bcsap" label="Esta En Bcsap" />
+  </columns>
+</dataModel>

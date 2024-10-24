@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Etiqueta_Perfil_Material_V" alias="Etiqueta_Perfil_Material_V" created="2021-07-27T11:27:12" modified="2021-08-02T16:58:47" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Etiqueta_Id" fieldName="Etiqueta_Id" label="Etiqueta Id" />
+    <column name="Numero_Etiqueta" fieldName="Numero_Etiqueta" label="Numero Etiqueta" />
+    <column name="URL_Codigo_QR_Etiqueta" fieldName="UrlCodigoQREtiqueta" label="Url Codigo QR Etiqueta" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Cantidad" fieldName="Cantidad" label="Cantidad" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Tipo_Material" fieldName="Tipo_Material" label="Tipo Material" />
+    <column name="Clase_Material" fieldName="Clase_Material" label="Clase Material" />
+    <column name="Material_Empaque" fieldName="Material_Empaque" label="Material Empaque" />
+    <column name="URL_Codigo_Material" fieldName="URL_Codigo_Material" label="URL Codigo Material" />
+    <column name="URL_Codigo_Cantidad" fieldName="URL_Codigo_Cantidad" label="URL Codigo Cantidad" />
+    <column name="URL_Codigo_Numero_Orden_Produccion" fieldName="URL_Codigo_Numero_Orden_Produccion" label="URL Codigo Numero Orden Produccion" />
+    <column name="Mostrar_Codigo_Material" fieldName="Mostrar_Codigo_Material" label="Mostrar Codigo Material" />
+    <column name="Mostar_Codigo_Cantidad" fieldName="Mostar_Codigo_Cantidad" label="Mostar Codigo Cantidad" />
+    <column name="Mostrar_Codigo_Orden" fieldName="Mostrar_Codigo_Orden" label="Mostrar Codigo Orden" />
+  </columns>
+</dataModel>

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Ubicacion_Almacenamiento" conflictDetection="overwriteChanges" label="Ubicacion Almacenamiento" handler="eaton.Rules.Ubicacion_AlmacenamientoBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Ubicacion_Almacenamiento"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Ubicacion_Almacenamiento"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Ubicacion_Almacenamiento"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Tipo_Ubicacion"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Ubicacion_Almacenamiento"."Tipo_Ubicacion_Id" "Tipo_Ubicacion_Id"
+	,"Ubicacion_Almacenamiento"."Aplica_Para_Ruta_Optima" "Aplica_Para_Ruta_Optima"
+	,"Registrado_Desde"."Registrado_Desde" "Registrado_Desde"
+	,"Ubicacion_Almacenamiento"."Registrado_Desde_Id" "Registrado_Desde_Id"
+from "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Ubicacion_Almacenamiento"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Ubicacion_Almacenamiento"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Ubicacion_Almacenamiento"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Tipo_Ubicacion" "Tipo_Ubicacion" on "Ubicacion_Almacenamiento"."Tipo_Ubicacion_Id" = "Tipo_Ubicacion"."Tipo_Ubicacion_Id"
+	left join "APP"."Registrado_Desde" "Registrado_Desde" on "Ubicacion_Almacenamiento"."Registrado_Desde_Id" = "Registrado_Desde"."Registrado_Desde_Id"
+]]></text>
+    </command>
+    <command id="Ubicacion_Almacenamiento_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Ubicacion_Almacenamiento_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Ubicacion Almacenamiento Id" readOnly="true" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" showInSummary="true" allowNulls="false" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Clave Tipo Ubicacion" />
+    <field name="Tipo_Ubicacion_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Ubicacion Id" showInSummary="true">
+      <items style="Lookup" dataController="Tipo_Ubicacion" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" dataView="Tipo_Ubicacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Aplica_Para_Ruta_Optima" type="Boolean" allowNulls="false" default="((0))" label="Aplica Para Ruta Optima">
+      <items style="CheckBox" />
+    </field>
+    <field name="Registrado_Desde" type="String" readOnly="true" label="Registrado Desde" length="250" />
+    <field name="Registrado_Desde_Id" type="Int16" label="Registrado Desde Id">
+      <items style="Lookup" dataController="Registrado_Desde" dataValueField="Registrado_Desde_Id" dataTextField="Registrado_Desde" copy="Registrado_Desde=Registrado_Desde" dataView="Registrado_Desde_LookUp_List" pageSize="15" />
+    </field>
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Ubicacion Almacenamiento" showInSelector="false" filter=" Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" aliasFieldName="Clave_Tipo_Ubicacion" />
+        <dataField fieldName="Aplica_Para_Ruta_Optima" textMode="Static" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Registrado_Desde" />
+        <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Ubicacion Almacenamiento">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Ubicacion Almacenamiento" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Tipo_Ubicacion_Id" columns="15" aliasFieldName="Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Aplica_Para_Ruta_Optima" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Registrado_Desde" textMode="Static" />
+            <dataField fieldName="Registrado_Desde_Id" columns="15" textMode="Static" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Ubicacion Almacenamiento">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Ubicacion Almacenamiento" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Aplica_Para_Ruta_Optima" />
+            <dataField fieldName="Tipo_Ubicacion_Id" columns="15" aliasFieldName="Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Registrado_Desde" hidden="true" />
+            <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Ubicacion_Almacenamiento_LookUp_List" type="Grid" commandId="command1" label="Ubicacion Almacenamiento" sortExpression="Ubicacion_Almacenamiento ASC" filter="Estatus_Registro_Id IN (0,1) " showInSelector="false" tags="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Registrado_Desde" hidden="true" />
+        <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Ubicacion_Id" columns="15" aliasFieldName="Clave_Tipo_Ubicacion" hidden="true" />
+        <dataField fieldName="Aplica_Para_Ruta_Optima" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a3" commandName="SQL" roles="Administrators,administrador,CapturistaRecibos" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Ubicacion_Almacenamiento SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Ubicacion_Almacenamiento_Id = @Ubicacion_Almacenamiento_Id
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a2" commandName="SQL" roles="Administrators,administrador,CapturistaRecibos" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Ubicacion_Almacenamiento SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Ubicacion_Almacenamiento_Id = @Ubicacion_Almacenamiento_Id
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Administrators,administrador,CapturistaRecibos" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" roles="Administrators,administrador,CapturistaRecibos" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE APP.Ubicacion_Almacenamiento SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Ubicacion_Almacenamiento_Id = @Ubicacion_Almacenamiento_Id
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="Administrators,administrador,CapturistaRecibos" />
+      <action id="a2" commandName="SQL" roles="Administrators,administrador,CapturistaRecibos" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Ubicacion_Almacenamiento SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Ubicacion_Almacenamiento_Id = @Ubicacion_Almacenamiento_Id
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Ubicacion_Almacenamiento] 
+WHERE 
+    dbo.fn_Sustituir_Caracteres_Especiales(Lower(Ubicacion_Almacenamiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Ubicacion_Almacenamiento)) 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](248,1,69,@Ubicacion_Almacenamiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](248,1,69,@Ubicacion_Almacenamiento) 
+   RETURN 
+END ]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT    TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Ubicacion_Almacenamiento]
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Ubicacion_Almacenamiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Ubicacion_Almacenamiento)) 
+   AND Ubicacion_Almacenamiento_Id <> @Ubicacion_Almacenamiento_Id	
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](249,1,69,@Ubicacion_Almacenamiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](249,1,69,@Ubicacion_Almacenamiento) 
+   RETURN 
+END ]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Ubicacion_Almacenamiento] 
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Ubicacion_Almacenamiento_Id = @Ubicacion_Almacenamiento_Id]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Ubicacion_Almacenamiento]
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Ubicacion_Almacenamiento_Id= @Ubicacion_Almacenamiento_Id]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,1544 @@
+<?xml version="1.0" encoding="utf-8"?><logs><log type="Controllers"><c y="NodeSet" t="2021-01-08T13:32:59"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:36:08"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:45:03"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:45:46"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:45:49"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:45:50"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:46:32"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:46:33"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:49:22"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:50:51"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:50:51"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:50:52"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:50:53"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:50:54"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:52:42"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:53:26"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:53:27"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:54:17"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:54:26"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:55:07"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T13:56:12"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:00:14"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:01:13"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento_Id), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:01:58"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento_Id), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:02:54"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:03:04"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:45:22"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:45:45"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:45:51"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:47:56"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:48:59"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:48:59"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:49:00"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:57:16"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T14:58:50"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T15:00:07"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T15:01:10"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T15:02:08"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T15:09:05"><controller name="Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Movimiento_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T15:29:51"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Detalle)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Detalle) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Detalle) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T16:13:57"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Folio)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Folio) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Folio) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T16:15:50"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T16:15:52"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T16:18:55"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T17:15:10"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Folio)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Folio) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Folio) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T17:15:12"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Folio)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Folio) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Folio) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T17:17:57"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T17:18:02"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T19:45:48"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T19:47:48"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Detalle_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Detalle_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Detalle_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T19:56:27"><controller name="Movimiento_Detalle" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento_Detalle 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento_Detalle_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento_Detalle_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Detalle_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](260,1,75,@Movimiento_Detalle_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T21:46:41"><controller name="Desviacion_Material" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Desviacion_Material
+WHERE
+	Orden_Produccion_Id = @Orden_Produccion_Detalle
+	AND Producto_Id = @Producto_Id
+	AND Material_Id = @Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](63,1,21,CONVERT(VARCHAR(20),@Numero_Orden_Produccion) + ' vs. ' + @Producto_Descripcion + ' vs. ' + @Material)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](63,1,21,CONVERT(VARCHAR(20),@Numero_Orden_Produccion)  + ' vs. ' + @Producto_Descripcion + ' vs. ' + @Material)
+   RETURN
+END 
+</Script></update></c><c y="NodeSet" t="2021-01-08T21:52:43"><controller name="Desviacion_Material" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Desviacion_Material
+WHERE
+	Orden_Produccion_Id = @Orden_Produccion_Detalle
+	AND Producto_Id = @Producto_Id
+	AND Material_Id = @Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](63,1,21,CONVERT(VARCHAR(20),@Orden_Produccion_Detalle) + ' vs. ' + @Producto_Descripcion + ' vs. ' + @Material)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](63,1,21,CONVERT(VARCHAR(20),@Orden_Produccion_Detalle)  + ' vs. ' + @Producto_Descripcion + ' vs. ' + @Material)
+   RETURN
+END 
+</Script></update></c><c y="NodeSet" t="2021-01-08T21:54:35"><controller name="Desviacion_Material" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Desviacion_Material
+WHERE
+	Orden_Produccion_Id = @Orden_Produccion_Detalle
+	AND Producto_Id = @Producto_Id
+	AND Material_Id = @Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](63,1,21,CONVERT(VARCHAR(20),@Orden_Produccion_Detalle_Id) + ' vs. ' + @Producto_Descripcion + ' vs. ' + @Material)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](63,1,21,CONVERT(VARCHAR(20),@Orden_Produccion_Detalle_Id)  + ' vs. ' + @Producto_Descripcion + ' vs. ' + @Material)
+   RETURN
+END 
+</Script></update></c><c y="NodeSet" t="2021-01-08T22:02:40"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T22:04:16"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T22:07:22"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-08T22:23:18"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T14:30:38"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Id)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T14:31:59"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Id,NULL))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Id, NULL)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T14:33:04"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento,NULL))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento, NULL)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T15:15:08"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento,NULL))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento, NULL)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T15:21:50"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento,NULL))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento, NULL)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T15:25:36"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento),NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T15:27:15"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Id),NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Id), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T15:59:52"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento),NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T16:10:48"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento),NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T16:12:11"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T16:14:18"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+
+/*IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T16:14:26"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+
+/*IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T16:15:52"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento),NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento),NULL) 
+
+/*IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T16:46:40"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Id),NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Id),NULL) 
+
+/*IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T16:48:50"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Id)) 
+
+/*IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T19:06:33"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T20:34:56"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T20:49:31"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+/*
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T20:50:24"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>/*DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END*/</Script></update></c><c y="NodeSet" t="2021-01-11T20:51:31"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T20:51:34"><controller name="Estatus_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento ))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento )) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](252,1,71,@Estatus_Movimiento ) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T20:51:46"><controller name="Estatus_Movimiento" /><rule id="r101" /><update><Script>UPDATE  
+   APP.Estatus_Movimiento  
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Estatus_Movimiento_Id = @Estatus_Movimiento_Id </Script></update></c><c y="NodeSet" t="2021-01-11T20:57:41"><controller name="Tipo_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Tipo_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Movimiento) )=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento) ) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](256,1,73,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](256,1,73,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T20:57:50"><controller name="Tipo_Movimiento" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Tipo_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Movimiento) )=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento) ) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](256,1,73,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](256,1,73,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T21:00:12"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r100" /><update><Script>DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Ruta_Optima)) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](254,1,72,@Estatus_Movimiento_Ruta_Optima) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](254,1,72,@Estatus_Movimiento_Ruta_Optima) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T21:01:12"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r102" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Ruta_Optima), NULL) 
+AND Estatus_Movimiento_Ruta_Optima_Id &lt;&gt; @Estatus_Movimiento_Ruta_Optima_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T21:03:01"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r102" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Ruta_Optima)) 
+AND Estatus_Movimiento_Ruta_Optima_Id &lt;&gt; @Estatus_Movimiento_Ruta_Optima_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T21:03:49"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r103" /><update><Script>UPDATE  
+   APP.Estatus_Movimiento_Ruta_Optima 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE())
+WHERE 
+   Estatus_Movimiento_Ruta_Optima_Id = @Estatus_Movimiento_Ruta_Optima_Id </Script></update></c><c y="NodeSet" t="2021-01-11T21:03:51"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r103" /><update><Script>UPDATE  
+   APP.Estatus_Movimiento_Ruta_Optima 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE())
+WHERE 
+   Estatus_Movimiento_Ruta_Optima_Id = @Estatus_Movimiento_Ruta_Optima_Id </Script></update></c><c y="NodeSet" t="2021-01-11T21:10:19"><controller name="Estatus_Movimiento" /><rule id="r102" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento)) 
+AND Estatus_Movimiento_Id &lt;&gt; @Estatus_Movimiento_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](253,1,71,@Estatus_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](253,1,71,@Estatus_Movimiento) 
+   RETURN 
+END </Script></update></c><c y="NodeSet" t="2021-01-11T21:12:34"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r102" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Ruta_Optima)) 
+AND Estatus_Movimiento_Ruta_Optima_Id &lt;&gt; @Estatus_Movimiento_Ruta_Optima_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T21:12:36"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r102" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Estatus_Movimiento_Ruta_Optima 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Movimiento_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Movimiento_Ruta_Optima)) 
+AND Estatus_Movimiento_Ruta_Optima_Id &lt;&gt; @Estatus_Movimiento_Ruta_Optima_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](255,1,72,@Estatus_Movimiento_Ruta_Optima_Id) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-01-11T21:18:52"><controller name="Estatus_Movimiento" /><rule id="r103" /><update><Script>UPDATE  
+   APP.Estatus_Movimiento  
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+   Estatus_Movimiento_Id = @Estatus_Movimiento_Id </Script></update></c><c y="NodeSet" t="2021-01-11T21:20:22"><controller name="Estatus_Movimiento_Ruta_Optima" /><rule id="r103" /><update><Script>UPDATE  
+   APP.Estatus_Movimiento_Ruta_Optima 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+   Estatus_Movimiento_Ruta_Optima_Id = @Estatus_Movimiento_Ruta_Optima_Id </Script></update></c><c y="NodeSet" t="2021-01-11T21:21:51"><controller name="Tipo_Movimiento" /><rule id="r102" /><update><Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Tipo_Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Movimiento))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Movimiento)) 
+AND Tipo_Movimiento_Id &lt;&gt; @Tipo_Movimiento_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](257,1,73,@Tipo_Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](257,1,73,@Tipo_Movimiento) 
+   RETURN 
+END</Script></update></c><c y="NodeSet" t="2021-11-25T13:04:05"><controller name="Solicitud" /><view id="grid1" /><move><controller name="Solicitud" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:04:19"><controller name="Solicitud" /><view id="grid1" /><dataField fieldName="Categoria_Solicitud_Id" /><before><controller name="Solicitud" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:20:42"><controller name="Solicitud" /><view id="editForm1" /><category id="c1" /><move><controller name="Solicitud" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:20:58"><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><move><controller name="Solicitud" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:21:05"><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Tipo_Solicitud_Id" /><move><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:21:09"><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><move><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:21:16"><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Tipo_Solicitud_Id" /><before><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:21:30"><controller name="Solicitud" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Tipo_Solicitud_Id" /><before><controller name="Solicitud" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:37:08"><controller name="Solicitud2" /><view id="grid1" /><move><controller name="Solicitud2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:37:25"><controller name="Solicitud" /><view id="editForm1" /><move><controller name="Solicitud" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:37:45"><controller name="Solicitud" /><view id="createForm1" /><move><controller name="Solicitud" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:38:02"><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Tipo_Solicitud_Id" /><before><controller name="Solicitud" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:38:12"><controller name="Solicitud" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Tipo_Solicitud_Id" /><before><controller name="Solicitud" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:52:18"><controller name="Solicitud2" /><view id="grid1" /><move><controller name="Solicitud2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:52:26"><controller name="Solicitud2" /><view id="grid1" /><dataField fieldName="Tipo_Solicitud_Id" /><before><controller name="Solicitud2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:53:51"><controller name="Solicitud2" /><view id="editForm1" /><category id="c1" /><move><controller name="Solicitud2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:53:56"><controller name="Solicitud2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Categoria_Solicitud_Id" /><before><controller name="Solicitud2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:56:39"><controller name="Solicitud2" /><view id="editForm1" /><category id="c1" /><move><controller name="Solicitud2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:57:20"><controller name="Solicitud2" /><view id="createForm1" /><category id="c1" /><move><controller name="Solicitud2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-25T13:57:27"><controller name="Solicitud2" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Categoria_Solicitud_Id" /><before><controller name="Solicitud2" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:57:37"><controller name="Solicitud2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Categoria_Solicitud_Id" /><before><controller name="Solicitud2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-25T13:57:43"><controller name="Solicitud2" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>false</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-25T15:18:14"><controller name="Etiqueta1" /><view id="grid1" /><move><controller name="Etiqueta1" /><field name="Etiqueta_Id" /></move></c><c y="NodeSet" t="2021-11-25T15:18:18"><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="Etiqueta_Id" /></before></c><c y="NodeSet" t="2021-11-25T15:19:12"><controller name="Etiqueta1" /><field name="Etiqueta_Id" /><update><Label>Folio Solicitud</Label></update></c><c y="NodeSet" t="2021-11-25T15:19:25"><controller name="Etiqueta1" /><view id="editForm1" /><move><controller name="Etiqueta1" /><field name="Etiqueta_Id" /></move></c><c y="NodeSet" t="2021-11-25T15:19:37"><controller name="Etiqueta1" /><view id="createForm1" /><move><controller name="Etiqueta1" /><field name="Etiqueta_Id" /></move></c><c y="NodeSet" t="2021-11-25T15:19:44"><controller name="Etiqueta1" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta1" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Etiqueta_Id" /></before></c><c y="NodeSet" t="2021-11-25T15:19:50"><controller name="Etiqueta1" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta1" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Etiqueta_Id" /></before></c><c y="NodeSet" t="2021-11-25T17:47:15"><controller name="Bitacora_Captura_Sap1" /><field name="SolicitudId" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-25T17:47:20"><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-25T17:47:28"><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-25T17:47:32"><controller name="Bitacora_Captura_Sap1" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-25T17:47:37"><controller name="Bitacora_Captura_Sap1" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Bitacora_Captura_Sap1" /><view id="editForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-25T17:47:42"><controller name="Bitacora_Captura_Sap1" /><view id="createForm1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-25T17:47:50"><controller name="Bitacora_Captura_Sap1" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Ruta_Optima_Id" /><before><controller name="Bitacora_Captura_Sap1" /><view id="createForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-25T18:02:47"><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><dataField fieldName="Ruta_Optima_Id" /><before><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-25T18:11:14"><controller name="Solicitud2" /><view id="grid1" /><dataField fieldName="Dato_Solicitud_Urgencia_Compras" /><update><Alias>Dato_Solicitud_Urgencia_Compras</Alias><Hidden>false</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-25T18:12:57"><controller name="Solicitud2" /><view id="grid1" /><dataField fieldName="Dato_Solicitud_Urgencia_Compras" /><update><Alias /><Hidden>false</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-25T18:25:12"><controller name="Bitacora_Captura_Sap1" /><field name="Error" /><update><AllowQBE>true</AllowQBE><AllowSorting>true</AllowSorting></update></c><c y="NodeSet" t="2021-11-25T18:26:52"><controller name="Solicitud2" /><field name="Dato_Solicitud_Urgencia_Compras" /><update><AllowQBE>true</AllowQBE><AllowSorting>true</AllowSorting></update></c><c y="NodeSet" t="2021-11-25T18:49:04"><controller name="Grid_Consulta_Entrega_Semaforizada_Para_Retro_A_Solicitante_V" /><field name="Label_Estatus_Solicitud" /><update><AllowQBE>true</AllowQBE><AllowSorting>true</AllowSorting></update></c><c y="NodeSet" t="2021-11-25T18:50:08"><controller name="Grid_Consulta_Entrega_Semaforizada_Para_Retro_A_Solicitante_V" /><field name="Label_Tiempo_Transcurrido" /><update><AllowQBE>true</AllowQBE><AllowSorting>true</AllowSorting></update></c><c y="NodeSet" t="2021-11-25T18:50:43"><controller name="Grid_Consulta_Entrega_Semaforizada_Para_Retro_A_Solicitante_V" /><field name="Ultimo_Comentario_Solicitante" /><update><AllowQBE>true</AllowQBE><AllowSorting>true</AllowSorting></update></c><c y="NodeSet" t="2021-11-25T18:51:15"><controller name="Grid_Consulta_Entrega_Semaforizada_Para_Retro_A_Solicitante_V" /><field name="Ultimo_Comentario_Surtidor" /><update><AllowQBE>true</AllowQBE><AllowSorting>true</AllowSorting></update></c><c y="NodeSet" t="2021-11-30T13:55:54"><controller name="Etiqueta1" /><field name="Etiqueta_Id" /><update><Label>Etiqueta_Id</Label></update></c><c y="NodeSet" t="2021-11-30T17:13:45"><controller name="Bitacora_Captura_Sap2_3" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:14:35"><controller name="Bitacora_Captura_Sap2_2" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:15:40"><controller name="Bitacora_Captura_Sap2_1" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:16:07"><controller name="Bitacora_Captura_Sap2" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:16:13"><controller name="Bitacora_Captura_Sap1_2_2" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:16:20"><controller name="Bitacora_Captura_Sap1_2_1" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:16:27"><controller name="Bitacora_Captura_Sap1_2" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:16:39"><controller name="Bitacora_Captura_Sap1_1" /><field name="SolicitudId" /><update><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T17:42:49"><controller name="Bitacora_Captura_Sap1_1" /><field name="SolicitudId" /><update><Label>Folio Solicitud</Label></update></c><c y="NodeSet" t="2021-11-30T17:56:24"><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="Etiqueta_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T17:56:35"><controller name="Etiqueta1" /><view id="editForm1" /><dataField fieldName="Etiqueta_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T17:56:43"><controller name="Etiqueta1" /><view id="createForm1" /><dataField fieldName="Etiqueta_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:07:07"><controller name="Etiqueta1" /><field name="SolicitudId" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:07:13"><controller name="Etiqueta1" /><view id="grid1" /><move><controller name="Etiqueta1" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:07:19"><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:07:26"><controller name="Etiqueta1" /><view id="editForm1" /><move><controller name="Etiqueta1" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:07:31"><controller name="Etiqueta1" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta1" /><view id="editForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:07:36"><controller name="Etiqueta1" /><view id="createForm1" /><move><controller name="Etiqueta1" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:07:41"><controller name="Etiqueta1" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta1" /><view id="createForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:10:49"><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="SolicitudId" /><before><controller name="Etiqueta1" /><view id="grid1" /><dataField fieldName="Numero_Etiqueta" /></before></c><c y="NodeSet" t="2021-11-30T18:11:31"><controller name="Etiqueta2" /><field name="SolicitudId" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:11:38"><controller name="Etiqueta2" /><view id="grid1" /><move><controller name="Etiqueta2" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:11:43"><controller name="Etiqueta2" /><view id="grid1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta2" /><view id="grid1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:11:47"><controller name="Etiqueta2" /><view id="grid1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Etiqueta2" /><view id="grid1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:11:51"><controller name="Etiqueta2" /><view id="editForm1" /><move><controller name="Etiqueta2" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:11:55"><controller name="Etiqueta2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Etiqueta2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:12:00"><controller name="Etiqueta2" /><view id="createForm1" /><move><controller name="Etiqueta2" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:12:04"><controller name="Etiqueta2" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Etiqueta2" /><view id="createForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:12:26"><controller name="Etiqueta" /><field name="SolicitudId" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:12:32"><controller name="Etiqueta" /><view id="grid1" /><move><controller name="Etiqueta" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:12:38"><controller name="Etiqueta" /><view id="grid1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Etiqueta" /><view id="grid1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:12:42"><controller name="Etiqueta" /><view id="editForm1" /><move><controller name="Etiqueta" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:12:46"><controller name="Etiqueta" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Numero_Etiqueta" /><before><controller name="Etiqueta" /><view id="editForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:12:49"><controller name="Etiqueta" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Etiqueta" /><view id="editForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:12:52"><controller name="Etiqueta" /><view id="createForm1" /><move><controller name="Etiqueta" /><field name="SolicitudId" /></move></c><c y="NodeSet" t="2021-11-30T18:12:56"><controller name="Etiqueta" /><view id="createForm1" /><category id="c1" /><dataField fieldName="Bitacora_Captura_Sap_Id" /><before><controller name="Etiqueta" /><view id="createForm1" /><category id="c1" /><dataField fieldName="SolicitudId" /></before></c><c y="NodeSet" t="2021-11-30T18:36:01"><controller name="Bitacora_Captura_Sap" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:36:30"><controller name="Bitacora_Captura_Sap1" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:37:00"><controller name="Bitacora_Captura_Sap1_1" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:42:06"><controller name="Bitacora_Captura_Sap1_2" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:42:24"><controller name="Bitacora_Captura_Sap1_2_1" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:42:43"><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:43:51"><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><dataField fieldName="Ruta_Optima_Id" /><before><controller name="Bitacora_Captura_Sap1" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:44:02"><controller name="Bitacora_Captura_Sap1" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:44:12"><controller name="Bitacora_Captura_Sap1" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:44:22"><controller name="Bitacora_Captura_Sap1" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:44:30"><controller name="Bitacora_Captura_Sap1" /><view id="createForm1" /><move><controller name="Bitacora_Captura_Sap1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:44:39"><controller name="Bitacora_Captura_Sap1" /><view id="createForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:45:00"><controller name="Bitacora_Captura_Sap1_1" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:45:06"><controller name="Bitacora_Captura_Sap1_1" /><view id="grid1" /><dataField fieldName="Devolucion_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_1" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:45:10"><controller name="Bitacora_Captura_Sap1_1" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:45:15"><controller name="Bitacora_Captura_Sap1_1" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:45:21"><controller name="Bitacora_Captura_Sap1_1" /><view id="createForm1" /><move><controller name="Bitacora_Captura_Sap1_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:45:28"><controller name="Bitacora_Captura_Sap1_1" /><view id="createForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:45:47"><controller name="Bitacora_Captura_Sap1_2" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:45:51"><controller name="Bitacora_Captura_Sap1_2" /><view id="grid1" /><dataField fieldName="Transferencia_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:45:58"><controller name="Bitacora_Captura_Sap1_2" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:46:03"><controller name="Bitacora_Captura_Sap1_2" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:46:07"><controller name="Bitacora_Captura_Sap1_2" /><view id="createForm1" /><move><controller name="Bitacora_Captura_Sap1_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:46:13"><controller name="Bitacora_Captura_Sap1_2" /><view id="createForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:46:26"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1_2_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:46:30"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="grid1" /><dataField fieldName="Transferencia_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_2_1" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:46:36"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1_2_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:46:40"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:46:42"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:46:47"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="createForm1" /><move><controller name="Bitacora_Captura_Sap1_2_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:46:54"><controller name="Bitacora_Captura_Sap1_2_1" /><view id="createForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:47:13"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1_2_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:47:22"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Transferencia_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:47:45"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="editForm1" /><move><controller name="Bitacora_Captura_Sap1_2_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:47:52"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Transferencia_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_2_2" /><view id="editForm1" /><category id="c1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:48:02"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1_2_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:48:05"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Transferencia_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:48:12"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="editForm1" /><dataField fieldName="Solicitud_Id" /><update><Hidden>true</Hidden><DataViewShowInSummary>false</DataViewShowInSummary></update></c><c y="NodeSet" t="2021-11-30T18:48:36"><controller name="Bitacora_Captura_Sap1_2_2" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:48:56"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap1_2_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:48:59"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Transferencia_Material_Id" /><move><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:49:02"><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Transferencia_Material_Id" /><before><controller name="Bitacora_Captura_Sap1_2_2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:51:28"><controller name="Bitacora_Captura_Sap2" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:51:35"><controller name="Bitacora_Captura_Sap2" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:51:48"><controller name="Bitacora_Captura_Sap2" /><view id="grid1" /><dataField fieldName="Tipo_Surtido_Id" /><before><controller name="Bitacora_Captura_Sap2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:52:07"><controller name="Bitacora_Captura_Sap2_1" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:53:00"><controller name="Bitacora_Captura_Sap2_1" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap2_1" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:53:06"><controller name="Bitacora_Captura_Sap2_1" /><view id="grid1" /><dataField fieldName="Tipo_Surtido_Id" /><before><controller name="Bitacora_Captura_Sap2_1" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:53:25"><controller name="Bitacora_Captura_Sap2_2" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:53:29"><controller name="Bitacora_Captura_Sap2_2" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap2_2" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:53:33"><controller name="Bitacora_Captura_Sap2_2" /><view id="grid1" /><dataField fieldName="Es_Captura_De_Surtido" /><before><controller name="Bitacora_Captura_Sap2_2" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c><c y="NodeSet" t="2021-11-30T18:53:51"><controller name="Bitacora_Captura_Sap2_3" /><field name="Solicitud_Id" /><update><Label>Folio Solicitud</Label><ReadOnly>true</ReadOnly></update></c><c y="NodeSet" t="2021-11-30T18:53:55"><controller name="Bitacora_Captura_Sap2_3" /><view id="grid1" /><move><controller name="Bitacora_Captura_Sap2_3" /><field name="Solicitud_Id" /></move></c><c y="NodeSet" t="2021-11-30T18:54:00"><controller name="Bitacora_Captura_Sap2_3" /><view id="grid1" /><dataField fieldName="Tipo_Surtido_Id" /><before><controller name="Bitacora_Captura_Sap2_3" /><view id="grid1" /><dataField fieldName="Solicitud_Id" /></before></c></log><log type="Application"></log></logs>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Estatus_Ruta_Optima" conflictDetection="overwriteChanges" label="Estatus Ruta Optima" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Estatus_Ruta_Optima"."Estatus_Ruta_Optima_Id" "Estatus_Ruta_Optima_Id"
+	,"Estatus_Ruta_Optima"."Estatus_Ruta_Optima" "Estatus_Ruta_Optima"
+	,"Estatus_Ruta_Optima"."Significa_Pendiente" "Significa_Pendiente"
+	,"Estatus_Ruta_Optima"."Significa_Entregada" "Significa_Entregada"
+	,"Estatus_Ruta_Optima"."Significa_Cancelada" "Significa_Cancelada"
+	,"Estatus_Ruta_Optima"."Fecha_Creacion" "Fecha_Creacion"
+	,"Estatus_Ruta_Optima"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Estatus_Ruta_Optima"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Estatus_Ruta_Optima"."Significa_Surtido" "Significa_Surtido"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+from "APP"."Estatus_Ruta_Optima" "Estatus_Ruta_Optima"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Estatus_Ruta_Optima"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Estatus_Ruta_Optima"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Estatus_Ruta_Optima"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Estatus_Ruta_Optima_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Estatus_Ruta_Optima_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Estatus_Ruta_Optima_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Estatus Ruta Optima Id" readOnly="true" />
+    <field name="Estatus_Ruta_Optima" type="String" allowNulls="false" label="Estatus de Ruta Óptima" length="250" showInSummary="true" />
+    <field name="Significa_Pendiente" type="Boolean" allowNulls="false" default="((0))" label="Significa Pendiente?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Entregada" type="Boolean" allowNulls="false" default="((0))" label="Significa Entregada?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Significa_Cancelada" type="Boolean" allowNulls="false" default="((0))" label="Significa Cancelada?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Significa_Surtido" type="Boolean" allowNulls="false" default="((0))" label="Significa Surtido?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Estatus de Ruta Óptima" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Ruta_Optima" />
+        <dataField fieldName="Significa_Pendiente" />
+        <dataField fieldName="Significa_Entregada" />
+        <dataField fieldName="Significa_Cancelada" />
+        <dataField fieldName="Significa_Surtido" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Estatus de Ruta Óptima">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Estatus de Ruta Óptima" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Estatus_Ruta_Optima" />
+            <dataField fieldName="Significa_Pendiente" />
+            <dataField fieldName="Significa_Entregada" />
+            <dataField fieldName="Significa_Cancelada" />
+            <dataField fieldName="Significa_Surtido" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Estatus de Ruta Óptima">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Estatus de Ruta Óptima" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Estatus_Ruta_Optima" />
+            <dataField fieldName="Significa_Pendiente" />
+            <dataField fieldName="Significa_Entregada" />
+            <dataField fieldName="Significa_Cancelada" />
+            <dataField fieldName="Significa_Surtido" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="Administrators" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE 
+APP.Estatus_Ruta_Optima
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Ruta_Optima_Id = @Estatus_Ruta_Optima_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="Administrators" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="Administrators" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="Administrators" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Administrators" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE 
+APP.Estatus_Ruta_Optima
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Ruta_Optima_Id = @Estatus_Ruta_Optima_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Administrators" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="Administrators" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators">
+        <data><![CDATA[UPDATE 
+APP.Estatus_Ruta_Optima
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Ruta_Optima_Id = @Estatus_Ruta_Optima_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="Administrators" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE 
+APP.Estatus_Ruta_Optima
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Ruta_Optima_Id = @Estatus_Ruta_Optima_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Ruta_Optima
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Ruta_Optima))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](117,1,36,@Estatus_Ruta_Optima)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Estatus_Ruta_Optima
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Estatus_Ruta_Optima_Id = @Estatus_Ruta_Optima_Id]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Ruta_Optima
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Ruta_Optima))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Ruta_Optima))
+	AND Estatus_Ruta_Optima_Id <> @Estatus_Ruta_Optima_Id
+	
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](118,1,36,@Estatus_Ruta_Optima)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Estatus_Ruta_Optima
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Estatus_Ruta_Optima_Id = @Estatus_Ruta_Optima_Id]]></rule>
+  </businessRules>
+</dataController>

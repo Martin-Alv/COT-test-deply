@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Orden_Produccion_V" conflictDetection="overwriteChanges" label="Grid Orden Produccion V" handler="eaton.Rules.Grid_Orden_Produccion_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text" custom="false">
+      <text><![CDATA[select
+	"Grid_Orden_Produccion_V"."CheckBox" "CheckBox"
+	,"Grid_Orden_Produccion_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Orden_Produccion_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Orden_Produccion_V"."Fecha_Produccion" "Fecha_Produccion"
+	,"Grid_Orden_Produccion_V"."Creado_Por" "Creado_Por"
+	,"Grid_Orden_Produccion_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Orden_Produccion_V"."Actualizado_Por" "Actualizado_Por"
+	,"Grid_Orden_Produccion_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Grid_Orden_Produccion_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Grid_Orden_Produccion_V"."Estatus_Registro" "Estatus_Registro"
+	,"Grid_Orden_Produccion_V"."Cantidad" "Cantidad"
+	,"Grid_Orden_Produccion_V"."Estatus_Orden_Produccion_Id" "Estatus_Orden_Produccion_Id"
+	,"Grid_Orden_Produccion_V"."Estatus_Orden_Produccion" "Estatus_Orden_Produccion"
+	,"Grid_Orden_Produccion_V"."Producto_Clave" "Producto_Clave"
+	,"Grid_Orden_Produccion_V"."Producto_Descripcion" "Producto_Descripcion"
+	,"Grid_Orden_Produccion_V"."Producto_Id" "Producto_Id"
+	,"Grid_Orden_Produccion_V"."Familia_Id" "Familia_Id"
+	,"Grid_Orden_Produccion_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Orden_Produccion_V"."Familia_Descripcion" "Familia_Descripcion"
+	,"Grid_Orden_Produccion_V"."Cantidad_Dias_Produccion" "Cantidad_Dias_Produccion"
+	,"Grid_Orden_Produccion_V"."Menor_A_Dias_Establecidos" "Menor_A_Dias_Establecidos"
+	,"Grid_Orden_Produccion_V"."Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" "Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud"
+	,"Grid_Orden_Produccion_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Orden_Produccion_V"."Usuario_Aplicacion_Id" "Usuario_Aplicacion_Id"
+	,"Grid_Orden_Produccion_V"."Usuario_Id" "Usuario_Id"
+from "dbo"."Grid_Orden_Produccion_V" "Grid_Orden_Produccion_V"
+]]></text>
+    </command>
+    <command id="Producto_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Producto_Id" />
+      </output>
+    </command>
+    <command id="Familia_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Familia_Id" />
+      </output>
+    </command>
+    <command type="Text" id="Grid_Orden_Produccion_Por_Fecha_Impresion_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Fecha_Produccion]
+      ,[Fecha_Liberacion_Produccion]
+      ,[Fecha_Compromiso_Produccion]
+      ,[Fecha_Embarque]
+      ,[Creado_Por]
+      ,[Fecha_Creacion]
+      ,[Actualizado_Por]
+      ,[Fecha_Ultima_Actualizacion]
+      ,[Estatus_Registro_Id]
+      ,[Estatus_Registro]
+      ,[Cantidad]
+      ,[Estatus_Orden_Produccion_Id]
+      ,[Estatus_Orden_Produccion]
+      ,[Producto_Clave]
+      ,[Producto_Descripcion]
+      ,[Producto_Id]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Familia_Descripcion]
+      ,[Cantidad_Dias_Produccion]
+      ,[Menor_A_Dias_Establecidos]
+      ,[Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud]
+      ,[Area_Servicio_Id]
+      ,[Usuario_Aplicacion_Id]
+      ,[Usuario_Id]
+	  ,[Esta_Bloqueado] As EstaBloqueado
+  FROM [dbo].[Grid_Orden_Produccion_Por_Fecha_Impresion_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Orden_Produccion_V2" custom="false">
+      <text><![CDATA[select
+	"Grid_Orden_Produccion_V"."CheckBox" "CheckBox"
+	,"Grid_Orden_Produccion_V"."Esta_Bloqueado" "EstaBloqueado"
+	,"Grid_Orden_Produccion_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Orden_Produccion_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Orden_Produccion_V"."Fecha_Produccion" "Fecha_Produccion"
+	,"Grid_Orden_Produccion_V"."Creado_Por" "Creado_Por"
+	,"Grid_Orden_Produccion_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Orden_Produccion_V"."Actualizado_Por" "Actualizado_Por"
+	,"Grid_Orden_Produccion_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Grid_Orden_Produccion_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Grid_Orden_Produccion_V"."Estatus_Registro" "Estatus_Registro"
+	,"Grid_Orden_Produccion_V"."Cantidad" "Cantidad"
+	,"Grid_Orden_Produccion_V"."Estatus_Orden_Produccion_Id" "Estatus_Orden_Produccion_Id"
+	,"Grid_Orden_Produccion_V"."Estatus_Orden_Produccion" "Estatus_Orden_Produccion"
+	,"Grid_Orden_Produccion_V"."Producto_Clave" "Producto_Clave"
+	,"Grid_Orden_Produccion_V"."Producto_Descripcion" "Producto_Descripcion"
+	,"Grid_Orden_Produccion_V"."Producto_Id" "Producto_Id"
+	,"Grid_Orden_Produccion_V"."Familia_Id" "Familia_Id"
+	,"Grid_Orden_Produccion_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Orden_Produccion_V"."Familia_Descripcion" "Familia_Descripcion"
+	,"Grid_Orden_Produccion_V"."Cantidad_Dias_Produccion" "Cantidad_Dias_Produccion"
+	,"Grid_Orden_Produccion_V"."Menor_A_Dias_Establecidos" "Menor_A_Dias_Establecidos"
+	,"Grid_Orden_Produccion_V"."Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" "Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud"
+	,"Grid_Orden_Produccion_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Orden_Produccion_V"."Usuario_Aplicacion_Id" "Usuario_Aplicacion_Id"
+	,"Grid_Orden_Produccion_V"."Usuario_Id" "Usuario_Id"
+from "dbo"."Grid_Orden_Produccion_V" "Grid_Orden_Produccion_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" readOnly="true" />
+    <field name="Fecha_Produccion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Produccion" showInSummary="true" readOnly="true" />
+    <field name="EstaBloqueado" type="Boolean" allowNulls="false" label="Esta Bloqueado" readOnly="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Creado_Por" type="String" allowNulls="false" label="Creado Por" readOnly="true" length="7" showInSummary="true" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Creacion" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" allowNulls="false" label="Actualizado Por" readOnly="true" length="7" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" label="Estatus Registro Id" />
+    <field name="Estatus_Registro" type="String" allowNulls="false" label="Estatus Registro" readOnly="true" length="6" />
+    <field name="Cantidad" type="Decimal" allowNulls="false" label="Cantidad" readOnly="true" />
+    <field name="Estatus_Orden_Produccion_Id" type="Int32" allowNulls="false" label="Estatus Orden Produccion Id">
+      <items style="Lookup" dataController="Estatus_Orden_Produccion" dataView="Estatus_Orden_Produccion_LookUp_List" dataTextField="Estatus_Orden_Produccion" dataValueField="Estatus_Orden_Produccion_Id" />
+    </field>
+    <field name="Estatus_Orden_Produccion" type="String" allowNulls="false" label="Estatus Orden Produccion" readOnly="true" length="9" />
+    <field name="Producto_Clave" type="String" label="Producto Terminado" length="50" readOnly="true" />
+    <field name="Producto_Descripcion" type="String" allowNulls="false" label="Producto Descripcion" length="250" readOnly="true" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto Id" readOnly="true" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" readOnly="true" />
+    <field name="Familia_Clave" type="String" allowNulls="false" label="Familia Clave" readOnly="true" length="503" />
+    <field name="Familia_Descripcion" type="String" allowNulls="false" label="Familia Descripcion" length="250" />
+    <field name="Cantidad_Dias_Produccion" type="Int32" allowNulls="false" label="Cantidad Dias Produccion" readOnly="true" />
+    <field name="Menor_A_Dias_Establecidos" type="Int32" allowNulls="false" label="Menor A Dias Establecidos" readOnly="true" />
+    <field name="Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" type="Int32" allowNulls="false" label="Cantidad Orden Detalle Pendiente Por Enviar A Solicitud" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" />
+    <field name="Usuario_Aplicacion_Id" type="Int32" allowNulls="false" label="Usuario Aplicacion Id" />
+    <field name="Usuario_Id" type="Guid" allowNulls="false" label="Usuario Id" />
+    <field name="Habilitar_Crear_Solicitud" type="Boolean" label="Habilitar Crear de Solicitud" isVirtual="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Existencia_Completa_Cantidad_Material" type="Boolean" label="Existencia Completa Cantidad Material" isVirtual="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Fecha_Liberacion_Produccion" type="DateTime" dataFormatString="g" label="RelDate (Fecha de Impresión)" showInSummary="true" readOnly="true" isVirtual="true" allowNulls="false">
+      <formula />
+    </field>
+    <field name="Fecha_Compromiso_Produccion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Compromiso Produccion (OMAD)" showInSummary="true" readOnly="true" isVirtual="true">
+      <formula />
+    </field>
+    <field name="Fecha_Embarque" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Embarque (OPGI)" showInSummary="true" readOnly="true" isVirtual="true">
+      <formula />
+    </field>
+  </fields>
+  <views>
+    <view id="editForm1" type="Form" label="Orden Produccion" commandId="Grid_Orden_Produccion_V2" tags="modal-fullscreen">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description />
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+            <dataField fieldName="Usuario_Aplicacion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+            <dataField fieldName="EstaBloqueado" readOnly="true" />
+            <dataField fieldName="Creado_Por" columns="7" hidden="true" />
+            <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+            <dataField fieldName="Actualizado_Por" columns="7" hidden="true" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro" columns="6" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Fecha_Produccion" columns="20" />
+            <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" hidden="true" />
+            <dataField fieldName="Cantidad_Dias_Produccion" columns="15" hidden="true" />
+            <dataField fieldName="Menor_A_Dias_Establecidos" columns="15" hidden="true" />
+            <dataField fieldName="Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" aliasFieldName="Estatus_Orden_Produccion">
+              <visibility>
+                <expression test="[Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud] == 0" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Estatus_Orden_Produccion" columns="9" hidden="true" />
+          </dataFields>
+        </category>
+        <category id="c2" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Existencia_Completa_Cantidad_Material" hidden="true" />
+            <dataField fieldName="Habilitar_Crear_Solicitud" hidden="true" />
+            <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+            <dataField fieldName="Producto_Clave" columns="50" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Cantidad" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="Grid_Orden_Produccion_V2" label="New Grid Orden Produccion V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="EstaBloqueado" />
+            <dataField fieldName="Fecha_Produccion" columns="20" />
+            <dataField fieldName="Creado_Por" columns="7" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" columns="7" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" />
+            <dataField fieldName="Estatus_Registro" columns="6" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion" columns="9" />
+            <dataField fieldName="Producto_Clave" columns="50" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Cantidad_Dias_Produccion" columns="15" />
+            <dataField fieldName="Menor_A_Dias_Establecidos" columns="15" />
+            <dataField fieldName="Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" columns="15" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Usuario_Aplicacion_Id" columns="15" />
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Existencia_Completa_Cantidad_Material" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Orden_Produccion_V" type="Grid" label="Orden Produccion" commandId="Grid_Orden_Produccion_V2" showInSelector="false" filter="Usuario_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="EstaBloqueado" />
+        <dataField fieldName="Fecha_Produccion" columns="20" tag="smart-dates-disabled" />
+        <dataField fieldName="Creado_Por" columns="7" hidden="true" />
+        <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+        <dataField fieldName="Actualizado_Por" columns="7" hidden="true" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Registro" columns="6" hidden="true" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" hidden="true" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Producto_Clave" columns="50" />
+        <dataField fieldName="Producto_Descripcion" />
+        <dataField fieldName="Cantidad" columns="15" />
+        <dataField fieldName="Cantidad_Dias_Produccion" columns="15" hidden="true" />
+        <dataField fieldName="Menor_A_Dias_Establecidos" columns="15" hidden="true" />
+        <dataField fieldName="Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion" columns="9" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Aplicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="gridOrdenProduccionPorFechaImpresionRelDate" type="Grid" label="Orden Produccion por Fecha de Impresión" commandId="Grid_Orden_Produccion_Por_Fecha_Impresion_V" filter="Usuario_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Fecha_Produccion" columns="25" tag="smart-dates-disabled" />
+        <dataField fieldName="Fecha_Liberacion_Produccion" columns="25" tag="smart-dates-disabled" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" search="Suggested" />
+        <dataField fieldName="EstaBloqueado" />
+        <dataField fieldName="Fecha_Compromiso_Produccion" columns="10" tag="smart-dates-disabled" hidden="true" />
+        <dataField fieldName="Fecha_Embarque" columns="10" tag="smart-dates-disabled" hidden="true" />
+        <dataField fieldName="Creado_Por" columns="7" hidden="true" />
+        <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+        <dataField fieldName="Actualizado_Por" columns="7" hidden="true" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Registro" columns="6" hidden="true" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" columns="10" />
+        <dataField fieldName="Familia_Descripcion" hidden="true" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Producto_Clave" columns="15" />
+        <dataField fieldName="Producto_Descripcion" columns="30" />
+        <dataField fieldName="Cantidad" columns="10" />
+        <dataField fieldName="Cantidad_Dias_Produccion" columns="15" hidden="true" />
+        <dataField fieldName="Menor_A_Dias_Establecidos" columns="15" hidden="true" />
+        <dataField fieldName="Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion" columns="9" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Aplicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="grid1" type="Grid" label="Orden Producción" commandId="Grid_Orden_Produccion_V2" filter="Usuario_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" search="Suggested" />
+        <dataField fieldName="EstaBloqueado" />
+        <dataField fieldName="Fecha_Produccion" columns="20" tag="smart-dates-disabled" />
+        <dataField fieldName="Creado_Por" columns="7" hidden="true" />
+        <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+        <dataField fieldName="Actualizado_Por" columns="7" hidden="true" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Registro" columns="6" hidden="true" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" hidden="true" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Producto_Clave" columns="50" />
+        <dataField fieldName="Producto_Descripcion" />
+        <dataField fieldName="Cantidad" columns="15" />
+        <dataField fieldName="Cantidad_Dias_Produccion" columns="15" hidden="true" />
+        <dataField fieldName="Menor_A_Dias_Establecidos" columns="15" hidden="true" />
+        <dataField fieldName="Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion" columns="9" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Aplicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" whenClientScript="$app.touch.dataView()._selectedKeyList.length == 1" headerText="Seleccionar" />
+      <action id="a2" commandName="Edit" commandArgument="editForm1" whenView="grid1" whenClientScript="$app.touch.dataView()._selectedKeyList.length == 1" headerText="Seleccionar" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" whenClientScript="[Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud] == 0" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="Actualizar" whenView="editForm1" id="a100" cssClass="material-icon-edit" whenLastCommandName="Edit" />
+      <action id="a3" commandName="Cancel" headerText="Regresar" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" headerText="Regresar" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Custom" commandArgument="ExecJS02" headerText="Lista de Materiales" id="a100" whenKeySelected="true" causesValidation="false" cssClass="material-icon-list" whenClientScript="$app.touch.dataView()._selectedKeyList.length &gt; 1" />
+      <action commandName="Custom" commandArgument="ExecJS03" headerText="Lista de Materiales Agrupados" id="a101" whenKeySelected="true" causesValidation="false" cssClass="material-icon-list" whenClientScript="$app.touch.dataView()._selectedKeyList.length &gt; 1" whenView="gridOrdenProduccionPorFechaImpresionRelDate" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Select" type="Sql" phase="Execute" view="editForm1"><![CDATA[SET @Habilitar_Crear_Solicitud = 0 -- ISNULL(dbo.fn_Habilitar_Crear_Solicitud(@Orden_Produccion_Id),0);
+SET @Existencia_Completa_Cantidad_Material = 0 -- ISNULL(dbo.fn_Validar_Existencia_Completa_Cant_Mat(@Orden_Produccion_Id),0);]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Administrar_Orden_Prod_Actualizar_Orden_Prod" />
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="Crear_Solicitud" />
+    <rule id="r103" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="Before" name="Listar_Mat_De_Ordenes_Seleccionadas"><![CDATA[if(debug==1){
+	console.log("obtenerElementosSeleccionados");
+}
+
+MostrarListaDeMaterialPtePorSurtirDeMultiplesOrdenesProd($app.touch.dataView()._selectedKeyList);
+
+
+]]></rule>
+    <rule id="r104" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="Before" name="Listar_Mat_De_Ordenes_Seleccionadas"><![CDATA[if(debug==1){
+	console.log("obtenerElementosSeleccionados");
+}
+
+MostrarListaDeMaterialPtePorSurtirDeMultiplesOrdenesProdV20($app.touch.dataView()._selectedKeyList);
+
+
+]]></rule>
+    <rule id="r105" commandName="Custom" commandArgument="ExecJS03" type="JavaScript" phase="Before" name="Listar_Mat_Agrupado_De_Ordenes_Seleccionadas"><![CDATA[fnDebug("MostrarListaDeMaterialPtePorSurtirAgrupadoDeMultiplesOrdenesProd");
+
+MostrarListaDeMaterialPtePorSurtirAgrupadoDeMultiplesOrdenesProd($app.touch.dataView()._selectedKeyList);
+
+
+]]></rule>
+  </businessRules>
+</dataController>

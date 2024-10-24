@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Documento_Comentario" alias="Documento_Comentario" created="2019-01-24T19:01:30" modified="2019-09-22T13:08:18" x="20" y="34" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Solicitud_" parentTableSchema="APP" parentTableName="Solicitud" x="1861" y="229">
+      <foreignKeyColumn columnName="Solicitud_Id" parentColumnName="Solicitud_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Comentario_" parentTableSchema="APP" parentTableName="Tipo_Comentario" x="1558" y="280">
+      <foreignKeyColumn columnName="Tipo_Comentario_Id" parentColumnName="Tipo_Comentario_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Archivo_" parentTableSchema="APP" parentTableName="Tipo_Archivo" x="1271" y="337">
+      <foreignKeyColumn columnName="Tipo_Archivo_Id" parentColumnName="Tipo_Archivo_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="529" y="1031">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="1086" y="642">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="865" y="790">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Registrado_Desde" parentTableSchema="APP" parentTableName="Registrado_Desde" x="1455" y="607">
+      <foreignKeyColumn columnName="Registrado_Desde_Id" parentColumnName="Registrado_Desde_Id" />
+    </foreignKey>
+    <foreignKey id="Orden_Produccion" parentTableSchema="dbo" parentTableName="Orden_Produccion" x="3257" y="20">
+      <foreignKeyColumn columnName="Orden_Produccion_Id" parentColumnName="Orden_Produccion_Id" />
+    </foreignKey>
+    <foreignKey id="Orden_Produccion_Detalle" parentTableSchema="dbo" parentTableName="Orden_Produccion_Detalle" x="2908" y="77">
+      <foreignKeyColumn columnName="Orden_Produccion_Detalle_Id" parentColumnName="Orden_Produccion_Detalle_Id" />
+    </foreignKey>
+    <foreignKey id="Producto" parentTableSchema="APP" parentTableName="Producto" x="2567" y="129">
+      <foreignKeyColumn columnName="Producto_Id" parentColumnName="Producto_Id" />
+    </foreignKey>
+    <foreignKey id="Material" parentTableSchema="APP" parentTableName="Material" x="2228" y="179">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Ruta_Optima" parentTableSchema="APP" parentTableName="Ruta_Optima" x="49" y="961">
+      <foreignKeyColumn columnName="Ruta_Optima_Id" parentColumnName="Ruta_Optima_Id" />
+    </foreignKey>
+    <foreignKey id="Motivo_Cancelacion" parentTableSchema="APP" parentTableName="Motivo_Cancelacion" x="879" y="412">
+      <foreignKeyColumn columnName="Motivo_Cancelacion_Id" parentColumnName="Motivo_Cancelacion_Id" />
+    </foreignKey>
+    <foreignKey id="Material_Surtido" parentTableSchema="APP" parentTableName="Material_Surtido" x="1145" y="786">
+      <foreignKeyColumn columnName="Material_Surtido_Id" parentColumnName="Material_Surtido_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Movimiento" parentTableSchema="APP" parentTableName="Tipo_Movimiento" x="511" y="227">
+      <foreignKeyColumn columnName="Tipo_Movimiento_Id" parentColumnName="Tipo_Movimiento_Id" />
+    </foreignKey>
+    <foreignKey id="Motivo_Movimiento" parentTableSchema="APP" parentTableName="Motivo_Movimiento" x="472" y="585">
+      <foreignKeyColumn columnName="Motivo_Movimiento_Id" parentColumnName="Motivo_Movimiento_Id" />
+    </foreignKey>
+    <foreignKey id="Movimiento_Ruta_Optima" parentTableSchema="APP" parentTableName="Movimiento_Ruta_Optima" x="902" y="1002">
+      <foreignKeyColumn columnName="Movimiento_Ruta_Optima_Id" parentColumnName="Movimiento_Ruta_Optima_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Documento_Comentario_Id" fieldName="Documento_Comentario_Id" label="Documento Comentario Id" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Producción Id" aliasColumnName="Orden_Produccion_Id" aliasForeignKey="Orden_Produccion" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion" label="Orden Producción" foreignKey="Orden_Produccion" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Producción Detalle Id" aliasColumnName="Orden_Produccion_Detalle_Id" aliasForeignKey="Orden_Produccion_Detalle" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle" label="Orden Producción Detalle" foreignKey="Orden_Produccion_Detalle" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" aliasColumnName="Producto_Clave" aliasForeignKey="Producto" />
+    <column name="Producto_Clave" fieldName="Producto" label="Producto" foreignKey="Producto" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material" />
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" aliasColumnName="Solicitud_Id" aliasForeignKey="Solicitud_" />
+    <column name="Solicitud_Id" fieldName="Solicitud" label="Solicitud" foreignKey="Solicitud_" />
+    <column name="Comentarios" fieldName="Comentarios" label="Comentarios" />
+    <column name="Picture" fieldName="Picture" label="Imagen" />
+    <column name="PictureFileName" fieldName="PictureFileName" label="Nombre del archivo de imagen" />
+    <column name="PictureContentType" fieldName="PictureContentType" label="Tipo de Contenido de Imagen" />
+    <column name="PictureLength" fieldName="PictureLength" label="Longitud de la Imagen" />
+    <column name="Es_Comentario" fieldName="Es_Comentario" label="Es Comentario?" />
+    <column name="Tipo_Comentario_Id" fieldName="Tipo_Comentario_Id" label="Tipo Comentario Id" aliasColumnName="Tipo_Comentario" aliasForeignKey="Tipo_Comentario_" />
+    <column name="Tipo_Comentario" fieldName="Tipo_Comentario" label="Tipo de Comentario" foreignKey="Tipo_Comentario_" />
+    <column name="Es_Imagen" fieldName="Es_Imagen" label="Es Imagen?" />
+    <column name="Tipo_Archivo_Id" fieldName="Tipo_Archivo_Id" label="Tipo Archivo Id" aliasColumnName="Tipo_Archivo" aliasForeignKey="Tipo_Archivo_" />
+    <column name="Tipo_Archivo" fieldName="Tipo_Archivo" label="Tipo de Archivo" foreignKey="Tipo_Archivo_" />
+    <column name="Es_Motivo_Cancelacion" fieldName="Es_Motivo_Cancelacion" label="Es Motivo Cancelación?" />
+    <column name="Motivo_Cancelacion_Id" fieldName="Motivo_Cancelacion_Id" label="Motivo Cancelación Id" aliasColumnName="Motivo_Cancelacion" aliasForeignKey="Motivo_Cancelacion" />
+    <column name="Motivo_Cancelacion" fieldName="Motivo_Cancelacion" label="Motivo de Cancelación" foreignKey="Motivo_Cancelacion" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Registrado_Desde_Id" fieldName="Registrado_Desde_Id" label="Registrado Desde Id" />
+    <column name="Registrado_Desde" fieldName="Registrado_Desde" label="Registrado Desde" foreignKey="Registrado_Desde" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" aliasColumnName="Ruta_Optima_Id" aliasForeignKey="Ruta_Optima" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima" label="Ruta Óptima" foreignKey="Ruta_Optima" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido_Id" label="Material Surtido Id" aliasColumnName="Material_Surtido_Id" aliasForeignKey="Material_Surtido" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido" label="Material Surtido" foreignKey="Material_Surtido" />
+    <column name="Tipo_Movimiento_Id" fieldName="Tipo_Movimiento_Id" label="Tipo Movimiento Id" aliasColumnName="Tipo_Movimiento" aliasForeignKey="Tipo_Movimiento" />
+    <column name="Tipo_Movimiento" fieldName="Tipo_Movimiento" label="Tipo Movimiento" foreignKey="Tipo_Movimiento" />
+    <column name="Es_Solicitud_Devolucion" fieldName="Tipo_Movimiento_Es_Solicitud_Devolucion" label="Tipo Movimiento Es Solicitud Devolucion" foreignKey="Tipo_Movimiento" />
+    <column name="Es_Solicitud_Transferencia" fieldName="Tipo_Movimiento_Es_Solicitud_Transferencia" label="Tipo Movimiento Es Solicitud Transferencia" foreignKey="Tipo_Movimiento" />
+    <column name="Motivo_Movimiento_Id" fieldName="Motivo_Movimiento_Id" label="Motivo Movimiento Id" aliasColumnName="Motivo_Movimiento" aliasForeignKey="Motivo_Movimiento" />
+    <column name="Motivo_Movimiento" fieldName="Motivo_Movimiento" label="Motivo Movimiento" foreignKey="Motivo_Movimiento" />
+    <column name="Aplica_A_Devolucion" fieldName="Motivo_Movimiento_Aplica_A_Devolucion" label="Motivo Movimientoaplica A Devolucion" foreignKey="Motivo_Movimiento" />
+    <column name="Aplica_A_Transferencia" fieldName="Motivo_Movimiento_Aplica_A_Transferencia" label="Motivo Movimientoaplica A Transferencia" foreignKey="Motivo_Movimiento" />
+    <column name="Movimiento_Ruta_Optima_Id" fieldName="Movimiento_Ruta_Optima_Id" label="Movimiento Ruta Optima Id" aliasColumnName="Numero_Grupo_Ruta_Optima" aliasForeignKey="Movimiento_Ruta_Optima" />
+    <column name="Numero_Grupo_Ruta_Optima" fieldName="Numero_Grupo_Ruta_Optima" label="Numero Grupo Ruta Optima" foreignKey="Movimiento_Ruta_Optima" />
+  </columns>
+</dataModel>

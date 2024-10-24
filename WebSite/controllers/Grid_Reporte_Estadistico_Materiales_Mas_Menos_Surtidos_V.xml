@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V" conflictDetection="overwriteChanges" label="Grid Reporte Estadistico Materiales Mas Menos Surtidos V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fila" "Fila"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Material" "Material"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fecha_Solicitud_Anio" "Fecha_Solicitud_Anio"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fecha_Solicitud_Mes" "Fecha_Solicitud_Mes"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fecha_Solicitud_Nombre_Mes" "Fecha_Solicitud_Nombre_Mes"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fecha_Solicitud_Semana_Mes" "Fecha_Solicitud_Semana_Mes"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Fecha_Solicitud_Hora" "Fecha_Solicitud_Hora"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."SubFamilia_Clave" "SubFamilia_Clave"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Cantidad_Solicitud" "Cantidad_Solicitud"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Categoria_Solicitud_Id" "Categoria_Solicitud_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Unidad_Material_Solicitado_Id" "Unidad_Material_Solicitado_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Unidad_Material_Solicitado" "Unidad_Material_Solicitado"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Unidad_Material_Entregado" "Unidad_Material_Entregado"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"."Entregado_Por" "Entregado_Por"
+from "dbo"."Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V" "Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V"
+]]></text>
+    </command>
+    <command type="Text" id="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Pasada_V" custom="false">
+      <text><![CDATA[
+SELECT [Fila]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Material_Descripcion]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Solicitud_Anio]
+      ,[Fecha_Solicitud_Mes]
+      ,[Fecha_Solicitud_Nombre_Mes]
+      ,[Fecha_Solicitud_Semana_Mes]
+      ,[Fecha_Solicitud_Hora]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[SubFamilia_Clave]
+      ,[Cantidad_Solicitud]
+      ,[Cantidad_Solicitado]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Categoria_Solicitud_Id]
+      ,[Categoria_Solicitud]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+      ,[Unidad_Material_Solicitado_Id]
+      ,[Unidad_Material_Solicitado]
+      ,[Unidad_Material_Entregado_Id]
+      ,[Unidad_Material_Entregado]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+  FROM [dbo].[Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Pasada_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Actual_V" custom="false">
+      <text><![CDATA[SELECT [Fila]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Material_Descripcion]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Solicitud_Anio]
+      ,[Fecha_Solicitud_Mes]
+      ,[Fecha_Solicitud_Nombre_Mes]
+      ,[Fecha_Solicitud_Semana_Mes]
+      ,[Fecha_Solicitud_Hora]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[SubFamilia_Clave]
+      ,[Cantidad_Solicitud]
+      ,[Cantidad_Solicitado]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Categoria_Solicitud_Id]
+      ,[Categoria_Solicitud]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+      ,[Unidad_Material_Solicitado_Id]
+      ,[Unidad_Material_Solicitado]
+      ,[Unidad_Material_Entregado_Id]
+      ,[Unidad_Material_Entregado]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+  FROM [dbo].[Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Actual_V]]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Fila" type="Int64" label="Fila" showInSummary="true" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" showInSummary="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" showInSummary="true" />
+    <field name="Fecha_Solicitud" type="DateTime" label="Fecha Solicitud" showInSummary="true" />
+    <field name="Fecha_Solicitud_Anio" type="Int32" label="Fecha Solicitud Anio" />
+    <field name="Fecha_Solicitud_Mes" type="Int32" label="Fecha Solicitud Mes" />
+    <field name="Fecha_Solicitud_Nombre_Mes" type="String" label="Fecha Solicitud Nombre Mes" length="50" />
+    <field name="Fecha_Solicitud_Semana_Mes" type="Int32" label="Fecha Solicitud Semana Mes" />
+    <field name="Fecha_Solicitud_Hora" type="String" label="Fecha Solicitud Hora" readOnly="true" length="2" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" />
+    <field name="Familia_Clave" type="String" allowNulls="false" label="Familia Clave" readOnly="true" length="250" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" label="Categoria Id" />
+    <field name="SubFamilia_Clave" type="String" allowNulls="false" label="Sub Familia Clave" length="250" />
+    <field name="Cantidad_Solicitud" type="Int32" label="Cantidad Solicitud" />
+    <field name="Cantidad_Solicitado" type="Decimal" label="Cantidad Solicitado" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id" />
+    <field name="Area_Entrega" type="String" allowNulls="false" label="Area Entrega" readOnly="true" length="250" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" />
+    <field name="Area_Servicio" type="String" allowNulls="false" label="Area Servicio" readOnly="true" length="250" />
+    <field name="Categoria_Solicitud_Id" type="Int32" allowNulls="false" label="Categoria Solicitud Id" />
+    <field name="Categoria_Solicitud" type="String" allowNulls="false" label="Categoria Solicitud" length="150" />
+    <field name="Tipo_Solicitud_Id" type="Int32" allowNulls="false" label="Tipo Solicitud Id" />
+    <field name="Tipo_Solicitud" type="String" allowNulls="false" label="Tipo Solicitud" length="150" />
+    <field name="Unidad_Material_Solicitado_Id" type="Int32" allowNulls="false" label="Unidad Material Solicitado Id" />
+    <field name="Unidad_Material_Solicitado" type="String" allowNulls="false" label="Unidad Material Solicitado" length="250" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" label="Unidad Material Entregado Id" />
+    <field name="Unidad_Material_Entregado" type="String" allowNulls="false" label="Unidad Material Entregado" length="250" />
+    <field name="Solicitado_Por_Id" type="Guid" allowNulls="false" label="Solicitado Por Id" />
+    <field name="Solicitado_Por" type="String" allowNulls="false" label="Solicitado Por" length="256" />
+    <field name="Entregado_Por_Id" type="Guid" label="Entregado Por Id" />
+    <field name="Entregado_Por" type="String" allowNulls="false" label="Entregado Por" length="256" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Grid Reporte Estadistico Materiales Mas Menos Surtidos V" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+        <dataField fieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="gridMatMasMenosSurtidoSemPasada" type="Grid" commandId="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Pasada_V" label="Reporte Estadístico de Materiales Mas Menos Surtidos la semana pasada">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="gridMatMasMenosSurtidoSemPasadaGrafColumn" type="Grid" commandId="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Pasada_V" label="Reporte Estadístico de Materiales Mas Menos Surtidos la semana pasada - Gráfica Columna">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" tag="pivot1-row1-column&#xD;&#xA;pivot1-title:&quot;Tipo de Solicitud por Área de Servicio&quot;" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-col1" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="gridMatMasMenosSurtidoSemPasadaGrafColumnStacked" type="Grid" commandId="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Pasada_V" label="Reporte Estadístico de Materiales Mas Menos Surtidos la semana pasada - Gráfica Columna Apilada">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" tag="pivot1-row1-columnstacked&#xD;&#xA;pivot1-title:&quot;Tipo de Solicitud por Área de Servicio&quot;" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-col1" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="gridMatMasMenosSurtidoSemActual" type="Grid" commandId="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Actual_V" label="Reporte Estadístico de Materiales Mas Menos Surtidos la semana actual">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="gridMatMasMenosSurtidoSemActualGrafColumn" type="Grid" commandId="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Actual_V" label="Reporte Estadístico de Materiales Mas Menos Surtidos la semana actual - Gráfica Columna">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" tag="pivot1-row1-column&#xD;&#xA;pivot1-title:&quot;Tipo de Solicitud por Área de Servicio&quot;" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-col1" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="gridMatMasMenosSurtidoSemActualGrafColumnStacked" type="Grid" commandId="Grid_Rep_Estadistico_Mat_Mas_Menos_Surtidos_Sem_Actual_V" label="Reporte Estadístico de Materiales Mas Menos Surtidos la semana actual - Gráfica Columna Apilada">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Fecha_Solicitud" columns="10" />
+        <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Mes" columns="15" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+        <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+        <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia_Clave" />
+        <dataField fieldName="Cantidad_Solicitud" columns="15" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" tag="pivot1-row1-columnstacked&#xD;&#xA;pivot1-title:&quot;Tipo de Solicitud por Área de Servicio&quot;" />
+        <dataField fieldName="Categoria_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-col1" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Reporte Estadistico Materiales Mas Menos Surtidos V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Reporte Estadistico Materiales Mas Menos Surtidos V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Fila" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Fecha_Solicitud" columns="10" />
+            <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+            <dataField fieldName="Fecha_Solicitud_Mes" columns="15" />
+            <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+            <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+            <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" columns="15" />
+            <dataField fieldName="SubFamilia_Clave" />
+            <dataField fieldName="Cantidad_Solicitud" columns="15" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Categoria_Solicitud_Id" columns="15" />
+            <dataField fieldName="Categoria_Solicitud" />
+            <dataField fieldName="Tipo_Solicitud_Id" columns="15" />
+            <dataField fieldName="Tipo_Solicitud" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Entregado_Por_Id" columns="15" />
+            <dataField fieldName="Entregado_Por" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Reporte Estadistico Materiales Mas Menos Surtidos V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Fila" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Fecha_Solicitud" columns="10" />
+            <dataField fieldName="Fecha_Solicitud_Anio" columns="15" />
+            <dataField fieldName="Fecha_Solicitud_Mes" columns="15" />
+            <dataField fieldName="Fecha_Solicitud_Nombre_Mes" columns="50" />
+            <dataField fieldName="Fecha_Solicitud_Semana_Mes" columns="15" />
+            <dataField fieldName="Fecha_Solicitud_Hora" columns="2" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" columns="15" />
+            <dataField fieldName="SubFamilia_Clave" />
+            <dataField fieldName="Cantidad_Solicitud" columns="15" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Categoria_Solicitud_Id" columns="15" />
+            <dataField fieldName="Categoria_Solicitud" />
+            <dataField fieldName="Tipo_Solicitud_Id" columns="15" />
+            <dataField fieldName="Tipo_Solicitud" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Entregado_Por_Id" columns="15" />
+            <dataField fieldName="Entregado_Por" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

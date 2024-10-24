@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Material_Ubicacion_Stock" alias="Material_Ubicacion_Stock" created="2018-10-17T12:57:16" modified="2021-04-12T19:21:31" x="20" y="32" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Material_" parentTableSchema="APP" parentTableName="Material" x="632" y="20">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Almacenamiento_" parentTableSchema="APP" parentTableName="Tipo_Almacenamiento" x="1281" y="192">
+      <foreignKeyColumn columnName="Tipo_Almacenamiento_Id" parentColumnName="Tipo_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Ubicacion_Almacenamiento_" parentTableSchema="APP" parentTableName="Ubicacion_Almacenamiento" x="1189" y="424">
+      <foreignKeyColumn columnName="Ubicacion_Almacenamiento_Id" parentColumnName="Ubicacion_Almacenamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="881" y="515">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="1272" y="46">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="985" y="270">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Ubicacion" parentTableSchema="APP" parentTableName="Tipo_Ubicacion" x="966" y="41">
+      <foreignKeyColumn columnName="Tipo_Ubicacion_Id" parentColumnName="Tipo_Ubicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Registrado_Desde" parentTableSchema="APP" parentTableName="Registrado_Desde" x="639" y="306">
+      <foreignKeyColumn columnName="Registrado_Desde_Id" parentColumnName="Registrado_Desde_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Material_Ubicacion_Stock_Id" fieldName="Material_Ubicacion_Stock_Id" label="Material Ubicacion Stock Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material_" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material_" />
+    <column name="Tipo_Almacenamiento_Id" fieldName="Tipo_Almacenamiento_Id" label="Tipo Almacenamiento Id" aliasColumnName="Tipo_Almacenamiento" aliasForeignKey="Tipo_Almacenamiento_" />
+    <column name="Tipo_Almacenamiento" fieldName="Tipo_Almacenamiento" label="Tipo Almacenamiento" foreignKey="Tipo_Almacenamiento_" />
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicacion Almacenamiento Id" aliasColumnName="Ubicacion_Almacenamiento" aliasForeignKey="Ubicacion_Almacenamiento_" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" foreignKey="Ubicacion_Almacenamiento_" />
+    <column name="Total_Stock" fieldName="Total_Stock" label="Total Stock" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Til" fieldName="Til" label="Til" />
+    <column name="Tipo_Ubicacion_Id" fieldName="Tipo_Ubicacion_Id" label="Tipo Ubicacion Id" aliasColumnName="Clave_Tipo_Ubicacion" aliasForeignKey="Tipo_Ubicacion" />
+    <column name="Clave_Tipo_Ubicacion" fieldName="Clave_Tipo_Ubicacion" label="Clave Tipo Ubicacion" foreignKey="Tipo_Ubicacion" />
+    <column name="Registrado_Desde" fieldName="Registrado_Desde" label="Registrado Desde" foreignKey="Registrado_Desde" />
+    <column name="Registrado_Desde_Id" fieldName="Registrado_Desde_Id" label="Registrado Desde Id" />
+    <column name="PO" fieldName="PO" label="PO" />
+  </columns>
+</dataModel>

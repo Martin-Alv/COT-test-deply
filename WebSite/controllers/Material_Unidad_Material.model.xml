@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Material_Unidad_Material" alias="Material_Unidad_Material" created="2019-01-12T07:28:27" modified="2019-01-21T02:03:39" x="20" y="38" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Material_" parentTableSchema="APP" parentTableName="Material" x="1260" y="20">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Unidad_Material_" parentTableSchema="APP" parentTableName="Unidad_Material" x="943" y="93">
+      <foreignKeyColumn columnName="Unidad_Material_Id" parentColumnName="Unidad_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="42" y="435">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="590" y="318">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="590" y="176">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Material_Unidad_Material_Id" fieldName="Material_Unidad_Material_Id" label="Material Unidad Material Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material_" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material_" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" aliasColumnName="Unidad_Material" aliasForeignKey="Unidad_Material_" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad de Material" foreignKey="Unidad_Material_" />
+    <column name="Cantidad_Caja_Bolsa_Por_Tarima_Contenedor" fieldName="Cantidad_Caja_Bolsa_Por_Tarima_Contenedor" label="Cantidad de Caja Bolsa Por Tarima Contenedor" />
+    <column name="Cantidad_Pieza_Unidad_Por_Caja_Bolsa" fieldName="Cantidad_Pieza_Unidad_Por_Caja_Bolsa" label="Cantidad de Pieza Unidad Por Caja Bolsa" />
+    <column name="Puede_Surtirse_Manualmente" fieldName="Puede_Surtirse_Manualmente" label="Puede Surtirse Manualmente?" />
+    <column name="Permitir_Desviacion" fieldName="Permitir_Desviacion" label="Permitir Desviación?" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+  </columns>
+</dataModel>

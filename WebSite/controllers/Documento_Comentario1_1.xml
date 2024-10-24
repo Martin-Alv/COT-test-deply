@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Documento_Comentario1_1" label="Documento_Comentario1_1" conflictDetection="overwriteChanges" handler="eaton.Rules.Documento_Comentario1_1BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Documento_Comentario"."Documento_Comentario_Id" "Documento_Comentario_Id"
+	,"Documento_Comentario"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Orden_Produccion"."Orden_Produccion_Id" "Orden_Produccion"
+	,"Documento_Comentario"."Orden_Produccion_Detalle_Id" "Orden_Produccion_Detalle_Id"
+	,"Orden_Produccion_Detalle"."Orden_Produccion_Detalle_Id" "Orden_Produccion_Detalle"
+	,"Documento_Comentario"."Producto_Id" "Producto_Id"
+	,"Producto"."Producto_Clave" "Producto"
+	,"Documento_Comentario"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material"
+	,"Documento_Comentario"."Solicitud_Id" "Solicitud_Id"
+	,"Solicitud_"."Solicitud_Id" "Solicitud"
+	,"Documento_Comentario"."Comentarios" "Comentarios"
+	,"Documento_Comentario"."Picture" "Picture"
+	,"Documento_Comentario"."PictureFileName" "PictureFileName"
+	,"Documento_Comentario"."PictureContentType" "PictureContentType"
+	,"Documento_Comentario"."PictureLength" "PictureLength"
+	,"Documento_Comentario"."Es_Comentario" "Es_Comentario"
+	,"Documento_Comentario"."Tipo_Comentario_Id" "Tipo_Comentario_Id"
+	,"Tipo_Comentario_"."Tipo_Comentario" "Tipo_Comentario"
+	,"Documento_Comentario"."Es_Imagen" "Es_Imagen"
+	,"Documento_Comentario"."Tipo_Archivo_Id" "Tipo_Archivo_Id"
+	,"Tipo_Archivo_"."Tipo_Archivo" "Tipo_Archivo"
+	,"Documento_Comentario"."Es_Motivo_Cancelacion" "Es_Motivo_Cancelacion"
+	,"Documento_Comentario"."Motivo_Cancelacion_Id" "Motivo_Cancelacion_Id"
+	,"Motivo_Cancelacion"."Motivo_Cancelacion" "Motivo_Cancelacion"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Documento_Comentario"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Documento_Comentario"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Documento_Comentario"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Documento_Comentario"."Registrado_Desde_Id" "Registrado_Desde_Id"
+	,"Registrado_Desde"."Registrado_Desde" "Registrado_Desde"
+	,"Documento_Comentario"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Ruta_Optima"."Ruta_Optima_Id" "Ruta_Optima"
+	,"Documento_Comentario"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Material_Surtido"."Material_Surtido_Id" "Material_Surtido"
+	,"Documento_Comentario"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Tipo_Movimiento"."Tipo_Movimiento" "Tipo_Movimiento"
+	,"Tipo_Movimiento"."Es_Solicitud_Devolucion" "Tipo_Movimiento_Es_Solicitud_Devolucion"
+	,"Tipo_Movimiento"."Es_Solicitud_Transferencia" "Tipo_Movimiento_Es_Solicitud_Transferencia"
+	,"Documento_Comentario"."Motivo_Movimiento_Id" "Motivo_Movimiento_Id"
+	,"Motivo_Movimiento"."Motivo_Movimiento" "Motivo_Movimiento"
+	,"Motivo_Movimiento"."Aplica_A_Devolucion" "Motivo_Movimiento_Aplica_A_Devolucion"
+	,"Motivo_Movimiento"."Aplica_A_Transferencia" "Motivo_Movimiento_Aplica_A_Transferencia"
+	,"Documento_Comentario"."Movimiento_Ruta_Optima_Id" "Movimiento_Ruta_Optima_Id"
+	,"Movimiento_Ruta_Optima"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+from "APP"."Documento_Comentario" "Documento_Comentario"
+	left join "APP"."Solicitud" "Solicitud_" on "Documento_Comentario"."Solicitud_Id" = "Solicitud_"."Solicitud_Id"
+	left join "APP"."Tipo_Comentario" "Tipo_Comentario_" on "Documento_Comentario"."Tipo_Comentario_Id" = "Tipo_Comentario_"."Tipo_Comentario_Id"
+	left join "APP"."Tipo_Archivo" "Tipo_Archivo_" on "Documento_Comentario"."Tipo_Archivo_Id" = "Tipo_Archivo_"."Tipo_Archivo_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Documento_Comentario"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Documento_Comentario"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Documento_Comentario"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Registrado_Desde" "Registrado_Desde" on "Documento_Comentario"."Registrado_Desde_Id" = "Registrado_Desde"."Registrado_Desde_Id"
+	left join "dbo"."Orden_Produccion" "Orden_Produccion" on "Documento_Comentario"."Orden_Produccion_Id" = "Orden_Produccion"."Orden_Produccion_Id"
+	left join "dbo"."Orden_Produccion_Detalle" "Orden_Produccion_Detalle" on "Documento_Comentario"."Orden_Produccion_Detalle_Id" = "Orden_Produccion_Detalle"."Orden_Produccion_Detalle_Id"
+	left join "APP"."Producto" "Producto" on "Documento_Comentario"."Producto_Id" = "Producto"."Producto_Id"
+	left join "APP"."Material" "Material" on "Documento_Comentario"."Material_Id" = "Material"."Material_Id"
+	left join "APP"."Ruta_Optima" "Ruta_Optima" on "Documento_Comentario"."Ruta_Optima_Id" = "Ruta_Optima"."Ruta_Optima_Id"
+	left join "APP"."Motivo_Cancelacion" "Motivo_Cancelacion" on "Documento_Comentario"."Motivo_Cancelacion_Id" = "Motivo_Cancelacion"."Motivo_Cancelacion_Id"
+	left join "APP"."Material_Surtido" "Material_Surtido" on "Documento_Comentario"."Material_Surtido_Id" = "Material_Surtido"."Material_Surtido_Id"
+	left join "APP"."Tipo_Movimiento" "Tipo_Movimiento" on "Documento_Comentario"."Tipo_Movimiento_Id" = "Tipo_Movimiento"."Tipo_Movimiento_Id"
+	left join "APP"."Motivo_Movimiento" "Motivo_Movimiento" on "Documento_Comentario"."Motivo_Movimiento_Id" = "Motivo_Movimiento"."Motivo_Movimiento_Id"
+	left join "APP"."Movimiento_Ruta_Optima" "Movimiento_Ruta_Optima" on "Documento_Comentario"."Movimiento_Ruta_Optima_Id" = "Movimiento_Ruta_Optima"."Movimiento_Ruta_Optima_Id"
+]]></text>
+    </command>
+    <command id="Documento_Comentario_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Documento_Comentario_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Documento_Comentario_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Documento Comentario Id" readOnly="true" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Producción Id" showInSummary="true" default="((0))">
+      <items style="Lookup" dataController="Orden_Produccion" newDataView="createForm1" dataValueField="Orden_Produccion_Id" dataTextField="Orden_Produccion_Id" dataView="Orden_Produccion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Orden_Produccion" type="Int64" label="Orden Producción" readOnly="true" />
+    <field name="Orden_Produccion_Detalle_Id" type="Int64" allowNulls="false" label="Orden Producción Detalle Id" showInSummary="true" default="((0))">
+      <items style="Lookup" dataController="Orden_Produccion_Detalle" newDataView="createForm1" dataValueField="Orden_Produccion_Detalle_Id" dataTextField="Orden_Produccion_Detalle_Id" dataView="Orden_Produccion_Detalle_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Orden_Produccion_Detalle" type="Int64" label="Orden Producción Detalle" readOnly="true" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto Id" showInSummary="true" default="((0))">
+      <items style="Lookup" dataController="Producto" newDataView="createForm1" dataValueField="Producto_Id" dataTextField="Producto_Clave" dataView="Producto_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Producto" type="String" readOnly="true" label="Producto" length="50" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" default="((0))">
+      <items style="Lookup" dataController="Material" newDataView="createForm1" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" label="Solicitud Id" showInSummary="true">
+      <items style="Lookup" dataController="Solicitud" dataValueField="Solicitud_Id" dataTextField="Solicitud_Id" dataView="Solicitud_LookUp_List" pageSize="15" newDataView="createForm1" />
+    </field>
+    <field name="Solicitud" type="Int64" label="Solicitud" readOnly="true" />
+    <field name="Comentarios" type="String" allowQBE="false" allowSorting="false" label="Comentarios" />
+    <field name="Picture" type="Byte[]" onDemand="true" sourceFields="Documento_Comentario_Id" onDemandHandler="Documento_ComentarioPicture" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Archivo" />
+    <field name="PictureFileName" type="String" label="Nombre de Archivo" length="250" />
+    <field name="PictureContentType" type="String" label="Tipo de Archivo" length="250" />
+    <field name="PictureLength" type="Int32" label="Tamaño de Archivo" />
+    <field name="Es_Comentario" type="Boolean" allowNulls="false" label="Es Comentario?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Tipo_Comentario_Id" type="Int32" allowNulls="false" label="Tipo Comentario Id" default="((3))">
+      <items style="Lookup" dataController="Tipo_Comentario" dataValueField="Tipo_Comentario_Id" dataTextField="Tipo_Comentario" dataView="Tipo_Comentario_LookUp_List" pageSize="15" newDataView="createForm1" />
+    </field>
+    <field name="Tipo_Comentario" type="String" readOnly="true" label="Tipo de Comentario" length="150" />
+    <field name="Es_Imagen" type="Boolean" allowNulls="false" label="Es Imagen?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Tipo_Archivo_Id" type="Int32" allowNulls="false" label="Tipo Archivo Id" default="((0))">
+      <items style="Lookup" dataController="Tipo_Archivo" dataValueField="Tipo_Archivo_Id" dataTextField="Tipo_Archivo" dataView="Tipo_Archivo_LookUp_List" pageSize="15" newDataView="createForm1" />
+    </field>
+    <field name="Tipo_Archivo" type="String" readOnly="true" label="Tipo de Archivo" length="150" />
+    <field name="Es_Motivo_Cancelacion" type="Boolean" allowNulls="false" label="Es Motivo Cancelación?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Motivo_Cancelacion_Id" type="Int32" allowNulls="false" label="Motivo Cancelación Id" default="((0))">
+      <items style="Lookup" dataController="Motivo_Cancelacion" newDataView="createForm1" dataValueField="Motivo_Cancelacion_Id" dataTextField="Motivo_Cancelacion" pageSize="15" dataView="Motivo_Cancelacion_LookUp_List" />
+    </field>
+    <field name="Motivo_Cancelacion" type="String" readOnly="true" label="Motivo de Cancelación" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Registrado_Desde_Id" type="Int16" allowNulls="false" label="Registrado Desde Id">
+      <items style="Lookup" dataController="Registrado_Desde" dataValueField="Registrado_Desde_Id" dataTextField="Registrado_Desde" dataView="Registrado_Desde_LookUp_List" pageSize="15" newDataView="createForm1" />
+    </field>
+    <field name="Registrado_Desde" type="String" readOnly="true" label="Registrado Desde" length="250" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Ruta Optima Id">
+      <items style="Lookup" dataController="Ruta_Optima" newDataView="createForm1" dataValueField="Ruta_Optima_Id" dataTextField="Ruta_Optima_Id" dataView="Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Ruta_Optima" type="Int64" label="Ruta Óptima" readOnly="true" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" label="Material Surtido Id">
+      <items style="Lookup" dataController="Material_Surtido" newDataView="createForm1" searchOnStart="true" dataValueField="Material_Surtido_Id" dataTextField="Material_Surtido_Id" />
+    </field>
+    <field name="Material_Surtido" type="Int64" label="Material Surtido" readOnly="true" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Movimiento Id">
+      <items style="Lookup" dataController="Tipo_Movimiento" newDataView="createForm1" searchOnStart="true" dataValueField="Tipo_Movimiento_Id" dataTextField="Tipo_Movimiento" copy="Tipo_Movimiento_Es_Solicitud_Devolucion=Es_Solicitud_Devolucion, Tipo_Movimiento_Es_Solicitud_Transferencia=Es_Solicitud_Transferencia" />
+    </field>
+    <field name="Tipo_Movimiento" type="String" readOnly="true" label="Tipo Movimiento" length="250" />
+    <field name="Tipo_Movimiento_Es_Solicitud_Devolucion" type="Boolean" readOnly="true" label="Tipo Movimiento Es Solicitud Devolucion" />
+    <field name="Tipo_Movimiento_Es_Solicitud_Transferencia" type="Boolean" readOnly="true" label="Tipo Movimiento Es Solicitud Transferencia" />
+    <field name="Motivo_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Motivo Movimiento Id">
+      <items style="Lookup" dataController="Motivo_Movimiento" dataValueField="Motivo_Movimiento_Id" dataTextField="Motivo_Movimiento" copy="Motivo_Movimiento_Aplica_A_Devolucion=Aplica_A_Devolucion, Motivo_Movimiento_Aplica_A_Transferencia=Aplica_A_Transferencia" dataView="Motivo_Movimiento_Transf_LookUp_List" pageSize="15" newDataView="createForm1" />
+    </field>
+    <field name="Motivo_Movimiento" type="String" readOnly="true" label="Motivo Movimiento" length="250" />
+    <field name="Motivo_Movimiento_Aplica_A_Devolucion" type="Boolean" readOnly="true" label="Motivo Movimientoaplica A Devolucion" />
+    <field name="Motivo_Movimiento_Aplica_A_Transferencia" type="Boolean" readOnly="true" label="Motivo Movimientoaplica A Transferencia" />
+    <field name="Movimiento_Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Movimiento Ruta Optima Id">
+      <items style="Lookup" dataController="Movimiento_Ruta_Optima" newDataView="createForm1" searchOnStart="true" dataValueField="Movimiento_Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" />
+    </field>
+    <field name="Numero_Grupo_Ruta_Optima" type="Decimal" readOnly="true" label="Numero Grupo Ruta Optima" />
+    <field name="Cantidad_Solicitado" type="Decimal" label="Cantidad Solicitado" isVirtual="true" />
+    <field name="Cantidad_Entregado" type="Decimal" label="Cantidad Entregado" isVirtual="true" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" label="Unidad Material Entregado Id" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" label="Ubicacion Almacenamiento De Surtido Id" isVirtual="true" />
+    <field name="Solicitud_Material" type="String" label="Solicitud Material" isVirtual="true" />
+    <field name="Tipo_Operacion_Id" type="Int32" label="Tipo Operacion Id" isVirtual="true" />
+    <field name="Movimiento" type="String" label="Movimiento" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Documento Comentario" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt;0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Solicitud_Id" aliasFieldName="Solicitud" hidden="true" />
+        <dataField fieldName="Comentarios" rows="5" />
+        <dataField fieldName="Picture" columns="15" hidden="true" />
+        <dataField fieldName="PictureFileName" hidden="true" />
+        <dataField fieldName="PictureContentType" hidden="true" />
+        <dataField fieldName="PictureLength" columns="15" hidden="true" />
+        <dataField fieldName="Es_Comentario" hidden="true" />
+        <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" />
+        <dataField fieldName="Es_Imagen" hidden="true" />
+        <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" hidden="true" />
+        <dataField fieldName="Es_Motivo_Cancelacion" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="Documento_Comentario_Solicitud_Entregado" type="Grid" commandId="command1" label="Comentarios y documentos de la solicitud entregada" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt;0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Solicitud_Id" aliasFieldName="Solicitud" hidden="true" />
+        <dataField fieldName="Comentarios" rows="5" />
+        <dataField fieldName="Picture" columns="15" hidden="true" />
+        <dataField fieldName="PictureFileName" hidden="true" />
+        <dataField fieldName="PictureContentType" hidden="true" />
+        <dataField fieldName="PictureLength" columns="15" hidden="true" />
+        <dataField fieldName="Es_Comentario" hidden="true" />
+        <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" />
+        <dataField fieldName="Es_Imagen" hidden="true" />
+        <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" hidden="true" />
+        <dataField fieldName="Es_Motivo_Cancelacion" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Documento Comentario">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Documento Comentario" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" aliasFieldName="Solicitud" />
+            <dataField fieldName="Comentarios" rows="5" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName" />
+            <dataField fieldName="PictureContentType" />
+            <dataField fieldName="PictureLength" columns="15" />
+            <dataField fieldName="Es_Comentario" hidden="true" />
+            <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" hidden="true" />
+            <dataField fieldName="Es_Imagen" hidden="true" />
+            <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Documento Comentario">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Documento Comentario" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" aliasFieldName="Solicitud" hidden="true" />
+            <dataField fieldName="Comentarios" rows="5" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="PictureContentType">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="PictureLength" columns="15">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Es_Comentario" hidden="true" />
+            <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" hidden="true" />
+            <dataField fieldName="Es_Imagen" hidden="true" />
+            <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Documento_Comentario
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Documento_Comentario_Id = @Documento_Comentario_Id AND Creado_Por_Id = @BusinessRules_UserId
+
+DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Documento_Comentario
+WHERE
+Documento_Comentario_Id = @Documento_Comentario_Id AND
+Creado_Por_Id <> @BusinessRules_UserId
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1442,1,0, @BusinessRules_UserId)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Documento_Comentario
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Documento_Comentario_Id = @Documento_Comentario_Id AND Creado_Por_Id = @BusinessRules_UserId
+
+DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Documento_Comentario
+WHERE
+Documento_Comentario_Id = @Documento_Comentario_Id AND
+Creado_Por_Id <> @BusinessRules_UserId
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1442,1,0, @BusinessRules_UserId)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" whenView="createForm1|createForm2" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" whenView="createForm1|createForm2" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" whenView="createForm1|createForm2|createForm3" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action id="a101" whenLastCommandName="New" commandName="Cancel" whenView="createFormCancelarSurtidoDesdeRutaOptima|createFormCancelarSurtidoDesdeMatSurtiAEjec|createFormCancelarTransferencia" headerText="Regresar" cssClass="material-icon-arrow-back" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE 
+APP.Documento_Comentario
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Documento_Comentario_Id = @Documento_Comentario_Id AND Creado_Por_Id = @BusinessRules_UserId
+
+DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Documento_Comentario
+WHERE
+Documento_Comentario_Id = @Documento_Comentario_Id AND
+Creado_Por_Id <> @BusinessRules_UserId
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1442,1,0, @BusinessRules_UserId)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Documento_Comentario
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Documento_Comentario_Id = @Documento_Comentario_Id AND Creado_Por_Id = @BusinessRules_UserId
+
+DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Documento_Comentario
+WHERE
+Documento_Comentario_Id = @Documento_Comentario_Id AND
+Creado_Por_Id <> @BusinessRules_UserId
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1442,1,0, @BusinessRules_UserId)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Documento_Comentario
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Documento_Comentario_Id = @Documento_Comentario_Id]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Documento_Comentario
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Documento_Comentario_Id = @Documento_Comentario_Id]]></rule>
+    <rule id="r100" commandName="New" type="Sql" phase="Execute"><![CDATA[/*SELECT TOP 1
+    @Tipo_Archivo_Id = Tipo_Archivo_Id
+    ,@Tipo_Archivo = Tipo_Archivo
+FROM APP.Tipo_Archivo
+WHERE Es_Evidencia_De_Cadista = 1
+AND Estatus_Registro_Id = 1 -- Que este activo*/
+
+
+-- SELECT TOP 1
+    SET @Tipo_Archivo_Id = 0 --Tipo_Archivo_Id
+    SET @Tipo_Archivo = '' -- Tipo_Archivo
+-- FROM APP.Tipo_Archivo
+-- WHERE Es_Evidencia_De_Cadista = 1
+-- AND Estatus_Registro_Id = 1 -- Que este activo
+]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Documento_Comentario
+WHERE
+Documento_Comentario_Id = @Documento_Comentario_Id
+AND Creado_Por_Id <> @BusinessRules_UserId
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1441,1,0, @BusinessRules_UserId)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END
+]]></rule>
+  </businessRules>
+</dataController>

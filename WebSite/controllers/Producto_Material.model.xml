@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Producto_Material" alias="Producto_Material" created="2018-10-25T19:53:35" modified="2018-10-28T01:04:08" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Producto_" parentTableSchema="APP" parentTableName="Producto" x="405" y="20">
+      <foreignKeyColumn columnName="Producto_Id" parentColumnName="Producto_Id" />
+    </foreignKey>
+    <foreignKey id="Material_" parentTableSchema="APP" parentTableName="Material" x="1232" y="97">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Unidad_Material_" parentTableSchema="APP" parentTableName="Unidad_Material" x="392" y="703">
+      <foreignKeyColumn columnName="Unidad_Material_Id" parentColumnName="Unidad_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="784" y="751">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="736" y="194">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="408" y="218">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Producto_Material_Id" fieldName="Producto_Material_Id" label="Producto Material Id" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" aliasColumnName="Producto_Clave" aliasForeignKey="Producto_" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" foreignKey="Producto_" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material_" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material_" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" aliasColumnName="Unidad_Material" aliasForeignKey="Unidad_Material_" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" foreignKey="Unidad_Material_" />
+    <column name="Cantidad" fieldName="Cantidad" label="Cantidad" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

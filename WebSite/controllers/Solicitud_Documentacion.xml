@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Solicitud_Documentacion" conflictDetection="overwriteChanges" label="Solicitud Documentacion" handler="eaton.Rules.Solicitud_DocumentacionBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Solicitud_Documentacion"."Solicitud_Documentacion_Id" "Solicitud_Documentacion_Id"
+	,"Solicitud_Documentacion"."Solicitud_Id" "Solicitud_Id"
+	,"Solicitud_Documentacion"."Comentarios" "Comentarios"
+	,"Solicitud_Documentacion"."Picture" "Picture"
+	,"Solicitud_Documentacion"."PictureFileName" "PictureFileName"
+	,"Solicitud_Documentacion"."PictureContentType" "PictureContentType"
+	,"Solicitud_Documentacion"."PictureLength" "PictureLength"
+	,"Solicitud_Documentacion"."Es_Comentario" "Es_Comentario"
+	,"Solicitud_Documentacion"."Tipo_Comentario_Id" "Tipo_Comentario_Id"
+	,"Tipo_Comentario"."Tipo_Comentario" "Tipo_Comentario"
+	,"Solicitud_Documentacion"."Es_Imagen" "Es_Imagen"
+	,"Solicitud_Documentacion"."Tipo_Archivo_Id" "Tipo_Archivo_Id"
+	,"Tipo_Archivo_"."Tipo_Archivo" "Tipo_Archivo"
+	,"Solicitud_Documentacion"."Es_Motivo_Cancelacion" "Es_Motivo_Cancelacion"
+	,"Solicitud_Documentacion"."Motivo_Cancelacion_Id" "Motivo_Cancelacion_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Solicitud_Documentacion"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Solicitud_Documentacion"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Solicitud_Documentacion"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Solicitud_Documentacion" "Solicitud_Documentacion"
+	left join "APP"."Tipo_Archivo" "Tipo_Archivo_" on "Solicitud_Documentacion"."Tipo_Archivo_Id" = "Tipo_Archivo_"."Tipo_Archivo_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Solicitud_Documentacion"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Solicitud_Documentacion"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Solicitud_Documentacion"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Tipo_Comentario" "Tipo_Comentario" on "Solicitud_Documentacion"."Tipo_Comentario_Id" = "Tipo_Comentario"."Tipo_Comentario_Id"
+]]></text>
+    </command>
+    <command id="Solicitud_Documentacion_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Solicitud_Documentacion_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Solicitud_Documentacion_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Solicitud Documentacion Id" readOnly="true" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" default="((0))" label="Folio Solicitud" showInSummary="true" />
+    <field name="Comentarios" type="String" allowQBE="false" allowSorting="false" label="Comentarios" showInSummary="true" />
+    <field name="Picture" type="Byte[]" onDemand="true" sourceFields="Solicitud_Documentacion_Id" onDemandHandler="Solicitud_DocumentacionPicture" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Archivo" showInSummary="true" />
+    <field name="PictureFileName" type="String" label="Nombre de Archivo" length="250" showInSummary="true" />
+    <field name="PictureContentType" type="String" label="Tipo de Archivo" length="250" showInSummary="true" />
+    <field name="PictureLength" type="Int32" label="Tamaño de Archivo" />
+    <field name="Es_Comentario" type="Boolean" allowNulls="false" default="((0))" label="Es Comentario">
+      <items style="CheckBox" />
+    </field>
+    <field name="Tipo_Comentario_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Comentario Id">
+      <items style="Lookup" dataController="Tipo_Comentario" newDataView="createForm1" dataValueField="Tipo_Comentario_Id" dataTextField="Tipo_Comentario" dataView="Tipo_Comentario_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Comentario" type="String" readOnly="true" label="Tipo Comentario" length="150" />
+    <field name="Es_Imagen" type="Boolean" allowNulls="false" default="((0))" label="Es Imagen">
+      <items style="CheckBox" />
+    </field>
+    <field name="Tipo_Archivo_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Archivo Id">
+      <items style="Lookup" dataController="Tipo_Archivo" newDataView="createForm1" dataValueField="Tipo_Archivo_Id" dataTextField="Tipo_Archivo" dataView="Tipo_Archivo_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Archivo" type="String" readOnly="true" label="Tipo Archivo" length="150" />
+    <field name="Es_Motivo_Cancelacion" type="Boolean" allowNulls="false" default="((0))" label="Es Motivo Cancelacion">
+      <items style="CheckBox" />
+    </field>
+    <field name="Motivo_Cancelacion_Id" type="Int32" allowNulls="false" default="((0))" label="Motivo Cancelacion Id" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Solicitud Documentacion">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Comentarios" rows="5" />
+        <dataField fieldName="Picture" columns="15" hidden="true" />
+        <dataField fieldName="PictureFileName" hidden="true" />
+        <dataField fieldName="PictureContentType" hidden="true" />
+        <dataField fieldName="PictureLength" columns="15" hidden="true" />
+        <dataField fieldName="Es_Comentario" hidden="true" />
+        <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" hidden="true" />
+        <dataField fieldName="Es_Imagen" hidden="true" />
+        <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" hidden="true" />
+        <dataField fieldName="Es_Motivo_Cancelacion" hidden="true" />
+        <dataField fieldName="Motivo_Cancelacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Solicitud Documentacion">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Solicitud Documentacion" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Comentarios" rows="5" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="PictureContentType">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="PictureLength" columns="15">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Es_Comentario" hidden="true" />
+            <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" hidden="true" />
+            <dataField fieldName="Es_Imagen" hidden="true" />
+            <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" hidden="true" />
+            <dataField fieldName="Es_Motivo_Cancelacion" hidden="true" />
+            <dataField fieldName="Motivo_Cancelacion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Solicitud Documentacion">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Solicitud Documentacion" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Comentarios" rows="5" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="PictureContentType">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="PictureLength" columns="15">
+              <readOnly>
+                <expression test="true" type="ClientScript" />
+              </readOnly>
+            </dataField>
+            <dataField fieldName="Es_Comentario" hidden="true" />
+            <dataField fieldName="Tipo_Comentario_Id" aliasFieldName="Tipo_Comentario" hidden="true" />
+            <dataField fieldName="Es_Imagen" hidden="true" />
+            <dataField fieldName="Tipo_Archivo_Id" aliasFieldName="Tipo_Archivo" hidden="true" />
+            <dataField fieldName="Es_Motivo_Cancelacion" hidden="true" />
+            <dataField fieldName="Motivo_Cancelacion_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

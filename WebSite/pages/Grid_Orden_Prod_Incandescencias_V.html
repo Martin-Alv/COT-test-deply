@@ -1,0 +1,14 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crear Solicitud de Incandescencias</title>
+    <meta name="description" content="This page allows grid orden prod incandescencias v management.">
+  </head>
+  <body class="material-icon-list" data-authorize-roles="administrador,SolicitanteIncandescencias">
+    <div data-flow="row">
+      <div id="view1" data-controller="Grid_Orden_Prod_Incandescencias_V" data-view="grid_OrdenProdPorFechaImpresionIncan" data-show-in-summary="true" data-selection-mode="multiple" data-tag="view-style-grid,  &#xD;&#xA;view-style-list-disabled,  &#xD;&#xA;view-style-cards-disabled, &#xD;&#xA;view-style-charts-disabled, &#xD;&#xA;view-style-calendar-disabled, &#xD;&#xA;inline-editing-none, &#xD;&#xA;inline-editing-option-none"> </div>
+      <div id="view2" data-controller="Grid_Orden_Det_Orden_Prod_Incan_V" data-view="grid1" data-filter-source="view1" data-filter-fields="Orden_Produccion_Id,Numero_Orden_Produccion" data-page-size="30" data-selection-mode="multiple" data-tag="view-style-grid,  &#xD;&#xA;view-style-list-disabled,  &#xD;&#xA;view-style-cards-disabled, &#xD;&#xA;view-style-charts-disabled, &#xD;&#xA;view-style-calendar-disabled, &#xD;&#xA;inline-editing-none, &#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select"> </div>
+    </div>
+  </body>
+</html>

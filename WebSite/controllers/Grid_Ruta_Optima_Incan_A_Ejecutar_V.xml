@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Ruta_Optima_Incan_A_Ejecutar_V" conflictDetection="overwriteChanges" label="Grid Ruta Optima Incan A Ejecutar V" handler="eaton.Rules.Grid_Ruta_Optima_Incan_A_Ejecutar_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Tmp_Ruta_Optima_Transaccion_Id" "Tmp_Ruta_Optima_Transaccion_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Material_Id" "Material_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Material" "Material"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Unidad_Material_Solicitado_Id" "Unidad_Material_Solicitado_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Unidad_Material_Solicitado" "Unidad_Material_Solicitado"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Material_Unidad_Material_Id" "Material_Unidad_Material_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Unidad_Material_Id" "Unidad_Material_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Unidad_Material" "Unidad_Material"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Unidad_Material_Entregado" "Unidad_Material_Entregado"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Ubicacion_Almacenamiento_De_Surtido_Id" "Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Ubicacion_Almacenamiento_De_Surtido" "Ubicacion_Almacenamiento_De_Surtido"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Creado_Por_Id" "Creado_Por_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Transaccion_Id" "Transaccion_Id"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Solicitud_Material" "Solicitud_Material"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Material_Ubicacion" "Material_Ubicacion"
+	,"Grid_Ruta_Optima_Incan_A_Ejecutar_V"."Material_Ubicacion_Stock_Id" "Material_Ubicacion_Stock_Id"
+from "dbo"."Grid_Ruta_Optima_Incan_A_Ejecutar_V" "Grid_Ruta_Optima_Incan_A_Ejecutar_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Tmp_Ruta_Optima_Transaccion_Id" type="String" label="Tmp Ruta Optima Transaccion Id" length="50" showInSummary="true" isPrimaryKey="true" allowNulls="false" />
+    <field name="Numero_Grupo_Ruta_Optima" type="Int32" allowNulls="false" label="Numero Grupo Ruta Optima" showInSummary="true" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Ruta Optima Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" />
+    <field name="Unidad_Material_Solicitado_Id" type="Int32" allowNulls="false" label="Unidad Material Solicitado Id" />
+    <field name="Unidad_Material_Solicitado" type="String" label="Unidad Material Solicitado" length="250" />
+    <field name="Material_Unidad_Material_Id" type="Int64" allowNulls="false" label="Material Unidad Material Id" />
+    <field name="Unidad_Material_Id" type="Int32" allowNulls="false" label="Unidad Material Id" />
+    <field name="Unidad_Material" type="String" allowNulls="false" label="Unidad Material" length="250" />
+    <field name="Cantidad_Solicitado" type="Decimal" label="Cantidad Solicitado" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" label="Unidad Material Entregado Id">
+      <items style="Lookup" dataController="Unidad_Material" dataView="Unidad_Material_LookUp_List" dataTextField="Unidad_Material" dataValueField="Unidad_Material_Id" copy="Unidad_Material_Entregado_Id = Unidad_Material_Id&#xD;&#xA;,Unidad_Material_Entregado = Unidad_Material" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" label="Unidad Material Entregado" length="250" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento Id" contextFields="Material_Id=Material_Id">
+      <items style="Lookup" dataController="Material_Ubicacion_Almacen_V" dataView="Material_Ubicacion_Almacen_Con_Stock" dataTextField="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" copy="Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado=Total_Stock,&#xD;&#xA;Material_Ubicacion_Stock_Id = Material_Ubicacion_Stock_Id&#xD;&#xA;" />
+    </field>
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento De Surtido Id" contextFields="Material_Id=Material_Id">
+      <items style="Lookup" dataController="Material_Ubicacion_Almacen_V" dataView="Material_Ubicacion_Almacen_Con_Stock" dataTextField="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" copy="Ubicacion_Almacenamiento_De_Surtido_Id = Ubicacion_Almacenamiento_Id, Ubicacion_Almacenamiento_De_Surtido=Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Ubicacion_Almacenamiento_De_Surtido" type="String" label="Ubicacion Almacenamiento De Surtido" length="150" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" label="Creado Por Id" />
+    <field name="Transaccion_Id" type="String" allowNulls="false" label="Transaccion Id" length="50" />
+    <field name="Solicitud_Material" type="String" allowQBE="false" allowSorting="false" label="Solicitud Material" />
+    <field name="Tiempo_Transcurrido" type="Int32" allowNulls="false" label="Tiempo Transcurrido" />
+    <field name="Material_Ubicacion" type="String" allowQBE="false" allowSorting="false" label="Otras ubicaciones del material" readOnly="true" />
+    <field name="Material_Ubicacion_Stock_Id" type="Int64" label="Material Ubicacion Stock Id" />
+    <field name="Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado" type="Decimal" label="Total Stock En Ubicacion Almacenamiento Seleccionado" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Ruta Óptima A Ejecutar" filter="Creado_Por_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Tmp_Ruta_Optima_Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" hidden="true" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Material_Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" hidden="true" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Solicitud_Material" rows="5" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Material_Ubicacion" rows="5" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Ruta Optima Incan A Ejecutar V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Ruta Optima Incan A Ejecutar V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tmp_Ruta_Optima_Transaccion_Id" columns="50" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" aliasFieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Solicitud_Material" rows="5" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Material_Ubicacion" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" textMode="Static" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Ruta Optima Incan A Ejecutar V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tmp_Ruta_Optima_Transaccion_Id" columns="50" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Material_Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Solicitud_Material" rows="5" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Material_Ubicacion" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" roles="hidden" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" roles="hidden" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" headerText="Regresar" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Guardar" id="a100" whenLastCommandName="Edit" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true" />
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="After" name="Valida_Y_Llama_A_ExecCS01"><![CDATA[//this.preventDefault();
+// Obtenemos el valor
+var valor = $("#Cantidad_Material_Entregado").val();
+var Ubicacion_Formulario = '';
+var material_A_Surtir = [Material]; //[Material_Id];
+// var Ruta_Optima_Id = [Movimiento_Ruta_Optima_Id]
+// var Material_Id = [Transferencia_Material_Id]
+
+//-------------------------------------------------//
+
+var Tmp_Ruta_Optima_Transaccion_Id = [Tmp_Ruta_Optima_Transaccion_Id]; 
+var Ruta_Optima_Id = [Ruta_Optima_Id]; 
+var Material_Id = [Material_Id];      
+var Cantidad_Solicitado = [Cantidad_Solicitado];      
+var Cantidad_Entregado = [Cantidad_Entregado];      
+var Unidad_Material_Entregado_Id = [Unidad_Material_Entregado_Id];     
+var Ubicacion_Almacenamiento_Id = [Ubicacion_Almacenamiento_Id];     
+
+if(valor > 0){
+  [Cantidad_Entregado] = valor;
+  Cantidad_Entregado = [Cantidad_Entregado]  
+  Ubicacion_Formulario = [Ubicacion_Almacenamiento] + '; ';
+  if(debug == 1){
+        fnDebug(Ubicacion_Formulario);
+        fnDebug("Valor: " + valor);
+  		console.log("Cantidad_Entregado: " + [Cantidad_Entregado]);
+	}
+}
+
+if([Cantidad_Entregado] < 0){
+	this.preventDefault();
+  	alertify.alert("Ingrese cantidad de mat. válido para surtir").setHeader("Mensaje");   	
+  	$("#Cantidad_Material_Entregado").focus();
+}
+else
+	{
+      // Ejecutamos BR ExecCS01
+      $app.execute({
+        controller: 'Material_Ubicacion_Almacenamiento_De_Surtido2'
+        , filter: [
+            { field: 'Material_Id', operator: '=', value: [Material_Id] },
+            { field: 'Ruta_Optima_Id', operator: '=', value: [Ruta_Optima_Id] },
+          
+        ]
+        , dataType: 'json'
+        , done: function (result) {
+    
+            if (debug === 1) {
+                console.log("result: ");
+                console.log(result.Material_Ubicacion_Almacenamiento_De_Surtido2);
+            }
+    
+            arregloUbicaciones = result.Material_Ubicacion_Almacenamiento_De_Surtido2;
+    
+            var Ubicaciones_Origen = Ubicacion_Formulario;
+    
+            arregloUbicaciones.forEach(function (elemento, indice, array) { Ubicaciones_Origen = Ubicaciones_Origen + elemento.Ubicacion_Almacenamiento_De_Surtido + '; '; });
+    
+            $app.confirm(
+                "Daá salida al material " + material_A_Surtir + " con las siguientes ubicaciones: " + Ubicaciones_Origen + ". ¿Desea continuar?"
+            ).done(function (e) {
+                if (debug == true) {
+                    console.log("Se confirmó la operación");
+                }
+    
+                // Ejecutamos BR ExecCS01
+                // =======================
+                $app.execute({
+                    controller: 'Grid_Ruta_Optima_Incan_A_Ejecutar_V'
+                    , command: 'Custom'
+                    , argument: 'ExecCS01'
+                    , values: [
+                      { name: 'Tmp_Ruta_Optima_Transaccion_Id', newValue: Tmp_Ruta_Optima_Transaccion_Id }    
+                      ,{ name: 'Ruta_Optima_Id', newValue: Ruta_Optima_Id }
+                      ,{ name: 'Material_Id', newValue: Material_Id }      
+                      ,{ name: 'Cantidad_Solicitado', newValue: Cantidad_Solicitado }      
+                      ,{ name: 'Cantidad_Entregado', newValue: Cantidad_Entregado }      
+                      ,{ name: 'Unidad_Material_Entregado_Id', newValue: Unidad_Material_Entregado_Id }      
+                      ,{ name: 'Ubicacion_Almacenamiento_De_Surtido_Id', newValue: Ubicacion_Almacenamiento_Id }      
+                      ]
+                    ,done: function (result) {
+                      eval(result.clientScript); 
+                      if(debug == 10){
+                        console.log("ExecCS01 result : ");
+                        console.log(result);   
+                          
+                        $app.touch.contextDataView().discard();
+                        $app.touch.contextDataView().cancel();
+                      }           
+                    }
+                  })
+            
+            }); // END $app.confirm(
+        
+        } // END done execute Movimiento_Ruta_Optima_Ubicacion_Almacenamiento2
+    }); // END execute Movimiento_Ruta_Optima_Ubicacion_Almacenamiento2
+    this.preventDefault();   
+	}
+  
+]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Actualizar_Surtido" />
+    <rule id="r104" commandName="Calculate" type="JavaScript" phase="Execute" name="Valida_Stock_De_Ubi_Almac_Selecc"><![CDATA[var fieldValue = [Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado];
+var triggerFieldName = this.arguments().Trigger;
+var tryConversion = triggerFieldName == 'Ubicacion_Almacenamiento_Id';
+
+if (fieldValue != null && tryConversion) {
+	if (fieldValue < [Cantidad_Solicitado]){
+		fnDebug("El stock en la ubicación seleccionada es menor a cantidad solicitado.")
+    	this.preventDefault();    
+  		$app.alert('El stock en la ubicación seleccionada es menor a la cantidad solicitada. Seleccione otra ubicación o Agregué otras ubicaciones de surtido.');
+	}
+}
+]]></rule>
+  </businessRules>
+</dataController>

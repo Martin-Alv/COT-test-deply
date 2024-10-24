@@ -1,0 +1,15 @@
+﻿*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Tmp_Operacion_Cuadre_Inventario2.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^Delete^&quot;Borrar&quot;^Delete^
+
+^DownloadFile^Descargar Archivo de Carga^DownloadFile^
+
+^Operations^Operaciones^Operations^
+
+^UploadFile^Cargar Archivo^UploadFile^
+

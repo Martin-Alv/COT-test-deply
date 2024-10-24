@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?><logs><log type="Controllers"><c y="NodeSet" t="2019-09-12T16:52:59"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="grid1" />
+<update>
+  <ShowInSelector>false</ShowInSelector>
+</update></c><c y="NodeSet" t="2019-09-12T16:53:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<copy>
+  <controller name="Ubicacion_Origen_Transfer_V" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-09-12T16:53:15"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="grid1" />
+<after>
+  <controller name="Ubicacion_Origen_Transfer_V" />
+  <view id="v100" />
+</after></c><c y="NodeSet" t="2019-09-12T16:54:01"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="v100" />
+<update>
+  <Label>Ubicación Origen Transferencia</Label>
+  <SortExpression>Ubicacion_Almacenamiento asc</SortExpression>
+</update></c><c y="NodeSet" t="2019-09-12T16:54:20"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="v100" />
+<rename>Ubicacion_Origen_Transferencia_LookUp_List</rename></c><c y="NodeSet" t="2019-09-12T16:56:04"><controller name="Movimiento_Detalle2" />
+<field name="Transferencia_Ubicacion_Origen_Id" />
+<update>
+  <ItemsDataController>Ubicacion_Origen_Transfer_V</ItemsDataController>
+  <ItemsDataView>Ubicacion_Origen_Transferencia_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-09-12T16:56:56"><controller name="Modal_Transfer_Ubicacion_Origen" />
+<field name="Ubicacion_Almacenamiento_Id" />
+<update>
+  <ItemsDataController>Ubicacion_Origen_Transfer_V</ItemsDataController>
+  <ItemsDataView>Ubicacion_Origen_Transferencia_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-09-12T17:03:01"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Ubicacion_Almacenamiento_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-12T17:03:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Tipo_Ubicacion_Id" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Clave_Tipo_Ubicacion" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Aplica_Para_Ruta_Optima" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:13"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:13"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:13"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-09-12T17:03:13"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<dataField fieldName="Estatus_Registro" />
+<delete /></c><c y="NodeSet" t="2019-09-13T13:37:27"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Transferencia_Ubicacion_Origen_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T13:37:33"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Transferencia_Ubicacion_Origen_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T13:48:10"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<delete /></c><c y="NodeSet" t="2019-09-13T13:48:10"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a6" />
+<delete /></c><c y="NodeSet" t="2019-09-13T13:48:10"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a8" />
+<delete /></c><c y="NodeSet" t="2019-09-13T13:48:10"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a7" />
+<delete /></c><c y="NodeSet" t="2019-09-13T13:48:10"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a9" />
+<delete /></c><c y="NodeSet" t="2019-09-13T13:48:10"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a10" />
+<delete /></c><c y="NodeSet" t="2019-09-13T14:42:05"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a2" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T14:42:13"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag2" />
+<action id="a1" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T14:42:26"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag4" />
+<action id="a1" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T14:42:42"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag9" />
+<action id="a1" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T17:43:18"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a1" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T17:45:23"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a1" />
+<update>
+  <Roles />
+</update></c><c y="NodeSet" t="2019-09-13T17:59:49"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:00:12"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a2" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:00:32"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag9" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:01:22"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag4" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:01:33"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag2" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:01:46"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag1" />
+<action id="a1" />
+<update>
+  <Roles />
+</update></c><c y="NodeSet" t="2019-09-13T18:10:19"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="Ubicacion_Origen_Transferencia_LookUp_List" />
+<update>
+  <Tags>view-style-grid, 
+view-style-list-disabled, 
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none</Tags>
+</update></c><c y="NodeSet" t="2019-09-13T18:19:26"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="editForm1" />
+<dataField fieldName="Ubicacion_Almacenamiento_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:19:32"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="editForm1" />
+<dataField fieldName="Tipo_Ubicacion_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:19:43"><controller name="Ubicacion_Origen_Transfer_V" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:20:04"><controller name="Ubicacion_Origen_Transfer_V" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:23:10"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Transferencia_Material_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:23:19"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Transferencia_Ubicacion_Destino_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:23:30"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Unidad_Material_A_Transferir_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:23:54"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Motivo_Movimiento_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:24:05"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Movimiento_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:24:21"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:24:29"><controller name="Movimiento_Detalle2" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-09-13T18:26:51"><controller name="Material" />
+<actionGroup id="ag1" />
+<action id="a7" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:27:19"><controller name="Material" />
+<actionGroup id="ag4" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:27:28"><controller name="Material" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+   APP.Material
+SET
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:28:44"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag1" />
+<action id="a2" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:28:50"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE 
+   APP.Ubicacion_Almacenamiento_Area_Entrega
+SET    
+   Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Ubicacion_Almacenamiento_Area_Entrega_Id = @Ubicacion_Almacenamiento_Area_Entrega_Id</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:28:56"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag1" />
+<action id="a7" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:03"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag1" />
+<action id="a8" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:07"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag1" />
+<action id="a10" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:14"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag2" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:21"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+   APP.Ubicacion_Almacenamiento_Area_Entrega
+SET    
+   Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Ubicacion_Almacenamiento_Area_Entrega_Id = @Ubicacion_Almacenamiento_Area_Entrega_Id</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:29"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag4" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:35"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+   APP.Ubicacion_Almacenamiento_Area_Entrega
+SET    
+   Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Ubicacion_Almacenamiento_Area_Entrega_Id = @Ubicacion_Almacenamiento_Area_Entrega_Id</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:50"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag9" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:29:55"><controller name="Ubicacion_Almacenamiento_Area_Entrega" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+   APP.Ubicacion_Almacenamiento_Area_Entrega
+SET    
+   Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Ubicacion_Almacenamiento_Area_Entrega_Id = @Ubicacion_Almacenamiento_Area_Entrega_Id</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:36:23"><controller name="Estatus_Movimiento" />
+<actionGroup id="ag2" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:36:48"><controller name="Estatus_Movimiento" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Data>UPDATE APP.Estatus_Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Movimiento_Id = @Estatus_Movimiento_Id
+
+</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:36:58"><controller name="Estatus_Movimiento" />
+<actionGroup id="ag4" />
+<action id="a1" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-09-13T18:37:03"><controller name="Estatus_Movimiento" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Data>UPDATE APP.Estatus_Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Estatus_Movimiento_Id = @Estatus_Movimiento_Id
+
+</Data>
+  <Roles>Administrators,administrador</Roles>
+</update></c></log><log type="Application"><c y="NodeSet" t="2019-09-12T17:02:12"><page name="Ubicacion_Origen_Transfer_V" />
+<configure type="Exclude" /></c><c y="NodeSet" t="2019-09-13T14:24:30"><page name="Ubicacion_Origen_Transfer_V" />
+<configure type="Include" /></c><c y="NodeSet" t="2019-09-13T14:24:46"><page name="Ubicacion_Origen_Transfer_V" />
+<dataView id="view1" />
+<update>
+  <Tag>view-style-grid, 
+view-style-list-disabled, 
+view-style-charts-disabled,
+view-style-cards-disabled,
+view-style-calendar-disabled</Tag>
+</update></c><c y="NodeSet" t="2019-09-13T14:45:50"><page name="Ubicacion_Origen_Transfer_V" />
+<configure type="Exclude" /></c></log></logs>

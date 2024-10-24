@@ -1,0 +1,9 @@
+﻿*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Movimiento1.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^Update^Actualizar Solicitud de Devolución de Material^Update^
+

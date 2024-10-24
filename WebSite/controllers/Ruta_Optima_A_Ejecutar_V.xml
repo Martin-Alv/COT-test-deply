@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Ruta_Optima_A_Ejecutar_V" conflictDetection="overwriteChanges" label="Ruta Optima A Ejecutar V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text" tableName="APP.Ruta_Optima" custom="false">
+      <text><![CDATA[SELECT [Ruta_Optima_Id]
+      ,[Numero_Grupo_Ruta_Optima]
+      ,[Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Fecha_Produccion]
+      ,[Producto_Id]
+      ,[Orden_Produccion_Detalle_Id]
+      ,[Solicitud_Id]
+      ,[Fecha_Solicitud]
+      ,[Material_Id]
+      ,[Material]
+      ,[Material_Descripcion]
+      ,[Unidad_Material_Id]
+      ,[Unidad_Material]
+      ,[Cantidad_Solicitado]
+      ,[Unidad_Material_Entregado_Id]
+      ,[Unidad_Material_Entregado]
+      ,[Cantidad_Entregado]
+	  ,[Ubicacion_Almacenamiento_Id]
+      ,[Ubicacion_Almacenamiento]
+      ,[Creado_Por_Id]
+      ,[Transaccion_Id]
+	  ,[Boton_Actualizar_Ruta_Optima]
+  FROM [dbo].[Ruta_Optima_A_Ejecutar_V]]]></text>
+    </command>
+    <command id="Material_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Id" />
+      </output>
+    </command>
+    <command id="Unidad_Material_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Unidad_Material_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Orden Ruta Optima" showInSummary="true" isVirtual="true" readOnly="true" isPrimaryKey="true" />
+    <field name="Numero_Grupo_Ruta_Optima" type="Int32" allowNulls="false" label="Numero Grupo Ruta Optima" showInSummary="true" isVirtual="true" readOnly="true" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" isVirtual="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" readOnly="true" isVirtual="true" />
+    <field name="Fecha_Produccion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Produccion" showInSummary="true" readOnly="true" />
+    <field name="Orden_Produccion_Detalle_Id" type="Int64" allowNulls="false" label="Orden Produccion Detalle Id" readOnly="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" readOnly="true" />
+    <field name="Unidad_Material_Id" type="Int32" allowNulls="false" label="Unidad Material Id" readOnly="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" readOnly="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" readOnly="true" />
+    <field name="Unidad_Material" type="String" allowNulls="false" label="Unidad Material Solicitado" length="250" readOnly="true" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" readOnly="true" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" label="Creado Por Id" readOnly="true" />
+    <field name="Transaccion_Id" type="String" allowNulls="false" label="Transaccion Id" length="50" readOnly="true" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" label="Folio Solicitud" />
+    <field name="Fecha_Solicitud" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Solicitud" readOnly="true" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" label="Unidad Material Entregado Id">
+      <items style="DropDownList" dataController="Unidad_Material" dataView="Unidad_Material_LookUp_List" dataTextField="Unidad_Material" dataValueField="Unidad_Material_Id" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" label="Unidad Material Entregado" length="250" isVirtual="true" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto Id" />
+    <field name="Cantidad_Solicitado" type="Int32" allowNulls="false" label="Cantidad Solicitado" readOnly="true" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Ubicacion Almacenamiento Id" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Ruta Optima A Ejecutar" sortExpression="Ruta_Optima_Id ASC" tags="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Fecha_Produccion" columns="20" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Detalle_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Unidad_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Unidad_Material" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Unidad_Material_Entregado" hidden="true" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Ruta Optima A Ejecutar">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Ruta Optima A Ejecutar" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Fecha_Produccion" columns="20" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Ruta Optima A Ejecutar V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Fecha_Produccion" columns="20" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Unidad_Material" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Custom" commandArgument="ExecJS03" headerText="Actualizar - Modal Alertify" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+      <action id="a100" commandName="Select" commandArgument="editForm1" confirmation="_controller=Modal_Actualizar_Ruta_Optima&#xD;&#xA;_title=Conf Modal Actualizar Ruta Optima" headerText="Actualizar Dir A Modal" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action commandName="Custom" headerText="Agregar Comentario" id="a100" commandArgument="ExecJS01" cssClass="material-icon-add-box" />
+      <action commandName="Navigate" commandArgument="~/pages/Solicitud_Documentacion?Solicitud_Id={Solicitud_Id}&amp;_controller=Solicitud_Documentacion&amp;_command=New&amp;_argument=createForm1" id="a101" headerText="Agregar Comentario/Imagen" cssClass="material-icon-add-box" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS02" headerText="Actualizar JS 02" id="a102" />
+      <action commandName="Custom" commandArgument="ExecJS04" headerText="Actualizar JS 04 - MA- API" id="a103" roles="hidden" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" type="JavaScript" phase="After" commandArgument="ExecJS01" name="Agregar_Comentario"><![CDATA[this.preventDefault();
+$app.touch.show({
+  controller: 'Solicitud_Documentacion'
+  ,startCommand: 'New'
+  ,startArgument: 'createForm1'
+  ,filter:[
+    {name: 'Solicitud_Id',value:[Solicitud_Id]}
+  ]  
+});
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After" name="Actualizar_Surtido"><![CDATA[IF @Cantidad_Entregado > 0 AND @Unidad_Material_Entregado_Id > 0
+BEGIN
+-- EJECUCIÓN DE SP
+  EXEC dbo.sp_Actualizar_Surtido
+	-- Add the parameters for the stored procedure here	
+	0 -- @Tipo_Operacion_Id
+	,@Ruta_Optima_Id
+	,@Orden_Produccion_Id
+	,@Solicitud_Id	
+	,@Cantidad_Entregado
+	,@Unidad_Material_Entregado_Id
+	------------
+	,@BusinessRules_UserId-- @Creado_Por_Id 
+	,'' -- @Transaccion_Id 
+	,1 -- @Fijar_Bitacora --Poner 1 si se desea guardar las operaciones y resultados del SP a la tabla de dbo.Bitacora_Sistema
+	,0 -- @Mostrar_Tablas_Sistema  -- Poner 1 si se desea presentar a pantalla tablas o consultas, para uso del Desarrollador
+	,0 -- @Mensaje_Sistema_Id OUT   --Parametro de Entrada y/o salida, Sirve para regresas las claves de errores, advertencias o mensajes. Inicializar en 0
+	,0 -- @Simular  -- Poner 1 si se desea proceder con todas las operaciones del SP pero al final "deshacer" todo lo que se hizo
+	,'' -- @Trace   -- Variable para dejar "rastro" de donde "paso" las instrucciones del SP
+	,0 -- @Debug  -- Poner 1 si se desea mostrar a pantalla lo que esta "haciendo" el SP (Modo Prueba)
+END ]]></rule>
+    <rule id="r102" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="After" name="Abrir_Modal_Actualizar_Ruta_Optima"><![CDATA[this.preventDefault();
+$app.touch.show({
+  controller: 'Modal_Actualizar_Ruta_Optima'
+  ,startCommand: 'Edit'
+  ,startArgument: 'editForm1'
+  ,filter:[
+    {name: 'Ruta_Optima_Id',value:[Ruta_Optima_Id]}
+    ,{name: 'Orden_Produccion_Id',value:[Orden_Produccion_Id]}
+    ,{name: 'Solicitud_Id',value:[Solicitud_Id]}
+  ]
+});
+]]></rule>
+    <rule id="r103" commandName="Custom" commandArgument="ExecJS03" type="JavaScript" phase="After" name="Abrir_Alertify_Modal_Actualizar_Ruta_Optima"><![CDATA[abrirModalActualizarRutaOptima([Ruta_Optima_Id],[Orden_Produccion_Id],[Solicitud_Id])]]></rule>
+    <rule id="r104" commandName="Custom" commandArgument="ExecJS04" type="JavaScript" phase="After" name="Abrir_Alertify_Modal_Actualizar_Ruta_Optima_API"><![CDATA[abrirModalActualizarRutaOptimaApi([Ruta_Optima_Id],[Orden_Produccion_Id],[Solicitud_Id])]]></rule>
+    <rule id="r105" commandName="Select" type="JavaScript" phase="Before" view="grid1"><![CDATA[console.log("START PAGE SIZE BR ");
+// Asigna el nuevo al pageSize
+//$app.touch.dataView()._pageSize = 7;
+//Refrescamos la vista
+//$app.touch.dataView().sync();
+console.log("END PAGE SIZE BR ");]]></rule>
+  </businessRules>
+</dataController>

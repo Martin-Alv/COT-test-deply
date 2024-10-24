@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Estatus_Procesamiento" conflictDetection="overwriteChanges" label="Estatus Procesamiento" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Estatus_Procesamiento"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento_Orden" "Estatus_Procesamiento_Orden"
+	,"Estatus_Procesamiento"."Significa_Pendiente_Por_Procesar" "Significa_Pendiente_Por_Procesar"
+	,"Estatus_Procesamiento"."Significa_Procesado_Exitosamente" "Significa_Procesado_Exitosamente"
+from "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Estatus_Procesamiento_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Estatus Procesamiento Id" />
+    <field name="Estatus_Procesamiento" type="String" allowNulls="false" label="Estatus Procesamiento" length="150" showInSummary="true" />
+    <field name="Estatus_Procesamiento_Orden" type="Int32" allowNulls="false" label="Estatus Procesamiento Orden" showInSummary="true" />
+    <field name="Significa_Pendiente_Por_Procesar" type="Boolean" allowNulls="false" default="((0))" label="Significa Pendiente Por Procesar" showInSummary="true" />
+    <field name="Significa_Procesado_Exitosamente" type="Boolean" allowNulls="false" default="((0))" label="Significa Procesado Exitosamente" showInSummary="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Estatus Procesamiento" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Procesamiento_Id" columns="15" />
+        <dataField fieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Estatus_Procesamiento_Orden" columns="15" />
+        <dataField fieldName="Significa_Pendiente_Por_Procesar" />
+        <dataField fieldName="Significa_Procesado_Exitosamente" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Estatus Procesamiento">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Estatus Procesamiento" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Estatus_Procesamiento_Id" columns="15" />
+            <dataField fieldName="Estatus_Procesamiento" />
+            <dataField fieldName="Estatus_Procesamiento_Orden" columns="15" />
+            <dataField fieldName="Significa_Pendiente_Por_Procesar" />
+            <dataField fieldName="Significa_Procesado_Exitosamente" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Estatus Procesamiento">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Estatus_Procesamiento_Id" columns="15" />
+            <dataField fieldName="Estatus_Procesamiento" />
+            <dataField fieldName="Estatus_Procesamiento_Orden" columns="15" />
+            <dataField fieldName="Significa_Pendiente_Por_Procesar" />
+            <dataField fieldName="Significa_Procesado_Exitosamente" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Estatus_Procesamiento_LookUp_List" type="Grid" commandId="command1" label="Estatus Procesamiento" showInSelector="false" tags="action-buttons-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Estatus_Procesamiento_Id" columns="15" />
+        <dataField fieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Estatus_Procesamiento_Orden" columns="15" hidden="true" />
+        <dataField fieldName="Significa_Pendiente_Por_Procesar" hidden="true" />
+        <dataField fieldName="Significa_Procesado_Exitosamente" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" roles="administrators" />
+      <action id="a2" commandName="Edit" roles="administrators" />
+      <action id="a3" commandName="Delete" roles="administrators" />
+      <action id="a6" roles="administrators" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="administrators" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="administrators" />
+      <action id="a9" roles="administrators" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="administrators" />
+      <action id="a2" commandName="Delete" roles="administrators" />
+      <action id="a3" commandName="Cancel" roles="administrators" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="administrators" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" roles="administrators" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="administrators" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="administrators" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" roles="administrators" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" roles="administrators" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" roles="administrators" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" roles="administrators" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Administrators" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="administrators" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" roles="administrators" />
+      <action id="a2" roles="administrators" />
+      <action id="a3" commandName="ExportRowset" roles="administrators" />
+      <action id="a4" commandName="ExportRss" roles="administrators" />
+      <action id="a5" roles="administrators" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" roles="administrators" />
+      <action id="a7" commandName="DataSheet" roles="administrators" />
+      <action id="a8" commandName="Grid" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" roles="administrators" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" roles="administrators" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" roles="Administrators" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" roles="administrators" />
+      <action id="a2" commandName="ReportAsImage" roles="administrators" />
+      <action id="a3" commandName="ReportAsExcel" roles="administrators" />
+      <action id="a4" commandName="ReportAsWord" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" roles="administrators" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" roles="administrators" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" roles="administrators" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" roles="administrators" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="administrators" />
+      <action id="a2" commandName="Delete" roles="administrators" />
+    </actionGroup>
+  </actions>
+</dataController>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Ubicacion_Almacenamiento_En_Almacen_V" alias="Ubicacion_Almacenamiento_En_Almacen_V" created="2019-05-13T22:43:14" modified="2019-05-13T22:43:20" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicacion Almacenamiento Id" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+  </columns>
+</dataModel>

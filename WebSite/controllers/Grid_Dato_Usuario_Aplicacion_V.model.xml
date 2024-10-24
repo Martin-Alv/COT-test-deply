@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Dato_Usuario_Aplicacion_V" alias="Grid_Dato_Usuario_Aplicacion_V" created="2019-01-18T02:26:30" modified="2019-03-13T15:15:22" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicación Id" />
+    <column name="Nombre_Completo" fieldName="Nombre_Completo" label="Nombre Completo" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario de Sistema" />
+    <column name="Tiene_Usuario_Aplicacion_Acceso" fieldName="Tiene_Usuario_Aplicacion_Acceso" label="Tiene Usuario Aplicacion Acceso" />
+  </columns>
+</dataModel>

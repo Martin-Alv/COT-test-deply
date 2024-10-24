@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Material" conflictDetection="overwriteChanges" label="Material" handler="eaton.Rules.MaterialBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Material"."Material_Id" "Material_Id"
+	,"Material"."Material_Descripcion" "Material_Descripcion"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Material"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Material"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Material"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Material"."Material" "Material"
+	,"MRP_Type"."MRP_Type" "Mrp_Type"
+	,"Material"."MRP_Type_Id" "Mrp_Type_Id"
+	,"Material"."Clasificacion_Id" "Clasificacion_Id"
+	,"Clasificacion"."Clasificacion" "Clasificacion"
+	,"Clasificacion"."Es_Material_Indirecto" "Clasificacion_es_Material_Indirecto"
+	,"Registrado_Desde"."Registrado_Desde" "Registrado_Desde"
+	,"Material"."Registrado_Desde_Id" "Registrado_Desde_Id"
+	,"Material_Empaque"."Material_Empaque" "Material_Empaque"
+	,"Material"."Material_Empaque_Id" "Material_Empaque_Id"
+	,"Material"."Clase_Material_Id" "Clase_Material_Id"
+	,"Clase_Material"."Clase_Material" "Clase_Material"
+	,"Material"."Tipo_Material_Id" "Tipo_Material_Id"
+	,"Tipo_Material"."Tipo_Material" "Tipo_Material"
+from "APP"."Material" "Material"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Material"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Material"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Material"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."MRP_Type" "MRP_Type" on "Material"."MRP_Type_Id" = "MRP_Type"."MRP_Type_Id"
+	left join "APP"."Clasificacion" "Clasificacion" on "Material"."Clasificacion_Id" = "Clasificacion"."Clasificacion_Id"
+	left join "APP"."Registrado_Desde" "Registrado_Desde" on "Material"."Registrado_Desde_Id" = "Registrado_Desde"."Registrado_Desde_Id"
+	left join "APP"."Material_Empaque" "Material_Empaque" on "Material"."Material_Empaque_Id" = "Material_Empaque"."Material_Empaque_Id"
+	left join "APP"."Clase_Material" "Clase_Material" on "Material"."Clase_Material_Id" = "Clase_Material"."Clase_Material_Id"
+	left join "APP"."Tipo_Material" "Tipo_Material" on "Material"."Tipo_Material_Id" = "Tipo_Material"."Tipo_Material_Id"
+]]></text>
+    </command>
+    <command id="Material_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Material Id" readOnly="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Mrp_Type" type="String" readOnly="true" label="Mrp Type" length="250" />
+    <field name="Mrp_Type_Id" type="Int32" allowNulls="false" default="((0))" label="Mrp Type Id">
+      <items style="Lookup" dataController="MRP_Type" newDataView="createForm1" dataValueField="MRP_Type_Id" dataTextField="MRP_Type" copy="Mrp_Type=MRP_Type" dataView="MRP_Type_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clasificacion_Id" type="Int32" default="((0))" label="Clasificacion Id">
+      <items style="Lookup" dataController="Clasificacion" newDataView="createForm1" dataValueField="Clasificacion_Id" dataTextField="Clasificacion" copy="" dataView="Clasificacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clasificacion" type="String" readOnly="true" label="Clasificacion" length="250" />
+    <field name="Clasificacion_es_Material_Indirecto" type="Boolean" readOnly="true" label="Clasificacion es Material Indirecto" />
+    <field name="Registrado_Desde" type="String" readOnly="true" label="Registrado Desde" length="250" />
+    <field name="Registrado_Desde_Id" type="Int16" label="Registrado Desde Id">
+      <items style="Lookup" dataController="Registrado_Desde" dataValueField="Registrado_Desde_Id" dataTextField="Registrado_Desde" copy="Registrado_Desde=Registrado_Desde" dataView="Registrado_Desde_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material_Empaque" type="String" readOnly="true" label="Material Empaque" length="500" />
+    <field name="Material_Empaque_Id" type="Int32" label="Material Empaque Id">
+      <items style="Lookup" dataController="Material_Empaque" dataValueField="Material_Empaque_Id" dataTextField="Material_Empaque" copy="Material_Empaque=Material_Empaque" dataView="Material_Empaque_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clase_Material_Id" type="Int32" label="Clase Material Id">
+      <items style="Lookup" dataController="Clase_Material" dataValueField="Clase_Material_Id" dataTextField="Clase_Material" dataView="Clase_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clase_Material" type="String" readOnly="true" label="Clase Material" length="250" />
+    <field name="Tipo_Material_Id" type="Int32" label="Tipo Material Id">
+      <items style="Lookup" dataController="Tipo_Material" dataValueField="Tipo_Material_Id" dataTextField="Tipo_Material" dataView="Tipo_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Material" type="String" readOnly="true" label="Tipo Material" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material" showInSelector="false" sortExpression="Material" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Mrp_Type_Id" columns="15" hidden="true" />
+        <dataField fieldName="Mrp_Type" />
+        <dataField fieldName="Clasificacion_Id" aliasFieldName="Clasificacion" />
+        <dataField fieldName="Clasificacion_es_Material_Indirecto" hidden="true" />
+        <dataField fieldName="Material_Empaque" hidden="true" />
+        <dataField fieldName="Material_Empaque_Id" columns="15" aliasFieldName="Material_Empaque" />
+        <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" />
+        <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" />
+        <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+        <dataField fieldName="Registrado_Desde" textMode="Static" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Material">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Material" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Mrp_Type_Id" columns="15" aliasFieldName="Mrp_Type" />
+            <dataField fieldName="Clasificacion_Id" aliasFieldName="Clasificacion" hyperlinkFormatString="~/pages/Clasificacion?Clasificacion_Id={Clasificacion_Id}&amp;_controller=Clasificacion&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Clasificacion_es_Material_Indirecto" hidden="true" />
+            <dataField fieldName="Registrado_Desde" textMode="Static" />
+            <dataField fieldName="Registrado_Desde_Id" columns="15" textMode="Static" hidden="true" />
+            <dataField fieldName="Material_Empaque" hidden="true" />
+            <dataField fieldName="Material_Empaque_Id" columns="15" aliasFieldName="Material_Empaque" />
+            <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" hyperlinkFormatString="~/pages/Clase_Material?Clase_Material_Id={Clase_Material_Id}&amp;_controller=Clase_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" hyperlinkFormatString="~/pages/Tipo_Material?Tipo_Material_Id={Tipo_Material_Id}&amp;_controller=Tipo_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Material">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Material" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Mrp_Type_Id" columns="15" aliasFieldName="Mrp_Type" />
+            <dataField fieldName="Clasificacion_Id" aliasFieldName="Clasificacion" />
+            <dataField fieldName="Clasificacion_es_Material_Indirecto" hidden="true" />
+            <dataField fieldName="Registrado_Desde" hidden="true" />
+            <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Empaque" hidden="true" />
+            <dataField fieldName="Material_Empaque_Id" columns="15" aliasFieldName="Material_Empaque" />
+            <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" />
+            <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Material_LookUp_List" type="Grid" commandId="command1" label="Material" sortExpression="Material" filter="Estatus_Registro_Id  = 1 " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Mrp_Type_Id" columns="15" aliasFieldName="Mrp_Type" hidden="true" />
+        <dataField fieldName="Clasificacion_Id" aliasFieldName="Clasificacion" />
+        <dataField fieldName="Clasificacion_es_Material_Indirecto" hidden="true" />
+        <dataField fieldName="Registrado_Desde" hidden="true" />
+        <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Empaque" hidden="true" />
+        <dataField fieldName="Material_Empaque_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" hyperlinkFormatString="~/pages/Clase_Material?Clase_Material_Id={Clase_Material_Id}&amp;_controller=Clase_Material&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" hyperlinkFormatString="~/pages/Tipo_Material?Tipo_Material_Id={Tipo_Material_Id}&amp;_controller=Tipo_Material&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="Material_LookUp_List_Indirecto" type="Grid" commandId="command1" label="Material" sortExpression="Material" filter="Estatus_Registro_Id  = 1 " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Mrp_Type_Id" columns="15" aliasFieldName="Mrp_Type" hidden="true" />
+        <dataField fieldName="Clasificacion_Id" aliasFieldName="Clasificacion" />
+        <dataField fieldName="Clasificacion_es_Material_Indirecto" />
+        <dataField fieldName="Registrado_Desde" hidden="true" />
+        <dataField fieldName="Registrado_Desde_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Empaque" hidden="true" />
+        <dataField fieldName="Material_Empaque_Id" columns="15" hidden="true" />
+        <dataField fieldName="Clase_Material_Id" aliasFieldName="Clase_Material" hyperlinkFormatString="~/pages/Clase_Material?Clase_Material_Id={Clase_Material_Id}&amp;_controller=Clase_Material&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Tipo_Material_Id" aliasFieldName="Tipo_Material" hyperlinkFormatString="~/pages/Tipo_Material?Tipo_Material_Id={Tipo_Material_Id}&amp;_controller=Tipo_Material&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Material
+SET
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="Administrators,administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="Administrators,administrador" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="Administrators,administrador" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Material
+SET
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Administrators,administrador" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="Administrators,administrador" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Material
+SET
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="Administrators,administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Material
+SET
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material))
+AND Material_Id <> @Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE
+APP.Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+Material_Id = @Material_Id]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Material
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id]]></rule>
+  </businessRules>
+</dataController>

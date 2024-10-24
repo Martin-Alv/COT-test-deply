@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Area_Servicio_Familia1" label="Area_Servicio_Familia1" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Area_Servicio_Familia"."Area_Servicio_Familia_Id" "Area_Servicio_Familia_Id"
+	,"Area_Servicio_Familia"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Area_Servicio_"."Area_Servicio" "Area_Servicio"
+	,"Area_Servicio_Familia"."Familia_Id" "Familia_Id"
+	,"Familia_"."Familia_Clave" "Familia_Clave"
+	,"Familia_"."Familia_Descripcion" "Familia_Descripcion"
+	,"Area_Servicio_Familia"."Categoria_Id" "Categoria_Id"
+	,"Categoria_"."Categoria_Clave" "Categoria_Clave"
+	,"Categoria_"."Categoria_Descripcion" "Categoria_Descripcion"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Area_Servicio_Familia"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Area_Servicio_Familia"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Area_Servicio_Familia"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Area_Servicio_Familia" "Area_Servicio_Familia"
+	left join "APP"."Area_Servicio" "Area_Servicio_" on "Area_Servicio_Familia"."Area_Servicio_Id" = "Area_Servicio_"."Area_Servicio_Id"
+	left join "APP"."Familia" "Familia_" on "Area_Servicio_Familia"."Familia_Id" = "Familia_"."Familia_Id"
+	left join "APP"."Categoria" "Categoria_" on "Area_Servicio_Familia"."Categoria_Id" = "Categoria_"."Categoria_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Area_Servicio_Familia"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Area_Servicio_Familia"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Area_Servicio_Familia"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Area_Servicio_Familia_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Area_Servicio_Familia_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Area_Servicio_Familia_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Área Servicio Familia Id" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" default="((0))" label="Área Servicio Id" showInSummary="true">
+      <items style="Lookup" dataController="Area_Servicio" newDataView="createForm1" dataValueField="Area_Servicio_Id" dataTextField="Area_Servicio" dataView="Area_Servicio_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Servicio" type="String" readOnly="true" label="Área de Servicio" length="250" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" default="((0))" label="Familia Id" showInSummary="true">
+      <items style="Lookup" dataController="Familia" newDataView="createForm1" dataValueField="Familia_Id" dataTextField="Familia_Clave" copy="Familia_Descripcion=Familia_Descripcion" dataView="Familia_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Familia_Clave" type="String" readOnly="true" label="Familia Clave" length="250" />
+    <field name="Familia_Descripcion" type="String" readOnly="true" label="Familia Descripción" length="250" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" default="((0))" label="Categoria Id" showInSummary="true">
+      <items style="Lookup" dataController="Categoria" newDataView="createForm1" dataValueField="Categoria_Id" dataTextField="Categoria_Clave" copy="Categoria_Descripcion=Categoria_Descripcion" dataView="Categoria_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Categoria_Clave" type="String" readOnly="true" label="Categoría Clave" length="250" />
+    <field name="Categoria_Descripcion" type="String" readOnly="true" label="Categoría Descripción" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Asignación Área servicio vs Familia" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" />
+        <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" hidden="true" />
+        <dataField fieldName="Categoria_Descripcion" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Asignación Área servicio vs Familia">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Área Servicio Familia SubFamilia" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" hidden="true" />
+            <dataField fieldName="Categoria_Descripcion" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Asignación Área servicio vs Familia">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Área Servicio Familia SubFamilia" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" hidden="true" />
+            <dataField fieldName="Categoria_Descripcion" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Area_Servicio_Familia
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Area_Servicio_Familia
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="hidden" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE 
+APP.Area_Servicio_Familia
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Area_Servicio_Familia
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Area_Servicio_Familia
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="Before"><![CDATA[/*
+-- SET @Result_ShowAlert = CONCAT(@Arguments_CommandName, '; ', @Arguments_LastCommandName);
+INSERT INTO dbo.Bitacora_Sistema (
+     Fecha_Inicio
+    ,Proceso_Sistema_Id
+    ,Aplicacion_Id
+    ,Mensaje_Sistema_Id
+    ,Transaccion_Id
+    ,Rastreo
+    ,Creado_Por_Id
+
+) VALUES (
+    GETDATE()-- Fecha_Inicio
+    ,0 -- Proceso_Sistema_Id
+    ,'2ffcd29b-3f14-4c2a-ab4e-ec696c7fee6a' -- Aplicacion_Id
+    ,0 --Mensaje_Sistema_Id
+    ,NEWID() -- Transaccion_Id
+    ,CONCAT(@Arguments_CommandName, '; ', @Arguments_LastCommandName) --Rastreo
+    ,'5c7568fd-6412-474e-a099-006fad27cd02' -- Creado_Por_Id
+)
+
+
+
+RETURN;
+
+*/
+
+DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT TOP 1 @Already_Exists  = 1
+FROM APP.Area_Servicio_Familia
+WHERE Area_Servicio_Id = @Area_Servicio_Id
+AND Familia_Id = @Familia_Id
+AND Estatus_Registro_Id = @Estatus_Registro_Id
+AND Area_Servicio_Familia_Id <> @Area_Servicio_Familia_Id
+
+	
+IF @Already_Exists = 1
+BEGIN
+	-- Si existe otro registro que coincide con los datos (pero puede estar repetido por la reutilización de la tabla), entonces permititmos editar
+	DECLARE @B_Area_Servicio_Id INT, @B_Familia_Id INT
+	SELECT TOP 1
+		@B_Area_Servicio_Id = Area_Servicio_Id
+		,@B_Familia_Id = Familia_Id
+	FROM APP.Area_Servicio_Familia
+	WHERE Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id
+	
+	-- Validar si cambio algun otro campo
+	IF(@B_Area_Servicio_Id <> @Area_Servicio_Id OR @B_Familia_Id <> @Familia_Id)  BEGIN
+		-- El usuario actualizó los valores principales y si se encontró otro registro, entonces no se debe permitir la edición
+		SET @BusinessRules_PreventDefault = 1
+		SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1565,1,45,@Area_Servicio + ' vs. ' + @Familia_Descripcion )
+		SET @Result_ShowAlert = @Result_ShowViewMessage
+		RETURN
+	END 
+	ELSE IF (@Estatus_Registro_Id = 1) BEGIN
+		-- El usuario cambio el Estatus de registro a activo y ya hay otro registro con misma area, familia y activo, entonces ya no se permite acticvar
+		SET @BusinessRules_PreventDefault = 1
+		SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1565,1,45,@Area_Servicio + ' vs. ' + @Familia_Descripcion )
+		SET @Result_ShowAlert = @Result_ShowViewMessage
+		RETURN
+		
+	END
+	-- DE lo contrario si se permite actualizar
+	
+END
+-- ELSE SI SE PERMITE EDITAR
+
+
+
+/*
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](151,1,45,@Area_Servicio + ' vs. ' + @Familia_Descripcion )
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+
+*/]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Area_Servicio_Familia
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Area_Servicio_Familia_Id = @Area_Servicio_Familia_Id]]></rule>
+    <rule id="r104" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Area_Servicio_Familia
+WHERE
+	Area_Servicio_Id = @Area_Servicio_Id	
+	AND Familia_Id = @Familia_Id
+	
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1564,1,45,@Area_Servicio + ' vs. ' + @Familia_Descripcion)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+]]></rule>
+  </businessRules>
+</dataController>

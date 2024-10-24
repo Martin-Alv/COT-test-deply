@@ -1,0 +1,11 @@
+﻿*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Mov_Transfer_Ruta_Optima_A_Ejecutar_V.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^Back^Regresar^Back^
+
+^Update^Actualizar^Update^
+

@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Orden_Produccion_Pickeo1" label="Orden_Produccion_Pickeo1" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Orden_Produccion_Pickeo"."Orden_Produccion_Pickeo_Id" "Orden_Produccion_Pickeo_Id"
+	,"Orden_Produccion_Pickeo"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Area_Servicio_"."Area_Servicio" "Area_Servicio"
+	,"Orden_Produccion_Pickeo"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Orden_Produccion_Pickeo"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Orden_Produccion_Pickeo"."Producto_Id" "Producto_Id"
+	,"Producto_"."Producto_Clave" "Producto_Clave"
+	,"Producto_"."Producto_Descripcion" "Producto_Descripcion"
+	,"Orden_Produccion_Pickeo"."Estatus_Orden_Produccion_Pickeo_Id" "Estatus_Orden_Produccion_Pickeo_Id"
+	,"Estatus_Orden_Produccion_Pickeo_"."Estatus_Orden_Produccion_Pickeo" "Estatus_Orden_Produccion_Pickeo"
+	,"Orden_Produccion_Pickeo"."Enviado_Por_Solicitante_Id" "Enviado_Por_Solicitante_Id"
+	,"Enviado_Por_Solicitante"."Usuario_Sistema" "Enviado_Por_Solicitante"
+	,"Orden_Produccion_Pickeo"."Fecha_Envio_Solicitante" "Fecha_Envio_Solicitante"
+	,"Orden_Produccion_Pickeo"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Orden_Produccion_Pickeo"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Orden_Produccion_Pickeo"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+from "dbo"."Orden_Produccion_Pickeo" "Orden_Produccion_Pickeo"
+	left join "APP"."Area_Servicio" "Area_Servicio_" on "Orden_Produccion_Pickeo"."Area_Servicio_Id" = "Area_Servicio_"."Area_Servicio_Id"
+	left join "APP"."Producto" "Producto_" on "Orden_Produccion_Pickeo"."Producto_Id" = "Producto_"."Producto_Id"
+	left join "APP"."Estatus_Orden_Produccion_Pickeo" "Estatus_Orden_Produccion_Pickeo_" on "Orden_Produccion_Pickeo"."Estatus_Orden_Produccion_Pickeo_Id" = "Estatus_Orden_Produccion_Pickeo_"."Estatus_Orden_Produccion_Pickeo_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Orden_Produccion_Pickeo"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Orden_Produccion_Pickeo"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Orden_Produccion_Pickeo"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Enviado_Por_Solicitante" on "Orden_Produccion_Pickeo"."Enviado_Por_Solicitante_Id" = "Enviado_Por_Solicitante"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Orden_Produccion_Pickeo_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Orden_Produccion_Pickeo_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Produccion_Pickeo_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Orden Produccion Pickeo Id" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" default="((0))" label="Area Servicio Id" showInSummary="true">
+      <items style="Lookup" dataController="Area_Servicio" dataValueField="Area_Servicio_Id" dataTextField="Area_Servicio" dataView="Area_Servicio_LookUp_List" />
+    </field>
+    <field name="Area_Servicio" type="String" readOnly="true" label="Area Servicio" length="250" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" default="((0))" label="Orden Produccion Id" showInSummary="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" default="((0))" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" default="((0))" label="Producto Id" showInSummary="true">
+      <items style="Lookup" dataController="Producto" dataValueField="Producto_Id" dataTextField="Producto_Clave" copy="Producto_Descripcion=Producto_Descripcion" dataView="Producto_LookUp_List" />
+    </field>
+    <field name="Producto_Clave" type="String" readOnly="true" label="Producto Clave" length="50" />
+    <field name="Producto_Descripcion" type="String" readOnly="true" label="Producto Descripcion" length="250" />
+    <field name="Estatus_Orden_Produccion_Pickeo_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Orden Produccion Pickeo Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Orden_Produccion_Pickeo" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Orden_Produccion_Pickeo_Id" dataTextField="Estatus_Orden_Produccion_Pickeo" />
+    </field>
+    <field name="Estatus_Orden_Produccion_Pickeo" type="String" readOnly="true" label="Estatus Orden Produccion Pickeo" length="250" />
+    <field name="Enviado_Por_Solicitante_Id" type="Guid" label="Enviado Por Solicitante Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" />
+    </field>
+    <field name="Enviado_Por_Solicitante" type="String" readOnly="true" label="Enviado Por Solicitante" length="256" />
+    <field name="Fecha_Envio_Solicitante" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Envio Solicitante" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Orden Produccion Pickeo">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+        <dataField fieldName="Producto_Descripcion" />
+        <dataField fieldName="Estatus_Orden_Produccion_Pickeo_Id" aliasFieldName="Estatus_Orden_Produccion_Pickeo" />
+        <dataField fieldName="Enviado_Por_Solicitante_Id" aliasFieldName="Enviado_Por_Solicitante" />
+        <dataField fieldName="Fecha_Envio_Solicitante" columns="20" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Creado_Por" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Orden Produccion Pickeo">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description />
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Estatus_Orden_Produccion_Pickeo_Id" aliasFieldName="Estatus_Orden_Produccion_Pickeo" hidden="true" />
+          </dataFields>
+        </category>
+        <category id="c2" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Enviado_Por_Solicitante_Id" aliasFieldName="Enviado_Por_Solicitante" />
+            <dataField fieldName="Fecha_Envio_Solicitante" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="editBatch" type="Form" commandId="command1" label="Review Orden Produccion Pickeo">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description />
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+          </dataFields>
+        </category>
+        <category id="c2" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Enviado_Por_Solicitante_Id" aliasFieldName="Enviado_Por_Solicitante" />
+            <dataField fieldName="Fecha_Envio_Solicitante" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Orden Produccion Pickeo">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+            <dataField fieldName="Producto_Descripcion" />
+            <dataField fieldName="Estatus_Orden_Produccion_Pickeo_Id" aliasFieldName="Estatus_Orden_Produccion_Pickeo" />
+            <dataField fieldName="Enviado_Por_Solicitante_Id" aliasFieldName="Enviado_Por_Solicitante" />
+            <dataField fieldName="Fecha_Envio_Solicitante" columns="20" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Creado_Por" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editBatch" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="Generar Solicitudes de última carga de materiales" id="a101" whenClientScript="$app.touch.dataView()._selectedKeyList.length &gt;= 1" cssClass="material-icon-assignment" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="Generar Solicitudes de última carga de materiales" id="a101" whenClientScript="$app.touch.dataView()._selectedKeyList.length &gt;= 1" cssClass="material-icon-assignment" />
+    </actionGroup>
+  </actions>
+</dataController>

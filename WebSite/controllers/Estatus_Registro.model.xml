@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Estatus_Registro" alias="Estatus_Registro" created="2018-10-10T12:26:03" modified="2018-10-10T12:26:06" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" />
+    <column name="Estatus_Registro_Orden" fieldName="Estatus_Registro_Orden" label="Estatus Registro Orden" />
+  </columns>
+</dataModel>

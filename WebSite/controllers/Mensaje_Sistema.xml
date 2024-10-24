@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Mensaje_Sistema" conflictDetection="overwriteChanges" label="Mensaje Sistema" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Mensaje_Sistema"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Mensaje_Sistema"."Mensaje_Amigable_Usuario" "Mensaje_Amigable_Usuario"
+	,"Mensaje_Sistema"."Tipo_Mensaje_Sistema_Id" "Tipo_Mensaje_Sistema_Id"
+	,"Tipo_Mensaje_Sistema_"."Tipo_Mensaje_Sistema" "Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema"
+	,"Mensaje_Sistema"."No_Reintentar" "No_Reintentar"
+	,"Mensaje_Sistema"."No_Http_Estatus" "No_Http_Estatus"
+	,"Mensaje_Sistema"."Enviar_Correo" "Enviar_Correo"
+	,"Mensaje_Sistema"."Creado_Por_Id" "Creado_Por_Id"
+	,"Mensaje_Sistema"."Fecha_Creacion" "Fecha_Creacion"
+	,"Mensaje_Sistema"."Actualizado_Por_Id" "Actualizado_Por_Id"
+	,"Mensaje_Sistema"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Mensaje_Sistema"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro_Estatus_Registro"
+from "dbo"."Mensaje_Sistema" "Mensaje_Sistema"
+	left join "dbo"."Tipo_Mensaje_Sistema" "Tipo_Mensaje_Sistema_" on "Mensaje_Sistema"."Tipo_Mensaje_Sistema_Id" = "Tipo_Mensaje_Sistema_"."Tipo_Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Mensaje_Sistema"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Mensaje Sistema Id" />
+    <field name="Mensaje_Sistema" type="String" allowNulls="false" label="Mensaje Sistema" length="250" showInSummary="true" />
+    <field name="Mensaje_Amigable_Usuario" type="String" allowNulls="false" label="Mensaje Amigable Usuario" length="250" showInSummary="true" />
+    <field name="Tipo_Mensaje_Sistema_Id" type="Int32" allowNulls="false" label="Tipo Mensaje Sistema Id" showInSummary="true" />
+    <field name="Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema" type="String" readOnly="true" label="Tipo Mensaje Sistema" length="150" />
+    <field name="No_Reintentar" type="Boolean" allowNulls="false" default="((0))" label="No Reintentar" showInSummary="true" />
+    <field name="No_Http_Estatus" type="Boolean" allowNulls="false" default="((0))" label="No Http Estatus" showInSummary="true" />
+    <field name="Enviar_Correo" type="Boolean" allowNulls="false" default="((0))" label="Enviar Correo" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02'))" label="Creado Por Id" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02'))" label="Actualizado Por Id" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro_Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Mensaje Sistema" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" />
+        <dataField fieldName="Mensaje_Sistema" />
+        <dataField fieldName="Mensaje_Amigable_Usuario" />
+        <dataField fieldName="Tipo_Mensaje_Sistema_Id" aliasFieldName="Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema" />
+        <dataField fieldName="No_Reintentar" />
+        <dataField fieldName="No_Http_Estatus" />
+        <dataField fieldName="Enviar_Correo" />
+        <dataField fieldName="Creado_Por_Id" columns="15" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por_Id" columns="15" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Mensaje Sistema">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Mensaje Sistema" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" />
+            <dataField fieldName="Mensaje_Sistema" />
+            <dataField fieldName="Mensaje_Amigable_Usuario" />
+            <dataField fieldName="Tipo_Mensaje_Sistema_Id" aliasFieldName="Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema" />
+            <dataField fieldName="No_Reintentar" />
+            <dataField fieldName="No_Http_Estatus" />
+            <dataField fieldName="Enviar_Correo" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por_Id" columns="15" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Mensaje Sistema">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" />
+            <dataField fieldName="Mensaje_Sistema" />
+            <dataField fieldName="Mensaje_Amigable_Usuario" />
+            <dataField fieldName="Tipo_Mensaje_Sistema_Id" aliasFieldName="Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema" />
+            <dataField fieldName="No_Reintentar" />
+            <dataField fieldName="No_Http_Estatus" />
+            <dataField fieldName="Enviar_Correo" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por_Id" columns="15" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Mensaje_Sistema_LookUp_List" type="Grid" commandId="command1" label="Mensaje Sistema" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" />
+        <dataField fieldName="Mensaje_Sistema" />
+        <dataField fieldName="Mensaje_Amigable_Usuario" />
+        <dataField fieldName="Tipo_Mensaje_Sistema_Id" aliasFieldName="Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema" />
+        <dataField fieldName="No_Reintentar" />
+        <dataField fieldName="No_Http_Estatus" />
+        <dataField fieldName="Enviar_Correo" />
+        <dataField fieldName="Creado_Por_Id" columns="15" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por_Id" columns="15" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+      </dataFields>
+    </view>
+    <view id="Mensaje_Sistema_Lookup_List_Etiqueta" type="Grid" commandId="command1" label="Mensaje Sistema" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+        <dataField fieldName="Mensaje_Amigable_Usuario" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="administrators" />
+      <action id="a3" commandName="Delete" roles="Super_Admin" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="Super_Admin" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="Super_Admin" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="Super_Admin" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Super_Admin" />
+      <action id="a2" commandName="Delete" roles="Super_Admin" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="Super_Admin" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="Super_Admin" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="Super_Admin" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" roles="Super_Admin" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" roles="Super_Admin" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" roles="administrators" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" roles="Super_Admin" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Super_Admin" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="Super_Admin" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="Super_Admin" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" roles="Super_Admin" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" roles="Super_Admin" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" roles="hidden" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" roles="Super_Admin" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" roles="Super_Admin" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="Super_Admin" />
+      <action id="a2" commandName="Delete" roles="Super_Admin" />
+    </actionGroup>
+  </actions>
+</dataController>

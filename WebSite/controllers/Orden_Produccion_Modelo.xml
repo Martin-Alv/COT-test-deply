@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Orden_Produccion_Modelo" conflictDetection="overwriteChanges" label="Orden Produccion Modelo" handler="eaton.Rules.Orden_Produccion_ModeloBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Orden_Produccion_Modelo"."Orden_Produccion_Modelo_Id" "Orden_Produccion_Modelo_Id"
+	,"Orden_Produccion_Modelo"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Orden_Produccion_"."Numero_Orden_Produccion" "Orden_Produccion"
+	,"Orden_Produccion_Modelo"."Modelo_Id" "Modelo_Id"
+	,"Modelo_"."Modelo_Descripcion" "Modelo_Descripcion"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Orden_Produccion_Modelo"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Orden_Produccion_Modelo"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Orden_Produccion_Modelo"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Orden_Produccion_Modelo" "Orden_Produccion_Modelo"
+	left join "dbo"."Orden_Produccion" "Orden_Produccion_" on "Orden_Produccion_Modelo"."Orden_Produccion_Id" = "Orden_Produccion_"."Orden_Produccion_Id"
+	left join "APP"."Modelo" "Modelo_" on "Orden_Produccion_Modelo"."Modelo_Id" = "Modelo_"."Modelo_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Orden_Produccion_Modelo"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Orden_Produccion_Modelo"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Orden_Produccion_Modelo"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Orden_Produccion_Modelo_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Orden_Produccion_Modelo_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Produccion_Modelo_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Orden Produccion Modelo Id" readOnly="true" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" default="((0))" label="Orden Produccion Id" showInSummary="true">
+      <items style="Lookup" dataController="Orden_Produccion" searchOnStart="true" dataValueField="Orden_Produccion_Id" dataTextField="Numero_Orden_Produccion" dataView="Orden_Produccion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Orden_Produccion" type="Int64" readOnly="true" label="Orden Producción" />
+    <field name="Modelo_Id" type="Int32" allowNulls="false" default="((0))" label="Modelo Id" showInSummary="true">
+      <items style="Lookup" dataController="Modelo" dataValueField="Modelo_Id" dataTextField="Modelo_Descripcion" dataView="Modelo_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Modelo_Descripcion" type="String" readOnly="true" label="Modelo Descripcion" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Orden Produccion Modelo" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Orden_Produccion" />
+        <dataField fieldName="Modelo_Id" aliasFieldName="Modelo_Descripcion" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Orden de Producción Modelo">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Orden de Producción Modelo" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Orden_Produccion" />
+            <dataField fieldName="Modelo_Id" aliasFieldName="Modelo_Descripcion" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Orden de Producción Modelo">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Orden de Producción Modelo" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Orden_Produccion" />
+            <dataField fieldName="Modelo_Id" aliasFieldName="Modelo_Descripcion" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Orden_Produccion_Modelo] SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Orden_Produccion_Modelo_Id = @Orden_Produccion_Modelo_Id 
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Orden_Produccion_Modelo] SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Orden_Produccion_Modelo_Id = @Orden_Produccion_Modelo_Id 
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE [APP].[Orden_Produccion_Modelo] SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Orden_Produccion_Modelo_Id = @Orden_Produccion_Modelo_Id 
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Orden_Produccion_Modelo] SET Estatus_Registro_Id = 3, 
+Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Orden_Produccion_Modelo_Id = @Orden_Produccion_Modelo_Id 
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Orden_Produccion_Modelo]
+WHERE 
+           [Orden_Produccion_Id] = @Orden_Produccion_Id
+   AND [Modelo_Id] = @Modelo_Id
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](210,1,57,CONVERT(VARCHAR(20),@Orden_Produccion) + ' vs. ' + @Modelo_Descripcion) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](210,1,57,CONVERT(VARCHAR(20),@Orden_Produccion) + ' vs. ' + @Modelo_Descripcion) 
+   RETURN 
+END
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Orden_Produccion_Modelo]
+WHERE 
+   [Orden_Produccion_Id] = @Orden_Produccion_Id
+   AND [Modelo_Id] = @Modelo_Id
+   AND Orden_Produccion_Modelo_Id <> @Orden_Produccion_Modelo_Id
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](211,1,57,CONVERT(VARCHAR(20),@Orden_Produccion) + ' vs. ' + @Modelo_Descripcion) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](211,1,57,CONVERT(VARCHAR(20),@Orden_Produccion) + ' vs. ' + @Modelo_Descripcion) 
+   RETURN
+END
+]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Orden_Produccion_Modelo]
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Orden_Produccion_Id = @Orden_Produccion_Id
+]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+  [APP].[Orden_Produccion_Modelo]
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)   
+WHERE 
+   Orden_Produccion_Id = @Orden_Produccion_Id
+]]></rule>
+  </businessRules>
+</dataController>

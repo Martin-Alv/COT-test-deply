@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Movimiento3" label="Movimiento3" conflictDetection="overwriteChanges" handler="eaton.Rules.Movimiento3BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Movimiento"."Movimiento_Id" "Movimiento_Id"
+	,"Movimiento"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Area_Servicio"."Area_Servicio" "Area_Servicio"
+	,"Movimiento"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Tipo_Movimiento"."Tipo_Movimiento" "Tipo_Movimiento"
+	,"Tipo_Movimiento"."Es_Solicitud_Devolucion" "Tipo_Movimiento_Es_Solicitud_Devolucion"
+	,"Tipo_Movimiento"."Es_Solicitud_Transferencia" "Tipo_Movimiento_Es_Solicitud_Transferencia"
+	,"Movimiento"."Estatus_Movimiento_Id" "Estatus_Movimiento_Id"
+	,"Estatus_Movimiento"."Estatus_Movimiento" "Estatus_Movimiento"
+	,"Estatus_Movimiento"."Aplica_A_Devolucion" "Estatus_Movimiento_Aplica_A_Devolucion"
+	,"Estatus_Movimiento"."Significa_Pendiente" "Estatus_Movimiento_Significa_Pendiente"
+	,"Estatus_Movimiento"."Aplica_A_Transferencia" "Estatus_Movimiento_Aplica_A_Transferencia"
+	,"Movimiento"."Fecha_Solicitud_Movimiento" "Fecha_Solicitud_Movimiento"
+	,"Movimiento"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Area_Entrega"."Area_Entrega" "Area_Entrega"
+	,"Movimiento"."Devolucion_Ubicacion_Origen_Id" "Devolucion_Ubicacion_Origen_Id"
+	,"Devolucion_Ubicacion_Origen"."Clave_Tipo_Ubicacion" "Devolucion_Ubicacion_Origen_Clave_Tipo_Ubicacion"
+	,"Devolucion_Ubicacion_Origen"."Descripcion_Tipo_Ubicacion" "Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion"
+	,"Movimiento"."Devolucion_Ubicacion_Destino_Id" "Devolucion_Ubicacion_Destino_Id"
+	,"Devolucion_Ubicacion_Destino"."Area_Entrega" "Devolucion_Ubicacion_Destino_Area_Entrega"
+	,"Movimiento"."Estatus_Devolucion_Id" "Estatus_Devolucion_Id"
+	,"Estatus_Devolucion"."Estatus_Movimiento" "Estatus_Devolucion"
+	,"Movimiento"."Fecha_Devolucion" "Fecha_Devolucion"
+	,"Movimiento"."Devolucion_Fecha_Cancelacion" "Devolucion_Fecha_Cancelacion"
+	,"Movimiento"."Transferencia_Ubicacion_Origen_Id" "Transferencia_Ubicacion_Origen_Id"
+	,"Transferencia_Ubicacion_Origen"."Ubicacion_Almacenamiento" "Transferencia_Ubicacion_Origen_Ubicacion_Almacenamiento"
+	,"Movimiento"."Transferencia_Ubicacion_Destino_Id" "Transferencia_Ubicacion_Destino_Id"
+	,"Transferencia_Ubicacion_Destino"."Ubicacion_Almacenamiento" "Transferencia_Ubicacion_Destino_Ubicacion_Almacenamiento"
+	,"Movimiento"."Fecha_Transferencia" "Fecha_Transferencia"
+	,"Movimiento"."Transferencia_Fecha_Cancelacion" "Transferencia_Fecha_Cancelacion"
+	,"Movimiento"."Estatus_Transferencia_Id" "Estatus_Transferencia_Id"
+	,"Estatus_Transferencia"."Estatus_Movimiento" "Estatus_Transferencia"
+	,"Movimiento"."Movimiento_Ruta_Optima_Id" "Movimiento_Ruta_Optima_Id"
+	,"Movimiento_Ruta_Optima"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Movimiento_Solicitado_Por"."Usuario_Sistema" "Movimiento_Solicitado_Por"
+	,"Movimiento_Iniciado_Por"."Usuario_Sistema" "Movimiento_Iniciado_Por"
+	,"Movimiento_Realizado_Por"."Usuario_Sistema" "Movimiento_Realizado_Por"
+	,"Movimiento_Cancelado_Por"."Usuario_Sistema" "Movimiento_Cancelado_Por"
+	,"Movimiento_Capturado_Por"."Usuario_Sistema" "Movimiento_Capturado_Por"
+	,"Movimiento"."Es_Capturado" "Es_Capturado"
+	,"Movimiento"."Fecha_Captura_Movimiento" "Fecha_Captura_Movimiento"
+	,"Movimiento"."Captura_Transaccion_Id" "Captura_Transaccion_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Movimiento"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Movimiento"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Movimiento"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro"."Estatus_Registro" "Estatus_Registro"
+	,"Movimiento"."Movimiento_Folio" "Movimiento_Folio"
+	,"Movimiento"."Movimiento_Solicitado_Por_Id" "Movimiento_Solicitado_Por_Id"
+	,"Movimiento"."Movimiento_Iniciado_Por_Id" "Movimiento_Iniciado_Por_Id"
+	,"Movimiento"."Movimiento_Realizado_Por_Id" "Movimiento_Realizado_Por_Id"
+	,"Movimiento"."Movimiento_Cancelado_Por_Id" "Movimiento_Cancelado_Por_Id"
+	,"Movimiento"."Movimiento_Capturado_Por_Id" "Movimiento_Capturado_Por_Id"
+	,"Movimiento"."Movimiento_Motivo_Cancelacion_Id" "Movimiento_Motivo_Cancelacion_Id"
+	,"Movimiento_Motivo_Cancelacion"."Motivo_Movimiento" "Movimiento_Motivo_Cancelacion"
+from "APP"."Movimiento" "Movimiento"
+	left join "APP"."Area_Servicio" "Area_Servicio" on "Movimiento"."Area_Servicio_Id" = "Area_Servicio"."Area_Servicio_Id"
+	left join "APP"."Tipo_Movimiento" "Tipo_Movimiento" on "Movimiento"."Tipo_Movimiento_Id" = "Tipo_Movimiento"."Tipo_Movimiento_Id"
+	left join "APP"."Estatus_Movimiento" "Estatus_Movimiento" on "Movimiento"."Estatus_Movimiento_Id" = "Estatus_Movimiento"."Estatus_Movimiento_Id"
+	left join "APP"."Area_Entrega" "Area_Entrega" on "Movimiento"."Area_Entrega_Id" = "Area_Entrega"."Area_Entrega_Id"
+	left join "APP"."Tipo_Ubicacion" "Devolucion_Ubicacion_Origen" on "Movimiento"."Devolucion_Ubicacion_Origen_Id" = "Devolucion_Ubicacion_Origen"."Tipo_Ubicacion_Id"
+	left join "APP"."Area_Entrega" "Devolucion_Ubicacion_Destino" on "Movimiento"."Devolucion_Ubicacion_Destino_Id" = "Devolucion_Ubicacion_Destino"."Area_Entrega_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Transferencia_Ubicacion_Origen" on "Movimiento"."Transferencia_Ubicacion_Origen_Id" = "Transferencia_Ubicacion_Origen"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Transferencia_Ubicacion_Destino" on "Movimiento"."Transferencia_Ubicacion_Destino_Id" = "Transferencia_Ubicacion_Destino"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Movimiento_Ruta_Optima" "Movimiento_Ruta_Optima" on "Movimiento"."Movimiento_Ruta_Optima_Id" = "Movimiento_Ruta_Optima"."Movimiento_Ruta_Optima_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro" on "Movimiento"."Estatus_Registro_Id" = "Estatus_Registro"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Movimiento"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Movimiento"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Solicitado_Por" on "Movimiento"."Movimiento_Solicitado_Por_Id" = "Movimiento_Solicitado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Iniciado_Por" on "Movimiento"."Movimiento_Iniciado_Por_Id" = "Movimiento_Iniciado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Realizado_Por" on "Movimiento"."Movimiento_Realizado_Por_Id" = "Movimiento_Realizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Cancelado_Por" on "Movimiento"."Movimiento_Cancelado_Por_Id" = "Movimiento_Cancelado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Movimiento_Capturado_Por" on "Movimiento"."Movimiento_Capturado_Por_Id" = "Movimiento_Capturado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Estatus_Movimiento" "Estatus_Devolucion" on "Movimiento"."Estatus_Devolucion_Id" = "Estatus_Devolucion"."Estatus_Movimiento_Id"
+	left join "APP"."Estatus_Movimiento" "Estatus_Transferencia" on "Movimiento"."Estatus_Transferencia_Id" = "Estatus_Transferencia"."Estatus_Movimiento_Id"
+	left join "APP"."Motivo_Movimiento" "Movimiento_Motivo_Cancelacion" on "Movimiento"."Movimiento_Motivo_Cancelacion_Id" = "Movimiento_Motivo_Cancelacion"."Motivo_Movimiento_Id"
+]]></text>
+    </command>
+    <command id="Movimiento_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Movimiento_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Movimiento_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Movimiento Id" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" default="((0))" label="Area Servicio Id">
+      <items style="Lookup" dataController="Area_Servicio" newDataView="createForm1" dataValueField="Area_Servicio_Id" dataTextField="Area_Servicio" dataView="Area_Servicio_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Servicio" type="String" readOnly="true" label="Área De Servicio" length="250" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Movimiento Id">
+      <items style="Lookup" dataController="Tipo_Movimiento" newDataView="createForm1" dataValueField="Tipo_Movimiento_Id" dataTextField="Tipo_Movimiento" copy="Tipo_Movimiento_Es_Solicitud_Devolucion=Es_Solicitud_Devolucion, Tipo_Movimiento_Es_Solicitud_Transferencia=Es_Solicitud_Transferencia" dataView="Tipo_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Movimiento" type="String" readOnly="true" label="Tipo De Movimiento" length="250" />
+    <field name="Tipo_Movimiento_Es_Solicitud_Devolucion" type="Boolean" readOnly="true" label="Tipo Movimiento Es Solicitud Devolucion" />
+    <field name="Tipo_Movimiento_Es_Solicitud_Transferencia" type="Boolean" readOnly="true" label="Tipo Movimiento Es Solicitud Transferencia" />
+    <field name="Estatus_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Movimiento Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Movimiento" newDataView="createForm1" dataValueField="Estatus_Movimiento_Id" dataTextField="Estatus_Movimiento" copy="Estatus_Movimiento_Aplica_A_Devolucion=Aplica_A_Devolucion, Estatus_Movimiento_Significa_Pendiente=Significa_Pendiente, Estatus_Movimiento_Aplica_A_Transferencia=Aplica_A_Transferencia" dataView="Estatus_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Movimiento" type="String" readOnly="true" label="Estatus De Movimiento" length="250" />
+    <field name="Estatus_Movimiento_Aplica_A_Devolucion" type="Boolean" readOnly="true" label="Estatus Movimiento Aplica A Devolucion" />
+    <field name="Estatus_Movimiento_Significa_Pendiente" type="Boolean" readOnly="true" label="Estatus Movimiento Significa Pendiente" />
+    <field name="Estatus_Movimiento_Aplica_A_Transferencia" type="Boolean" readOnly="true" label="Estatus Movimiento Aplica A Transferencia" />
+    <field name="Fecha_Solicitud_Movimiento" type="DateTime" dataFormatString="g" label="Fecha De Solicitud Movimiento" showInSummary="true" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" default="((0))" label="Area Entrega Id">
+      <items style="Lookup" dataController="Area_Entrega" newDataView="createForm1" dataValueField="Area_Entrega_Id" dataTextField="Area_Entrega" dataView="Area_Entrega_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Entrega" type="String" readOnly="true" label="Área De Entrega" length="250" />
+    <field name="Devolucion_Ubicacion_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Ubicacion Origen Id">
+      <items style="Lookup" dataController="Tipo_Ubicacion" newDataView="createForm1" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" copy="Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion=Descripcion_Tipo_Ubicacion" dataView="Tipo_Ubicacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Devolucion_Ubicacion_Origen_Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Devolucion Ubicacion Origen Clave Tipo Ubicacion" />
+    <field name="Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion" type="String" readOnly="true" label="Devolucion Ubicacion Origen Descripcion Tipo Ubicacion" length="250" />
+    <field name="Devolucion_Ubicacion_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Ubicacion Destino Id">
+      <items style="Lookup" dataController="Area_Entrega" newDataView="createForm1" dataValueField="Area_Entrega_Id" dataTextField="Area_Entrega" dataView="Area_Entrega_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Devolucion_Ubicacion_Destino_Area_Entrega" type="String" readOnly="true" label="Devolución Ubicación Destino Área De Entrega" length="250" />
+    <field name="Estatus_Devolucion_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Devolucion Id">
+      <items style="Lookup" dataController="Estatus_Movimiento" newDataView="createForm1" dataValueField="Estatus_Movimiento_Id" dataTextField="Estatus_Movimiento" dataView="Estatus_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Devolucion" type="String" readOnly="true" label="Estatus Devolucion" length="250" />
+    <field name="Fecha_Devolucion" type="DateTime" dataFormatString="g" label="Fecha De Devolución" />
+    <field name="Devolucion_Fecha_Cancelacion" type="DateTime" dataFormatString="g" label="Devolución Fecha De Cancelación" />
+    <field name="Transferencia_Ubicacion_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Ubicacion Origen Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_Ubicacion_Origen_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transferencia Ubicacion Origen Ubicacion Almacenamiento" length="150" />
+    <field name="Transferencia_Ubicacion_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Ubicacion Destino Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_Ubicacion_Destino_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transferencia Ubicacion Destino Ubicacion Almacenamiento" length="150" />
+    <field name="Fecha_Transferencia" type="DateTime" dataFormatString="g" label="Fecha De Transferencia" />
+    <field name="Transferencia_Fecha_Cancelacion" type="DateTime" dataFormatString="g" label="Transferencia Fecha De Cancelación" />
+    <field name="Estatus_Transferencia_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Transferencia Id">
+      <items style="Lookup" dataController="Estatus_Movimiento" newDataView="createForm1" dataValueField="Estatus_Movimiento_Id" dataTextField="Estatus_Movimiento" dataView="Estatus_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Transferencia" type="String" readOnly="true" label="Estatus Transferencia" length="250" />
+    <field name="Movimiento_Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Movimiento Ruta Optima Id">
+      <items style="Lookup" dataController="Movimiento_Ruta_Optima" newDataView="createForm1" dataValueField="Movimiento_Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" dataView="Movimiento_Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Numero_Grupo_Ruta_Optima" type="Decimal" readOnly="true" label="Numero Grupo Ruta Optima" />
+    <field name="Movimiento_Solicitado_Por" type="String" readOnly="true" label="Movimiento Solicitado Por" length="256" />
+    <field name="Movimiento_Iniciado_Por" type="String" readOnly="true" label="Movimiento Iniciado Por" length="256" />
+    <field name="Movimiento_Realizado_Por" type="String" readOnly="true" label="Movimiento Realizado Por" length="256" />
+    <field name="Movimiento_Cancelado_Por" type="String" readOnly="true" label="Movimiento Cancelado Por" length="256" />
+    <field name="Movimiento_Capturado_Por" type="String" readOnly="true" label="Movimiento Capturado Por" length="256" />
+    <field name="Es_Capturado" type="Boolean" allowNulls="false" default="((0))" label="Es Capturado?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Fecha_Captura_Movimiento" type="DateTime" dataFormatString="g" label="Fecha Captura De Movimiento" />
+    <field name="Captura_Transaccion_Id" type="String" default="(newid())" label="Captura Transaccion Id" length="50" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha De Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus De Registro" length="150" />
+    <field name="Movimiento_Folio" type="Int64" allowNulls="false" label="Movimiento De Folio" readOnly="true" />
+    <field name="Movimiento_Solicitado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Solicitado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" copy="Movimiento_Solicitado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Movimiento_Iniciado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Iniciado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Movimiento_Iniciado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Movimiento_Realizado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Realizado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Movimiento_Realizado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Movimiento_Cancelado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Cancelado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Movimiento_Cancelado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Movimiento_Capturado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Movimiento Capturado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Movimiento_Capturado_Por=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Movimiento_Motivo_Cancelacion_Id" type="Int32" allowNulls="false" default="((0))" label="Movimiento Motivo Cancelacion Id">
+      <items style="Lookup" dataController="Motivo_Movimiento" newDataView="createForm1" dataValueField="Motivo_Movimiento_Id" dataTextField="Motivo_Movimiento" copy="Movimiento_Motivo_Cancelacion=Motivo_Movimiento" dataView="Motivo_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Movimiento_Motivo_Cancelacion" type="String" readOnly="true" label="Movimiento Motivo Cancelacion" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material de Solicitud Transferencia" filter="Estatus_Registro_Id &lt;&gt; 0 AND Movimiento_Solicitado_Por_Id = @BusinessRules_UserId  " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" />
+        <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Devolucion" hidden="true" />
+        <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Transferencia" hidden="true" />
+        <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" />
+        <dataField fieldName="Estatus_Movimiento_Aplica_A_Devolucion" hidden="true" />
+        <dataField fieldName="Estatus_Movimiento_Significa_Pendiente" hidden="true" />
+        <dataField fieldName="Estatus_Movimiento_Aplica_A_Transferencia" />
+        <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+        <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+        <dataField fieldName="Devolucion_Ubicacion_Origen_Id" aliasFieldName="Devolucion_Ubicacion_Origen_Clave_Tipo_Ubicacion" />
+        <dataField fieldName="Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion" />
+        <dataField fieldName="Devolucion_Ubicacion_Destino_Id" aliasFieldName="Devolucion_Ubicacion_Destino_Area_Entrega" />
+        <dataField fieldName="Estatus_Devolucion_Id" aliasFieldName="Estatus_Devolucion" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Devolucion_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Devolucion" columns="20" />
+        <dataField fieldName="Devolucion_Fecha_Cancelacion" columns="20" />
+        <dataField fieldName="Transferencia_Ubicacion_Origen_Id" aliasFieldName="Transferencia_Ubicacion_Origen_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Transferencia_Ubicacion_Destino_Id" aliasFieldName="Transferencia_Ubicacion_Destino_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Fecha_Transferencia" columns="20" />
+        <dataField fieldName="Transferencia_Fecha_Cancelacion" columns="20" />
+        <dataField fieldName="Estatus_Transferencia_Id" aliasFieldName="Estatus_Transferencia" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Transferencia_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Movimiento_Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+        <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" aliasFieldName="Movimiento_Solicitado_Por" />
+        <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+        <dataField fieldName="Movimiento_Realizado_Por_Id" columns="15" aliasFieldName="Movimiento_Realizado_Por" />
+        <dataField fieldName="Movimiento_Cancelado_Por_Id" columns="15" aliasFieldName="Movimiento_Cancelado_Por" />
+        <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+        <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" columns="15" aliasFieldName="Movimiento_Motivo_Cancelacion" />
+        <dataField fieldName="Es_Capturado" />
+        <dataField fieldName="Fecha_Captura_Movimiento" columns="20" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Movimiento_Folio" columns="15" />
+      </dataFields>
+    </view>
+    <view id="Movimiento_LookUp_List" type="Grid" commandId="command1" label="Movimiento" filter="Estatus_Registro_Id IN (0,1)" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hyperlinkFormatString="~/pages/Tipo_Movimiento?Tipo_Movimiento_Id={Tipo_Movimiento_Id}&amp;_controller=Tipo_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Devolucion" />
+        <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Transferencia" />
+        <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Movimiento_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Estatus_Movimiento_Aplica_A_Devolucion" />
+        <dataField fieldName="Estatus_Movimiento_Significa_Pendiente" />
+        <dataField fieldName="Estatus_Movimiento_Aplica_A_Transferencia" />
+        <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+        <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" hyperlinkFormatString="~/pages/Area_Entrega?Area_Entrega_Id={Area_Entrega_Id}&amp;_controller=Area_Entrega&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Devolucion_Ubicacion_Origen_Id" aliasFieldName="Devolucion_Ubicacion_Origen_Clave_Tipo_Ubicacion" hyperlinkFormatString="~/pages/Tipo_Ubicacion?Tipo_Ubicacion_Id={Devolucion_Ubicacion_Origen_Id}&amp;_controller=Tipo_Ubicacion&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion" />
+        <dataField fieldName="Devolucion_Ubicacion_Destino_Id" aliasFieldName="Devolucion_Ubicacion_Destino_Area_Entrega" hyperlinkFormatString="~/pages/Area_Entrega?Area_Entrega_Id={Devolucion_Ubicacion_Destino_Id}&amp;_controller=Area_Entrega&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Estatus_Devolucion_Id" aliasFieldName="Estatus_Devolucion" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Devolucion_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Devolucion" columns="20" />
+        <dataField fieldName="Devolucion_Fecha_Cancelacion" columns="20" />
+        <dataField fieldName="Transferencia_Ubicacion_Origen_Id" aliasFieldName="Transferencia_Ubicacion_Origen_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Ubicacion_Origen_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Transferencia_Ubicacion_Destino_Id" aliasFieldName="Transferencia_Ubicacion_Destino_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Ubicacion_Destino_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Transferencia" columns="20" />
+        <dataField fieldName="Transferencia_Fecha_Cancelacion" columns="20" />
+        <dataField fieldName="Movimiento_Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" hyperlinkFormatString="~/pages/Movimiento_Ruta_Optima?Movimiento_Ruta_Optima_Id={Movimiento_Ruta_Optima_Id}&amp;_controller=Movimiento_Ruta_Optima&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" aliasFieldName="Movimiento_Solicitado_Por" />
+        <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+        <dataField fieldName="Movimiento_Realizado_Por_Id" columns="15" aliasFieldName="Movimiento_Realizado_Por" />
+        <dataField fieldName="Movimiento_Cancelado_Por_Id" columns="15" aliasFieldName="Movimiento_Cancelado_Por" />
+        <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+        <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" columns="15" aliasFieldName="Movimiento_Motivo_Cancelacion" />
+        <dataField fieldName="Estatus_Transferencia_Id" aliasFieldName="Estatus_Transferencia" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Transferencia_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Es_Capturado" />
+        <dataField fieldName="Fecha_Captura_Movimiento" columns="20" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+        <dataField fieldName="Movimiento_Folio" columns="15" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Material de Solicitud Transferencia">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Material de Solicitud Transferencia" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" hyperlinkFormatString="~/pages/Area_Servicio?Area_Servicio_Id={Area_Servicio_Id}&amp;_controller=Area_Servicio&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hyperlinkFormatString="~/pages/Tipo_Movimiento?Tipo_Movimiento_Id={Tipo_Movimiento_Id}&amp;_controller=Tipo_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Devolucion" />
+            <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Transferencia" />
+            <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Movimiento_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Movimiento_Aplica_A_Devolucion" hidden="true" />
+            <dataField fieldName="Estatus_Movimiento_Significa_Pendiente" hidden="true" />
+            <dataField fieldName="Estatus_Movimiento_Aplica_A_Transferencia" />
+            <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" hyperlinkFormatString="~/pages/Area_Entrega?Area_Entrega_Id={Area_Entrega_Id}&amp;_controller=Area_Entrega&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Devolucion_Ubicacion_Origen_Id" aliasFieldName="Devolucion_Ubicacion_Origen_Clave_Tipo_Ubicacion" hyperlinkFormatString="~/pages/Tipo_Ubicacion?Tipo_Ubicacion_Id={Devolucion_Ubicacion_Origen_Id}&amp;_controller=Tipo_Ubicacion&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion" />
+            <dataField fieldName="Devolucion_Ubicacion_Destino_Id" aliasFieldName="Devolucion_Ubicacion_Destino_Area_Entrega" hyperlinkFormatString="~/pages/Area_Entrega?Area_Entrega_Id={Devolucion_Ubicacion_Destino_Id}&amp;_controller=Area_Entrega&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Devolucion_Id" aliasFieldName="Estatus_Devolucion" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Devolucion_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Devolucion" columns="20" />
+            <dataField fieldName="Devolucion_Fecha_Cancelacion" columns="20" />
+            <dataField fieldName="Transferencia_Ubicacion_Origen_Id" aliasFieldName="Transferencia_Ubicacion_Origen_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Ubicacion_Origen_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Transferencia_Ubicacion_Destino_Id" aliasFieldName="Transferencia_Ubicacion_Destino_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Ubicacion_Destino_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Transferencia" columns="20" />
+            <dataField fieldName="Transferencia_Fecha_Cancelacion" columns="20" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" hyperlinkFormatString="~/pages/Movimiento_Ruta_Optima?Movimiento_Ruta_Optima_Id={Movimiento_Ruta_Optima_Id}&amp;_controller=Movimiento_Ruta_Optima&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" aliasFieldName="Movimiento_Solicitado_Por" />
+            <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+            <dataField fieldName="Movimiento_Realizado_Por_Id" columns="15" aliasFieldName="Movimiento_Realizado_Por" />
+            <dataField fieldName="Movimiento_Cancelado_Por_Id" columns="15" aliasFieldName="Movimiento_Cancelado_Por" />
+            <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+            <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" columns="15" aliasFieldName="Movimiento_Motivo_Cancelacion" />
+            <dataField fieldName="Estatus_Transferencia_Id" aliasFieldName="Estatus_Transferencia" hyperlinkFormatString="~/pages/Estatus_Movimiento?Estatus_Movimiento_Id={Estatus_Transferencia_Id}&amp;_controller=Estatus_Movimiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Es_Capturado" />
+            <dataField fieldName="Fecha_Captura_Movimiento" columns="20" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Movimiento_Folio" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Registro de Movimiento">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Registro de Movimiento" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" />
+            <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Devolucion" />
+            <dataField fieldName="Tipo_Movimiento_Es_Solicitud_Transferencia" />
+            <dataField fieldName="Estatus_Movimiento_Id" aliasFieldName="Estatus_Movimiento" />
+            <dataField fieldName="Estatus_Movimiento_Aplica_A_Devolucion" hidden="true" />
+            <dataField fieldName="Estatus_Movimiento_Significa_Pendiente" hidden="true" />
+            <dataField fieldName="Estatus_Movimiento_Aplica_A_Transferencia" />
+            <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+            <dataField fieldName="Devolucion_Ubicacion_Origen_Id" aliasFieldName="Devolucion_Ubicacion_Origen_Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Devolucion_Ubicacion_Origen_Descripcion_Tipo_Ubicacion" />
+            <dataField fieldName="Devolucion_Ubicacion_Destino_Id" aliasFieldName="Devolucion_Ubicacion_Destino_Area_Entrega" />
+            <dataField fieldName="Estatus_Devolucion_Id" aliasFieldName="Estatus_Devolucion" />
+            <dataField fieldName="Fecha_Devolucion" columns="20" />
+            <dataField fieldName="Devolucion_Fecha_Cancelacion" columns="20" />
+            <dataField fieldName="Transferencia_Ubicacion_Origen_Id" aliasFieldName="Transferencia_Ubicacion_Origen_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Transferencia_Ubicacion_Destino_Id" aliasFieldName="Transferencia_Ubicacion_Destino_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Fecha_Transferencia" columns="20" />
+            <dataField fieldName="Transferencia_Fecha_Cancelacion" columns="20" />
+            <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" aliasFieldName="Movimiento_Solicitado_Por" />
+            <dataField fieldName="Movimiento_Iniciado_Por_Id" columns="15" aliasFieldName="Movimiento_Iniciado_Por" />
+            <dataField fieldName="Movimiento_Realizado_Por_Id" columns="15" aliasFieldName="Movimiento_Realizado_Por" />
+            <dataField fieldName="Movimiento_Cancelado_Por_Id" columns="15" aliasFieldName="Movimiento_Cancelado_Por" />
+            <dataField fieldName="Movimiento_Capturado_Por_Id" columns="15" aliasFieldName="Movimiento_Capturado_Por" />
+            <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" columns="15" aliasFieldName="Movimiento_Motivo_Cancelacion" />
+            <dataField fieldName="Estatus_Transferencia_Id" aliasFieldName="Estatus_Transferencia" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+            <dataField fieldName="Es_Capturado" />
+            <dataField fieldName="Fecha_Captura_Movimiento" columns="20" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+            <dataField fieldName="Movimiento_Folio" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Id = @Movimiento_Id
+
+]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Id = @Movimiento_Id
+
+]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE APP.Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Id = @Movimiento_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" roles="hidden" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE APP.Movimiento
+SET Estatus_Registro_Id = 3, 
+    Actualizado_Por_Id = @BusinessRules_UserId ,
+    Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Id = @Movimiento_Id
+
+]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+
+SET @Already_Exists = 0 
+
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](258,1,74,@Movimiento) 
+   RETURN 
+END]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Movimiento 
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Movimiento_Id = @Movimiento_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT 
+    TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Movimiento 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Movimiento), NULL)=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Movimiento), NULL) 
+AND Movimiento_Id <> @Movimiento_Id 
+ 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](259,1,74,@Movimiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](259,1,74,@Movimiento) 
+   RETURN 
+END]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Movimiento 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+   Movimiento_Id = @Movimiento_Id]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Tmp_Operacion_Cuadre_Inventario1" label="Tmp_Operacion_Cuadre_Inventario1" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Tmp_Operacion_Cuadre_Inventario"."Tmp_Operacion_Cuadre_Inventario_Id" "Tmp_Operacion_Cuadre_Inventario_Id"
+	,"Tmp_Operacion_Cuadre_Inventario"."Material_Id" "Material_Id"
+	,"Material_"."Material" "Material_Material"
+	,"Material_"."Material_Descripcion" "Material_Descripcion"
+	,"Tmp_Operacion_Cuadre_Inventario"."Material" "Material"
+	,"Tmp_Operacion_Cuadre_Inventario"."Devolucion_Origen" "Devolucion_Origen"
+	,"Tmp_Operacion_Cuadre_Inventario"."Devolucion_Destino" "Devolucion_Destino"
+	,"Tmp_Operacion_Cuadre_Inventario"."Devolucion_Cantidad" "Devolucion_Cantidad"
+	,"Tmp_Operacion_Cuadre_Inventario"."Transferencia_Origen" "Transferencia_Origen"
+	,"Tmp_Operacion_Cuadre_Inventario"."Transferencia_Destino" "Transferencia_Destino"
+	,"Tmp_Operacion_Cuadre_Inventario"."Transferencia_Cantidad" "Transferencia_Cantidad"
+	,"Tmp_Operacion_Cuadre_Inventario"."Valor_Special_Stock" "Valor_Special_Stock"
+	,"Tmp_Operacion_Cuadre_Inventario"."Devolucion_Origen_Id" "Devolucion_Origen_Id"
+	,"Devolucion_Origen_"."Clave_Tipo_Ubicacion" "Dev_Origen_Clave_Tipo_Ubicacion"
+	,"Devolucion_Origen_"."Descripcion_Tipo_Ubicacion" "Dev_Origen_Descripcion_Tipo_Ubicacion"
+	,"Tmp_Operacion_Cuadre_Inventario"."Devolucion_Destino_Id" "Devolucion_Destino_Id"
+	,"Devolucion_Destino_"."Ubicacion_Almacenamiento" "Dev_Destino_Ubicacion_Almacenamiento"
+	,"Tmp_Operacion_Cuadre_Inventario"."Cantidad_A_Devolver" "Cantidad_A_Devolver"
+	,"Tmp_Operacion_Cuadre_Inventario"."Transferencia_Origen_Id" "Transferencia_Origen_Id"
+	,"Transferencia_Origen_"."Ubicacion_Almacenamiento" "Transfer_Origen_Ubicacion_Almacenamiento"
+	,"Tmp_Operacion_Cuadre_Inventario"."Transferencia_Destino_Id" "Transferencia_Destino_Id"
+	,"Transferencia_Destino_"."Ubicacion_Almacenamiento" "Transfer_Destino_Ubicacion_Almacenamiento"
+	,"Tmp_Operacion_Cuadre_Inventario"."Cantidad_A_Transferir" "Cantidad_A_Transferir"
+	,"Tmp_Operacion_Cuadre_Inventario"."Special_Stock" "Special_Stock"
+	,"Tmp_Operacion_Cuadre_Inventario"."Es_Captura_Local" "Es_Captura_Local"
+	,"Tmp_Operacion_Cuadre_Inventario"."Es_Captura_Remota" "Es_Captura_Remota"
+	,"Tmp_Operacion_Cuadre_Inventario"."Fecha_Captura" "Fecha_Captura"
+	,"Tmp_Operacion_Cuadre_Inventario"."Estatus_Captura_Sap_Id" "Estatus_Captura_Sap_Id"
+	,"Estatus_Captura_Sap_"."Estatus_Captura_Sap" "Estatus_Captura_Sap"
+	,"Tmp_Operacion_Cuadre_Inventario"."Nombre_Equipo_Llamada" "Nombre_Equipo_Llamada"
+	,"Tmp_Operacion_Cuadre_Inventario"."Nombre_Equipo_Captura" "Nombre_Equipo_Captura"
+	,"Tmp_Operacion_Cuadre_Inventario"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Tmp_Operacion_Cuadre_Inventario"."Error" "Error"
+	,"Capturado_Por"."Usuario_Sistema" "Capturado_Por"
+	,"Tmp_Operacion_Cuadre_Inventario"."Es_Capturado" "Es_Capturado"
+	,"Tmp_Operacion_Cuadre_Inventario"."Tipo_Operacion_Sap_Id" "Tipo_Operacion_Sap_Id"
+	,"Tipo_Operacion_Sap_"."Tipo_Operacion_Sap" "Tipo_Operacion_Sap"
+	,"Tipo_Operacion_Sap_"."Es_Cuadre_Inventario_Devolucion" "Es_Cuadre_Inventario_Devolucion"
+	,"Tipo_Operacion_Sap_"."Es_Cuadre_Inventario_Transferencia" "Es_Cuadre_Inventario_Transferencia"
+	,"Tmp_Operacion_Cuadre_Inventario"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Tmp_Operacion_Cuadre_Inventario"."Transaccion_Id" "Transaccion_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Tmp_Operacion_Cuadre_Inventario"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Tmp_Operacion_Cuadre_Inventario"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Tmp_Operacion_Cuadre_Inventario"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Tmp_Operacion_Cuadre_Inventario"."Usuario_Id" "Usuario_Id"
+	,"Usuario"."Usuario_Sistema" "Usuario_Sistema"
+from "dbo"."Tmp_Operacion_Cuadre_Inventario" "Tmp_Operacion_Cuadre_Inventario"
+	left join "APP"."Material" "Material_" on "Tmp_Operacion_Cuadre_Inventario"."Material_Id" = "Material_"."Material_Id"
+	left join "APP"."Tipo_Ubicacion" "Devolucion_Origen_" on "Tmp_Operacion_Cuadre_Inventario"."Devolucion_Origen_Id" = "Devolucion_Origen_"."Tipo_Ubicacion_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Devolucion_Destino_" on "Tmp_Operacion_Cuadre_Inventario"."Devolucion_Destino_Id" = "Devolucion_Destino_"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Transferencia_Origen_" on "Tmp_Operacion_Cuadre_Inventario"."Transferencia_Origen_Id" = "Transferencia_Origen_"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Transferencia_Destino_" on "Tmp_Operacion_Cuadre_Inventario"."Transferencia_Destino_Id" = "Transferencia_Destino_"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Estatus_Captura_Sap" "Estatus_Captura_Sap_" on "Tmp_Operacion_Cuadre_Inventario"."Estatus_Captura_Sap_Id" = "Estatus_Captura_Sap_"."Estatus_Captura_Sap_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Tmp_Operacion_Cuadre_Inventario"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "APP"."Tipo_Operacion_Sap" "Tipo_Operacion_Sap_" on "Tmp_Operacion_Cuadre_Inventario"."Tipo_Operacion_Sap_Id" = "Tipo_Operacion_Sap_"."Tipo_Operacion_Sap_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Tmp_Operacion_Cuadre_Inventario"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Capturado_Por" on "Tmp_Operacion_Cuadre_Inventario"."Capturado_Por_Id" = "Capturado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Tmp_Operacion_Cuadre_Inventario"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Tmp_Operacion_Cuadre_Inventario"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Usuario" on "Tmp_Operacion_Cuadre_Inventario"."Usuario_Id" = "Usuario"."Usuario_Sistema_Id"
+	left join "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento" on "Tmp_Operacion_Cuadre_Inventario"."Estatus_Procesamiento_Id" = "Estatus_Procesamiento"."Estatus_Procesamiento_Id"
+]]></text>
+    </command>
+    <command id="Tmp_Operacion_Cuadre_Inventario_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Tmp_Operacion_Cuadre_Inventario_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Tmp_Operacion_Cuadre_Inventario_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Tmp Operacion Cuadre Inventario Id" readOnly="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" newDataView="createForm1" searchOnStart="true" dataValueField="Material_Id" dataTextField="Material" copy="Material_Descripcion=Material_Descripcion" />
+    </field>
+    <field name="Material_Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" readOnly="true" label="Material Descripcion" length="250" />
+    <field name="Material" type="String" label="Material" length="250" showInSummary="true" />
+    <field name="Devolucion_Origen" type="String" label="Devolucion Origen" length="250" showInSummary="true" />
+    <field name="Devolucion_Destino" type="String" label="Devolucion Destino" length="250" showInSummary="true" />
+    <field name="Devolucion_Cantidad" type="Decimal" allowNulls="false" default="((0))" label="Devolucion Cantidad" showInSummary="true" />
+    <field name="Transferencia_Origen" type="String" label="Transferencia Origen" length="250" />
+    <field name="Transferencia_Destino" type="String" label="Transferencia Destino" length="250" />
+    <field name="Transferencia_Cantidad" type="Decimal" allowNulls="false" default="((0))" label="Transferencia Cantidad" />
+    <field name="Valor_Special_Stock" type="String" label="Valor Special Stock" length="10" />
+    <field name="Devolucion_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Origen Id">
+      <items style="Lookup" dataController="Tipo_Ubicacion" newDataView="createForm1" searchOnStart="true" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" copy="Dev_Origen_Descripcion_Tipo_Ubicacion=Descripcion_Tipo_Ubicacion" />
+    </field>
+    <field name="Dev_Origen_Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Dev Origen Clave Tipo Ubicacion" />
+    <field name="Dev_Origen_Descripcion_Tipo_Ubicacion" type="String" readOnly="true" label="Dev Origen Descripcion Tipo Ubicacion" length="250" />
+    <field name="Devolucion_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Destino Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Dev_Destino_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Dev Destino Ubicacion Almacenamiento" length="150" />
+    <field name="Cantidad_A_Devolver" type="Decimal" allowNulls="false" default="((0))" label="Cantidad A Devolver" />
+    <field name="Transferencia_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Origen Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Transfer_Origen_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transfer Origen Ubicacion Almacenamiento" length="150" />
+    <field name="Transferencia_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Destino Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Transfer_Destino_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transfer Destino Ubicacion Almacenamiento" length="150" />
+    <field name="Cantidad_A_Transferir" type="Decimal" allowNulls="false" default="((0))" label="Cantidad A Transferir" />
+    <field name="Special_Stock" type="String" allowNulls="false" default="((0))" label="Special Stock" length="10" />
+    <field name="Es_Captura_Local" type="Boolean" allowNulls="false" default="((0))" label="Es Captura Local" readOnly="true" />
+    <field name="Es_Captura_Remota" type="Boolean" allowNulls="false" default="((0))" label="Es Captura Remota" readOnly="true" />
+    <field name="Fecha_Captura" type="DateTime" dataFormatString="g" label="Fecha Captura" readOnly="true" />
+    <field name="Estatus_Captura_Sap_Id" type="Int32" allowNulls="false" label="Estatus Captura Sap Id">
+      <items style="Lookup" dataController="Estatus_Captura_Sap" dataValueField="Estatus_Captura_Sap_Id" dataTextField="Estatus_Captura_Sap" dataView="Estatus_Captura_Sap" pageSize="15" />
+    </field>
+    <field name="Estatus_Captura_Sap" type="String" readOnly="true" label="Estatus Captura Sap" length="250" />
+    <field name="Nombre_Equipo_Llamada" type="String" allowNulls="false" default="('N/A')" label="Nombre Equipo Llamada" length="150" readOnly="true" />
+    <field name="Nombre_Equipo_Captura" type="String" allowNulls="false" default="('N/A')" label="Nombre Equipo Captura" length="150" readOnly="true" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id" readOnly="true">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" dataView="Mensaje_Sistema_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje Sistema" length="250" />
+    <field name="Error" type="String" allowQBE="false" allowSorting="false" label="Error" readOnly="true" />
+    <field name="Capturado_Por" type="String" readOnly="true" label="Capturado Por" length="256" />
+    <field name="Es_Capturado" type="Boolean" allowNulls="false" default="((0))" label="Es Capturado" readOnly="true" />
+    <field name="Tipo_Operacion_Sap_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Operacion Sap Id">
+      <items style="Lookup" dataController="Tipo_Operacion_Sap" dataValueField="Tipo_Operacion_Sap_Id" dataTextField="Tipo_Operacion_Sap" copy="Es_Cuadre_Inventario_Devolucion=Es_Cuadre_Inventario_Devolucion, Es_Cuadre_Inventario_Transferencia=Es_Cuadre_Inventario_Transferencia" dataView="Tipo_Operacion_Sap_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Operacion_Sap" type="String" readOnly="true" label="Tipo Operacion Sap" length="250" />
+    <field name="Es_Cuadre_Inventario_Devolucion" type="Boolean" readOnly="true" label="Es Cuadre Inventario Devolucion" />
+    <field name="Es_Cuadre_Inventario_Transferencia" type="Boolean" readOnly="true" label="Es Cuadre Inventario Transferencia" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Procesamiento Id" readOnly="true">
+      <items style="Lookup" dataController="Estatus_Procesamiento" dataValueField="Estatus_Procesamiento_Id" dataTextField="Estatus_Procesamiento" dataView="Estatus_Procesamiento_LookUp_List" />
+    </field>
+    <field name="Estatus_Procesamiento" type="String" readOnly="true" label="Estatus Procesamiento" length="150" />
+    <field name="Transaccion_Id" type="String" allowNulls="false" default="(newid())" label="Transaccion Id" length="50" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" readOnly="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" readOnly="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Usuario_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Usuario Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" copy="Usuario_Sistema=Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Usuario_Sistema" type="String" readOnly="true" label="Usuario Sistema" length="256" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Operación Cuadre Inventario SAP - Devolución" reportTemplate="true" filter="Usuario_Id = @BusinessRules_UserId AND Es_Cuadre_Inventario_Devolucion = 1">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Material" hidden="true" />
+        <dataField fieldName="Material_Descripcion" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Devolucion_Origen" />
+        <dataField fieldName="Devolucion_Destino" />
+        <dataField fieldName="Devolucion_Cantidad" columns="15" />
+        <dataField fieldName="Transferencia_Origen" hidden="true" />
+        <dataField fieldName="Transferencia_Destino" hidden="true" />
+        <dataField fieldName="Transferencia_Cantidad" columns="15" hidden="true" />
+        <dataField fieldName="Valor_Special_Stock" columns="10" hidden="true" />
+        <dataField fieldName="Devolucion_Origen_Id" aliasFieldName="Dev_Origen_Clave_Tipo_Ubicacion" hyperlinkFormatString="~/pages/Tipo_Ubicacion?Tipo_Ubicacion_Id={Devolucion_Origen_Id}&amp;_controller=Tipo_Ubicacion&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Dev_Origen_Descripcion_Tipo_Ubicacion" hidden="true" />
+        <dataField fieldName="Devolucion_Destino_Id" aliasFieldName="Dev_Destino_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Devolucion_Destino_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Cantidad_A_Devolver" columns="15" hidden="true" />
+        <dataField fieldName="Transferencia_Origen_Id" aliasFieldName="Transfer_Origen_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Origen_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Transferencia_Destino_Id" aliasFieldName="Transfer_Destino_Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Transferencia_Destino_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Cantidad_A_Transferir" columns="15" hidden="true" />
+        <dataField fieldName="Special_Stock" columns="10" hidden="true" />
+        <dataField fieldName="Es_Captura_Local" />
+        <dataField fieldName="Es_Captura_Remota" />
+        <dataField fieldName="Fecha_Captura" columns="20" />
+        <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+        <dataField fieldName="Nombre_Equipo_Llamada" />
+        <dataField fieldName="Nombre_Equipo_Captura" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="Error" rows="5" />
+        <dataField fieldName="Capturado_Por" />
+        <dataField fieldName="Es_Capturado" />
+        <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+        <dataField fieldName="Es_Cuadre_Inventario_Devolucion" hidden="true" />
+        <dataField fieldName="Es_Cuadre_Inventario_Transferencia" hidden="true" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hidden="true" />
+        <dataField fieldName="Usuario_Id" columns="15" aliasFieldName="Usuario_Sistema" />
+        <dataField fieldName="Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Operación Cuadre Inventario SAP - Devolución">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Operación Cuadre Inventario SAP - Devolución" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+            <dataField fieldName="Material_Descripcion" hidden="true" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Devolucion_Origen" />
+            <dataField fieldName="Devolucion_Destino" />
+            <dataField fieldName="Devolucion_Cantidad" columns="15" />
+            <dataField fieldName="Es_Captura_Local" />
+            <dataField fieldName="Es_Captura_Remota" />
+            <dataField fieldName="Fecha_Captura" columns="20" />
+            <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+            <dataField fieldName="Nombre_Equipo_Llamada" />
+            <dataField fieldName="Nombre_Equipo_Captura" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" tag="lookup-details-hidden" />
+            <dataField fieldName="Error" rows="5" />
+            <dataField fieldName="Capturado_Por" />
+            <dataField fieldName="Es_Capturado" />
+            <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+            <dataField fieldName="Es_Cuadre_Inventario_Devolucion" hidden="true" />
+            <dataField fieldName="Es_Cuadre_Inventario_Transferencia" hidden="true" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+            <dataField fieldName="Transaccion_Id" columns="50" hidden="true" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Usuario_Id" columns="15" aliasFieldName="Usuario_Sistema" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Operación Cuadre Inventario SAP - Devolución">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" hidden="true" />
+            <dataField fieldName="Material_Descripcion" hidden="true" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Devolucion_Origen" />
+            <dataField fieldName="Devolucion_Destino" />
+            <dataField fieldName="Devolucion_Cantidad" columns="15" />
+            <dataField fieldName="Transferencia_Origen" hidden="true" />
+            <dataField fieldName="Transferencia_Destino" hidden="true" />
+            <dataField fieldName="Transferencia_Cantidad" columns="15" hidden="true" />
+            <dataField fieldName="Valor_Special_Stock" columns="10" hidden="true" />
+            <dataField fieldName="Devolucion_Origen_Id" aliasFieldName="Dev_Origen_Clave_Tipo_Ubicacion" hidden="true" />
+            <dataField fieldName="Dev_Origen_Descripcion_Tipo_Ubicacion" hidden="true" />
+            <dataField fieldName="Devolucion_Destino_Id" aliasFieldName="Dev_Destino_Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Cantidad_A_Devolver" columns="15" hidden="true" />
+            <dataField fieldName="Transferencia_Origen_Id" aliasFieldName="Transfer_Origen_Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Transferencia_Destino_Id" aliasFieldName="Transfer_Destino_Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Cantidad_A_Transferir" columns="15" hidden="true" />
+            <dataField fieldName="Special_Stock" columns="10" hidden="true" />
+            <dataField fieldName="Es_Captura_Local" hidden="true" />
+            <dataField fieldName="Es_Captura_Remota" hidden="true" />
+            <dataField fieldName="Fecha_Captura" columns="20" hidden="true" />
+            <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" hidden="true" />
+            <dataField fieldName="Nombre_Equipo_Llamada" hidden="true" />
+            <dataField fieldName="Nombre_Equipo_Captura" hidden="true" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Error" rows="5" hidden="true" />
+            <dataField fieldName="Capturado_Por" hidden="true" />
+            <dataField fieldName="Es_Capturado" hidden="true" />
+            <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+            <dataField fieldName="Es_Cuadre_Inventario_Devolucion" hidden="true" />
+            <dataField fieldName="Es_Cuadre_Inventario_Transferencia" hidden="true" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hidden="true" />
+            <dataField fieldName="Transaccion_Id" columns="50" hidden="true" />
+            <dataField fieldName="Creado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+            <dataField fieldName="Actualizado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hidden="true" />
+            <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+            <dataField fieldName="Usuario_Sistema" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="^Delete^&quot;Borrar&quot;^Delete^" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE
+[dbo].[Tmp_Operacion_Cuadre_Inventario]
+SET
+    Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+[Tmp_Operacion_Cuadre_Inventario_Id] = @Tmp_Operacion_Cuadre_Inventario_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" cssClass="material-icon-delete" headerText="^Delete^&quot;Borrar&quot;^Delete^">
+        <data><![CDATA[UPDATE
+[dbo].[Tmp_Operacion_Cuadre_Inventario]
+SET
+    Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+[Tmp_Operacion_Cuadre_Inventario_Id] = @Tmp_Operacion_Cuadre_Inventario_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="DeleteIcon" whenView="grid1" headerText="^Delete^&quot;Borrar&quot;^Delete^">
+        <data><![CDATA[UPDATE
+[dbo].[Tmp_Operacion_Cuadre_Inventario]
+SET
+    Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+[Tmp_Operacion_Cuadre_Inventario_Id] = @Tmp_Operacion_Cuadre_Inventario_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="^Delete^&quot;Borrar&quot;^Delete^" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE
+[dbo].[Tmp_Operacion_Cuadre_Inventario]
+SET
+    Estatus_Registro_Id = 3
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+[Tmp_Operacion_Cuadre_Inventario_Id] = @Tmp_Operacion_Cuadre_Inventario_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="^Operations^Operaciones^Operations^" flat="true">
+      <action id="a3" commandName="ReportAsExcel" headerText="^DownloadFile^Descargar Archivo de Carga^DownloadFile^" cssClass="material-icon-cloud_download" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" headerText="^UploadFile^Cargar Archivo^UploadFile^" cssClass="material-icon-cloud_upload" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[SET @Estatus_Captura_Sap_Id = 1; --	Pendiente
+SET @Estatus_Procesamiento_Id = 0;
+SET @Mensaje_Sistema_Id = 0;
+SET @Estatus_Registro_Id = 1; -- Activo
+SET @Usuario_Id = @BusinessRules_UserId;
+SET @Tipo_Operacion_Sap_Id = 4; -- Cuadre de Inventario Devolución]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE
+[dbo].[Tmp_Operacion_Cuadre_Inventario]
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+[Tmp_Operacion_Cuadre_Inventario_Id] = @Tmp_Operacion_Cuadre_Inventario_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE
+[dbo].[Tmp_Operacion_Cuadre_Inventario]
+SET
+   Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+[Tmp_Operacion_Cuadre_Inventario_Id] = @Tmp_Operacion_Cuadre_Inventario_Id]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Material" alias="Material" created="2018-10-11T00:26:54" modified="2021-07-21T18:49:01" x="20" y="67" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="389" y="237">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="400" y="20">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="400" y="152">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="MRP_Type" parentTableSchema="dbo" parentTableName="MRP_Type" x="823" y="69">
+      <foreignKeyColumn columnName="MRP_Type_Id" parentColumnName="MRP_Type_Id" />
+    </foreignKey>
+    <foreignKey id="Clasificacion" parentTableSchema="APP" parentTableName="Clasificacion" x="794" y="249">
+      <foreignKeyColumn columnName="Clasificacion_Id" parentColumnName="Clasificacion_Id" />
+    </foreignKey>
+    <foreignKey id="Registrado_Desde" parentTableSchema="APP" parentTableName="Registrado_Desde" x="1101" y="232">
+      <foreignKeyColumn columnName="Registrado_Desde_Id" parentColumnName="Registrado_Desde_Id" />
+    </foreignKey>
+    <foreignKey id="Material_Empaque" parentTableSchema="APP" parentTableName="Material_Empaque" x="1098" y="426">
+      <foreignKeyColumn columnName="Material_Empaque_Id" parentColumnName="Material_Empaque_Id" />
+    </foreignKey>
+    <foreignKey id="Clase_Material" parentTableSchema="APP" parentTableName="Clase_Material" x="817" y="500">
+      <foreignKeyColumn columnName="Clase_Material_Id" parentColumnName="Clase_Material_Id" />
+    </foreignKey>
+    <foreignKey id="Tipo_Material" parentTableSchema="APP" parentTableName="Tipo_Material" x="460" y="439">
+      <foreignKeyColumn columnName="Tipo_Material_Id" parentColumnName="Tipo_Material_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="MRP_Type" fieldName="Mrp_Type" label="Mrp Type" foreignKey="MRP_Type" />
+    <column name="MRP_Type_Id" fieldName="Mrp_Type_Id" label="Mrp Type Id" />
+    <column name="Clasificacion_Id" fieldName="Clasificacion_Id" label="Clasificacion Id" aliasColumnName="Clasificacion" aliasForeignKey="Clasificacion" />
+    <column name="Clasificacion" fieldName="Clasificacion" label="Clasificacion" foreignKey="Clasificacion" />
+    <column name="Es_Material_Indirecto" fieldName="Clasificacion_es_Material_Indirecto" label="Clasificacion es Material Indirecto" foreignKey="Clasificacion" />
+    <column name="Registrado_Desde" fieldName="Registrado_Desde" label="Registrado Desde" foreignKey="Registrado_Desde" />
+    <column name="Registrado_Desde_Id" fieldName="Registrado_Desde_Id" label="Registrado Desde Id" />
+    <column name="Material_Empaque" fieldName="Material_Empaque" label="Material Empaque" foreignKey="Material_Empaque" />
+    <column name="Material_Empaque_Id" fieldName="Material_Empaque_Id" label="Material Empaque Id" />
+    <column name="Clase_Material_Id" fieldName="Clase_Material_Id" label="Clase Material Id" aliasColumnName="Clase_Material" aliasForeignKey="Clase_Material" />
+    <column name="Clase_Material" fieldName="Clase_Material" label="Clase Material" foreignKey="Clase_Material" />
+    <column name="Tipo_Material_Id" fieldName="Tipo_Material_Id" label="Tipo Material Id" aliasColumnName="Tipo_Material" aliasForeignKey="Tipo_Material" />
+    <column name="Tipo_Material" fieldName="Tipo_Material" label="Tipo Material" foreignKey="Tipo_Material" />
+  </columns>
+</dataModel>

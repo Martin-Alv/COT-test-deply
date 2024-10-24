@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Unidad_Material" alias="Unidad_Material" created="2018-10-11T00:29:56" modified="2019-01-21T01:42:12" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="581" y="413">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="578" y="126">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="584" y="262">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Es_Por_Tarima" fieldName="Es_Por_Tarima" label="Es por Tarima?" />
+    <column name="Es_Por_Contenedor" fieldName="Es_Por_Contenedor" label="Es por Contenedor?" />
+    <column name="Es_Objeto_Voluminoso" fieldName="Es_Objeto_Voluminoso" label="Es Objeto Voluminoso?" />
+    <column name="Es_De_Manejo_Delicado" fieldName="Es_De_Manejo_Delicado" label="Es de Manejo Delicado?" />
+    <column name="Es_Por_Caja" fieldName="Es_Por_Caja" label="Es por Caja?" />
+    <column name="Es_Por_Bolsa" fieldName="Es_Por_Bolsa" label="Es por Bolsa?" />
+    <column name="Es_Por_Pieza" fieldName="Es_Por_Pieza" label="Es por Pieza?" />
+    <column name="Es_Por_Unidad" fieldName="Es_Por_Unidad" label="Es por Unidad?" />
+    <column name="Es_Por_Longitud" fieldName="Es_Por_Longitud" label="Es por Longitud?" />
+    <column name="Es_Por_Peso" fieldName="Es_Por_Peso" label="Es por Peso?" />
+    <column name="Es_Por_Tarima_Contenedor_o_Caja_Bolsa_o_Unidad_Pieza" fieldName="Es_Por_Tarima_Contenedor_o_Caja_Bolsa_o_Unidad_Pieza" label="Es por Tarima Contenedor o Caja Bolsa o Unidad Pieza?" />
+  </columns>
+</dataModel>

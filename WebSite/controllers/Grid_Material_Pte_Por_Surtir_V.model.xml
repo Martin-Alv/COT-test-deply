@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Material_Pte_Por_Surtir_V" alias="Grid_Material_Pte_Por_Surtir_V" created="2019-01-18T01:32:46" modified="2019-04-14T23:40:02" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripción" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitada" />
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicación Almacenamiento Id" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicación de Almacenamiento" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" />
+    <column name="Material_Unidad_Material_Id" fieldName="Material_Unidad_Material_Id" label="Material Unidad Material Id" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" />
+    <column name="Orden_Produccion_Solicitud_Material" fieldName="Orden_Produccion_Solicitud_Material" label="Orden Producción que solicitó el Material" />
+    <column name="Solicitado_Por" fieldName="SolicitadoPor" label="Solicitado Por" />
+  </columns>
+</dataModel>

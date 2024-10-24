@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Relacion Usuario Aplicacion</title>
+  </head>
+  <body class="material-icon-people-outline" data-authorize-roles="administradorUsuarios,administradorIT">
+    <!--The contents of this page will be overwritten by app generator. Set page property "Generate" to "First Time Only" to preserve changes.-->
+    <div data-flow="row">
+      <div id="view1" data-controller="Grid_Dato_Usuario_Aplicacion_V" data-view="grid1" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-calendar-disabled"> </div>
+    </div>
+    <div data-flow="row">
+      <div data-activator="Tab|Área de Servicio">
+        <div id="view2" data-controller="Usuario_Aplicacion_Area_Servicio" data-view="grid1" data-filter-source="view1" data-filter-fields="Usuario_Aplicacion_Id,Usuario_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-calendar-disabled"> </div>
+      </div>
+      <div data-activator="Tab|Áreas de Entrega">
+        <div id="view5" data-controller="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" data-view="grid1" data-filter-source="view1" data-filter-fields="Usuario_Aplicacion_Id"> </div>
+      </div>
+      <div data-activator="Tab|Dato Acceso (NIP)">
+        <div id="view3" data-controller="Usuario_Aplicacion_Acceso" data-view="Usuario_Aplicacion_Acceso" data-filter-source="view1" data-filter-fields="Usuario_Aplicacion_Id,Usuario_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none"> </div>
+      </div>
+      <div data-activator="Tab|Dato Acceso SAP">
+        <div id="view4" data-controller="Dato_Acceso_Sap" data-view="grid1" data-filter-source="view1" data-filter-fields="Usuario_Aplicacion_Id,Usuario_Id" data-tag="view-style-grid,  &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled, &#xD;&#xA;view-style-charts-disabled, &#xD;&#xA;view-style-calendar-disabled, &#xD;&#xA;inline-editing-none, &#xD;&#xA;inline-editing-option-none "> </div>
+      </div>
+      <div data-activator="Tab|Rol lógico">
+        <div id="view6" data-controller="Usuario_Aplicacion_Rol_Logico" data-view="grid1" data-filter-source="view1" data-filter-fields="Usuario_Aplicacion_Id,Usuario_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none"> </div>
+      </div>
+    </div>
+  </body>
+</html>

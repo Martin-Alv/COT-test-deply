@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Dato_Acceso_Sap" alias="Dato_Acceso_Sap" created="2019-06-12T10:36:32" modified="2019-06-19T16:36:42" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Usuario_Aplicacion_" parentTableSchema="APP" parentTableName="Usuario_Aplicacion" x="982" y="44">
+      <foreignKeyColumn columnName="Usuario_Aplicacion_Id" parentColumnName="Usuario_Aplicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="257" y="384">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="705" y="37">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="678" y="272">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Usuario_Sistema" parentTableSchema="dbo" parentTableName="Usuario_V" x="446" y="175">
+      <foreignKeyColumn columnName="Usuario_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Dato_Acceso_Sap_Id" fieldName="Dato_Acceso_Sap_Id" label="Dato Acceso Sap Id" />
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicacion Id" aliasColumnName="Nombre_Completo" aliasForeignKey="Usuario_Aplicacion_" />
+    <column name="Nombre_Completo" fieldName="Nombre_Completo" label="Nombre Completo" foreignKey="Usuario_Aplicacion_" />
+    <column name="Nombre_Usuario_Sap" fieldName="Nombre_Usuario_Sap" label="Nombre de Usuario Sap" />
+    <column name="Password_Usuario_Sap" fieldName="Password_Usuario_Sap" label="Password de Usuario Sap" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Usuario_Sistema" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" foreignKey="Usuario_Sistema" />
+  </columns>
+</dataModel>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Usuario_V" alias="Usuario_V" created="2018-10-11T15:13:35" modified="2018-10-11T15:26:42" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Aplicacion_Id" fieldName="Aplicacion_Id" label="Aplicacion Id" />
+    <column name="Usuario_Sistema_Id" fieldName="Usuario_Sistema_Id" label="Usuario Sistema Id" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" />
+  </columns>
+</dataModel>

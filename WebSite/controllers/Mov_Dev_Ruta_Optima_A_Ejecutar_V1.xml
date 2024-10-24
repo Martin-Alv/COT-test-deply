@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Mov_Dev_Ruta_Optima_A_Ejecutar_V1" conflictDetection="overwriteChanges" label="Mov Dev Ruta Optima A Ejecutar V1" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Tmp_Ruta_Optima_Transaccion_Id" "Tmp_Ruta_Optima_Transaccion_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Movimiento_Ruta_Optima_Id" "Movimiento_Ruta_Optima_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_Material_Id" "Devolucion_Material_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_Material" "Devolucion_Material"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_Material_Desc" "Devolucion_Material_Desc"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Cantidad_A_Devolver" "Cantidad_A_Devolver"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_En_Ubicacion_Almacenamiento_Id" "Devolucion_En_Ubicacion_Almacenamiento_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_En_Ubicacion_Almacenamiento" "Devolucion_En_Ubicacion_Almacenamiento"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_Ubicacion_Almacenamiento_Id" "Devolucion_Ubicacion_Almacenamiento_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Devolucion_Ubicacion_Almacenamiento" "Devolucion_Ubicacion_Almacenamiento"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Cantidad_Devuelto" "Cantidad_Devuelto"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Unidad_Material_Devuelto_Id" "Unidad_Material_Devuelto_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Unidad_Material_Devuelto" "Unidad_Material_Devuelto"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Movimiento" "Movimiento"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Creado_Por_Id" "Creado_Por_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Transaccion_Id" "Transaccion_Id"
+	,"Mov_Dev_Ruta_Optima_A_Ejecutar_V"."Material_Ubicacion_Stock_Id" "Material_Ubicacion_Stock_Id"
+from "dbo"."Mov_Dev_Ruta_Optima_A_Ejecutar_V" "Mov_Dev_Ruta_Optima_A_Ejecutar_V"
+]]></text>
+    </command>
+    <command id="Tipo_Movimiento_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Tipo_Movimiento_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Tmp_Ruta_Optima_Transaccion_Id" type="String" label="Tmp Ruta Optima Transaccion Id" readOnly="true" length="50" showInSummary="true" />
+    <field name="Numero_Grupo_Ruta_Optima" type="Decimal" allowNulls="false" label="Numero Grupo Ruta Optima" showInSummary="true" />
+    <field name="Movimiento_Ruta_Optima_Id" type="Int64" allowNulls="false" label="Movimiento Ruta Optima Id" showInSummary="true" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" label="Tipo Movimiento Id" readOnly="true" showInSummary="true" />
+    <field name="Devolucion_Material_Id" type="Int64" allowNulls="false" label="Devolucion Material Id" showInSummary="true" />
+    <field name="Devolucion_Material" type="String" allowNulls="false" label="Devolucion Material" length="250" />
+    <field name="Devolucion_Material_Desc" type="String" allowNulls="false" label="Devolucion Material Desc" length="250" />
+    <field name="Cantidad_A_Devolver" type="Decimal" label="Cantidad A Devolver" readOnly="true" />
+    <field name="Devolucion_En_Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Devolucion En Ubicacion Almacenamiento Id" readOnly="true" />
+    <field name="Devolucion_En_Ubicacion_Almacenamiento" type="String" allowNulls="false" label="Devolucion En Ubicacion Almacenamiento" readOnly="true" length="1" />
+    <field name="Devolucion_Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" label="Devolucion Ubicacion Almacenamiento Id" />
+    <field name="Devolucion_Ubicacion_Almacenamiento" type="String" label="Devolucion Ubicacion Almacenamiento" length="150" />
+    <field name="Cantidad_Devuelto" type="Decimal" allowNulls="false" label="Cantidad Devuelto" />
+    <field name="Unidad_Material_Devuelto_Id" type="Int32" allowNulls="false" label="Unidad Material Devuelto Id" />
+    <field name="Unidad_Material_Devuelto" type="String" allowNulls="false" label="Unidad Material Devuelto" length="250" />
+    <field name="Movimiento" type="String" allowQBE="false" allowSorting="false" label="Movimiento" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" label="Creado Por Id" />
+    <field name="Transaccion_Id" type="String" allowNulls="false" label="Transaccion Id" length="50" />
+    <field name="Material_Ubicacion_Stock_Id" type="Int64" allowNulls="false" label="Material Ubicacion Stock Id" readOnly="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Mov Dev Ruta Optima A Ejecutar V1">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Tmp_Ruta_Optima_Transaccion_Id" columns="50" />
+        <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+        <dataField fieldName="Movimiento_Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Tipo_Movimiento_Id" columns="15" />
+        <dataField fieldName="Devolucion_Material_Id" columns="15" />
+        <dataField fieldName="Devolucion_Material" />
+        <dataField fieldName="Devolucion_Material_Desc" />
+        <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+        <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" columns="15" />
+        <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento" columns="1" />
+        <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" columns="15" />
+        <dataField fieldName="Devolucion_Ubicacion_Almacenamiento" />
+        <dataField fieldName="Cantidad_Devuelto" columns="15" />
+        <dataField fieldName="Unidad_Material_Devuelto_Id" columns="15" />
+        <dataField fieldName="Unidad_Material_Devuelto" />
+        <dataField fieldName="Movimiento" rows="5" />
+        <dataField fieldName="Creado_Por_Id" columns="15" />
+        <dataField fieldName="Transaccion_Id" columns="50" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Mov Dev Ruta Optima A Ejecutar V1">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Mov Dev Ruta Optima A Ejecutar V1" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tmp_Ruta_Optima_Transaccion_Id" columns="50" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Tipo_Movimiento_Id" columns="15" />
+            <dataField fieldName="Devolucion_Material_Id" columns="15" />
+            <dataField fieldName="Devolucion_Material" />
+            <dataField fieldName="Devolucion_Material_Desc" />
+            <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+            <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento" columns="1" />
+            <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Devolucion_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Cantidad_Devuelto" columns="15" />
+            <dataField fieldName="Unidad_Material_Devuelto_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Devuelto" />
+            <dataField fieldName="Movimiento" rows="5" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Mov Dev Ruta Optima A Ejecutar V1">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tmp_Ruta_Optima_Transaccion_Id" columns="50" />
+            <dataField fieldName="Numero_Grupo_Ruta_Optima" columns="15" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Tipo_Movimiento_Id" columns="15" />
+            <dataField fieldName="Devolucion_Material_Id" columns="15" />
+            <dataField fieldName="Devolucion_Material" />
+            <dataField fieldName="Devolucion_Material_Desc" />
+            <dataField fieldName="Cantidad_A_Devolver" columns="15" />
+            <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Devolucion_En_Ubicacion_Almacenamiento" columns="1" />
+            <dataField fieldName="Devolucion_Ubicacion_Almacenamiento_Id" columns="15" />
+            <dataField fieldName="Devolucion_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Cantidad_Devuelto" columns="15" />
+            <dataField fieldName="Unidad_Material_Devuelto_Id" columns="15" />
+            <dataField fieldName="Unidad_Material_Devuelto" />
+            <dataField fieldName="Movimiento" rows="5" />
+            <dataField fieldName="Creado_Por_Id" columns="15" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

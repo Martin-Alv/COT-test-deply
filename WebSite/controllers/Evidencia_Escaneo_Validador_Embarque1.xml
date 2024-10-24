@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Evidencia_Escaneo_Validador_Embarque1" label="Evidencia_Escaneo_Validador_Embarque1" conflictDetection="overwriteChanges" handler="eaton.Rules.Evidencia_Escaneo_Validador_Embarque1BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Evidencia_Escaneo_Validador_Embarque"."Evidencia_Escaneo_Validador_Embarque_Id" "Evidencia_Escaneo_Validador_Embarque_Id"
+	,"Evidencia_Escaneo_Validador_Embarque"."Comentario" "Comentario"
+	,"Evidencia_Escaneo_Validador_Embarque"."PictureFileName" "PictureFileName"
+	,"Evidencia_Escaneo_Validador_Embarque"."PictureContentType" "PictureContentType"
+	,"Evidencia_Escaneo_Validador_Embarque"."PictureLength" "PictureLength"
+	,"Evidencia_Escaneo_Validador_Embarque"."Transaccion_Escaneo" "Transaccion_Escaneo"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Evidencia_Escaneo_Validador_Embarque"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Evidencia_Escaneo_Validador_Embarque"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Evidencia_Escaneo_Validador_Embarque"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Evidencia_Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id" "EscaneoValidadorEmbarqueId"
+from "APP"."Evidencia_Escaneo_Validador_Embarque" "Evidencia_Escaneo_Validador_Embarque"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Evidencia_Escaneo_Validador_Embarque"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Evidencia_Escaneo_Validador_Embarque"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Evidencia_Escaneo_Validador_Embarque"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Evidencia_Escaneo_Validador_Embarque_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Evidencia_Escaneo_Validador_Embarque_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Evidencia_Escaneo_Validador_Embarque_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Evidencia Escaneo Validador Embarque Id" readOnly="true" />
+    <field name="Comentario" type="String" label="Comentario" length="500" showInSummary="true" />
+    <field name="PictureFileName" type="String" label="Picture File Name" length="250" showInSummary="true" />
+    <field name="PictureContentType" type="String" label="Picture Content Type" length="250" showInSummary="true" />
+    <field name="PictureLength" type="Int32" label="Picture Length" showInSummary="true" />
+    <field name="Transaccion_Escaneo" type="Guid" allowNulls="false" default="(newid())" label="Transaccion Escaneo" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="EscaneoValidadorEmbarqueId" type="Int64" allowNulls="false" default="((0))" label="Escaneo Validador Embarque">
+      <items style="Lookup" dataController="Escaneo_Validador_Embarque1" dataView="Escaneo_Validador_Embarque_LookUp_List" dataTextField="Escaneo_Validador_Embarque_Id" dataValueField="Escaneo_Validador_Embarque_Id" />
+    </field>
+    <field name="Escaneo_Validador_Embarque_Id" type="Int64" allowNulls="false" default="((0))" label="Escaneo Validador Embarque" computed="true" readOnly="true">
+      <items style="Lookup" dataController="Escaneo_Validador_Embarque1" dataView="Escaneo_Validador_Embarque_LookUp_List" dataTextField="Escaneo_Validador_Embarque_Id" dataValueField="Escaneo_Validador_Embarque_Id" />
+      <formula>"Evidencia_Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id"</formula>
+    </field>
+    <field name="Picture" type="Byte[]" label="Picture" sourceFields="Evidencia_Escaneo_Validador_Embarque_Id" onDemand="true" onDemandHandler="Evidencia_EscaneoPictureBlobHandler" onDemandStyle="Thumbnail" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Evidencias y comentarios" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false" tags="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none ">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Escaneo_Validador_Embarque_Id" columns="15" hidden="true" />
+        <dataField fieldName="EscaneoValidadorEmbarqueId" columns="15" />
+        <dataField fieldName="Comentario" />
+        <dataField fieldName="Picture" columns="15" />
+        <dataField fieldName="PictureFileName" />
+        <dataField fieldName="PictureContentType" />
+        <dataField fieldName="PictureLength" columns="15" />
+        <dataField fieldName="Transaccion_Escaneo" columns="15" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Evidencia Escaneo">
+      <headerText>Evidencia Escaneo</headerText>
+      <categories>
+        <category id="c1" headerText="Evidencia Escaneo" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Comentario" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName" />
+            <dataField fieldName="PictureContentType" />
+            <dataField fieldName="PictureLength" columns="15" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="EscaneoValidadorEmbarqueId" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Evidencia Escaneo" reportLabel="Evidencia Escaneo">
+      <headerText>Nueva Evidencia Escaneo</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Evidencia Escaneo" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="EscaneoValidadorEmbarqueId" columns="15" />
+            <dataField fieldName="Comentario" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName" />
+            <dataField fieldName="PictureContentType" />
+            <dataField fieldName="PictureLength" columns="15" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm2" type="Form" commandId="command1" label="Nueva Evidencia Escaneo" reportLabel="Evidencia Escaneo" showInSelector="false">
+      <headerText>Nueva Evidencia Escaneo</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Evidencia Escaneo" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="EscaneoValidadorEmbarqueId" columns="15" textMode="Static" />
+            <dataField fieldName="Comentario" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName" />
+            <dataField fieldName="PictureContentType" />
+            <dataField fieldName="PictureLength" columns="15" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Evidencia_Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Evidencia_Escaneo_Validador_Embarque_Id = @Evidencia_Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Evidencia_Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Evidencia_Escaneo_Validador_Embarque_Id = @Evidencia_Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Usar Cámara&quot;" id="a101" whenLastCommandName="Edit" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Usar Cámara&quot;" whenLastCommandName="New" id="a100" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="DeleteIcon" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Evidencia_Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Evidencia_Escaneo_Validador_Embarque_Id = @Evidencia_Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Evidencia_Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Evidencia_Escaneo_Validador_Embarque_Id = @Evidencia_Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[--Verificar que exista la transacción en 
+DECLARE @Already_Exists_Transaccion BIT 
+SET @Already_Exists_Transaccion = 0 
+SELECT 
+   TOP 1 @Already_Exists_Transaccion  = 1 
+FROM 
+   APP.Escaneo_Validador_Embarque 
+WHERE 
+   Estatus_Registro_Id=1 AND Transaccion_Escaneo=@Transaccion_Escaneo
+IF @Already_Exists_Transaccion = 0 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = 'Es indispensable validar la información antes de generar evidencias';
+   SET @Result_ShowAlert =  'Es indispensable validar la información antes de generar evidencias';
+   RETURN 
+END
+-- Insert/Before
+DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Evidencia_Escaneo_Validador_Embarque 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Comentario)) = dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Comentario)) -- Verificar si aplica campo
+   AND Escaneo_Validador_Embarque_Id = @EscaneoValidadorEmbarqueId
+   AND Transaccion_Escaneo = @Transaccion_Escaneo
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1613,1,232,@Comentario) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1613,1,232,@Comentario) 
+   RETURN 
+END
+--
+
+
+DECLARE @Nuevo_Nombre VARCHAR(250);
+SET @Nuevo_Nombre = REPLACE(@PictureFileName, ' ','');
+SET @PictureFileName = @Nuevo_Nombre;
+
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[-- Insert/After
+UPDATE  
+   APP.Evidencia_Escaneo_Validador_Embarque 
+SET 
+   Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Evidencia_Escaneo_Validador_Embarque_Id = @Evidencia_Escaneo_Validador_Embarque_Id
+--]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[-- Update/Before
+DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Evidencia_Escaneo_Validador_Embarque 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Comentario)) = dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Comentario)) -- Verificar si aplica campo
+   AND Escaneo_Validador_Embarque_Id = @EscaneoValidadorEmbarqueId
+   AND Transaccion_Escaneo = @Transaccion_Escaneo
+   AND Evidencia_Escaneo_Validador_Embarque_Id <> @Evidencia_Escaneo_Validador_Embarque_Id 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1613,1,232,@Comentario) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1613,1,232,@Comentario) 
+   RETURN 
+END
+--
+
+
+DECLARE @Nuevo_Nombre VARCHAR(250);
+SET @Nuevo_Nombre = REPLACE(@PictureFileName, ' ','');
+SET @PictureFileName = @Nuevo_Nombre;]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[--- Update/After
+UPDATE  
+   APP.Evidencia_Escaneo_Validador_Embarque 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Evidencia_Escaneo_Validador_Embarque_Id = @Evidencia_Escaneo_Validador_Embarque_Id
+--]]></rule>
+    <rule id="r104" commandName="New" commandArgument="createForm1" type="JavaScript" phase="After"><![CDATA[fnDebug("Este es el folio del escaneo");
+fnDebug([Master.Folio_Escaneo_Anterior]);
+
+fnDebug("Este es el folio del Escaneo_Id PK");
+fnDebug([Master.Escaneo_Validador_Embarque_Id]);
+
+if ([Master.Folio_Escaneo_Anterior] == null) {
+	[EscaneoValidadorEmbarqueId] = [Master.Escaneo_Validador_Embarque_Id];
+} else {
+	[EscaneoValidadorEmbarqueId] = [Master.Folio_Escaneo_Anterior];
+}
+]]></rule>
+    <rule id="r105" commandName="Custom" commandArgument="ExecJS001" type="JavaScript" phase="Before"><![CDATA[
+this.preventDefault();
+var contenido = '<div><video id="player" controls autoplay style="width:100%; height:auto;"></video></div>'
+contenido += '<div style="width:100%; max-height:200px; overflow: hidden"><canvas id="canvas" style="display: none;"></canvas></div>'
+// contenido += '<div><button id="capture">Capture</button><button id="usarFoto">Usar Foto</button></div>'
+
+
+alertify.alert().set({
+    onshow: function(){ 
+        IniciarVideo();
+    }
+})
+
+alertify.alert(
+    'Cámara', 
+    contenido,
+    function () { 
+        tomarFoto();
+        establecerFotoForm();
+    }
+)
+
+alertify.alert().set({
+    onshow: function(){ 
+        fnDebug("Reset onShow Setting");
+    }
+})
+]]></rule>
+  </businessRules>
+  <blobAdapterConfig>Field: Picture
+Storage-System: Azure
+Account: cooperetiquetastrg
+Container: evidenciapokayokeprod
+Key: rVnYLmTRPjtViq31qdfPdljnut0H93qrxNCKMDnv1jhT4hV3AnHlt8FgbasITUm/r4AGhXoguXVn+ALLTFlfqA==
+Path-Template: {EscaneoValidadorEmbarqueId}/{Evidencia_Escaneo_Validador_Embarque_Id}-{PictureFileName}</blobAdapterConfig>
+</dataController>

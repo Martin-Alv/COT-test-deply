@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Material_Pte_Por_Surtir_Excedente_V" alias="Grid_Material_Pte_Por_Surtir_Excedente_V" created="2019-02-13T10:00:42" modified="2019-02-18T15:03:30" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Material_Unidad_Material_Id" fieldName="Material_Unidad_Material_Id" label="Material Unidad Material Id" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" />
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicacion Almacenamiento Id" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+    <column name="Orden_Produccion_Solicitud_Material" fieldName="Orden_Produccion_Solicitud_Material" label="Orden Produccion Solicitud Material" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" />
+    <column name="Cantidad_Excedente" fieldName="Cantidad_Excedente" label="Cantidad Excedente" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Area Entrega" />
+  </columns>
+</dataModel>

@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Solicitud3" label="Solicitud3" conflictDetection="overwriteChanges" handler="eaton.Rules.Solicitud3BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Solicitud"."Solicitud_Id" "Solicitud_Id"
+	,"Solicitud"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Area_Servicio_"."Area_Servicio" "Area_Servicio"
+	,"Solicitud"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Unidad_Material_Entregado_"."Unidad_Material" "Unidad_Material_Entregado"
+	,"Solicitud"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Solicitud"."Fecha_Entrega" "Fecha_Entrega"
+	,"Solicitud"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Estatus_Solicitud_"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Solicitud"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Solicitud"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Solicitud"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Solicitud"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Entregado_Por"."Usuario_Sistema" "Entregado_Por"
+	,"Solicitud"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Orden_Produccion"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Solicitud"."Orden_Produccion_Detalle_Id" "Orden_Produccion_Detalle_Id"
+	,"Orden_Produccion_Detalle"."Orden_Produccion_Detalle_Id" "Orden_Produccion_Detalle"
+	,"Solicitud"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Solicitado_Por"."Usuario_Sistema" "Solicitado_Por"
+	,"Solicitud"."Familia_Id" "Familia_Id"
+	,"Familia"."Familia_Clave" "Familia_Clave"
+	,"Solicitud"."Producto_Id" "Producto_Id"
+	,"Producto"."Producto_Clave" "Producto_Clave"
+	,"Solicitud"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Material_Solicitado"."Material" "Material"
+	,"Solicitud"."Unidad_Material_Solicitado_Id" "Unidad_Material_Solicitado_Id"
+	,"Unidad_Material_Solicitado"."Unidad_Material" "Unidad_Material_Solicitado"
+	,"Solicitud"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Solicitud"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Solicitud"."Solicitud_Transaccion_Id" "Solicitud_Transaccion_Id"
+	,"Solicitud"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Area_Entrega"."Area_Entrega" "Area_Entrega"
+	,"Solicitud"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Tipo_Solicitud"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Solicitud"."Categoria_Solicitud_Id" "Categoria_Solicitud_Id"
+	,"Categoria_Solicitud"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Categoria_Solicitud"."Es_De_Kanban" "Es_De_Kanban"
+	,"Categoria_Solicitud"."Es_Otro" "Es_Otro"
+	,"Categoria_Solicitud"."Es_Interplanta" "Es_Interplanta"
+	,"Categoria_Solicitud"."Es_Solicitud_Rollo" "Es_Solicitud_Rollo"
+	,"Categoria_Solicitud"."Es_Urgencia_Compra" "Es_Urgencia_Compra"
+	,"Solicitud"."Motivo_Solicitud" "Motivo_Solicitud"
+	,"Solicitud"."Registrado_Desde_Id" "Registrado_Desde_Id"
+	,"Registrado_Desde"."Registrado_Desde" "Registrado_Desde"
+	,"Solicitud"."Categoria_Id" "Categoria_Id"
+	,"Categoria"."Categoria_Clave" "Categoria_Clave"
+	,"Solicitud"."Motivo_Solicitud_Id" "Motivo_Solicitud_Id"
+	,"Motivo_Solicitud"."Motivo_Solicitud" "Motivo_Solicitud_Motivo_Solicitud"
+	,"Motivo_Solicitud"."Es_Otro" "Motivo_Solicitud_Es_Otro"
+	,"Solicitud"."Numero_Orden_Produccion" "Solicitud_Numero_Orden_Produccion"
+	,"Solicitud"."Fecha_Captura" "Fecha_Captura"
+	,"Solicitud"."Capturado_Por_Id" "Capturado_Por_Id"
+	,"Capturado_Por"."Usuario_Sistema" "Capturado_Por"
+	,"Solicitud"."Fecha_Surtido" "Fecha_Surtido"
+	,"Solicitud"."Motivo_Cancelacion_Id" "Motivo_Cancelacion_Id"
+	,"Motivo_Cancelacion"."Motivo_Cancelacion" "Motivo_Cancelacion"
+	,"Solicitud"."Captura_Transaccion_Id" "Captura_Transaccion_Id"
+	,"Solicitud"."Subtipo_Solicitud_Id" "Subtipo_Solicitud_Id"
+	,"Subtipo_Solicitud"."Subtipo_Solicitud" "Subtipo_Solicitud"
+	,"Subtipo_Solicitud"."Es_Solicitud_Mat_Normal" "SubtipoSolic_Es_Solic_Mat_Normal"
+	,"Subtipo_Solicitud"."Es_Solicitud_Mat_Pickeo_Incan" "SubtipoSolic_Es_Solic_Mat_Pickeo_Incan"
+	,"Solicitud"."Dato_Solicitud_Urgencia_Compras" "Dato_Solicitud_Urgencia_Compras"
+from "APP"."Solicitud" "Solicitud"
+	left join "APP"."Area_Servicio" "Area_Servicio_" on "Solicitud"."Area_Servicio_Id" = "Area_Servicio_"."Area_Servicio_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Entregado_" on "Solicitud"."Unidad_Material_Entregado_Id" = "Unidad_Material_Entregado_"."Unidad_Material_Id"
+	left join "APP"."Estatus_Solicitud" "Estatus_Solicitud_" on "Solicitud"."Estatus_Solicitud_Id" = "Estatus_Solicitud_"."Estatus_Solicitud_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Solicitud"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Solicitud"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Solicitud"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Orden_Produccion" "Orden_Produccion" on "Solicitud"."Orden_Produccion_Id" = "Orden_Produccion"."Orden_Produccion_Id"
+	left join "dbo"."Orden_Produccion_Detalle" "Orden_Produccion_Detalle" on "Solicitud"."Orden_Produccion_Detalle_Id" = "Orden_Produccion_Detalle"."Orden_Produccion_Detalle_Id"
+	left join "dbo"."Usuario_V" "Solicitado_Por" on "Solicitud"."Solicitado_Por_Id" = "Solicitado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Entregado_Por" on "Solicitud"."Entregado_Por_Id" = "Entregado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Familia" "Familia" on "Solicitud"."Familia_Id" = "Familia"."Familia_Id"
+	left join "APP"."Producto" "Producto" on "Solicitud"."Producto_Id" = "Producto"."Producto_Id"
+	left join "APP"."Material" "Material_Solicitado" on "Solicitud"."Material_Solicitado_Id" = "Material_Solicitado"."Material_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Solicitado" on "Solicitud"."Unidad_Material_Solicitado_Id" = "Unidad_Material_Solicitado"."Unidad_Material_Id"
+	left join "APP"."Area_Entrega" "Area_Entrega" on "Solicitud"."Area_Entrega_Id" = "Area_Entrega"."Area_Entrega_Id"
+	left join "APP"."Tipo_Solicitud" "Tipo_Solicitud" on "Solicitud"."Tipo_Solicitud_Id" = "Tipo_Solicitud"."Tipo_Solicitud_Id"
+	left join "APP"."Categoria_Solicitud" "Categoria_Solicitud" on "Solicitud"."Categoria_Solicitud_Id" = "Categoria_Solicitud"."Categoria_Solicitud_Id"
+	left join "APP"."Registrado_Desde" "Registrado_Desde" on "Solicitud"."Registrado_Desde_Id" = "Registrado_Desde"."Registrado_Desde_Id"
+	left join "APP"."Categoria" "Categoria" on "Solicitud"."Categoria_Id" = "Categoria"."Categoria_Id"
+	left join "APP"."Motivo_Solicitud" "Motivo_Solicitud" on "Solicitud"."Motivo_Solicitud_Id" = "Motivo_Solicitud"."Motivo_Solicitud_Id"
+	left join "dbo"."Usuario_V" "Capturado_Por" on "Solicitud"."Capturado_Por_Id" = "Capturado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Motivo_Cancelacion" "Motivo_Cancelacion" on "Solicitud"."Motivo_Cancelacion_Id" = "Motivo_Cancelacion"."Motivo_Cancelacion_Id"
+	left join "APP"."Subtipo_Solicitud" "Subtipo_Solicitud" on "Solicitud"."Subtipo_Solicitud_Id" = "Subtipo_Solicitud"."Subtipo_Solicitud_Id"
+]]></text>
+    </command>
+    <command id="Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Solicitud_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Folio Solicitud" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" showInSummary="true">
+      <items style="Lookup" dataController="Area_Servicio" newDataView="createForm1" dataValueField="Area_Servicio_Id" dataTextField="Area_Servicio" dataView="Area_Servicio_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Servicio" type="String" readOnly="true" label="Área de Servicio" length="250" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" label="Unidad Material Entregado Id" showInSummary="true">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" readOnly="true" label="Unidad Material Entregado" length="250" />
+    <field name="Fecha_Solicitud" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Solicitud" showInSummary="true" />
+    <field name="Fecha_Entrega" type="DateTime" dataFormatString="g" label="Fecha de Entrega" showInSummary="true" />
+    <field name="Estatus_Solicitud_Id" type="Int32" allowNulls="false" label="Estatus Solicitud Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Solicitud" newDataView="createForm1" dataValueField="Estatus_Solicitud_Id" dataTextField="Estatus_Solicitud" dataView="Estatus_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Solicitud" type="String" readOnly="true" label="Estatus de Solicitud" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Entregado_Por_Id" type="Guid" label="Entregado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Entregado_Por" type="String" readOnly="true" label="Entregado Por" length="256" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Producción Id">
+      <items style="Lookup" dataController="Orden_Produccion" dataValueField="Orden_Produccion_Id" dataTextField="Numero_Orden_Produccion" dataView="Orden_Produccion_LookUp_List" pageSize="15" newDataView="createForm1" />
+    </field>
+    <field name="Numero_Orden_Produccion" type="Int64" readOnly="true" label="Número Orden Producción" />
+    <field name="Orden_Produccion_Detalle_Id" type="Int64" allowNulls="false" label="Orden Producción Detalle Id" contextFields="Orden_Produccion_Id=Orden_Produccion_Id">
+      <items style="Lookup" dataController="Orden_Produccion_Detalle" dataValueField="Orden_Produccion_Detalle_Id" dataTextField="Orden_Produccion_Detalle_Id" dataView="Orden_Produccion_Detalle_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Orden_Produccion_Detalle" type="Int64" label="Orden Producción Detalle" readOnly="true" />
+    <field name="Solicitado_Por_Id" type="Guid" allowNulls="false" label="Solicitado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Solicitado_Por" type="String" readOnly="true" label="Solicitado Por" length="256" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id">
+      <items style="Lookup" dataController="Familia" dataValueField="Familia_Id" dataTextField="Familia_Clave" dataView="Familia_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Familia_Clave" type="String" readOnly="true" label="Familia Clave" length="250" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto Id">
+      <items style="Lookup" dataController="Producto" dataValueField="Producto_Id" dataTextField="Producto_Clave" dataView="Producto_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Producto_Clave" type="String" readOnly="true" label="Producto Terminado" length="50" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Unidad_Material_Solicitado_Id" type="Int32" allowNulls="false" label="Unidad Material Solicitado Id">
+      <items style="Lookup" dataController="Unidad_Material" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Solicitado" type="String" readOnly="true" label="Unidad Material Solicitado" length="250" />
+    <field name="Cantidad_Solicitado" type="Decimal" allowNulls="false" label="Cantidad Solicitado" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Solicitud_Transaccion_Id" type="Guid" allowNulls="false" default="(newid())" label="Solicitud Transacción Id" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id">
+      <items style="Lookup" dataController="Area_Entrega" dataValueField="Area_Entrega_Id" dataTextField="Area_Entrega" dataView="Area_Entrega_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Entrega" type="String" readOnly="true" label="Area de Entrega" length="250" />
+    <field name="Tipo_Solicitud_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Solicitud Id">
+      <items style="Lookup" dataController="Tipo_Solicitud" dataValueField="Tipo_Solicitud_Id" dataTextField="Tipo_Solicitud" dataView="Tipo_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Solicitud" type="String" readOnly="true" label="Tipo de Solicitud" length="150" />
+    <field name="Categoria_Solicitud_Id" type="Int32" allowNulls="false" default="((0))" label="Categoria Solicitud Id">
+      <items style="Lookup" dataController="Categoria_Solicitud" dataValueField="Categoria_Solicitud_Id" dataTextField="Categoria_Solicitud" copy="Es_De_Kanban=Es_De_Kanban, Es_Otro=Es_Otro, Es_Interplanta=Es_Interplanta, Es_Solicitud_Rollo=Es_Solicitud_Rollo, Es_Urgencia_Compra=Es_Urgencia_Compra" dataView="Categoria_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Categoria_Solicitud" type="String" readOnly="true" label="Categoría de Solicitud" length="150" />
+    <field name="Es_De_Kanban" type="Boolean" readOnly="true" label="Es De Kanban" />
+    <field name="Es_Otro" type="Boolean" readOnly="true" label="Es Otro" />
+    <field name="Es_Interplanta" type="Boolean" readOnly="true" label="Es Interplanta" />
+    <field name="Es_Solicitud_Rollo" type="Boolean" readOnly="true" label="Es Solicitud Rollo" />
+    <field name="Es_Urgencia_Compra" type="Boolean" readOnly="true" label="Es Urgencia Compra" />
+    <field name="Motivo_Solicitud" type="String" label="Comentarios" />
+    <field name="Registrado_Desde_Id" type="Int16" allowNulls="false" default="((0))" label="Registrado Desde Id" roles="administrador" writeRoles="Administrators">
+      <items style="Lookup" dataController="Registrado_Desde" searchOnStart="true" dataValueField="Registrado_Desde_Id" dataTextField="Registrado_Desde" dataView="Registrado_Desde_LookUp_List" />
+    </field>
+    <field name="Registrado_Desde" type="String" readOnly="true" label="Registrado Desde" length="250" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" default="((0))" label="Categoria Id">
+      <items style="Lookup" dataController="Categoria" dataValueField="Categoria_Id" dataTextField="Categoria_Clave" dataView="Categoria_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Categoria_Clave" type="String" readOnly="true" label="Categoria Clave" length="250" />
+    <field name="Motivo_Solicitud_Id" type="Int32" allowNulls="false" default="((0))" label="Motivo Solicitud Id">
+      <items style="Lookup" dataController="Motivo_Solicitud" dataValueField="Motivo_Solicitud_Id" dataTextField="Motivo_Solicitud" copy="Motivo_Solicitud_Es_Otro=Es_Otro" dataView="Motivo_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Motivo_Solicitud_Motivo_Solicitud" type="String" readOnly="true" label="Motivo de Solicitud" length="250" />
+    <field name="Motivo_Solicitud_Es_Otro" type="Boolean" readOnly="true" label="Motivo Solicitud Es Otro" />
+    <field name="Solicitud_Numero_Orden_Produccion" type="Int64" allowNulls="false" default="((0))" label="Numero Orden Produccion" />
+    <field name="Fecha_Captura" type="DateTime" dataFormatString="g" label="Fecha Captura" />
+    <field name="Capturado_Por_Id" type="Guid" label="Capturado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Capturado_Por" type="String" readOnly="true" label="Capturado Por" length="256" />
+    <field name="Fecha_Surtido" type="DateTime" dataFormatString="g" label="Fecha Surtido" />
+    <field name="Motivo_Cancelacion_Id" type="Int32" allowNulls="false" default="((0))" label="Motivo Cancelacion Id">
+      <items style="Lookup" dataController="Motivo_Cancelacion" dataValueField="Motivo_Cancelacion_Id" dataTextField="Motivo_Cancelacion" dataView="Motivo_Cancelacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Motivo_Cancelacion" type="String" readOnly="true" label="Motivo Cancelacion" length="250" />
+    <field name="Captura_Transaccion_Id" type="String" label="Captura Transaccion Id" length="50" />
+    <field name="Subtipo_Solicitud_Id" type="Int32" allowNulls="false" default="((0))" label="Subtipo Solicitud Id">
+      <items style="Lookup" dataController="Subtipo_Solicitud" dataValueField="Subtipo_Solicitud_Id" dataTextField="Subtipo_Solicitud" copy="SubtipoSolic_Es_Solic_Mat_Normal=Es_Solicitud_Mat_Normal, SubtipoSolic_Es_Solic_Mat_Pickeo_Incan=Es_Solicitud_Mat_Pickeo_Incan" dataView="Subtipo_Solicitud_Look_Up_List" pageSize="15" />
+    </field>
+    <field name="Subtipo_Solicitud" type="String" readOnly="true" label="Subtipo Solicitud" length="250" />
+    <field name="SubtipoSolic_Es_Solic_Mat_Normal" type="Boolean" readOnly="true" label="Subtiposolic Es Solic Mat Normal" />
+    <field name="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" type="Boolean" readOnly="true" label="Subtiposolic Es Solic Mat Pickeo Incan" />
+    <field name="Dato_Solicitud_Urgencia_Compras" type="String" allowQBE="false" allowSorting="false" label="Dato Solicitud Urgencia Compras" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Solicitudes de Incandescencias" showInSelector="false" filter="Solicitado_Por_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" />
+        <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" />
+        <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+        <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+        <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" />
+        <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Orden_Produccion_Detalle" />
+        <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+        <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" />
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Solicitud_Transaccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Es_De_Kanban" />
+        <dataField fieldName="Es_Otro" />
+        <dataField fieldName="Es_Interplanta" />
+        <dataField fieldName="Es_Solicitud_Rollo" />
+        <dataField fieldName="Es_Urgencia_Compra" />
+        <dataField fieldName="Motivo_Solicitud" rows="5" />
+        <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hidden="true" />
+        <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" />
+        <dataField fieldName="Motivo_Solicitud_Es_Otro" />
+        <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5" hidden="true" />
+        <dataField fieldName="Fecha_Captura" columns="20" />
+        <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" />
+        <dataField fieldName="Fecha_Surtido" columns="20" />
+        <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+        <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" hyperlinkFormatString="~/pages/Subtipo_Solicitud?Subtipo_Solicitud_Id={Subtipo_Solicitud_Id}&amp;_controller=Subtipo_Solicitud&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" />
+        <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Solicitud">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" />
+            <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" />
+            <dataField fieldName="Es_De_Kanban" />
+            <dataField fieldName="Es_Otro" />
+            <dataField fieldName="Es_Interplanta" />
+            <dataField fieldName="Es_Solicitud_Rollo" />
+            <dataField fieldName="Es_Urgencia_Compra" />
+            <dataField fieldName="Motivo_Solicitud" rows="5" />
+            <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" />
+            <dataField fieldName="Motivo_Solicitud_Es_Otro" />
+            <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5" hidden="true" />
+            <dataField fieldName="Fecha_Captura" columns="20" />
+            <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" />
+            <dataField fieldName="Fecha_Surtido" columns="20" />
+            <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+            <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" hyperlinkFormatString="~/pages/Subtipo_Solicitud?Subtipo_Solicitud_Id={Subtipo_Solicitud_Id}&amp;_controller=Subtipo_Solicitud&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" />
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Orden_Produccion_Detalle" />
+            <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+            <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" />
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" />
+            <dataField fieldName="Fecha_Entrega" columns="20" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Solicitud_Transaccion_Id" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Solicitud">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" />
+            <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" />
+            <dataField fieldName="Es_De_Kanban" />
+            <dataField fieldName="Es_Otro" />
+            <dataField fieldName="Es_Interplanta" />
+            <dataField fieldName="Es_Solicitud_Rollo" />
+            <dataField fieldName="Es_Urgencia_Compra" />
+            <dataField fieldName="Motivo_Solicitud" rows="5" />
+            <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" />
+            <dataField fieldName="Motivo_Solicitud_Es_Otro" />
+            <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5" hidden="true" />
+            <dataField fieldName="Fecha_Captura" columns="20" />
+            <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" />
+            <dataField fieldName="Fecha_Surtido" columns="20" />
+            <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+            <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" />
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Material" />
+            <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+            <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" />
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" />
+            <dataField fieldName="Fecha_Entrega" columns="20" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Solicitud_Transaccion_Id" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+            <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Solicitud_LookUp_List" type="Grid" commandId="command1" label="Solicitud" filter="Estatus_Registro_Id IN (0,1)&#xD;&#xA;" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" hyperlinkFormatString="~/pages/Tipo_Solicitud?Tipo_Solicitud_Id={Tipo_Solicitud_Id}&amp;_controller=Tipo_Solicitud&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" hyperlinkFormatString="~/pages/Categoria_Solicitud?Categoria_Solicitud_Id={Categoria_Solicitud_Id}&amp;_controller=Categoria_Solicitud&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Es_De_Kanban" />
+        <dataField fieldName="Es_Otro" />
+        <dataField fieldName="Es_Interplanta" />
+        <dataField fieldName="Es_Solicitud_Rollo" />
+        <dataField fieldName="Es_Urgencia_Compra" />
+        <dataField fieldName="Motivo_Solicitud" rows="5" />
+        <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hyperlinkFormatString="~/pages/Registrado_Desde?Registrado_Desde_Id={Registrado_Desde_Id}&amp;_controller=Registrado_Desde&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" hyperlinkFormatString="~/pages/Categoria?Categoria_Id={Categoria_Id}&amp;_controller=Categoria&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" hyperlinkFormatString="~/pages/Motivo_Solicitud?Motivo_Solicitud_Id={Motivo_Solicitud_Id}&amp;_controller=Motivo_Solicitud&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Motivo_Solicitud_Es_Otro" />
+        <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Fecha_Captura" columns="20" />
+        <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Surtido" columns="20" />
+        <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" hyperlinkFormatString="~/pages/Motivo_Cancelacion?Motivo_Cancelacion_Id={Motivo_Cancelacion_Id}&amp;_controller=Motivo_Cancelacion&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" />
+        <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" hyperlinkFormatString="~/pages/Subtipo_Solicitud?Subtipo_Solicitud_Id={Subtipo_Solicitud_Id}&amp;_controller=Subtipo_Solicitud&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" />
+        <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" />
+        <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+        <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+        <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+        <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Material" />
+        <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+        <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" />
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Solicitud_Transaccion_Id" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Solicitud
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Solicitud_Id = @Solicitud_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Solicitud
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Solicitud_Id = @Solicitud_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE 
+APP.Solicitud
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Solicitud_Id = @Solicitud_Id
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Solicitud
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Solicitud_Id = @Solicitud_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Solicitud
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+    Solicitud_Id = @Solicitud_Id]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Solicitud
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Solicitud_Id = @Solicitud_Id]]></rule>
+  </businessRules>
+</dataController>

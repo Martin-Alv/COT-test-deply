@@ -1,0 +1,24 @@
+﻿{
+    "splash": {
+        "enabled": true,
+        "background": "../images/background.jpg",
+        "logo": "/images/Cooper.png",
+        "duration": 2500
+    },	
+	"ui":{
+		"menu": {
+			"tabbar": true,
+			"apps": {
+                "tiles": null,
+                "location": "toolbar"
+            }
+		},
+		"notify": {
+            "location": "left",
+            "transparent": true,
+            "enabled": true
+        }
+	}
+   
+}
+

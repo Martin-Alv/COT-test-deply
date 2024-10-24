@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Crear_Solicitud" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <fields>
+    <field name="Numero_Orden" type="Int32" allowNulls="false" label="Numero Orden" isPrimaryKey="true" />
+  </fields>
+  <views>
+    <view id="createForm1" type="Form" label="Crear Solicitudes">
+      <categories>
+        <category id="c1" headerText="Crea _Solicitud" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Numero_Orden" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="grid1" type="Grid" label="grid1" showInSelector="false">
+      <dataFields>
+        <dataField fieldName="Numero_Orden" columns="15" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" label="Crear Solicitudes">
+      <categories>
+        <category id="c1" headerText="Crea _Solicitud" flow="NewColumn">
+          <dataFields>
+            <dataField fieldName="Numero_Orden" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag2" scope="Form">
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Listar Materiales" id="a100" whenLastCommandName="New" whenClientScript="[Numero_Orden]&gt;0" />
+      <action commandName="Custom" commandArgument="ExecJs02" whenLastCommandName="New" id="a101" headerText="Cancelar" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="After" name="Listar_Materiales"><![CDATA[this.preventDefault();
+$app.touch.show({
+  controller: 'Orden_Detalle1'
+  ,startCommand: 'Select'
+  ,startArgument: 'Listado_Material'
+  ,filter: [
+    {name: 'Numero_Orden',value: [Numero_Orden]}    
+  ]
+})]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="After" name="Cancelar"><![CDATA[
+location.reload();
+]]></rule>
+  </businessRules>
+</dataController>

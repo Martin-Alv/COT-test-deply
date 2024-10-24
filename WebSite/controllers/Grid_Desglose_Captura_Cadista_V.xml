@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Desglose_Captura_Cadista_V" conflictDetection="overwriteChanges" label="Grid Desglose Captura Cadista V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Desglose_Captura_Cadista_V"."Bitacora_Captura_Sap_Id" "Bitacora_Captura_Sap_Id"
+	,"Grid_Desglose_Captura_Cadista_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Desglose_Captura_Cadista_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Desglose_Captura_Cadista_V"."Material_Id" "Material_Id"
+	,"Grid_Desglose_Captura_Cadista_V"."Material_Surtido" "Material_Surtido"
+	,"Grid_Desglose_Captura_Cadista_V"."Ubicacion_Origen" "Ubicacion_Origen"
+	,"Grid_Desglose_Captura_Cadista_V"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Grid_Desglose_Captura_Cadista_V"."Ubicacion_Destino" "Ubicacion_Destino"
+	,"Grid_Desglose_Captura_Cadista_V"."Fecha_Captura" "Fecha_Captura"
+	,"Grid_Desglose_Captura_Cadista_V"."Estatus_Captura_Sap" "Estatus_Captura_Sap"
+	,"Grid_Desglose_Captura_Cadista_V"."Tipo_Operacion_Sap" "Tipo_Operacion_Sap"
+	,"Grid_Desglose_Captura_Cadista_V"."Usuario_Surtidor_Id" "Usuario_Surtidor_Id"
+	,"Grid_Desglose_Captura_Cadista_V"."Usuario_Surtidor" "Usuario_Surtidor"
+	,"Grid_Desglose_Captura_Cadista_V"."Usuario_Cadista_Id" "Usuario_Cadista_Id"
+	,"Grid_Desglose_Captura_Cadista_V"."Usuario_Cadista" "Usuario_Cadista"
+	,"Grid_Desglose_Captura_Cadista_V"."Area_Entrega" "Area_Entrega"
+from "dbo"."Grid_Desglose_Captura_Cadista_V" "Grid_Desglose_Captura_Cadista_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Bitacora_Captura_Sap_Id" type="Int64" allowNulls="false" label="Bitacora Captura Sap" showInSummary="true" isPrimaryKey="true" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Ruta Optima Id" showInSummary="true" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" label="Material Surtido Id" showInSummary="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" />
+    <field name="Material_Surtido" type="String" label="Material Surtido" length="250" showInSummary="true" />
+    <field name="Ubicacion_Origen" type="String" label="Ubicación Origen" length="150" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Ubicacion_Destino" type="Int32" allowNulls="false" label="Ubicación Destino" />
+    <field name="Fecha_Captura" type="DateTime" dataFormatString="g" label="Fecha de Captura" />
+    <field name="Estatus_Captura_Sap" type="String" allowNulls="false" label="Estatus de Captura Sap" length="250" />
+    <field name="Tipo_Operacion_Sap" type="String" allowNulls="false" label="Tipo de Operación Sap" length="250" />
+    <field name="Usuario_Surtidor_Id" type="Guid" allowNulls="false" label="Usuario Surtidor Id" />
+    <field name="Usuario_Surtidor" type="String" allowNulls="false" label="Usuario Surtidor" length="256" />
+    <field name="Usuario_Cadista_Id" type="Guid" label="Usuario Cadista Id" />
+    <field name="Usuario_Cadista" type="String" allowNulls="false" label="Usuario Cadista" length="256" />
+    <field name="Area_Entrega" type="String" label="Área de Entrega" length="99" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Desglose Captura" filter="Usuario_Cadista_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Bitacora_Captura_Sap_Id" columns="15" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido" />
+        <dataField fieldName="Ubicacion_Origen" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Ubicacion_Destino" columns="15" />
+        <dataField fieldName="Fecha_Captura" columns="20" />
+        <dataField fieldName="Estatus_Captura_Sap" />
+        <dataField fieldName="Tipo_Operacion_Sap" />
+        <dataField fieldName="Usuario_Surtidor_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Surtidor" />
+        <dataField fieldName="Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Cadista" />
+        <dataField fieldName="Area_Entrega" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Desglose Captura">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Desglose Captura" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Bitacora_Captura_Sap_Id" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Surtido" />
+            <dataField fieldName="Ubicacion_Origen" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" />
+            <dataField fieldName="Fecha_Captura" columns="20" />
+            <dataField fieldName="Estatus_Captura_Sap" />
+            <dataField fieldName="Tipo_Operacion_Sap" />
+            <dataField fieldName="Usuario_Surtidor" />
+            <dataField fieldName="Usuario_Cadista" />
+            <dataField fieldName="Area_Entrega" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Desglose Captura Cadista V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Bitacora_Captura_Sap_Id" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material_Surtido" />
+            <dataField fieldName="Ubicacion_Origen" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" />
+            <dataField fieldName="Fecha_Captura" columns="20" />
+            <dataField fieldName="Estatus_Captura_Sap" />
+            <dataField fieldName="Tipo_Operacion_Sap" />
+            <dataField fieldName="Usuario_Surtidor_Id" columns="15" />
+            <dataField fieldName="Usuario_Surtidor" />
+            <dataField fieldName="Usuario_Cadista_Id" columns="15" />
+            <dataField fieldName="Usuario_Cadista" />
+            <dataField fieldName="Area_Entrega" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+  </actions>
+</dataController>

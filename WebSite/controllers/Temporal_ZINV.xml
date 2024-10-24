@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Temporal_ZINV" conflictDetection="overwriteChanges" label="Temporal ZINV" handler="eaton.Rules.Temporal_ZINVBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Temporal_ZINV"."Temporal_ZINV_Id" "Temporal_ZINV_Id"
+	,"Temporal_ZINV"."Plant" "Plant"
+	,"Temporal_ZINV"."SLoc" "S_Loc"
+	,"Temporal_ZINV"."StockCategory" "Stock_Category"
+	,"Temporal_ZINV"."StorageType" "Storage_Type"
+	,"Temporal_ZINV"."StorageBin" "Storage_Bin"
+	,"Temporal_ZINV"."MaterialNumber" "Material_Number"
+	,"Temporal_ZINV"."TotalStock" "Total_Stock"
+	,"Temporal_ZINV"."TotalValue" "Total_Value"
+	,"Temporal_ZINV"."PhyInvIndCC" "Phy_Inv_Ind_CC"
+	,"Temporal_ZINV"."Carga_Id" "Carga_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Temporal_ZINV"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Temporal_ZINV"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Temporal_ZINV"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro"."Estatus_Registro" "Estatus_Registro"
+	,"Temporal_ZINV"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Temporal_ZINV"."PO" "PO"
+	,"Mensaje_Sistema"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Temporal_ZINV"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+from "dbo"."Temporal_ZINV" "Temporal_ZINV"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro" on "Temporal_ZINV"."Estatus_Registro_Id" = "Estatus_Registro"."Estatus_Registro_Id"
+	left join "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento" on "Temporal_ZINV"."Estatus_Procesamiento_Id" = "Estatus_Procesamiento"."Estatus_Procesamiento_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Temporal_ZINV"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Temporal_ZINV"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema" on "Temporal_ZINV"."Mensaje_Sistema_Id" = "Mensaje_Sistema"."Mensaje_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Temporal_ZINV_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Temporal_ZINV_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Temporal_ZINV_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Temporal ZINV Id" readOnly="true" />
+    <field name="Plant" type="String" label="Plant" length="300" showInSummary="true" />
+    <field name="S_Loc" type="String" label="S Loc" length="300" showInSummary="true" />
+    <field name="Stock_Category" type="String" label="Stock Category" length="300" showInSummary="true" />
+    <field name="Storage_Type" type="String" label="Storage Type" length="300" showInSummary="true" />
+    <field name="Storage_Bin" type="String" label="Storage Bin" length="300" showInSummary="true" />
+    <field name="Material_Number" type="String" label="Material Number" length="300" />
+    <field name="Total_Stock" type="String" label="Total Stock" length="300" />
+    <field name="Total_Value" type="String" label="Total Value" length="300" />
+    <field name="Phy_Inv_Ind_CC" type="String" label="Phy Inv Ind CC" length="300" />
+    <field name="Carga_Id" type="Int32" label="Carga Id" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Procesamiento Id">
+      <items style="Lookup" dataController="Estatus_Procesamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Procesamiento_Id" dataTextField="Estatus_Procesamiento" />
+    </field>
+    <field name="Estatus_Procesamiento" type="String" readOnly="true" label="Estatus Procesamiento" length="150" />
+    <field name="PO" type="Decimal" label="PO" />
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje Sistema" length="250" />
+    <field name="Mensaje_Sistema_Id" type="Int32" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema_Id" copy="Mensaje_Sistema=Mensaje_Sistema" dataView="Mensaje_Sistema_LookUp_List" pageSize="15" />
+    </field>
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Temporal ZINV" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Plant" />
+        <dataField fieldName="Storage_Type" />
+        <dataField fieldName="Storage_Bin" />
+        <dataField fieldName="S_Loc" />
+        <dataField fieldName="Material_Number" />
+        <dataField fieldName="Total_Stock" />
+        <dataField fieldName="Stock_Category" />
+        <dataField fieldName="Total_Value" />
+        <dataField fieldName="Phy_Inv_Ind_CC" />
+        <dataField fieldName="Carga_Id" columns="15" />
+        <dataField fieldName="PO" columns="15" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Mensaje_Sistema" textMode="Static" />
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Temporal ZINV">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Temporal ZINV" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Plant" />
+            <dataField fieldName="S_Loc" />
+            <dataField fieldName="Stock_Category" />
+            <dataField fieldName="Storage_Type" />
+            <dataField fieldName="Storage_Bin" />
+            <dataField fieldName="Material_Number" />
+            <dataField fieldName="Total_Stock" />
+            <dataField fieldName="Total_Value" />
+            <dataField fieldName="Phy_Inv_Ind_CC" />
+            <dataField fieldName="Carga_Id" columns="15" />
+            <dataField fieldName="PO" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Crear Temporal ZINV">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Plant" />
+            <dataField fieldName="S_Loc" />
+            <dataField fieldName="Stock_Category" />
+            <dataField fieldName="Storage_Type" />
+            <dataField fieldName="Storage_Bin" />
+            <dataField fieldName="Material_Number" />
+            <dataField fieldName="Total_Stock" />
+            <dataField fieldName="Total_Value" />
+            <dataField fieldName="Phy_Inv_Ind_CC" />
+            <dataField fieldName="Carga_Id" columns="15" />
+            <dataField fieldName="PO" columns="15" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" />
+            <dataField fieldName="Mensaje_Sistema" textMode="Static" />
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Temporal_ZINV_LookUp_List" type="Grid" commandId="command1" label="Temporal ZINV" showInSelector="false" filter="Estatus_Registro_Id IN (0,1)">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Plant" />
+        <dataField fieldName="S_Loc" />
+        <dataField fieldName="Stock_Category" />
+        <dataField fieldName="Storage_Type" />
+        <dataField fieldName="Storage_Bin" />
+        <dataField fieldName="Material_Number" />
+        <dataField fieldName="Total_Stock" />
+        <dataField fieldName="Total_Value" />
+        <dataField fieldName="Phy_Inv_Ind_CC" />
+        <dataField fieldName="Carga_Id" columns="15" hidden="true" />
+        <dataField fieldName="PO" columns="15" />
+        <dataField fieldName="Mensaje_Sistema" hidden="true" textMode="Static" />
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_ZINV SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_ZINV_Id = @Temporal_ZINV_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_ZINV SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_ZINV_Id = @Temporal_ZINV_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_ZINV SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_ZINV_Id = @Temporal_ZINV_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_ZINV SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_ZINV_Id = @Temporal_ZINV_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Temporal_ZINV
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_ZINV_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_ZINV_Id))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1395,1,10,@Temporal_ZINV_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1395,1,10,@Temporal_ZINV_Id)
+   RETURN
+END]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   dbo.Temporal_ZINV
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_ZINV_Id = @Temporal_ZINV_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Temporal_ZINV
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_ZINV_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_ZINV_Id))
+AND Temporal_ZINV_Id <> @Temporal_ZINV_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1396,1,10,@Temporal_ZINV_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1396,1,10,@Temporal_ZINV_Id)
+   RETURN
+END]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   dbo.Temporal_ZINV
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_ZINV_Id = @Temporal_ZINV_Id
+]]></rule>
+  </businessRules>
+</dataController>

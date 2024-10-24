@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Delivery" alias="Delivery" created="2022-03-08T21:52:17" modified="2022-03-31T15:01:56" x="20" y="29" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Producto_" parentTableSchema="APP" parentTableName="Producto" x="1174" y="20">
+      <foreignKeyColumn columnName="Producto_Id" parentColumnName="Producto_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="498" y="223">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="546" y="132">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="868" y="155">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Planta" parentTableSchema="APP" parentTableName="Planta" x="865" y="281">
+      <foreignKeyColumn columnName="Planta_Id" parentColumnName="Planta_Id" />
+    </foreignKey>
+    <foreignKey id="Almacen" parentTableSchema="APP" parentTableName="Almacen" x="518" y="412">
+      <foreignKeyColumn columnName="Almacen_Id" parentColumnName="Almacen_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Delivery_Id" fieldName="Delivery_Id" label="Delivery Id" />
+    <column name="Delivery" fieldName="Delivery" label="Delivery" />
+    <column name="Sales_Order" fieldName="Sales_Order" label="Sales Order" />
+    <column name="Sales_Item" fieldName="Sales_Item" label="Sales Item" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" aliasColumnName="Producto_Clave" aliasForeignKey="Producto_" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" foreignKey="Producto_" />
+    <column name="Cantidad" fieldName="Cantidad" label="Cantidad" />
+    <column name="Es_Negativo_En_Sap" fieldName="Es_Negativo_En_Sap" label="¿Es Negativo En SAP?" />
+    <column name="Valor_Real_Reporte_Sap" fieldName="Valor_Real_Reporte_Sap" label="Valor en Reporte SAP" />
+    <column name="Planta_Id" fieldName="Planta_Id" label="Planta Id" aliasColumnName="Numero_Planta" aliasForeignKey="Planta" />
+    <column name="Numero_Planta" fieldName="Numero_Planta" label="Número de Planta" foreignKey="Planta" />
+    <column name="Almacen_Id" fieldName="Almacen_Id" label="Almacen Id" aliasColumnName="Numero_Almacen" aliasForeignKey="Almacen" />
+    <column name="Numero_Almacen" fieldName="Almacen" label="Almacén" foreignKey="Almacen" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

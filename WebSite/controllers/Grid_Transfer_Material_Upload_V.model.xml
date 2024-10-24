@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Transfer_Material_Upload_V" alias="Grid_Transfer_Material_Upload_V" created="2019-07-24T01:55:56" modified="2019-08-21T12:57:58" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Movimiento_Material_Upload_Id" fieldName="Movimiento_Material_Upload_Id" label="Movimiento Material Upload Id" />
+    <column name="Movimiento_Id" fieldName="Movimiento_Id" label="Movimiento Id" />
+    <column name="Movimiento_Detalle_Id" fieldName="Movimiento_Detalle_Id" label="Movimiento Detalle Id" />
+    <column name="Tipo_Movimiento_Id" fieldName="Tipo_Movimiento_Id" label="Tipo Movimiento Id" />
+    <column name="Transferencia_Material_Id" fieldName="Transferencia_Material_Id" label="Transferencia Material Id" />
+    <column name="Transferencia_Material" fieldName="Transferencia_Material" label="Transferencia Material" />
+    <column name="Transferencia_Material_Descripcion" fieldName="Transferencia_Material_Descripcion" label="Transferencia Material Descripcion" />
+    <column name="Transferencia_Cantidad" fieldName="Transferencia_Cantidad" label="Transferencia Cantidad" />
+    <column name="Last_Transferencia_Material" fieldName="Last_Transferencia_Material" label="Last Transferencia Material" />
+    <column name="Last_Transferencia_Material_Descripcion" fieldName="Last_Transferencia_Material_Descripcion" label="Last Transferencia Material Descripcion" />
+    <column name="Last_Transferencia_Cantidad" fieldName="Last_Transferencia_Cantidad" label="Last Transferencia Cantidad" />
+    <column name="Es_Actualizado" fieldName="Es_Actualizado" label="Es Actualizado" />
+    <column name="Estatus_Procesamiento_Id" fieldName="Estatus_Procesamiento_Id" label="Estatus Procesamiento Id" />
+    <column name="Estatus_Procesamiento" fieldName="Estatus_Procesamiento" label="Estatus Procesamiento" />
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" />
+    <column name="Mensaje_Sistema" fieldName="Mensaje_Sistema" label="Mensaje Sistema" />
+    <column name="Mensaje_Amigable_Usuario" fieldName="Mensaje_Amigable_Usuario" label="Mensaje Amigable Usuario" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+    <column name="Creado_Por" fieldName="Creado_Por" label="Creado Por" />
+    <column name="Actualizado_Por_Id" fieldName="Actualizado_Por_Id" label="Actualizado Por Id" />
+    <column name="Actualizado_Por" fieldName="Actualizado_Por" label="Actualizado Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Transferencia_Material_Ubicacion_Origen" fieldName="Transferencia_Material_Ubicacion_Origen" label="Transferencia Material Ubicacion Origen" />
+    <column name="Transferencia_Material_Ubicacion_Destino" fieldName="Transferencia_Material_Ubicacion_Destino" label="Transferencia Material Ubicacion Destino" />
+    <column name="Last_Transferencia_Material_Ubicacion_Origen" fieldName="Last_Transferencia_Material_Ubicacion_Origen" label="Last Transferencia Material Ubicacion Origen" />
+    <column name="Last_Transferencia_Material_Ubicacion_Destino" fieldName="Last_Transferencia_Material_Ubicacion_Destino" label="Last Transferencia Material Ubicacion Destino" />
+  </columns>
+</dataModel>

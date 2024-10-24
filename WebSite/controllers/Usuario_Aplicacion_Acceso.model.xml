@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Usuario_Aplicacion_Acceso" alias="Usuario_Aplicacion_Acceso" created="2019-03-13T19:46:32" modified="2019-05-03T16:56:24" x="20" y="26" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Usuario_Aplicacion_" parentTableSchema="APP" parentTableName="Usuario_Aplicacion" x="1126" y="20">
+      <foreignKeyColumn columnName="Usuario_Aplicacion_Id" parentColumnName="Usuario_Aplicacion_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="804" y="520">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="812" y="229">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="831" y="371">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Usuario" parentTableSchema="dbo" parentTableName="Usuario_V" x="816" y="95">
+      <foreignKeyColumn columnName="Usuario_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Desbloqueado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="488" y="571">
+      <foreignKeyColumn columnName="Desbloqueado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Usuario_Aplicacion_Acceso_Id" fieldName="Usuario_Aplicacion_Acceso_Id" label="Usuario Aplicación Acceso Id" />
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicación Id" aliasColumnName="Nombre_Completo" aliasForeignKey="Usuario_Aplicacion_" />
+    <column name="Nombre_Completo" fieldName="Nombre_Completo" label="Nombre Completo" foreignKey="Usuario_Aplicacion_" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Usuario" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario de Sistema" foreignKey="Usuario" />
+    <column name="Nip" fieldName="Nip" label="Nip" />
+    <column name="Numero_Actualizacion_Acceso" fieldName="Numero_Actualizacion_Acceso" label="Número Actualización Acceso" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultimo_Acceso" fieldName="Fecha_Ultimo_Acceso" label="Fecha Ultimo Acceso" format="g" />
+    <column name="Numero_Intento_Acceso" fieldName="Numero_Intento_Acceso" label="Numero Intento Acceso" />
+    <column name="Fecha_Ultimo_Acceso_Fallido" fieldName="Fecha_Ultimo_Acceso_Fallido" label="Fecha Ultimo Acceso Fallido" format="g" />
+    <column name="Fecha_Ultimo_Bloqueo" fieldName="Fecha_Ultimo_Bloqueo" label="Fecha Ultimo Bloqueo" format="g" />
+    <column name="Desbloqueado_Por_Id" fieldName="Desbloqueado_Por_Id" label="Desbloqueado Por Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Desbloqueado_Por" />
+    <column name="Usuario_Sistema" fieldName="Desbloqueado_Por" label="Desbloqueado Por" foreignKey="Desbloqueado_Por" />
+    <column name="Desbloquear" fieldName="Desbloquear" label="Desbloquear?" />
+    <column name="Bloqueado" fieldName="Bloqueado" label="Bloqueado?" />
+  </columns>
+</dataModel>

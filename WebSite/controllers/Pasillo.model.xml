@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Pasillo" alias="Pasillo" created="2018-10-20T12:50:27" modified="2019-01-16T11:56:21" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="868" y="421">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="471" y="204">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="453" y="570">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="pi" parentTableSchema="APP" parentTableName="Pasillo" x="1286" y="47">
+      <foreignKeyColumn columnName="Pasillo_Vecino_Izquierda_Id" parentColumnName="Pasillo_Id" />
+    </foreignKey>
+    <foreignKey id="pd" parentTableSchema="APP" parentTableName="Pasillo" x="927" y="232">
+      <foreignKeyColumn columnName="Pasillo_Vecino_Derecha_Id" parentColumnName="Pasillo_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Pasillo_Id" fieldName="Pasillo_Id" label="Pasillo Id" />
+    <column name="Clave_Pasillo" fieldName="Clave_Pasillo" label="Clave Pasillo" />
+    <column name="Rango_Columna_Inicio" fieldName="Rango_Columna_Inicio" label="Rango Columna Inicio" />
+    <column name="Rango_Columna_Fin" fieldName="Rango_Columna_Fin" label="Rango Columna Fin" />
+    <column name="Rango_Nivel_Inicio" fieldName="Rango_Nivel_Inicio" label="Rango Nivel Inicio" />
+    <column name="Rango_Nivel_Fin" fieldName="Rango_Nivel_Fin" label="Rango Nivel Fin" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Valor_Pasillo" fieldName="Valor_Pasillo" label="Valor Pasillo" />
+    <column name="Pasillo_Vecino_Izquierda_Id" fieldName="Pasillo_Vecino_Izquierda_Id" label="Pasillo Vecino Izquierda Id" aliasColumnName="Clave_Pasillo" aliasForeignKey="pi" />
+    <column name="Clave_Pasillo" fieldName="Clave_Pasillo_Vecino_Izquierda" label="Clave Pasillo Vecino Izquierda" foreignKey="pi" />
+    <column name="Pasillo_Vecino_Derecha_Id" fieldName="Pasillo_Vecino_Derecha_Id" label="Pasillo Vecino Derecha Id" aliasColumnName="Clave_Pasillo" aliasForeignKey="pd" />
+    <column name="Clave_Pasillo" fieldName="Clave_Pasillo_Vecino_Derecha" label="Clave Pasillo Vecino Derecha" foreignKey="pd" />
+  </columns>
+</dataModel>

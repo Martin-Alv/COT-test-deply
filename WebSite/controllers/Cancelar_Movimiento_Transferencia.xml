@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Cancelar_Movimiento_Transferencia" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <fields>
+    <field name="Comentario" type="String" label="Comentario" />
+    <field name="Motivo_Movimiento_Id" type="Int32" label="Motivo Movimiento Id">
+      <items style="Lookup" dataController="Motivo_Movimiento" dataView="Motivo_Movimiento_Transf_LookUp_List" dataTextField="Motivo_Movimiento" dataValueField="Motivo_Movimiento_Id" />
+    </field>
+  </fields>
+</dataController>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Desviacion_Material" alias="Desviacion_Material" created="2019-01-11T19:16:03" modified="2019-01-22T08:55:33" x="20" y="52" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Orden_Produccion_" parentTableSchema="dbo" parentTableName="Orden_Produccion" x="2151" y="20">
+      <foreignKeyColumn columnName="Orden_Produccion_Id" parentColumnName="Orden_Produccion_Id" />
+    </foreignKey>
+    <foreignKey id="Familia_" parentTableSchema="APP" parentTableName="Familia" x="1852" y="76">
+      <foreignKeyColumn columnName="Familia_Id" parentColumnName="Familia_Id" />
+    </foreignKey>
+    <foreignKey id="Producto_" parentTableSchema="APP" parentTableName="Producto" x="1239" y="570">
+      <foreignKeyColumn columnName="Producto_Id" parentColumnName="Producto_Id" />
+    </foreignKey>
+    <foreignKey id="Material_" parentTableSchema="APP" parentTableName="Material" x="739" y="478">
+      <foreignKeyColumn columnName="Material_Id" parentColumnName="Material_Id" />
+    </foreignKey>
+    <foreignKey id="Categoria_Desviacion_" parentTableSchema="APP" parentTableName="Categoria_Desviacion" x="773" y="667">
+      <foreignKeyColumn columnName="Categoria_Desviacion_Id" parentColumnName="Categoria_Desviacion_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="395" y="655">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="24" y="604">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="75" y="464">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Orden_Produccion_Detalle" parentTableSchema="dbo" parentTableName="Orden_Produccion_Detalle" x="1041" y="162">
+      <foreignKeyColumn columnName="Orden_Produccion_Detalle_Id" parentColumnName="Orden_Produccion_Detalle_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Desviacion_Material_Id" fieldName="Desviacion_Material_Id" label="Desviación Material Id" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Producción Id" aliasColumnName="Numero_Orden_Produccion" aliasForeignKey="Orden_Produccion_" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Número de Orden de Producción" foreignKey="Orden_Produccion_" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Producción Detalle Id" aliasColumnName="Orden_Produccion_Detalle_Id" aliasForeignKey="Orden_Produccion_Detalle" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle" label="Orden Produccion Detalle" foreignKey="Orden_Produccion_Detalle" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" aliasColumnName="Familia_Descripcion" aliasForeignKey="Familia_" />
+    <column name="Familia_Descripcion" fieldName="Familia_Descripcion" label="Familia Descripción" foreignKey="Familia_" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" aliasColumnName="Producto_Descripcion" aliasForeignKey="Producto_" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripción" foreignKey="Producto_" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" aliasColumnName="Material" aliasForeignKey="Material_" />
+    <column name="Material" fieldName="Material" label="Material" foreignKey="Material_" />
+    <column name="Categoria_Desviacion_Id" fieldName="Categoria_Desviacion_Id" label="Categoría Desviación Id" aliasColumnName="Categoria_Desviacion" aliasForeignKey="Categoria_Desviacion_" />
+    <column name="Categoria_Desviacion" fieldName="Categoria_Desviacion" label="Categoría de Desviación" foreignKey="Categoria_Desviacion_" />
+    <column name="Folio_Desviacion" fieldName="Folio_Desviacion" label="Folio de Desviación" />
+    <column name="Cantidad_Material_Sustento" fieldName="Cantidad_Material_Sustento" label="Cantidad de Material Sustento" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+  </columns>
+</dataModel>

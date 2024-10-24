@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Consulta_Entrega_Semaforizada_Avance_General_V" conflictDetection="overwriteChanges" label="Grid Consulta Entrega Semaforizada Avance General V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Estatus_Orden_Produccion_Id" "Estatus_Orden_Produccion_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Estatus_Orden_Produccion" "Estatus_Orden_Produccion"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Familia_Id" "Familia_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Familia_Descripcion" "Familia_Descripcion"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Material_Id" "Material_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Material" "Material"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Motivo_Cancelacion" "Motivo_Cancelacion"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Ultimo_Comentario_Surtidor" "Ultimo_Comentario_Surtidor"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Ultimo_Comentario_Solicitante" "Ultimo_Comentario_Solicitante"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Anio_Mes_Fecha_Solicitud" "Anio_Mes_Fecha_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Mes_Fecha_Solicitud" "Mes_Fecha_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Anio_Fecha_Solicitud" "Anio_Fecha_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Dia_Fecha_Solicitud" "Dia_Fecha_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Mes_Dia_Fecha_Solicitud" "Mes_Dia_Fecha_Solicitud"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Consulta_Entrega_Semaforizada_Avance_General_V"."Motivo_Solicitud" "Motivo_Solicitud"
+from "dbo"."Grid_Consulta_Entrega_Semaforizada_Avance_General_V" "Grid_Consulta_Entrega_Semaforizada_Avance_General_V"
+]]></text>
+    </command>
+    <command type="Text" id="Grid_Consulta_Entrega_Semaforizada_Avance_General_Dia_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Estatus_Orden_Produccion_Id]
+      ,[Estatus_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Familia_Descripcion]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material_Id]
+      ,[Material]
+      ,[Material_Descripcion]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Motivo_Cancelacion]
+      ,[Ultimo_Comentario_Surtidor]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Anio_Fecha_Solicitud]
+      ,[Mes_Fecha_Solicitud]
+      ,[Dia_Fecha_Solicitud]
+      ,[Anio_Mes_Fecha_Solicitud]
+      ,[Mes_Dia_Fecha_Solicitud]
+      ,[Fecha_Solicitud]
+      ,[Tiempo_Transcurrido]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Ultimo_Comentario_Solicitante]
+      ,[Motivo_Solicitud]
+  FROM [dbo].[Grid_Consulta_Entrega_Semaforizada_Avance_General_Dia_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Consulta_Entrega_Semaforizada_Avance_General_Mes_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Estatus_Orden_Produccion_Id]
+      ,[Estatus_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Familia_Descripcion]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material_Id]
+      ,[Material]
+      ,[Material_Descripcion]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Motivo_Cancelacion]
+      ,[Ultimo_Comentario_Surtidor]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Anio_Fecha_Solicitud]
+      ,[Mes_Fecha_Solicitud]
+      ,[Dia_Fecha_Solicitud]
+      ,[Anio_Mes_Fecha_Solicitud]
+      ,[Mes_Dia_Fecha_Solicitud]
+      ,[Fecha_Solicitud]
+      ,[Tiempo_Transcurrido]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Ultimo_Comentario_Solicitante]
+      ,[Motivo_Solicitud]
+  FROM [dbo].[Grid_Consulta_Entrega_Semaforizada_Avance_General_Mes_V]]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Estatus_Orden_Produccion_Id" type="Int32" allowNulls="false" label="Estatus Orden Produccion Id" readOnly="true" showInSummary="true" />
+    <field name="Estatus_Orden_Produccion" type="String" allowNulls="false" label="Estatus Orden Produccion" length="250" showInSummary="true" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" showInSummary="true" />
+    <field name="Familia_Clave" type="String" label="Familia Clave" length="250" />
+    <field name="Familia_Descripcion" type="String" allowNulls="false" label="Familia Descripcion" length="250" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" label="Solicitud Id" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" />
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" />
+    <field name="Estatus_Solicitud_Id" type="Int32" allowNulls="false" label="Estatus Solicitud Id" readOnly="true" />
+    <field name="Estatus_Solicitud" type="String" allowNulls="false" label="Estatus Solicitud" length="250" />
+    <field name="Motivo_Cancelacion" type="String" allowNulls="false" label="Motivo Cancelacion" readOnly="true" length="250" />
+    <field name="Ultimo_Comentario_Surtidor" type="String" allowNulls="false" allowQBE="false" allowSorting="false" label="Ultimo Comentario Surtidor" readOnly="true" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id" readOnly="true" />
+    <field name="Fecha_Solicitud" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Solicitud" />
+    <field name="Tiempo_Transcurrido" type="Int32" allowNulls="false" label="Tiempo Transcurrido" readOnly="true" />
+    <field name="Surtidor_Responsable_Id" type="Guid" allowNulls="false" label="Surtidor Responsable Id" />
+    <field name="Surtidor_Responsable" type="String" label="Surtidor Responsable" length="256" />
+    <field name="Solicitado_Por_Id" type="Guid" allowNulls="false" label="Solicitado Por Id" />
+    <field name="Solicitado_Por" type="String" allowNulls="false" label="Solicitado Por" length="256" />
+    <field name="Ultimo_Comentario_Solicitante" type="String" allowNulls="false" allowQBE="false" allowSorting="false" label="Ultimo Comentario Solicitante" readOnly="true" />
+    <field name="Anio_Mes_Fecha_Solicitud" type="String" label="Anio Mes Fecha Solicitud" readOnly="true" length="12" />
+    <field name="Mes_Fecha_Solicitud" type="String" label="Mes Fecha Solicitud" readOnly="true" length="30" />
+    <field name="Anio_Fecha_Solicitud" type="Int32" label="Anio Fecha Solicitud" readOnly="true" />
+    <field name="Dia_Fecha_Solicitud" type="String" label="Dia Fecha Solicitud" readOnly="true" length="30" />
+    <field name="Mes_Dia_Fecha_Solicitud" type="String" label="Mes Dia Fecha Solicitud" readOnly="true" length="4" />
+    <field name="Area_Entrega" type="String" allowNulls="false" label="Area Entrega" readOnly="true" length="250" />
+    <field name="Motivo_Solicitud" type="String" allowNulls="false" allowQBE="false" allowSorting="false" label="Motivo Solicitud" readOnly="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Solicitud/Entregas Avance General - Gráfica Pastel">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Estatus_Orden_Produccion" />
+        <dataField fieldName="Familia_Id" columns="15" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+        <dataField fieldName="Estatus_Solicitud" tag="pivot1-row1-pie3d" />
+        <dataField fieldName="Motivo_Cancelacion" />
+        <dataField fieldName="Ultimo_Comentario_Surtidor" rows="5" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Ultimo_Comentario_Solicitante" rows="5" />
+        <dataField fieldName="Anio_Mes_Fecha_Solicitud" columns="12" />
+        <dataField fieldName="Mes_Fecha_Solicitud" columns="30" />
+        <dataField fieldName="Anio_Fecha_Solicitud" columns="15" />
+        <dataField fieldName="Dia_Fecha_Solicitud" columns="30" />
+        <dataField fieldName="Mes_Dia_Fecha_Solicitud" columns="4" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Motivo_Solicitud" rows="5" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Consulta Entrega Semaforizada Avance General V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Consulta Entrega Semaforizada Avance General V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+            <dataField fieldName="Estatus_Solicitud" />
+            <dataField fieldName="Motivo_Cancelacion" />
+            <dataField fieldName="Ultimo_Comentario_Surtidor" rows="5" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+            <dataField fieldName="Surtidor_Responsable" />
+            <dataField fieldName="Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Ultimo_Comentario_Solicitante" rows="5" />
+            <dataField fieldName="Anio_Mes_Fecha_Solicitud" columns="12" />
+            <dataField fieldName="Mes_Fecha_Solicitud" columns="30" />
+            <dataField fieldName="Anio_Fecha_Solicitud" columns="15" />
+            <dataField fieldName="Dia_Fecha_Solicitud" columns="30" />
+            <dataField fieldName="Mes_Dia_Fecha_Solicitud" columns="4" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Motivo_Solicitud" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Consulta Entrega Semaforizada Avance General V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Familia_Descripcion" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+            <dataField fieldName="Estatus_Solicitud" />
+            <dataField fieldName="Motivo_Cancelacion" />
+            <dataField fieldName="Ultimo_Comentario_Surtidor" rows="5" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+            <dataField fieldName="Surtidor_Responsable" />
+            <dataField fieldName="Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Ultimo_Comentario_Solicitante" rows="5" />
+            <dataField fieldName="Anio_Mes_Fecha_Solicitud" columns="12" />
+            <dataField fieldName="Mes_Fecha_Solicitud" columns="30" />
+            <dataField fieldName="Anio_Fecha_Solicitud" columns="15" />
+            <dataField fieldName="Dia_Fecha_Solicitud" columns="30" />
+            <dataField fieldName="Mes_Dia_Fecha_Solicitud" columns="4" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Motivo_Solicitud" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="graficaColumnEstatusSolicitudDia" type="Grid" commandId="Grid_Consulta_Entrega_Semaforizada_Avance_General_Dia_V" label="Solicitud/Entregas Avance Diario - Gráfica Columna">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Estatus_Orden_Produccion" />
+        <dataField fieldName="Familia_Id" columns="15" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+        <dataField fieldName="Estatus_Solicitud" tag="pivot1-col1-sortbyvalue" />
+        <dataField fieldName="Motivo_Cancelacion" />
+        <dataField fieldName="Ultimo_Comentario_Surtidor" rows="5" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Ultimo_Comentario_Solicitante" rows="5" />
+        <dataField fieldName="Anio_Mes_Fecha_Solicitud" columns="12" />
+        <dataField fieldName="Mes_Fecha_Solicitud" columns="30" />
+        <dataField fieldName="Anio_Fecha_Solicitud" columns="15" />
+        <dataField fieldName="Dia_Fecha_Solicitud" columns="30" />
+        <dataField fieldName="Mes_Dia_Fecha_Solicitud" columns="4" tag="pivot1-row1-column&#xD;&#xA;pivot1-title:&quot;Estatus de Solicitud Diario&quot;&#xD;&#xA;pivot1-haxistitle:&quot;MesDía&quot;&#xD;&#xA;pivot1-vaxistitle:&quot;Estatus Solicitud&quot;" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Motivo_Solicitud" rows="5" />
+      </dataFields>
+    </view>
+    <view id="graficaColumnEstatusSolicitudMes" type="Grid" commandId="Grid_Consulta_Entrega_Semaforizada_Avance_General_Mes_V" label="Solicitud/Entregas Avance Mensual - Gráfica Columna">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+        <dataField fieldName="Estatus_Orden_Produccion" />
+        <dataField fieldName="Familia_Id" columns="15" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Descripcion" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+        <dataField fieldName="Estatus_Solicitud" tag="pivot1-col1-sortbyvalue" />
+        <dataField fieldName="Motivo_Cancelacion" />
+        <dataField fieldName="Ultimo_Comentario_Surtidor" rows="5" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Ultimo_Comentario_Solicitante" rows="5" />
+        <dataField fieldName="Anio_Mes_Fecha_Solicitud" columns="12" />
+        <dataField fieldName="Mes_Fecha_Solicitud" columns="30" tag="pivot1-row1-column&#xD;&#xA;pivot1-title:&quot;Estatus de Solicitud Mensual&quot;&#xD;&#xA;pivot1-haxistitle:&quot;Mes&quot;&#xD;&#xA;pivot1-vaxistitle:&quot;Estatus Solicitud&quot;" />
+        <dataField fieldName="Anio_Fecha_Solicitud" columns="15" />
+        <dataField fieldName="Dia_Fecha_Solicitud" columns="30" />
+        <dataField fieldName="Mes_Dia_Fecha_Solicitud" columns="4" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Motivo_Solicitud" rows="5" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

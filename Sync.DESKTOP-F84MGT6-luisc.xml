@@ -1,0 +1,2722 @@
+<?xml version="1.0" encoding="utf-8"?><logs><log type="Controllers"><c y="NodeSet" t="2019-01-08T12:30:56"><controller name="Unidad_Material" />
+<view id="grid1" />
+<update>
+  <Label>Unidad de Material</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:31:05"><controller name="Unidad_Material" />
+<view id="editForm1" />
+<update>
+  <Label>Actualizar Unidad de Material</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:31:15"><controller name="Unidad_Material" />
+<field name="Unidad_Material" />
+<update>
+  <Label>Unidad de Material</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:32:29"><controller name="Unidad_Material" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Unidad_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+WHERE
+Unidad_Material_Id = @Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:32:49"><controller name="Unidad_Material" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE
+APP.Unidad_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Unidad_Material_Id = @Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:33:09"><controller name="Unidad_Material" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Unidad_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Unidad_Material_Id = @Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:33:23"><controller name="Unidad_Material" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Unidad_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Unidad_Material_Id = @Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:34:34"><controller name="Unidad_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert</CommandName>
+  <Phase>Before</Phase>
+  <Script>DECLARE @Existe BIT
+SET @Existe = 0</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T12:35:37"><controller name="Unidad_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](42,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](42,1,13,@Producto_Clave)
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:44:37"><controller name="Unidad_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Producto_Clave)
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:45:30"><controller name="Unidad_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:45:33"><controller name="Unidad_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:46:17"><controller name="Unidad_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert</CommandName>
+  <Phase>After</Phase>
+  <Script>UPDATE
+APP.Unidad_Material
+SET
+Creado_Por_Id= @BusinessRules_UserId
+WHERE
+Unidad_Material_Id = @Unidad_Material_Id</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T12:46:43"><controller name="Unidad_Material" />
+<rule id="r101" />
+<update>
+  <Script>UPDATE
+APP.Unidad_Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+Unidad_Material_Id = @Unidad_Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:47:34"><controller name="Unidad_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Update</CommandName>
+  <Phase>Before</Phase>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+AND Unidad_Material_Id &lt;&gt; @Unidad_Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</insert></c><c y="NodeSet" t="2019-01-08T12:48:52"><controller name="Unidad_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Update</CommandName>
+  <Phase>After</Phase>
+  <Script>UPDATE 
+   APP.Unidad_Material
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Unidad_Material_Id = @Unidad_Material_Id</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T12:49:51"><controller name="Unidad_Material" />
+<rule id="r103" />
+<update>
+  <Script>UPDATE 
+   APP.Unidad_Material
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Unidad_Material_Id = @Unidad_Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:50:48"><controller name="Material" />
+<field name="Fecha_Creacion" />
+<update>
+  <Label>Fecha de Creación</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:51:04"><controller name="Material" />
+<field name="Fecha_Ultima_Actualizacion" />
+<update>
+  <Label>Fecha de Última Actualización</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:51:40"><controller name="Material" />
+<view id="createForm1" />
+<category id="c1" />
+<update>
+  <HeaderText>Material</HeaderText>
+</update></c><c y="NodeSet" t="2019-01-08T12:52:01"><controller name="Material" />
+<view id="grid1" />
+<update>
+  <SortExpression>Material</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-08T12:52:24"><controller name="Unidad_Material" />
+<field name="Fecha_Creacion" />
+<update>
+  <Label>Fecha de Creación</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:52:38"><controller name="Unidad_Material" />
+<field name="Fecha_Ultima_Actualizacion" />
+<update>
+  <Label>Fecha de Última Actualización</Label>
+</update></c><c y="NodeSet" t="2019-01-08T12:53:02"><controller name="Unidad_Material" />
+<view id="grid1" />
+<update>
+  <SortExpression>Unidad_Material</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-08T12:53:46"><controller name="Material" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Material_Id = @Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:54:03"><controller name="Material" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Material_Id = @Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:54:14"><controller name="Material" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borratr"</HeaderText>
+  <Data>UPDATE
+APP.Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Material_Id = @Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T12:55:20"><controller name="Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert</CommandName>
+  <Phase>Before</Phase>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</insert></c><c y="NodeSet" t="2019-01-08T12:55:59"><controller name="Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:56:35"><controller name="Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:57:10"><controller name="Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Update</CommandName>
+  <Phase>After</Phase>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material))
+AND Material_Id &lt;&gt; @Material_d
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</insert></c><c y="NodeSet" t="2019-01-08T12:57:20"><controller name="Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,13,@Producto_Clave)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:59:15"><controller name="Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,13,@Material)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:59:26"><controller name="Material" />
+<rule id="r101" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material))
+AND Material_Id &lt;&gt; @Material_d
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](47,1,13,@Material)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:59:35"><controller name="Unidad_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Unidad_Material)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T12:59:41"><controller name="Unidad_Material" />
+<rule id="r102" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Unidad_Material))
+AND Unidad_Material_Id &lt;&gt; @Unidad_Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](46,1,13,@Unidad_Material)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:01:01"><controller name="Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert</CommandName>
+  <Phase>After</Phase>
+  <Script>UPDATE
+APP.Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+Unidad_Id = @Unidad_Id</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T13:01:13"><controller name="Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Update</CommandName>
+  <Phase>After</Phase>
+  <Script>abc</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T13:01:37"><controller name="Material" />
+<rule id="r103" />
+<update>
+  <Script>UPDATE 
+   APP.Material
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Material_Id = @Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:02:21"><controller name="Producto_Material" />
+<field name="Fecha_Creacion" />
+<update>
+  <Label>Fecha de Creación</Label>
+</update></c><c y="NodeSet" t="2019-01-08T13:02:37"><controller name="Producto_Material" />
+<field name="Fecha_Ultima_Actualizacion" />
+<update>
+  <Label>Fecha de Última Actualización</Label>
+</update></c><c y="NodeSet" t="2019-01-08T13:04:17"><controller name="Producto_Material" />
+<view id="editForm1" />
+<update>
+  <Label>Actualizar Relación Producto y Material</Label>
+</update></c><c y="NodeSet" t="2019-01-08T13:04:21"><controller name="Producto_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<update>
+  <HeaderText>Relación Producto y Material</HeaderText>
+</update></c><c y="NodeSet" t="2019-01-08T13:04:30"><controller name="Producto_Material" />
+<view id="createForm1" />
+<update>
+  <Label>Nueva Relación Producto y Material</Label>
+</update></c><c y="NodeSet" t="2019-01-08T13:04:40"><controller name="Producto_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<update>
+  <HeaderText>Relación Producto y Material</HeaderText>
+</update></c><c y="NodeSet" t="2019-01-08T13:05:37"><controller name="Producto_Material" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Producto_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Producto_Material_Id = @Producto_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T13:05:50"><controller name="Producto_Material" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Producto_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Producto_Material_Id = @Producto_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T13:06:03"><controller name="Producto_Material" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE
+APP.Producto_Material
+SET
+Estatus_Registro_Id = 3
+,Actualizado_Por_Id= @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = GetDate()
+WHERE
+Producto_Material_Id = @Producto_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-08T13:08:11"><controller name="Producto_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert</CommandName>
+  <Phase>Before</Phase>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Producto_Material
+WHERE
+	Producto_Id = @Producto_Id
+AND Material_Id = @Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](48,1,13,@Material)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</insert></c><c y="NodeSet" t="2019-01-08T13:08:29"><controller name="Producto_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Producto_Material
+WHERE
+	Producto_Id = @Producto_Id
+AND Material_Id = @Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](48,1,13,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:08:59"><controller name="Producto_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Update</CommandName>
+  <Phase>After</Phase>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Producto_Material
+WHERE
+	Producto_Id = @Producto_Id
+AND Material_Id = @Material_Id
+AND Producto_Material_Id &lt;&gt; @Producto_Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](48,1,13,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</insert></c><c y="NodeSet" t="2019-01-08T13:09:48"><controller name="Producto_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Insert</CommandName>
+  <Phase>After</Phase>
+  <Script>abc</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T13:10:13"><controller name="Material" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE
+APP.Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+Material_Id = @Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:10:15"><controller name="Material" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE
+APP.Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+Material_Id = @Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:13:50"><controller name="Producto_Material" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE
+	APP.Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Id = @Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:14:14"><controller name="Producto_Material" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE
+	APP.Producto_Material
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Producto_Material_Id = @Producto_Material_Id</Script>
+</update></c><c y="NodeSet" t="2019-01-08T13:14:49"><controller name="Producto_Material" />
+<insert type="rule">
+  <Type>Sql</Type>
+  <CommandName>Update</CommandName>
+  <Phase>After</Phase>
+  <Script>UPDATE 
+   APP.Producto_Material
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Producto_Material_Id = @Producto_Material_Id</Script>
+</insert></c><c y="NodeSet" t="2019-01-08T14:46:36"><controller name="Unidad_Material" />
+<view id="Unidad_Material_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id IN (0,1)</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-08T14:47:28"><controller name="Estatus_Registro" />
+<view id="Estatus_Registro_LookUp_List" />
+<update>
+  <SortExpression>Estatus_Registro</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-08T14:47:47"><controller name="Estatus_Registro" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <ReadOnlyWhen>true</ReadOnlyWhen>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-01-08T14:47:54"><controller name="Estatus_Registro" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ReadOnly>true</ReadOnly>
+</update></c><c y="NodeSet" t="2019-01-08T14:48:14"><controller name="Estatus_Registro" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:19"><controller name="Estatus_Registro" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:24"><controller name="Estatus_Registro" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:33"><controller name="Estatus_Registro" />
+<actionGroup id="ag1" />
+<action id="a6" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:33"><controller name="Estatus_Registro" />
+<actionGroup id="ag1" />
+<action id="a7" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:33"><controller name="Estatus_Registro" />
+<actionGroup id="ag1" />
+<action id="a8" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:34"><controller name="Estatus_Registro" />
+<actionGroup id="ag1" />
+<action id="a9" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:34"><controller name="Estatus_Registro" />
+<actionGroup id="ag1" />
+<action id="a10" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:38"><controller name="Estatus_Registro" />
+<actionGroup id="ag3" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:48:46"><controller name="Estatus_Registro" />
+<view id="createForm1" />
+<delete /></c><c y="NodeSet" t="2019-01-08T14:58:50"><controller name="Orden_Produccion" />
+<actionGroup id="ag9" />
+<action id="a100" />
+<update>
+  <WhenClientScript />
+</update></c><c y="NodeSet" t="2019-01-08T14:59:28"><controller name="Orden_Produccion" />
+<actionGroup id="ag9" />
+<action id="a100" />
+<update>
+  <WhenClientScript>[Estatus_Orden_Produccion_Id] == 1</WhenClientScript>
+</update></c><c y="NodeSet" t="2019-01-15T09:04:56"><controller name="Color" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:05:07"><controller name="Color" />
+<view id="grid1" />
+<dataField fieldName="Codigo_Rgb" />
+<after>
+  <controller name="Color" />
+  <view id="grid1" />
+  <dataField fieldName="Creado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:05:10"><controller name="Color" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Creacion" />
+<after>
+  <controller name="Color" />
+  <view id="grid1" />
+  <dataField fieldName="Actualizado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:05:20"><controller name="Color" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:20"><controller name="Color" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:20"><controller name="Color" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:20"><controller name="Color" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:54"><controller name="Color" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:54"><controller name="Color" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:54"><controller name="Color" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:54"><controller name="Color" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:05:54"><controller name="Color" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:06:24"><controller name="Color" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE 
+APP.Color 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Color_Id = @Color_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:06:29"><controller name="Color" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Color 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Color_Id = @Color_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:06:42"><controller name="Color" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Color 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Color_Id = @Color_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:06:56"><controller name="Color" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Color 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Color_Id = @Color_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:07:20"><controller name="Color" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Color
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Nombre_Ingles))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Nombre_Ingles))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](51,1,15,@Nombre_Ingles)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:07:30"><controller name="Color" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Color
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Nombre_Ingles))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Nombre_Ingles))
+AND Color_Id &lt;&gt; @Color_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](52,1,15,@Nombre_Ingles)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:08:54"><controller name="Tipo_Solicitud" />
+<view id="grid1" />
+<dataField fieldName="Tipo_Solicitud" />
+<after>
+  <controller name="Tipo_Solicitud" />
+  <view id="grid1" />
+  <dataField fieldName="Creado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:08:57"><controller name="Tipo_Solicitud" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Creacion" />
+<after>
+  <controller name="Tipo_Solicitud" />
+  <view id="grid1" />
+  <dataField fieldName="Actualizado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:09:06"><controller name="Tipo_Solicitud" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:09:23"><controller name="Tipo_Solicitud" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:23"><controller name="Tipo_Solicitud" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:23"><controller name="Tipo_Solicitud" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:23"><controller name="Tipo_Solicitud" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:31"><controller name="Tipo_Solicitud" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:31"><controller name="Tipo_Solicitud" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:31"><controller name="Tipo_Solicitud" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:31"><controller name="Tipo_Solicitud" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:31"><controller name="Tipo_Solicitud" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:09:50"><controller name="Tipo_Solicitud" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Tipo_Solicitud
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Solicitud))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Solicitud))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](53,1,16,@Tipo_Solicitud)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:09:56"><controller name="Tipo_Solicitud" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Tipo_Solicitud
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Tipo_Solicitud))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Tipo_Solicitud))
+AND Tipo_Solicitud_Id &lt;&gt; @Tipo_Solicitud_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](54,1,16,@Tipo_Solicitud)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:10:23"><controller name="Tipo_Solicitud" />
+<view id="grid1" />
+<update>
+  <SortExpression>Tipo_Solicitud</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:10:30"><controller name="Tipo_Solicitud" />
+<copy>
+  <controller name="Tipo_Solicitud" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-15T09:10:40"><controller name="Tipo_Solicitud" />
+<view id="v100" />
+<rename>Tipo_Solicitud_LookUp_List</rename></c><c y="NodeSet" t="2019-01-15T09:10:47"><controller name="Tipo_Solicitud" />
+<view id="Tipo_Solicitud_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:10:47"><controller name="Tipo_Solicitud" />
+<view id="Tipo_Solicitud_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:10:47"><controller name="Tipo_Solicitud" />
+<view id="Tipo_Solicitud_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:10:47"><controller name="Tipo_Solicitud" />
+<view id="Tipo_Solicitud_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:10:47"><controller name="Tipo_Solicitud" />
+<view id="Tipo_Solicitud_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:10:55"><controller name="Tipo_Solicitud" />
+<view id="Tipo_Solicitud_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:11:03"><controller name="Color" />
+<copy>
+  <controller name="Color" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-15T09:11:12"><controller name="Color" />
+<view id="v100" />
+<rename>Color_LookUp</rename></c><c y="NodeSet" t="2019-01-15T09:11:17"><controller name="Color" />
+<view id="Color_LookUp" />
+<rename>Color_LookUp_List</rename></c><c y="NodeSet" t="2019-01-15T09:11:42"><controller name="Color" />
+<view id="grid1" />
+<update>
+  <SortExpression>Nombre_Ingles</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:11:51"><controller name="Color" />
+<view id="Color_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:11:51"><controller name="Color" />
+<view id="Color_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:11:51"><controller name="Color" />
+<view id="Color_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:11:51"><controller name="Color" />
+<view id="Color_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:11:51"><controller name="Color" />
+<view id="Color_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:12:03"><controller name="Color" />
+<view id="Color_LookUp_List" />
+<update>
+  <SortExpression>Nombre_Ingles</SortExpression>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:13:00"><controller name="Categoria_Desviacion" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:13:09"><controller name="Categoria_Desviacion" />
+<view id="grid1" />
+<dataField fieldName="Categoria_Desviacion" />
+<after>
+  <controller name="Categoria_Desviacion" />
+  <view id="grid1" />
+  <dataField fieldName="Creado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:13:12"><controller name="Categoria_Desviacion" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Creacion" />
+<after>
+  <controller name="Categoria_Desviacion" />
+  <view id="grid1" />
+  <dataField fieldName="Actualizado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:13:20"><controller name="Categoria_Desviacion" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:20"><controller name="Categoria_Desviacion" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:20"><controller name="Categoria_Desviacion" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:20"><controller name="Categoria_Desviacion" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:30"><controller name="Categoria_Desviacion" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:30"><controller name="Categoria_Desviacion" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:30"><controller name="Categoria_Desviacion" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:30"><controller name="Categoria_Desviacion" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:30"><controller name="Categoria_Desviacion" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:13:55"><controller name="Categoria_Desviacion" />
+<view id="grid1" />
+<update>
+  <SortExpression>Categoria_Desviacion</SortExpression>
+  <FilterExpression>Estatus_Registro_Id&lt;&gt;0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:14:04"><controller name="Categoria_Desviacion" />
+<copy>
+  <controller name="Categoria_Desviacion" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-15T09:14:16"><controller name="Categoria_Desviacion" />
+<view id="v100" />
+<rename>Categoria_Desviacion_LookUp_List</rename></c><c y="NodeSet" t="2019-01-15T09:14:21"><controller name="Categoria_Desviacion" />
+<view id="Categoria_Desviacion_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:14:21"><controller name="Categoria_Desviacion" />
+<view id="Categoria_Desviacion_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:14:21"><controller name="Categoria_Desviacion" />
+<view id="Categoria_Desviacion_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:14:21"><controller name="Categoria_Desviacion" />
+<view id="Categoria_Desviacion_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:14:21"><controller name="Categoria_Desviacion" />
+<view id="Categoria_Desviacion_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:14:28"><controller name="Categoria_Desviacion" />
+<view id="Categoria_Desviacion_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:14:53"><controller name="Categoria_Desviacion" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE APP.Categoria_Desviacion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Categoria_Desviacion_Id = @Categoria_Desviacion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:14:58"><controller name="Categoria_Desviacion" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Categoria_Desviacion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Categoria_Desviacion_Id = @Categoria_Desviacion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:15:11"><controller name="Categoria_Desviacion" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Categoria_Desviacion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Categoria_Desviacion_Id = @Categoria_Desviacion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:15:25"><controller name="Categoria_Desviacion" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Categoria_Desviacion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Categoria_Desviacion_Id = @Categoria_Desviacion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:15:42"><controller name="Categoria_Desviacion" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Categoria_Desviacion
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Categoria_Desviacion))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Categoria_Desviacion))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](61,1,20,@Categoria_Desviacion)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:15:49"><controller name="Categoria_Desviacion" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Categoria_Desviacion
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Categoria_Desviacion))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Categoria_Desviacion))
+AND Categoria_Desviacion_Id &lt;&gt; @Categoria_Desviacion_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](62,1,20,@Categoria_Desviacion)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:16:51"><controller name="Estatus_Solicitud" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Solicitud
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Solicitud))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Solicitud))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](59,1,19,@Estatus_Solicitud)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:16:57"><controller name="Estatus_Solicitud" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Solicitud
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Solicitud))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Solicitud))
+AND Estatus_Solicitud_Id &lt;&gt; @Estatus_Solicitud_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](60,1,19,@Estatus_Solicitud)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:18:04"><controller name="Semaforo" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:04"><controller name="Semaforo" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:04"><controller name="Semaforo" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:04"><controller name="Semaforo" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:04"><controller name="Semaforo" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:12"><controller name="Semaforo" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:12"><controller name="Semaforo" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:12"><controller name="Semaforo" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:12"><controller name="Semaforo" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:18:20"><controller name="Semaforo" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <CodeDefault>1</CodeDefault>
+</update></c><c y="NodeSet" t="2019-01-15T09:20:38"><controller name="Semaforo" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Semaforo_Id = @Semaforo_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:20:53"><controller name="Semaforo" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Semaforo_Id = @Semaforo_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:21:09"><controller name="Semaforo" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Semaforo_Id = @Semaforo_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:21:40"><controller name="Semaforo" />
+<view id="grid1" />
+<update>
+  <SortExpression>Semaforo</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:21:59"><controller name="Semaforo" />
+<copy>
+  <controller name="Semaforo" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-15T09:22:07"><controller name="Semaforo" />
+<view id="v100" />
+<update>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:22:13"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:22:13"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:22:13"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:22:13"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:22:13"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:22:18"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Es_Semaforo_Tiempo_Entrega" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-01-15T09:22:22"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Es_Semaforo_Mat_Exist_Parcial" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-01-15T09:22:26"><controller name="Semaforo" />
+<view id="v100" />
+<dataField fieldName="Es_Semaforo_Mat_Inexistente" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-01-15T09:22:41"><controller name="Semaforo" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Semaforo
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Semaforo))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Semaforo))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](49,1,24,@Semaforo)
+   SET @Result_ShowAlert =  @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:22:49"><controller name="Semaforo" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Semaforo
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Semaforo))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Semaforo))
+AND Semaforo_Id &lt;&gt; @Semaforo_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](69,1,24,@Semaforo)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:23:36"><controller name="Semaforo_Rango_Valor" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <CodeDefault>1</CodeDefault>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:24:07"><controller name="Semaforo" />
+<view id="v100" />
+<rename>Semaforo_LookUp_List</rename></c><c y="NodeSet" t="2019-01-15T09:25:15"><controller name="Semaforo_Rango_Valor" />
+<field name="Semaforo_Id" />
+<update>
+  <ItemsDataView>Semaforo_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:26:14"><controller name="Semaforo_Rango_Valor" />
+<view id="grid1" />
+<update>
+  <SortExpression>Semaforo, Rango_Inicio, Rango_Fin</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:26:29"><controller name="Semaforo_Rango_Valor" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:29"><controller name="Semaforo_Rango_Valor" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:29"><controller name="Semaforo_Rango_Valor" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:29"><controller name="Semaforo_Rango_Valor" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:39"><controller name="Semaforo_Rango_Valor" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:39"><controller name="Semaforo_Rango_Valor" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:39"><controller name="Semaforo_Rango_Valor" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:39"><controller name="Semaforo_Rango_Valor" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:26:40"><controller name="Semaforo_Rango_Valor" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:27:40"><controller name="Semaforo_Rango_Valor" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:28:00"><controller name="Semaforo_Rango_Valor" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:28:18"><controller name="Semaforo_Rango_Valor" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:28:31"><controller name="Semaforo_Rango_Valor" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:28:40"><controller name="Semaforo_Rango_Valor" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Semaforo_Rango_Valor
+WHERE
+	Semaforo_Id = @Semaforo_Id
+	AND dbo.fn_Sustituir_Caracteres_Especiales(Lower(Rango_Inicio))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Rango_Inicio))
+	AND dbo.fn_Sustituir_Caracteres_Especiales(Lower(Rango_Fin))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Rango_Fin))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](50,1,25,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:28:46"><controller name="Semaforo_Rango_Valor" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Semaforo_Rango_Valor
+WHERE
+	Semaforo_Id = @Semaforo_Id
+	AND dbo.fn_Sustituir_Caracteres_Especiales(Lower(Rango_Inicio))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Rango_Inicio))
+	AND dbo.fn_Sustituir_Caracteres_Especiales(Lower(Rango_Fin))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Rango_Fin))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](70,1,25,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:29:09"><controller name="Semaforo_Rango_Valor" />
+<copy>
+  <controller name="Semaforo_Rango_Valor" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-15T09:29:44"><controller name="Semaforo_Rango_Valor" />
+<view id="v100" />
+<rename>Semaforo_Rango_Valor_LookUp_List</rename></c><c y="NodeSet" t="2019-01-15T09:29:50"><controller name="Semaforo_Rango_Valor" />
+<view id="Semaforo_Rango_Valor_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:30:18"><controller name="Color" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Color 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Color_Id = @Color_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:31:12"><controller name="Semaforo" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Semaforo 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Semaforo_Id = @Semaforo_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:33:03"><controller name="Estatus_Orden_Produccion" />
+<view id="grid1" />
+<update>
+  <SortExpression>Estatus_Orden_Produccion</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:33:24"><controller name="Estatus_Orden_Produccion" />
+<view id="Estatus_Orden_Produccion_LookUp_List" />
+<update>
+  <SortExpression>Estatus_Orden_Produccion</SortExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:33:58"><controller name="Estatus_Orden_Produccion" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Id = @Estatus_Orden_Produccion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:34:09"><controller name="Estatus_Orden_Produccion" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Id = @Estatus_Orden_Produccion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:34:19"><controller name="Estatus_Orden_Produccion" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Id = @Estatus_Orden_Produccion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:34:31"><controller name="Estatus_Orden_Produccion" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Id = @Estatus_Orden_Produccion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:34:45"><controller name="Estatus_Orden_Produccion" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Orden_Produccion
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Orden_Produccion))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Orden_Produccion))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](55,1,17,@Estatus_Orden_Produccion)
+   SET @Result_ShowAlert = @Result_ShowAlert
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:34:50"><controller name="Estatus_Orden_Produccion" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Orden_Produccion
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Orden_Produccion))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Orden_Produccion))
+AND Estatus_Orden_Produccion_Id &lt;&gt; @Estatus_Orden_Produccion_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](56,1,17,@Estatus_Orden_Produccion)
+   SET @Result_ShowAlert = @Result_ShowAlert
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:36:14"><controller name="Estatus_Orden_Produccion_Detalle" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Orden_Produccion_Detalle
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Orden_Produccion_Detalle))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Orden_Produccion_Detalle))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](65,1,22,@Estatus_Orden_Produccion_Detalle)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:36:24"><controller name="Estatus_Orden_Produccion_Detalle" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Estatus_Orden_Produccion_Detalle
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Estatus_Orden_Produccion_Detalle))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Estatus_Orden_Produccion_Detalle))
+AND Estatus_Orden_Produccion_Detalle_Id &lt;&gt; @Estatus_Orden_Produccion_Detalle_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](65,1,22,@Estatus_Orden_Produccion_Detalle)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-15T09:36:53"><controller name="Estatus_Orden_Produccion_Detalle" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion_Detalle 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Detalle_Id = @Estatus_Orden_Produccion_Detalle_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:37:04"><controller name="Estatus_Orden_Produccion_Detalle" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion_Detalle 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Detalle_Id = @Estatus_Orden_Produccion_Detalle_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:37:16"><controller name="Estatus_Orden_Produccion_Detalle" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion_Detalle 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Detalle_Id = @Estatus_Orden_Produccion_Detalle_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:37:26"><controller name="Estatus_Orden_Produccion_Detalle" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion_Detalle 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Detalle_Id = @Estatus_Orden_Produccion_Detalle_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:37:39"><controller name="Estatus_Orden_Produccion_Detalle" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+APP.Estatus_Orden_Produccion_Detalle 
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Estatus_Orden_Produccion_Detalle_Id = @Estatus_Orden_Produccion_Detalle_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-15T09:38:33"><controller name="Desviacion_Material" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:38:47"><controller name="Desviacion_Material" />
+<field name="Orden_Produccion_Id" />
+<update>
+  <ItemsDataView>Orden_Produccion_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:38:54"><controller name="Desviacion_Material" />
+<field name="Familia_Id" />
+<update>
+  <ItemsDataView>Familia_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:38:59"><controller name="Desviacion_Material" />
+<field name="Producto_Id" />
+<update>
+  <ItemsDataView>Producto_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:39:04"><controller name="Desviacion_Material" />
+<field name="Material_Id" />
+<update>
+  <ItemsDataView>Material_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-15T09:39:29"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<update>
+  <SortExpression>Numero_Orden_Produccion</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt;0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:39:39"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<move>
+  <controller name="Desviacion_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Folio_Desviacion" />
+</move></c><c y="NodeSet" t="2019-01-15T09:39:41"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<dataField fieldName="Orden_Produccion_Id" />
+<move>
+  <controller name="Desviacion_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Folio_Desviacion" />
+</move></c><c y="NodeSet" t="2019-01-15T09:39:43"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<dataField fieldName="Folio_Desviacion" />
+<after>
+  <controller name="Desviacion_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Orden_Produccion_Id" />
+</after></c><c y="NodeSet" t="2019-01-15T09:39:54"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<update>
+  <SortExpression>Folio_Desviacion</SortExpression>
+</update></c><c y="NodeSet" t="2019-01-15T09:39:58"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<dataField fieldName="Cantidad_Material_Sustento" />
+<move>
+  <controller name="Desviacion_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Creado_Por" />
+</move></c><c y="NodeSet" t="2019-01-15T09:40:00"><controller name="Desviacion_Material" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Creacion" />
+<after>
+  <controller name="Desviacion_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Actualizado_Por" />
+</after></c><c y="NodeSet" t="2019-01-15T09:40:10"><controller name="Desviacion_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:10"><controller name="Desviacion_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:10"><controller name="Desviacion_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:10"><controller name="Desviacion_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:13"><controller name="Desviacion_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Orden_Produccion_Id" />
+<move>
+  <controller name="Desviacion_Material" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Folio_Desviacion" />
+</move></c><c y="NodeSet" t="2019-01-15T09:40:17"><controller name="Desviacion_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Folio_Desviacion" />
+<after>
+  <controller name="Desviacion_Material" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Orden_Produccion_Id" />
+</after></c><c y="NodeSet" t="2019-01-15T09:40:29"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:29"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:29"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:29"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:40:29"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:41:09"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Orden_Produccion_Id" />
+<move>
+  <controller name="Desviacion_Material" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Folio_Desviacion" />
+</move></c><c y="NodeSet" t="2019-01-15T09:41:11"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Folio_Desviacion" />
+<after>
+  <controller name="Desviacion_Material" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Orden_Produccion_Id" />
+</after></c><c y="NodeSet" t="2019-01-15T09:41:29"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Categoria_Desviacion_Material" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:42:05"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Orden_Produccion_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-15T09:42:14"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<dataField fieldName="Orden_Produccion_Id" />
+<update>
+  <Alias>Numero_Orden_Produccion</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-01-15T09:42:17"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Orden_Produccion_Detalle_Id" />
+<move>
+  <controller name="Desviacion_Material" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Orden_Produccion_Id" />
+</move></c><c y="NodeSet" t="2019-01-16T10:52:11"><controller name="Material_Unidad_Material" />
+<field name="Fecha_Creacion" />
+<update>
+  <Label>Fecha de Creación</Label>
+</update></c><c y="NodeSet" t="2019-01-16T10:52:19"><controller name="Material_Unidad_Material" />
+<field name="Estatus_Registro_Id" />
+<update>
+  <ItemsDataView>Estatus_Registro_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-16T10:52:30"><controller name="Material_Unidad_Material" />
+<field name="Material_Id" />
+<update>
+  <ItemsDataView>Material_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-16T10:52:37"><controller name="Material_Unidad_Material" />
+<field name="Unidad_Material_Id" />
+<update>
+  <ItemsDataView>Unidad_Material_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-16T10:52:48"><controller name="Material_Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="Permitir_Desviacion" />
+<after>
+  <controller name="Material_Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Creado_Por" />
+</after></c><c y="NodeSet" t="2019-01-16T10:52:51"><controller name="Material_Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Creacion" />
+<after>
+  <controller name="Material_Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Actualizado_Por" />
+</after></c><c y="NodeSet" t="2019-01-16T10:53:23"><controller name="Material_Unidad_Material" />
+<view id="grid1" />
+<update>
+  <Label>Relación Material Vs. Unidad de Material</Label>
+</update></c><c y="NodeSet" t="2019-01-16T10:53:30"><controller name="Material_Unidad_Material" />
+<view id="editForm1" />
+<update>
+  <Label>Actualizar Relación Material Vs. Unidad de Material</Label>
+</update></c><c y="NodeSet" t="2019-01-16T10:53:38"><controller name="Material_Unidad_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<update>
+  <HeaderText>Actualizar Relación Material Vs. Unidad de Material</HeaderText>
+</update></c><c y="NodeSet" t="2019-01-16T10:53:48"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<update>
+  <Label>Nueva Relación Material Vs. Unidad de Material</Label>
+</update></c><c y="NodeSet" t="2019-01-16T10:54:02"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<update>
+  <HeaderText>Nueva Relación Material Vs. Unidad de Material</HeaderText>
+</update></c><c y="NodeSet" t="2019-01-16T10:54:08"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:08"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:09"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:09"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:09"><controller name="Material_Unidad_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:14"><controller name="Material_Unidad_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:14"><controller name="Material_Unidad_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:14"><controller name="Material_Unidad_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:54:14"><controller name="Material_Unidad_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:55:50"><controller name="Material_Unidad_Material" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Material_Unidad_Material 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Material_Unidad_Material_Id = @Material_Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-16T10:56:04"><controller name="Material_Unidad_Material" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Material_Unidad_Material 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Material_Unidad_Material_Id = @Material_Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-16T10:56:18"><controller name="Material_Unidad_Material" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Material_Unidad_Material 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Material_Unidad_Material_Id = @Material_Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-16T10:56:31"><controller name="Material_Unidad_Material" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE APP.Material_Unidad_Material 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Material_Unidad_Material_Id = @Material_Unidad_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-16T10:56:45"><controller name="Material_Unidad_Material" />
+<rule id="r100" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Material_Unidad_Material
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Material_Unidad_Material))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Material_Unidad_Material))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](67,1,23,@Material_Id+' vs. '+@Unidad_Material_Id)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-16T10:56:51"><controller name="Material_Unidad_Material" />
+<rule id="r103" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Material_Unidad_Material
+WHERE
+   Material_Id = @Material_Id
+   AND Unidad_Material_Id = @Unidad_Material_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](68,1,23,@Material_Id+' vs. '+@Unidad_Material_Id)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-16T10:57:17"><controller name="Material_Unidad_Material" />
+<view id="grid1" />
+<update>
+  <SortExpression>Material,Unidad_Material</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T10:57:23"><controller name="Material_Unidad_Material" />
+<copy>
+  <controller name="Material_Unidad_Material" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-16T10:57:37"><controller name="Material_Unidad_Material" />
+<view id="v100" />
+<rename>Material_Unidad_Material_LookUp_List</rename></c><c y="NodeSet" t="2019-01-16T10:57:51"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:57:51"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:57:51"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:57:51"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:57:51"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-16T10:58:01"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T10:58:17"><controller name="Material_Unidad_Material" />
+<view id="Material_Unidad_Material_LookUp_List" />
+<dataField fieldName="Cantidad_Caja_Bolsa_Por_Tarima_Contenedor" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-01-16T10:58:25"><controller name="Material_Unidad_Material" />
+<field name="Puede_Surtirse_Manualmente" />
+<update>
+  <Label>¿Puede Surtirse Manualmente?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T10:58:32"><controller name="Material_Unidad_Material" />
+<field name="Permitir_Desviacion" />
+<update>
+  <Label>¿Permitir Desviación?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T10:59:39"><controller name="Desviacion_Material" />
+<field name="Categoria_Desviacion_Id" />
+<update>
+  <ItemsDataView>Categoria_Desviacion_LookUp_List</ItemsDataView>
+</update></c><c y="NodeSet" t="2019-01-16T11:02:15"><controller name="Desviacion_Material" />
+<copy>
+  <controller name="Desviacion_Material" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-16T11:02:28"><controller name="Desviacion_Material" />
+<view id="v100" />
+<rename>Desviacion_Material_LookUp_List</rename></c><c y="NodeSet" t="2019-01-16T11:02:34"><controller name="Desviacion_Material" />
+<view id="Desviacion_Material_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T11:02:41"><controller name="Desviacion_Material" />
+<view id="Desviacion_Material_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:02:41"><controller name="Desviacion_Material" />
+<view id="Desviacion_Material_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:02:41"><controller name="Desviacion_Material" />
+<view id="Desviacion_Material_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:02:41"><controller name="Desviacion_Material" />
+<view id="Desviacion_Material_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:02:41"><controller name="Desviacion_Material" />
+<view id="Desviacion_Material_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:05:35"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="grid1" />
+<update>
+  <Tags>view-style-grid, 
+view-style-list, 
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none</Tags>
+  <ShowInSelector>false</ShowInSelector>
+  <SortExpression>Usuario_Aplicacion_Nombre_Completo,Usuario_Sistema,Area_Entrega,Nivel_Prioridad_Surtido</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T11:07:55"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="grid1" />
+<update>
+  <Tags>view-style-grid, 
+view-style-list, 
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none</Tags>
+  <Label>Relación Usuario Aplicación vs. Área Entrega vs. Nivel Prioridad de Surtido</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:17:16"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Comentario_Desviacion_Material" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:17:24"><controller name="Desviacion_Material" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Folio_Desviacion_Material" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:19:37"><controller name="Orden_Produccion" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+dbo.Orden_Produccion 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Orden_Produccion_Id = @Orden_Produccion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-16T11:19:47"><controller name="Orden_Produccion" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+dbo.Orden_Produccion 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+Orden_Produccion_Id = @Orden_Produccion_Id</Data>
+</update></c><c y="NodeSet" t="2019-01-16T11:35:55"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="grid1" />
+<dataField fieldName="Nivel_Prioridad_Surtido_Id" />
+<move>
+  <controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+  <view id="grid1" />
+  <dataField fieldName="MotivoCambioPrioridad" />
+</move></c><c y="NodeSet" t="2019-01-16T11:36:01"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Nivel_Prioridad_Surtido_Id" />
+<move>
+  <controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="MotivoCambioPrioridad" />
+</move></c><c y="NodeSet" t="2019-01-16T11:36:21"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<copy>
+  <controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-16T11:37:23"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="v100" />
+<rename>Usuario_App_Area_Entrega_Nivel_LookUp_List</rename></c><c y="NodeSet" t="2019-01-16T11:37:29"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:37:29"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:37:29"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:37:29"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:37:29"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:37:34"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<dataField fieldName="MotivoCambioPrioridad" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:37:42"><controller name="Usuario_Aplicacion_Area_Entrega_Nivel_Prioridad_Surtido" />
+<view id="Usuario_App_Area_Entrega_Nivel_LookUp_List" />
+<update>
+  <Tags>view-style-grid, 
+view-style-list, 
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none</Tags>
+  <FilterExpression>Estatus_Registro_Id = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T11:42:18"><controller name="Orden_Produccion" />
+<view id="grid1" />
+<dataField fieldName="Estatus_Orden_Produccion_Id" />
+<move>
+  <controller name="Orden_Produccion" />
+  <view id="grid1" />
+  <dataField fieldName="CpusuarioSistema" />
+</move></c><c y="NodeSet" t="2019-01-16T11:42:24"><controller name="Orden_Produccion" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="CpusuarioSistema" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:42:30"><controller name="Orden_Produccion" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="CpusuarioSistema" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:42:37"><controller name="Orden_Produccion" />
+<view id="Orden_Produccion_Listado" />
+<dataField fieldName="CpusuarioSistema" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:42:42"><controller name="Orden_Produccion" />
+<view id="Orden_Produccion_LookUp_List" />
+<dataField fieldName="CpusuarioSistema" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:43:37"><controller name="Orden_Produccion" />
+<rule id="r102" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Orden_Produccion
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Numero_Orden_Produccion))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Numero_Orden_Produccion))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](57,1,18,@Numero_Orden_Produccion)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-16T11:43:43"><controller name="Orden_Produccion" />
+<rule id="r104" />
+<update>
+  <Script>DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Orden_Produccion
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Numero_Orden_Produccion))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Numero_Orden_Produccion))
+AND Orden_Produccion_Id &lt;&gt; @Orden_Produccion_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](58,1,18,@Numero_Orden_Produccion)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+</Script>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:05"><controller name="Unidad_Material" />
+<field name="EsPorTarima" />
+<update>
+  <Label>¿Es por Tarima?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:09"><controller name="Unidad_Material" />
+<field name="EsPorContenedor" />
+<update>
+  <Label>¿Es por Contenedor?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:16"><controller name="Unidad_Material" />
+<field name="EsObjetoVoluminoso" />
+<update>
+  <Label>¿Es Objeto Voluminoso?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:20"><controller name="Unidad_Material" />
+<field name="EsDeManejoDelicado" />
+<update>
+  <Label>¿Es de Manejo Delicado?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:24"><controller name="Unidad_Material" />
+<field name="EsPorCaja" />
+<update>
+  <Label>¿Es por Caja?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:28"><controller name="Unidad_Material" />
+<field name="EsPorBolsa" />
+<update>
+  <Label>¿Es por Bolsa?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:34"><controller name="Unidad_Material" />
+<field name="EsPorPieza" />
+<update>
+  <Label>¿Es por Pieza?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:39"><controller name="Unidad_Material" />
+<field name="EsPorUnidad" />
+<update>
+  <Label>¿Es por Unidad?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:43"><controller name="Unidad_Material" />
+<field name="EsPorLongitud" />
+<update>
+  <Label>¿Es por Longitud?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:47"><controller name="Unidad_Material" />
+<field name="EsPorPeso" />
+<update>
+  <Label>¿Es por Peso?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:44:52"><controller name="Unidad_Material" />
+<field name="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<update>
+  <Label>¿Es por Tarima Contenedor o Caja Bolsa o Unidad Pieza?</Label>
+</update></c><c y="NodeSet" t="2019-01-16T11:48:45"><controller name="Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<move>
+  <controller name="Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Estatus_Registro_Id" />
+</move></c><c y="NodeSet" t="2019-01-16T11:48:45"><controller name="Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<move>
+  <controller name="Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Fecha_Ultima_Actualizacion" />
+</move></c><c y="NodeSet" t="2019-01-16T11:48:45"><controller name="Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<move>
+  <controller name="Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Actualizado_Por" />
+</move></c><c y="NodeSet" t="2019-01-16T11:48:45"><controller name="Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<move>
+  <controller name="Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Fecha_Creacion" />
+</move></c><c y="NodeSet" t="2019-01-16T11:48:45"><controller name="Unidad_Material" />
+<view id="grid1" />
+<dataField fieldName="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<move>
+  <controller name="Unidad_Material" />
+  <view id="grid1" />
+  <dataField fieldName="Creado_Por" />
+</move></c><c y="NodeSet" t="2019-01-16T11:48:55"><controller name="Unidad_Material" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="EsPorTarimaContenedoroCajaBolsaoUnidadPieza" />
+<move>
+  <controller name="Unidad_Material" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Estatus_Registro_Id" />
+</move></c><c y="NodeSet" t="2019-01-16T11:52:58"><controller name="Pasillo" />
+<view id="grid1" />
+<dataField fieldName="Rango_Nivel_Fin" />
+<after>
+  <controller name="Pasillo" />
+  <view id="grid1" />
+  <dataField fieldName="Pasillo_Vecino_Izquierda_Id" />
+</after></c><c y="NodeSet" t="2019-01-16T11:53:01"><controller name="Pasillo" />
+<view id="grid1" />
+<dataField fieldName="Pasillo_Vecino_Izquierda_Id" />
+<after>
+  <controller name="Pasillo" />
+  <view id="grid1" />
+  <dataField fieldName="Pasillo_Vecino_Derecha_Id" />
+</after></c><c y="NodeSet" t="2019-01-16T11:53:05"><controller name="Pasillo" />
+<view id="grid1" />
+<dataField fieldName="Pasillo_Vecino_Derecha_Id" />
+<after>
+  <controller name="Pasillo" />
+  <view id="grid1" />
+  <dataField fieldName="Valor_Pasillo" />
+</after></c><c y="NodeSet" t="2019-01-16T11:53:26"><controller name="Pasillo" />
+<view id="grid1" />
+<update>
+  <SortExpression>Clave_Pasillo</SortExpression>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T11:53:36"><controller name="Pasillo" />
+<copy>
+  <controller name="Pasillo" />
+  <view id="grid1" />
+</copy></c><c y="NodeSet" t="2019-01-16T11:53:45"><controller name="Pasillo" />
+<view id="v100" />
+<rename>Pasillo_LookUp_List</rename></c><c y="NodeSet" t="2019-01-16T11:54:24"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<update>
+  <FilterExpression>Estatus_Registro_Id IN (0,1)</FilterExpression>
+</update></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Rango_Columna_Inicio" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Rango_Columna_Fin" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Rango_Nivel_Inicio" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Rango_Nivel_Fin" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Pasillo_Vecino_Izquierda_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Pasillo_Vecino_Derecha_Id" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Valor_Pasillo" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2019-01-16T11:54:45"><controller name="Pasillo" />
+<view id="Pasillo_LookUp_List" />
+<dataField fieldName="Estatus_Registro_Id" />
+<delete /></c></log><log type="Application"><c y="NodeSet" t="2019-01-08T14:35:47"><page name="Material" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:35:55"><page name="Area_Servicio" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:05"><page name="Area_Entrega" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:11"><page name="Familia_Patron" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:16"><page name="Familia" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:20"><page name="Categoria" />
+<update>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:25"><page name="Producto" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:33"><page name="Orden_Produccion" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:38"><page name="Orden_Produccion_Detalle" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:43"><page name="Solicitud" />
+<update>
+  <Offline>false</Offline>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:36:50"><page name="Tipo_Almacenamiento" />
+<rename>Tipo de Almacenamiento</rename></c><c y="NodeSet" t="2019-01-08T14:37:15"><page name="Genero_Persona" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>Administrators</Roles>
+</update></c><c y="NodeSet" t="2019-01-08T14:37:22"><page name="Genero_Persona" />
+<rename>Genero de Persona</rename></c><c y="NodeSet" t="2019-01-08T14:37:28"><page name="Genero_Persona" />
+<update>
+  <Title>Genero de Persona</Title>
+</update></c><c y="NodeSet" t="2019-01-08T14:38:00"><page name="RelacionUsuarioAplicacion" />
+<rename>Relaciones Usuario Vs Aplicación</rename></c><c y="NodeSet" t="2019-01-08T14:39:59"><page name="Material" />
+<insert type="container">
+  <Flow>NewRow</Flow>
+</insert></c><c y="NodeSet" t="2019-01-08T14:40:37"><page name="Material" />
+<container id="c101" />
+<insert type="dataView">
+  <Controller>Material_Familia</Controller>
+  <View>grid1</View>
+  <Activator>Tab</Activator>
+  <Text>Familias</Text>
+  <Sequence>10</Sequence>
+  <ShowInSummary>false</ShowInSummary>
+  <MultiSelect>false</MultiSelect>
+  <ShowActionBar>true</ShowActionBar>
+  <ShowDescription>false</ShowDescription>
+  <ShowViewSelector>true</ShowViewSelector>
+  <ShowSearchBar>true</ShowSearchBar>
+  <ShowQuickFind>true</ShowQuickFind>
+  <SearchByFirstLetter>false</SearchByFirstLetter>
+  <ShowRowNumber>false</ShowRowNumber>
+  <ShowPager>Bottom</ShowPager>
+  <ShowPageSize>true</ShowPageSize>
+  <ShowModalForms>false</ShowModalForms>
+  <SearchOnStart>false</SearchOnStart>
+  <ShowDetailsInListMode>false</ShowDetailsInListMode>
+  <AutoHighlightFirstRow>false</AutoHighlightFirstRow>
+  <AutoSelectFirstRow>false</AutoSelectFirstRow>
+  <FilterSource>view1</FilterSource>
+  <FilterFields>Material_Id</FilterFields>
+  <AutoHide>Nothing</AutoHide>
+</insert></c><c y="NodeSet" t="2019-01-16T11:41:31"><page name="RelacionUsuarioAplicacion" />
+<dataView id="view5" />
+<update>
+  <FilterFields>Usuario_Aplicacion_Id</FilterFields>
+</update></c><c y="NodeSet" t="2019-01-16T11:50:24"><page name="Producto_Material" />
+<rename>Relación Producto Material</rename></c><c y="NodeSet" t="2019-01-16T11:51:09"><page name="Producto" />
+<container id="container1" />
+<insert type="dataView">
+  <Controller>Producto_Material</Controller>
+  <View>grid1</View>
+  <Activator>Tab</Activator>
+  <Text>Materiales</Text>
+  <Sequence>10</Sequence>
+  <ShowInSummary>false</ShowInSummary>
+  <MultiSelect>false</MultiSelect>
+  <ShowActionBar>true</ShowActionBar>
+  <ShowDescription>false</ShowDescription>
+  <ShowViewSelector>true</ShowViewSelector>
+  <ShowSearchBar>true</ShowSearchBar>
+  <ShowQuickFind>true</ShowQuickFind>
+  <SearchByFirstLetter>false</SearchByFirstLetter>
+  <ShowRowNumber>false</ShowRowNumber>
+  <ShowPager>Bottom</ShowPager>
+  <ShowPageSize>true</ShowPageSize>
+  <ShowModalForms>false</ShowModalForms>
+  <SearchOnStart>false</SearchOnStart>
+  <ShowDetailsInListMode>false</ShowDetailsInListMode>
+  <AutoHighlightFirstRow>false</AutoHighlightFirstRow>
+  <AutoSelectFirstRow>false</AutoSelectFirstRow>
+  <FilterSource>view1</FilterSource>
+  <FilterFields>Producto_Id</FilterFields>
+  <AutoHide>Nothing</AutoHide>
+</insert></c></log></logs>

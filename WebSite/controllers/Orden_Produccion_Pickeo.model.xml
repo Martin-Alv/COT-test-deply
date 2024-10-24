@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Orden_Produccion_Pickeo" alias="Orden_Produccion_Pickeo" created="2019-08-26T17:15:01" modified="2019-08-26T21:44:05" x="20" y="22" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Area_Servicio_" parentTableSchema="APP" parentTableName="Area_Servicio" x="1481" y="20">
+      <foreignKeyColumn columnName="Area_Servicio_Id" parentColumnName="Area_Servicio_Id" />
+    </foreignKey>
+    <foreignKey id="Producto_" parentTableSchema="APP" parentTableName="Producto" x="1028" y="123">
+      <foreignKeyColumn columnName="Producto_Id" parentColumnName="Producto_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Orden_Produccion_Pickeo_" parentTableSchema="APP" parentTableName="Estatus_Orden_Produccion_Pickeo" x="940" y="482">
+      <foreignKeyColumn columnName="Estatus_Orden_Produccion_Pickeo_Id" parentColumnName="Estatus_Orden_Produccion_Pickeo_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="37" y="634">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="682" y="195">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="488" y="381">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Enviado_Por_Solicitante" parentTableSchema="dbo" parentTableName="Usuario_V" x="546" y="185">
+      <foreignKeyColumn columnName="Enviado_Por_Solicitante_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Orden_Produccion_Pickeo_Id" fieldName="Orden_Produccion_Pickeo_Id" label="Orden Produccion Pickeo Id" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" aliasColumnName="Area_Servicio" aliasForeignKey="Area_Servicio_" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Area Servicio" foreignKey="Area_Servicio_" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" aliasColumnName="Producto_Clave" aliasForeignKey="Producto_" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" foreignKey="Producto_" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripcion" foreignKey="Producto_" />
+    <column name="Estatus_Orden_Produccion_Pickeo_Id" fieldName="Estatus_Orden_Produccion_Pickeo_Id" label="Estatus Orden Produccion Pickeo Id" aliasColumnName="Estatus_Orden_Produccion_Pickeo" aliasForeignKey="Estatus_Orden_Produccion_Pickeo_" />
+    <column name="Estatus_Orden_Produccion_Pickeo" fieldName="Estatus_Orden_Produccion_Pickeo" label="Estatus Orden Produccion Pickeo" foreignKey="Estatus_Orden_Produccion_Pickeo_" />
+    <column name="Enviado_Por_Solicitante_Id" fieldName="Enviado_Por_Solicitante_Id" label="Enviado Por Solicitante Id" aliasColumnName="Usuario_Sistema" aliasForeignKey="Enviado_Por_Solicitante" />
+    <column name="Usuario_Sistema" fieldName="Enviado_Por_Solicitante" label="Enviado Por Solicitante" foreignKey="Enviado_Por_Solicitante" />
+    <column name="Fecha_Envio_Solicitante" fieldName="Fecha_Envio_Solicitante" label="Fecha Envio Solicitante" format="g" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+  </columns>
+</dataModel>

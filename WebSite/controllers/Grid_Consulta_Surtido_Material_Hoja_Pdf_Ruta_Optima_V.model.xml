@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Consulta_Surtido_Material_Hoja_Pdf_Ruta_Optima_V" alias="Grid_Consulta_Surtido_Material_Hoja_Pdf_Ruta_Optima_V" created="2019-03-14T15:38:21" modified="2019-03-14T15:38:25" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Solicitado_Id" fieldName="Material_Solicitado_Id" label="Material Solicitado Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_QR" fieldName="Material_QR" label="Material QR" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Cantidad_Entregado_QR" fieldName="Cantidad_Entregado_QR" label="Cantidad Entregado QR" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+    <column name="Ubicacion_Origen_QR" fieldName="Ubicacion_Origen_QR" label="Ubicacion Origen QR" />
+    <column name="Clave_Tipo_Ubicacion" fieldName="Clave_Tipo_Ubicacion" label="Clave Tipo Ubicacion" />
+    <column name="Ubicacion_Destino_QR" fieldName="Ubicacion_Destino_QR" label="Ubicacion Destino QR" />
+    <column name="Surtido_Por_Id" fieldName="Surtido_Por_Id" label="Surtido Por Id" />
+  </columns>
+</dataModel>

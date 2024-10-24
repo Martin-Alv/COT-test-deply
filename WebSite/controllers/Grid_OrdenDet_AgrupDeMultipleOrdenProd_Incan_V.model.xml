@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_OrdenDet_AgrupDeMultipleOrdenProd_Incan_V" alias="Grid_OrdenDet_AgrupDeMultipleOrdenProd_Incan_V" created="2019-11-01T20:30:37" modified="2019-11-01T20:30:41" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Cantidad_Mat_Total_Para_Producir" fieldName="Cantidad_Mat_Total_Para_Producir" label="Cantidad Mat Total Para Producir" />
+    <column name="Cantidad_Mat_Solicitado_Previamente" fieldName="Cantidad_Mat_Solicitado_Previamente" label="Cantidad Mat Solicitado Previamente" />
+    <column name="Cantidad_Mat_Restante_Por_Solicitar" fieldName="Cantidad_Mat_Restante_Por_Solicitar" label="Cantidad Mat Restante Por Solicitar" />
+    <column name="Cantidad_Mat_A_Solicitar" fieldName="Cantidad_Mat_A_Solicitar" label="Cantidad Mat A Solicitar" />
+    <column name="Seleccion_Temporal_Transaccion_Id" fieldName="Seleccion_Temporal_Transaccion_Id" label="Seleccion Temporal Transaccion Id" />
+    <column name="Material_Orden_Produccion" fieldName="Material_Orden_Produccion" label="Material Orden Produccion" />
+    <column name="Material_Producto" fieldName="Material_Producto" label="Material Producto" />
+    <column name="Material_Orden_Produccion_Detalle" fieldName="Material_Orden_Produccion_Detalle" label="Material Orden Produccion Detalle" />
+    <column name="Material_Cantidad_Para_Producir" fieldName="Material_Cantidad_Para_Producir" label="Material Cantidad Para Producir" />
+    <column name="Material_Familia" fieldName="Material_Familia" label="Material Familia" />
+    <column name="Material_Area_Entrega" fieldName="Material_Area_Entrega" label="Material Area Entrega" />
+    <column name="Material_Ubicacion_Almacen" fieldName="Material_Ubicacion_Almacen" label="Material Ubicacion Almacen" />
+    <column name="Material_Ubicacion_Piso" fieldName="Material_Ubicacion_Piso" label="Material Ubicacion Piso" />
+    <column name="Material_Agrupado_De_Multiple_Orden_Produccion_Id" fieldName="Material_Agrupado_De_Multiple_Orden_Produccion_Id" label="Material Agrupado De Multiple Orden Produccion Id" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+  </columns>
+</dataModel>

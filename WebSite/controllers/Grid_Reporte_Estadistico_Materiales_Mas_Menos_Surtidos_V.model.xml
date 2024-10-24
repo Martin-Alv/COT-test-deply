@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V" alias="Grid_Reporte_Estadistico_Materiales_Mas_Menos_Surtidos_V" created="2019-05-17T16:22:31" modified="2019-05-17T16:22:58" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Fila" fieldName="Fila" label="Fila" />
+    <column name="Material_Solicitado_Id" fieldName="Material_Solicitado_Id" label="Material Solicitado Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha Solicitud" />
+    <column name="Fecha_Solicitud_Anio" fieldName="Fecha_Solicitud_Anio" label="Fecha Solicitud Anio" />
+    <column name="Fecha_Solicitud_Mes" fieldName="Fecha_Solicitud_Mes" label="Fecha Solicitud Mes" />
+    <column name="Fecha_Solicitud_Nombre_Mes" fieldName="Fecha_Solicitud_Nombre_Mes" label="Fecha Solicitud Nombre Mes" />
+    <column name="Fecha_Solicitud_Semana_Mes" fieldName="Fecha_Solicitud_Semana_Mes" label="Fecha Solicitud Semana Mes" />
+    <column name="Fecha_Solicitud_Hora" fieldName="Fecha_Solicitud_Hora" label="Fecha Solicitud Hora" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" />
+    <column name="Categoria_Id" fieldName="Categoria_Id" label="Categoria Id" />
+    <column name="SubFamilia_Clave" fieldName="SubFamilia_Clave" label="Sub Familia Clave" />
+    <column name="Cantidad_Solicitud" fieldName="Cantidad_Solicitud" label="Cantidad Solicitud" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Area Entrega" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Area Servicio" />
+    <column name="Categoria_Solicitud_Id" fieldName="Categoria_Solicitud_Id" label="Categoria Solicitud Id" />
+    <column name="Categoria_Solicitud" fieldName="Categoria_Solicitud" label="Categoria Solicitud" />
+    <column name="Tipo_Solicitud_Id" fieldName="Tipo_Solicitud_Id" label="Tipo Solicitud Id" />
+    <column name="Tipo_Solicitud" fieldName="Tipo_Solicitud" label="Tipo Solicitud" />
+    <column name="Unidad_Material_Solicitado_Id" fieldName="Unidad_Material_Solicitado_Id" label="Unidad Material Solicitado Id" />
+    <column name="Unidad_Material_Solicitado" fieldName="Unidad_Material_Solicitado" label="Unidad Material Solicitado" />
+    <column name="Unidad_Material_Entregado_Id" fieldName="Unidad_Material_Entregado_Id" label="Unidad Material Entregado Id" />
+    <column name="Unidad_Material_Entregado" fieldName="Unidad_Material_Entregado" label="Unidad Material Entregado" />
+    <column name="Solicitado_Por_Id" fieldName="Solicitado_Por_Id" label="Solicitado Por Id" />
+    <column name="Solicitado_Por" fieldName="Solicitado_Por" label="Solicitado Por" />
+    <column name="Entregado_Por_Id" fieldName="Entregado_Por_Id" label="Entregado Por Id" />
+    <column name="Entregado_Por" fieldName="Entregado_Por" label="Entregado Por" />
+  </columns>
+</dataModel>

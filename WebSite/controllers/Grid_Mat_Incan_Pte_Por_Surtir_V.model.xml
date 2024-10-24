@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Mat_Incan_Pte_Por_Surtir_V" alias="Grid_Mat_Incan_Pte_Por_Surtir_V" created="2019-10-18T16:56:38" modified="2019-10-20T08:11:12" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Orden_Solicitud" fieldName="Orden_Solicitud" label="Orden Solicitud" />
+    <column name="Orden_Material" fieldName="Orden_Material" label="Orden Material" />
+    <column name="Orden_Solicitado_Por" fieldName="Orden_Solicitado_Por" label="Orden Solicitado Por" />
+    <column name="Orden_Material_Id" fieldName="Orden_Material_Id" label="Orden Material Id" />
+  </columns>
+</dataModel>

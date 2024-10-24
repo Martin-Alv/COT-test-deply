@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Estatus_Procesamiento" alias="Estatus_Procesamiento" created="2019-07-30T18:57:51" modified="2019-07-30T18:57:55" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Estatus_Procesamiento_Id" fieldName="Estatus_Procesamiento_Id" label="Estatus Procesamiento Id" />
+    <column name="Estatus_Procesamiento" fieldName="Estatus_Procesamiento" label="Estatus Procesamiento" />
+    <column name="Estatus_Procesamiento_Orden" fieldName="Estatus_Procesamiento_Orden" label="Estatus Procesamiento Orden" />
+    <column name="Significa_Pendiente_Por_Procesar" fieldName="Significa_Pendiente_Por_Procesar" label="Significa Pendiente Por Procesar" />
+    <column name="Significa_Procesado_Exitosamente" fieldName="Significa_Procesado_Exitosamente" label="Significa Procesado Exitosamente" />
+  </columns>
+</dataModel>

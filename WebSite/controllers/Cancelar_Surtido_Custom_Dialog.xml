@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Cancelar_Surtido_Custom_Dialog" conflictDetection="overwriteChanges" handler="eaton.Rules.Cancelar_Surtido_Custom_DialogBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <fields>
+    <field name="Comentario" type="String" label="Comentario" allowNulls="false" />
+    <field name="Motivo_Cancelacion_Id" type="Int32" label="Motivo de Cancelación" allowNulls="false">
+      <items style="Lookup" dataController="Motivo_Cancelacion" dataView="Motivo_Cancelacion_LookUp_List" dataTextField="Motivo_Cancelacion" dataValueField="Motivo_Cancelacion_Id" />
+    </field>
+  </fields>
+  <views />
+  <actions />
+</dataController>

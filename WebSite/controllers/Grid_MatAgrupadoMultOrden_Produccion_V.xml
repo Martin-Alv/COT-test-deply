@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_MatAgrupadoMultOrden_Produccion_V" conflictDetection="overwriteChanges" label="Grid Mat Agrupado Mult Orden Produccion V" handler="eaton.Rules.Grid_MatAgrupadoMultOrden_Produccion_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Id" "Material_Id"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material" "Material"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Descripcion" "Material_Descripcion"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Cantidad_Mat_Total_Para_Producir" "Cantidad_Mat_Total_Para_Producir"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Cantidad_Mat_Solicitado_Previamente" "Cantidad_Mat_Solicitado_Previamente"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Cantidad_Mat_Restante_Por_Solicitar" "Cantidad_Mat_Restante_Por_Solicitar"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Cantidad_Mat_A_Solicitar" "Cantidad_Mat_A_Solicitar"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Seleccion_Temporal_Transaccion_Id" "Seleccion_Temporal_Transaccion_Id"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Orden_Produccion" "Material_Orden_Produccion"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Producto" "Material_Producto"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Orden_Produccion_Detalle" "Material_Orden_Produccion_Detalle"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Cantidad_Para_Producir" "Material_Cantidad_Para_Producir"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Familia" "Material_Familia"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Area_Entrega" "Material_Area_Entrega"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Ubicacion_Almacen" "Material_Ubicacion_Almacen"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Ubicacion_Piso" "Material_Ubicacion_Piso"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Material_Agrupado_De_Multiple_Orden_Produccion_Id" "Material_Agrupado_De_Multiple_Orden_Produccion_Id"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Tipo_Seleccion_Temporal_Id" "Tipo_Seleccion_Temporal_Id"
+	,"Grid_MatAgrupadoMultOrden_Produccion_V"."Area_Entrega_Id" "Area_Entrega_Id"
+from "dbo"."Grid_MatAgrupadoMultOrden_Produccion_V" "Grid_MatAgrupadoMultOrden_Produccion_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Id" type="Int64" allowNulls="false" label="Material Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" showInSummary="true" readOnly="true" />
+    <field name="Cantidad_Mat_Total_Para_Producir" type="Decimal" label="Cantidad Mat Total Para Producir" showInSummary="true" readOnly="true" />
+    <field name="Cantidad_Mat_Solicitado_Previamente" type="Decimal" label="Cantidad Mat Solicitado Previamente" showInSummary="true" readOnly="true" />
+    <field name="Cantidad_Mat_Restante_Por_Solicitar" type="Decimal" label="Cantidad Mat Restante Por Solicitar" readOnly="true" />
+    <field name="Cantidad_Mat_A_Solicitar" type="Decimal" label="Cantidad Mat A Solicitar" />
+    <field name="Seleccion_Temporal_Transaccion_Id" type="Guid" allowNulls="false" label="Seleccion Temporal Transaccion Id" isPrimaryKey="true" />
+    <field name="Material_Orden_Produccion" type="String" allowQBE="false" allowSorting="false" label="Material Orden Produccion" readOnly="true" />
+    <field name="Material_Producto" type="String" allowQBE="false" allowSorting="false" label="Material Producto" readOnly="true" />
+    <field name="Material_Orden_Produccion_Detalle" type="String" allowQBE="false" allowSorting="false" label="Material Orden Produccion Detalle" readOnly="true" />
+    <field name="Material_Cantidad_Para_Producir" type="String" allowQBE="false" allowSorting="false" label="Material Cantidad Para Producir" readOnly="true" />
+    <field name="Material_Familia" type="String" allowQBE="false" allowSorting="false" label="Material Familia" readOnly="true" />
+    <field name="Material_Area_Entrega" type="String" allowQBE="false" allowSorting="false" label="Material Area Entrega" readOnly="true" />
+    <field name="Material_Ubicacion_Almacen" type="String" allowQBE="false" allowSorting="false" label="Material Ubicacion Almacen" readOnly="true" htmlEncode="false" />
+    <field name="Material_Ubicacion_Piso" type="String" allowQBE="false" allowSorting="false" label="Material Ubicacion Piso" readOnly="true" htmlEncode="false" />
+    <field name="Material_Agrupado_De_Multiple_Orden_Produccion_Id" type="Int64" allowNulls="false" label="Material Agrupado De Multiple Orden Produccion Id" readOnly="true" />
+    <field name="Cantidad_Solicitado" type="Decimal" allowNulls="false" label="Cantidad Solicitado" readOnly="true" />
+    <field name="Tipo_Seleccion_Temporal_Id" type="Int32" allowNulls="false" label="Tipo Seleccion Temporal Id" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id">
+      <items style="Lookup" dataController="Area_Entrega" dataView="Area_Entrega_LookUp_List" dataTextField="Area_Entrega" dataValueField="Area_Entrega_Id" pageSize="15" copy="Area_Entrega=Area_Entrega" />
+    </field>
+    <field name="Area_Entrega" type="String" label="Area Entrega" isVirtual="true" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Agrupado De Multiples Ordenes Producción" tags="modal-fullscreen,&#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select,&#xD;&#xA;view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-calendar-disabled">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" columns="15" />
+        <dataField fieldName="Material_Descripcion" columns="15" />
+        <dataField fieldName="Cantidad_Mat_Total_Para_Producir" columns="15" />
+        <dataField fieldName="Cantidad_Mat_Solicitado_Previamente" columns="15" />
+        <dataField fieldName="Cantidad_Mat_Restante_Por_Solicitar" columns="15" />
+        <dataField fieldName="Cantidad_Mat_A_Solicitar" columns="15" />
+        <dataField fieldName="Seleccion_Temporal_Transaccion_Id" columns="15" />
+        <dataField fieldName="Material_Orden_Produccion" columns="15" />
+        <dataField fieldName="Material_Producto" rows="5" columns="15" />
+        <dataField fieldName="Material_Orden_Produccion_Detalle" rows="5" hidden="true" />
+        <dataField fieldName="Material_Cantidad_Para_Producir" rows="5" columns="15" />
+        <dataField fieldName="Material_Familia" rows="5" hidden="true" />
+        <dataField fieldName="Material_Area_Entrega" rows="5" hidden="true" />
+        <dataField fieldName="Material_Ubicacion_Almacen" rows="5" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Piso" rows="5" columns="15" />
+        <dataField fieldName="Material_Agrupado_De_Multiple_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Seleccion_Temporal_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Material Agrupado De Multiples Ordenes Produccion">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material Agrupado De Multiples Ordenes Produccion" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material" readOnly="true" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Mat_Total_Para_Producir" columns="15" />
+            <dataField fieldName="Cantidad_Mat_Solicitado_Previamente" columns="15" />
+            <dataField fieldName="Cantidad_Mat_Restante_Por_Solicitar" columns="15" />
+            <dataField fieldName="Cantidad_Mat_A_Solicitar" columns="15" />
+            <dataField fieldName="Seleccion_Temporal_Transaccion_Id" columns="15" readOnly="true" hidden="true" />
+            <dataField fieldName="Material_Orden_Produccion" rows="5" />
+            <dataField fieldName="Material_Producto" rows="5" />
+            <dataField fieldName="Material_Orden_Produccion_Detalle" rows="5" />
+            <dataField fieldName="Material_Cantidad_Para_Producir" rows="5" />
+            <dataField fieldName="Material_Familia" rows="5" />
+            <dataField fieldName="Material_Area_Entrega" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Almacen" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Piso" rows="5" />
+            <dataField fieldName="Material_Agrupado_De_Multiple_Orden_Produccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" hidden="true" />
+            <dataField fieldName="Tipo_Seleccion_Temporal_Id" columns="15" readOnly="true" hidden="true" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" aliasFieldName="Area_Entrega" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Mat Agrupado Mult Orden Produccion V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Cantidad_Mat_Total_Para_Producir" columns="15" />
+            <dataField fieldName="Cantidad_Mat_Solicitado_Previamente" columns="15" />
+            <dataField fieldName="Cantidad_Mat_Restante_Por_Solicitar" columns="15" />
+            <dataField fieldName="Cantidad_Mat_A_Solicitar" columns="15" />
+            <dataField fieldName="Seleccion_Temporal_Transaccion_Id" columns="15" />
+            <dataField fieldName="Material_Orden_Produccion" rows="5" />
+            <dataField fieldName="Material_Producto" rows="5" />
+            <dataField fieldName="Material_Orden_Produccion_Detalle" rows="5" />
+            <dataField fieldName="Material_Cantidad_Para_Producir" rows="5" />
+            <dataField fieldName="Material_Familia" rows="5" />
+            <dataField fieldName="Material_Area_Entrega" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Almacen" rows="5" />
+            <dataField fieldName="Material_Ubicacion_Piso" rows="5" />
+            <dataField fieldName="Material_Agrupado_De_Multiple_Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Tipo_Seleccion_Temporal_Id" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="hidden" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Guardar" cssClass="material-icon-save" whenLastCommandName="Edit" id="a100" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" headerText="Actualizar" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Custom" commandArgument="ExecJS02" headerText="Desviación de Material" whenView="grid1" id="a100" whenKeySelected="true" cssClass="material-icon-swap-horiz" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS03" headerText="Colocar Nota/Comentario/Doc/Img" whenView="grid1" id="a101" whenKeySelected="true" cssClass="material-icon-note-add" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS04" headerText="Crear Solicitud" whenView="grid1" id="a102" whenKeySelected="true" cssClass="material-icon-assignment" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r101" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="After" name="Valida_Y_Llama_A_ExecCS01"><![CDATA[//this.preventDefault();
+
+if([Cantidad_Mat_A_Solicitar] == 0){
+	this.preventDefault();
+  	//alertify.alert("Ingrese cantidad de mat. válido para solicitar").setHeader("Mensaje");   	
+   	//focus and show message next to field
+    this.result.focus('Cantidad_Mat_A_Solicitar', 'Ingrese cantidad de material válido para solicitar.');
+  	//$("#Cantidad_Material_A_Solicitar").focus();
+}
+else 
+if([Cantidad_Mat_A_Solicitar] > [Cantidad_Mat_Restante_Por_Solicitar]){
+  if(debug == 1){
+  console.log("> Cantidad_Mat_A_Solicitar: " + [Cantidad_Mat_A_Solicitar]);
+  console.log("Cantidad_Mat_Restante_Por_Solicitar: " + [Cantidad_Mat_Restante_Por_Solicitar]);
+}
+  this.preventDefault();
+  	//alertify.alert("La cantidad a solicitar no debe ser mayor a la cantidad restante por solicitar.").setHeader("Mensaje");   	;
+  	//$("#Cantidad_Material_A_Solicitar").focus();
+  	this.result.focus('Cantidad_Mat_A_Solicitar', 'La cantidad a solicitar no debe ser mayor a la cantidad restante por solicitar.');
+}
+else
+	{
+      // Ejecutamos BR ExecCS01
+      $app.execute({
+        controller: 'Grid_MatAgrupadoMultOrden_Produccion_V'
+        , command: 'Custom'
+        , argument: 'ExecCS01'
+        , values: [
+            { name: 'Material_Agrupado_De_Multiple_Orden_Produccion_Id', newValue: [Material_Agrupado_De_Multiple_Orden_Produccion_Id] }  
+          ,{ name: 'Seleccion_Temporal_Transaccion_Id', newValue: [Seleccion_Temporal_Transaccion_Id] }  
+          	,{ name: 'Material_Id', newValue: [Material_Id] }
+            ,{ name: 'Cantidad_Mat_A_Solicitar', newValue: [Cantidad_Mat_A_Solicitar] }
+          ,{ name: 'Material_Orden_Produccion', newValue: [Material_Orden_Produccion] }
+          ,{ name: 'Material_Producto', newValue: [Material_Producto] }
+          ,{ name: 'Material_Orden_Produccion_Detalle', newValue: [Material_Orden_Produccion_Detalle] }
+          ,{ name: 'Area_Entrega_Id', newValue: [Area_Entrega_Id] }
+          ]
+        ,done: function (result){
+          eval(result.clientScript); 
+          fnDebug("ExecCS01 result : ")
+          fnDebug(result)                      	
+          }                   
+      })
+	}]]></rule>
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Administrar_Material_Agrupado_De_Multiple_Orden_Prod" />
+    <rule id="r103" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="Crear_Solicitud_Material_De_Mat_Agrupado" />
+    <rule id="r104" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="After" name="Abrir_CreateForm_Desviacion_Material"><![CDATA[/*this.preventDefault();
+$app.touch.show({
+    controller: 'Desviacion_Material',
+    startCommand: 'New',
+    startArgument: 'createForm1',
+    defaultValues: [
+      { name: 'Orden_Produccion_Id', value:[Orden_Produccion_Id]}
+      ,{ name: 'Numero_Orden_Produccion', value:[Numero_Orden_Produccion]}
+      ,{ name: 'Orden_Produccion_Detalle_Id', value:[Orden_Produccion_Detalle_Id]}
+      ,{ name: 'Familia_Id', value:[Familia_Id]}
+      ,{ name: 'Familia_Descripcion', value:[Familia_Descripcion]}
+      ,{ name: 'Producto_Id', value:[Producto_Id]}
+      ,{ name: 'Producto_Descripcion', value:[Producto_Descripcion]}
+      ,{ name: 'Material_Id', value:[Material_Id]}
+      ,{name: 'Material',value:[Material]} 
+    ]
+  ,filter:[
+    { name: 'Orden_Produccion_Id', value:[Orden_Produccion_Id]}
+    ,{ name: 'Numero_Orden_Produccion', value:[Numero_Orden_Produccion]}
+    ,{ name: 'Orden_Produccion_Detalle_Id', value:[Orden_Produccion_Detalle_Id]} 
+    ,{ name: 'Familia_Id', value:[Familia_Id]}
+    ,{ name: 'Familia_Descripcion', value:[Familia_Descripcion]}
+    ,{ name: 'Producto_Id', value:[Producto_Id]}
+    ,{ name: 'Producto_Descripcion', value:[Producto_Descripcion]}
+  ]
+});
+*/]]></rule>
+    <rule id="r105" commandName="Custom" commandArgument="ExecJS03" type="JavaScript" phase="After" name="Abrir_CreateForm_Documento_Comentario"><![CDATA[/*this.preventDefault();
+$app.touch.show({
+    controller: 'Documento_Comentario',
+    startCommand: 'New',
+    startArgument: 'createForm1',
+    defaultValues: [
+      { name: 'Orden_Produccion_Id', value:[Orden_Produccion_Id]}      
+      ,{ name: 'Orden_Produccion_Detalle_Id', value:[Orden_Produccion_Detalle_Id]}
+      ,{ name: 'Producto_Id', value:[Producto_Id]}      
+      ,{ name: 'Material_Id', value:[Material_Id]}       
+      ,{ name: 'Tipo_Comentario_Id', value: 1} // Comentario de solicitante
+      ,{ name: 'Registrado_Desde_Id', value: 1} // Registrado desde Materiales Pendientes por Solicitar por Orden de Produccion
+    ]
+  ,filter:[
+    { name: 'Orden_Produccion_Id', value:[Orden_Produccion_Id]}    
+    ,{ name: 'Orden_Produccion_Detalle_Id', value:[Orden_Produccion_Detalle_Id]}     
+    ,{ name: 'Producto_Id', value:[Producto_Id]}    
+  ]
+});
+*/]]></rule>
+    <rule id="r100" commandName="Custom" commandArgument="ExecJS04" type="JavaScript" phase="Before" name="Valida_Y_Llama_Crear_Solicitud"><![CDATA[CrearSolicitudMaterialDeMatAgrupado($app.touch.dataView()._selectedKeyList);]]></rule>
+  </businessRules>
+</dataController>

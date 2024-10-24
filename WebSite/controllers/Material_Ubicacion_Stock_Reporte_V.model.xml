@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Material_Ubicacion_Stock_Reporte_V" alias="Material_Ubicacion_Stock_Reporte_V" created="2021-04-10T11:42:39" modified="2021-04-10T11:43:21" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Clave_Tipo_Ubicacion" fieldName="Clave_Tipo_Ubicacion" label="Clave Tipo Ubicacion" />
+    <column name="Tipo_Almacenamiento" fieldName="Tipo_Almacenamiento" label="Tipo Almacenamiento" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+    <column name="Total_Stock" fieldName="Total_Stock" label="Total Stock" />
+  </columns>
+</dataModel>

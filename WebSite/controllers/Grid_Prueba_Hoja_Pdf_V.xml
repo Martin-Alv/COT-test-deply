@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Prueba_Hoja_Pdf_V" conflictDetection="overwriteChanges" label="Grid Prueba Hoja Pdf V" handler="eaton.Rules.Grid_Prueba_Hoja_Pdf_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Prueba_Hoja_Pdf_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Prueba_Hoja_Pdf_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Prueba_Hoja_Pdf_V"."Material" "Material"
+	,"Grid_Prueba_Hoja_Pdf_V"."Material_QR" "Material_QR"
+	,"Grid_Prueba_Hoja_Pdf_V"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Grid_Prueba_Hoja_Pdf_V"."Cantidad_Entregado_QR" "Cantidad_Entregado_QR"
+	,"Grid_Prueba_Hoja_Pdf_V"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Grid_Prueba_Hoja_Pdf_V"."Ubicacion_Origen_QR" "Ubicacion_Origen_QR"
+	,"Grid_Prueba_Hoja_Pdf_V"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Grid_Prueba_Hoja_Pdf_V"."Ubicacion_Destino_QR" "Ubicacion_Destino_QR"
+	,"Grid_Prueba_Hoja_Pdf_V"."Surtido_Por_Id" "Surtido_Por_Id"
+	,"Grid_Prueba_Hoja_Pdf_V"."Material_Ubicacion_Almacenamiento_De_Surtido_Id" "Material_Ubicacion_Almacenamiento_De_Surtido_Id"
+from "dbo"."Grid_Prueba_Hoja_Pdf_V" "Grid_Prueba_Hoja_Pdf_V"
+]]></text>
+    </command>
+    <command type="Text" id="Grid_Prueba_Hoja_Pdf_V_1" custom="false">
+      <text><![CDATA[SELECT [Ruta_Optima_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Material_QR]
+      ,[Cantidad_Entregado]
+      ,[Cantidad_Entregado_QR]
+      ,[Ubicacion_Almacenamiento]
+      ,[Ubicacion_Origen_QR]
+      ,[Clave_Tipo_Ubicacion]
+      ,[Ubicacion_Destino_QR]
+      ,[Surtido_Por_Id]
+      ,[Material_Ubicacion_Almacenamiento_De_Surtido_Id]
+  FROM [dbo].[Grid_Prueba_Hoja_Pdf_V_1]]]></text>
+    </command>
+    <command type="Text" id="Grid_Prueba_Hoja_Pdf_V_2" custom="false">
+      <text><![CDATA[SELECT [Ruta_Optima_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Material_QR]
+      ,[Cantidad_Entregado]
+      ,[Cantidad_Entregado_QR]
+      ,[Ubicacion_Almacenamiento]
+      ,[Ubicacion_Origen_QR]
+      ,[Clave_Tipo_Ubicacion]
+      ,[Ubicacion_Destino_QR]
+      ,[Surtido_Por_Id]
+      ,[Material_Ubicacion_Almacenamiento_De_Surtido_Id]
+  FROM [dbo].[Grid_Prueba_Hoja_Pdf_V_2]]]></text>
+    </command>
+    <command type="Text" id="Grid_Prueba_Hoja_Pdf_V_3" custom="false">
+      <text><![CDATA[SELECT [Ruta_Optima_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Material_QR]
+      ,[Cantidad_Entregado]
+      ,[Cantidad_Entregado_QR]
+      ,[Ubicacion_Almacenamiento]
+      ,[Ubicacion_Origen_QR]
+      ,[Clave_Tipo_Ubicacion]
+      ,[Ubicacion_Destino_QR]
+      ,[Surtido_Por_Id]
+      ,[Material_Ubicacion_Almacenamiento_De_Surtido_Id]
+  FROM [dbo].[Grid_Prueba_Hoja_Pdf_V_3]]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Ruta Optima Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" showInSummary="true" />
+    <field name="Material_QR" type="String" allowQBE="false" allowSorting="false" label="Material QR" showInSummary="true" htmlEncode="false" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" showInSummary="true" />
+    <field name="Cantidad_Entregado_QR" type="String" allowQBE="false" allowSorting="false" label="Cantidad Entregado QR" htmlEncode="false" />
+    <field name="Ubicacion_Almacenamiento" type="String" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Ubicacion_Origen_QR" type="String" allowQBE="false" allowSorting="false" label="Ubicacion Origen QR" htmlEncode="false" />
+    <field name="Clave_Tipo_Ubicacion" type="Int32" allowNulls="false" label="Clave Tipo Ubicacion" />
+    <field name="Ubicacion_Destino_QR" type="String" allowQBE="false" allowSorting="false" label="Ubicacion Destino QR" htmlEncode="false" />
+    <field name="Surtido_Por_Id" type="Guid" allowNulls="false" label="Surtido Por Id" />
+    <field name="Material_Ubicacion_Almacenamiento_De_Surtido_Id" type="Int64" allowNulls="false" label="Material Ubicacion Almacenamiento De Surtido Id" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Grid Prueba Hoja Pdf V">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_QR" rows="5" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado_QR" rows="5" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Prueba Hoja Pdf V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Prueba Hoja Pdf V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_QR" rows="5" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+            <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+            <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+            <dataField fieldName="Surtido_Por_Id" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Prueba Hoja Pdf V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Material_QR" rows="5" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+            <dataField fieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+            <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+            <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+            <dataField fieldName="Surtido_Por_Id" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Grid_Prueba_Hoja_Pdf_V_1" type="Grid" commandId="Grid_Prueba_Hoja_Pdf_V_1" label="Grid Prueba Hoja Pdf V - Barcodes 128c Cant Entregado PNG" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_QR" rows="5" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+      </dataFields>
+    </view>
+    <view id="Grid_Prueba_Hoja_Pdf_V_2" type="Grid" commandId="Grid_Prueba_Hoja_Pdf_V_2" label="Grid Prueba Hoja Pdf V - Barcodes 128c Cant Entregado JPG" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_QR" rows="5" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+      </dataFields>
+    </view>
+    <view id="Grid_Prueba_Hoja_Pdf_V_3" type="Grid" commandId="Grid_Prueba_Hoja_Pdf_V_3" label="Grid Prueba Hoja Pdf V - Metaflor c128 Cant Entregado" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Material_QR" rows="5" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Cantidad_Entregado_QR" rows="5" />
+        <dataField fieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Origen_QR" rows="5" />
+        <dataField fieldName="Clave_Tipo_Ubicacion" columns="15" />
+        <dataField fieldName="Ubicacion_Destino_QR" rows="5" />
+        <dataField fieldName="Surtido_Por_Id" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Report" commandArgument="ExecCS01" headerText="Imprimir Hoja PDF" cssClass="material-icon-print" id="a100" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Report" commandArgument="ExecCS01" type="Code" phase="Execute" name="Imprimir_PDF" />
+  </businessRules>
+</dataController>

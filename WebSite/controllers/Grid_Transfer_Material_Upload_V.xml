@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Transfer_Material_Upload_V" conflictDetection="overwriteChanges" label="Grid Transfer Material Upload V" handler="eaton.Rules.Grid_Transfer_Material_Upload_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Transfer_Material_Upload_V"."Movimiento_Material_Upload_Id" "Movimiento_Material_Upload_Id"
+	,"Grid_Transfer_Material_Upload_V"."Movimiento_Id" "Movimiento_Id"
+	,"Grid_Transfer_Material_Upload_V"."Movimiento_Detalle_Id" "Movimiento_Detalle_Id"
+	,"Grid_Transfer_Material_Upload_V"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Id" "Transferencia_Material_Id"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material" "Transferencia_Material"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Descripcion" "Transferencia_Material_Descripcion"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Cantidad" "Transferencia_Cantidad"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material" "Last_Transferencia_Material"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material_Descripcion" "Last_Transferencia_Material_Descripcion"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Cantidad" "Last_Transferencia_Cantidad"
+	,"Grid_Transfer_Material_Upload_V"."Es_Actualizado" "Es_Actualizado"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Grid_Transfer_Material_Upload_V"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Grid_Transfer_Material_Upload_V"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Grid_Transfer_Material_Upload_V"."Mensaje_Amigable_Usuario" "Mensaje_Amigable_Usuario"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Registro" "Estatus_Registro"
+	,"Grid_Transfer_Material_Upload_V"."Creado_Por_Id" "Creado_Por_Id"
+	,"Grid_Transfer_Material_Upload_V"."Creado_Por" "Creado_Por"
+	,"Grid_Transfer_Material_Upload_V"."Actualizado_Por_Id" "Actualizado_Por_Id"
+	,"Grid_Transfer_Material_Upload_V"."Actualizado_Por" "Actualizado_Por"
+	,"Grid_Transfer_Material_Upload_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Transfer_Material_Upload_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Ubicacion_Origen" "Transferencia_Material_Ubicacion_Origen"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Ubicacion_Destino" "Transferencia_Material_Ubicacion_Destino"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material_Ubicacion_Origen" "Last_Transferencia_Material_Ubicacion_Origen"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material_Ubicacion_Destino" "Last_Transferencia_Material_Ubicacion_Destino"
+from "dbo"."Grid_Transfer_Material_Upload_V" "Grid_Transfer_Material_Upload_V"
+]]></text>
+    </command>
+    <command type="Text" id="Grid_Transfer_Material_Upload_V" custom="false" tableName="Movimiento_Material_Upload">
+      <text><![CDATA[select
+	"Grid_Transfer_Material_Upload_V"."Movimiento_Material_Upload_Id" "Movimiento_Material_Upload_Id"
+	,"Grid_Transfer_Material_Upload_V"."Movimiento_Id" "Movimiento_Id"
+	,"Grid_Transfer_Material_Upload_V"."Movimiento_Detalle_Id" "Movimiento_Detalle_Id"
+	,"Grid_Transfer_Material_Upload_V"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Id" "Transferencia_Material_Id"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material" "Transferencia_Material"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Descripcion" "Transferencia_Material_Descripcion"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Cantidad" "Transferencia_Cantidad"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Ubicacion_Origen" "Transferencia_Material_Ubicacion_Origen"
+	,"Grid_Transfer_Material_Upload_V"."Transferencia_Material_Ubicacion_Destino" "Transferencia_Material_Ubicacion_Destino"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material" "Last_Transferencia_Material"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material_Descripcion" "Last_Transferencia_Material_Descripcion"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Cantidad" "Last_Transferencia_Cantidad"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material_Ubicacion_Origen" "Last_Transferencia_Material_Ubicacion_Origen"
+	,"Grid_Transfer_Material_Upload_V"."Last_Transferencia_Material_Ubicacion_Destino" "Last_Transferencia_Material_Ubicacion_Destino"
+	,"Grid_Transfer_Material_Upload_V"."Es_Actualizado" "Es_Actualizado"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Grid_Transfer_Material_Upload_V"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Grid_Transfer_Material_Upload_V"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Grid_Transfer_Material_Upload_V"."Mensaje_Amigable_Usuario" "Mensaje_Amigable_Usuario"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Grid_Transfer_Material_Upload_V"."Estatus_Registro" "Estatus_Registro"
+	,"Grid_Transfer_Material_Upload_V"."Creado_Por_Id" "Creado_Por_Id"
+	,"Grid_Transfer_Material_Upload_V"."Creado_Por" "Creado_Por"
+	,"Grid_Transfer_Material_Upload_V"."Actualizado_Por_Id" "Actualizado_Por_Id"
+	,"Grid_Transfer_Material_Upload_V"."Actualizado_Por" "Actualizado_Por"
+	,"Grid_Transfer_Material_Upload_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Transfer_Material_Upload_V"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+from "dbo"."Grid_Transfer_Material_Upload_V" "Grid_Transfer_Material_Upload_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Movimiento_Material_Upload_Id" type="Int64" label="Movimiento Material Upload Id" showInSummary="true" readOnly="true" isPrimaryKey="true" />
+    <field name="Movimiento_Id" type="Int64" allowNulls="false" label="Movimiento Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Movimiento_Detalle_Id" type="Int64" allowNulls="false" label="Movimiento Detalle Id" readOnly="true" showInSummary="true" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" label="Tipo Movimiento Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Transferencia_Material_Id" type="Int64" allowNulls="false" label="Transferencia Material Id" showInSummary="true" />
+    <field name="Transferencia_Material" type="String" label="Material" length="250" />
+    <field name="Transferencia_Material_Descripcion" type="String" allowNulls="false" label="Material Descripcion" length="250" />
+    <field name="Transferencia_Cantidad" type="Decimal" label="Cantidad" />
+    <field name="Last_Transferencia_Material" type="String" label="Last Transferencia Material" length="250" />
+    <field name="Last_Transferencia_Material_Descripcion" type="String" label="Last Transferencia Material Descripcion" length="250" />
+    <field name="Last_Transferencia_Cantidad" type="Decimal" label="Last Transferencia Cantidad" />
+    <field name="Es_Actualizado" type="Boolean" allowNulls="false" label="Es Actualizado" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" allowNulls="false" label="Estatus Procesamiento Id" />
+    <field name="Estatus_Procesamiento" type="String" allowNulls="false" label="Estatus Procesamiento" length="150" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" label="Mensaje Sistema Id" />
+    <field name="Mensaje_Sistema" type="String" allowNulls="false" label="Mensaje Sistema" length="250" />
+    <field name="Mensaje_Amigable_Usuario" type="String" allowNulls="false" label="Mensaje Sistema" length="250" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" dataTextField="Estatus_Registro" dataValueField="Estatus_Registro_Id" />
+    </field>
+    <field name="Estatus_Registro" type="String" allowNulls="false" label="Estatus Registro" length="150" isVirtual="true" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" label="Creado Por Id" />
+    <field name="Creado_Por" type="String" allowNulls="false" label="Creado Por" length="256" />
+    <field name="Actualizado_Por_Id" type="Guid" allowNulls="false" label="Actualizado Por Id" />
+    <field name="Actualizado_Por" type="String" allowNulls="false" label="Actualizado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Creacion" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Ultima Actualizacion" />
+    <field name="Transferencia_Material_Ubicacion_Origen" type="String" label="Transferencia Material Ubicacion Origen" length="250" />
+    <field name="Transferencia_Material_Ubicacion_Destino" type="String" label="Transferencia Material Ubicacion Destino" length="250" />
+    <field name="Last_Transferencia_Material_Ubicacion_Origen" type="String" label="Last Transferencia Material Ubicacion Origen" length="250" />
+    <field name="Last_Transferencia_Material_Ubicacion_Destino" type="String" label="Last Transferencia Material Ubicacion Destino" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="Grid_Transfer_Material_Upload_V" label="Carga de Materiales para Transferencia" reportTemplate="true">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Movimiento_Material_Upload_Id" columns="15" hidden="true" />
+        <dataField fieldName="Movimiento_Id" columns="15" />
+        <dataField fieldName="Movimiento_Detalle_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Movimiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Transferencia_Material_Id" columns="15" hidden="true" />
+        <dataField fieldName="Transferencia_Material" />
+        <dataField fieldName="Transferencia_Material_Descripcion" />
+        <dataField fieldName="Transferencia_Cantidad" columns="15" />
+        <dataField fieldName="Transferencia_Material_Ubicacion_Origen" />
+        <dataField fieldName="Transferencia_Material_Ubicacion_Destino" />
+        <dataField fieldName="Last_Transferencia_Material" hidden="true" />
+        <dataField fieldName="Last_Transferencia_Material_Descripcion" hidden="true" />
+        <dataField fieldName="Last_Transferencia_Cantidad" columns="15" hidden="true" />
+        <dataField fieldName="Es_Actualizado" hidden="true" />
+        <dataField fieldName="Estatus_Procesamiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+        <dataField fieldName="Mensaje_Sistema" hidden="true" />
+        <dataField fieldName="Mensaje_Amigable_Usuario" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Registro" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Last_Transferencia_Material_Ubicacion_Origen" hidden="true" />
+        <dataField fieldName="Last_Transferencia_Material_Ubicacion_Destino" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="Grid_Transfer_Material_Upload_V" label="Transferencia Material ">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Transferencia Material " flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Movimiento_Material_Upload_Id" columns="15" hidden="true" />
+            <dataField fieldName="Transferencia_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Transferencia_Material" />
+            <dataField fieldName="Transferencia_Material_Descripcion" />
+            <dataField fieldName="Transferencia_Cantidad" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Transferencia_Material_Ubicacion_Origen" />
+            <dataField fieldName="Transferencia_Material_Ubicacion_Destino" />
+            <dataField fieldName="Last_Transferencia_Material_Ubicacion_Origen" hidden="true" />
+            <dataField fieldName="Last_Transferencia_Material_Ubicacion_Destino" hidden="true" />
+            <dataField fieldName="Actualizado_Por_Id" columns="15" hidden="true" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="Grid_Transfer_Material_Upload_V" label="Agregar Transferencia Material">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Movimiento_Id" columns="15" />
+            <dataField fieldName="Tipo_Movimiento_Id" columns="15" hidden="true" />
+            <dataField fieldName="Transferencia_Material_Id" columns="15" hidden="true" />
+            <dataField fieldName="Transferencia_Material" />
+            <dataField fieldName="Transferencia_Cantidad" columns="15" />
+            <dataField fieldName="Es_Actualizado" hidden="true" />
+            <dataField fieldName="Estatus_Procesamiento_Id" columns="15" hidden="true" />
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+            <dataField fieldName="Actualizado_Por_Id" columns="15" hidden="true" />
+            <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+            <dataField fieldName="Transferencia_Material_Ubicacion_Origen" />
+            <dataField fieldName="Transferencia_Material_Ubicacion_Destino" />
+            <dataField fieldName="Movimiento_Material_Upload_Id" columns="15" hidden="true" />
+            <dataField fieldName="Last_Transferencia_Material_Ubicacion_Origen" rows="5" hidden="true" />
+            <dataField fieldName="Last_Transferencia_Material_Ubicacion_Destino" rows="5" hidden="true" />
+            <dataField fieldName="Last_Transferencia_Material" rows="5" hidden="true" />
+            <dataField fieldName="Last_Transferencia_Material_Descripcion" rows="5" hidden="true" />
+            <dataField fieldName="Last_Transferencia_Cantidad" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1">
+        <data><![CDATA[UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1">
+        <data><![CDATA[UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1">
+        <data><![CDATA[UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" whenClientScript="[Master.Estatus_Movimiento_Aplica_A_Transferencia] == 1 &amp;&amp; [Master.Estatus_Movimiento_Significa_Pendiente] == 1">
+        <data><![CDATA[UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action id="a3" commandName="ReportAsExcel" headerText="^DownloadFile^Descargar Archivo^DownloadFile^" cssClass="material-icon-cloud_download" />
+      <action commandName="Import" commandArgument="createForm1" headerText="^UploadFile^Cargar Archivo^UploadFile^" id="a100" cssClass="material-icon-cloud_load" />
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="^ProcessMaterials^Procesar Materiales^ProcessMaterials^" id="a101" cssClass="material-icon-check" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[SET @Tipo_Movimiento_Id = 2; -- SELECT TOP 1 tm.Tipo_Movimiento_Id FROM APP.Tipo_Movimiento tm WHERE tm.Estatus_Registro_Id = 1 AND tm.Es_Solicitud_Transferencia = 1;
+SET @Es_Actualizado = 0;
+SET @Estatus_Procesamiento_Id = 0;
+SET @Mensaje_Sistema_Id = 0;
+SET @Estatus_Registro_Id = 1; -- Activo
+SET @Creado_Por_Id = @BusinessRules_UserId;
+SET @Fecha_Creacion =dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),null);
+SET @Actualizado_Por_Id = @BusinessRules_UserId;
+SET @Fecha_Ultima_Actualizacion=dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),null);
+
+
+]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Procesar_Mat_Cargado" />
+    <rule id="r103" commandName="Update" type="Sql" phase="Before"><![CDATA[SET @Actualizado_Por_Id = @BusinessRules_UserId;
+SET @Fecha_Ultima_Actualizacion=dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),null);
+
+]]></rule>
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS01" type="JavaScript" phase="After"><![CDATA[$appfactory.find('Grid_Transfer_Material_Upload_V', 'Controller').sync();
+$appfactory.find('Movimiento2', 'Controller').sync();]]></rule>
+  </businessRules>
+</dataController>

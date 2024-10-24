@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <!--<link rel="stylesheet" href="../js/lib/jQuery.NumPad-master/jquery.numpad.css">-->
+    <!--<script type="text/javascript" src="../js/lib/jQuery.NumPad-master/jquery.numpad.js"></script>-->
+    <script>
+        //Obtenemos el valor para Cantidad_Material_A_Solicitar
+        setTimeout(function () {
+            var cant_Mat_Restante_Por_Solicitar = $('[data-field="Cantidad_Mat_Restante_Por_Solicitar"] .app-field-data').text();
+            if (debug === 1) {
+                console.log("cant_Mat_Restante_Por_Solicitar: " + cant_Mat_Restante_Por_Solicitar);
+            }
+            $("#Cantidad_Material_A_Solicitar").val(parseFloat(cant_Mat_Restante_Por_Solicitar));
+        }, 1000)
+
+        $(document).ready(function () {
+            $('#Cantidad_Material_A_Solicitar').numpad({
+                hidePlusMinusButton: true,//ocultamos el negativo
+                hideDecimalButton: false
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid table-responsive">
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Orden de Producción</span>
+            <span data-control="field" data-field="Orden_Produccion_Id" class="form-control sp">[Orden_Produccion_Id]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Material</span>
+            <span data-control="field" data-field="Material_Id" class="form-control sp">[Material_Id]</span>
+        </div>
+        <div data-container="row">
+            <span data-control="label" class="label label-primary">Material Descripción</span>
+            <span data-control="field" data-field="Material_Descripcion" class="form-control sp">[Material_Descripcion]</span>
+        </div>
+
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">Clasificación de Material</span>
+        <span data-control="field" data-field="Clasificacion" class="form-control sp">[Clasificacion]</span>
+    </div>
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">Cantidad de Material solicitado previamente:</span>
+        <span data-control="field" data-field="Cantidad_Mat_Solicitado_Previamente" class="form-control sp">[Cantidad_Mat_Solicitado_Previamente]</span>
+    </div>
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">Cantidad de Material restante para solicitar:</span>
+        <span data-control="field" data-field="Cantidad_Mat_Restante_Por_Solicitar" class="form-control sp">[Cantidad_Mat_Restante_Por_Solicitar]</span>
+    </div>
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">* Cantidad de Material a Solicitar:</span>
+        <input type="number" min="0" max="9999" id="Cantidad_Material_A_Solicitar" value="0" class="inputValorIncrementarDecrementar" required />
+        <input type="button" class="btnIncrementar" id="incrementar" value="+" onclick="incrementarDecrementar('+', 'Cantidad_Material_A_Solicitar',0)" />
+        <input type="button" class="btnIncrementar" id="decrementar" value="-" onclick="incrementarDecrementar('-', 'Cantidad_Material_A_Solicitar',0)" />
+    </div>
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">Ubicaciones en Almacén:</span>
+        <span data-control="field" data-field="Material_Ubicacion_Almacen" class="form-control sp">[Material_Ubicacion_Almacen]</span>
+    </div>
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">Ubicaciones en Piso:</span>
+        <span data-control="field" data-field="Material_Ubicacion_Piso" class="form-control sp">[Material_Ubicacion_Piso]</span>
+    </div>
+    <div data-container="row">
+        <span data-control="label" class="label label-primary">Área de Entrega</span>
+        <span data-control="field" data-field="Area_Entrega_Id" class="form-control sp">[Area_Entrega_Id]</span>
+    </div>
+    </div>
+</body>
+</html>

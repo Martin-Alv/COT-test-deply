@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode title="^SiteHome^Home^SiteHome^" description="" url="~/index.html">
+    <siteMapNode title="^HomePath^Home^HomePath^" description="^HomeDesc^Application home page^HomeDesc^" url="~/pages/home" cssClass="Wide" />
+    <siteMapNode title="Solicitud Bitacora Sistema" description="View Grid Solicitud BCS V" url="~/pages/grid_solicitud_bcs_v" roles="hidden" />
+    <siteMapNode title="Grid Usuario Rol Logico V" description="View Grid Usuario Rol Logico V" url="~/pages/grid_usuario_rol_logico_v" roles="hidden" />
+    <siteMapNode title="Tipo Ubicacion1" description="View Tipo Ubicacion1" url="~/pages/tipo_ubicacion-1" roles="hidden" />
+    <siteMapNode title="Material Ubicacion Stock Reporte V" description="View Material Ubicacion Stock Reporte V" url="~/pages/material_ubicacion_stock_reporte_v" roles="hidden" />
+    <siteMapNode title="Mov Dev Ruta Optima A Ejecutar V1" description="View Mov Dev Ruta Optima A Ejecutar V1" url="~/pages/mov_dev_ruta_optima_a_ejecutar_v1" roles="hidden" />
+    <siteMapNode title="Etiqueta Perfil Material V" description="View  Perfil Material V" url="~/pages/etiqueta_perfil_material_v" roles="hidden" />
+    <siteMapNode title="Etiqueta Perfil Material V1" description="View Etiqueta Perfil Material V1" url="~/pages/etiqueta_perfil_material_v1" roles="Hidden" />
+    <siteMapNode title="Crear Solicitud de Material" description="" url="~/pages/crear-solicitud-material" roles="administrador,Solicitante,UsuarioParaConsulta" cssClass="material-icon-list" />
+    <siteMapNode title="Atención de Solicitudes" description="" url="~/pages/ejecutar_surtido" roles="administrador,Surtidor" cssClass="material-icon-description">
+      <siteMapNode title="Ruta Óptima A Ejecutar" description="View Ruta Optima A Ejecutar." url="~/pages/ruta_optima_a_ejecutar_v" roles="administrador,Surtidor" />
+    </siteMapNode>
+    <siteMapNode title="Atención a Solicitudes" description="Solicitudes de Balastras, Tablillas, Driver´s." url="~/pages/grid_material_pte_por_surtir_con_area_asignada_v" roles="administrador,SurtidorMaterialConAreaAsignada" cssClass="material-icon-description">
+      <siteMapNode title="Material Surtido A Ejecutar" description="View Grid Material Surtido A Ejecutar V" url="~/pages/grid_material_surtido_a_ejecutar_v" roles="administrador,SurtidorMaterialConAreaAsignada" />
+    </siteMapNode>
+    <siteMapNode title="Modulo Actualizacion De Inventario" description="" url="~/pages/modulo_actualizacion_de_inventario" roles="administrador">
+      <siteMapNode title="Temporal lx03" description="Ver Temporal lx03" url="~/pages/temporal_lx-03" roles="administrador" />
+    </siteMapNode>
+    <siteMapNode title="Material Ubicacion Stock Historial" description="Ver Material Ubicacion Stock Historial" url="~/pages/material_ubicacion_stock_historial" roles="UsuarioQueActualizaMatERSL,administrador" />
+    <siteMapNode title="Atención a Devolución de Material" description="Solicitudes de Devoluciones de Materiales" url="~/pages/grid_movimiento_dev_pte_v" roles="administrador,SurtidorDevolucion" cssClass="material-icon-description">
+      <siteMapNode title="Devolución de Material en Ruta Óptima" description="Devolución de Materiales en Ruta Optima." url="~/pages/mov_dev_ruta_optima_a_ejecutar_v" roles="administrador,SurtidorDevolucion" />
+    </siteMapNode>
+    <siteMapNode title="Atención a Transferencia de Material" description="Solicitudes de Transferencias de Materiales." url="~/pages/grid_movimiento_transfer_pte_v" roles="administrador,SurtidorReciboTransferencia" cssClass="material-icon-description">
+      <siteMapNode title="Transferencia de Material en Ruta Óptima" description="" url="~/pages/mov_transfer_ruta_optima_a_ejecutar_v" roles="administrador,SurtidorReciboTransferencia" />
+    </siteMapNode>
+    <siteMapNode title="Solicitud de Excedente" description="" url="~/pages/solicituddeexcedente" roles="administrador,SupervisorProduccion" cssClass="material-icon-assignment" />
+    <siteMapNode title="Ubicacion Almacenamiento" description="Ver Ubicacion Almacenamiento" url="~/pages/ubicacion_almacenamiento" roles="administrador,CapturistaRecibos">
+      <siteMapNode title="Tipo de Almacenamiento" description="View Tipo Almacenamiento" url="~/pages/tipo_almacenamiento" />
+      <siteMapNode title="Tipo Ubicacion" description="View Tipo Ubicacion" url="~/pages/tipo_ubicacion" roles="administrador" />
+    </siteMapNode>
+    <siteMapNode title="Catálogos de Aplicación" description="" url="~/pages/catalogo_aplicacion" roles="administrador,SupervisorAlmacen,SupervisorProduccion,Solicitante,UsuarioParaConsulta,Surtidor,SurtidorMaterialConAreaAsignada,SolicitanteDevolucion,SolicitanteReciboTransferencia,UsuarioCuadreInventarioDev,UsuarioCuadreInventarioTransfer,OperadorInventario" cssClass="material-icon-view-module">
+      <siteMapNode title="Área de Servicio" description="View Area Servicio" url="~/pages/area_servicio" roles="administrador,SupervisorProduccion" />
+      <siteMapNode title="Relación Área Servicio vs. Familia vs. SubFamilia de Producto" description="View Area Servicio Familia" url="~/pages/area_servicio_familia" roles="administrador,SupervisorProduccion" />
+      <siteMapNode title="Área de Entrega" description="View Area Entrega" url="~/pages/area_entrega" roles="administrador">
+        <siteMapNode title="Relación Área Entrega vs. Área de Servicio" description="View Area Entrega Area Servicio" url="~/pages/area_entrega_area_servicio" roles="hidden" />
+        <siteMapNode title="Nivel Prioridad Surtido" description="View Nivel Prioridad Surtido" url="~/pages/nivel_prioridad_surtido" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Relación Área Entrega vs. Familia vs. SubFamilia de Producto" description="View Area Entrega Familia" url="~/pages/area_entrega_familia" roles="administrador,SupervisorAlmacen" />
+      <siteMapNode title="Asignación Área servicio vs Familia" description="Ver Asignación Área servicio vs Familia" url="~/pages/asignacion_area_servicio_vs_familia" roles="administrador,SupervisorAlmacen" />
+      <siteMapNode title="Familia Patrón" description="View Familia Patron" url="~/pages/familia_patron" roles="administrador" />
+      <siteMapNode title="Familia de Producto" description="View Familia de Producto" url="~/pages/familia" roles="administrador" />
+      <siteMapNode title="Categoría de Producto" description="View Categoria" url="~/pages/categoria" roles="administrador" />
+      <siteMapNode title="Producto" description="View Producto" url="~/pages/producto" roles="administrador">
+        <siteMapNode title="Relación Producto Material" description="View Producto Material" url="~/pages/producto_material" roles="hidden" />
+      </siteMapNode>
+      <siteMapNode title="Material" description="View Material" url="~/pages/material" roles="administrador,SupervisorAlmacen">
+        <siteMapNode title="Material Ubicacion Stock" description="View Material Ubicacion Stock" url="~/pages/material_ubicacion_stock" roles="administrador" />
+        <siteMapNode title="Material Ubicacion Almacenamiento De Surtido" description="View Material Ubicacion Almacenamiento De Surtido" url="~/pages/material_ubicacion_almacenamiento_de_surtido" roles="administrador" />
+        <siteMapNode title="Material Surtido" description="View Material Surtido" url="~/pages/material_surtido" roles="administrador" />
+        <siteMapNode title="Material Exclusión" description="View Material Exclusion" url="~/pages/material_exclusion" roles="administrador,SupervisorAlmacen" />
+      </siteMapNode>
+      <siteMapNode title="Unidad de Material" description="View Unidad Material" url="~/pages/unidad_material" roles="administrador,SupervisorAlmacen" />
+      <siteMapNode title="Orden Producción" description="View Orden Produccion" url="~/pages/orden_produccion" roles="administrador,UsuarioParaConsulta">
+        <siteMapNode title="Estatus de Orden Producción" description="View Estatus Orden Produccion" url="~/pages/estatus_orden_produccion" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Orden Producción Detalle" description="View Orden Produccion Detalle" url="~/pages/orden_produccion_detalle" roles="administrador,UsuarioParaConsulta">
+        <siteMapNode title="Estatus de Orden Producción Detalle" description="View Estatus Orden Produccion Detalle" url="~/pages/estatus_orden_produccion_detalle" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Solicitud" description="View Solicitud" url="~/pages/solicitud" roles="administrador" cssClass="material-icon-library-books">
+        <siteMapNode title="Categoría de Solicitud" description="View Categoria Solicitud" url="~/pages/categoria_solicitud" roles="administrador" />
+        <siteMapNode title="Tipo de Solicitud" description="View Tipo Solicitud" url="~/pages/tipo_solicitud" roles="administrador" />
+        <siteMapNode title="Motivo de Solicitud" description="View Motivo Solicitud" url="~/pages/motivo_solicitud" roles="administrador" />
+        <siteMapNode title="Estatus de Solicitud" description="View Estatus Solicitud" url="~/pages/estatus_solicitud" roles="administrador" />
+        <siteMapNode title="Solicitud Detalle" description="View Solicitud Detalle" url="~/pages/solicitud_detalle" roles="administrador" />
+        <siteMapNode title="Relación Solicitud vs Nivel Prioridad Surtido" description="View Solicitud Nivel Prioridad Surtido" url="~/pages/solicitud_nivel_prioridad_surtido" roles="administrador" />
+        <siteMapNode title="Subtipo Solicitud" description="View Subtipo Solicitud" url="~/pages/subtipo_solicitud" />
+      </siteMapNode>
+      <siteMapNode title="Solicitud Manual" description="View Solicitud" url="~/pages/solicitud_1" roles="administrador,SupervisorProduccion,Solicitante" cssClass="material-icon-library-books" />
+      <siteMapNode title="Solicitudes" description="" url="~/pages/solicitudes" roles="SupervisorAlmacen" cssClass="material-icon-library-books" />
+      <siteMapNode title="Movimiento" description="Administración de Movimiento." url="~/pages/movimiento" roles="administrador">
+        <siteMapNode title="Movimiento Detalle" description="View Movimiento Detalle" url="~/pages/movimiento_detalle" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Semáforo" description="View Semaforo" url="~/pages/semaforo" roles="administrador">
+        <siteMapNode title="Semáforo Rango Valor" description="View Semaforo Rango Valor" url="~/pages/semaforo_rango_valor" />
+        <siteMapNode title="Color" description="View Color" url="~/pages/color" />
+      </siteMapNode>
+      <siteMapNode title="Pasillo" description="View Pasillo" url="~/pages/pasillo" roles="administrador" />
+      <siteMapNode title="Ruta Optima" description="View Ruta Optima" url="~/pages/ruta_optima" roles="administrador">
+        <siteMapNode title="Estatus de Ruta Óptima" description="View Estatus Ruta Optima" url="~/pages/estatus_ruta_optima" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Tipo Archivo" description="View Tipo Archivo" url="~/pages/tipo_archivo" roles="administrador" />
+      <siteMapNode title="Tipo de Comentario" description="View Tipo Comentario" url="~/pages/tipo_comentario" roles="administrador" />
+      <siteMapNode title="Kanban" description="View Kanban" url="~/pages/kanban" roles="hidden">
+        <siteMapNode title="Material Kanban" description="View Material Kanban" url="~/pages/material_kanban" />
+      </siteMapNode>
+      <siteMapNode title="Genero de Persona" description="View Genero Persona" url="~/pages/genero_persona" roles="administrador" />
+      <siteMapNode title="Desviación Material" description="View Desviacion Material" url="~/pages/desviacion_material" roles="administrador">
+        <siteMapNode title="Categoría Desviación" description="View Categoria Desviacion" url="~/pages/categoria_desviacion" />
+      </siteMapNode>
+      <siteMapNode title="Relación Material Vs. Unidad de Material" description="View Material Unidad Material" url="~/pages/material_unidad_material" roles="administrador" />
+      <siteMapNode title="Documento Comentario" description="View Documento Comentario" url="~/pages/documento_comentario" roles="administrador">
+        <siteMapNode title="Registrado Desde" description="View Registrado Desde" url="~/pages/registrado_desde" />
+      </siteMapNode>
+      <siteMapNode title="Estatus de Surtido" description="View Estatus Surtido" url="~/pages/estatus_surtido" roles="administrador" />
+      <siteMapNode title="Material Pendiente por Surtir" description="" url="~/pages/grid_orden_detalle_de_multiple_orden_prod_v" roles="administrador" />
+      <siteMapNode title="Planta" description="View Planta" url="~/pages/planta" roles="administrador" />
+      <siteMapNode title="Almacen" description="Ver Almacén" url="~/pages/almacen" roles="Administrador" />
+      <siteMapNode title="Planeador" description="View Planeador" url="~/pages/planeador" roles="administrador" />
+      <siteMapNode title="Excluido Desde" description="View Excluido Desde" url="~/pages/excluido_desde" roles="administrador" />
+      <siteMapNode title="Tipo de Exclusión" description="View Tipo Exclusion" url="~/pages/tipo_exclusion" roles="administrador" />
+      <siteMapNode title="Motivo de Cancelación" description="View Motivo Cancelacion" url="~/pages/motivo_cancelacion" roles="administrador,SupervisorAlmacen" />
+      <siteMapNode title="Material Inventario Fisico" description="View Material Inventario Físico" url="~/pages/material_inventario_teorico" roles="SupervisorAlmacen,administrador" />
+      <siteMapNode title="Tipo Notificacion" description="View Tipo Notificacion" url="~/pages/tipo_notificacion" roles="administrador" />
+      <siteMapNode title="Dato Acceso SAP Usuario" description="View Dato Acceso SAP" url="~/pages/dato_acceso_sap_1" roles="Surtidor,SurtidorMaterialConAreaAsignada,SupervisorAlmacen,SurtidorDevolucion,SurtidorReciboTransferencia" />
+      <siteMapNode title="Motivo Movimiento" description="View Motivo Movimiento" url="~/pages/motivo_movimiento" roles="administrador" />
+      <siteMapNode title="Movimiento Ruta Optima" description="View Movimiento Ruta Optima" url="~/pages/movimiento_ruta_optima" roles="administrador">
+        <siteMapNode title="Estatus Movimiento" description="View Estatus Movimiento" url="~/pages/estatus_movimiento" roles="administrador" />
+        <siteMapNode title="Tipo Movimiento" description="View Tipo Movimiento" url="~/pages/tipo_movimiento" roles="administrador" />
+        <siteMapNode title="Estatus Movimiento Ruta Optima" description="View Estatus Movimiento Ruta Optima" url="~/pages/estatus_movimiento_ruta_optima" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Solicitud de Devolución de Material" description="" url="~/pages/solicdevmat" roles="administrador,SolicitanteDevolucion" cssClass="material-icon-library-books" />
+      <siteMapNode title="Solicitud de Transferencia de Material" description="" url="~/pages/solictransfmat" roles="administrador,SolicitanteReciboTransferencia" cssClass="material-icon-library-books" />
+      <siteMapNode title="Movimiento Ruta Optima Ubicacion Almacenamiento" description="View Movimiento Ruta Optima Ubicacion Almacenamiento" url="~/pages/movimiento_ruta_optima_ubicacion_almacenamiento" roles="administrador" />
+      <siteMapNode title="Grid Transfer Material Upload V" description="View Grid Transfer Material Upload V" url="~/pages/grid_transfer_material_upload_v" roles="hidden" />
+      <siteMapNode title="Operación Cuadre Inventario" description="View Tmp Operacion Cuadre Inventario" url="~/pages/tmp_operacion_cuadre_inventario" roles="administrador" cssClass="material-icon-swap_vert" />
+      <siteMapNode title="Operación Cuadre Inventario SAP - Devolución" description="" url="~/pages/cuadreinventariopiso" roles="administrador,SupervisorAlmacen,UsuarioCuadreInventarioDev,OperadorInventario" cssClass="material-icon-swap_vert" />
+      <siteMapNode title="Operación Cuadre Inventario SAP - Transferencia" description="" url="~/pages/cuadreinventarioalmacen" roles="SupervisorAlmacen,UsuarioCuadreInventarioTransfer,OperadorInventario" cssClass="material-icon-swap_vert" />
+      <siteMapNode title="Ubicación Transfer vs. Área Entrega" description="" url="~/pages/ubicacion_almacenamiento_area_entrega" roles="administrador,SolicitanteReciboTransferencia" />
+      <siteMapNode title="Material de Solicitud Transferencia" description="" url="~/pages/movdetalle" roles="SolicitanteReciboTransferencia" />
+      <siteMapNode title="Movimiento Desglose" description="View Movimiento Desglose" url="~/pages/movimiento_desglose" roles="administrador" />
+      <siteMapNode title="Rol Logico" description="Ver Rol Lógico" url="~/pages/rol_logico" roles="administrador" />
+      <siteMapNode title="Modulo Etiqueta Proveedor" description="" url="~/pages/modulo_etiqueta_proveedor" roles="administrador">
+        <siteMapNode title="Proveedor ERSL" description="Ver Proveedor ERSL" url="~/pages/proveedor_ersl" roles="administrador" />
+        <siteMapNode title="Etiqueta Proveedor" description="Ver Etiqueta Proveedor" url="~/pages/etiqueta_proveedor" roles="administrador" />
+        <siteMapNode title="Tipo Etiqueta" description="Ver Tipo Etiqueta" url="~/pages/tipo_etiqueta" roles="administrador" />
+        <siteMapNode title="Etiqueta Detalle Proveedor" description="Ver Etiqueta Detalle Proveedor" url="~/pages/etiqueta_detalle_proveedor" roles="administrador" />
+        <siteMapNode title="Historial Impresion Etiqueta" description="Ver Historial Impresion Etiqueta" url="~/pages/historial_impresion_etiqueta" roles="administrador" />
+        <siteMapNode title="Usuario Proveedor" description="Ver Usuario Proveedor" url="~/pages/usuario_proveedor" roles="administrador" />
+        <siteMapNode title="Temporal Etiqueta Proveedor" description="Ver Temporal Etiqueta Proveedor" url="~/pages/temporal_etiqueta_proveedor" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Modulo Etiqueta Embarque" description="" url="~/pages/modulo_etiqueta_embarque" roles="administrador">
+        <siteMapNode title="Etiqueta Embarque" description="Ver Etiqueta Embarque" url="~/pages/etiquetas_embarque" roles="administrador" />
+        <siteMapNode title="Etiqueta Embarque Detalle" description="Ver Etiqueta Embarque Detalle" url="~/pages/etiqueta_embarque_detalle" roles="administrador" />
+      </siteMapNode>
+      <siteMapNode title="Material Empaque" description="Ver Material Empaque" url="~/pages/material_empaque" roles="administrador" />
+      <siteMapNode title="Clase Material" description="Ver Clase Material" url="~/pages/clase_material" roles="administrador" />
+      <siteMapNode title="Tipo Material" description="Ver Tipo Material" url="~/pages/tipo_material" roles="administrador" />
+      <siteMapNode title="Documento Material" description="Ver Documento Material" url="~/pages/documento_material" roles="administrador" />
+      <siteMapNode title="Carga Masiva Material" description="" url="~/pages/carga_masiva_material" roles="administrador" />
+      <siteMapNode title="Temporal Carga Masiva Material" description="Ver Temporal Carga Masiva Material" url="~/pages/temporal_carga_masiva_material" roles="administrador" />
+    </siteMapNode>
+    <siteMapNode title="Módulo Incandescencias/Pickeo" description="" url="~/pages/moduloincan" roles="administrador,SolicitanteIncandescencias,SurtidorIncandescencias">
+      <siteMapNode title="Crear Solicitud de Incandescencias" description="View Grid Orden Prod Incandescencias V" url="~/pages/grid_orden_prod_incandescencias_v" roles="administrador,SolicitanteIncandescencias" cssClass="material-icon-list" />
+      <siteMapNode title="Grid Orden Det Orden Prod Incan V" description="View Grid Orden Det Orden Prod Incan V" url="~/pages/grid_orden_det_orden_prod_incan_v" roles="hidden" />
+      <siteMapNode title="Producto Material" description="" url="~/pages/productomaterial" roles="administrador,SolicitanteIncandescencias,SurtidorIncandescencias" />
+      <siteMapNode title="Estatus Orden Produccion Pickeo" description="View Estatus Orden Produccion Pickeo" url="~/pages/estatus_orden_produccion_pickeo" roles="administrador" />
+      <siteMapNode title="Orden Produccion Pickeo" description="View Orden Produccion Pickeo" url="~/pages/orden_produccion_pickeo" roles="administrador,SurtidorIncandescencias" cssClass="material-icon-line_weight" />
+      <siteMapNode title="Solicitud de Incandescencia" description="" url="~/pages/solicitud-incan" roles="administrador,SolicitanteIncandescencias,SurtidorIncandescencias" cssClass="material-icon-assignment" />
+      <siteMapNode title="Atención de Solicitud Incandescencia" description="" url="~/pages/grid_mat_incan_pte_por_surtir_v" roles="administrador,SurtidorIncandescencias" cssClass="material-icon-description">
+        <siteMapNode title="Ruta Optima Pickeo A Ejecutar" description="View Grid Ruta Optima Incan A Ejecutar V" url="~/pages/grid_ruta_optima_incan_a_ejecutar_v" roles="administrador,SurtidorIncandescencias" />
+      </siteMapNode>
+      <siteMapNode title="Lista Orden Producción Material Surtido Incan" description="" url="~/pages/grid_lista_surtido_incan_v" roles="administrador,SurtidorIncandescencias" />
+      <siteMapNode title="Grid Orden Det De Multiple Orden Prod Incan V" description="View Grid Orden Det De Multiple Orden Prod Incan V" url="~/pages/grid_orden-det_de-multiple-orden-prod_incan_v" roles="hidden" />
+      <siteMapNode title="Grid Orden Det Agrup De Multiple Orden Prod Incan V" description="View Grid Orden Det Agrup De Multiple Orden Prod Incan V" url="~/pages/grid_orden-det_agrup-de-multiple-orden-prod_incan_v" roles="hidden" />
+      <siteMapNode title="Material Exclusión" description="" url="~/pages/matexclusion" roles="administrador,SolicitanteIncandescencias,SurtidorIncandescencias" />
+    </siteMapNode>
+    <siteMapNode title="Solicitudes Pendientes Por Entregar" description="Ver Solicitudes pendientes por entregar" url="~/pages/grid_solicitudes_pendientes_por_entregar_cadista_v" roles="administrador,Cadista" />
+    <siteMapNode title="Desglose Captura" description="Ver Desglose Captura" url="~/pages/grid_desglose_captura_cadista_v" roles="administrador, cadista" />
+    <siteMapNode title="Reportes y Gráficas" description="" url="~/pages/reportes" roles="Solicitante,administrador,Surtidor,SurtidorMaterialConAreaAsignada,SupervisorAlmacen,SupervisorProduccion,ConsultaReporte,ConsultaReporteMuestra,SurtidorDevolucion,SurtidorReciboTransferencia,SupervisorAlmacen,OperadorInventario,Cadista,SolicitanteReciboTransferencia" cssClass="material-icon-event-note">
+      <siteMapNode title="Reporte de Entregas Semaforizadas para Solicitante" description="Reporte de Consulta de Entregas Semaforizadas para retroalimentación a Solicitante" url="~/pages/grid_consulta_entrega_semaforizada_para_retro_a_solicitante_v" roles="administrador,Solicitante" />
+      <siteMapNode title="Reporte de Entregas Semaforizadas" description="" url="~/pages/consultaentregasemafor-admin" roles="administrador,SupervisorAlmacen,SupervisorProduccion" />
+      <siteMapNode title="Reporte Consulta Surtido Material" description="Reporte de materiales surtidos" url="~/pages/grid_consulta_surtido_material_v" roles="administrador,Surtidor" />
+      <siteMapNode title="Consulta Surtido Material Hoja Pdf para Captura" description="View Grid Consulta Surtido Material Hoja Pdf Ruta Optima V" url="~/pages/grid_consulta_surtido_material_hoja_pdf_ruta_optima_v" roles="hidden" />
+      <siteMapNode title="Reporte Consulta Surtido de Material" description="Reporte de materiales surtidos" url="~/pages/grid_consulta_surtido_material_v_1" roles="administrador,SurtidorMaterialConAreaAsignada" />
+      <siteMapNode title="Bitácora Captura SAP (Surtido)" description="" url="~/pages/bitacorasapuser" roles="administrador,Surtidor,SurtidorMaterialConAreaAsignada,SurtidorIncandescencias" />
+      <siteMapNode title="Bitácora Captura SAP (Devolución)" description="" url="~/pages/bitacoracaptsapdev" roles="administrador,SurtidorDevolucion" />
+      <siteMapNode title="Bitácora Captura SAP (Transferencia)" description="" url="~/pages/bitacoracaptsaptransfer" roles="administrador,SurtidorReciboTransferencia" />
+      <siteMapNode title="Grid Prueba Hoja Pdf para Captura SAP" description="View Grid Prueba Hoja Pdf" url="~/pages/grid_prueba_hoja_pdf_v" roles="hidden" />
+      <siteMapNode title="Reporte Tiempo de Atención y Entrega de Solicitud" description="Reporte Tiempo de Atención y Entrega de Solicitud" url="~/pages/grid_consulta_tiempo_atencion_entrega_solicitud_v" roles="administrador,SupervisorAlmacen,ConsultaReporte" />
+      <siteMapNode title="Consulta de Entregas Semaforizadas" description="" url="~/pages/consultaentregasemafor-admin_1" roles="administrador,ConsultaReporte,ConsultaReporteMuestra" />
+      <siteMapNode title="Reporte y Gráfica de Estatus de Solicitud/Entrega" description="View Grid Consulta Entrega Semaforizada Avance General V" url="~/pages/grid_consulta_entrega_semaforizada_avance_general_v" roles="administrador,ConsultaReporte" />
+      <siteMapNode title="Reporte y Gráfica de Tiempo de Surtido" description="Reporte y Gráfica Tiempo de Surtido de día/mes anterior y día/mes actual." url="~/pages/grid_grafica_tiempo_de_surtido_v" roles="administrador,SupervisorAlmacen,ConsultaReporte" />
+      <siteMapNode title="Reporte Estadístico de Materiales Mas Menos Surtidos" description="View Reporte Estadistico Materiales Mas Menos Surtidos V" url="~/pages/grid_reporte_estadistico_materiales_mas_menos_surtidos_v" roles="administrador,SupervisorAlmacen,ConsultaReporte" />
+      <siteMapNode title="Grid Cant Solic Por Area Entrega V" description="View Grid Cant Solic Por Area Entrega V" url="~/pages/grid_cant_solic_por_area_entrega_v" roles="hidden" />
+      <siteMapNode title="Gráficas de Tiempos de Surtido" description="" url="~/pages/graficatiemposurtido" roles="administrador,ConsultaReporte" />
+      <siteMapNode title="Grid Cant Solicitud Por Surtidor V" description="View Grid Cant Solicitud Por Surtidor V" url="~/pages/grid_cant_solicitud_por_surtidor_v" roles="hidden" />
+      <siteMapNode title="Grid Cant Solic Por Tipo Solic V" description="View Grid Cant Solic Por Tipo Solic V" url="~/pages/grid_cant_solic_por_tipo_solic_v" roles="hidden" />
+      <siteMapNode title="Grid Cant Solic Rango Tiempo Area Entrega V" description="View Grid Cant Solic Rango Tiempo Area Entrega V" url="~/pages/grid_cant_solic_rango_tiempo_area_entrega_v" roles="hidden" />
+      <siteMapNode title="Grid Cant Solic Rango Tiempo Por Area Entrega V" description="View Grid Cant Solic Rango Tiempo Por Area Entrega V" url="~/pages/grid_cant_solic_rango_tiempo_por_area_entrega_v" roles="hidden" />
+      <siteMapNode title="Bitácora de Captura SAP (Surtido)" description="" url="~/pages/bitacoracapturasapadmin" roles="SupervisorAlmacen,administrador" />
+      <siteMapNode title="Bitácora de Captura SAP (Devolución)" description="" url="~/pages/bitacaptsaptdevadmin" roles="SupervisorAlmacen,administrador" />
+      <siteMapNode title="Bitácora de Captura SAP (Transferencia)" description="" url="~/pages/bitacaptsaptransferadmin" roles="SupervisorAlmacen,administrador" />
+      <siteMapNode title="Bitácora de Captura SAP (Importación de Surtido)" description="" url="~/pages/bitcaptsapsupalmacen" roles="SupervisorAlmacen,administrador,OperadorInventario" />
+      <siteMapNode title="Bitácora Captura SAP (Duplicados)" description="View Grid Bcs Duplicado V" url="~/pages/grid_bcs_duplicado_v" roles="SupervisorAlmacen,administrador" />
+      <siteMapNode title="Movimiento Desglose" description="" url="~/pages/movdesglose" roles="SupervisorAlmacen,administrador" />
+      <siteMapNode title="Solicitudes Entregadas Por Cadista" description="Ver solicitudes entregadas por cadita" url="~/pages/grid_solicitudes_entregadas_por_cadista_dia_actual_v" roles="Cadista" />
+      <siteMapNode title="Reporte de Solicitudes Entregadas" description="Ver Solicitudes Entregadas" url="~/pages/grid_solicitudes_entregadas_por_cadista_para_admin_dia_actual_v" roles="administrador,SupervisorAlmacen" />
+      <siteMapNode title="Reportes De Solicitud De Material Indirecto" description="Ver Reportes De Solicitud De Material Indirecto" url="~/pages/grid_reporte_solicitud_ind_dia_actual_v" roles="administrador" />
+      <siteMapNode title="Bitácora Captura SAP" description="Ver Bitácora Captura SAP " url="~/pages/bitacora_captura_sap_" roles="SolicitanteReciboTransferencia" cssClass="material-icon-library-books" />
+    </siteMapNode>
+    <siteMapNode title="Administración" description="" url="~/pages/administracion" roles="administrador,administradorIT,administrators,administradorUsuarios,super_Admin" cssClass="material-icon-settings-applications">
+      <siteMapNode title="Administración de Usuarios" description="^MembershipDesc^User and role manager^MembershipDesc^" url="~/pages/membership" roles="administrators,administrador,administradorIT" cssClass="material-icon-supervisor-account" />
+      <siteMapNode title="Datos de Usuario Aplicación" description="View Usuario Aplicacion" url="~/pages/usuario_aplicacion" roles="administradorUsuarios,administrador,administradorIT" cssClass="material-icon-account-box">
+        <siteMapNode title="Tipo de Usuario" description="View Tipo Usuario" url="~/pages/tipo_usuario" roles="administrador,administradorUsuarios" />
+        <siteMapNode title="Estatus de Usuario" description="View Estatus Usuario" url="~/pages/estatus_usuario" roles="administrador,administradorUsuarios" />
+      </siteMapNode>
+      <siteMapNode title="Relaciones Usuario vs. Aplicación" description="" url="~/pages/relacion-usuario-aplicacion" roles="administradorUsuarios,administradorIT" cssClass="material-icon-people-outline">
+        <siteMapNode title="Relación Usuario Aplicación vs. Área Entrega vs. Nivel Prioridad Surtido" description="View Usuario Aplicacion Area Entrega Nivel Prioridad Surtido" url="~/pages/usuario_aplicacion_area_entrega_nivel_prioridad_surtido" roles="AdministradorUsuarios" />
+        <siteMapNode title="Relación Usuario Aplicación vs. Categoría de Producto" description="View Usuario Aplicacion Categoria" url="~/pages/usuario_aplicacion_categoria" roles="hidden" />
+        <siteMapNode title="Relación Usuario Aplicación vs. Área Servicio" description="View Usuario Aplicacion Area Servicio" url="~/pages/usuario_aplicacion_area_servicio" roles="AdministradorUsuarios" />
+        <siteMapNode title="Relación Usuario Aplicación vs. Datos Acceso" description="View Usuario Aplicacion Acceso" url="~/pages/usuario_aplicacion_acceso" roles="AdministradorUsuarios" />
+        <siteMapNode title="Relación Usuario Aplicación vs. Dato Acceso SAP" description="View Dato Acceso SAP" url="~/pages/dato_acceso_sap" roles="AdministradorUsuarios" />
+        <siteMapNode title="Usuario Aplicacion vs. Rol Logico" description="Ver Usuario Aplicación vs Rol lógico" url="~/pages/usuario_aplicacion_rol_logico" roles="AdministradorUsuarios" />
+      </siteMapNode>
+      <siteMapNode title="Administración de Proveedores" description="" url="~/pages/administracion_de_proveedores" roles="administrador" />
+      <siteMapNode title="Catálogos de Sistema" description="" url="~/pages/catalogo_sistema" roles="Super_Admin">
+        <siteMapNode title="Estatus Registro" description="View Estatus Registro" url="~/pages/estatus_registro" roles="Super_Admin" />
+        <siteMapNode title="Categoría Configuración de Sistema" description="View Categoria Configuracion Sistema" url="~/pages/categoria_configuracion_sistema" roles="Super_Admin" />
+        <siteMapNode title="Configuración de Sistema" description="View Configuracion Sistema" url="~/pages/configuracion_sistema" roles="Super_Admin" />
+        <siteMapNode title="Estatus de Buzón de Correo Electrónico" description="Vista de Estatus de Buzon de Correo Electronico" url="~/pages/estatus_buzon_correo_electronico" roles="Super_Admin" />
+        <siteMapNode title="Buzon Correo Electronico" description="View Buzon Correo Electronico" url="~/pages/buzon_correo_electronico" roles="Super_Admin" />
+        <siteMapNode title="Layout HTML" description="View Layout HTML" url="~/pages/layout_html" roles="hidden" />
+        <siteMapNode title="MRP Type" description="View MRP Type" url="~/pages/mrp_type" roles="Super_Admin" />
+        <siteMapNode title="Estatus Captura SAP" description="View Estatus Captura SAP" url="~/pages/estatus_captura_sap" roles="Super_Admin" />
+        <siteMapNode title="Mensaje Sistema" description="View Mensaje Sistema" url="~/pages/mensaje_sistema" roles="hidden" />
+        <siteMapNode title="Tipo Operacion SAP" description="View Tipo Operacion SAP" url="~/pages/tipo_operacion_sap" roles="Super_Admin" />
+        <siteMapNode title="Estatus Procesamiento" description="View Estatus Procesamiento" url="~/pages/estatus_procesamiento" roles="Super_Admin" />
+      </siteMapNode>
+      <siteMapNode title="Incidencias, Bitácoras" description="" url="~/pages/incidencias" roles="administrador" cssClass="material-icon-bug-report">
+        <siteMapNode title="Relación Orden Producción vs. Familia vs. SubFamilia" description="View Grid Orden Produccion Relacion Familia Sub Familia V" url="~/pages/grid_orden_produccion_relacion_familia_sub-familia_v" roles="administrador" />
+        <siteMapNode title="Relación Orden Producción vs. Familia vs. SubFamilia en último eplanning" description="View Grid Orden Prod Relacion Fam Sub Familia En Ultimo Eplanning V" url="~/pages/grid_orden_prod_relacion_fam_sub-familia_en_ultimo_eplanning_v" roles="administrador" />
+        <siteMapNode title="Bitácora SAP GUI Service" description="Bitácora SAP GUI Service" url="~/pages/log_app" roles="administrador" />
+        <siteMapNode title="Bitacora Captura SAP" description="View Bitacora Captura SAP" url="~/pages/bitacora_captura_sap" roles="administrador" />
+        <siteMapNode title="Log Captura SAP" description="View Log Captura SAP" url="~/pages/log_captura_sap" roles="administrador" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Grid Material Pte Por Surtir V" description="View Grid Material Pte Por Surtir V" url="~/pages/grid_material_pte_por_surtir_v" roles="hidden" />
+    <siteMapNode title="Grid Solicitud Material Pte Por Surtir V" description="View Grid Solicitud Material Pte Por Surtir V" url="~/pages/grid_solicitud_material_pte_por_surtir_v" roles="hidden" />
+    <siteMapNode title="Grid Dato Usuario Aplicacion V" description="View Grid Dato Usuario Aplicacion V" url="~/pages/grid_dato_usuario_aplicacion_v" roles="hidden" />
+    <siteMapNode title="Grid Orden Detalle De Multiple Orden Produccion V" description="View Grid Orden Detalle De Multiple Orden Produccion V" url="~/pages/grid_orden_detalle_de_multiple_orden_produccion_v" roles="hidden" />
+    <siteMapNode title="Grid Ruta Optima A Ejecutar V" description="View Grid Ruta Optima A Ejecutar V" url="~/pages/grid_ruta_optima_a_ejecutar_v" roles="hidden" />
+    <siteMapNode title="Material Ubicacion Almacen V" description="View Material Ubicacion Almacen V" url="~/pages/material_ubicacion_almacen_v" roles="hidden" />
+    <siteMapNode title="Grid Orden Detalle De Orden Produccion V" description="View Grid Orden Detalle De Orden Produccion V" url="~/pages/grid_orden_detalle_de_orden_produccion_v" roles="hidden" />
+    <siteMapNode title="Grid Area Entrega V" description="View Grid Area Entrega V" url="~/pages/grid_area_entrega_v" roles="hidden" />
+    <siteMapNode title="Grid Consulta Entrega Semaforizada Para Retro A Solicitante Admin V" description="View Grid Consulta Entrega Semaforizada Para Retro A Solicitante Admin V" url="~/pages/grid_consulta_entrega_semaforizada_para_retro_a_solicitante_admin_v" roles="hidden" />
+    <siteMapNode title="Grid Solicitud Material V" description="View Grid Solicitud Material V" url="~/pages/grid_solicitud_material_v" roles="hidden" />
+    <siteMapNode title="Orden Produccion Solicitud Material V" description="View Orden Produccion Solicitud Material V" url="~/pages/orden_produccion_solicitud_material_v" roles="hidden" />
+    <siteMapNode title="Grid Material Pte Por Surtir Excedente V" description="" url="~/pages/grid_material_pte_por_surtir_excedente_v" roles="hidden" />
+    <siteMapNode title="Grid Orden Produccion Material Pte Por Surtir V" description="View Grid Orden Produccion Material Pte Por Surtir V" url="~/pages/grid_orden_produccion_material_pte_por_surtir_v" roles="hidden" />
+    <siteMapNode title="Grid Solicitud Material Pte Por Surtir Con Area Asignada V" description="View Grid Solicitud Material Pte Por Surtir Con Area Asignada V" url="~/pages/grid_solicitud_material_pte_por_surtir_con_area_asignada_v" roles="hidden" />
+    <siteMapNode title="Grid Orden Produccion Con Material Pte Por Surtir V" description="View Grid Orden Produccion Con Material Pte Por Surtir V" url="~/pages/grid_orden_produccion_con_material_pte_por_surtir_v" roles="hidden" />
+    <siteMapNode title="Grid Consulta Surtido Material Con Area Asignada V" description="View Grid Consulta Surtido Material Con Area Asignada V" url="~/pages/grid_consulta_surtido_material_con_area_asignada_v" roles="hidden" />
+    <siteMapNode title="Ubicacion Almacenamiento En Almacen V" description="View Ubicacion Almacenamiento En Almacen V" url="~/pages/ubicacion_almacenamiento_en_almacen_v" roles="hidden" />
+    <siteMapNode title="Grid Material Agrupado De Multiples Ordenes Produccion V" description="View Grid Material Agrupado De Multiples Ordenes Produccion V" url="~/pages/grid_material_agrupado_de_multiples_ordenes_produccion_v" roles="hidden" />
+    <siteMapNode title="Grid Ruta Optima Solic Coment V" description="View Grid Ruta Optima Solic Coment V" url="~/pages/grid_ruta_optima_solic_coment_v" roles="hidden" />
+    <siteMapNode title="Módulo Start Stop" description="" url="~/pages/modulostartstop" roles="Adminstartstop,Userstartstop" cssClass="material-icon-slideshow">
+      <siteMapNode title="Turno Laboral" description="" url="~/pages/turno_laboral" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="Celda" description="" url="~/pages/celda" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="Razón Tiempo Muerto" description="" url="~/pages/razon_tiempo_muerto" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="Rate Categoría" description="" url="~/pages/rate_categoria" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="Subcategoría" description="View Subcategoría" url="~/pages/rate_subcategoria" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="SS Dat Model" description="" url="~/pages/ss_dat_model" roles="Adminstartstop" />
+      <siteMapNode title="SS Dat Order" description="" url="~/pages/ss_dat_order" roles="Adminstartstop" />
+      <siteMapNode title="SS Dat Pz" description="" url="~/pages/ss_dat_pz" roles="Adminstartstop" />
+      <siteMapNode title="SS Cat Orden" description="" url="~/pages/ss_cat_orden" roles="Adminstartstop" />
+      <siteMapNode title="SS Modelo Tiempo Muerto" description="View SS Modelo Tiempo Muerto" url="~/pages/ss_modelo_tiempo_muerto" roles="Adminstartstop" />
+      <siteMapNode title="SS Dat Orden Tiempo Muerto" description="" url="~/pages/ss_dat_orden_tiempo_muerto" roles="Adminstartstop" />
+      <siteMapNode title="Reporte de Orden de Producción" description="View Listado Orden Produccion V" url="~/pages/listado_orden_produccion_v" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="Detalle Orden Produccion V" description="View Detalle Orden Produccion V" url="~/pages/detalle_orden_produccion_v" roles="hidden" />
+      <siteMapNode title="Orden Produccion Razon Tiempo Muerto V" description="View Orden Produccion Razon Tiempo Muerto V" url="~/pages/orden_produccion_razon_tiempo_muerto_v" roles="hidden" />
+      <siteMapNode title="Orden Produccion Modelo V" description="View Orden Produccion Modelo V" url="~/pages/orden_produccion_modelo_v" roles="hidden" />
+      <siteMapNode title="Modelo Razon Tiempo Muerto V" description="View Modelo Razon Tiempo Muerto V" url="~/pages/modelo_razon_tiempo_muerto_v" roles="hidden" />
+      <siteMapNode title="Reporte Modelo" description="" url="~/pages/listado_orden_produccion_v_1" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="SS Valor Busqueda Orden" description="View SS Valor Busqueda Orden" url="~/pages/ss_valor_busqueda_orden" roles="Adminstartstop,Userstartstop" />
+      <siteMapNode title="Bitacora Movimientos Valor Busqueda" description="View Bitacora Movimientos Valor Busqueda" url="~/pages/bitacora_movimientos_valor_busqueda" roles="Adminstartstop" />
+    </siteMapNode>
+    <siteMapNode title="Grid Mat Surtido Coment V" description="View Grid Mat Surtido Coment V" url="~/pages/grid_mat_surtido_coment_v" roles="hidden" />
+    <siteMapNode title="Etiquetas (surtido)" description="" url="~/pages/etiqueta_surtidor" roles="Surtidor" />
+    <siteMapNode title="Etiquetas" description="" url="~/pages/etiquetas" roles="UsuarioEtiqueta,administrador">
+      <siteMapNode title="Estatus Etiqueta" description="Ver Estatus Etiqueta" url="~/pages/estatus_etiqueta" roles="UsuarioEtiqueta,administrador" />
+      <siteMapNode title="Tamaño de  Etiqueta" description="Ver Tamaño de Etiqueta" url="~/pages/tamanio_etiqueta" roles="UsuarioEtiqueta,administrador" />
+      <siteMapNode title="Etiqueta" description="Ver Etiqueta" url="~/pages/etiqueta" roles="administrador" />
+    </siteMapNode>
+    <siteMapNode title="Etiqueta Usuario Proveedor" description="" url="~/pages/etiqueta_usuario_proveedor" roles="ProveedorCooper" />
+    <siteMapNode title="Carga Masiva de Etiquetas" description="" url="~/pages/carga_masiva_de_etiquetas" roles="ProveedorCooper" />
+    <siteMapNode title="Crear Material" description="" url="~/pages/etiquetas_para_proveedores" roles="administrador,CompradorRSL,UsuarioMatInde" />
+    <siteMapNode title="Etiqueta Provedor Captura" description="" url="~/pages/etiqueta_provedor_captura" roles="administrador,CapturistaRecibos" />
+    <siteMapNode title="Carga Masiva De Etiquetas de proveedores" description="" url="~/pages/carga-masiva-de-etiquetasdeproveedores" roles="EtiquetaCargaMasivaUsuarioCooper" />
+    <siteMapNode title="Clasificacion de Material" description="" url="~/pages/clasificacion_de_material" roles="ClasificacionMaterial" />
+    <siteMapNode title="Material Clasificado" description="" url="~/pages/material_clasificado" roles="ClasificacionMaterial" />
+    <siteMapNode title="Modulo Clasificacion" description="" url="~/pages/modulo_clasificacion" roles="administrador">
+      <siteMapNode title="Temporal Material Clasificacion" description="Ver Temporal Material Clasificacion" url="~/pages/temporal_material_clasificacion" roles="administrador" />
+      <siteMapNode title="Clasificacion" description="Ver Clasificación" url="~/pages/clasificacion" roles="administrador" />
+      <siteMapNode title="Material Clasificados" description="" url="~/pages/material_clasificados" roles="administrador" />
+    </siteMapNode>
+    <siteMapNode title="Actualizar O Registrar Inventario Material" description="" url="~/pages/actualizar_o_registrar_inventario_material" roles="UsuarioQueActualizaMatERSL" />
+    <siteMapNode title="Carga Masiva Inventario ERSL" description="" url="~/pages/carga_masiva_inventario_ersl" roles="UsuarioQueActualizaMatERSL" />
+    <siteMapNode title="Descarga De Inventario Material ERSL" description="Ver Descarga De Inventario Material ERSL." url="~/pages/descarga_de_inventario_material_ersl" roles="UsuarioQueActualizaMatERSL" />
+    <siteMapNode title="Registro de Material Indirecto." description="Ver Registro de Material Indirecto." url="~/pages/registro_material_indirecto" roles="hidden" />
+    <siteMapNode title="Etiqueta Embarque" description="Ver Etiqueta Embarque" url="~/pages/etiqueta_embarque" roles="usuarioEtiquetaEmbarque" />
+    <siteMapNode title="Etiqueta embarque empaque" description="" url="~/pages/etiquetaembarqueempaque" roles="UsuarioEtiquetaEmbarqueEmpaque" />
+    <siteMapNode title="Perfil Material" description="" url="~/pages/perfil_material" roles="UsuarioPerfilMaterial" />
+    <siteMapNode title="Embarques" description="" url="~/pages/embarques" roles="UsuarioEmpacador,Administrador,AdministradorEmbarques">
+      <siteMapNode title="Escaneo Validador Embarque" description="Ver Escaneo validador embarque" url="~/pages/escaneo_validador_embarque" roles="Administrador,AdministradorEmbarques" />
+      <siteMapNode title="Bitacora Validador Embarques" description="Ver Bitacora validador embarque" url="~/pages/bitacora_validador_embarques" roles="Administrador,AdministradorEmbarques" />
+      <siteMapNode title="Log Delivery Procesamiento" description="View Log Delivery Procesamiento" url="~/pages/log_delivery_procesamiento" roles="hidden" />
+      <siteMapNode title="Delivery" description="Ver Delivery" url="~/pages/delivery" roles="Administrador,AdministradorEmbarques" />
+      <siteMapNode title="Resultado Validacion Embarque" description="Ver Resultado validación embarque" url="~/pages/resultado_validacion_embarque" roles="Administrador,AdministradorEmbarques" />
+      <siteMapNode title="Evidencia Escaneo Validador Embarque" description="Ver Evidencia Escaneo" url="~/pages/evidencia_escaneo_validador_embarque" roles="Administrador,AdministradorEmbarques" />
+      <siteMapNode title="Consultar Evidencias de Escaneo" description="" url="~/pages/consultar_evidencias_de_escaneo" roles="Administrador,AdministradorEmbarques" />
+      <siteMapNode title="Validador de Embarques" description="" url="~/pages/validar_etiquetas" roles="UsuarioEmpacador" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

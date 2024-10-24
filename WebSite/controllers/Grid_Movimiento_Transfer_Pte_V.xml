@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Movimiento_Transfer_Pte_V" conflictDetection="overwriteChanges" label="Grid Movimiento Transfer Pte V" handler="eaton.Rules.Grid_Movimiento_Transfer_Pte_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Movimiento_Transfer_Pte_V"."Fila" "Fila"
+	,"Grid_Movimiento_Transfer_Pte_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Movimiento_Transfer_Pte_V"."Nivel_Prioridad_Surtido_Id" "Nivel_Prioridad_Surtido_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Nivel_Prioridad_Surtido" "Nivel_Prioridad_Surtido"
+	,"Grid_Movimiento_Transfer_Pte_V"."Nivel_Prioridad_Surtido_Valor" "Nivel_Prioridad_Surtido_Valor"
+	,"Grid_Movimiento_Transfer_Pte_V"."Usuario_Aplicacion_Id" "Usuario_Aplicacion_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Usuario_Id" "Usuario_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Usuario_Sistema" "Usuario_Sistema"
+	,"Grid_Movimiento_Transfer_Pte_V"."Movimiento_Id" "Movimiento_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Movimiento_Folio" "Movimiento_Folio"
+	,"Grid_Movimiento_Transfer_Pte_V"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Tipo_Movimiento" "Tipo_Movimiento"
+	,"Grid_Movimiento_Transfer_Pte_V"."Movimiento_Material" "Movimiento_Material"
+	,"Grid_Movimiento_Transfer_Pte_V"."Movimiento_Solicitado_Por_Id" "Movimiento_Solicitado_Por_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Movimiento_Solicitado_Por" "Movimiento_Solicitado_Por"
+	,"Grid_Movimiento_Transfer_Pte_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Movimiento_Transfer_Pte_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Movimiento_Transfer_Pte_V"."Fecha_Solicitud_Movimiento" "Fecha_Solicitud_Movimiento"
+from "dbo"."Grid_Movimiento_Transfer_Pte_V" "Grid_Movimiento_Transfer_Pte_V"
+]]></text>
+    </command>
+    <command id="Nivel_Prioridad_Surtido_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Nivel_Prioridad_Surtido_Id" />
+      </output>
+    </command>
+    <command id="Usuario_Aplicacion_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Usuario_Aplicacion_Id" />
+      </output>
+    </command>
+    <command id="Tipo_Movimiento_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Tipo_Movimiento_Id" />
+      </output>
+    </command>
+    <command id="Area_Servicio_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Area_Servicio_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Fila" type="Int64" label="Fila" showInSummary="true" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id" showInSummary="true" />
+    <field name="Area_Entrega" type="String" allowNulls="false" label="Area Entrega" length="250" showInSummary="true" />
+    <field name="Nivel_Prioridad_Surtido_Id" type="Int32" allowNulls="false" label="Nivel Prioridad Surtido Id" readOnly="true" showInSummary="true" />
+    <field name="Nivel_Prioridad_Surtido" type="String" allowNulls="false" label="Nivel Prioridad Surtido" length="150" showInSummary="true" />
+    <field name="Nivel_Prioridad_Surtido_Valor" type="Int32" allowNulls="false" label="Nivel Prioridad Surtido Valor" />
+    <field name="Usuario_Aplicacion_Id" type="Int32" allowNulls="false" label="Usuario Aplicacion Id" readOnly="true" />
+    <field name="Usuario_Id" type="Guid" allowNulls="false" label="Usuario Id" />
+    <field name="Usuario_Sistema" type="String" allowNulls="false" label="Usuario Sistema" length="256" />
+    <field name="Movimiento_Id" type="Int64" allowNulls="false" label="Movimiento Id" isPrimaryKey="true" />
+    <field name="Movimiento_Folio" type="Int64" allowNulls="false" label="Movimiento Folio" readOnly="true" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" label="Tipo Movimiento Id" readOnly="true" isPrimaryKey="true" />
+    <field name="Tipo_Movimiento" type="String" allowNulls="false" label="Tipo Movimiento" length="250" />
+    <field name="Movimiento_Material" type="String" allowQBE="false" allowSorting="false" label="Movimiento Material" readOnly="true" />
+    <field name="Movimiento_Solicitado_Por_Id" type="Guid" allowNulls="false" label="Movimiento Solicitado Por Id" />
+    <field name="Movimiento_Solicitado_Por" type="String" allowNulls="false" label="Movimiento Solicitado Por" length="256" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" readOnly="true" />
+    <field name="Area_Servicio" type="String" allowNulls="false" label="Area Servicio" length="250" />
+    <field name="Fecha_Solicitud_Movimiento" type="DateTime" dataFormatString="g" label="Fecha Solicitud Movimiento" />
+    <field name="Tmp_Mov_Ruta_Optima_Transaccion_Id" type="String" label="Tmp Mov Ruta Optima Transaccion Id" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Solicitud de Transferencias de Materiales Pendientes" filter="Usuario_Id = @BusinessRules_UserId" tags="multi-select-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Fila" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" hidden="true" />
+        <dataField fieldName="Nivel_Prioridad_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Nivel_Prioridad_Surtido" hidden="true" />
+        <dataField fieldName="Nivel_Prioridad_Surtido_Valor" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Aplicacion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+        <dataField fieldName="Usuario_Sistema" hidden="true" />
+        <dataField fieldName="Movimiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Movimiento_Folio" columns="15" />
+        <dataField fieldName="Tipo_Movimiento_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Movimiento" hidden="true" />
+        <dataField fieldName="Movimiento_Material" rows="5" />
+        <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Movimiento_Solicitado_Por" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" hidden="true" />
+        <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+        <dataField fieldName="Tmp_Mov_Ruta_Optima_Transaccion_Id" rows="5" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Movimiento Transfer Pte V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Movimiento Transfer Pte V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Fila" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Id" columns="15" />
+            <dataField fieldName="Nivel_Prioridad_Surtido" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Valor" columns="15" />
+            <dataField fieldName="Usuario_Aplicacion_Id" columns="15" />
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Usuario_Sistema" />
+            <dataField fieldName="Movimiento_Id" columns="15" />
+            <dataField fieldName="Movimiento_Folio" columns="15" />
+            <dataField fieldName="Tipo_Movimiento_Id" columns="15" />
+            <dataField fieldName="Tipo_Movimiento" />
+            <dataField fieldName="Movimiento_Material" rows="5" />
+            <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Movimiento_Solicitado_Por" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Movimiento Transfer Pte V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Fila" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Id" columns="15" />
+            <dataField fieldName="Nivel_Prioridad_Surtido" />
+            <dataField fieldName="Nivel_Prioridad_Surtido_Valor" columns="15" />
+            <dataField fieldName="Usuario_Aplicacion_Id" columns="15" />
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Usuario_Sistema" />
+            <dataField fieldName="Movimiento_Id" columns="15" />
+            <dataField fieldName="Movimiento_Folio" columns="15" />
+            <dataField fieldName="Tipo_Movimiento_Id" columns="15" />
+            <dataField fieldName="Tipo_Movimiento" />
+            <dataField fieldName="Movimiento_Material" rows="5" />
+            <dataField fieldName="Movimiento_Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Movimiento_Solicitado_Por" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Fecha_Solicitud_Movimiento" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" roles="hidden" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" roles="hidden" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="^Operations^Operaciones^Operations" flat="true">
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Iniciar Transferencia" id="a100" whenClientScript="$app.touch.dataView()._selectedKeyList.length &gt;= 1" cssClass="material-icon-play-arrow" roles="SurtidorReciboTransferencia" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="Before" name="Iniciar_Transferencia"><![CDATA[if(debug==1){
+	console.log("click en Iniciar Transferencia");
+}
+
+IniciarTransferencia($app.touch.dataView()._selectedKeyList);
+
+]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Generar_Tmp_Mov_Ruta_Optima" />
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="Generar_Mov_Ruta_Optima" />
+  </businessRules>
+</dataController>

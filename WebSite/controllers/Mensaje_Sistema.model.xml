@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Mensaje_Sistema" alias="Mensaje_Sistema" created="2019-06-19T09:39:05" modified="2019-06-19T09:39:25" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Tipo_Mensaje_Sistema_" parentTableSchema="dbo" parentTableName="Tipo_Mensaje_Sistema" x="405" y="20">
+      <foreignKeyColumn columnName="Tipo_Mensaje_Sistema_Id" parentColumnName="Tipo_Mensaje_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="405" y="250">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" />
+    <column name="Mensaje_Sistema" fieldName="Mensaje_Sistema" label="Mensaje Sistema" />
+    <column name="Mensaje_Amigable_Usuario" fieldName="Mensaje_Amigable_Usuario" label="Mensaje Amigable Usuario" />
+    <column name="Tipo_Mensaje_Sistema_Id" fieldName="Tipo_Mensaje_Sistema_Id" label="Tipo Mensaje Sistema Id" aliasColumnName="Tipo_Mensaje_Sistema" aliasForeignKey="Tipo_Mensaje_Sistema_" />
+    <column name="Tipo_Mensaje_Sistema" fieldName="Tipo_Mensaje_Sistema_Tipo_Mensaje_Sistema" label="Tipo Mensaje Sistema" foreignKey="Tipo_Mensaje_Sistema_" />
+    <column name="No_Reintentar" fieldName="No_Reintentar" label="No Reintentar" />
+    <column name="No_Http_Estatus" fieldName="No_Http_Estatus" label="No Http Estatus" />
+    <column name="Enviar_Correo" fieldName="Enviar_Correo" label="Enviar Correo" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Actualizado_Por_Id" fieldName="Actualizado_Por_Id" label="Actualizado Por Id" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro_Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

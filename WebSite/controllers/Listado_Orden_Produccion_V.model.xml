@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Listado_Orden_Produccion_V" alias="Listado_Orden_Produccion_V" created="2019-07-29T21:50:02" modified="2019-07-30T01:50:27" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_produccion_Id" fieldName="Orden_produccion_Id" label="Orden producción Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Número Orden Producción" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripción" />
+    <column name="Cantidad_Producido" fieldName="Cantidad_Producido" label="Cantidad Producido" />
+    <column name="Cantidad_Total" fieldName="Cantidad_Total" label="Cantidad Total" />
+    <column name="Tiempo_Muerto" fieldName="Tiempo_Muerto" label="Tiempo Muerto" />
+    <column name="Categoria_descripcion" fieldName="Categoria_descripcion" label="Categoria descripción" />
+    <column name="Estatus_Orden_Produccion" fieldName="Estatus_Orden_Produccion" label="Estatus Orden Producción" />
+    <column name="Label_Estatus_Orden_Produccion" fieldName="Label_Estatus_Orden_Produccion" label="Label Estatus Orden Producción" />
+  </columns>
+</dataModel>

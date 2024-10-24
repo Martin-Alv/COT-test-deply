@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Escaneo_Validador_Embarque1_1" label="Escaneo_Validador_Embarque1_1" conflictDetection="overwriteChanges" handler="eaton.Rules.Escaneo_Validador_Embarque1_1BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id" "Escaneo_Validador_Embarque_Id"
+	,"Escaneo_Validador_Embarque"."Seccion_Capturada" "Seccion_Capturada"
+	,"Escaneo_Validador_Embarque"."Material_Tarima" "Material_Tarima"
+	,"Escaneo_Validador_Embarque"."SOrde_SItem_Tarima" "SOrde_SItem_Tarima"
+	,"Escaneo_Validador_Embarque"."Etiqueta_Embarque_Detalle_Id" "Etiqueta_Embarque_Detalle_Id"
+	,"Etiqueta_Embarque_Detalle_"."Folio_Etiqueta_Embarque_Detalle" "EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle"
+	,"Escaneo_Validador_Embarque"."Folio_Etiqueta_Embarque_Detalle" "Folio_Etiqueta_Embarque_Detalle"
+	,"Escaneo_Validador_Embarque"."Material_Embarque" "Material_Embarque"
+	,"Escaneo_Validador_Embarque"."SOrde_SItem_Emabarque" "SOrde_SItem_Emabarque"
+	,"Escaneo_Validador_Embarque"."Delivery_Id" "Delivery_Id"
+	,"Delivery_"."Delivery" "Delivery"
+	,"Escaneo_Validador_Embarque"."Delivery_Delivery" "Delivery_Delivery"
+	,"Escaneo_Validador_Embarque"."Material_Delivery" "Material_Delivery"
+	,"Escaneo_Validador_Embarque"."SOrde_SItem_Delivery" "SOrde_SItem_Delivery"
+	,"Escaneo_Validador_Embarque"."Delivery_Packing_List" "Delivery_Packing_List"
+	,"Escaneo_Validador_Embarque"."SOrder_SItem_Packing_List" "Sorder_Sitem_Packing_List"
+	,"Escaneo_Validador_Embarque"."Cantidad_Material" "Cantidad_Material"
+	,"Escaneo_Validador_Embarque"."Resultado_Validacion_Embarque_Id" "Resultado_Validacion_Embarque_Id"
+	,"Resultado_Validacion_Embarque_"."Estatus_Validacion_Embarque" "Resultado_Validacion_Embarque"
+	,"Resultado_Validacion_Embarque_"."Es_Correcto" "Es_Correcto"
+	,"Resultado_Validacion_Embarque_"."Es_Incorrecto" "Es_Incorrecto"
+	,"Resultado_Validacion_Embarque_"."Es_Correcto_En_Progreso" "Es_Correcto_En_Progreso"
+	,"Resultado_Validacion_Embarque_"."Es_Incorrecto_En_Progreso" "Es_Incorrecto_En_Progreso"
+	,"Escaneo_Validador_Embarque"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Escaneo_Validador_Embarque"."Transaccion_Escaneo" "Transaccion_Escaneo"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Escaneo_Validador_Embarque"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Escaneo_Validador_Embarque"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Escaneo_Validador_Embarque"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Escaneo_Validador_Embarque"."Mensaje_Validacion_Aplicada" "MensajeValidacionAplicada"
+	,"Escaneo_Validador_Embarque"."Creado_Por_Id" "Creado_Por_Id"
+from "APP"."Escaneo_Validador_Embarque" "Escaneo_Validador_Embarque"
+	left join "APP"."Etiqueta_Embarque_Detalle" "Etiqueta_Embarque_Detalle_" on "Escaneo_Validador_Embarque"."Etiqueta_Embarque_Detalle_Id" = "Etiqueta_Embarque_Detalle_"."Etiqueta_Embarque_Detalle_Id"
+	left join "APP"."Delivery" "Delivery_" on "Escaneo_Validador_Embarque"."Delivery_Id" = "Delivery_"."Delivery_Id"
+	left join "APP"."Resultado_Validacion_Embarque" "Resultado_Validacion_Embarque_" on "Escaneo_Validador_Embarque"."Resultado_Validacion_Embarque_Id" = "Resultado_Validacion_Embarque_"."Resultado_Validacion_Embarque_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Escaneo_Validador_Embarque"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Escaneo_Validador_Embarque"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Escaneo_Validador_Embarque"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Escaneo_Validador_Embarque"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Escaneo_Validador_Embarque_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Escaneo_Validador_Embarque_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Escaneo_Validador_Embarque_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Escaneo Validador Embarque Id" readOnly="true" />
+    <field name="Folio_Escaneo" type="Int64" allowNulls="false" label="Folio Escaneo" readOnly="true" computed="true">
+      <formula>"Escaneo_Validador_Embarque"."Escaneo_Validador_Embarque_Id"</formula>
+    </field>
+    <field name="Seccion_Capturada" type="Int16" label="Sección Capturada" showInSummary="true" causesCalculate="true" />
+    <field name="Material_Tarima" type="String" label="Número de material en la tarima." length="250" showInSummary="true" causesCalculate="true" />
+    <field name="SOrde_SItem_Tarima" type="String" label="SOrder/SItem (Tarima)" length="250" showInSummary="true" causesCalculate="true" />
+    <field name="Etiqueta_Embarque_Detalle_Id" type="Int32" allowNulls="false" default="((0))" label="Etiqueta Embarque Detalle Id" showInSummary="true">
+      <items style="Lookup" dataController="Etiqueta_Embarque_Detalle" dataValueField="Etiqueta_Embarque_Detalle_Id" dataTextField="Folio_Etiqueta_Embarque_Detalle" dataView="Etiqueta_Embarque_Detalle_LookUp" pageSize="15" />
+    </field>
+    <field name="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" type="Int32" label=" Folio Etiqueta Embarque" readOnly="true" />
+    <field name="Folio_Etiqueta_Embarque_Detalle" type="String" label="Folio Etiqueta Embarque Detalle" length="250" showInSummary="true" />
+    <field name="Material_Embarque" type="String" label="Material (Embarque)" length="250" />
+    <field name="SOrde_SItem_Emabarque" type="String" label="SOrder/SItem (Embarque)" length="250" />
+    <field name="Delivery_Id" type="Int64" allowNulls="false" default="((0))" label="Delivery Id">
+      <items style="Lookup" dataController="Delivery" dataValueField="Delivery_Id" dataTextField="Delivery" pageSize="15" dataView="Delivery_LookUp_List" />
+    </field>
+    <field name="Delivery" type="Int64" readOnly="true" label="Delivery" />
+    <field name="Delivery_Delivery" type="String" label="Delivery (Delivery)" length="250" causesCalculate="true" />
+    <field name="Material_Delivery" type="String" label="Material (Delivery)" length="250" />
+    <field name="SOrde_SItem_Delivery" type="String" label="SOrder/SItem (Delivery)" length="250" />
+    <field name="Delivery_Packing_List" type="String" label="Delivery (Packing List)" length="250" causesCalculate="true" />
+    <field name="Sorder_Sitem_Packing_List" type="String" label="Sorder/Sitem (Packing List)" length="250" />
+    <field name="Cantidad_Material" type="Decimal" label="Cantidad de Material" causesCalculate="true" />
+    <field name="Resultado_Validacion_Embarque_Id" type="Int32" allowNulls="false" default="((0))" label="Resultado Validacion Embarque Id">
+      <items style="Lookup" dataController="Resultado_Validacion_Embarque" dataValueField="Resultado_Validacion_Embarque_Id" dataTextField="Estatus_Validacion_Embarque" copy="" dataView="Resultado_Validacion_Embarque_LookupList" pageSize="15" />
+    </field>
+    <field name="Resultado_Validacion_Embarque" type="String" readOnly="true" label="Resultado Validación Embarque" length="250" />
+    <field name="Es_Correcto" type="Boolean" readOnly="true" label="Es Correcto" />
+    <field name="Es_Incorrecto" type="Boolean" readOnly="true" label="Es Incorrecto" />
+    <field name="Es_Correcto_En_Progreso" type="Boolean" readOnly="true" label="Es Correcto En Progreso" />
+    <field name="Es_Incorrecto_En_Progreso" type="Boolean" readOnly="true" label="Es Incorrecto En Progreso" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" dataView="Mensaje_Sistema_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transaccion_Escaneo" type="Guid" label="Transacción Escaneo" />
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje de Sistema" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="MensajeValidacionAplicada" type="String" allowQBE="false" allowSorting="false" label="Mensaje Validacion Aplicada" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Creado Por Id">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema_Id" copy="Creado_Por=Usuario_Sistema" />
+    </field>
+    <field name="Folio_Etiqueta_Embarque" type="Int32" label=" Folio Etiqueta Embarque" isVirtual="true">
+      <items style="Lookup" dataController="Etiqueta_Embarque_Detalle" dataView="Etiqueta_Embarque_Detalle_LookUp" dataTextField="Folio_Etiqueta_Embarque_Detalle" dataValueField="Etiqueta_Embarque_Detalle_Id" />
+    </field>
+    <field name="Material_Tarima_Dos" type="String" label="Número de material en la tarima" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="SOrde_SItem_Tarima_Dos" type="String" label="SOrder SItem Tarima" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="SOrde_SItem_Packing_List" type="String" label="SOrder SItem Packing List" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="Folio_Etiqueta_Embarque_Tres" type="Int32" label=" Folio Etiqueta Embarque " isVirtual="true">
+      <items style="Lookup" dataController="Etiqueta_Embarque_Detalle" dataView="Etiqueta_Embarque_Detalle_LookUp" dataTextField="Folio_Etiqueta_Embarque_Detalle" dataValueField="Etiqueta_Embarque_Detalle_Id" />
+    </field>
+    <field name="Material_Tarima_Tres" type="String" label="Número de material en la tarima" isVirtual="true" length="250" causesCalculate="true" />
+    <field name="SOrde_SItem_Tarima_Tres" type="String" label="SOrder SItem Tarima " isVirtual="true" length="250" causesCalculate="true" />
+    <field name="Delivery_Dos" type="Int64" label="Delivery " isVirtual="true">
+      <items style="Lookup" dataController="Delivery" dataView="Delivery_LookUp_List" dataTextField="Delivery" dataValueField="Delivery_Id" />
+    </field>
+    <field name="Resultado_Validacion" type="String" label="Resultado Validación" isVirtual="true" htmlEncode="false" />
+    <field name="Folio_Etiqueta_Embarque_SeccionUno" type="String" label="Folio Etiqueta" isVirtual="true" causesCalculate="true" />
+    <field name="Folio_Etiqueta_Embarque_SeccionDos" type="String" label="Folio Etiqueta Embarque Sección Dos" isVirtual="true" causesCalculate="true" />
+    <field name="Folio_Etiqueta_Embarque_SeccionTres" type="String" label="Folio Etiqueta Embarque Seccion Tres" causesCalculate="true" isVirtual="true" />
+    <field name="Delivery_SeccionTres" type="String" label="Delivery Seccion Tres" isVirtual="true" />
+    <field name="Evidencia_Escaneo_Validador_Embarque1" type="DataView" label="Evidencias y comentarios" contextFields="Transaccion_Escaneo = Transaccion_Escaneo">
+      <dataView controller="Evidencia_Escaneo_Validador_Embarque1" view="grid1" filterFields="Transaccion_Escaneo,Escaneo_Validador_Embarque_Id" />
+    </field>
+    <field name="Folio_Escaneo_Id" type="Int64" label="Folio Escaneo Id" isVirtual="true" />
+    <field name="Mostrar_Campos_Sistema" type="Boolean" label="Mostrar Campos Sistema" allowNulls="false" isVirtual="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Folio_Escaneo_Anterior" type="Int64" label="Folio Escaneo Anterior" isVirtual="true" />
+    <field name="Captura_Iniciada" type="Boolean" label="Captura Iniciada" isVirtual="true" allowNulls="false">
+      <items style="CheckBox" />
+    </field>
+    <field name="Sales_Order_Uno" type="String" label="Sales Order (Tarima)" isVirtual="true" causesCalculate="true" />
+    <field name="Sales_Item_Uno" type="String" label="línea de la sales order" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Order_Dos" type="String" label="Sales Order (Tarima)" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Item_Dos" type="String" label="línea de la sales order" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Order_Tres" type="String" label="Sales Order (Tarima)" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Item_Tres" type="String" label="línea de la sales order" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Order_Packing" type="String" label="Sales Order Packing" causesCalculate="true" isVirtual="true" />
+    <field name="Sales_Item_Packing" type="String" label="línea de la sales order Packing" causesCalculate="true" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Escaneo Validador Embarque" filter="Estatus_Registro_Id &lt;&gt; 0 AND Seccion_Capturada &gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Folio_Escaneo" columns="15" />
+        <dataField fieldName="Seccion_Capturada" columns="15" />
+        <dataField fieldName="Material_Tarima" />
+        <dataField fieldName="SOrde_SItem_Tarima" />
+        <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" />
+        <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+        <dataField fieldName="Material_Embarque" />
+        <dataField fieldName="SOrde_SItem_Emabarque" />
+        <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" />
+        <dataField fieldName="Delivery_Delivery" />
+        <dataField fieldName="Material_Delivery" />
+        <dataField fieldName="SOrde_SItem_Delivery" />
+        <dataField fieldName="Delivery_Packing_List" />
+        <dataField fieldName="Sorder_Sitem_Packing_List" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+        <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" />
+        <dataField fieldName="Transaccion_Escaneo" columns="15" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Es_Correcto" hidden="true" />
+        <dataField fieldName="Es_Incorrecto" hidden="true" />
+        <dataField fieldName="Es_Correcto_En_Progreso" hidden="true" />
+        <dataField fieldName="Es_Incorrecto_En_Progreso" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="Escaneo_Validador_Embarque_LookUp_List" type="Grid" commandId="command1" label="Escaneo Validador Embarque" filter="Estatus_Registro_Id IN (0,1) " showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Escaneo_Validador_Embarque_Id" columns="15" />
+        <dataField fieldName="Seccion_Capturada" columns="15" />
+        <dataField fieldName="Material_Tarima" />
+        <dataField fieldName="SOrde_SItem_Tarima" />
+        <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" />
+        <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+        <dataField fieldName="Material_Embarque" />
+        <dataField fieldName="SOrde_SItem_Emabarque" />
+        <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" />
+        <dataField fieldName="Delivery_Delivery" />
+        <dataField fieldName="Material_Delivery" />
+        <dataField fieldName="SOrde_SItem_Delivery" />
+        <dataField fieldName="Delivery_Packing_List" />
+        <dataField fieldName="Sorder_Sitem_Packing_List" />
+        <dataField fieldName="Cantidad_Material" columns="15" />
+        <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+        <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+        <dataField fieldName="Transaccion_Escaneo" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Escaneo validador embarque">
+      <headerText>Escaneo validador embarque</headerText>
+      <categories>
+        <category id="c1" headerText="Escaneo validador embarque" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Tarima" />
+            <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" hyperlinkFormatString="~/pages/Etiqueta_Embarque_Detalle?Etiqueta_Embarque_Detalle_Id={Etiqueta_Embarque_Detalle_Id}&amp;_controller=Etiqueta_Embarque_Detalle&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Material_Embarque" />
+            <dataField fieldName="SOrde_SItem_Emabarque" />
+            <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" hyperlinkFormatString="~/pages/Delivery?Delivery_Id={Delivery_Id}&amp;_controller=Delivery&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" />
+            <dataField fieldName="Material_Delivery" />
+            <dataField fieldName="SOrde_SItem_Delivery" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="Es_Correcto" />
+            <dataField fieldName="Es_Incorrecto" />
+            <dataField fieldName="Es_Correcto_En_Progreso" />
+            <dataField fieldName="Es_Incorrecto_En_Progreso" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" />
+          </dataFields>
+          <visibility>
+            <expression test="false" type="ClientScript" />
+          </visibility>
+        </category>
+        <category headerText="Primera Validación" id="c2">
+          <dataFields>
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionUno" />
+            <dataField fieldName="Material_Tarima" />
+            <dataField fieldName="Sales_Order_Uno" columns="15" />
+            <dataField fieldName="Sales_Item_Uno" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Segunda Validación" id="c3">
+          <dataFields>
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionDos" />
+            <dataField fieldName="Material_Tarima_Dos" />
+            <dataField fieldName="SOrde_SItem_Tarima_Dos" hidden="true" />
+            <dataField fieldName="Sales_Order_Dos" />
+            <dataField fieldName="Sales_Item_Dos" />
+          </dataFields>
+        </category>
+        <category headerText="Tercera Validación" id="c5">
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Packing_List" hidden="true" />
+            <dataField fieldName="Sales_Order_Packing" />
+            <dataField fieldName="Sales_Item_Packing" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Delivery_SeccionTres" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionTres" />
+            <dataField fieldName="SOrde_SItem_Tarima_Tres" hidden="true" />
+            <dataField fieldName="Sales_Order_Tres" />
+            <dataField fieldName="Sales_Item_Tres" />
+            <dataField fieldName="Material_Tarima_Tres" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Resultado" id="c4">
+          <dataFields>
+            <dataField fieldName="Resultado_Validacion" rows="5" readOnly="true" textMode="Static" />
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hyperlinkFormatString="~/pages/Resultado_Validacion_Embarque?Resultado_Validacion_Embarque_Id={Resultado_Validacion_Embarque_Id}&amp;_controller=Resultado_Validacion_Embarque&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" readOnly="true" textMode="Static">
+              <visibility>
+                <expression test="$app.touch.contextDataView().get_isEditing() == false" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" tag="lookup-details-hidden" readOnly="true" textMode="Static">
+              <visibility>
+                <expression test="$app.touch.contextDataView().get_isEditing() == false" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Mostrar_Campos_Sistema" hidden="true" />
+            <dataField fieldName="Seccion_Capturada" columns="15" readOnly="true" textMode="Static" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" readOnly="true" textMode="Static" />
+            <dataField fieldName="Folio_Escaneo_Anterior" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Folio_Escaneo_Id" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Captura_Iniciada">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+          </dataFields>
+        </category>
+        <category headerText="Evidencias" id="c6">
+          <dataFields>
+            <dataField fieldName="Evidencia_Escaneo_Validador_Embarque1" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Escaneo validador embarque">
+      <headerText>Nuevo Escaneo validador embarque</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Escaneo validador embarque" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Seccion_Capturada" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Material_Embarque" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Emabarque" hidden="true" />
+            <dataField fieldName="Material_Delivery" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Delivery" hidden="true" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Transaccion_Escaneo" columns="15" hidden="true" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" hidden="true" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+        <category headerText="Primera Validación" id="c2" collapsed="true">
+          <description><![CDATA[Se valida SO/Lin y Material de Etiqueta de Embarque y Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionUno" rows="5" />
+            <dataField fieldName="SOrde_SItem_Tarima" />
+            <dataField fieldName="Material_Tarima" />
+          </dataFields>
+        </category>
+        <category headerText="Segunda Validación" id="c3" collapsed="true">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" hidden="true" />
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Folio_Etiqueta_Embarque" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionDos" rows="5" />
+            <dataField fieldName="SOrde_SItem_Tarima_Dos" rows="5" />
+            <dataField fieldName="Material_Tarima_Dos" rows="5" />
+          </dataFields>
+        </category>
+        <category headerText="Tercera Validación" collapsed="true" id="c5">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Packing List Vs Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Packing_List" rows="5" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Delivery_Dos" columns="15" hidden="true" />
+            <dataField fieldName="Delivery_SeccionTres" rows="5" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Tres" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionTres" rows="5" />
+            <dataField fieldName="SOrde_SItem_Tarima_Tres" rows="5" />
+            <dataField fieldName="Material_Tarima_Tres" rows="5" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Resultado" id="c4">
+          <dataFields>
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hidden="true" />
+            <dataField fieldName="Resultado_Validacion" rows="5" />
+            <dataField fieldName="Evidencia_Escaneo_Validador_Embarque1" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="FormNuevo" type="Form" commandId="command1" label="Nuevo Escaneo validador embarque">
+      <headerText />
+      <categories>
+        <category headerText="Primera Validación" id="c2" collapsed="true" flow="NewColumn">
+          <description><![CDATA[Se valida SO/Lin y Material de Etiqueta de Embarque y Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Embarque_Detalle_Id" aliasFieldName="EtiquetaEmbarqueDetalleFolioEtiquetaEmbarqueDetalle" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionUno" />
+            <dataField fieldName="SOrde_SItem_Tarima" hidden="true" />
+            <dataField fieldName="Material_Tarima" />
+            <dataField fieldName="Sales_Order_Uno" columns="15" />
+            <dataField fieldName="Sales_Item_Uno" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Segunda Validación" id="c3" collapsed="true">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="Delivery_Id" aliasFieldName="Delivery" hidden="true" />
+            <dataField fieldName="Delivery_Delivery" />
+            <dataField fieldName="Folio_Etiqueta_Embarque" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionDos" />
+            <dataField fieldName="SOrde_SItem_Tarima_Dos" hidden="true" />
+            <dataField fieldName="Material_Tarima_Dos" />
+            <dataField fieldName="Sales_Order_Dos" />
+            <dataField fieldName="Sales_Item_Dos" />
+          </dataFields>
+        </category>
+        <category headerText="Tercera Validación" collapsed="true" id="c5">
+          <description><![CDATA[Se valida Delivery, SO/Lin y Material de Packing List Vs Delivery Vs Etiqueta de Embarque Vs Etiqueta de Tarima]]></description>
+          <dataFields>
+            <dataField fieldName="SOrde_SItem_Packing_List" hidden="true" />
+            <dataField fieldName="Sales_Order_Packing" />
+            <dataField fieldName="Sales_Item_Packing" />
+            <dataField fieldName="Delivery_Packing_List" />
+            <dataField fieldName="Delivery_Dos" columns="15" hidden="true" />
+            <dataField fieldName="Delivery_SeccionTres" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_Tres" columns="15" hidden="true" />
+            <dataField fieldName="Folio_Etiqueta_Embarque_SeccionTres" />
+            <dataField fieldName="SOrde_SItem_Tarima_Tres" hidden="true" />
+            <dataField fieldName="Sales_Order_Tres" />
+            <dataField fieldName="Sales_Item_Tres" />
+            <dataField fieldName="Material_Tarima_Tres" />
+            <dataField fieldName="Cantidad_Material" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Resultado" id="c4">
+          <dataFields>
+            <dataField fieldName="Resultado_Validacion_Embarque_Id" aliasFieldName="Resultado_Validacion_Embarque" hidden="true" />
+            <dataField fieldName="Resultado_Validacion" rows="5" readOnly="true" textMode="Static" />
+            <dataField fieldName="Mostrar_Campos_Sistema" hidden="true" />
+            <dataField fieldName="Seccion_Capturada" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Transaccion_Escaneo" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Folio_Escaneo_Anterior" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Folio_Escaneo_Id" columns="15">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Captura_Iniciada">
+              <visibility>
+                <expression test="[Mostrar_Campos_Sistema] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+          </dataFields>
+        </category>
+        <category headerText="Evidencias" id="c6" floating="true">
+          <dataFields>
+            <dataField fieldName="Evidencia_Escaneo_Validador_Embarque1" columns="15" tag="view-style-grid, &#xD;&#xA;view-style-list, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none ">
+              <headerText>Evidencias y comentarios</headerText>
+            </dataField>
+          </dataFields>
+        </category>
+        <category id="c1" headerText="Nuevo Escaneo validador embarque">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Folio_Etiqueta_Embarque_Detalle" />
+            <dataField fieldName="Material_Embarque" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Emabarque" hidden="true" />
+            <dataField fieldName="Material_Delivery" hidden="true" />
+            <dataField fieldName="SOrde_SItem_Delivery" hidden="true" />
+            <dataField fieldName="Sorder_Sitem_Packing_List" />
+            <dataField fieldName="MensajeValidacionAplicada" rows="5" hidden="true" />
+            <dataField fieldName="Creado_Por_Id" columns="15" hidden="true" />
+          </dataFields>
+          <visibility>
+            <expression test="false" type="ClientScript" />
+          </visibility>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="SQL" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques,UsuarioEmpacador" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" whenLastCommandArgument="editForm1" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecCS001" headerText="&quot;Validar&quot;" id="a100" whenLastCommandName="New" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Validar&quot;" whenLastCommandName="New" id="a101" roles="hidden" />
+      <action id="a2" commandName="SQL" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques, UsuarioEmpacador" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" roles="hidden" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="hidden" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="hidden" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" roles="hidden" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" roles="hidden" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" headerText="Guardar" roles="hidden" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Custom" commandArgument="ExecJS008" headerText="Guardar" whenLastCommandName="Edit" whenLastCommandArgument="FormNuevo" id="a106" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Validar&quot;" whenLastCommandName="Edit" id="a103" whenLastCommandArgument="FormNuevo" roles="hidden" />
+      <action commandName="Custom" headerText="&quot;Nuevo Escaneo&quot;" id="a102" commandArgument="ExecJS006" whenLastCommandName="Edit" whenLastCommandArgument="FormNuevo" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS007" headerText="&quot;Regresar&quot;" whenLastCommandName="Edit" whenLastCommandArgument="FormNuevo" id="a104" />
+      <action commandName="Custom" id="a105" headerText="&quot;regresar&quot;" whenLastCommandName="Select" whenLastCommandArgument="editForm1" commandArgument="ExecJS007" />
+      <action id="a107" />
+      <action commandName="Custom" commandArgument="ExecJS001" headerText="&quot;Validar&quot;" whenLastCommandName="Edit" id="a109" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS007" headerText="&quot;Regresar&quot;" whenLastCommandName="Edit" id="a108" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+      <action commandName="Custom" commandArgument="ExecJS004" headerText="&quot;NUEVO&quot;" id="a300" whenView="grid1" causesValidation="false" roles="hidden" />
+      <action commandName="Edit" commandArgument="FormNuevo" headerText="&quot;Abrir&quot;" id="a100" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="DeleteIcon" whenView="grid1" roles="Administrador,AdministradorEmbarques,UsuarioEmpacador" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" headerText="&quot;Guardar ag6a1&quot;" roles="hidden" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="SQL" cssClass="material-icon-delete" roles="Administrador,AdministradorEmbarques, UsuarioEmpacador" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[-- "Borrar"
+UPDATE APP.Escaneo_Validador_Embarque 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="After"><![CDATA[-- Insert/After
+UPDATE  
+   APP.Escaneo_Validador_Embarque 
+SET 
+   Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id
+--]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[--- Update/After
+UPDATE  
+   APP.Escaneo_Validador_Embarque 
+SET 
+   Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Escaneo_Validador_Embarque_Id = @Escaneo_Validador_Embarque_Id
+--]]></rule>
+    <rule id="r111" commandName="Select" commandArgument="grid1" type="JavaScript" phase="After"><![CDATA[var r = $appfactory.find('Escaneo_Validador_Embarque1', 'Controller');
+if (r._multiSelect == false) {
+  	fnDebug("Activando la multiselección...");
+	r.multiSelect('Multiple');
+	r.refresh();
+}
+
+]]></rule>
+    <rule id="r108" commandName="Select" type="JavaScript" phase="After" commandArgument="editForm1" view="editForm1"><![CDATA[fnDebug("Edit After JS")
+
+
+var mostrarSeccionCapturada = (categoria, SeccionCapturada) => {
+    // colapsa las 3 secciones principales de captura
+    fnResetSeccion_Capturada();
+    // Descolapsar la seccion correcta
+    grupo = document.querySelector('div[data-category="' + categoria + '"]');
+    grupo.classList.remove("app-container-collapsed");
+    switch (SeccionCapturada) {
+        case 1:
+            // document.querySelector('div[data-category="c2"]').style.display = 'none';
+            document.querySelector('div[data-category="c3"]').style.display = 'none';
+            document.querySelector('div[data-category="c5"]').style.display = 'none';
+            break;
+        case 2:
+            document.querySelector('div[data-category="c2"]').style.display = 'none';
+            // document.querySelector('div[data-category="c3"]').style.display = 'none';
+            document.querySelector('div[data-category="c5"]').style.display = 'none';
+            break;
+        case 3:
+            document.querySelector('div[data-category="c2"]').style.display = 'none';
+            document.querySelector('div[data-category="c3"]').style.display = 'none';
+            // document.querySelector('div[data-category="c5"]').style.display = 'none';
+            break;
+        default:
+            break;
+    }
+}
+
+var fnPersonalizarBtnCloseEdit = () => {
+    fnDebug("Personalizando botón close...");
+    // identificar el botón natural de COT y removerlo
+    btn = document.querySelector('.app-btn.app-btn4.app-btn-close');
+    if(!btn) return;
+    padre = btn.parentNode;
+    padre.removeChild(btn);
+    // crear un nuevo botón muy parecido al original y agregarlo al html
+    var nuevoBtn = document.createElement("span");
+    nuevoBtn.className = 'custom-btn custom-btn4 custom-btn-close'
+    padre.appendChild(nuevoBtn);
+
+    var cerrar = () => {
+        fnDebug("Se dió clic en el botón [X]");
+        var actionPath;
+        if($app.touch.contextDataView().get_isEditing() == true){
+            actionPath = 'a[data-action-path="ag2/a108"]';
+        } else {
+            actionPath =  'a[data-action-path="ag2/a105"]'; // No se esta editando, solo visualizando la informacion
+        }
+        regresar = document.querySelector(actionPath);
+        regresar.click()
+    }
+
+    nuevoBtn.addEventListener('click', cerrar);
+    nuevoBtn.addEventListener('touchend', cerrar);
+
+}
+
+
+var _Seccion_Capturada = [Seccion_Capturada];
+var _CategoryId;
+
+var _SOrde_SItem_Tarima = [SOrde_SItem_Tarima];
+var arraySOEmbarque = _SOrde_SItem_Tarima.toString().split('/');
+var _Sales_Order_Tarima = (arraySOEmbarque.length > 0) ? parseInt(arraySOEmbarque[0]) : '';
+var _Sales_Item_Tarima = (arraySOEmbarque.length > 1) ? parseInt(arraySOEmbarque[1]) : '';
+_Sales_Order_Tarima = (isNaN(_Sales_Order_Tarima)) ? '' : _Sales_Order_Tarima ;
+_Sales_Item_Tarima = (isNaN(_Sales_Item_Tarima)) ? '' : _Sales_Item_Tarima;
+
+var _Folio_Etiqueta_Embarque_Detalle = [Folio_Etiqueta_Embarque_Detalle]
+_Folio_Etiqueta_Embarque_Detalle = (_Folio_Etiqueta_Embarque_Detalle == undefined) ? '' : _Folio_Etiqueta_Embarque_Detalle.toString();
+
+
+switch (_Seccion_Capturada) {
+    case 1:
+        $app.input.execute({
+            values: [
+                 { name: 'Folio_Etiqueta_Embarque_SeccionUno', value: _Folio_Etiqueta_Embarque_Detalle }
+                // ,{ name: 'Material_Tarima', value: [Material_Tarima] } este campo se guarda directamente en una columna de la tabla
+                ,{ name: 'Sales_Order_Uno', value: _Sales_Order_Tarima.toString() }
+                ,{ name: 'Sales_Item_Uno', value: _Sales_Item_Tarima.toString() }
+                // Campos de sistema
+                ,{ name: 'Folio_Escaneo_Anterior', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Folio_Escaneo_Id', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Captura_Iniciada', value: true }
+            ]
+            ,raiseCalculate: false
+        });
+        _CategoryId = 'c2';
+        break;
+    case 2:
+        $app.input.execute({
+            values: [
+                 //  { name: 'Delivery_Delivery', value: [] } Este valor se guarda directamente en un campo de la tabla
+                 { name: 'Folio_Etiqueta_Embarque_SeccionDos', value: _Folio_Etiqueta_Embarque_Detalle }
+                ,{ name: 'Material_Tarima_Dos', value: [Material_Tarima] }
+                ,{ name: 'Sales_Order_Dos', value: _Sales_Order_Tarima.toString() }
+                ,{ name: 'Sales_Item_Dos', value: _Sales_Item_Tarima.toString() }
+                // Campos de sistema
+                ,{ name: 'Folio_Escaneo_Anterior', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Folio_Escaneo_Id', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Captura_Iniciada', value: true }
+            ]
+            ,raiseCalculate: false
+        });
+        _CategoryId = 'c3';
+        break;
+    case 3:
+
+        // obtener datos de SalesOrder en packing list
+        var _SOrde_SItem_Packing = [Sorder_Sitem_Packing_List];
+        _SOrde_SItem_Packing = (_SOrde_SItem_Packing == undefined) ? '' : _SOrde_SItem_Packing ;
+        var arraySOPacking = _SOrde_SItem_Packing.toString().split('/');
+        var _Sales_Order_Packing = (arraySOPacking.length > 0) ? parseInt(arraySOPacking[0]) : '';
+        var _Sales_Item_Packing = (arraySOPacking.length > 1) ? parseInt(arraySOPacking[1]) : '';
+        _Sales_Order_Packing = (isNaN(_Sales_Order_Packing)) ? '' : _Sales_Order_Packing ;
+        _Sales_Item_Packing = (isNaN(_Sales_Item_Packing)) ? '' : _Sales_Item_Packing;
+
+        $app.input.execute({
+            values: [
+                 { name: 'Sales_Order_Packing', value: _Sales_Order_Packing.toString() }
+                ,{ name: 'Sales_Item_Packing', value: _Sales_Item_Packing.toString() }
+                // ,{ name: 'Delivery_Packing', value:  } // Se guarda directamente en un campo de la tabla
+                ,{ name: 'Folio_Etiqueta_Embarque_SeccionTres', value: _Folio_Etiqueta_Embarque_Detalle }
+                ,{ name: 'Sales_Order_Tres', value: _Sales_Order_Tarima.toString() }
+                ,{ name: 'Sales_Item_Tres', value: _Sales_Item_Tarima.toString() }
+                ,{ name: 'Material_Tarima_Tres', value: [Material_Tarima] }
+                // ,{ name: 'Cantida_Material', value:  } // se garda directamente en el campo
+                // Campos de sistema
+                ,{ name: 'Folio_Escaneo_Anterior', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Folio_Escaneo_Id', value: [Escaneo_Validador_Embarque_Id] }
+                ,{ name: 'Captura_Iniciada', value: true }
+            ]
+            ,raiseCalculate: false
+        });
+        _CategoryId = 'c5';
+        break;
+    default:
+        _CategoryId = '';
+        fnDebug('No se seleccionó la seccion capturada')
+        break;
+}
+
+
+mostrarSeccionCapturada(_CategoryId, _Seccion_Capturada);
+nuevoModal = fnPersonalizarBtnCloseEdit();
+if (nuevoModal != false) {
+  	// cuando la funcion devuevlve un false es porque ya se agrego el boton custo, y entonces tambien los eventos
+	addRemplazarValoresMaterial();
+}
+
+]]></rule>
+  </businessRules>
+</dataController>

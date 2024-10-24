@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Ruta_Optima_A_Ejecutar_V" alias="Ruta_Optima_A_Ejecutar_V" created="2018-10-22T02:31:19" modified="2018-11-08T12:36:40" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Numero_Grupo_Ruta_Optima" fieldName="Numero_Grupo_Ruta_Optima" label="Numero Grupo Ruta Optima" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Fecha_Produccion" fieldName="Fecha_Produccion" label="Fecha Produccion" format="g" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Produccion Detalle Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha Solicitud" format="g" />
+    <column name="Unidad_Material_Entregado_Id" fieldName="Unidad_Material_Entregado_Id" label="Unidad Material Entregado Id" />
+    <column name="Unidad_Material_Entregado" fieldName="Unidad_Material_Entregado" label="Unidad Material Entregado" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicacion Almacenamiento Id" />
+  </columns>
+</dataModel>

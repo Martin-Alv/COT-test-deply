@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="SS_Valor_Busqueda_Orden" alias="SS_Valor_Busqueda_Orden" created="2020-05-18T20:33:13" modified="2020-05-18T20:59:57" x="24" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="SubCategoria_" parentTableSchema="APP" parentTableName="RATE_SUBCATEGORIA" x="559" y="20">
+      <foreignKeyColumn columnName="SubCategoria_Id" parentColumnName="ID_SUBCATEGORIA" />
+    </foreignKey>
+    <foreignKey id="SubCategoria_Default_" parentTableSchema="APP" parentTableName="RATE_SUBCATEGORIA" x="1019" y="31">
+      <foreignKeyColumn columnName="SubCategoria_Default_Id" parentColumnName="ID_SUBCATEGORIA" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="20" y="449">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="582" y="304">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="597" y="469">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="SUBCATEGORIA_DESCRIPCION" fieldName="SUBCATEGORIA_DESCRIPCION" label="Subcategoria Descripcion" foreignKey="SubCategoria_" />
+    <column name="SUBCATEGORIA_DESCRIPCION" fieldName="SUBCATEGORIA_DESCRIPCION_DEFAULT" label="SubCategoria Descripcion_Default" foreignKey="SubCategoria_Default_" />
+    <column name="SS_Valor_Busqueda_Orden_Id" fieldName="SS_Valor_Busqueda_Orden_Id" label="SS Valor Busqueda Orden Id" />
+    <column name="Valor_Busqueda" fieldName="Valor_Busqueda" label="Valor Busqueda" />
+    <column name="Orden" fieldName="Orden" label="Orden" />
+    <column name="SubCategoria_Id" fieldName="SubCategoria_Id" label="Sub Categoria Id" aliasColumnName="SUBCATEGORIA_DESCRIPCION" aliasForeignKey="SubCategoria_" />
+    <column name="SubCategoria_Default_Id" fieldName="SubCategoria_Default_Id" label="Sub Categoria Default Id" aliasColumnName="SUBCATEGORIA_DESCRIPCION" aliasForeignKey="SubCategoria_Default_" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro_Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Orden_Produccion_Con_Material_Pte_Por_Surtir_V" alias="Grid_Orden_Produccion_Con_Material_Pte_Por_Surtir_V" created="2019-02-14T19:45:14" modified="2019-02-18T16:03:20" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Fecha_Produccion" fieldName="Fecha_Produccion" label="Fecha Produccion" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripcion" />
+  </columns>
+</dataModel>

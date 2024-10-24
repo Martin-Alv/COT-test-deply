@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="utf-8"?><logs><log type="Controllers"><c y="NodeSet" t="2019-11-04T15:39:21"><controller name="Grid_Orden_Prod_Incandescencias_V" />
+<insert type="command">
+  <CommandId>Grid_Orden_Produccion_Por_Fecha_Impresion_Incan_V</CommandId>
+  <Text>SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Fecha_Produccion]
+      ,[Fecha_Liberacion_Produccion]
+      ,[Fecha_Compromiso_Produccion]
+      ,[Fecha_Embarque]
+      ,[Creado_Por]
+      ,[Fecha_Creacion]
+      ,[Actualizado_Por]
+      ,[Fecha_Ultima_Actualizacion]
+      ,[Estatus_Registro_Id]
+      ,[Estatus_Registro]
+      ,[Cantidad]
+      ,[Estatus_Orden_Produccion_Id]
+      ,[Estatus_Orden_Produccion]
+      ,[Producto_Clave]
+      ,[Producto_Descripcion]
+      ,[Producto_Id]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Familia_Descripcion]
+      ,[Cantidad_Dias_Produccion]
+      ,[Menor_A_Dias_Establecidos]
+      ,[Cantidad_Orden_Detalle_Pendiente_Por_Enviar_A_Solicitud]
+      ,[Area_Servicio_Id]
+      ,[Usuario_Aplicacion_Id]
+      ,[Usuario_Id]
+  FROM [dbo].[Grid_Orden_Produccion_Por_Fecha_Impresion_Incan_V]</Text>
+  <Custom>false</Custom>
+  <Type>Text</Type>
+</insert></c><c y="NodeSet" t="2019-11-04T15:41:06"><controller name="Grid_Orden_Prod_Incandescencias_V" />
+<insert type="view">
+  <ViewId>grid_OrdenProdPorFechaImpresionIncan</ViewId>
+  <Type>Grid</Type>
+  <Legend>false</Legend>
+  <CommandId>Grid_Orden_Produccion_Por_Fecha_Impresion_Incan_V</CommandId>
+  <Label>Orden Producción por Fecha de Impresión</Label>
+  <ShowInSelector>true</ShowInSelector>
+  <ReportTemplate>false</ReportTemplate>
+</insert></c><c y="NodeSet" t="2019-11-04T15:41:15"><controller name="Grid_Orden_Prod_Incandescencias_V" />
+<view id="grid_OrdenProdPorFechaImpresionIncan" />
+<update>
+  <FilterExpression>Usuario_Id = @BusinessRules_UserId</FilterExpression>
+</update></c><c y="NodeSet" t="2019-11-04T16:07:57"><controller name="Grid_Orden_Prod_Incandescencias_V" />
+<view id="grid_OrdenProdPorFechaImpresionIncan" />
+<move>
+  <controller name="Grid_Orden_Prod_Incandescencias_V" />
+  <view id="grid1" />
+</move></c><c y="NodeSet" t="2019-12-16T23:32:36"><controller name="Grid_Orden_Produccion_V" />
+<view id="gridOrdenProduccionPorFechaImpresionRelDate" />
+<move>
+  <controller name="Grid_Orden_Produccion_V" />
+  <view id="grid1" />
+</move></c><c y="NodeSet" t="2019-12-16T23:35:43"><controller name="Grid_Orden_Produccion_V" />
+<view id="gridOrdenProduccionPorFechaImpresionRelDate" />
+<dataField fieldName="Numero_Orden_Produccion" />
+<update>
+  <Search>Suggested</Search>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-16T23:35:54"><controller name="Grid_Orden_Produccion_V" />
+<view id="grid1" />
+<dataField fieldName="Numero_Orden_Produccion" />
+<update>
+  <Search>Suggested</Search>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-16T23:39:09"><controller name="Grid_Orden_Produccion_V" />
+<view id="grid1" />
+<update>
+  <ShowInSelector>true</ShowInSelector>
+</update></c><c y="NodeSet" t="2019-12-16T23:39:17"><controller name="Grid_Orden_Produccion_V" />
+<view id="grid1" />
+<update>
+  <Label>Orden Producción</Label>
+</update></c><c y="NodeSet" t="2019-12-17T00:22:15"><controller name="Bitacora_Captura_Sap1" />
+<insert type="actionGroup">
+  <Scope>ActionBar</Scope>
+  <HeaderText>Operaciones</HeaderText>
+  <Flat>true</Flat>
+</insert></c><c y="NodeSet" t="2019-12-17T00:26:16"><controller name="Bitacora_Captura_Sap1" />
+<actionGroup id="ag100" />
+<insert type="action">
+  <CommandName>Report</CommandName>
+  <CommandArgument>ExecCS01</CommandArgument>
+  <HeaderText>Generar Hoja Para Captura</HeaderText>
+  <CausesValidation>true</CausesValidation>
+  <WhenClientScript>$app.touch.dataView()._totalRowCount &gt; 0 &amp;&amp; [Estatus_Captura_Sap_Id] == 1</WhenClientScript>
+  <CssClass>material-icon-description</CssClass>
+</insert></c><c y="NodeSet" t="2019-12-17T00:27:10"><controller name="Bitacora_Captura_Sap1" />
+<insert type="rule">
+  <Type>Code</Type>
+  <CommandName>Report</CommandName>
+  <CommandArgument>ExecCS01</CommandArgument>
+  <Name>Imprimir_PDF</Name>
+  <Phase>Execute</Phase>
+</insert></c><c y="NodeSet" t="2019-12-17T00:28:37"><controller name="Producto_Material" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+   APP.Producto_Material
+SET
+   Estatus_Registro_Id = 3 
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Producto_Material_Id = @Producto_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-12-17T00:36:57"><controller name="Producto_Material" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Data>UPDATE 
+   APP.Producto_Material
+SET
+   Estatus_Registro_Id = 3 
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Producto_Material_Id = @Producto_Material_Id</Data>
+</update></c><c y="NodeSet" t="2019-12-17T01:03:20"><controller name="Grid_Bcs_Duplicado_V" />
+<view id="grid1" />
+<update>
+  <Label>Bitácora Captura SAP Duplicado</Label>
+</update></c><c y="NodeSet" t="2019-12-17T01:04:10"><controller name="Grid_Bcs_Duplicado_V" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2019-12-17T01:35:13"><controller name="Grid_Mat_Surtido_Coment_V" />
+<view id="grid1" />
+<update>
+  <Label>Comentarios</Label>
+</update></c><c y="NodeSet" t="2019-12-18T01:03:19"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Solicitud_Id" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Solicitado_Por" />
+</move></c><c y="NodeSet" t="2019-12-18T01:03:19"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Solicitud_Id" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Solicitado_Por_Id" />
+</move></c><c y="NodeSet" t="2019-12-18T01:03:23"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Solicitado_Por" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Solicitud_Id" />
+</move></c><c y="NodeSet" t="2019-12-18T01:03:29"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Solicitado_Por_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-18T01:03:45"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Ubicacion_Almacenamiento_Id" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Solicitud_Id" />
+</move></c><c y="NodeSet" t="2019-12-18T01:03:47"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Ubicacion_Almacenamiento" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Solicitud_Id" />
+</move></c><c y="NodeSet" t="2019-12-18T01:03:53"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Solicitud_Id" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Material_Descripcion" />
+</move></c><c y="NodeSet" t="2019-12-18T01:04:01"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Solicitado_Por_Id" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Fecha_Solicitud" />
+</move></c><c y="NodeSet" t="2019-12-18T01:04:03"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Solicitud" />
+<move>
+  <controller name="Grid_Lista_Surtido_Incan_V" />
+  <view id="grid1" />
+  <dataField fieldName="Solicitado_Por_Id" />
+</move></c><c y="NodeSet" t="2019-12-18T01:04:19"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<dataField fieldName="Ubicacion_Almacenamiento_Id" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-18T01:09:02"><controller name="Grid_Ruta_Optima_Incan_A_Ejecutar_V" />
+<view id="grid1" />
+<dataField fieldName="Numero_Grupo_Ruta_Optima" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-18T01:10:23"><controller name="Grid_Ruta_Optima_Incan_A_Ejecutar_V" />
+<field name="Material_Ubicacion" />
+<update>
+  <Label>Otras ubicaciones del material</Label>
+</update></c><c y="NodeSet" t="2019-12-18T02:44:05"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<update>
+  <ReportTemplate>true</ReportTemplate>
+</update></c><c y="NodeSet" t="2019-12-18T02:49:17"><controller name="Grid_Lista_Surtido_Incan_V" />
+<view id="grid1" />
+<update>
+  <ReportTemplate>false</ReportTemplate>
+</update></c><c y="NodeSet" t="2019-12-18T03:30:12"><controller name="Grid_Orden_Prod_Incandescencias_V" />
+<view id="grid_OrdenProdPorFechaImpresionIncan" />
+<dataField fieldName="Numero_Orden_Produccion" />
+<update>
+  <Search>Suggested</Search>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-18T03:30:23"><controller name="Grid_Orden_Prod_Incandescencias_V" />
+<view id="grid1" />
+<dataField fieldName="Numero_Orden_Produccion" />
+<update>
+  <Search>Suggested</Search>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-12-18T03:35:19"><controller name="Solicitud2_2" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+	   APP.Solicitud
+	SET
+		Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+		-----
+	   ,Creado_Por_Id= @BusinessRules_UserId
+	   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Actualizado_Por_Id = @BusinessRules_UserId
+	   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Subtipo_Solicitud_Id = 1 --solicitud de material normal
+	WHERE
+		Solicitud_Id = @Solicitud_Id
+
+
+		
+
+</Script>
+</update></c><c y="NodeSet" t="2019-12-18T03:37:50"><controller name="Solicitud2_2" />
+<rule id="r100" />
+<update>
+  <Script>--SET @Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL);
+SET @Solicitado_Por_Id = @BusinessRules_UserId;
+SET @Tipo_Solicitud_Id = 2; -- Manual
+SET @Estatus_Solicitud_Id = (SELECT TOP 1 Estatus_Solicitud_Id FROM APP.Estatus_Solicitud WHERE Significa_Pendiente = 1 AND Estatus_Registro_Id = 1);
+SET @Registrado_Desde_Id = 9; -- Solicitud creado desde Solicitud Manual.
+
+
+---Obtener 1 area de servicio que tenga asignado el usuario logeado 
+SELECT 
+	TOP 1 
+	@Area_Servicio_Id = ISNULL(uaase.Area_Servicio_Id,0)
+	,@Area_Servicio = ISNULL(ase.Area_Servicio,'Sin Area Servicio')
+FROM 
+	APP.Usuario_Aplicacion_Area_Servicio uaase
+INNER JOIN APP.Area_Servicio ase ON uaase.Area_Servicio_Id = ase.Area_Servicio_Id
+WHERE 
+	uaase.Estatus_Registro_Id = 1
+AND uaase.Usuario_Id = @BusinessRules_UserId;</Script>
+</update></c><c y="NodeSet" t="2019-12-18T03:38:36"><controller name="Solicitud2_2" />
+<rule id="r100" />
+<update>
+  <Script>--SET @Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL);
+SET @Solicitado_Por_Id = @BusinessRules_UserId;
+SET @Tipo_Solicitud_Id = 2; -- Manual
+SET @Estatus_Solicitud_Id = (SELECT TOP 1 Estatus_Solicitud_Id FROM APP.Estatus_Solicitud WHERE Significa_Pendiente = 1 AND Estatus_Registro_Id = 1);
+SET @Registrado_Desde_Id = 9; -- Solicitud creado desde Solicitud Manual.
+
+
+---Obtener 1 area de servicio que tenga asignado el usuario logeado 
+SELECT 
+	TOP 1 
+	@Area_Servicio_Id = ISNULL(uaase.Area_Servicio_Id,0)
+	,@Area_Servicio = ISNULL(ase.Area_Servicio,'Sin Area Servicio')
+FROM 
+	APP.Usuario_Aplicacion_Area_Servicio uaase
+INNER JOIN APP.Area_Servicio ase ON uaase.Area_Servicio_Id = ase.Area_Servicio_Id
+WHERE 
+	uaase.Estatus_Registro_Id = 1
+AND uaase.Usuario_Id = @BusinessRules_UserId;</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:04:01"><controller name="Solicitud2_2" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+	   APP.Solicitud
+	SET
+		Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+		-----
+	   ,Creado_Por_Id= @BusinessRules_UserId
+	   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Actualizado_Por_Id = @BusinessRules_UserId
+	   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Subtipo_Solicitud_Id = 2 --solicitud de incan
+	WHERE
+		Solicitud_Id = @Solicitud_Id
+
+
+		
+
+</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:04:46"><controller name="Solicitud2" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+	   APP.Solicitud
+	SET
+		Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+		-----
+	   ,Creado_Por_Id= @BusinessRules_UserId
+	   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Actualizado_Por_Id = @BusinessRules_UserId
+	   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Subtipo_Solicitud_Id = 1 --solicitud normal de mat
+	WHERE
+		Solicitud_Id = @Solicitud_Id
+
+
+		
+
+</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:05:39"><controller name="Solicitud2_1" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.Solicitud
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Subtipo_Solicitud_Id = 1 --solicitud normal de mat
+WHERE
+    Solicitud_Id = @Solicitud_Id</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:05:41"><controller name="Solicitud2_1" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.Solicitud
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Subtipo_Solicitud_Id = 1 --solicitud normal de mat
+WHERE
+    Solicitud_Id = @Solicitud_Id</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:05:42"><controller name="Solicitud2_1" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.Solicitud
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Subtipo_Solicitud_Id = 1 --solicitud normal de mat
+WHERE
+    Solicitud_Id = @Solicitud_Id</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:05:44"><controller name="Solicitud2_1" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+   APP.Solicitud
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Subtipo_Solicitud_Id = 1 --solicitud normal de mat
+WHERE
+    Solicitud_Id = @Solicitud_Id</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:08:26"><controller name="Solicitud2_2" />
+<rule id="r102" />
+<update>
+  <Script>UPDATE 
+	   APP.Solicitud
+	SET
+		Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+		-----
+	   ,Creado_Por_Id= @BusinessRules_UserId
+	   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Actualizado_Por_Id = @BusinessRules_UserId
+	   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Subtipo_Solicitud_Id = 2 --solicitud de incan
+	WHERE
+		Solicitud_Id = @Solicitud_Id
+
+
+		
+
+</Script>
+</update></c><c y="NodeSet" t="2019-12-18T04:09:52"><controller name="Solicitud2_2" />
+<view id="grid1" />
+<update>
+  <FilterExpression>Solicitado_Por_Id = @BusinessRules_UserId AND SubtipoSolic_Es_Solic_Mat_Pickeo_Incan = 1</FilterExpression>
+</update></c><c y="NodeSet" t="2019-12-19T20:14:48"><controller name="Material_Exclusion" />
+<clone /></c><c y="NodeSet" t="2019-12-19T20:15:09"><controller name="Material_Exclusion1" />
+<view id="grid1" />
+<update>
+  <FilterExpression>Estatus_Registro_Id &lt;&gt; 0 AND Tipo_Exclusion_Id = 4</FilterExpression>
+</update></c><c y="NodeSet" t="2020-01-28T04:36:46"><controller name="Solicitud2" />
+<field name="Categoria_Solicitud_Id" />
+<update>
+  <Copy>Es_De_Kanban=Es_De_Kanban, Es_Otro=Es_Otro, Es_Interplanta=Es_Interplanta, Es_Solicitud_Rollo=Es_Solicitud_Rollo,
+Es_Urgencia_Compra=Es_Urgencia_Compra</Copy>
+</update></c><c y="NodeSet" t="2020-01-28T04:39:35"><controller name="Solicitud2" />
+<view id="createForm1" />
+<dataField fieldName="Es_De_Excedente" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T04:42:16"><controller name="Solicitud2" />
+<rule id="r105" />
+<update>
+  <Script>IF @Orden_Produccion_Detalle_Id IS NULL
+BEGIN
+	SET @Orden_Produccion_Detalle_Id = 0
+END
+
+IF @Es_Urgencia_Compra = 0
+BEGIN
+  IF @Material_Stock_Total = 0
+  BEGIN	
+	 SET @BusinessRules_PreventDefault = 1
+	 SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+	 SET @Result_ShowAlert = @Result_ShowViewMessage
+	 RETURN
+  END 
+END</Script>
+</update></c><c y="NodeSet" t="2020-01-28T04:45:13"><controller name="Solicitud2" />
+<rule id="r103" />
+<update>
+  <Script>if([Cantidad_Solicitado]&lt;=0 &amp;&amp; [Es_Urgencia_Compra] == false){	
+  	this.result.focus('Cantidad_Solicitado','Ingrese cantidad válido para solicitar.') 
+    this.preventDefault();  	
+}
+else
+if([Area_Entrega_Id]==0){
+  	this.result.focus('Area_Entrega_Id','Seleccione área de entrega válida.') 
+	this.preventDefault();
+}
+else
+if ([Es_De_Excedente]==true &amp;&amp; ([Orden_Produccion_Id] == 0 || [Orden_Produccion_Id] == null )){  
+  this.result.focus('Orden_Produccion_Id','Seleccione orden de producción.') 
+  this.preventDefault();
+}</Script>
+</update></c><c y="NodeSet" t="2020-01-28T04:48:45"><controller name="Solicitud2" />
+<rule id="r103" />
+<update>
+  <Script>if([Cantidad_Solicitado]&lt;=0 &amp;&amp; [Es_Urgencia_Compra] == false){	
+  	this.result.focus('Cantidad_Solicitado','Ingrese cantidad válido para solicitar.') 
+    this.preventDefault();  	
+}
+else
+if([Area_Entrega_Id]==0 &amp;&amp; [Es_Urgencia_Compra] == false){
+  	this.result.focus('Area_Entrega_Id','Seleccione área de entrega válida.') 
+	this.preventDefault();
+}
+else
+if ([Es_De_Excedente]==true &amp;&amp; ([Orden_Produccion_Id] == 0 || [Orden_Produccion_Id] == null )){  
+  this.result.focus('Orden_Produccion_Id','Seleccione orden de producción.') 
+  this.preventDefault();
+}</Script>
+</update></c><c y="NodeSet" t="2020-01-28T04:49:08"><controller name="Solicitud2" />
+<view id="createForm1" />
+<dataField fieldName="Es_De_Excedente" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T04:49:13"><controller name="Solicitud2" />
+<view id="createForm1" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T04:51:35"><controller name="Solicitud2" />
+<rule id="r103" />
+<update>
+  <Script>if([Cantidad_Solicitado]&lt;=0 &amp;&amp; [Es_Urgencia_Compra] == false){	
+  	this.result.focus('Cantidad_Solicitado','Ingrese cantidad válido para solicitar.') 
+    this.preventDefault();  	
+}
+else
+if([Area_Entrega_Id]==0){
+  	this.result.focus('Area_Entrega_Id','Seleccione área de entrega válida.') 
+	this.preventDefault();
+}
+else
+if ([Es_De_Excedente]==true &amp;&amp; ([Orden_Produccion_Id] == 0 || [Orden_Produccion_Id] == null )){  
+  this.result.focus('Orden_Produccion_Id','Seleccione orden de producción.') 
+  this.preventDefault();
+}</Script>
+</update></c><c y="NodeSet" t="2020-01-28T04:51:39"><controller name="Solicitud2" />
+<rule id="r103" />
+<update>
+  <Script>if([Cantidad_Solicitado]&lt;=0 &amp;&amp; [Es_Urgencia_Compra] == false){	
+  	this.result.focus('Cantidad_Solicitado','Ingrese cantidad válido para solicitar.') 
+    this.preventDefault();  	
+}
+else
+if([Area_Entrega_Id]==0){
+  	this.result.focus('Area_Entrega_Id','Seleccione área de entrega válida.') 
+	this.preventDefault();
+}
+else
+if ([Es_De_Excedente]==true &amp;&amp; ([Orden_Produccion_Id] == 0 || [Orden_Produccion_Id] == null )){  
+  this.result.focus('Orden_Produccion_Id','Seleccione orden de producción.') 
+  this.preventDefault();
+}</Script>
+</update></c><c y="NodeSet" t="2020-01-28T04:52:22"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>
+SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+	
+IF @Material_Stock_Total = 0 AND @Es_Urgencia_Compra = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-01-28T04:58:29"><controller name="Categoria_Solicitud" />
+<view id="Categoria_Solicitud_LookUp_List" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T05:00:36"><controller name="Categoria_Solicitud" />
+<view id="Categoria_Solicitud_LookUp_List" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T05:12:06"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+	
+IF @Material_Stock_Total = 0 AND @Es_Urgencia_Compra = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 -cc ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:27:31"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+	
+IF (@Material_Stock_Total = 0 AND @Es_Urgencia_Compra = 0)
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 -cc ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:33:45"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+	
+IF @Material_Stock_Total = 0 
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END </Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:35:06"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>IF @Es_Urgencia_Compra = 0
+BEGIN
+SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+	
+IF @Material_Stock_Total = 0 
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+END</Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:35:08"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>IF @Es_Urgencia_Compra = 0
+BEGIN
+SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+	
+IF @Material_Stock_Total = 0 
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+END</Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:35:21"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>
+SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+IF @Es_Urgencia_Compra = 0
+BEGIN	
+IF @Material_Stock_Total = 0 
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+END</Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:41:32"><controller name="Solicitud2" />
+<view id="createForm1" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T05:44:01"><controller name="Solicitud2" />
+<view id="createForm1" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T05:44:08"><controller name="Solicitud2" />
+<view id="editForm1" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T05:44:18"><controller name="Solicitud2" />
+<view id="grid1" />
+<dataField fieldName="Es_Urgencia_Compra" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-01-28T05:44:28"><controller name="Solicitud2" />
+<rule id="r105" />
+<update>
+  <Script>IF @Orden_Produccion_Detalle_Id IS NULL
+BEGIN
+	SET @Orden_Produccion_Detalle_Id = 0
+END
+
+IF @Es_Urgencia_Compra = 0
+BEGIN
+  IF @Material_Stock_Total = 0
+  BEGIN	
+	 SET @BusinessRules_PreventDefault = 1
+	 SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+	 SET @Result_ShowAlert = @Result_ShowViewMessage
+	 RETURN
+  END 
+END</Script>
+</update></c><c y="NodeSet" t="2020-01-28T05:44:34"><controller name="Solicitud2" />
+<rule id="r106" />
+<update>
+  <Script>SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+IF @Es_Urgencia_Compra = 0
+BEGIN	
+IF @Material_Stock_Total = 0 
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+END</Script>
+</update></c><c y="NodeSet" t="2020-04-16T22:27:25"><controller name="RATE_SUBCATEGORIA" />
+<field name="Es_Emergencia" />
+<update>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2020-04-16T22:27:31"><controller name="RATE_SUBCATEGORIA" />
+<field name="Es_Estandar" />
+<update>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2020-04-16T22:27:38"><controller name="RATE_SUBCATEGORIA" />
+<field name="Es_CordPi" />
+<update>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2020-04-16T22:27:45"><controller name="RATE_SUBCATEGORIA" />
+<field name="Es_Sensor" />
+<update>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2020-04-16T22:27:52"><controller name="RATE_SUBCATEGORIA" />
+<field name="Es_Emergencia_Sensor" />
+<update>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2020-04-16T22:28:13"><controller name="RATE_SUBCATEGORIA" />
+<view id="grid1" />
+<dataField fieldName="SUBCATEGORIA_DESCRIPCION" />
+<move>
+  <controller name="RATE_SUBCATEGORIA" />
+  <view id="grid1" />
+  <dataField fieldName="Es_Emergencia_Sensor" />
+</move></c><c y="NodeSet" t="2020-04-16T22:28:13"><controller name="RATE_SUBCATEGORIA" />
+<view id="grid1" />
+<dataField fieldName="SUBCATEGORIA_DESCRIPCION" />
+<move>
+  <controller name="RATE_SUBCATEGORIA" />
+  <view id="grid1" />
+  <dataField fieldName="Es_Sensor" />
+</move></c><c y="NodeSet" t="2020-04-16T22:28:13"><controller name="RATE_SUBCATEGORIA" />
+<view id="grid1" />
+<dataField fieldName="SUBCATEGORIA_DESCRIPCION" />
+<move>
+  <controller name="RATE_SUBCATEGORIA" />
+  <view id="grid1" />
+  <dataField fieldName="Es_CordPi" />
+</move></c><c y="NodeSet" t="2020-04-16T22:28:13"><controller name="RATE_SUBCATEGORIA" />
+<view id="grid1" />
+<dataField fieldName="SUBCATEGORIA_DESCRIPCION" />
+<move>
+  <controller name="RATE_SUBCATEGORIA" />
+  <view id="grid1" />
+  <dataField fieldName="Es_Estandar" />
+</move></c><c y="NodeSet" t="2020-04-16T22:28:13"><controller name="RATE_SUBCATEGORIA" />
+<view id="grid1" />
+<dataField fieldName="SUBCATEGORIA_DESCRIPCION" />
+<move>
+  <controller name="RATE_SUBCATEGORIA" />
+  <view id="grid1" />
+  <dataField fieldName="Es_Emergencia" />
+</move></c><c y="NodeSet" t="2020-04-16T22:28:23"><controller name="RATE_SUBCATEGORIA" />
+<view id="Rate_Subcategoria_LookUp_List" />
+<dataField fieldName="Es_Emergencia" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-16T22:28:29"><controller name="RATE_SUBCATEGORIA" />
+<view id="Rate_Subcategoria_LookUp_List" />
+<dataField fieldName="Es_Estandar" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-16T22:28:35"><controller name="RATE_SUBCATEGORIA" />
+<view id="Rate_Subcategoria_LookUp_List" />
+<dataField fieldName="Es_CordPi" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-16T22:28:43"><controller name="RATE_SUBCATEGORIA" />
+<view id="Rate_Subcategoria_LookUp_List" />
+<dataField fieldName="Es_Sensor" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-16T22:28:49"><controller name="RATE_SUBCATEGORIA" />
+<view id="Rate_Subcategoria_LookUp_List" />
+<dataField fieldName="Es_Emergencia_Sensor" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-16T22:40:18"><controller name="SS_Cat_Orden" />
+<view id="grid1" />
+<dataField fieldName="Cantidad_Total" />
+<move>
+  <controller name="SS_Cat_Orden" />
+  <view id="grid1" />
+  <dataField fieldName="Subcategoria_Descripcion" />
+</move></c><c y="NodeSet" t="2020-04-16T22:40:18"><controller name="SS_Cat_Orden" />
+<view id="grid1" />
+<dataField fieldName="Cantidad_Total" />
+<move>
+  <controller name="SS_Cat_Orden" />
+  <view id="grid1" />
+  <dataField fieldName="Familia_Descripcion" />
+</move></c><c y="NodeSet" t="2020-04-16T22:40:18"><controller name="SS_Cat_Orden" />
+<view id="grid1" />
+<dataField fieldName="Cantidad_Total" />
+<move>
+  <controller name="SS_Cat_Orden" />
+  <view id="grid1" />
+  <dataField fieldName="Tiempo_Muerto" />
+</move></c><c y="NodeSet" t="2020-04-16T22:41:07"><controller name="SS_Cat_Orden" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Subcategoria_Descripcion" />
+<move>
+  <controller name="SS_Cat_Orden" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Estatus_Registro_Id" />
+</move></c><c y="NodeSet" t="2020-04-26T19:03:14"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="Ruta_Optima_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:03:20"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="Material_Surtido_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:03:32"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="Material_Surtido_Id" />
+<update>
+  <ReadOnly>true</ReadOnly>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:03:39"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="Ruta_Optima_Id" />
+<update>
+  <ReadOnly>true</ReadOnly>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:03"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag9" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:10"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:17"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag1" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:22"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:29"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag1" />
+<action id="a7" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:35"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag1" />
+<action id="a8" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:41"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag1" />
+<action id="a10" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:48"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag2" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:04:54"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:05:02"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag2" />
+<action id="a4" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:05:08"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag2" />
+<action id="a5" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:05:14"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag2" />
+<action id="a5" />
+<update>
+  <Roles />
+</update></c><c y="NodeSet" t="2020-04-26T19:05:30"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag3" />
+<action id="a1" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:05:36"><controller name="Movimiento_Desglose" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:09:19"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="Ruta_Optima_Id" />
+<update>
+  <Alias />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:09:24"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="Material_Surtido_Id" />
+<update>
+  <Alias />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:10:40"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Material_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:12:04"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Material_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:12:30"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:12:38"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Unidad_Material_Entregado_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:12:46"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Solicitud_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:12:56"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Solicitud_Id" />
+<update>
+  <Alias />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:13:01"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<move>
+  <controller name="Movimiento_Desglose" />
+  <field name="Fecha_Solicitud" />
+</move></c><c y="NodeSet" t="2020-04-26T19:13:03"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Solicitud_Id" />
+<move>
+  <controller name="Movimiento_Desglose" />
+  <view id="grid1" />
+  <dataField fieldName="Fecha_Solicitud" />
+</move></c><c y="NodeSet" t="2020-04-26T19:13:10"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:13:17"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<move>
+  <controller name="Movimiento_Desglose" />
+  <field name="Movimiento_Desglose_Id" />
+</move></c><c y="NodeSet" t="2020-04-26T19:13:19"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<move>
+  <controller name="Movimiento_Desglose" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Desglose_Id" />
+</move></c><c y="NodeSet" t="2020-04-26T19:13:21"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" />
+<move>
+  <controller name="Movimiento_Desglose" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Desglose_Id" />
+</move></c><c y="NodeSet" t="2020-04-26T19:13:23"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Desglose_Id" />
+<move>
+  <controller name="Movimiento_Desglose" />
+  <view id="grid1" />
+  <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" />
+</move></c><c y="NodeSet" t="2020-04-26T19:15:46"><controller name="Movimiento_Desglose" />
+<view id="grid1" />
+<dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:16:28"><controller name="Movimiento_Desglose" />
+<field name="Creado_Por" />
+<update>
+  <Label>Creado Por</Label>
+</update></c><c y="NodeSet" t="2020-04-26T19:42:45"><controller name="Movimiento_Desglose" />
+<clone /></c><c y="NodeSet" t="2020-04-26T19:44:38"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" />
+<update>
+  <ReadOnly>true</ReadOnly>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:46:51"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Material_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:53:50"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Material_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:54:16"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Material_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:54:28"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:54:38"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Unidad_Material_Entregado_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:54:46"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Solicitud_Id" />
+<update>
+  <Alias />
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:54:53"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<move>
+  <controller name="Movimiento_Desglose1" />
+  <field name="Fecha_Solicitud" />
+</move></c><c y="NodeSet" t="2020-04-26T19:54:55"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Solicitud_Id" />
+<move>
+  <controller name="Movimiento_Desglose1" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Fecha_Solicitud" />
+</move></c><c y="NodeSet" t="2020-04-26T19:55:02"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <HyperlinkFormatString />
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:55:12"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Creado_Por" />
+<delete /></c><c y="NodeSet" t="2020-04-26T19:55:13"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Creacion" />
+<delete /></c><c y="NodeSet" t="2020-04-26T19:55:13"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Fecha_Ultima_Actualizacion" />
+<delete /></c><c y="NodeSet" t="2020-04-26T19:55:13"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Actualizado_Por" />
+<delete /></c><c y="NodeSet" t="2020-04-26T19:59:11"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Solicitud_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T19:59:21"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Solicitud_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T20:18:28"><controller name="Movimiento_Desglose1" />
+<field name="Solicitud_Id" />
+<update>
+  <ItemsDataController />
+  <ItemsDataValueField />
+  <ItemsDataTextField />
+  <ItemsNewDataView />
+</update></c><c y="NodeSet" t="2020-04-26T20:27:37"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <Tag>lookup-details-hidden</Tag>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2020-04-26T20:33:24"><controller name="Movimiento_Desglose1" />
+<view id="editForm1" />
+<dataField fieldName="Estatus_Registro_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c></log><log type="Application"><c y="NodeSet" t="2019-11-04T15:41:22"><page name="Grid_Orden_Prod_Incandescencias_V" />
+<dataView id="view1" />
+<update>
+  <View>grid_OrdenProdPorFechaImpresionIncan</View>
+  <Tag>view-style-grid,  
+view-style-list-disabled,  
+view-style-cards-disabled, 
+view-style-charts-disabled, 
+view-style-calendar-disabled, 
+inline-editing-none, 
+inline-editing-option-none</Tag>
+</update></c><c y="NodeSet" t="2019-11-04T15:50:04"><page name="Grid_Orden_Prod_Incandescencias_V" />
+<dataView id="view1" />
+<update>
+  <Tag>view-style-grid,  
+view-style-list-disabled,  
+view-style-cards-disabled, 
+view-style-charts-disabled, 
+view-style-calendar-disabled, 
+inline-editing-none, 
+inline-editing-option-none</Tag>
+</update></c><c y="NodeSet" t="2019-11-04T16:07:54"><page name="Grid_Orden_Prod_Incandescencias_V" />
+<dataView id="view1" />
+<update>
+  <Tag>view-style-grid,  
+view-style-list-disabled,  
+view-style-cards-disabled, 
+view-style-charts-disabled, 
+view-style-calendar-disabled, 
+inline-editing-none, 
+inline-editing-option-none</Tag>
+</update></c><c y="NodeSet" t="2019-12-17T00:50:35"><page name="reportes" />
+<move>
+  <page name="Grid_Bcs_Duplicado_V" />
+</move></c><c y="NodeSet" t="2019-12-17T00:51:33"><page name="Grid_Bcs_Duplicado_V" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Title>Bitácora Captura SAP (Duplicados)</Title>
+  <Roles>Administrators,SupervisorAlmacen,administrador</Roles>
+</update></c><c y="NodeSet" t="2019-12-17T00:51:40"><page name="Grid_Bcs_Duplicado_V" />
+<rename>Bitácora Captura SAP (Duplicados)</rename></c><c y="NodeSet" t="2019-12-17T00:52:21"><page name="reportes" />
+<update>
+  <Roles>Administrators,Solicitante,administrador,Surtidor,SurtidorMaterialConAreaAsignada,SupervisorAlmacen,SupervisorProduccion,ConsultaReporte,ConsultaReporteMuestra,SurtidorDevolucion,SurtidorReciboTransferencia,SupervisorAlmacen</Roles>
+</update></c><c y="NodeSet" t="2019-12-17T00:53:36"><page name="Ubicacion_Origen_Transfer_V" />
+<before>
+  <page name="Grid_Mat_Surtido_Coment_V" />
+</before></c><c y="NodeSet" t="2019-12-17T00:53:46"><page name="Grid_Mat_Surtido_Coment_V" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>hidden</Roles>
+</update></c><c y="NodeSet" t="2019-12-17T00:54:41"><page name="Grid_Material_Surtido_A_Ejecutar_V" />
+<container id="c101" />
+<insert type="dataView">
+  <Controller>Grid_Mat_Surtido_Coment_V</Controller>
+  <View>grid1</View>
+  <Activator>Tab</Activator>
+  <Text>Comentarios de Solicitudes</Text>
+  <Sequence>10</Sequence>
+  <ShowInSummary>false</ShowInSummary>
+  <MultiSelect>false</MultiSelect>
+  <ShowActionBar>true</ShowActionBar>
+  <ShowDescription>true</ShowDescription>
+  <ShowViewSelector>true</ShowViewSelector>
+  <ShowSearchBar>true</ShowSearchBar>
+  <ShowQuickFind>true</ShowQuickFind>
+  <SearchByFirstLetter>false</SearchByFirstLetter>
+  <ShowRowNumber>false</ShowRowNumber>
+  <ShowPager>Bottom</ShowPager>
+  <ShowPageSize>true</ShowPageSize>
+  <ShowModalForms>false</ShowModalForms>
+  <SearchOnStart>false</SearchOnStart>
+  <ShowDetailsInListMode>true</ShowDetailsInListMode>
+  <AutoHighlightFirstRow>false</AutoHighlightFirstRow>
+  <AutoSelectFirstRow>false</AutoSelectFirstRow>
+  <FilterSource>view1</FilterSource>
+  <FilterFields>Material_Surtido_Id</FilterFields>
+  <FilterField2>Material_Id</FilterField2>
+  <AutoHide>Nothing</AutoHide>
+</insert></c><c y="NodeSet" t="2019-12-17T00:55:17"><page name="Grid_Material_Surtido_A_Ejecutar_V" />
+<dataView id="view2" />
+<update>
+  <Activator>Tab</Activator>
+  <Text>Mat Ubicacion Almacenamiento</Text>
+  <Sequence>20</Sequence>
+</update></c><c y="NodeSet" t="2019-12-17T01:02:09"><page name="Grid_Bcs_Duplicado_V" />
+<dataView id="view1" />
+<update>
+  <Tag>view-style-grid, 
+view-style-list-disabled,
+view-style-cards-disabled,
+view-style-charts-disabled,
+view-style-calendar-disabled,
+inline-editing-none,
+inline-editing-option-none  </Tag>
+</update></c><c y="NodeSet" t="2019-12-18T03:27:10"><page name="productomaterial" />
+<update>
+  <Roles>Administrators,administrador,SolicitanteIncandescencias,SurtidorIncandescencias</Roles>
+</update></c><c y="NodeSet" t="2019-12-19T18:38:48"><page name="Catalogo_Aplicacion" />
+<update>
+  <Roles>Administrators,administrador,SupervisorAlmacen,SupervisorProduccion,Solicitante,UsuarioParaConsulta,Surtidor,SurtidorMaterialConAreaAsignada,SolicitanteDevolucion,SolicitanteReciboTransferencia,UsuarioCuadreInventarioDev,UsuarioCuadreInventarioTransfer,SolicitanteIncandescencias,SurtidorIncandescencias</Roles>
+</update></c><c y="NodeSet" t="2019-12-19T18:39:18"><page name="Material_Exclusion" />
+<update>
+  <Roles>Administrators,administrador,SupervisorAlmacen,SolicitanteIncandescencias,SurtidorIncandescencias</Roles>
+</update></c><c y="NodeSet" t="2019-12-19T19:15:24"><page name="Material" />
+<move>
+  <page name="Material_Exclusion" />
+</move></c><c y="NodeSet" t="2019-12-19T19:15:26"><page name="Unidad_Material" />
+<before>
+  <page name="Material_Exclusion" />
+</before></c><c y="NodeSet" t="2019-12-19T20:15:25"><page name="Material" />
+<move>
+  <page name="Material_Exclusion" />
+</move></c><c y="NodeSet" t="2019-12-19T20:16:15"><pages />
+<insert type="page" context="/page/moduloincan">
+  <Name>matexclusion</Name>
+  <Generate>Always</Generate>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Title>matexclusion</Title>
+  <Roles>*</Roles>
+</insert></c><c y="NodeSet" t="2019-12-19T20:16:40"><page name="Catalogo_Aplicacion" />
+<update>
+  <Roles>Administrators,administrador,SupervisorAlmacen,SupervisorProduccion,Solicitante,UsuarioParaConsulta,Surtidor,SurtidorMaterialConAreaAsignada,SolicitanteDevolucion,SolicitanteReciboTransferencia,UsuarioCuadreInventarioDev,UsuarioCuadreInventarioTransfer</Roles>
+</update></c><c y="NodeSet" t="2019-12-19T20:16:58"><page name="Material_Exclusion" />
+<update>
+  <Roles>Administrators,administrador,SupervisorAlmacen</Roles>
+</update></c><c y="NodeSet" t="2019-12-19T20:17:17"><page name="matexclusion" />
+<update>
+  <Roles>Administrators,administrador,SolicitanteIncandescencias,SurtidorIncandescencias</Roles>
+</update></c><c y="NodeSet" t="2019-12-19T20:17:28"><page name="matexclusion" />
+<rename>Material Exclusión</rename></c><c y="NodeSet" t="2019-12-19T20:17:50"><page name="matexclusion" />
+<insert type="container">
+  <Flow>NewRow</Flow>
+</insert></c><c y="NodeSet" t="2019-12-19T20:18:20"><page name="matexclusion" />
+<container id="c101" />
+<insert type="dataView">
+  <Controller>Material_Exclusion1</Controller>
+  <View>grid1</View>
+  <Tag>view-style-grid, 
+view-style-list-disabled, 
+view-style-charts-disabled,
+view-style-cards-disabled,
+view-style-calendar-disabled</Tag>
+  <ShowInSummary>false</ShowInSummary>
+  <MultiSelect>false</MultiSelect>
+  <ShowActionBar>true</ShowActionBar>
+  <ShowDescription>true</ShowDescription>
+  <ShowViewSelector>true</ShowViewSelector>
+  <ShowSearchBar>true</ShowSearchBar>
+  <ShowQuickFind>true</ShowQuickFind>
+  <SearchByFirstLetter>false</SearchByFirstLetter>
+  <ShowRowNumber>false</ShowRowNumber>
+  <ShowPager>Bottom</ShowPager>
+  <ShowPageSize>true</ShowPageSize>
+  <ShowModalForms>false</ShowModalForms>
+  <SearchOnStart>false</SearchOnStart>
+  <ShowDetailsInListMode>true</ShowDetailsInListMode>
+  <AutoHighlightFirstRow>false</AutoHighlightFirstRow>
+  <AutoSelectFirstRow>false</AutoSelectFirstRow>
+  <AutoHide>Nothing</AutoHide>
+</insert></c><c y="NodeSet" t="2020-04-26T19:00:43"><page name="Catalogo_Aplicacion" />
+<move>
+  <page name="Movimiento_Desglose" />
+</move></c><c y="NodeSet" t="2020-04-26T19:01:05"><page name="Movimiento_Desglose" />
+<update>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Roles>Administrators,SupervisorAlmacen,administrador</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:43:10"><page name="Movimiento_Desglose" />
+<update>
+  <Roles>Administrators,administrador</Roles>
+</update></c><c y="NodeSet" t="2020-04-26T19:43:39"><pages />
+<insert type="page" context="/page/reportes">
+  <Name>movdesglose</Name>
+  <Generate>Always</Generate>
+  <UseExtenders>false</UseExtenders>
+  <Offline>false</Offline>
+  <Title>Movimiento Desglose</Title>
+  <Roles>Administrators,SupervisorAlmacen,administrador</Roles>
+</insert></c><c y="NodeSet" t="2020-04-26T19:43:46"><page name="movdesglose" />
+<insert type="container">
+  <Flow>NewRow</Flow>
+</insert></c><c y="NodeSet" t="2020-04-26T19:43:59"><page name="movdesglose" />
+<container id="c101" />
+<insert type="dataView">
+  <Controller>Movimiento_Desglose1</Controller>
+  <View>grid1</View>
+  <ShowInSummary>false</ShowInSummary>
+  <MultiSelect>false</MultiSelect>
+  <ShowActionBar>true</ShowActionBar>
+  <ShowDescription>true</ShowDescription>
+  <ShowViewSelector>true</ShowViewSelector>
+  <ShowSearchBar>true</ShowSearchBar>
+  <ShowQuickFind>true</ShowQuickFind>
+  <SearchByFirstLetter>false</SearchByFirstLetter>
+  <ShowRowNumber>false</ShowRowNumber>
+  <ShowPager>Bottom</ShowPager>
+  <ShowPageSize>true</ShowPageSize>
+  <ShowModalForms>false</ShowModalForms>
+  <SearchOnStart>false</SearchOnStart>
+  <ShowDetailsInListMode>true</ShowDetailsInListMode>
+  <AutoHighlightFirstRow>false</AutoHighlightFirstRow>
+  <AutoSelectFirstRow>false</AutoSelectFirstRow>
+  <AutoHide>Nothing</AutoHide>
+</insert></c><c y="NodeSet" t="2020-06-26T09:42:31"><page name="cuadreinventariopiso" />
+<update>
+  <Roles>Administrators,administrador,SupervisorAlmacen,UsuarioCuadreInventarioDev,OperadorInventario</Roles>
+</update></c><c y="NodeSet" t="2020-06-26T09:42:41"><page name="cuadreinventarioalmacen" />
+<update>
+  <Roles>Administrators,SupervisorAlmacen,UsuarioCuadreInventarioTransfer,OperadorInventario</Roles>
+</update></c><c y="NodeSet" t="2020-06-26T09:43:06"><page name="Catalogo_Aplicacion" />
+<update>
+  <Roles>Administrators,administrador,SupervisorAlmacen,SupervisorProduccion,Solicitante,UsuarioParaConsulta,Surtidor,SurtidorMaterialConAreaAsignada,SolicitanteDevolucion,SolicitanteReciboTransferencia,UsuarioCuadreInventarioDev,UsuarioCuadreInventarioTransfer,OperadorInventario</Roles>
+</update></c><c y="NodeSet" t="2020-06-26T09:43:20"><page name="reportes" />
+<update>
+  <Roles>Administrators,Solicitante,administrador,Surtidor,SurtidorMaterialConAreaAsignada,SupervisorAlmacen,SupervisorProduccion,ConsultaReporte,ConsultaReporteMuestra,SurtidorDevolucion,SurtidorReciboTransferencia,SupervisorAlmacen,OperadorInventario</Roles>
+</update></c><c y="NodeSet" t="2020-06-26T09:43:30"><page name="bitcaptsapsupalmacen" />
+<update>
+  <Roles>Administrators,SupervisorAlmacen,administrador,OperadorInventario</Roles>
+</update></c></log></logs>

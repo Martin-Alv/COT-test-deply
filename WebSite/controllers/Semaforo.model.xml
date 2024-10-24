@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Semaforo" alias="Semaforo" created="2018-10-18T00:54:32" modified="2019-02-08T01:58:38" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="603" y="351">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="604" y="86">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="603" y="217">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Solicitud" parentTableSchema="APP" parentTableName="Estatus_Solicitud" x="412" y="147">
+      <foreignKeyColumn columnName="Estatus_Solicitud_Id" parentColumnName="Estatus_Solicitud_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Semaforo_Id" fieldName="Semaforo_Id" label="Semáforo Id" />
+    <column name="Semaforo" fieldName="Semaforo" label="Semáforo" />
+    <column name="Es_Semaforo_Tiempo_Entrega" fieldName="Es_Semaforo_Tiempo_Entrega" label="Es Semáforo Tiempo Entrega?" />
+    <column name="Es_Semaforo_Mat_Exist_Parcial" fieldName="Es_Semaforo_Mat_Exist_Parcial" label="Es Semáforo Mat Exist Parcial?" />
+    <column name="Es_Semaforo_Mat_Inexistente" fieldName="Es_Semaforo_Mat_Inexistente" label="Es Semáforo Mat Inexistente?" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Estatus_Solicitud_Id" fieldName="Estatus_Solicitud_Id" label="Estatus Solicitud Id" aliasColumnName="Estatus_Solicitud" aliasForeignKey="Estatus_Solicitud" />
+    <column name="Estatus_Solicitud" fieldName="Estatus_Solicitud" label="Estatus Solicitud" foreignKey="Estatus_Solicitud" />
+    <column name="Es_Semaforo_Estatus_Solicitud" fieldName="Es_Semaforo_Estatus_Solicitud" label="Es Semáforo Estatus Solicitud?" />
+  </columns>
+</dataModel>

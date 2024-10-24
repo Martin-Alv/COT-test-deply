@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Dato_Acceso_Sap" conflictDetection="overwriteChanges" label="Dato Acceso Sap" handler="eaton.Rules.Dato_Acceso_SapBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Dato_Acceso_Sap"."Dato_Acceso_Sap_Id" "Dato_Acceso_Sap_Id"
+	,"Dato_Acceso_Sap"."Usuario_Aplicacion_Id" "Usuario_Aplicacion_Id"
+	,"Usuario_Aplicacion_"."Nombre_Completo" "Nombre_Completo"
+	,"Dato_Acceso_Sap"."Nombre_Usuario_Sap" "Nombre_Usuario_Sap"
+	,"Dato_Acceso_Sap"."Password_Usuario_Sap" "Password_Usuario_Sap"
+	,"Dato_Acceso_Sap"."Fecha_Creacion" "Fecha_Creacion"
+	,"Dato_Acceso_Sap"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Dato_Acceso_Sap"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Dato_Acceso_Sap"."Usuario_Id" "Usuario_Id"
+	,"Usuario_Sistema"."Usuario_Sistema" "Usuario_Sistema"
+from "APP"."Dato_Acceso_Sap" "Dato_Acceso_Sap"
+	left join "APP"."Usuario_Aplicacion" "Usuario_Aplicacion_" on "Dato_Acceso_Sap"."Usuario_Aplicacion_Id" = "Usuario_Aplicacion_"."Usuario_Aplicacion_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Dato_Acceso_Sap"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Dato_Acceso_Sap"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Dato_Acceso_Sap"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Usuario_Sistema" on "Dato_Acceso_Sap"."Usuario_Id" = "Usuario_Sistema"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Dato_Acceso_Sap_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Dato_Acceso_Sap_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Dato_Acceso_Sap_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Dato Acceso Sap Id" readOnly="true" />
+    <field name="Usuario_Aplicacion_Id" type="Int32" allowNulls="false" default="((0))" label="Usuario Aplicacion Id" showInSummary="true">
+      <items style="Lookup" dataController="Usuario_Aplicacion" dataValueField="Usuario_Aplicacion_Id" dataTextField="Nombre_Completo" dataView="Usuario_Aplicacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Nombre_Completo" type="String" label="Nombre Completo" readOnly="true" length="1003" />
+    <field name="Nombre_Usuario_Sap" type="String" allowNulls="false" default="((0))" label="Nombre de Usuario Sap" length="50" showInSummary="true" />
+    <field name="Password_Usuario_Sap" type="String" allowNulls="false" default="((0))" label="Password de Usuario Sap" length="50" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Usuario_Id" type="Guid" allowNulls="false" default="((0))" label="Usuario Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Usuario_Sistema" type="String" readOnly="true" label="Usuario Sistema" length="256" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Dato Acceso SAP" filter="Estatus_Registro_Id &lt;&gt; 0&#xD;&#xA;" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Usuario_Aplicacion_Id" aliasFieldName="Nombre_Completo" />
+        <dataField fieldName="Nombre_Usuario_Sap" columns="50" />
+        <dataField fieldName="Password_Usuario_Sap" columns="50" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Usuario_Id" aliasFieldName="Usuario_Sistema" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Dato Acceso SAP">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Dato Acceso SAP" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Usuario_Aplicacion_Id" aliasFieldName="Nombre_Completo" />
+            <dataField fieldName="Nombre_Usuario_Sap" columns="50" />
+            <dataField fieldName="Password_Usuario_Sap" columns="50" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Usuario_Id" aliasFieldName="Usuario_Sistema" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Dato Acceso SAP">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Dato Acceso SAP" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Usuario_Aplicacion_Id" aliasFieldName="Nombre_Completo" />
+            <dataField fieldName="Nombre_Usuario_Sap" columns="50" />
+            <dataField fieldName="Password_Usuario_Sap" columns="50" />
+            <dataField fieldName="Usuario_Id" aliasFieldName="Usuario_Sistema" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Dato_Acceso_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ WHERE Dato_Acceso_Sap_Id = @Dato_Acceso_Sap_Id ]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Dato_Acceso_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ WHERE Dato_Acceso_Sap_Id = @Dato_Acceso_Sap_Id ]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE [APP].[Dato_Acceso_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ WHERE Dato_Acceso_Sap_Id = @Dato_Acceso_Sap_Id ]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Dato_Acceso_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+ WHERE Dato_Acceso_Sap_Id = @Dato_Acceso_Sap_Id ]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists = 1 
+FROM 
+   [APP].[Dato_Acceso_Sap] 
+WHERE 
+        [Usuario_Aplicacion_Id] = @Usuario_Aplicacion_Id
+	AND [Usuario_Id] = @Usuario_Id
+
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](230,1,65,@Nombre_Completo + ' vs. ' + @Usuario_Sistema) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](230,1,65,@Nombre_Completo + ' vs. ' + @Usuario_Sistema)
+   RETURN 
+END ]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+ 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Dato_Acceso_Sap]
+WHERE 
+     [Usuario_Aplicacion_Id] = @Usuario_Aplicacion_Id
+	 AND [Usuario_Id] =  @Usuario_Id
+	 AND Dato_Acceso_Sap_Id <> @Dato_Acceso_Sap_Id
+	 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](231,1,65,@Nombre_Completo + ' vs. ' + @Usuario_Sistema) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](231,1,65,@Nombre_Completo + ' vs. ' + @Usuario_Sistema) 
+   RETURN 
+END ]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Dato_Acceso_Sap] 
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Dato_Acceso_Sap_Id = @Dato_Acceso_Sap_Id   ]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Dato_Acceso_Sap] 
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+
+WHERE 
+   Dato_Acceso_Sap_Id = @Dato_Acceso_Sap_Id ]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Usuario_Rol_Logico_V" alias="Grid_Usuario_Rol_Logico_V" created="2021-01-17T11:30:57" modified="2021-01-17T11:31:23" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Usuario_Sistema_Id" fieldName="Usuario_Sistema_Id" label="Usuario Sistema Id" />
+    <column name="Nombre_Completo" fieldName="Nombre_Completo" label="Nombre Completo" />
+    <column name="UserName" fieldName="UserName" label="User Name" />
+    <column name="Rol_Logico" fieldName="Rol_Logico" label="Rol Logico" />
+    <column name="Es_Supervisor_Lider" fieldName="Es_Supervisor_Lider" label="Es Supervisor Lider" />
+    <column name="Es_Gerente_Area" fieldName="Es_Gerente_Area" label="Es Gerente Area" />
+    <column name="Es_Gerente_Planta" fieldName="Es_Gerente_Planta" label="Es Gerente Planta" />
+    <column name="Es_Contralor" fieldName="Es_Contralor" label="Es Contralor" />
+    <column name="Es_Administrador_It" fieldName="Es_Administrador_It" label="Es Administrador It" />
+    <column name="Es_Administrador_Almacen" fieldName="Es_Administrador_Almacen" label="Es Administrador Almacen" />
+    <column name="Es_Despachador" fieldName="Es_Despachador" label="Es Despachador" />
+    <column name="Es_Empleado_Planta" fieldName="Es_Empleado_Planta" label="Es Empleado Planta" />
+    <column name="Es_Personal_QA" fieldName="Es_Personal_QA" label="Es Personal QA" />
+    <column name="Es_Cadista" fieldName="Es_Cadista" label="Es Cadista" />
+    <column name="Es_Comprador" fieldName="Es_Comprador" label="Es Comprador" />
+    <column name="Comprador_ERSL" fieldName="Comprador_ERSL" label="Comprador ERSL" />
+  </columns>
+</dataModel>

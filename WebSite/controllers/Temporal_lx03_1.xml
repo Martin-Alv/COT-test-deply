@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Temporal_lx03_1" label="Temporal_lx03_1" conflictDetection="overwriteChanges" handler="eaton.Rules.Temporal_lx03_1BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Temporal_lx03"."Temporal_lx03_Id" "Temporal_lx03_Id"
+	,"Temporal_lx03"."Typ" "Typ"
+	,"Temporal_lx03"."StorageBin" "StorageBin"
+	,"Temporal_lx03"."SLoc" "SLoc"
+	,"Temporal_lx03"."Material" "Material"
+	,"Temporal_lx03"."Plnt" "Plnt"
+	,"Temporal_lx03"."TotalStock" "TotalStock"
+	,"Temporal_lx03"."Batch" "Batch"
+	,"Temporal_lx03"."S" "S"
+	,"Temporal_lx03"."S_2" "S_2"
+	,"Temporal_lx03"."SpecialStockNumber" "SpecialStockNumber"
+	,"Temporal_lx03"."TiL" "TiL"
+	,"Temporal_lx03"."Availablestock" "Availablestock"
+	,"Temporal_lx03"."Stockforputaway" "Stockforputaway"
+	,"Temporal_lx03"."GRDate" "GRDate"
+	,"Temporal_lx03"."Time" "Time"
+	,"Temporal_lx03"."Quant" "Quant"
+	,"Temporal_lx03"."Carga_Id" "Carga_Id"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Temporal_lx03"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Temporal_lx03"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Temporal_lx03"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro"."Estatus_Registro" "Estatus_Registro"
+	,"Temporal_lx03"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Temporal_lx03"."PO" "PO"
+	,"Mensaje_Sistema"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Temporal_lx03"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+from "dbo"."Temporal_lx03" "Temporal_lx03"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Temporal_lx03"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Temporal_lx03"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento" on "Temporal_lx03"."Estatus_Procesamiento_Id" = "Estatus_Procesamiento"."Estatus_Procesamiento_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro" on "Temporal_lx03"."Estatus_Registro_Id" = "Estatus_Registro"."Estatus_Registro_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema" on "Temporal_lx03"."Mensaje_Sistema_Id" = "Mensaje_Sistema"."Mensaje_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Temporal_lx03_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Temporal_lx03_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Temporal_lx03_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Temporallx03 Id" readOnly="true" />
+    <field name="Typ" type="String" label="Storage Type" length="300" showInSummary="true" />
+    <field name="StorageBin" type="String" label="Storage Bin" length="300" showInSummary="true" />
+    <field name="SLoc" type="String" label="Storage Location" length="300" showInSummary="true" />
+    <field name="Material" type="String" label="Material" length="300" showInSummary="true" />
+    <field name="Plnt" type="String" label="Plnt" length="300" showInSummary="true" />
+    <field name="TotalStock" type="String" label="Total Stock" length="300" />
+    <field name="Batch" type="String" label="Batch" length="300" />
+    <field name="S" type="String" label="Stock Category (S)" length="300" />
+    <field name="S_2" type="String" label="S2" length="300" />
+    <field name="SpecialStockNumber" type="String" label="Special Stock Number" length="300" />
+    <field name="TiL" type="String" label="Ti L" length="300" />
+    <field name="Availablestock" type="String" label="Availablestock" length="300" />
+    <field name="Stockforputaway" type="String" label="Stockforputaway" length="300" />
+    <field name="GRDate" type="String" label="GR Date" length="300" />
+    <field name="Time" type="String" label="Time" length="300" />
+    <field name="Quant" type="String" label="Quant" length="300" />
+    <field name="Carga_Id" type="Int32" label="Carga Id" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Procesamiento Id">
+      <items style="Lookup" dataController="Estatus_Procesamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Procesamiento_Id" dataTextField="Estatus_Procesamiento" />
+    </field>
+    <field name="Estatus_Procesamiento" type="String" readOnly="true" label="Estatus Procesamiento" length="150" />
+    <field name="PO" type="Decimal" label="PO" />
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje Sistema" length="250" />
+    <field name="Mensaje_Sistema_Id" type="Int32" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema_Id" copy="Mensaje_Sistema=Mensaje_Sistema" dataView="Mensaje_Sistema_LookUp_List" pageSize="15" />
+    </field>
+  </fields>
+  <views>
+    <view id="Archivo_De_Carga" type="Grid" commandId="command1" label="Temporal lx03" filter="Estatus_Registro_Id =1" showInSelector="false" reportTemplate="true">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Typ" />
+        <dataField fieldName="StorageBin" />
+        <dataField fieldName="SLoc" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Plnt" hidden="true" />
+        <dataField fieldName="TotalStock" />
+        <dataField fieldName="Batch" hidden="true" />
+        <dataField fieldName="S" />
+        <dataField fieldName="S_2" hidden="true" />
+        <dataField fieldName="SpecialStockNumber" hidden="true" />
+        <dataField fieldName="TiL" />
+        <dataField fieldName="Availablestock" hidden="true" />
+        <dataField fieldName="Stockforputaway" hidden="true" />
+        <dataField fieldName="GRDate" hidden="true" />
+        <dataField fieldName="Time" hidden="true" />
+        <dataField fieldName="Quant" hidden="true" />
+        <dataField fieldName="Carga_Id" columns="15" hidden="true" />
+        <dataField fieldName="PO" columns="15" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" />
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+        <dataField fieldName="Mensaje_Sistema" textMode="Static" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Temporal lx03">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Temporal lx03" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Typ" />
+            <dataField fieldName="StorageBin" />
+            <dataField fieldName="SLoc" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Plnt" hidden="true" />
+            <dataField fieldName="TotalStock" />
+            <dataField fieldName="Batch" hidden="true" />
+            <dataField fieldName="S" />
+            <dataField fieldName="S_2" hidden="true" />
+            <dataField fieldName="SpecialStockNumber" hidden="true" />
+            <dataField fieldName="TiL" />
+            <dataField fieldName="Availablestock" hidden="true" />
+            <dataField fieldName="Stockforputaway" hidden="true" />
+            <dataField fieldName="GRDate" hidden="true" />
+            <dataField fieldName="Time" hidden="true" />
+            <dataField fieldName="Quant" hidden="true" />
+            <dataField fieldName="Carga_Id" columns="15" />
+            <dataField fieldName="PO" columns="15" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Mensaje_Sistema" textMode="Static" />
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Crear Temporal lx03">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Typ" />
+            <dataField fieldName="StorageBin" />
+            <dataField fieldName="SLoc" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Plnt" hidden="true" />
+            <dataField fieldName="TotalStock" />
+            <dataField fieldName="Batch" hidden="true" />
+            <dataField fieldName="S" />
+            <dataField fieldName="S_2" hidden="true" />
+            <dataField fieldName="SpecialStockNumber" hidden="true" />
+            <dataField fieldName="TiL" />
+            <dataField fieldName="Availablestock" hidden="true" />
+            <dataField fieldName="Stockforputaway" hidden="true" />
+            <dataField fieldName="GRDate" hidden="true" />
+            <dataField fieldName="Time" hidden="true" />
+            <dataField fieldName="Quant" hidden="true" />
+            <dataField fieldName="Carga_Id" columns="15" hidden="true" />
+            <dataField fieldName="PO" columns="15" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hidden="true" />
+            <dataField fieldName="Mensaje_Sistema" textMode="Static" />
+            <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Temporal_lx03_LookUp_List" type="Grid" commandId="command1" label="Temporal lx03" filter="Estatus_Registro_Id IN (0,1)" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Typ" />
+        <dataField fieldName="StorageBin" />
+        <dataField fieldName="SLoc" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Plnt" hidden="true" />
+        <dataField fieldName="TotalStock" hidden="true" />
+        <dataField fieldName="Batch" hidden="true" />
+        <dataField fieldName="S" hidden="true" />
+        <dataField fieldName="S_2" hidden="true" />
+        <dataField fieldName="SpecialStockNumber" hidden="true" />
+        <dataField fieldName="TiL" hidden="true" />
+        <dataField fieldName="Availablestock" />
+        <dataField fieldName="Stockforputaway" hidden="true" />
+        <dataField fieldName="GRDate" hidden="true" />
+        <dataField fieldName="Time" hidden="true" />
+        <dataField fieldName="Quant" hidden="true" />
+        <dataField fieldName="Carga_Id" columns="15" hidden="true" />
+        <dataField fieldName="Creado_Por" hidden="true" />
+        <dataField fieldName="PO" columns="15" hidden="true" />
+        <dataField fieldName="Mensaje_Sistema" hidden="true" />
+        <dataField fieldName="Mensaje_Sistema_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="administrators" roles="material-icon-delete">
+        <data><![CDATA[UPDATE dbo.Temporal_lx03 SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_lx03_Id = @Temporal_lx03_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="Archivo_De_Carga" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_lx03 SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_lx03_Id = @Temporal_lx03_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="Archivo_De_Carga" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="Archivo_De_Carga" headerText="&quot;Borrar&quot;" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_lx03 SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_lx03_Id = @Temporal_lx03_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" roles="hidden" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" roles="hidden" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrators">
+        <data><![CDATA[UPDATE dbo.Temporal_lx03 SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId ,
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Temporal_lx03_Id = @Temporal_lx03_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Archivos" flat="false">
+      <action id="a3" commandName="ReportAsExcel" cssClass="material-icon-cloud-download" headerText="&quot;Descargar Archivo de Carga&quot;" />
+      <action commandName="Import" commandArgument="createForm1" headerText="&quot;Importar Archivo&quot;" cssClass="material-icon-cloud-upload" id="a100" />
+    </actionGroup>
+    <actionGroup id="ag101" scope="ActionBar" headerText="Procesamiento" flat="true">
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="&quot;Procesar&quot;" id="a100" cssClass="material-icon-settings" />
+      <action commandName="SQL" headerText="&quot;Eliminar Pendientes de Procesar&quot;" id="a101" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE tl SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+FROM dbo.Temporal_lx03 tl
+INNER JOIN dbo.Estatus_Procesamiento ep 
+ON tl.Estatus_Procesamiento_Id = ep.Estatus_Procesamiento_Id
+WHERE ep.Significa_Pendiente_Por_Procesar=1]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Temporal_lx03
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_lx03_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_lx03_Id))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1393,1,10,@Temporal_lx03_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1393,1,10,@Temporal_lx03_Id)
+   RETURN
+END
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   dbo.Temporal_lx03
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_lx03_Id = @Temporal_lx03_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   dbo.Temporal_lx03
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Temporal_lx03_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Temporal_lx03_Id))
+AND Temporal_lx03_Id <> @Temporal_lx03_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1394,1,10,@Temporal_lx03_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1394,1,10,@Temporal_lx03_Id)
+   RETURN
+END
+
+]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   dbo.Temporal_lx03
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Temporal_lx03_Id = @Temporal_lx03_Id]]></rule>
+    <rule id="r104" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="Execute" name="Procesar" />
+  </businessRules>
+</dataController>

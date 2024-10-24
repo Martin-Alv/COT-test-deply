@@ -1,0 +1,37 @@
+trigger:
+- none
+
+pool:
+  #vmImage: 'windows-latest'
+  name: cooper
+
+variables:
+  solution: 'CooperReplenishmentSystem.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+ 
+- task: CmdLine@2
+  inputs:
+    displayName: 'Refresh BD'
+    script: 'codeontime -refresh C:\bwd-cooper\_work\1\s -DbConnection "Data Source=sergralesrsn.database.windows.net;Initial Catalog=sergralesrsdb_qa;Persist Security Info=True;User ID=EatonSysAdmin;Password=3@T0N!_5y54M1n!_8479341!_;" -dbprovider "sqlclient"'
+    workingDirectory: 'C:\Program Files (x86)\Code OnTime LLC\Code OnTime Generator'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Agent.WorkFolder)\utileria'
+    Contents: '$(Agent.WorkFolder)\utileria\NReco.PdfGenerator.dll'
+    TargetFolder: 'C:\bwd-cooper\_work\1\s\WebSite\bin'
+    OverWrite: true
+- task: CmdLine@2
+  inputs:
+    displayName: 'Publish'
+    script: 'aspnet_compiler.exe -nologo -f -v / -p /bwd-cooper/_work/1/s/WebSite C:\bwd-cooper\_work\1\a'
+    workingDirectory: 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'compilado-cot'
+    publishLocation: 'pipeline'

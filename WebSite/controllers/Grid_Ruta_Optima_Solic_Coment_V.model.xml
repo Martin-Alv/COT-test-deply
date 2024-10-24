@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Ruta_Optima_Solic_Coment_V" alias="Grid_Ruta_Optima_Solic_Coment_V" created="2019-09-22T15:19:30" modified="2019-09-22T15:19:33" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Comentario" fieldName="Comentario" label="Comentario" />
+    <column name="Motivo_Solicitud_Id" fieldName="Motivo_Solicitud_Id" label="Motivo Solicitud Id" />
+    <column name="Motivo_Solicitud" fieldName="Motivo_Solicitud" label="Motivo Solicitud" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Solicitado_Por" fieldName="Solicitado_Por" label="Solicitado Por" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha Solicitud" format="g" />
+  </columns>
+</dataModel>

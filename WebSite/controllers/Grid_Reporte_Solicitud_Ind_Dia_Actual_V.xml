@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Reporte_Solicitud_Ind_Dia_Actual_V" conflictDetection="overwriteChanges" label="Grid Reporte Solicitud Ind Dia Actual V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Material" "Material"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Fecha_Entrega_Cadista" "Fecha_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Tiempo_Transcurrido_Entrega_Cadista" "Tiempo_Transcurrido_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Caso_Tiempo_Transcurrido_Cadista" "Caso_Tiempo_Transcurrido_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Entregado_Por_Usuario_Cadista_Id" "Entregado_Por_Usuario_Cadista_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Actual_V"."Entregado_Por_Usuario_Cadista" "Entregado_Por_Usuario_Cadista"
+from "dbo"."Grid_Reporte_Solicitud_Ind_Dia_Actual_V" "Grid_Reporte_Solicitud_Ind_Dia_Actual_V"
+]]></text>
+    </command>
+    <command id="Familia_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Familia_Id" />
+      </output>
+    </command>
+    <command id="Categoria_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Categoria_Id" />
+      </output>
+    </command>
+    <command id="Estatus_Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Estatus_Solicitud_Id" />
+      </output>
+    </command>
+    <command id="Ruta_Optima_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Ruta_Optima_Id" />
+      </output>
+    </command>
+    <command id="Material_Surtido_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Surtido_Id" />
+      </output>
+    </command>
+    <command id="Area_Entrega_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Area_Entrega_Id" />
+      </output>
+    </command>
+    <command id="Tipo_Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Tipo_Solicitud_Id" />
+      </output>
+    </command>
+    <command type="Text" id="Grid_Reporte_Solicitud_Ind_Dia_Anterior_V" custom="false">
+      <text><![CDATA[select
+	"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Material" "Material"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Fecha_Entrega_Cadista" "Fecha_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Tiempo_Transcurrido_Entrega_Cadista" "Tiempo_Transcurrido_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Caso_Tiempo_Transcurrido_Cadista" "Caso_Tiempo_Transcurrido_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Entregado_Por_Usuario_Cadista_Id" "Entregado_Por_Usuario_Cadista_Id"
+	,"Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"."Entregado_Por_Usuario_Cadista" "Entregado_Por_Usuario_Cadista"
+from "dbo"."Grid_Reporte_Solicitud_Ind_Dia_Anterior_V" "Grid_Reporte_Solicitud_Ind_Dia_Anterior_V"]]></text>
+    </command>
+    <command type="Text" id="Grid_Reporte_Solicitud_Ind_Mes_Actual_V" custom="false">
+      <text><![CDATA[select
+	"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Material" "Material"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Fecha_Entrega_Cadista" "Fecha_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Tiempo_Transcurrido_Entrega_Cadista" "Tiempo_Transcurrido_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Caso_Tiempo_Transcurrido_Cadista" "Caso_Tiempo_Transcurrido_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Entregado_Por_Usuario_Cadista_Id" "Entregado_Por_Usuario_Cadista_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Actual_V"."Entregado_Por_Usuario_Cadista" "Entregado_Por_Usuario_Cadista"
+from "dbo"."Grid_Reporte_Solicitud_Ind_Mes_Actual_V" "Grid_Reporte_Solicitud_Ind_Mes_Actual_V"]]></text>
+    </command>
+    <command type="Text" id="Grid_Reporte_Solicitud_Ind_Mes_Anterior_V" custom="false">
+      <text><![CDATA[select
+	"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Material" "Material"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Fecha_Entrega_Cadista" "Fecha_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Tiempo_Transcurrido_Entrega_Cadista" "Tiempo_Transcurrido_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Caso_Tiempo_Transcurrido_Cadista" "Caso_Tiempo_Transcurrido_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Entregado_Por_Usuario_Cadista_Id" "Entregado_Por_Usuario_Cadista_Id"
+	,"Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"."Entregado_Por_Usuario_Cadista" "Entregado_Por_Usuario_Cadista"
+from "dbo"."Grid_Reporte_Solicitud_Ind_Mes_Anterior_V" "Grid_Reporte_Solicitud_Ind_Mes_Anterior_V"]]></text>
+    </command>
+    <command type="Text" id="Grid_Reporte_Solicitud_Ind_Semana_Actual_V" custom="false">
+      <text><![CDATA[select
+	"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Material" "Material"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Fecha_Entrega_Cadista" "Fecha_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Tiempo_Transcurrido_Entrega_Cadista" "Tiempo_Transcurrido_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Caso_Tiempo_Transcurrido_Cadista" "Caso_Tiempo_Transcurrido_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Entregado_Por_Usuario_Cadista_Id" "Entregado_Por_Usuario_Cadista_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Actual_V"."Entregado_Por_Usuario_Cadista" "Entregado_Por_Usuario_Cadista"
+from "dbo"."Grid_Reporte_Solicitud_Ind_Semana_Actual_V" "Grid_Reporte_Solicitud_Ind_Semana_Actual_V"]]></text>
+    </command>
+    <command type="Text" id="Grid_Reporte_Solicitud_Ind_Semana_Anterior_V" custom="false">
+      <text><![CDATA[select
+	"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Familia_Id" "Familia_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Material" "Material"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Fecha_Entrega_Cadista" "Fecha_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Tiempo_Transcurrido_Entrega_Cadista" "Tiempo_Transcurrido_Entrega_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Caso_Tiempo_Transcurrido_Cadista" "Caso_Tiempo_Transcurrido_Cadista"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Entregado_Por_Usuario_Cadista_Id" "Entregado_Por_Usuario_Cadista_Id"
+	,"Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"."Entregado_Por_Usuario_Cadista" "Entregado_Por_Usuario_Cadista"
+from "dbo"."Grid_Reporte_Solicitud_Ind_Semana_Anterior_V" "Grid_Reporte_Solicitud_Ind_Semana_Anterior_V"]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" />
+    <field name="Categoria_Solicitud" type="String" allowNulls="false" label="Categoria Solicitud" length="150" showInSummary="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" readOnly="true" showInSummary="true" />
+    <field name="Familia_Clave" type="String" allowNulls="false" label="Familia Clave" readOnly="true" length="250" showInSummary="true" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" label="Categoria Id" readOnly="true" />
+    <field name="Categoria_Clave" type="String" allowNulls="false" label="Categoria Clave" readOnly="true" length="250" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" label="Solicitud Id" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" />
+    <field name="Estatus_Solicitud_Id" type="Int32" allowNulls="false" label="Estatus Solicitud Id" readOnly="true" />
+    <field name="Estatus_Solicitud" type="String" allowNulls="false" label="Estatus Solicitud" length="250" />
+    <field name="Fecha_Solicitud_Dia" type="DateTime" label="Fecha Solicitud Dia" readOnly="true" />
+    <field name="Fecha_Solicitud" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Solicitud" />
+    <field name="Fecha_Entrega" type="DateTime" dataFormatString="g" label="Fecha Entrega" />
+    <field name="Solicitud_Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Solicitud Fecha Ultima Actualizacion" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Ruta Optima Id" readOnly="true" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" label="Material Surtido Id" readOnly="true" />
+    <field name="Tiempo_Transcurrido" type="Int32" allowNulls="false" label="Tiempo Transcurrido" readOnly="true" />
+    <field name="Caso_Tiempo_Transcurrido" type="String" allowNulls="false" label="Caso Tiempo Transcurrido" readOnly="true" length="17" />
+    <field name="Solicitud_Antiguedad_Dia" type="Int32" label="Solicitud Antiguedad Dia" readOnly="true" />
+    <field name="Solicitud_Hora_De_Solicitud" type="Int32" label="Solicitud Hora De Solicitud" readOnly="true" />
+    <field name="Solicitud_Hora" type="String" label="Solicitud Hora" readOnly="true" length="8" />
+    <field name="Solicitud_Hora_Completa" type="String" label="Solicitud Hora Completa" readOnly="true" length="30" />
+    <field name="Entregado_Por_Id" type="Guid" label="Entregado Por Id" />
+    <field name="Entregado_Por" type="String" label="Entregado Por" length="256" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id" readOnly="true" />
+    <field name="Area_Entrega" type="String" allowNulls="false" label="Area Entrega" readOnly="true" length="250" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" />
+    <field name="Area_Servicio" type="String" allowNulls="false" label="Area Servicio" length="250" />
+    <field name="Surtidor_Responsable_Id" type="Guid" label="Surtidor Responsable Id" readOnly="true" />
+    <field name="Surtidor_Responsable" type="String" label="Surtidor Responsable" readOnly="true" length="256" />
+    <field name="Solicitado_Por_Id" type="Guid" allowNulls="false" label="Solicitado Por Id" />
+    <field name="Solicitado_Por" type="String" allowNulls="false" label="Solicitado Por" length="256" />
+    <field name="Tipo_Solicitud_Id" type="Int32" allowNulls="false" label="Tipo Solicitud Id" readOnly="true" />
+    <field name="Tipo_Solicitud" type="String" allowNulls="false" label="Tipo Solicitud" length="150" />
+    <field name="Fecha_Entrega_Cadista" type="DateTime" dataFormatString="g" label="Fecha Entrega Cadista" />
+    <field name="Tiempo_Transcurrido_Entrega_Cadista" type="Int32" allowNulls="false" label="Tiempo Transcurrido Entrega Cadista" readOnly="true" />
+    <field name="Caso_Tiempo_Transcurrido_Cadista" type="String" allowNulls="false" label="Caso Tiempo Transcurrido Cadista" readOnly="true" length="17" />
+    <field name="Entregado_Por_Usuario_Cadista_Id" type="Guid" label="Entregado Por Usuario Cadista Id" />
+    <field name="Entregado_Por_Usuario_Cadista" type="String" label="Entregado Por Usuario Cadista" length="256" />
+  </fields>
+  <views>
+    <view id="Grid_Reporte_Solicitud_Ind_Dia_Actual_V" type="Grid" commandId="command1" label="Reporte de Solicitud de Material Indirecto Del Dia Actual" tags="view-style-grid,&#xD;&#xA;view-style-list,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Fecha_Entrega_Cadista" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido_Entrega_Cadista" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido_Cadista" columns="17" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista" />
+      </dataFields>
+    </view>
+    <view id="Grid_Reporte_Solicitud_Ind_Dia_Anterior_V" type="Grid" commandId="Grid_Reporte_Solicitud_Ind_Dia_Anterior_V" label="Reporte de Solicitud de Material Indirecto Del Dia Anterior" tags="view-style-grid,&#xD;&#xA;view-style-list,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Fecha_Entrega_Cadista" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido_Entrega_Cadista" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido_Cadista" columns="17" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista" />
+      </dataFields>
+    </view>
+    <view id="Grid_Reporte_Solicitud_Ind_Semana_Actual_V" type="Grid" commandId="Grid_Reporte_Solicitud_Ind_Semana_Actual_V" label="Reporte de Solicitud de Material Indirecto De La Semana Actual" tags="view-style-grid,&#xD;&#xA;view-style-list,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" hidden="true" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Fecha_Entrega_Cadista" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido_Entrega_Cadista" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido_Cadista" columns="17" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista" />
+      </dataFields>
+    </view>
+    <view id="Grid_Reporte_Solicitud_Ind_Semana_Anterior_V" type="Grid" commandId="Grid_Reporte_Solicitud_Ind_Semana_Anterior_V" label="Reporte de Solicitud de Material Indirecto De La Semana Anterior" tags="view-style-grid,&#xD;&#xA;view-style-list,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Fecha_Entrega_Cadista" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido_Entrega_Cadista" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido_Cadista" columns="17" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista" />
+      </dataFields>
+    </view>
+    <view id="Grid_Reporte_Solicitud_Ind_Mes_Actual_V" type="Grid" commandId="Grid_Reporte_Solicitud_Ind_Mes_Actual_V" label="Reporte de Solicitud de Material Indirecto Del Mes Actual" tags="view-style-grid,&#xD;&#xA;view-style-list,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" hidden="true" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Fecha_Entrega_Cadista" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido_Entrega_Cadista" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido_Cadista" columns="17" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista" />
+      </dataFields>
+    </view>
+    <view id="Grid_Reporte_Solicitud_Ind_Mes_Anterior_V" type="Grid" commandId="Grid_Reporte_Solicitud_Ind_Mes_Anterior_V" label="Reporte de Solicitud de Material Indirecto Del Mes Anterior" tags="view-style-grid,&#xD;&#xA;view-style-list,&#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Categoria_Solicitud" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" />
+        <dataField fieldName="Fecha_Entrega_Cadista" columns="20" />
+        <dataField fieldName="Tiempo_Transcurrido_Entrega_Cadista" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido_Cadista" columns="17" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por_Usuario_Cadista" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="Grid_Reporte_Solicitud_Ind_Dia_Actual_V" roles="hidden" />
+      <action id="a8" commandName="Duplicate" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" commandName="Select" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" cssClass="EditIcon" whenView="Grid_Reporte_Solicitud_Ind_Dia_Actual_V" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="Grid_Reporte_Solicitud_Ind_Dia_Actual_V" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+  </actions>
+</dataController>

@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Semaforo_Rango_Valor" conflictDetection="overwriteChanges" label="Semaforo Rango Valor" handler="eaton.Rules.Semaforo_Rango_ValorBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Semaforo_Rango_Valor"."Semaforo_Rango_Valor_Id" "Semaforo_Rango_Valor_Id"
+	,"Semaforo_Rango_Valor"."Semaforo_Id" "Semaforo_Id"
+	,"Semaforo_"."Semaforo" "Semaforo"
+	,"Semaforo_Rango_Valor"."Rango_Inicio" "Rango_Inicio"
+	,"Semaforo_Rango_Valor"."Rango_Fin" "Rango_Fin"
+	,"Semaforo_Rango_Valor"."Valor_Cuantitativo" "Valor_Cuantitativo"
+	,"Semaforo_Rango_Valor"."Valor_Cualitativo" "Valor_Cualitativo"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Semaforo_Rango_Valor"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Semaforo_Rango_Valor"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Semaforo_Rango_Valor"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Semaforo_Rango_Valor"."Color_Texto_Id" "Color_Texto_Id"
+	,"Color_Texto"."Nombre_Ingles" "Color_Texto"
+	,"Semaforo_Rango_Valor"."Color_Fondo_Texto_Id" "Color_Fondo_Texto_Id"
+	,"Color_Fondo_Texto"."Nombre_Ingles" "Color_Fondo_Texto"
+from "APP"."Semaforo_Rango_Valor" "Semaforo_Rango_Valor"
+	left join "APP"."Semaforo" "Semaforo_" on "Semaforo_Rango_Valor"."Semaforo_Id" = "Semaforo_"."Semaforo_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Semaforo_Rango_Valor"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Semaforo_Rango_Valor"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Semaforo_Rango_Valor"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Color" "Color_Texto" on "Semaforo_Rango_Valor"."Color_Texto_Id" = "Color_Texto"."Color_Id"
+	left join "APP"."Color" "Color_Fondo_Texto" on "Semaforo_Rango_Valor"."Color_Fondo_Texto_Id" = "Color_Fondo_Texto"."Color_Id"
+]]></text>
+    </command>
+    <command id="Semaforo_Rango_Valor_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Semaforo_Rango_Valor_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Semaforo_Rango_Valor_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Semáforo Rango Valor Id" readOnly="true" />
+    <field name="Semaforo_Id" type="Int32" allowNulls="false" label="Semáforo Id" showInSummary="true">
+      <items style="Lookup" dataController="Semaforo" newDataView="createForm1" dataValueField="Semaforo_Id" dataTextField="Semaforo" pageSize="15" dataView="Semaforo_LookUp_List" />
+    </field>
+    <field name="Semaforo" type="String" readOnly="true" label="Semáforo" length="250" />
+    <field name="Rango_Inicio" type="Decimal" allowNulls="false" label="Rango Inicio" showInSummary="true" />
+    <field name="Rango_Fin" type="Decimal" allowNulls="false" label="Rango Fin" showInSummary="true" />
+    <field name="Valor_Cuantitativo" type="Decimal" allowNulls="false" label="Valor Cuantitativo" showInSummary="true" />
+    <field name="Valor_Cualitativo" type="String" allowNulls="false" label="Valor Cualitativo" length="150" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" pageSize="15" dataView="Estatus_Registro_LookUp_List" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Color_Texto_Id" type="Int32" allowNulls="false" label="Color Texto Id">
+      <items style="Lookup" dataController="Color" newDataView="createForm1" dataValueField="Color_Id" dataTextField="Nombre_Ingles" dataView="Color_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Color_Texto" type="String" readOnly="true" label="Color de Texto" length="150" />
+    <field name="Color_Fondo_Texto_Id" type="Int32" allowNulls="false" label="Color Fondo Texto Id">
+      <items style="Lookup" dataController="Color" newDataView="createForm1" dataValueField="Color_Id" dataTextField="Nombre_Ingles" dataView="Color_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Color_Fondo_Texto" type="String" readOnly="true" label="Color de Fondo Texto" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Semáforo Rango Valor" showInSelector="false" sortExpression="Semaforo, Rango_Inicio, Rango_Fin" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Semaforo_Id" aliasFieldName="Semaforo" />
+        <dataField fieldName="Rango_Inicio" columns="15" />
+        <dataField fieldName="Rango_Fin" columns="15" />
+        <dataField fieldName="Valor_Cuantitativo" columns="15" />
+        <dataField fieldName="Valor_Cualitativo" />
+        <dataField fieldName="Color_Texto_Id" aliasFieldName="Color_Texto" />
+        <dataField fieldName="Color_Fondo_Texto_Id" aliasFieldName="Color_Fondo_Texto" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Semáforo Rango Valor">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Semáforo Rango Valor" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Semaforo_Id" aliasFieldName="Semaforo" />
+            <dataField fieldName="Rango_Inicio" columns="15" />
+            <dataField fieldName="Rango_Fin" columns="15" />
+            <dataField fieldName="Valor_Cuantitativo" columns="15" />
+            <dataField fieldName="Valor_Cualitativo" />
+            <dataField fieldName="Color_Texto_Id" aliasFieldName="Color_Texto" />
+            <dataField fieldName="Color_Fondo_Texto_Id" aliasFieldName="Color_Fondo_Texto" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Semáforo Rango Valor">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Semáforo Rango Valor" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Semaforo_Id" aliasFieldName="Semaforo" />
+            <dataField fieldName="Rango_Inicio" columns="15" />
+            <dataField fieldName="Rango_Fin" columns="15" />
+            <dataField fieldName="Valor_Cuantitativo" columns="15" />
+            <dataField fieldName="Valor_Cualitativo" />
+            <dataField fieldName="Color_Texto_Id" aliasFieldName="Color_Texto" />
+            <dataField fieldName="Color_Fondo_Texto_Id" aliasFieldName="Color_Fondo_Texto" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Semaforo_Rango_Valor_LookUp_List" type="Grid" commandId="command1" label="Semáforo Rango Valor" showInSelector="false" sortExpression="Semaforo, Rango_Inicio, Rango_Fin" filter="Estatus_Registro_Id = 1">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Semaforo_Id" aliasFieldName="Semaforo" />
+        <dataField fieldName="Rango_Inicio" columns="15" />
+        <dataField fieldName="Rango_Fin" columns="15" />
+        <dataField fieldName="Valor_Cuantitativo" columns="15" />
+        <dataField fieldName="Valor_Cualitativo" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Color_Texto_Id" aliasFieldName="Color_Texto" />
+        <dataField fieldName="Color_Fondo_Texto_Id" aliasFieldName="Color_Fondo_Texto" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+APP.Semaforo_Rango_Valor 
+SET 
+Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE 
+Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Semaforo_Rango_Valor
+WHERE
+	Semaforo_Id = @Semaforo_Id
+	AND Rango_Inicio = @Rango_Inicio
+	AND Rango_Fin = @Rango_Fin
+	AND Valor_Cuantitativo = @Valor_Cuantitativo
+	AND Valor_Cualitativo = @Valor_Cualitativo
+	
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](50,1,25,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Semaforo_Rango_Valor
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Semaforo_Rango_Valor
+WHERE
+	Semaforo_Id = @Semaforo_Id
+	AND Rango_Inicio = @Rango_Inicio
+	AND Rango_Fin = @Rango_Fin
+	AND Valor_Cuantitativo = @Valor_Cuantitativo
+	AND Valor_Cualitativo = @Valor_Cualitativo
+	AND Semaforo_Rango_Valor_Id <> @Semaforo_Rango_Valor_Id
+	
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](70,1,25,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Semaforo_Rango_Valor
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Semaforo_Rango_Valor_Id = @Semaforo_Rango_Valor_Id]]></rule>
+    <rule id="r104" commandName="Insert|Update" type="JavaScript" phase="Before" name="ValidarColorTextoColorFondoIguales"><![CDATA[if ([Color_Texto_Id] == [Color_Fondo_Texto_Id]){
+	$app.alert("ADVERTENCIA: El color de Texto es igual al Color de Fondo Texto.");
+  	this.PreventDefault();  
+}]]></rule>
+  </businessRules>
+</dataController>

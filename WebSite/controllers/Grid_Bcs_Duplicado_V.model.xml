@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Bcs_Duplicado_V" alias="Grid_Bcs_Duplicado_V" created="2019-12-17T00:49:13" modified="2019-12-17T00:49:17" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Cantidad_Duplicado" fieldName="Cantidad_Duplicado" label="Cantidad Duplicado" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Ubicacion_Origen" fieldName="Ubicacion_Origen" label="Ubicacion Origen" />
+    <column name="Ubicacion_Destino" fieldName="Ubicacion_Destino" label="Ubicacion Destino" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Usuario_Surtidor_Id" fieldName="Usuario_Surtidor_Id" label="Usuario Surtidor Id" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" />
+    <column name="Estatus_Captura_Sap" fieldName="Estatus_Captura_Sap" label="Estatus Captura Sap" />
+  </columns>
+</dataModel>

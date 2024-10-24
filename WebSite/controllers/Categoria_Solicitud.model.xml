@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Categoria_Solicitud" alias="Categoria_Solicitud" created="2019-03-28T18:30:50" modified="2021-05-20T16:36:41" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="565" y="398">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="798" y="290">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="422" y="55">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Categoria_Solicitud_Id" fieldName="Categoria_Solicitud_Id" label="Categoria Solicitud Id" />
+    <column name="Categoria_Solicitud" fieldName="Categoria_Solicitud" label="Categoría de Solicitud" />
+    <column name="Es_De_Excedente" fieldName="Es_De_Excedente" label="Es De Excedente?" />
+    <column name="Es_De_Kanban" fieldName="Es_De_Kanban" label="Es De Kanban?" />
+    <column name="Es_Otro" fieldName="Es_Otro" label="Es Otro?" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Es_Interplanta" fieldName="Es_Interplanta" label="Es Interplanta" />
+    <column name="Es_Solicitud_Rollo" fieldName="Es_Solicitud_Rollo" label="Es Solicitud Rollo" />
+    <column name="Es_Urgencia_Compra" fieldName="Es_Urgencia_Compra" label="Es Urgencia Compra" />
+    <column name="Es_Material_Indirecto" fieldName="Es_Material_Indirecto" label="Es Material Indirecto" />
+  </columns>
+</dataModel>

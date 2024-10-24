@@ -1,0 +1,13 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transferencias de Materiales en Ruta Óptima</title>
+  </head>
+  <body data-authorize-roles="administrador,SurtidorReciboTransferencia">
+    <div data-flow="row">
+      <div id="view1" data-controller="Mov_Transfer_Ruta_Optima_A_Ejecutar_V" data-view="grid1" data-show-in-summary="true" data-selection-mode="multiple" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none"> </div>
+      <div id="view2" data-controller="Movimiento_Ruta_Optima_Ubicacion_Almacenamiento3" data-view="grid1" data-filter-source="view1" data-filter-fields="Movimiento_Ruta_Optima_Id,Transferencia_Material_Id,Tipo_Movimiento_Id" data-tag="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none"> </div>
+    </div>
+  </body>
+</html>

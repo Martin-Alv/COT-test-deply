@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido" conflictDetection="overwriteChanges" label="Ruta Optima Ubicacion Almacenamiento De Surtido" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido_Id" "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Ruta_Optima_"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Ubicacion_Almacenamiento_De_Surtido_Id" "Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Ubicacion_Almacenamiento_De_Surtido_"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_De_Surtido"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Unidad_Material_Entregado_"."Unidad_Material" "Unidad_Material_Entregado"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material"
+from "APP"."Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido" "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"
+	left join "APP"."Ruta_Optima" "Ruta_Optima_" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Ruta_Optima_Id" = "Ruta_Optima_"."Ruta_Optima_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_De_Surtido_" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Ubicacion_Almacenamiento_De_Surtido_Id" = "Ubicacion_Almacenamiento_De_Surtido_"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Entregado_" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Unidad_Material_Entregado_Id" = "Unidad_Material_Entregado_"."Unidad_Material_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Material" "Material" on "Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido"."Material_Id" = "Material"."Material_Id"
+]]></text>
+    </command>
+    <command id="Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Ruta Optima Ubicacion Almacenamiento De Surtido Id" readOnly="true" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Ruta Optima Id" showInSummary="true">
+      <items style="Lookup" dataController="Ruta_Optima" dataValueField="Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" dataView="Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Numero_Grupo_Ruta_Optima" type="Int32" readOnly="true" label="Numero Grupo Ruta Optima" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Almacenamiento De Surtido Id" showInSummary="true" contextFields="Material_Id=Material_Id">
+      <items style="Lookup" dataController="Material_Ubicacion_Almacen_V" pageSize="15" dataView="Material_Ubicacion_Almacen_LookUp_List" dataTextField="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" />
+    </field>
+    <field name="Ubicacion_Almacenamiento_De_Surtido" type="String" readOnly="true" label="Ubicacion Almacenamiento De Surtido" length="150" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" default="((0))" label="Cantidad Entregado" showInSummary="true" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material Entregado Id" showInSummary="true">
+      <items style="Lookup" dataController="Unidad_Material" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" readOnly="true" label="Unidad Material Entregado" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material_Id" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Ruta Optima Ubicacion Almacenamiento De Surtido">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Material_Id" columns="15" aliasFieldName="Material" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review APP Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="APP Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" hyperlinkFormatString="~/pages/Ruta_Optima?Ruta_Optima_Id={Ruta_Optima_Id}&amp;_controller=Ruta_Optima&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Ubicacion_Almacenamiento_De_Surtido_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Entregado_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material_Id" columns="15" />
+            <dataField fieldName="Material" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New APP Ruta_Optima_Ubicacion_Almacenamiento_De_Surtido">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Creado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Creacion" columns="20" hidden="true" />
+            <dataField fieldName="Actualizado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hidden="true" />
+            <dataField fieldName="Material_Id" columns="15" aliasFieldName="Material" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

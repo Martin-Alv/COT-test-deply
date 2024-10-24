@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Historial_Impresion_Etiqueta" conflictDetection="overwriteChanges" label="Historial Impresion Etiqueta" handler="eaton.Rules.Historial_Impresion_EtiquetaBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Historial_Impresion_Etiqueta"."Historial_Impresion_Etiqueta_Id" "Historial_Impresion_Etiqueta_Id"
+	,"Historial_Impresion_Etiqueta"."Etiqueta_Proveedor_Id" "Etiqueta_Proveedor_Id"
+	,"Etiqueta_Proveedor_"."Folio" "Etiqueta_Proveedor"
+	,"Historial_Impresion_Etiqueta"."Etiqueta_Detalle_Proveedor_Id" "Etiqueta_Detalle_Proveedor_Id"
+	,"Etiqueta_Detalle_Proveedor_"."Folio" "Etiqueta_Detalle_Proveedor"
+	,"Historial_Impresion_Etiqueta"."Tipo_Etiqueta_Id" "Tipo_Etiqueta_Id"
+	,"Tipo_Etiqueta_"."Tipo_Etiqueta" "Tipo_Etiqueta"
+	,"Historial_Impresion_Etiqueta"."Tamanio_Etiqueta_Id" "Tamanio_Etiqueta_Id"
+	,"Tamanio_Etiqueta_"."Tamanio_Etiqueta" "Tamanio_Etiqueta"
+	,"Historial_Impresion_Etiqueta"."Fecha_Generacion" "Fecha_Generacion"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Historial_Impresion_Etiqueta"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Historial_Impresion_Etiqueta"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Historial_Impresion_Etiqueta"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Historial_Impresion_Etiqueta" "Historial_Impresion_Etiqueta"
+	left join "APP"."Etiqueta_Proveedor" "Etiqueta_Proveedor_" on "Historial_Impresion_Etiqueta"."Etiqueta_Proveedor_Id" = "Etiqueta_Proveedor_"."Etiqueta_Proveedor_Id"
+	left join "APP"."Etiqueta_Detalle_Proveedor" "Etiqueta_Detalle_Proveedor_" on "Historial_Impresion_Etiqueta"."Etiqueta_Detalle_Proveedor_Id" = "Etiqueta_Detalle_Proveedor_"."Etiqueta_Detalle_Proveedor_Id"
+	left join "APP"."Tipo_Etiqueta" "Tipo_Etiqueta_" on "Historial_Impresion_Etiqueta"."Tipo_Etiqueta_Id" = "Tipo_Etiqueta_"."Tipo_Etiqueta_Id"
+	left join "APP"."Tamanio_Etiqueta" "Tamanio_Etiqueta_" on "Historial_Impresion_Etiqueta"."Tamanio_Etiqueta_Id" = "Tamanio_Etiqueta_"."Tamanio_Etiqueta_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Historial_Impresion_Etiqueta"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Historial_Impresion_Etiqueta"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Historial_Impresion_Etiqueta"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Historial_Impresion_Etiqueta_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Historial_Impresion_Etiqueta_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Historial_Impresion_Etiqueta_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Historial Impresion Etiqueta Id" readOnly="true" />
+    <field name="Etiqueta_Proveedor_Id" type="Int32" allowNulls="false" label="Etiqueta Proveedor Id" showInSummary="true">
+      <items style="Lookup" dataController="Etiqueta_Proveedor" dataValueField="Etiqueta_Proveedor_Id" dataTextField="Folio" dataView="Etiqueta_Proveedor_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Etiqueta_Proveedor" type="Int32" label="Etiqueta Proveedor" readOnly="true" />
+    <field name="Etiqueta_Detalle_Proveedor_Id" type="Int32" allowNulls="false" label="Etiqueta Detalle Proveedor Id" showInSummary="true">
+      <items style="Lookup" dataController="Etiqueta_Detalle_Proveedor" dataValueField="Etiqueta_Detalle_Proveedor_Id" dataTextField="Folio" dataView="Etiqueta_Detalle_Proveedor_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Etiqueta_Detalle_Proveedor" type="Int32" label="Etiqueta Detalle Proveedor" readOnly="true" />
+    <field name="Tipo_Etiqueta_Id" type="Int32" allowNulls="false" label="Tipo Etiqueta Id" showInSummary="true">
+      <items style="Lookup" dataController="Tipo_Etiqueta" dataValueField="Tipo_Etiqueta_Id" dataTextField="Tipo_Etiqueta" dataView="Tipo_Etiqueta_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Etiqueta" type="String" readOnly="true" label="Tipo Etiqueta" length="250" />
+    <field name="Tamanio_Etiqueta_Id" type="Int32" allowNulls="false" label="Tamanio Etiqueta Id" showInSummary="true">
+      <items style="Lookup" dataController="Tamanio_Etiqueta" dataValueField="Tamanio_Etiqueta_Id" dataTextField="Tamanio_Etiqueta" dataView="Tamanio_Etiqueta_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tamanio_Etiqueta" type="String" readOnly="true" label="Tamanio Etiqueta" length="250" />
+    <field name="Fecha_Generacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Generacion" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" pageSize="15" dataView="Estatus_Registro_LookUp_List" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Historial Impresion Etiqueta" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Etiqueta_Proveedor_Id" aliasFieldName="Etiqueta_Proveedor" />
+        <dataField fieldName="Etiqueta_Detalle_Proveedor_Id" aliasFieldName="Etiqueta_Detalle_Proveedor" />
+        <dataField fieldName="Tipo_Etiqueta_Id" aliasFieldName="Tipo_Etiqueta" />
+        <dataField fieldName="Tamanio_Etiqueta_Id" aliasFieldName="Tamanio_Etiqueta" />
+        <dataField fieldName="Fecha_Generacion" columns="20" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Historial Impresion Etiqueta">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Historial Impresion Etiqueta" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Proveedor_Id" aliasFieldName="Etiqueta_Proveedor" hyperlinkFormatString="~/pages/Etiqueta_Proveedor?Etiqueta_Proveedor_Id={Etiqueta_Proveedor_Id}&amp;_controller=Etiqueta_Proveedor&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Etiqueta_Detalle_Proveedor_Id" aliasFieldName="Etiqueta_Detalle_Proveedor" hyperlinkFormatString="~/pages/Etiqueta_Detalle_Proveedor?Etiqueta_Detalle_Proveedor_Id={Etiqueta_Detalle_Proveedor_Id}&amp;_controller=Etiqueta_Detalle_Proveedor&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tipo_Etiqueta_Id" aliasFieldName="Tipo_Etiqueta" hyperlinkFormatString="~/pages/Tipo_Etiqueta?Tipo_Etiqueta_Id={Tipo_Etiqueta_Id}&amp;_controller=Tipo_Etiqueta&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Tamanio_Etiqueta_Id" aliasFieldName="Tamanio_Etiqueta" hyperlinkFormatString="~/pages/Tamanio_Etiqueta?Tamanio_Etiqueta_Id={Tamanio_Etiqueta_Id}&amp;_controller=Tamanio_Etiqueta&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Generacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Historial Impresion Etiqueta">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Historial Impresion Etiqueta" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Etiqueta_Proveedor_Id" aliasFieldName="Etiqueta_Proveedor" />
+            <dataField fieldName="Etiqueta_Detalle_Proveedor_Id" aliasFieldName="Etiqueta_Detalle_Proveedor" />
+            <dataField fieldName="Tipo_Etiqueta_Id" aliasFieldName="Tipo_Etiqueta" />
+            <dataField fieldName="Tamanio_Etiqueta_Id" aliasFieldName="Tamanio_Etiqueta" />
+            <dataField fieldName="Fecha_Generacion" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Historial_Impresion_Etiqueta_LookUp_List" type="Grid" commandId="command1" label="Historial Impresion Etiqueta" filter="Estatus_Registro_Id IN (0,1)" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Etiqueta_Proveedor_Id" aliasFieldName="Etiqueta_Proveedor" />
+        <dataField fieldName="Etiqueta_Detalle_Proveedor_Id" aliasFieldName="Etiqueta_Detalle_Proveedor" />
+        <dataField fieldName="Tipo_Etiqueta_Id" aliasFieldName="Tipo_Etiqueta" />
+        <dataField fieldName="Tamanio_Etiqueta_Id" aliasFieldName="Tamanio_Etiqueta" />
+        <dataField fieldName="Fecha_Generacion" columns="20" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Historial_Impresion_Etiqueta SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Historial_Impresion_Etiqueta_Id = @Historial_Impresion_Etiqueta_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Historial_Impresion_Etiqueta SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Historial_Impresion_Etiqueta_Id = @Historial_Impresion_Etiqueta_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Historial_Impresion_Etiqueta SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Historial_Impresion_Etiqueta_Id = @Historial_Impresion_Etiqueta_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators">
+        <data><![CDATA[UPDATE APP.Historial_Impresion_Etiqueta SET Estatus_Registro_Id = 3, Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Historial_Impresion_Etiqueta_Id = @Historial_Impresion_Etiqueta_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Historial_Impresion_Etiqueta
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Historial_Impresion_Etiqueta_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Historial_Impresion_Etiqueta_Id))
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1316,1,10,@Historial_Impresion_Etiqueta_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1316,1,10,@Historial_Impresion_Etiqueta_Id
+   RETURN
+END
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Historial_Impresion_Etiqueta
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Historial_Impresion_Etiqueta_Id = @Historial_Impresion_Etiqueta_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+SET @Already_Exists = 0
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Historial_Impresion_Etiqueta
+WHERE
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Historial_Impresion_Etiqueta_Id))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Historial_Impresion_Etiqueta_Id))
+AND Historial_Impresion_Etiqueta_Id <> @Historial_Impresion_Etiqueta_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1317,1,10,@Historial_Impresion_Etiqueta_Id)
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1317,1,10,@Historial_Impresion_Etiqueta_Id)
+   RETURN
+END]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Historial_Impresion_Etiqueta
+SET
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Historial_Impresion_Etiqueta_Id = @Historial_Impresion_Etiqueta_Id]]></rule>
+  </businessRules>
+</dataController>

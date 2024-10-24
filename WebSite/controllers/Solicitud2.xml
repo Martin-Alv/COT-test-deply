@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Solicitud2" label="Solicitud2" conflictDetection="overwriteChanges" handler="eaton.Rules.Solicitud2BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Solicitud"."Solicitud_Id" "Solicitud_Id"
+	,"Solicitud"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Area_Servicio_"."Area_Servicio" "Area_Servicio"
+	,"Solicitud"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Unidad_Material_Entregado_"."Unidad_Material" "Unidad_Material_Entregado"
+	,"Solicitud"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Solicitud"."Fecha_Entrega" "Fecha_Entrega"
+	,"Solicitud"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Estatus_Solicitud_"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Solicitud"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Solicitud"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Solicitud"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Solicitud"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Entregado_Por"."Usuario_Sistema" "Entregado_Por"
+	,"Solicitud"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Orden_Produccion"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Solicitud"."Orden_Produccion_Detalle_Id" "Orden_Produccion_Detalle_Id"
+	,"Orden_Produccion_Detalle"."Orden_Produccion_Detalle_Id" "Orden_Produccion_Detalle"
+	,"Solicitud"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Solicitado_Por"."Usuario_Sistema" "Solicitado_Por"
+	,"Solicitud"."Familia_Id" "Familia_Id"
+	,"Familia"."Familia_Clave" "Familia_Clave"
+	,"Solicitud"."Producto_Id" "Producto_Id"
+	,"Producto"."Producto_Clave" "Producto_Clave"
+	,"Solicitud"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Material_Solicitado"."Material" "Material"
+	,"Solicitud"."Unidad_Material_Solicitado_Id" "Unidad_Material_Solicitado_Id"
+	,"Unidad_Material_Solicitado"."Unidad_Material" "Unidad_Material_Solicitado"
+	,"Solicitud"."Cantidad_Solicitado" "Cantidad_Solicitado"
+	,"Solicitud"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Solicitud"."Solicitud_Transaccion_Id" "Solicitud_Transaccion_Id"
+	,"Solicitud"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Area_Entrega"."Area_Entrega" "Area_Entrega"
+	,"Solicitud"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Tipo_Solicitud"."Tipo_Solicitud" "Tipo_Solicitud"
+	,"Solicitud"."Categoria_Solicitud_Id" "Categoria_Solicitud_Id"
+	,"Categoria_Solicitud"."Categoria_Solicitud" "Categoria_Solicitud"
+	,"Categoria_Solicitud"."Es_De_Kanban" "Es_De_Kanban"
+	,"Categoria_Solicitud"."Es_Otro" "Es_Otro"
+	,"Categoria_Solicitud"."Es_Interplanta" "Es_Interplanta"
+	,"Categoria_Solicitud"."Es_Solicitud_Rollo" "Es_Solicitud_Rollo"
+	,"Categoria_Solicitud"."Es_Urgencia_Compra" "Es_Urgencia_Compra"
+	,"Solicitud"."Motivo_Solicitud" "Motivo_Solicitud"
+	,"Solicitud"."Registrado_Desde_Id" "Registrado_Desde_Id"
+	,"Registrado_Desde"."Registrado_Desde" "Registrado_Desde"
+	,"Solicitud"."Categoria_Id" "Categoria_Id"
+	,"Categoria"."Categoria_Clave" "Categoria_Clave"
+	,"Solicitud"."Motivo_Solicitud_Id" "Motivo_Solicitud_Id"
+	,"Motivo_Solicitud"."Motivo_Solicitud" "Motivo_Solicitud_Motivo_Solicitud"
+	,"Motivo_Solicitud"."Es_Otro" "Motivo_Solicitud_Es_Otro"
+	,"Solicitud"."Numero_Orden_Produccion" "Solicitud_Numero_Orden_Produccion"
+	,"Solicitud"."Fecha_Captura" "Fecha_Captura"
+	,"Solicitud"."Capturado_Por_Id" "Capturado_Por_Id"
+	,"Capturado_Por"."Usuario_Sistema" "Capturado_Por"
+	,"Solicitud"."Fecha_Surtido" "Fecha_Surtido"
+	,"Solicitud"."Motivo_Cancelacion_Id" "Motivo_Cancelacion_Id"
+	,"Motivo_Cancelacion"."Motivo_Cancelacion" "Motivo_Cancelacion"
+	,"Solicitud"."Captura_Transaccion_Id" "Captura_Transaccion_Id"
+	,"Solicitud"."Subtipo_Solicitud_Id" "Subtipo_Solicitud_Id"
+	,"Subtipo_Solicitud"."Subtipo_Solicitud" "Subtipo_Solicitud"
+	,"Subtipo_Solicitud"."Es_Solicitud_Mat_Normal" "SubtipoSolic_Es_Solic_Mat_Normal"
+	,"Subtipo_Solicitud"."Es_Solicitud_Mat_Pickeo_Incan" "SubtipoSolic_Es_Solic_Mat_Pickeo_Incan"
+	,"Solicitud"."Dato_Solicitud_Urgencia_Compras" "Dato_Solicitud_Urgencia_Compras"
+from "APP"."Solicitud" "Solicitud"
+	left join "APP"."Area_Servicio" "Area_Servicio_" on "Solicitud"."Area_Servicio_Id" = "Area_Servicio_"."Area_Servicio_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Entregado_" on "Solicitud"."Unidad_Material_Entregado_Id" = "Unidad_Material_Entregado_"."Unidad_Material_Id"
+	left join "APP"."Estatus_Solicitud" "Estatus_Solicitud_" on "Solicitud"."Estatus_Solicitud_Id" = "Estatus_Solicitud_"."Estatus_Solicitud_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Solicitud"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Solicitud"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Solicitud"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Orden_Produccion" "Orden_Produccion" on "Solicitud"."Orden_Produccion_Id" = "Orden_Produccion"."Orden_Produccion_Id"
+	left join "dbo"."Orden_Produccion_Detalle" "Orden_Produccion_Detalle" on "Solicitud"."Orden_Produccion_Detalle_Id" = "Orden_Produccion_Detalle"."Orden_Produccion_Detalle_Id"
+	left join "dbo"."Usuario_V" "Solicitado_Por" on "Solicitud"."Solicitado_Por_Id" = "Solicitado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Entregado_Por" on "Solicitud"."Entregado_Por_Id" = "Entregado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Familia" "Familia" on "Solicitud"."Familia_Id" = "Familia"."Familia_Id"
+	left join "APP"."Producto" "Producto" on "Solicitud"."Producto_Id" = "Producto"."Producto_Id"
+	left join "APP"."Material" "Material_Solicitado" on "Solicitud"."Material_Solicitado_Id" = "Material_Solicitado"."Material_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Solicitado" on "Solicitud"."Unidad_Material_Solicitado_Id" = "Unidad_Material_Solicitado"."Unidad_Material_Id"
+	left join "APP"."Area_Entrega" "Area_Entrega" on "Solicitud"."Area_Entrega_Id" = "Area_Entrega"."Area_Entrega_Id"
+	left join "APP"."Tipo_Solicitud" "Tipo_Solicitud" on "Solicitud"."Tipo_Solicitud_Id" = "Tipo_Solicitud"."Tipo_Solicitud_Id"
+	left join "APP"."Categoria_Solicitud" "Categoria_Solicitud" on "Solicitud"."Categoria_Solicitud_Id" = "Categoria_Solicitud"."Categoria_Solicitud_Id"
+	left join "APP"."Registrado_Desde" "Registrado_Desde" on "Solicitud"."Registrado_Desde_Id" = "Registrado_Desde"."Registrado_Desde_Id"
+	left join "APP"."Categoria" "Categoria" on "Solicitud"."Categoria_Id" = "Categoria"."Categoria_Id"
+	left join "APP"."Motivo_Solicitud" "Motivo_Solicitud" on "Solicitud"."Motivo_Solicitud_Id" = "Motivo_Solicitud"."Motivo_Solicitud_Id"
+	left join "dbo"."Usuario_V" "Capturado_Por" on "Solicitud"."Capturado_Por_Id" = "Capturado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Motivo_Cancelacion" "Motivo_Cancelacion" on "Solicitud"."Motivo_Cancelacion_Id" = "Motivo_Cancelacion"."Motivo_Cancelacion_Id"
+	left join "APP"."Subtipo_Solicitud" "Subtipo_Solicitud" on "Solicitud"."Subtipo_Solicitud_Id" = "Subtipo_Solicitud"."Subtipo_Solicitud_Id"
+]]></text>
+    </command>
+    <command id="Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Solicitud_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Folio Solicitud" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" label="Area Servicio Id" showInSummary="true">
+      <items style="Lookup" dataController="Area_Servicio" dataValueField="Area_Servicio_Id" dataTextField="Area_Servicio" dataView="Area_Servicio_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Servicio" type="String" readOnly="true" label="Área de Servicio" length="250" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" label="Unidad Material Entregado Id" showInSummary="true" allowNulls="false">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" readOnly="true" label="Unidad Material Entregado" length="250" />
+    <field name="Fecha_Solicitud" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Solicitud" showInSummary="true" />
+    <field name="Fecha_Entrega" type="DateTime" dataFormatString="g" label="Fecha de Entrega" showInSummary="true" />
+    <field name="Estatus_Solicitud_Id" type="Int32" allowNulls="false" label="Estatus Solicitud Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Solicitud" dataValueField="Estatus_Solicitud_Id" dataTextField="Estatus_Solicitud" dataView="Estatus_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Solicitud" type="String" readOnly="true" label="Estatus de Solicitud" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Entregado_Por_Id" type="Guid" label="Entregado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Entregado_Por" type="String" readOnly="true" label="Entregado Por" length="256" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Producción Id">
+      <items style="Lookup" dataController="Orden_Produccion" dataValueField="Orden_Produccion_Id" dataTextField="Numero_Orden_Produccion" dataView="Orden_Produccion_Listado" pageSize="15" copy="Producto_Id=Producto_Id,&#xD;&#xA;Producto_Clave=Producto_Clave,&#xD;&#xA;Familia_Id=Familia_Id,&#xD;&#xA;Familia_Clave=Familia_Clave,&#xD;&#xA;Categoria_Id=Categoria_Id,&#xD;&#xA;Categoria_Clave=Categoria_Clave,&#xD;&#xA;Area_Servicio_Id=Area_Servicio_Id,&#xD;&#xA;Area_Servicio=Area_Servicio" />
+    </field>
+    <field name="Numero_Orden_Produccion" type="Int64" readOnly="true" label="Número Orden Producción" />
+    <field name="Orden_Produccion_Detalle_Id" type="Int64" label="Orden Producción Detalle Id" allowNulls="false" contextFields="Orden_Produccion_Id = Orden_Produccion_Id">
+      <items style="Lookup" dataController="Orden_Produccion_Detalle" dataValueField="Orden_Produccion_Detalle_Id" dataTextField="Orden_Produccion_Detalle_Id" dataView="Orden_Produccion_Detalle_LookUp_List" pageSize="15" copy="Orden_Produccion_Detalle = Orden_Produccion_Detalle_Id" />
+      <configuration />
+    </field>
+    <field name="Orden_Produccion_Detalle" type="Int64" label="Orden Producción Detalle" readOnly="true" />
+    <field name="Solicitado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Solicitado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Solicitado_Por" type="String" readOnly="true" label="Solicitado Por" length="256" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id">
+      <items style="Lookup" dataController="Familia" newDataView="createForm1" dataValueField="Familia_Id" dataTextField="Familia_Clave" dataView="Familia_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Familia_Clave" type="String" readOnly="true" label="Familia Clave" length="250" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto Id">
+      <items style="Lookup" dataController="Producto" newDataView="createForm1" dataValueField="Producto_Id" dataTextField="Producto_Clave" dataView="Producto_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Producto_Clave" type="String" readOnly="true" label="Producto Terminado" length="50" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" causesCalculate="true" contextFields="Clasificacion_es_Material_Indirecto = Categoria_Es_Material_Indirecto">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" copy="Material_Solicitado_Id=Material_Id" />
+      <configuration />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Unidad_Material_Solicitado_Id" type="Int32" allowNulls="false" label="Unidad Material Solicitado Id">
+      <items style="Lookup" dataController="Unidad_Material" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Solicitado" type="String" readOnly="true" label="Unidad Material Solicitado" length="250" />
+    <field name="Cantidad_Solicitado" type="Decimal" allowNulls="false" label="Cantidad Solicitado" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" />
+    <field name="Solicitud_Transaccion_Id" type="Guid" allowNulls="false" default="(newid())" label="Solicitud Transacción Id" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id">
+      <items style="Lookup" dataController="Area_Entrega" dataValueField="Area_Entrega_Id" dataTextField="Area_Entrega" dataView="Area_Entrega_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Area_Entrega" type="String" readOnly="true" label="Area de Entrega" length="250" />
+    <field name="Tipo_Solicitud_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Solicitud Id">
+      <items style="Lookup" dataController="Tipo_Solicitud" dataValueField="Tipo_Solicitud_Id" dataTextField="Tipo_Solicitud" dataView="Tipo_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Solicitud" type="String" readOnly="true" label="Tipo de Solicitud" length="150" />
+    <field name="Categoria_Solicitud_Id" type="Int32" allowNulls="false" label="Categoria Solicitud Id">
+      <items style="Lookup" dataController="Categoria_Solicitud" dataValueField="Categoria_Solicitud_Id" dataTextField="Categoria_Solicitud" copy="Es_De_Kanban=Es_De_Kanban, Es_Otro=Es_Otro, Es_Interplanta=Es_Interplanta, Es_Solicitud_Rollo=Es_Solicitud_Rollo,&#xD;&#xA;Es_Urgencia_Compra=Es_Urgencia_Compra&#xD;&#xA;Categoria_Es_Material_Indirecto = Es_Material_Indirecto" dataView="Categoria_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Categoria_Solicitud" type="String" readOnly="true" label="Categoría de Solicitud" length="150" />
+    <field name="Es_De_Kanban" type="Boolean" readOnly="true" label="Es De Kanban" />
+    <field name="Es_Otro" type="Boolean" readOnly="true" label="Es Otro" />
+    <field name="Es_Interplanta" type="Boolean" readOnly="true" label="Es Interplanta" />
+    <field name="Es_Solicitud_Rollo" type="Boolean" readOnly="true" label="Es Solicitud Rollo" />
+    <field name="Es_Urgencia_Compra" type="Boolean" readOnly="true" label="Es Urgencia Compra" />
+    <field name="Motivo_Solicitud" type="String" label="Comentarios" />
+    <field name="Registrado_Desde_Id" type="Int16" allowNulls="false" default="((0))" label="Registrado Desde Id">
+      <items style="Lookup" dataController="Registrado_Desde" dataValueField="Registrado_Desde_Id" dataTextField="Registrado_Desde" dataView="Registrado_Desde_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Registrado_Desde" type="String" readOnly="true" label="Registrado Desde" length="250" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" default="((0))" label="Categoria Id">
+      <items style="Lookup" dataController="Categoria" newDataView="createForm1" dataValueField="Categoria_Id" dataTextField="Categoria_Clave" dataView="Categoria_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Categoria_Clave" type="String" readOnly="true" label="Categoria Clave" length="250" />
+    <field name="Motivo_Solicitud_Id" type="Int32" allowNulls="false" label="Motivo Solicitud Id">
+      <items style="Lookup" dataController="Motivo_Solicitud" dataValueField="Motivo_Solicitud_Id" dataTextField="Motivo_Solicitud" copy="Motivo_Solicitud_Es_Otro=Es_Otro" dataView="Motivo_Solicitud_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Motivo_Solicitud_Motivo_Solicitud" type="String" readOnly="true" label="Motivo de Solicitud" length="250" />
+    <field name="Motivo_Solicitud_Es_Otro" type="Boolean" label="Motivo Solicitud Es Otro" allowNulls="false" isVirtual="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Solicitud_Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Solicitud Número Orden Producción" />
+    <field name="Fecha_Captura" type="DateTime" dataFormatString="g" label="Fecha Captura" />
+    <field name="Capturado_Por_Id" type="Guid" label="Capturado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" pageSize="15" />
+    </field>
+    <field name="Capturado_Por" type="String" readOnly="true" label="Capturado Por" length="256" />
+    <field name="Fecha_Surtido" type="DateTime" dataFormatString="g" label="Fecha Surtido" />
+    <field name="Motivo_Cancelacion_Id" type="Int32" allowNulls="false" default="((0))" label="Motivo Cancelacion Id">
+      <items style="Lookup" dataController="Motivo_Cancelacion" dataValueField="Motivo_Cancelacion_Id" dataTextField="Motivo_Cancelacion" dataView="Motivo_Cancelacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Motivo_Cancelacion" type="String" readOnly="true" label="Motivo Cancelacion" length="250" />
+    <field name="Captura_Transaccion_Id" type="String" label="Captura Transaccion Id" length="50" />
+    <field name="Subtipo_Solicitud_Id" type="Int32" allowNulls="false" default="((0))" label="Subtipo Solicitud Id">
+      <items style="Lookup" dataController="Subtipo_Solicitud" dataValueField="Subtipo_Solicitud_Id" dataTextField="Subtipo_Solicitud" copy="SubtipoSolic_Es_Solic_Mat_Normal=Es_Solicitud_Mat_Normal, SubtipoSolic_Es_Solic_Mat_Pickeo_Incan=Es_Solicitud_Mat_Pickeo_Incan" dataView="Subtipo_Solicitud_Look_Up_List" />
+    </field>
+    <field name="Subtipo_Solicitud" type="String" readOnly="true" label="Subtipo Solicitud" length="250" />
+    <field name="SubtipoSolic_Es_Solic_Mat_Normal" type="Boolean" readOnly="true" label="Subtiposolic Es Solic Mat Normal" allowNulls="false">
+      <items style="CheckBox" />
+    </field>
+    <field name="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" type="Boolean" readOnly="true" label="Subtiposolic Es Solic Mat Pickeo Incan" allowNulls="false">
+      <items style="CheckBox" />
+    </field>
+    <field name="Dato_Solicitud_Urgencia_Compras" type="String" label="Dato Solicitud Urgencia Compras" />
+    <field name="Material_Stock" type="Decimal" label="Cantidad de Material en Almacén" isVirtual="true" />
+    <field name="Material_Stock_Total" type="Decimal" label="Material Cantidad Total en Almacén" isVirtual="true" />
+    <field name="Es_De_Excedente" type="Boolean" label="¿Es De Excedente?" allowNulls="false" isVirtual="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Mat_Ubicacion" type="String" label="Material Cantidad Total en Almacén" isVirtual="true" length="-1" />
+    <field name="Categoria_Es_Material_Indirecto" type="Boolean" label="Categoria Es Material Indirecto" isVirtual="true" />
+    <field name="Clasificacion_Material" type="String" label="Clasificación del Material" isVirtual="true" length="300" default="((''))" computed="true">
+      <formula>SELECT TOP 1 Clasificacion FROM APP.Clasificacion CLF INNER JOIN APP.Material MAT ON ( MAT.Clasificacion_Id = CLF.Clasificacion_Id AND MAT.Material_Id = "Solicitud"."Material_Solicitado_Id" AND CLF.Estatus_Registro_Id = 1 )</formula>
+    </field>
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Solicitud" showInSelector="false" filter="Solicitado_Por_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" />
+        <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" />
+        <dataField fieldName="Motivo_Solicitud" rows="5" />
+        <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+        <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+        <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+        <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" />
+        <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Orden_Produccion_Detalle" />
+        <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+        <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Cantidad_Solicitado" columns="15" />
+        <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" />
+        <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Solicitud_Transaccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Es_De_Kanban" />
+        <dataField fieldName="Es_Otro" />
+        <dataField fieldName="Es_Interplanta" />
+        <dataField fieldName="Es_Solicitud_Rollo" />
+        <dataField fieldName="Es_Urgencia_Compra" hidden="true" />
+        <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hidden="true" />
+        <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" />
+        <dataField fieldName="Motivo_Solicitud_Es_Otro" hidden="true" />
+        <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Fecha_Captura" columns="20" hidden="true" />
+        <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="Fecha_Surtido" columns="20" hidden="true" />
+        <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" hidden="true" />
+        <dataField fieldName="Captura_Transaccion_Id" columns="50" hidden="true" />
+        <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" />
+        <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" hidden="true" />
+        <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Solicitud">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" />
+            <dataField fieldName="Es_De_Excedente" hidden="true" />
+            <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" />
+            <dataField fieldName="Es_De_Kanban" hidden="true" />
+            <dataField fieldName="Es_Otro" hidden="true" />
+            <dataField fieldName="Es_Interplanta" hidden="true" />
+            <dataField fieldName="Es_Solicitud_Rollo" hidden="true" />
+            <dataField fieldName="Es_Urgencia_Compra" hidden="true" />
+            <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" />
+            <dataField fieldName="Motivo_Solicitud_Es_Otro" hidden="true" />
+            <dataField fieldName="Motivo_Solicitud" rows="1" watermark="Necesario (Ingrese Máx. 30 caracteres)">
+              <headerText>* Comentarios</headerText>
+            </dataField>
+            <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" watermark="Ingrese Número Orden Producción">
+              <visibility>
+                <expression test="[Motivo_Solicitud_Es_Otro] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5">
+              <visibility>
+                <expression test="[Es_Urgencia_Compra] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Fecha_Captura" columns="20" hidden="true" />
+            <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+            <dataField fieldName="Fecha_Surtido" columns="20" hidden="true" />
+            <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" hyperlinkFormatString="~/pages/Motivo_Cancelacion?Motivo_Cancelacion_Id={Motivo_Cancelacion_Id}&amp;_controller=Motivo_Cancelacion&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" hidden="true" />
+            <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" hidden="true" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Orden_Produccion_Detalle" />
+            <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+            <dataField fieldName="Material_Stock" columns="15" readOnly="true" hidden="true" />
+            <dataField fieldName="Material_Stock_Total" columns="15" readOnly="true" hidden="true" />
+            <dataField fieldName="Mat_Ubicacion" columns="-1" readOnly="true" />
+            <dataField fieldName="Clasificacion_Material" rows="5" readOnly="true" textMode="Static" />
+            <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" readOnly="true" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" readOnly="true" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" />
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" readOnly="true" />
+            <dataField fieldName="Fecha_Entrega" columns="20" readOnly="true" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Solicitud_Transaccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hidden="true" />
+            <dataField fieldName="Categoria_Es_Material_Indirecto" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Solicitud">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Categoria_Solicitud_Id" aliasFieldName="Categoria_Solicitud" />
+            <dataField fieldName="Es_De_Excedente" hidden="true" />
+            <dataField fieldName="Tipo_Solicitud_Id" aliasFieldName="Tipo_Solicitud" hidden="true" />
+            <dataField fieldName="Motivo_Solicitud_Id" aliasFieldName="Motivo_Solicitud_Motivo_Solicitud" />
+            <dataField fieldName="Motivo_Solicitud_Es_Otro" hidden="true" />
+            <dataField fieldName="Es_De_Kanban" hidden="true" />
+            <dataField fieldName="Es_Otro" hidden="true" />
+            <dataField fieldName="Es_Interplanta" hidden="true" />
+            <dataField fieldName="Es_Solicitud_Rollo" hidden="true" />
+            <dataField fieldName="Es_Urgencia_Compra" hidden="true" />
+            <dataField fieldName="Motivo_Solicitud" rows="1" watermark="Necesario (Ingrese Máx. 30 caracteres)">
+              <headerText>* Comentarios</headerText>
+            </dataField>
+            <dataField fieldName="Solicitud_Numero_Orden_Produccion" columns="15" watermark="Ingrese Número Orden Producción">
+              <visibility>
+                <expression test="[Motivo_Solicitud_Es_Otro] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Dato_Solicitud_Urgencia_Compras" rows="5">
+              <visibility>
+                <expression test="[Es_Urgencia_Compra] == true" type="ClientScript" />
+              </visibility>
+            </dataField>
+            <dataField fieldName="Fecha_Captura" columns="20" hidden="true" />
+            <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Surtido" columns="20" hidden="true" />
+            <dataField fieldName="Motivo_Cancelacion_Id" aliasFieldName="Motivo_Cancelacion" hidden="true" />
+            <dataField fieldName="Captura_Transaccion_Id" columns="50" hidden="true" />
+            <dataField fieldName="Subtipo_Solicitud_Id" aliasFieldName="Subtipo_Solicitud" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Normal" hidden="true" />
+            <dataField fieldName="SubtipoSolic_Es_Solic_Mat_Pickeo_Incan" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Id" aliasFieldName="Numero_Orden_Produccion" />
+            <dataField fieldName="Area_Servicio_Id" aliasFieldName="Area_Servicio" />
+            <dataField fieldName="Producto_Id" aliasFieldName="Producto_Clave" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" aliasFieldName="Categoria_Clave" />
+            <dataField fieldName="Orden_Produccion_Detalle_Id" aliasFieldName="Orden_Produccion_Detalle" />
+            <dataField fieldName="Material_Solicitado_Id" aliasFieldName="Material" />
+            <dataField fieldName="Material_Stock" columns="15" readOnly="true" hidden="true" />
+            <dataField fieldName="Material_Stock_Total" columns="15" readOnly="true" hidden="true" />
+            <dataField fieldName="Mat_Ubicacion" columns="-1" readOnly="true" />
+            <dataField fieldName="Clasificacion_Material" rows="5" readOnly="true" textMode="Static" />
+            <dataField fieldName="Solicitado_Por_Id" aliasFieldName="Solicitado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" hidden="true" />
+            <dataField fieldName="Cantidad_Solicitado" columns="15" />
+            <dataField fieldName="Estatus_Solicitud_Id" aliasFieldName="Estatus_Solicitud" hidden="true" />
+            <dataField fieldName="Unidad_Material_Solicitado_Id" aliasFieldName="Unidad_Material_Solicitado" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" hidden="true" />
+            <dataField fieldName="Entregado_Por_Id" aliasFieldName="Entregado_Por" hidden="true" />
+            <dataField fieldName="Fecha_Entrega" columns="20" hidden="true" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" hidden="true" />
+            <dataField fieldName="Solicitud_Transaccion_Id" columns="15" hidden="true" />
+            <dataField fieldName="Area_Entrega_Id" aliasFieldName="Area_Entrega" />
+            <dataField fieldName="Registrado_Desde_Id" aliasFieldName="Registrado_Desde" hidden="true" />
+            <dataField fieldName="Categoria_Es_Material_Indirecto" hidden="true" />
+            <dataField fieldName="Orden_Produccion_Detalle" columns="15" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[DECLARE @Significa_Pendiente BIT = 0;
+
+SET @Significa_Pendiente = ISNULL((SELECT 
+	TOP 1
+	es.Significa_Pendiente
+FROM
+	APP.Solicitud s 
+INNER JOIN APP.Estatus_Solicitud es ON s.Estatus_Solicitud_Id = es.Estatus_Solicitud_Id
+WHERE 
+	Solicitud_Id = @Solicitud_Id
+),0)
+
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') = ''
+BEGIN
+	SET @BusinessRules_PreventDefault = 1
+	SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](168,1,0,'')
+	SET @Result_ShowAlert = @Result_ShowViewMessage
+	RETURN	
+END
+ELSE
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') <> ''
+BEGIN
+	UPDATE 
+	APP.Solicitud
+	SET Estatus_Registro_Id = 3
+	, Actualizado_Por_Id = @BusinessRules_UserId 
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+	WHERE Solicitud_Id = @Solicitud_Id
+END
+ELSE
+IF @Significa_Pendiente = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](167,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[DECLARE @Significa_Pendiente BIT = 0;
+
+SET @Significa_Pendiente = ISNULL((SELECT 
+	TOP 1
+	es.Significa_Pendiente
+FROM
+	APP.Solicitud s 
+INNER JOIN APP.Estatus_Solicitud es ON s.Estatus_Solicitud_Id = es.Estatus_Solicitud_Id
+WHERE 
+	Solicitud_Id = @Solicitud_Id
+),0)
+
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') = ''
+BEGIN
+	SET @BusinessRules_PreventDefault = 1
+	SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](168,1,0,'')
+	SET @Result_ShowAlert = @Result_ShowViewMessage
+	RETURN	
+END
+ELSE
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') <> ''
+BEGIN
+	UPDATE 
+	APP.Solicitud
+	SET Estatus_Registro_Id = 3
+	, Actualizado_Por_Id = @BusinessRules_UserId 
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+	WHERE Solicitud_Id = @Solicitud_Id
+END
+ELSE
+IF @Significa_Pendiente = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](167,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[DECLARE @Significa_Pendiente BIT = 0;
+
+SET @Significa_Pendiente = ISNULL((SELECT 
+	TOP 1
+	es.Significa_Pendiente
+FROM
+	APP.Solicitud s 
+INNER JOIN APP.Estatus_Solicitud es ON s.Estatus_Solicitud_Id = es.Estatus_Solicitud_Id
+WHERE 
+	Solicitud_Id = @Solicitud_Id
+),0)
+
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') = ''
+BEGIN
+	SET @BusinessRules_PreventDefault = 1
+	SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](168,1,0,'')
+	SET @Result_ShowAlert = @Result_ShowViewMessage
+	RETURN	
+END
+ELSE
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') <> ''
+BEGIN
+	UPDATE 
+	APP.Solicitud
+	SET Estatus_Registro_Id = 3
+	, Actualizado_Por_Id = @BusinessRules_UserId 
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+	WHERE Solicitud_Id = @Solicitud_Id
+END
+ELSE
+IF @Significa_Pendiente = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](167,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[DECLARE @Significa_Pendiente BIT = 0;
+
+SET @Significa_Pendiente = ISNULL((SELECT 
+	TOP 1
+	es.Significa_Pendiente
+FROM
+	APP.Solicitud s 
+INNER JOIN APP.Estatus_Solicitud es ON s.Estatus_Solicitud_Id = es.Estatus_Solicitud_Id
+WHERE 
+	Solicitud_Id = @Solicitud_Id
+),0)
+
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') = ''
+BEGIN
+	SET @BusinessRules_PreventDefault = 1
+	SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](168,1,0,'')
+	SET @Result_ShowAlert = @Result_ShowViewMessage
+	RETURN	
+END
+ELSE
+IF @Significa_Pendiente = 1 AND ISNULL(@Motivo_Solicitud,'') <> ''
+BEGIN
+	UPDATE 
+	APP.Solicitud
+	SET Estatus_Registro_Id = 3
+	, Actualizado_Por_Id = @BusinessRules_UserId 
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+	WHERE Solicitud_Id = @Solicitud_Id
+END
+ELSE
+IF @Significa_Pendiente = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](167,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+	   APP.Solicitud
+	SET
+		Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+		-----
+	   ,Creado_Por_Id= @BusinessRules_UserId
+	   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Actualizado_Por_Id = @BusinessRules_UserId
+	   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	   ,Subtipo_Solicitud_Id = 1 --solicitud normal de mat
+	WHERE
+		Solicitud_Id = @Solicitud_Id
+
+
+		
+
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+	   APP.Solicitud
+	SET
+	    Actualizado_Por_Id = @BusinessRules_UserId
+	   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+	WHERE
+		Solicitud_Id = @Solicitud_Id
+	
+
+
+
+]]></rule>
+    <rule id="r100" commandName="New" type="Sql" phase="Execute"><![CDATA[--SET @Fecha_Solicitud = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL);
+SET @Solicitado_Por_Id = @BusinessRules_UserId;
+SET @Tipo_Solicitud_Id = 2; -- Manual
+SET @Estatus_Solicitud_Id = (SELECT TOP 1 Estatus_Solicitud_Id FROM APP.Estatus_Solicitud WHERE Significa_Pendiente = 1 AND Estatus_Registro_Id = 1);
+SET @Registrado_Desde_Id = 9; -- Solicitud creado desde Solicitud Manual.
+
+
+---Obtener 1 area de servicio que tenga asignado el usuario logeado 
+SELECT 
+	TOP 1 
+	@Area_Servicio_Id = ISNULL(uaase.Area_Servicio_Id,0)
+	,@Area_Servicio = ISNULL(ase.Area_Servicio,'Sin Area Servicio')
+FROM 
+	APP.Usuario_Aplicacion_Area_Servicio uaase
+INNER JOIN APP.Area_Servicio ase ON uaase.Area_Servicio_Id = ase.Area_Servicio_Id
+WHERE 
+	uaase.Estatus_Registro_Id = 1
+AND uaase.Usuario_Id = @BusinessRules_UserId;]]></rule>
+    <rule id="r103" commandName="Insert|Update" type="JavaScript" phase="Before"><![CDATA[if([Cantidad_Solicitado]<=0 && [Es_Urgencia_Compra] == false){	
+  	this.result.focus('Cantidad_Solicitado','Ingrese cantidad válido para solicitar.') 
+    this.preventDefault();  	
+}
+else
+if([Area_Entrega_Id]==0){
+  	this.result.focus('Area_Entrega_Id','Seleccione área de entrega válida.') 
+	this.preventDefault();
+}
+else
+if ([Es_De_Excedente]==true && ([Orden_Produccion_Id] == 0 || [Orden_Produccion_Id] == null )){  
+  this.result.focus('Orden_Produccion_Id','Seleccione orden de producción.') 
+  this.preventDefault();
+}]]></rule>
+    <rule id="r104" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Significa_Pendiente BIT = 0;
+
+SET @Significa_Pendiente = ISNULL((SELECT 
+	TOP 1
+	es.Significa_Pendiente
+FROM
+	APP.Solicitud s 
+INNER JOIN APP.Estatus_Solicitud es ON s.Estatus_Solicitud_Id = es.Estatus_Solicitud_Id
+WHERE 
+	Solicitud_Id = @Solicitud_Id
+),0)
+
+IF @Significa_Pendiente = 0
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](169,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END ]]></rule>
+    <rule id="r105" commandName="Insert|Update" type="Sql" phase="Before" name="ValidarExistDeMatEnAlmacen"><![CDATA[IF @Orden_Produccion_Detalle_Id IS NULL
+BEGIN
+	SET @Orden_Produccion_Detalle_Id = 0
+END
+
+IF @Es_Urgencia_Compra = 0
+BEGIN
+  IF @Material_Stock_Total = 0
+  BEGIN	
+	 SET @BusinessRules_PreventDefault = 1
+	 SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+	 SET @Result_ShowAlert = @Result_ShowViewMessage
+	 RETURN
+  END 
+END]]></rule>
+    <rule id="r106" commandName="Calculate" type="Sql" phase="Execute"><![CDATA[IF @Material_Solicitado_Id >0
+BEGIN
+SET @Material_Stock_Total = ISNULL((SELECT TOP 1 SUM(mua.Total_Stock) FROM dbo.Material_Ubicacion_Almacen_V mua WHERE mua.Material_Id = @Material_Solicitado_Id),0);
+
+SET @Mat_Ubicacion = CONVERT(VARCHAR(MAX),ISNULL(( SELECT
+	STUFF((
+			SELECT												
+				'; Ubicación: ' + v.Ubicacion_Almacenamiento + ', Stock: ' + CONVERT(VARCHAR(20),CONVERT(NUMERIC(15,1),v.Total_Stock))
+			FROM
+				[dbo].[Mat_Ubic_Almacen_Mostrar_En_Solic_Manual_V] v
+			WHERE
+				v.Material_Id = @Material_Solicitado_Id
+			FOR
+			XML PATH('')
+		), 1, 1, '')
+	),'N/A')
+	)
+	
+IF @Es_Urgencia_Compra = 0
+BEGIN	
+IF @Material_Stock_Total = 0 
+BEGIN	
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '173 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](173,1,0,'')
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+END
+END
+
+
+
+
+
+
+SET @Clasificacion_Material = ISNULL((
+    SELECT TOP 1 Clasificacion
+    FROM APP.Clasificacion CLF
+    INNER JOIN APP.Material MAT ON (
+        MAT.Clasificacion_Id = CLF.Clasificacion_Id
+        AND MAT.Material_Id = @Material_Solicitado_Id
+        AND CLF.Estatus_Registro_Id = 1
+    )
+),'')]]></rule>
+    <rule id="r107" type="JavaScript" commandName="Insert|Update" phase="Before" name="Motivo_Solicitud_Validator"><![CDATA[var fieldValue = [Motivo_Solicitud];
+if ([Motivo_Solicitud_Es_Otro] == true || [Es_Solicitud_Rollo]==true){
+  if (fieldValue == null) {
+      // prevent the default action processing
+      this.preventDefault();
+      // set the focus on the field and display an error
+      this.result.focus('Motivo_Solicitud', 'Ingrese comentario, máximo 30 caracteres.');
+  }
+  else
+    if (fieldValue.length > 30) {
+      // prevent the default action processing
+      this.preventDefault();
+      // set the focus on the field and display an error
+      this.result.focus('Motivo_Solicitud', 'Ingrese máximo 30 caracteres');
+  }
+}]]></rule>
+    <rule id="r108" commandName="Insert|Update" type="Sql" phase="Before" name="ObtenerAreaServicio"><![CDATA[IF ISNULL(@Area_Servicio_Id,0) = 0
+BEGIN
+	SELECT
+	 TOP 1 
+	 @Area_Servicio_Id = ISNULL(uaase.Area_Servicio_Id,0)
+	FROM 
+		APP.Usuario_Aplicacion_Area_Servicio uaase
+	INNER JOIN APP.Area_Servicio ase ON uaase.Area_Servicio_Id = ase.Area_Servicio_Id
+	WHERE 
+		uaase.Estatus_Registro_Id = 1
+	AND uaase.Usuario_Id = @BusinessRules_UserId
+END]]></rule>
+  </businessRules>
+</dataController>

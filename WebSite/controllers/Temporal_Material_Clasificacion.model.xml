@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Temporal_Material_Clasificacion" alias="Temporal_Material_Clasificacion" created="2021-03-19T17:32:56" modified="2021-03-22T20:20:35" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="447" y="20">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="515" y="177">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="531" y="343">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Procesamiento" parentTableSchema="dbo" parentTableName="Estatus_Procesamiento" x="876" y="58">
+      <foreignKeyColumn columnName="Estatus_Procesamiento_Id" parentColumnName="Estatus_Procesamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Mensaje_Sistema" parentTableSchema="dbo" parentTableName="Mensaje_Sistema" x="850" y="238">
+      <foreignKeyColumn columnName="Mensaje_Sistema_Id" parentColumnName="Mensaje_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Temporal_Material_Clasificacion_Id" fieldName="Temporal_Material_Clasificacion_Id" label="Temporal Material Clasificacion Id" />
+    <column name="Temporal_Material_Clasificacion" fieldName="Temporal_Material_Clasificacion" label="Temporal Material Clasificacion" />
+    <column name="Materal_Descripcion" fieldName="Materal_Descripcion" label="Materal Descripcion" />
+    <column name="MRP_Type_Id" fieldName="MRP_Type_Id" label="MRP Type Id" />
+    <column name="Clasificacion" fieldName="Clasificacion" label="Clasificacion" />
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" aliasColumnName="Mensaje_Amigable_Usuario" aliasForeignKey="Mensaje_Sistema" />
+    <column name="Mensaje_Amigable_Usuario" fieldName="Mensaje_Sistema" label="Mensaje Sistema" foreignKey="Mensaje_Sistema" />
+    <column name="Carga" fieldName="Carga" label="Carga" />
+    <column name="Fecha_Procesamiento" fieldName="Fecha_Procesamiento" label="Fecha Procesamiento" format="g" />
+    <column name="Transaccion_Procesamiento" fieldName="Transaccion_Procesamiento" label="Transaccion Procesamiento" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Estatus_Procesamiento_Id" fieldName="Estatus_Procesamiento_Id" label="Estatus Procesamiento Id" aliasColumnName="Estatus_Procesamiento" aliasForeignKey="Estatus_Procesamiento" />
+    <column name="Estatus_Procesamiento" fieldName="Estatus_Procesamiento" label="Estatus Procesamiento" foreignKey="Estatus_Procesamiento" />
+  </columns>
+</dataModel>

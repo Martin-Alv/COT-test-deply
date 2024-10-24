@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Orden_Prod_Incandescencias_V" alias="Grid_Orden_Prod_Incandescencias_V" created="2019-08-26T00:52:44" modified="2019-11-08T03:00:56" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Fecha_Produccion" fieldName="Fecha_Produccion" label="Fecha Produccion" format="g" />
+    <column name="Creado_Por" fieldName="Creado_Por" label="Creado Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Actualizado_Por" fieldName="Actualizado_Por" label="Actualizado Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" />
+    <column name="Cantidad" fieldName="Cantidad" label="Cantidad" />
+    <column name="Estatus_Orden_Produccion_Id" fieldName="Estatus_Orden_Produccion_Id" label="Estatus Orden Produccion Id" />
+    <column name="Estatus_Orden_Produccion" fieldName="Estatus_Orden_Produccion" label="Estatus Orden Produccion" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" />
+    <column name="Producto_Descripcion" fieldName="Producto_Descripcion" label="Producto Descripcion" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" />
+    <column name="Familia_Descripcion" fieldName="Familia_Descripcion" label="Familia Descripcion" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Area Servicio Id" />
+    <column name="Usuario_Aplicacion_Id" fieldName="Usuario_Aplicacion_Id" label="Usuario Aplicacion Id" />
+    <column name="Usuario_Id" fieldName="Usuario_Id" label="Usuario Id" />
+    <column name="Existe_En_Prod_Mat" fieldName="Existe_En_Prod_Mat" label="Existe En Prod Mat" />
+    <column name="Etiqueta_Existe_En_Prod_Mat" fieldName="Etiqueta_Existe_En_Prod_Mat" label="Etiqueta Existe En Prod Mat" />
+    <column name="Valida_Mat_Almacen" fieldName="Valida_Mat_Almacen" label="Valida Mat Almacen" />
+  </columns>
+</dataModel>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Estatus_Movimiento" alias="Estatus_Movimiento" created="2019-07-09T20:27:29" modified="2021-05-27T14:57:07" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="35" y="570">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="439" y="289">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="438" y="433">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Estatus_Movimiento_Id" fieldName="Estatus_Movimiento_Id" label="Estatus Movimiento Id" />
+    <column name="Estatus_Movimiento" fieldName="Estatus_Movimiento" label="Estatus De Movimiento" />
+    <column name="Significa_Pendiente" fieldName="Significa_Pendiente" label="Significa Pendiente" />
+    <column name="Significa_Cancelado" fieldName="Significa_Cancelado" label="Significa Cancelado" />
+    <column name="Significa_Recibido_En_Proceso_Dev" fieldName="Significa_Recibido_En_Proceso_Dev" label="Significa Recibido En Proceso Dev" />
+    <column name="Es_Devolucion_Completa" fieldName="Es_Devolucion_Completa" label="Es Devolución Completa" />
+    <column name="Es_Devolucion_Parcial" fieldName="Es_Devolucion_Parcial" label="Es Devolución Parcial" />
+    <column name="Es_Devolucion_Cancelado" fieldName="Es_Devolucion_Cancelado" label="Es Devolución Cancelado" />
+    <column name="Significa_Devuelto" fieldName="Significa_Devuelto" label="Significa Devuelto" />
+    <column name="Significa_Recibido_En_Proceso_Transf" fieldName="Significa_Recibido_En_Proceso_Transf" label="Significa Recibido En Proceso Transf" />
+    <column name="Es_Transferencia_Completa" fieldName="Es_Transferencia_Completa" label="Es Transferencia Completa" />
+    <column name="Es_Transferencia_Parcial" fieldName="Es_Transferencia_Parcial" label="Es Transferencia Parcial" />
+    <column name="Es_Transferencia_Cancelado" fieldName="Es_Transferencia_Cancelado" label="Es Transferencia Cancelado" />
+    <column name="Significa_Enviado_A_Transferir" fieldName="SignificaEnviadoATransferir" label="Significa Enviado A Transferir" />
+    <column name="En_Proceso_Enviado_A_Transferencia" fieldName="En_Proceso_Enviado_A_Transferencia" label="En Proceso Enviado A Transferencia" />
+    <column name="Significa_Transferido" fieldName="Significa_Transferido" label="Significa Transferido" />
+    <column name="Aplica_A_Devolucion" fieldName="Aplica_A_Devolucion" label="Aplica A Devolución" />
+    <column name="Aplica_A_Transferencia" fieldName="Aplica_A_Transferencia" label="Aplica A Transferencia" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha De Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus De Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

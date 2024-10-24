@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Ruta_Optima_A_Ejecutar_V" alias="Grid_Ruta_Optima_A_Ejecutar_V" created="2019-01-23T10:47:11" modified="2021-04-08T10:37:19" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Tmp_Ruta_Optima_Transaccion_Id" fieldName="Tmp_Ruta_Optima_Transaccion_Id" label="Tmp Ruta Optima Transaccion Id" />
+    <column name="Numero_Grupo_Ruta_Optima" fieldName="Numero_Grupo_Ruta_Optima" label="Numero Grupo Ruta Optima" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Unidad_Material_Entregado_Id" fieldName="Unidad_Material_Entregado_Id" label="Unidad Material Entregado Id" />
+    <column name="Unidad_Material_Entregado" fieldName="Unidad_Material_Entregado" label="Unidad Material Entregado" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Ubicacion_Almacenamiento_Id" fieldName="Ubicacion_Almacenamiento_Id" label="Ubicacion Almacenamiento Id" />
+    <column name="Ubicacion_Almacenamiento" fieldName="Ubicacion_Almacenamiento" label="Ubicacion Almacenamiento" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+    <column name="Transaccion_Id" fieldName="Transaccion_Id" label="Transaccion Id" />
+    <column name="Unidad_Material_Solicitado_Id" fieldName="Unidad_Material_Solicitado_Id" label="Unidad Material Solicitado Id" />
+    <column name="Unidad_Material_Solicitado" fieldName="Unidad_Material_Solicitado" label="Unidad Material Solicitado" />
+    <column name="Ubicacion_Almacenamiento_De_Surtido_Id" fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" label="Ubicacion Almacenamiento De Surtido Id" />
+    <column name="Ubicacion_Almacenamiento_De_Surtido" fieldName="Ubicacion_Almacenamiento_De_Surtido" label="Ubicacion Almacenamiento De Surtido" />
+    <column name="Material_Unidad_Material_Id" fieldName="Material_Unidad_Material_Id" label="Material Unidad Material Id" />
+    <column name="Unidad_Material_Id" fieldName="Unidad_Material_Id" label="Unidad Material Id" />
+    <column name="Unidad_Material" fieldName="Unidad_Material" label="Unidad Material" />
+    <column name="Solicitud_Material" fieldName="Solicitud_Material" label="Solicitud Material" />
+    <column name="Tiempo_Transcurrido" fieldName="Tiempo_Transcurrido" label="Tiempo Transcurrido" />
+    <column name="Material_Ubicacion_Stock_Id" fieldName="Material_Ubicacion_Stock_Id" label="Material Ubicacion Stock Id" />
+  </columns>
+</dataModel>

@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Documento_Material" conflictDetection="overwriteChanges" label="Documento Material" handler="eaton.Rules.Documento_MaterialBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Documento_Material"."Documento_Material_Id" "Documento_Material_Id"
+	,"Documento_Material"."PictureFileName" "PictureFileName"
+	,"Documento_Material"."PictureContentType" "PictureContentType"
+	,"Documento_Material"."PictureLength" "PictureLength"
+	,"Documento_Material"."Notas" "Notas"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Documento_Material"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Documento_Material"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Documento_Material"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Documento_Material"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material"
+	,"Documento_Material"."Nombre_Documento" "Nombre_Documento"
+from "APP"."Documento_Material" "Documento_Material"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Documento_Material"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Documento_Material"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Documento_Material"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Material" "Material" on "Documento_Material"."Material_Id" = "Material"."Material_Id"
+]]></text>
+    </command>
+    <command id="Documento_Material_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Documento_Material_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Documento_Material_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Documento Material Id" readOnly="true" />
+    <field name="PictureFileName" type="String" label="Nombre de Documento" length="250" showInSummary="true" />
+    <field name="PictureContentType" type="String" label="Picture Content Type" length="250" showInSummary="true" />
+    <field name="PictureLength" type="Int32" label="Picture Length" showInSummary="true" />
+    <field name="Notas" type="String" allowQBE="false" allowSorting="false" label="Notas" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Material_Id" type="Int64" label="Material Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" copy="Material = Material" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Nombre_Documento" type="String" label="Nombre de archivo" length="250" />
+    <field name="Picture" type="Byte[]" label="Documento" sourceFields="Documento_Material_Id" onDemand="true" onDemandHandler="PictureBlobHandler" onDemandStyle="Thumbnail" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Documento Material" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" aliasFieldName="Material" />
+        <dataField fieldName="PictureFileName" />
+        <dataField fieldName="Nombre_Documento" hidden="true" />
+        <dataField fieldName="PictureContentType" />
+        <dataField fieldName="PictureLength" columns="15" />
+        <dataField fieldName="Notas" rows="5" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Documento Material">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Documento Material" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName" textMode="Static" />
+            <dataField fieldName="Nombre_Documento" hidden="true" />
+            <dataField fieldName="PictureContentType" textMode="Static" hidden="true" />
+            <dataField fieldName="PictureLength" columns="15" textMode="Static" hidden="true" />
+            <dataField fieldName="Notas" rows="5" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Documento Material">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material" />
+            <dataField fieldName="Picture" columns="15" />
+            <dataField fieldName="PictureFileName" textMode="Static" />
+            <dataField fieldName="Nombre_Documento" hidden="true" />
+            <dataField fieldName="PictureContentType" textMode="Static" hidden="true" />
+            <dataField fieldName="PictureLength" columns="15" textMode="Static" hidden="true" />
+            <dataField fieldName="Notas" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Documento_Material_LookUp_List" type="Grid" commandId="command1" label="Documento Material" filter="Estatus_Registro_Id = 1" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" aliasFieldName="Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" hidden="true" />
+        <dataField fieldName="PictureFileName" />
+        <dataField fieldName="Nombre_Documento" hidden="true" />
+        <dataField fieldName="PictureContentType" />
+        <dataField fieldName="PictureLength" columns="15" />
+        <dataField fieldName="Notas" rows="5" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="administrador" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrador">
+        <data><![CDATA[UPDATE APP.Documento_Material 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Documento_Material_Id = @Documento_Material_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="administrador" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="administrador" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrador">
+        <data><![CDATA[UPDATE APP.Documento_Material 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Documento_Material_Id = @Documento_Material_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="administrador" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="administrador" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="administrador" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" roles="administrador" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" roles="administrador" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" roles="administrador" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="administrador" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="administrador" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="administrador">
+        <data><![CDATA[UPDATE APP.Documento_Material 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Documento_Material_Id = @Documento_Material_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" roles="administrador" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" roles="administrador" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" roles="administrador" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" roles="administrador" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="administrador">
+        <data><![CDATA[UPDATE APP.Documento_Material 
+SET 
+   Estatus_Registro_Id = 3, 
+   Actualizado_Por_Id = @BusinessRules_UserId,
+   Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Documento_Material_Id = @Documento_Material_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Documento_Material 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Documento_Material_Id)) = dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Documento_Material_Id)) -- Verificar si aplica campo
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1433,1,1,@Documento_Material_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1433,1,1,@Documento_Material_Id) 
+   RETURN 
+END
+
+-- REspaldar el nombre original del archivo 
+SET @Nombre_Documento = @PictureFileName;
+
+DECLARE @Nuevo_Nombre VARCHAR(250);
+SET @Nuevo_Nombre = REPLACE(@PictureFileName, ' ','');
+SET @PictureFileName = (SELECT @Nuevo_Nombre);
+
+
+
+
+
+
+
+
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Documento_Material 
+SET 
+   Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Documento_Material_Id = @Documento_Material_Id
+   
+]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   APP.Documento_Material 
+WHERE 
+   dbo.fn_Sustituir_Caracteres_Especiales(Lower(Documento_Material_Id)) = dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Documento_Material_Id)) -- Verificar si aplica campo
+AND Documento_Material_Id <> @Documento_Material_Id 
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](1434,1,1,@Documento_Material_Id) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](1434,1,1,@Documento_Material_Id) 
+   RETURN 
+END
+
+
+
+-- REspaldar el nombre original del archivo 
+SET @Nombre_Documento = @PictureFileName;
+
+DECLARE @Nuevo_Nombre VARCHAR(250);
+SET @Nuevo_Nombre = REPLACE(@PictureFileName, ' ','');
+SET @PictureFileName = (SELECT @Nuevo_Nombre);
+]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   APP.Documento_Material 
+SET 
+   Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Documento_Material_Id = @Documento_Material_Id]]></rule>
+  </businessRules>
+  <blobAdapterConfig>Field: Picture
+Storage-System: Azure
+Account: cooperetiquetastrg
+Container: materiales
+Key: rVnYLmTRPjtViq31qdfPdljnut0H93qrxNCKMDnv1jhT4hV3AnHlt8FgbasITUm/r4AGhXoguXVn+ALLTFlfqA==
+Path-Template: {Material_Id}/{Documento_Material_Id}-{PictureFileName}</blobAdapterConfig>
+</dataController>

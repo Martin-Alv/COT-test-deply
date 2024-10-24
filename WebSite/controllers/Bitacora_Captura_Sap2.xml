@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Bitacora_Captura_Sap2" label="Bitacora_Captura_Sap2" conflictDetection="overwriteChanges" handler="eaton.Rules.Bitacora_Captura_Sap2BusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Bitacora_Captura_Sap"."Bitacora_Captura_Sap_Id" "Bitacora_Captura_Sap_Id"
+	,"Bitacora_Captura_Sap"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Ruta_Optima_"."Numero_Grupo_Ruta_Optima" "Ruta_Optima"
+	,"Bitacora_Captura_Sap"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Material_Surtido_"."Numero_Grupo_Material_Surtido" "Material_Surtido"
+	,"Bitacora_Captura_Sap"."Material_Id" "Material_Id"
+	,"Material_"."Material" "Material_Material"
+	,"Material_"."Material_Descripcion" "Material_Descripcion"
+	,"Bitacora_Captura_Sap"."Material" "Material"
+	,"Bitacora_Captura_Sap"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Bitacora_Captura_Sap"."Tipo_Surtido_Id" "Tipo_Surtido_Id"
+	,"Bitacora_Captura_Sap"."Es_Captura_Local" "Es_Captura_Local"
+	,"Bitacora_Captura_Sap"."Es_Captura_Remota" "Es_Captura_Remota"
+	,"Bitacora_Captura_Sap"."Estatus_Captura_Sap_Id" "Estatus_Captura_Sap_Id"
+	,"Estatus_Captura_Sap_"."Estatus_Captura_Sap" "Estatus_Captura_Sap"
+	,"Bitacora_Captura_Sap"."Usuario_Surtidor_Id" "Usuario_Surtidor_Id"
+	,"Usuario_Surtidor"."Usuario_Sistema" "Usuario_Sistema"
+	,"Bitacora_Captura_Sap"."Nombre_Equipo_Llamada" "Nombre_Equipo_Llamada"
+	,"Bitacora_Captura_Sap"."Nombre_Equipo_Captura" "Nombre_Equipo_Captura"
+	,"Bitacora_Captura_Sap"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Bitacora_Captura_Sap"."Error" "Error"
+	,"Bitacora_Captura_Sap"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Bitacora_Captura_Sap"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Bitacora_Captura_Sap"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Bitacora_Captura_Sap"."Fecha_Captura" "Fecha_Captura"
+	,"Bitacora_Captura_Sap"."Tipo_Ubicacion_Id" "Tipo_Ubicacion_Id"
+	,"Tipo_Ubicacion"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Bitacora_Captura_Sap"."Ubicacion_Almacenamiento_Id" "Ubicacion_Almacenamiento_Id"
+	,"Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Bitacora_Captura_Sap"."Ubicacion_Origen" "Ubicacion_Origen"
+	,"Bitacora_Captura_Sap"."Ubicacion_Destino" "Ubicacion_Destino"
+	,"Bitacora_Captura_Sap"."Capturado_Por_Id" "Capturado_Por_Id"
+	,"Capturado_Por"."Usuario_Sistema" "Capturado_Por"
+	,"Bitacora_Captura_Sap"."Tipo_Operacion_Sap_Id" "Tipo_Operacion_Sap_Id"
+	,"Tipo_Operacion_Sap"."Tipo_Operacion_Sap" "Tipo_Operacion_Sap"
+	,"Tipo_Operacion_Sap"."Es_Captura_De_Surtido" "Es_Captura_De_Surtido"
+	,"Tipo_Operacion_Sap"."Es_Devolucion_De_Material" "Es_Devolucion_De_Material"
+	,"Tipo_Operacion_Sap"."Es_Transferencia_De_Material" "Es_Transferencia_De_Material"
+	,"Bitacora_Captura_Sap"."Transferencia_Destino_Id" "Transferencia_Destino_Id"
+	,"Transferencia_Destino"."Ubicacion_Almacenamiento" "Transferencia_Destino_Ubicacion_Almacenamiento"
+	,"Bitacora_Captura_Sap"."Transferencia_Origen_Id" "Transferencia_Origen_Id"
+	,"Transferencia_Origen"."Ubicacion_Almacenamiento" "Transferencia_Origen_Ubicacion_Almacenamiento"
+	,"Bitacora_Captura_Sap"."Transferencia_Material_Id" "Transferencia_Material_Id"
+	,"Transferencia_Material"."Material" "Tranferencia_Material"
+	,"Bitacora_Captura_Sap"."Devolucion_Destino_Id" "Devolucion_Destino_Id"
+	,"Devolucion_Destino"."Ubicacion_Almacenamiento" "Devolucion_Destino_Ubicacion_Almacenamiento"
+	,"Bitacora_Captura_Sap"."Devolucion_Material_Id" "Devolucion_Material_Id"
+	,"Devolucion_Material"."Material" "Devolucion_Material"
+	,"Devolucion_Material"."Material_Descripcion" "Devolucion_Material_Descripcion"
+	,"Bitacora_Captura_Sap"."Movimiento_Ruta_Optima_Id" "Movimiento_Ruta_Optima_Id"
+	,"Movimiento_Ruta_Optima"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Bitacora_Captura_Sap"."Tipo_Movimiento_Id" "Tipo_Movimiento_Id"
+	,"Tipo_Movimiento"."Tipo_Movimiento" "Tipo_Movimiento"
+	,"Bitacora_Captura_Sap"."Devolucion_Origen_Id" "Devolucion_Origen_Id"
+	,"Devolucion_Origen"."Clave_Tipo_Ubicacion" "Devolucion_Origen_Clave_Tipo_Ubicacion"
+	,"Devolucion_Origen"."Descripcion_Tipo_Ubicacion" "Devolucion_Origen_Descripcion_Tipo_Ubicacion"
+	,"Bitacora_Captura_Sap"."Cantidad_Devuelto" "Cantidad_Devuelto"
+	,"Bitacora_Captura_Sap"."Cantidad_Transferido" "Cantidad_Transferido"
+	,"Bitacora_Captura_Sap"."Es_Captura_Manual_Con_Pdf" "Es_Captura_Manual_Con_Pdf"
+	,"Bitacora_Captura_Sap"."Movimiento_Descto_Stock_En_Piso" "Movimiento_Descto_Stock_En_Piso"
+	,"Bitacora_Captura_Sap"."Es_Paso_Uno_Transferencia" "Es_Paso_Uno_Transferencia"
+	,"Bitacora_Captura_Sap"."Solicitud_Id" "Solicitud_Id"
+from "APP"."Bitacora_Captura_Sap" "Bitacora_Captura_Sap"
+	left join "APP"."Ruta_Optima" "Ruta_Optima_" on "Bitacora_Captura_Sap"."Ruta_Optima_Id" = "Ruta_Optima_"."Ruta_Optima_Id"
+	left join "APP"."Material_Surtido" "Material_Surtido_" on "Bitacora_Captura_Sap"."Material_Surtido_Id" = "Material_Surtido_"."Material_Surtido_Id"
+	left join "APP"."Material" "Material_" on "Bitacora_Captura_Sap"."Material_Id" = "Material_"."Material_Id"
+	left join "APP"."Estatus_Captura_Sap" "Estatus_Captura_Sap_" on "Bitacora_Captura_Sap"."Estatus_Captura_Sap_Id" = "Estatus_Captura_Sap_"."Estatus_Captura_Sap_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Bitacora_Captura_Sap"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Bitacora_Captura_Sap"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Bitacora_Captura_Sap"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Bitacora_Captura_Sap"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Tipo_Ubicacion" "Tipo_Ubicacion" on "Bitacora_Captura_Sap"."Tipo_Ubicacion_Id" = "Tipo_Ubicacion"."Tipo_Ubicacion_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento" on "Bitacora_Captura_Sap"."Ubicacion_Almacenamiento_Id" = "Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "dbo"."Usuario_V" "Usuario_Surtidor" on "Bitacora_Captura_Sap"."Usuario_Surtidor_Id" = "Usuario_Surtidor"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Capturado_Por" on "Bitacora_Captura_Sap"."Capturado_Por_Id" = "Capturado_Por"."Usuario_Sistema_Id"
+	left join "APP"."Tipo_Movimiento" "Tipo_Movimiento" on "Bitacora_Captura_Sap"."Tipo_Movimiento_Id" = "Tipo_Movimiento"."Tipo_Movimiento_Id"
+	left join "APP"."Tipo_Operacion_Sap" "Tipo_Operacion_Sap" on "Bitacora_Captura_Sap"."Tipo_Operacion_Sap_Id" = "Tipo_Operacion_Sap"."Tipo_Operacion_Sap_Id"
+	left join "APP"."Movimiento_Ruta_Optima" "Movimiento_Ruta_Optima" on "Bitacora_Captura_Sap"."Movimiento_Ruta_Optima_Id" = "Movimiento_Ruta_Optima"."Movimiento_Ruta_Optima_Id"
+	left join "APP"."Material" "Devolucion_Material" on "Bitacora_Captura_Sap"."Devolucion_Material_Id" = "Devolucion_Material"."Material_Id"
+	left join "APP"."Tipo_Ubicacion" "Devolucion_Origen" on "Bitacora_Captura_Sap"."Devolucion_Origen_Id" = "Devolucion_Origen"."Tipo_Ubicacion_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Devolucion_Destino" on "Bitacora_Captura_Sap"."Devolucion_Destino_Id" = "Devolucion_Destino"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Material" "Transferencia_Material" on "Bitacora_Captura_Sap"."Transferencia_Material_Id" = "Transferencia_Material"."Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Transferencia_Origen" on "Bitacora_Captura_Sap"."Transferencia_Origen_Id" = "Transferencia_Origen"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Transferencia_Destino" on "Bitacora_Captura_Sap"."Transferencia_Destino_Id" = "Transferencia_Destino"."Ubicacion_Almacenamiento_Id"
+]]></text>
+    </command>
+    <command id="Bitacora_Captura_Sap_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Bitacora_Captura_Sap_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Bitacora_Captura_Sap_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Bitacora Captura Sap Id" readOnly="true" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Ruta Optima Id" showInSummary="true">
+      <items style="Lookup" dataController="Ruta_Optima" dataValueField="Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" dataView="Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Ruta_Optima" type="Int32" readOnly="true" label="Número de Grupo de Ruta Óptima" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" default="((0))" label="Material Surtido Id" showInSummary="true">
+      <items style="Lookup" dataController="Material_Surtido" dataValueField="Material_Surtido_Id" dataTextField="Numero_Grupo_Material_Surtido" dataView="Material_Surtidor_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material_Surtido" type="Int32" readOnly="true" label="Número de Grupo de Material Surtido" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" copy="Material_Descripcion=Material_Descripcion" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material_Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" readOnly="true" label="Material Descripcion" length="250" />
+    <field name="Material" type="String" label="Material" length="250" showInSummary="true" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" default="((0))" label="Cantidad Entregado" showInSummary="true" />
+    <field name="Tipo_Surtido_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo de Surtido Id" />
+    <field name="Es_Captura_Local" type="Boolean" allowNulls="false" default="((0))" label="Es Captura Local?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Captura_Remota" type="Boolean" allowNulls="false" default="((0))" label="Es Captura Remota?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Estatus_Captura_Sap_Id" type="Int32" allowNulls="false" label="Estatus Captura Sap Id">
+      <items style="Lookup" dataController="Estatus_Captura_Sap" dataValueField="Estatus_Captura_Sap_Id" dataTextField="Estatus_Captura_Sap" dataView="Estatus_Captura_Sap" pageSize="15" />
+    </field>
+    <field name="Estatus_Captura_Sap" type="String" readOnly="true" label="Estatus Captura Sap" length="250" />
+    <field name="Usuario_Surtidor_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Usuario Surtidor Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" />
+    </field>
+    <field name="Usuario_Sistema" type="String" readOnly="true" label="Usuario Surtidor" length="256" />
+    <field name="Nombre_Equipo_Llamada" type="String" allowNulls="false" default="('N/A')" label="Nombre de Equipo de Llamada" length="150" />
+    <field name="Nombre_Equipo_Captura" type="String" allowNulls="false" default="('N/A')" label="Nombre de Equipo de Captura" length="150" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" newDataView="createForm1" searchOnStart="true" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" />
+    </field>
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje de Sistema" length="250" />
+    <field name="Error" type="String" allowQBE="false" allowSorting="false" label="Error" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Captura" type="DateTime" dataFormatString="g" label="Fecha Captura" />
+    <field name="Tipo_Ubicacion_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Ubicacion Id">
+      <items style="Lookup" dataController="Tipo_Ubicacion" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" dataView="Tipo_Ubicacion_LookUp_List" pageSize="15" copy="Ubicacion_Destino=Clave_Tipo_Ubicacion&#xD;&#xA;" />
+    </field>
+    <field name="Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Ubicación Destino" />
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Almacenamiento Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" copy="Ubicacion_Origen=Ubicacion_Almacenamiento&#xD;&#xA;" />
+    </field>
+    <field name="Ubicacion_Almacenamiento" type="String" readOnly="true" label="Ubicacion Origen" length="150" />
+    <field name="Ubicacion_Origen" type="String" label="Ubicacion Origen" length="150" />
+    <field name="Ubicacion_Destino" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Destino" />
+    <field name="Capturado_Por_Id" type="Guid" label="Capturado Por Id">
+      <items style="Lookup" dataController="Usuario_V" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" dataView="grid1" />
+    </field>
+    <field name="Capturado_Por" type="String" readOnly="true" label="Capturado Por" length="256" />
+    <field name="Tipo_Operacion_Sap_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Operacion Sap Id">
+      <items style="Lookup" dataController="Tipo_Operacion_Sap" dataValueField="Tipo_Operacion_Sap_Id" dataTextField="Tipo_Operacion_Sap" copy="Es_Captura_De_Surtido=Es_Captura_De_Surtido, Es_Devolucion_De_Material=Es_Devolucion_De_Material, Es_Transferencia_De_Material=Es_Transferencia_De_Material" dataView="Tipo_Operacion_Sap_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Operacion_Sap" type="String" readOnly="true" label="Tipo Operacion Sap" length="250" />
+    <field name="Movimiento_Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Movimiento Ruta Optima Id">
+      <items style="Lookup" dataController="Movimiento_Ruta_Optima" dataValueField="Movimiento_Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" dataView="Movimiento_Ruta_Optima_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Es_Captura_De_Surtido" type="Boolean" readOnly="true" label="Es Captura De Surtido" />
+    <field name="Es_Devolucion_De_Material" type="Boolean" readOnly="true" label="Es Devolucion De Material" />
+    <field name="Es_Transferencia_De_Material" type="Boolean" readOnly="true" label="Es Transferencia De Material" />
+    <field name="Transferencia_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Origen Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Transferencia Destino Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="Ubicacion_Almacenamiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Transferencia_Destino_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transferencia Destino de Ubicación Almacenamiento" length="150" />
+    <field name="Transferencia_Origen_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Transferencia Origen de Ubicación Almacenamiento" length="150" />
+    <field name="Transferencia_Material_Id" type="Int64" allowNulls="false" default="((0))" label="Transferencia Material Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tranferencia_Material" type="String" readOnly="true" label="Tranferencia de Material" length="250" />
+    <field name="Devolucion_Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Destino Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento_Id" copy="Devolucion_Destino_Ubicacion_Almacenamiento=Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Devolucion_Destino_Ubicacion_Almacenamiento" type="String" readOnly="true" label="Devolución Destino de Ubicación Almacenamiento" length="150" />
+    <field name="Devolucion_Material_Id" type="Int64" allowNulls="false" default="((0))" label="Devolucion Material Id">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" copy="Devolucion_Material_Descripcion=Material_Descripcion" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Devolucion_Material" type="String" readOnly="true" label="Devolucion Material" length="250" />
+    <field name="Devolucion_Material_Descripcion" type="String" readOnly="true" label="Devolucion Material Descripcion" length="250" />
+    <field name="Devolucion_Origen_Id" type="Int32" allowNulls="false" default="((0))" label="Devolucion Origen Id">
+      <items style="Lookup" dataController="Tipo_Ubicacion" newDataView="createForm1" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" copy="Devolucion_Origen_Descripcion_Tipo_Ubicacion=Descripcion_Tipo_Ubicacion" dataView="Tipo_Ubicacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Numero_Grupo_Ruta_Optima" type="Decimal" readOnly="true" label="Numero Grupo Ruta Optima" />
+    <field name="Tipo_Movimiento_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Movimiento Id">
+      <items style="Lookup" dataController="Tipo_Movimiento" dataValueField="Tipo_Movimiento_Id" dataTextField="Tipo_Movimiento" dataView="Tipo_Movimiento_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Tipo_Movimiento" type="String" readOnly="true" label="Tipo Movimiento" length="250" />
+    <field name="Devolucion_Origen_Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Devolucion Origen Clave Tipo Ubicacion" />
+    <field name="Devolucion_Origen_Descripcion_Tipo_Ubicacion" type="String" readOnly="true" label="Devolucion Origen Descripcion Tipo Ubicacion" length="250" />
+    <field name="Cantidad_Devuelto" type="Decimal" allowNulls="false" default="((0))" label="Cantidad Devuelto" />
+    <field name="Cantidad_Transferido" type="Decimal" allowNulls="false" default="((0))" label="Cantidad Transferido" />
+    <field name="Es_Captura_Manual_Con_Pdf" type="Boolean" allowNulls="false" default="((0))" label="Es Captura Manual Con Pdf" writeRoles="hidden">
+      <items style="CheckBox" />
+    </field>
+    <field name="Movimiento_Descto_Stock_En_Piso" type="Boolean" allowNulls="false" default="((0))" label="Movimiento Descto Stock En Piso">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Paso_Uno_Transferencia" type="Boolean" allowNulls="false" default="((0))" label="Es Paso Uno Transferencia">
+      <items style="CheckBox" />
+    </field>
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" default="((0))" label="Folio Solicitud" readOnly="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Bitácora Captura SAP (Surtido)" filter="Estatus_Registro_Id &lt;&gt; 0 AND Es_Captura_De_Surtido = 1" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Ruta_Optima" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" aliasFieldName="Material_Surtido" hidden="true" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Tipo_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Material" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" aliasFieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Origen" hidden="true" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+        <dataField fieldName="Ubicacion_Destino" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+        <dataField fieldName="Usuario_Surtidor_Id" aliasFieldName="Usuario_Sistema" />
+        <dataField fieldName="Fecha_Captura" columns="20" />
+        <dataField fieldName="Es_Captura_Local" />
+        <dataField fieldName="Es_Captura_Remota" />
+        <dataField fieldName="Nombre_Equipo_Llamada" />
+        <dataField fieldName="Nombre_Equipo_Captura" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+        <dataField fieldName="Error" rows="5" />
+        <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" readOnly="true" textMode="Static" />
+        <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+        <dataField fieldName="Es_Captura_De_Surtido" hidden="true" />
+        <dataField fieldName="Es_Devolucion_De_Material" hidden="true" />
+        <dataField fieldName="Es_Transferencia_De_Material" hidden="true" />
+        <dataField fieldName="Devolucion_Material_Descripcion" hidden="true" />
+        <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Es_Captura_Manual_Con_Pdf" />
+        <dataField fieldName="Movimiento_Descto_Stock_En_Piso" />
+        <dataField fieldName="Es_Paso_Uno_Transferencia" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Bitacora Captura SAP">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Bitacora Captura SAP" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" textMode="Static" tag="lookup-details-hidden" readOnly="true" />
+            <dataField fieldName="Tipo_Surtido_Id" columns="15" hidden="true" textMode="Static" readOnly="true" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+            <dataField fieldName="Material" textMode="Static" hidden="true" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" aliasFieldName="Ubicacion_Almacenamiento" textMode="Text" />
+            <dataField fieldName="Ubicacion_Origen" hidden="true" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" textMode="Static" readOnly="true" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" textMode="Text" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" hidden="true" />
+            <dataField fieldName="Usuario_Surtidor_Id" aliasFieldName="Usuario_Sistema" textMode="Text" />
+            <dataField fieldName="Fecha_Captura" columns="20" readOnly="true" textMode="Static" />
+            <dataField fieldName="Nombre_Equipo_Llamada" textMode="Static" readOnly="true" />
+            <dataField fieldName="Es_Captura_Local" textMode="Static" readOnly="true" />
+            <dataField fieldName="Es_Captura_Remota" textMode="Static" readOnly="true" />
+            <dataField fieldName="Nombre_Equipo_Captura" textMode="Static" readOnly="true" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" textMode="Static" readOnly="true" />
+            <dataField fieldName="Error" rows="5" textMode="Static" readOnly="true" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" textMode="Text" readOnly="true" tag="lookup-details-hidden" />
+            <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" readOnly="true" textMode="Static" />
+            <dataField fieldName="Es_Captura_De_Surtido" hidden="true" />
+            <dataField fieldName="Es_Devolucion_De_Material" hidden="true" />
+            <dataField fieldName="Es_Transferencia_De_Material" hidden="true" />
+            <dataField fieldName="Devolucion_Material_Descripcion" hidden="true" />
+            <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hidden="true" />
+            <dataField fieldName="Es_Captura_Manual_Con_Pdf" />
+            <dataField fieldName="Movimiento_Descto_Stock_En_Piso" hidden="true" />
+            <dataField fieldName="Es_Paso_Uno_Transferencia" hidden="true" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" aliasFieldName="Material_Surtido" textMode="Static" readOnly="true" hidden="true" tag="lookup-details-hidden" />
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Ruta_Optima" textMode="Static" readOnly="true" tag="lookup-details-hidden" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="editBatch" type="Form" commandId="command1" label="Actualizar Bitacora Captura SAP">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Bitacora Captura SAP" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" aliasFieldName="Ubicacion_Almacenamiento" textMode="Text" />
+            <dataField fieldName="Ubicacion_Origen" hidden="true" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" textMode="Text" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+            <dataField fieldName="Usuario_Surtidor_Id" aliasFieldName="Usuario_Sistema" textMode="Text" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="v100" type="Grid" commandId="command1" label="Bitácora Captura SAP (Surtido)" filter="Estatus_Registro_Id &lt;&gt; 0 AND Es_Captura_De_Surtido = 1" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Ruta_Optima" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" aliasFieldName="Material_Surtido" hidden="true" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Tipo_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Material" hidden="true" />
+        <dataField fieldName="Ubicacion_Almacenamiento_Id" aliasFieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Ubicacion_Origen" hidden="true" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+        <dataField fieldName="Ubicacion_Destino" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+        <dataField fieldName="Usuario_Surtidor_Id" aliasFieldName="Usuario_Sistema" />
+        <dataField fieldName="Fecha_Captura" columns="20" />
+        <dataField fieldName="Es_Captura_Local" />
+        <dataField fieldName="Es_Captura_Remota" />
+        <dataField fieldName="Nombre_Equipo_Llamada" />
+        <dataField fieldName="Nombre_Equipo_Captura" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+        <dataField fieldName="Error" rows="5" />
+        <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" readOnly="true" textMode="Static" />
+        <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+        <dataField fieldName="Es_Captura_De_Surtido" hidden="true" />
+        <dataField fieldName="Es_Devolucion_De_Material" hidden="true" />
+        <dataField fieldName="Es_Transferencia_De_Material" hidden="true" />
+        <dataField fieldName="Devolucion_Material_Descripcion" hidden="true" />
+        <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Es_Captura_Manual_Con_Pdf" />
+        <dataField fieldName="Movimiento_Descto_Stock_En_Piso" />
+        <dataField fieldName="Es_Paso_Uno_Transferencia" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nueva Bitacora Captura SAP">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nueva  Bitacora Captura SAP" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Ruta_Optima" />
+            <dataField fieldName="Material_Surtido_Id" aliasFieldName="Material_Surtido" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Tipo_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Es_Captura_Local" />
+            <dataField fieldName="Es_Captura_Remota" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Ubicacion_Almacenamiento_Id" aliasFieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Estatus_Captura_Sap_Id" aliasFieldName="Estatus_Captura_Sap" />
+            <dataField fieldName="Usuario_Surtidor_Id" aliasFieldName="Usuario_Sistema" hidden="true" />
+            <dataField fieldName="Nombre_Equipo_Llamada" />
+            <dataField fieldName="Nombre_Equipo_Captura" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hidden="true" />
+            <dataField fieldName="Error" rows="5" />
+            <dataField fieldName="Fecha_Captura" columns="20" />
+            <dataField fieldName="Ubicacion_Origen" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" />
+            <dataField fieldName="Capturado_Por_Id" aliasFieldName="Capturado_Por" />
+            <dataField fieldName="Es_Captura_De_Surtido" hidden="true" />
+            <dataField fieldName="Es_Devolucion_De_Material" hidden="true" />
+            <dataField fieldName="Es_Transferencia_De_Material" hidden="true" />
+            <dataField fieldName="Devolucion_Destino_Ubicacion_Almacenamiento" />
+            <dataField fieldName="Devolucion_Material_Descripcion" />
+            <dataField fieldName="Tipo_Movimiento_Id" aliasFieldName="Tipo_Movimiento" hidden="true" />
+            <dataField fieldName="Devolucion_Origen_Descripcion_Tipo_Ubicacion" />
+            <dataField fieldName="Cantidad_Devuelto" columns="15" />
+            <dataField fieldName="Cantidad_Transferido" columns="15" />
+            <dataField fieldName="Es_Captura_Manual_Con_Pdf" />
+            <dataField fieldName="Movimiento_Descto_Stock_En_Piso" />
+            <dataField fieldName="Es_Paso_Uno_Transferencia" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Tipo_Operacion_Sap_Id" aliasFieldName="Tipo_Operacion_Sap" hidden="true" />
+            <dataField fieldName="Movimiento_Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" hidden="true" />
+            <dataField fieldName="Transferencia_Material_Id" aliasFieldName="Tranferencia_Material" hidden="true" />
+            <dataField fieldName="Transferencia_Origen_Id" aliasFieldName="Transferencia_Origen_Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Transferencia_Destino_Id" aliasFieldName="Transferencia_Destino_Ubicacion_Almacenamiento" hidden="true" />
+            <dataField fieldName="Devolucion_Destino_Id" columns="15" hidden="true" />
+            <dataField fieldName="Devolucion_Material_Id" aliasFieldName="Devolucion_Material" hidden="true" />
+            <dataField fieldName="Devolucion_Origen_Id" aliasFieldName="Devolucion_Origen_Clave_Tipo_Ubicacion" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Bitacora_Captura_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE Bitacora_Captura_Sap_Id = @Bitacora_Captura_Sap_Id  ]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editBatch" headerText="&quot;Editar&quot;" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Bitacora_Captura_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE Bitacora_Captura_Sap_Id = @Bitacora_Captura_Sap_Id  ]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE [APP].[Bitacora_Captura_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE Bitacora_Captura_Sap_Id = @Bitacora_Captura_Sap_Id  ]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE [APP].[Bitacora_Captura_Sap] SET Estatus_Registro_Id = 3,
+Actualizado_Por_Id = @BusinessRules_UserId, 
+Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE Bitacora_Captura_Sap_Id = @Bitacora_Captura_Sap_Id  ]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[/*DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Bitacora_Captura_Sap] 
+WHERE 
+        [Ruta_Optima_Id] = @Ruta_Optima_Id
+	AND [Material_Surtido_Id] = @Material_Surtido_Id
+	AND [Material_Id] = @Material_Id
+	AND [Estatus_Captura_Sap_Id] = @Estatus_Captura_Sap_Id
+	AND [Tipo_Ubicacion_Id] = @Tipo_Ubicacion_Id
+	AND [Ubicacion_Almacenamiento_Id] = @Ubicacion_Almacenamiento_Id
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](234,1,67,CONVERT(VARCHAR(11),@Ruta_Optima) + ' vs. '+ CONVERT(VARCHAR(11),@Material_Surtido) + ' vs. '+ @Material + ' vs. '+ @Estatus_Captura_Sap + ' vs. '+ CONVERT(VARCHAR(11),@Clave_Tipo_Ubicacion) + ' vs. '+ @Ubicacion_Almacenamiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](234,1,67,CONVERT(VARCHAR(11),@Ruta_Optima) + ' vs. '+ CONVERT(VARCHAR(11),@Material_Surtido) + ' vs. '+ @Material + ' vs. '+ @Estatus_Captura_Sap + ' vs. '+ CONVERT(VARCHAR(11),@Clave_Tipo_Ubicacion) + ' vs. '+ @Ubicacion_Almacenamiento) 
+   RETURN 
+END*/
+
+
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[/*DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+
+FROM 
+   [APP].[Bitacora_Captura_Sap]
+WHERE 
+        [Ruta_Optima_Id] = @Ruta_Optima_Id
+	AND [Material_Surtido_Id] = @Material_Surtido_Id
+	AND [Material_Id] = @Material_Id
+	AND [Estatus_Captura_Sap_Id] = @Estatus_Captura_Sap_Id
+    AND Bitacora_Captura_Sap_Id <> @Bitacora_Captura_Sap_Id
+	AND [Tipo_Ubicacion_Id] = @Tipo_Ubicacion_Id
+	AND [Ubicacion_Almacenamiento_Id] = @Ubicacion_Almacenamiento_Id
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](238,1,67,CONVERT(VARCHAR(11),@Ruta_Optima) + ' vs. '+ CONVERT(VARCHAR(11),@Material_Surtido) + ' vs. '+ @Material + ' vs. '+ @Estatus_Captura_Sap + ' vs. '+ CONVERT(VARCHAR(11),@Clave_Tipo_Ubicacion) + ' vs. '+ @Ubicacion_Almacenamiento) 
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](238,1,67,CONVERT(VARCHAR(11),@Ruta_Optima) + ' vs. '+ CONVERT(VARCHAR(11),@Material_Surtido) + ' vs. '+ @Material + ' vs. '+ @Estatus_Captura_Sap + ' vs. '+ CONVERT(VARCHAR(11),@Clave_Tipo_Ubicacion)  + ' vs. '+ @Ubicacion_Almacenamiento) 
+   RETURN 
+END */]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Bitacora_Captura_Sap] 
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Bitacora_Captura_Sap_Id = @Bitacora_Captura_Sap_Id ]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Bitacora_Captura_Sap]
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+
+WHERE 
+   Bitacora_Captura_Sap_Id = @Bitacora_Captura_Sap_Id ]]></rule>
+  </businessRules>
+</dataController>

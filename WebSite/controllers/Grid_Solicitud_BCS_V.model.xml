@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Solicitud_BCS_V" alias="Grid_Solicitud_BCS_V" created="2020-12-03T22:00:39" modified="2020-12-04T09:19:12" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Produccion Detalle Id" />
+    <column name="Solicitado_Por" fieldName="Solicitado_Por" label="Solicitado Por" />
+    <column name="Material_Solicitado" fieldName="Material_Solicitado" label="Material Solicitado" />
+    <column name="Material_Solicitado_Descripcion" fieldName="Material_Solicitado_Descripcion" label="Material Solicitado Descripción" />
+    <column name="Unidad_Material_Solicitado" fieldName="Unidad_Material_Solicitado" label="Unidad Material Solicitado" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha de Solicitud" format="g" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Cantidad_Entregado" fieldName="Cantidad_Entregado" label="Cantidad Entregado" />
+    <column name="Unidad_Material_Surtido" fieldName="Unidad_Material_Surtido" label="Unidad Material Surtido" />
+    <column name="Fecha_Entrega" fieldName="Fecha_Entrega" label="Fecha de Entrega" format="g" />
+    <column name="Entregado_Por" fieldName="Entregado_Por" label="Entregado Por" />
+    <column name="Estatus_Solicitud" fieldName="Estatus_Solicitud" label="Estatus Solicitud" />
+    <column name="Tipo_Solicitud" fieldName="Tipo_Solicitud" label="Tipo Solicitud" />
+    <column name="Categoria_Solicitud" fieldName="Categoria_Solicitud" label="Categoria Solicitud" />
+    <column name="Motivo_Solicitud" fieldName="Motivo_Solicitud" label="Motivo Solicitud" />
+    <column name="Categoria_Clave" fieldName="Categoria_Clave" label="Categoria Clave" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Número de Orden Producción" />
+    <column name="Fecha_Surtido" fieldName="Fecha_Surtido" label="Fecha de Surtido" format="g" />
+    <column name="Fecha_Captura" fieldName="Fecha_Captura" label="Fecha de Captura" format="g" />
+    <column name="Capturado_Por" fieldName="Capturado_Por" label="Capturado Por" />
+    <column name="Fecha_Entrega_Cadista" fieldName="Fecha_Entrega_Cadista" label="Fecha Entrega Cadista" format="g" />
+    <column name="Entregado_Por_Usuario_Cadista_Id" fieldName="Entregado_Por_Usuario_Cadista_Id" label="Entregado Por Usuario Cadista Id" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido_Id" label="Material Surtido Id" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Area Servicio" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" />
+    <column name="Producto_Id" fieldName="Producto_Id" label="Producto Id" />
+    <column name="Producto_Clave" fieldName="Producto_Clave" label="Producto Clave" />
+    <column name="Entregado_Por_Usuario_Cadista" fieldName="Entregado_Por_Usuario_Cadista" label="Entregado Por Usuario Cadista" />
+  </columns>
+</dataModel>

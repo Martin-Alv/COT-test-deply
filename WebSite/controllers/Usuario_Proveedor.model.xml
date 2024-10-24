@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Usuario_Proveedor" alias="Usuario_Proveedor" created="2021-01-13T16:55:36" modified="2021-01-14T16:30:16" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Proveedor_ERSL_" parentTableSchema="APP" parentTableName="Proveedor_ERSL" x="405" y="20">
+      <foreignKeyColumn columnName="Proveedor_ERSL_Id" parentColumnName="Proveedor_ERSL_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="421" y="348">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="748" y="89">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="429" y="208">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Usuario_Sistema" parentTableSchema="dbo" parentTableName="Usuario_V" x="751" y="238">
+      <foreignKeyColumn columnName="Usuario_Sistema_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Usuario_Proveedor_Id" fieldName="Usuario_Proveedor_Id" label="Usuario Proveedor Id" />
+    <column name="Proveedor_ERSL_Id" fieldName="Proveedor_ERSL_Id" label="Proveedor ERSL Id" aliasColumnName="Proveedor_ERSL" aliasForeignKey="Proveedor_ERSL_" />
+    <column name="Proveedor_ERSL" fieldName="Proveedor_ERSL_Proveedor_ERSL" label="Proveedor ERSL" foreignKey="Proveedor_ERSL_" />
+    <column name="Usuario_Sistema" fieldName="Usuario_Sistema" label="Usuario Sistema" foreignKey="Usuario_Sistema" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema_Id" fieldName="Usuario_Sistema_Id" label="Usuario Sistema Id" />
+  </columns>
+</dataModel>

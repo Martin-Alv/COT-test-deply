@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Temporal_Etiqueta_Proveedor" alias="Temporal_Etiqueta_Proveedor" created="2021-01-18T18:06:45" modified="2021-02-23T17:17:50" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="452" y="315">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="454" y="26">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="452" y="171">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Procesamiento" parentTableSchema="dbo" parentTableName="Estatus_Procesamiento" x="446" y="442">
+      <foreignKeyColumn columnName="Estatus_Procesamiento_Id" parentColumnName="Estatus_Procesamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Mensaje_Sistema" parentTableSchema="dbo" parentTableName="Mensaje_Sistema" x="449" y="632">
+      <foreignKeyColumn columnName="Mensaje_Sistema_Id" parentColumnName="Mensaje_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Temporal_Etiqueta_Proveedor_Id" fieldName="Temporal_Etiqueta_Proveedor_Id" label="Temporal Etiqueta Proveedor Id" />
+    <column name="Temporal_Etiqueta_Proveedor" fieldName="Temporal_Etiqueta_Proveedor" label="Temporal Etiqueta Proveedor" />
+    <column name="Tipo_Factura" fieldName="Tipo_Factura" label="Tipo Factura" />
+    <column name="Factura" fieldName="Factura" label="Factura" />
+    <column name="Fecha" fieldName="Fecha" label="Fecha" format="g" />
+    <column name="Referencia" fieldName="Referencia" label="Referencia" />
+    <column name="Comprador" fieldName="Comprador" label="Comprador" />
+    <column name="Parte" fieldName="Parte" label="Parte" />
+    <column name="Clase" fieldName="Clase" label="Clase" />
+    <column name="Descripcion" fieldName="Descripcion" label="Descripcion" />
+    <column name="Desc_Ingles" fieldName="Desc_Ingles" label="Desc Ingles" />
+    <column name="Fracccion" fieldName="Fracccion" label="Fracccion" />
+    <column name="Tipo_Tasa" fieldName="Tipo_Tasa" label="Tipo Tasa" />
+    <column name="Tasa" fieldName="Tasa" label="Tasa" />
+    <column name="Pais_Origen" fieldName="Pais_Origen" label="Pais Origen" />
+    <column name="HTS" fieldName="HTS" label="Hts" />
+    <column name="Orden_Compra" fieldName="Orden_Compra" label="Orden Compra" />
+    <column name="Clave_Proveedor" fieldName="Clave_Proveedor" label="Clave Proveedor" />
+    <column name="Nombre_Proveedor" fieldName="Nombre_Proveedor" label="Nombre Proveedor" />
+    <column name="Cantidad_Piezas" fieldName="Cantidad_Piezas" label="Cantidad Piezas" />
+    <column name="Unidad_De_Medida" fieldName="Unidad_De_Medida" label="Unidad De Medida" />
+    <column name="Peso" fieldName="Peso" label="Peso" />
+    <column name="Peso_Bruto" fieldName="Peso_Bruto" label="Peso Bruto" />
+    <column name="Costo_Unitario" fieldName="Costo_Unitario" label="Costo Unitario" format="c" />
+    <column name="Total_DLLS" fieldName="Total_DLLS" label="Total DLLS" />
+    <column name="Cantidad_En_UMC" fieldName="Cantidad_En_UMC" label="Cantidad En UMC" />
+    <column name="UM_Comercial" fieldName="UM_Comercial" label="UM Comercial" />
+    <column name="Cant_Bultos" fieldName="Cant_Bultos" label="Cant Bultos" />
+    <column name="Desc_Bultos" fieldName="Desc_Bultos" label="Desc Bultos" />
+    <column name="Tipo" fieldName="Tipo" label="Tipo" />
+    <column name="Permiso_Regla_8" fieldName="Permiso_Regla_8" label="Permiso Regla8" />
+    <column name="Clave_Proveedor_Mx" fieldName="Clave_Proveedor_Mx" label="Clave Proveedor Mx" />
+    <column name="Nombre_Proveedor_Mx" fieldName="Nombre_Proveedor_Mx" label="Nombre Proveedor Mx" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha Creacion" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha Ultima Actualizacion" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Estatus_Procesamiento_Id" fieldName="Estatus_Procesamiento_Id" label="Estatus Procesamiento Id" aliasColumnName="Estatus_Procesamiento" aliasForeignKey="Estatus_Procesamiento" />
+    <column name="Estatus_Procesamiento" fieldName="Estatus_Procesamiento" label="Estatus Procesamiento" foreignKey="Estatus_Procesamiento" />
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" aliasColumnName="Mensaje_Sistema" aliasForeignKey="Mensaje_Sistema" />
+    <column name="Mensaje_Sistema" fieldName="Mensaje_Sistema" label="Mensaje Sistema" foreignKey="Mensaje_Sistema" />
+    <column name="Error" fieldName="Error" label="Error" />
+    <column name="Carga" fieldName="Carga" label="Carga" />
+    <column name="Creado_Por_Id" fieldName="Creado_Por_Id" label="Creado Por Id" />
+  </columns>
+</dataModel>

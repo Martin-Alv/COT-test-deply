@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Material_Ubicacion_Almacenamiento_De_Surtido3_1" label="Material_Ubicacion_Almacenamiento_De_Surtido3_1" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Material_Ubicacion_Almacenamiento_De_Surtido"."Material_Ubicacion_Almacenamiento_De_Surtido_Id" "Material_Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Ruta_Optima_"."Numero_Grupo_Ruta_Optima" "Numero_Grupo_Ruta_Optima"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Material_Id" "Material_Id"
+	,"Material_"."Material" "Material"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Ubicacion_Almacenamiento_De_Surtido_Id" "Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Ubicacion_Almacenamiento_De_Surtido_"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_De_Surtido"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Unidad_Material_Entregado_"."Unidad_Material" "Unidad_Material_Entregado"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Material_Ubicacion_Almacenamiento_De_Surtido"."Material_Ubicacion_Stock_Id" "Material_Ubicacion_Stock_Id"
+from "APP"."Material_Ubicacion_Almacenamiento_De_Surtido" "Material_Ubicacion_Almacenamiento_De_Surtido"
+	left join "APP"."Ruta_Optima" "Ruta_Optima_" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Ruta_Optima_Id" = "Ruta_Optima_"."Ruta_Optima_Id"
+	left join "APP"."Material" "Material_" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Material_Id" = "Material_"."Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento_De_Surtido_" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Ubicacion_Almacenamiento_De_Surtido_Id" = "Ubicacion_Almacenamiento_De_Surtido_"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_Entregado_" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Unidad_Material_Entregado_Id" = "Unidad_Material_Entregado_"."Unidad_Material_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Material_Ubicacion_Almacenamiento_De_Surtido"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Material_Ubicacion_Almacenamiento_De_Surtido_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Ubicacion_Almacenamiento_De_Surtido_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Material Ubicación Almacenamiento De Surtido Id" readOnly="true" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Ruta Óptima Id" showInSummary="true">
+      <items style="Lookup" dataController="Ruta_Optima" dataValueField="Ruta_Optima_Id" dataTextField="Numero_Grupo_Ruta_Optima" dataView="Ruta_Optima_LookUp_List" newDataView="createForm1" pageSize="15" />
+    </field>
+    <field name="Numero_Grupo_Ruta_Optima" type="Int32" readOnly="true" label="Número Grupo Ruta Óptima" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" default="((0))" label="Material Surtido Id" showInSummary="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" copy="Material_Id=Material_Id" newDataView="createForm1" pageSize="15" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicación Almacenamiento De Surtido Id" showInSummary="true">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento_En_Almacen_V" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" dataView="grid1" pageSize="15" copy="Ubicacion_Almacenamiento_De_Surtido_Id = Ubicacion_Almacenamiento_Id, Ubicacion_Almacenamiento_De_Surtido=Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Ubicacion_Almacenamiento_De_Surtido" type="String" readOnly="true" label="Ubicación Almacenamiento De Surtido" length="150" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" default="((0))" label="Cantidad Entregado" showInSummary="true" causesCalculate="true" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material Entregado Id">
+      <items style="Lookup" dataController="Unidad_Material" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" newDataView="createForm1" pageSize="15" />
+    </field>
+    <field name="Unidad_Material_Entregado" type="String" readOnly="true" label="Unidad Material Entregado" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Material_Ubicacion_Stock_Id" type="Int64" label="Folio Material Ubicación Stock" />
+    <field name="Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado" type="Decimal" label="Total Stock En Ubicacion Almacenamiento Seleccionado" isVirtual="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Ubicación Almacenamiento De Surtido" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Ubicacion Almacenamiento De Surtido">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Ubicacion Almacenamiento De Surtido" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" aliasFieldName="Estatus_Registro" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Ubicacion Almacenamiento De Surtido">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Ubicacion Almacenamiento De Surtido" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" hidden="true" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+            <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Material_Ubicacion_Almacenamiento_De_Surtido_LookUp_List" type="Grid" commandId="command1" label="Material Ubicación Almacenamiento De Surtido" showInSelector="false" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" aggregate="Sum" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="Mat_Ub_Almac_De_Surtido_RO" type="Grid" commandId="command1" label="Material Ubicación Almacenamiento De Surtido" showInSelector="false" filter="Estatus_Registro_Id = 1" tags="view-style-grid, &#xD;&#xA;view-style-list-disabled, &#xD;&#xA;view-style-cards-disabled,&#xD;&#xA;view-style-charts-disabled,&#xD;&#xA;view-style-calendar-disabled,&#xD;&#xA;inline-editing-none,&#xD;&#xA;inline-editing-option-none,&#xD;&#xA;multi-select-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Ruta_Optima_Id" aliasFieldName="Numero_Grupo_Ruta_Optima" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento_De_Surtido" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" aggregate="Sum" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material_Entregado" />
+        <dataField fieldName="Material_Ubicacion_Stock_Id" columns="15" hidden="true" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE
+	APP.[Material_Ubicacion_Almacenamiento_De_Surtido]
+SET    
+	Estatus_Registro_Id = 3
+	,Actualizado_Por_Id = @BusinessRules_UserId
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Ubicacion_Almacenamiento_De_Surtido_Id = @Material_Ubicacion_Almacenamiento_De_Surtido_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE
+	APP.[Material_Ubicacion_Almacenamiento_De_Surtido]
+SET    
+	Estatus_Registro_Id = 3
+	,Actualizado_Por_Id = @BusinessRules_UserId
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Ubicacion_Almacenamiento_De_Surtido_Id = @Material_Ubicacion_Almacenamiento_De_Surtido_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="hidden" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="Select" commandArgument="editForm1" whenLastCommandName="Insert" id="a100" whenLastCommandArgument="Save" whenClientScript="this.hasDetails()" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;">
+        <data><![CDATA[UPDATE
+	APP.[Material_Ubicacion_Almacenamiento_De_Surtido]
+SET    
+	Estatus_Registro_Id = 3
+	,Actualizado_Por_Id = @BusinessRules_UserId
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Ubicacion_Almacenamiento_De_Surtido_Id = @Material_Ubicacion_Almacenamiento_De_Surtido_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE
+	APP.[Material_Ubicacion_Almacenamiento_De_Surtido]
+SET    
+	Estatus_Registro_Id = 3
+	,Actualizado_Por_Id = @BusinessRules_UserId
+	,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Ubicacion_Almacenamiento_De_Surtido_Id = @Material_Ubicacion_Almacenamiento_De_Surtido_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r103" commandName="Calculate|Insert|Update" type="JavaScript" phase="Before"><![CDATA[/*var fieldValue = [Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado];
+var success = this.validateInput();
+var commandName = this.arguments().CommandName;
+var triggerFieldName = this.arguments().Trigger;
+var tryConversion = triggerFieldName == 'Cantidad_Entregado';
+
+if (fieldValue != null && tryConversion) {
+  success = fieldValue > [Cantidad_Entregado];
+	if (!success){		
+    	this.preventDefault();  	
+  		this.result.focus('Cantidad_Entregado','El stock en la ubicación seleccionada es menor a cantidad entregado.')        
+	}
+}
+*/]]></rule>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Cantidad_A_Entregar_Es_Valido BIT = 0;
+DECLARE @Mensaje_Id INT = 0;
+
+DECLARE @Cantidad_Solicitado NUMERIC(15,4) = 0;
+DECLARE @Cantidad_Entregado_Ubicacion_Ruta_Optima NUMERIC(15,4) = 0;
+DECLARE @Cantidad_Entregado_Otra_Ubicacion NUMERIC(15,4) = 0;
+
+SET @Cantidad_Solicitado = ISNULL((SELECT TOP 1 ro.Cantidad_Solicitado FROM APP.Ruta_Optima ro WHERE ro.Estatus_Registro_Id = 1 AND ro.Ruta_Optima_Id = @Ruta_Optima_Id),0);
+
+SET @Cantidad_Entregado_Ubicacion_Ruta_Optima = ISNULL((SELECT TOP 1 SUM(ISNULL(ro.Cantidad_Entregado,0)) FROM APP.Ruta_Optima ro WHERE ro.Estatus_Registro_Id = 1 AND ro.Ruta_Optima_Id = @Ruta_Optima_Id),0);
+SET @Cantidad_Entregado_Otra_Ubicacion = ISNULL((SELECT TOP 1 SUM(ISNULL(mus.Cantidad_Entregado,0)) FROM APP.[Material_Ubicacion_Almacenamiento_De_Surtido] mus WHERE mus.Estatus_Registro_Id = 1 AND mus.Ruta_Optima_Id = @Ruta_Optima_Id),0);
+
+/*IF @Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado < @Cantidad_Entregado
+BEGIN
+	SET @Cantidad_A_Entregar_Es_Valido = 0;	
+	SET @Mensaje_Id = 1;
+END
+ELSE*/
+IF (@Cantidad_Entregado + @Cantidad_Entregado_Ubicacion_Ruta_Optima + @Cantidad_Entregado_Otra_Ubicacion) <= @Cantidad_Solicitado
+BEGIN
+	SET @Cantidad_A_Entregar_Es_Valido = 1;	
+END
+
+IF @Cantidad_A_Entregar_Es_Valido = 0 AND @Mensaje_Id = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '157 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](157,1,0,'')
+   SET @Result_ShowAlert = '157 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](157,1,0,'')
+   RETURN
+END 
+ELSE
+IF @Cantidad_A_Entregar_Es_Valido = 0 AND @Mensaje_Id = 0
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = '147 - ' + [dbo].[fn_Obtener_Mensaje_Sistema](147,1,0,'')
+   SET @Result_ShowAlert = '147 - '+ [dbo].[fn_Obtener_Mensaje_Sistema](147,1,0,'')
+   RETURN
+END 
+
+
+]]></rule>
+    <rule id="r101" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE
+	APP.[Material_Ubicacion_Almacenamiento_De_Surtido]
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Ubicacion_Almacenamiento_De_Surtido_Id = @Material_Ubicacion_Almacenamiento_De_Surtido_Id]]></rule>
+    <rule id="r102" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE
+	APP.[Material_Ubicacion_Almacenamiento_De_Surtido]
+SET    
+   Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+	Material_Ubicacion_Almacenamiento_De_Surtido_Id = @Material_Ubicacion_Almacenamiento_De_Surtido_Id]]></rule>
+    <rule id="r104" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Cantidad_A_Entregar_Es_Valido BIT = 0;
+DECLARE @Mensaje_Id INT = 0;
+
+DECLARE @Cantidad_Solicitado NUMERIC(15,4) = 0;
+DECLARE @Cantidad_Entregado_Ubicacion_Ruta_Optima NUMERIC(15,4) = 0;
+DECLARE @Cantidad_Entregado_Otra_Ubicacion NUMERIC(15,4) = 0;
+
+SET @Cantidad_Solicitado = ISNULL((SELECT TOP 1 ro.Cantidad_Solicitado FROM APP.Ruta_Optima ro WHERE ro.Estatus_Registro_Id = 1 AND ro.Ruta_Optima_Id = @Ruta_Optima_Id),0);
+
+SET @Cantidad_Entregado_Ubicacion_Ruta_Optima = ISNULL((SELECT TOP 1 SUM(ISNULL(ro.Cantidad_Entregado,0)) FROM APP.Ruta_Optima ro WHERE ro.Estatus_Registro_Id = 1 AND ro.Ruta_Optima_Id = @Ruta_Optima_Id),0);
+SET @Cantidad_Entregado_Otra_Ubicacion = ISNULL((SELECT TOP 1 SUM(ISNULL(mus.Cantidad_Entregado,0)) FROM APP.[Material_Ubicacion_Almacenamiento_De_Surtido] mus WHERE mus.Estatus_Registro_Id = 1 AND mus.Ruta_Optima_Id = @Ruta_Optima_Id AND Material_Ubicacion_Almacenamiento_De_Surtido_Id <> @Material_Ubicacion_Almacenamiento_De_Surtido_Id),0);
+
+/*IF @Total_Stock_En_Ubicacion_Almacenamiento_Seleccionado < @Cantidad_Entregado
+BEGIN
+	SET @Cantidad_A_Entregar_Es_Valido = 0;	
+	SET @Mensaje_Id = 1;
+END
+ELSE*/
+IF (@Cantidad_Entregado + @Cantidad_Entregado_Ubicacion_Ruta_Optima + @Cantidad_Entregado_Otra_Ubicacion) <= @Cantidad_Solicitado
+BEGIN
+	SET @Cantidad_A_Entregar_Es_Valido = 1;	
+END
+
+IF @Cantidad_A_Entregar_Es_Valido = 0 AND @Mensaje_Id = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage =[dbo].[fn_Obtener_Mensaje_Sistema](157,1,0,'')
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](157,1,0,'')
+   RETURN
+END 
+ELSE
+IF @Cantidad_A_Entregar_Es_Valido = 0 AND @Mensaje_Id = 0
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage =[dbo].[fn_Obtener_Mensaje_Sistema](147,1,0,'')
+   SET @Result_ShowAlert = [dbo].[fn_Obtener_Mensaje_Sistema](147,1,0,'')
+   RETURN
+END 
+
+
+]]></rule>
+  </businessRules>
+</dataController>

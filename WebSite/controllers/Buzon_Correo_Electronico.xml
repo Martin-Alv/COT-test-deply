@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Buzon_Correo_Electronico" conflictDetection="overwriteChanges" label="Buzon Correo Electronico" handler="eaton.Rules.Buzon_Correo_ElectronicoBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Buzon_Correo_Electronico"."Buzon_Correo_Electronico_Id" "Buzon_Correo_Electronico_Id"
+	,"Buzon_Correo_Electronico"."De_Nombre" "De_Nombre"
+	,"Buzon_Correo_Electronico"."De_Correo_Electronico" "De_Correo_Electronico"
+	,"Buzon_Correo_Electronico"."Para_Nombre" "Para_Nombre"
+	,"Buzon_Correo_Electronico"."Para_Correo_Electronico" "Para_Correo_Electronico"
+	,"Buzon_Correo_Electronico"."Cc_Nombre" "Cc_Nombre"
+	,"Buzon_Correo_Electronico"."Cc_Correo_Electronico" "Cc_Correo_Electronico"
+	,"Buzon_Correo_Electronico"."Bcc" "Bcc"
+	,"Buzon_Correo_Electronico"."Asunto" "Asunto"
+	,"Buzon_Correo_Electronico"."Cuerpo" "Cuerpo"
+	,"Buzon_Correo_Electronico"."Tipo_Notificacion_Id" "Tipo_Notificacion_Id"
+	,"Buzon_Correo_Electronico"."Layout_HTML_Id" "Layout_HTML_Id"
+	,"Layout_HTML_"."Layout_HTML_Nombre" "Layout_HTML_Layout_HTML_Nombre"
+	,"Buzon_Correo_Electronico"."Re_Intentar" "Re_Intentar"
+	,"Buzon_Correo_Electronico"."Numero_Intentos" "Numero_Intentos"
+	,"Buzon_Correo_Electronico"."Estatus_Buzon_Correo_Electronico_Id" "Estatus_Buzon_Correo_Electronico_Id"
+	,"Estatus_Buzon_Correo_Electronico_"."Estatus_Buzon_Correo_Electronico" "Estatus_Buzon_Correo_Electronico"
+	,"Buzon_Correo_Electronico"."Estatus_Procesamiento_Id" "Estatus_Procesamiento_Id"
+	,"Estatus_Procesamiento_"."Estatus_Procesamiento" "Estatus_Procesamiento"
+	,"Buzon_Correo_Electronico"."Mensaje_Sistema_Id" "Mensaje_Sistema_Id"
+	,"Mensaje_Sistema_"."Mensaje_Sistema" "Mensaje_Sistema"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Buzon_Correo_Electronico"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Buzon_Correo_Electronico"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Buzon_Correo_Electronico"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "dbo"."Buzon_Correo_Electronico" "Buzon_Correo_Electronico"
+	left join "dbo"."Layout_HTML" "Layout_HTML_" on "Buzon_Correo_Electronico"."Layout_HTML_Id" = "Layout_HTML_"."Layout_HTML_Id"
+	left join "dbo"."Estatus_Buzon_Correo_Electronico" "Estatus_Buzon_Correo_Electronico_" on "Buzon_Correo_Electronico"."Estatus_Buzon_Correo_Electronico_Id" = "Estatus_Buzon_Correo_Electronico_"."Estatus_Buzon_Correo_Electronico_Id"
+	left join "dbo"."Estatus_Procesamiento" "Estatus_Procesamiento_" on "Buzon_Correo_Electronico"."Estatus_Procesamiento_Id" = "Estatus_Procesamiento_"."Estatus_Procesamiento_Id"
+	left join "dbo"."Mensaje_Sistema" "Mensaje_Sistema_" on "Buzon_Correo_Electronico"."Mensaje_Sistema_Id" = "Mensaje_Sistema_"."Mensaje_Sistema_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Buzon_Correo_Electronico"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Buzon_Correo_Electronico"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Buzon_Correo_Electronico"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Buzon_Correo_Electronico_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Buzon_Correo_Electronico_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Buzon_Correo_Electronico_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Buzon Correo Electronico Id" readOnly="true" />
+    <field name="De_Nombre" type="String" allowNulls="false" label="De Nombre" length="450" showInSummary="true" />
+    <field name="De_Correo_Electronico" type="String" allowNulls="false" label="De Correo Electrónico" length="150" showInSummary="true" />
+    <field name="Para_Nombre" type="String" allowNulls="false" label="Para Nombre" length="450" showInSummary="true" />
+    <field name="Para_Correo_Electronico" type="String" allowNulls="false" label="Para Correo Electrónico" length="150" showInSummary="true" />
+    <field name="Cc_Nombre" type="String" label="Cc Nombre" length="450" showInSummary="true" />
+    <field name="Cc_Correo_Electronico" type="String" label="Cc Correo Electrónico" length="150" />
+    <field name="Bcc" type="String" label="Bcc" length="150" />
+    <field name="Asunto" type="String" allowNulls="false" allowQBE="false" allowSorting="false" label="Asunto" />
+    <field name="Cuerpo" type="String" allowNulls="false" allowQBE="false" allowSorting="false" label="Cuerpo" />
+    <field name="Tipo_Notificacion_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo de Notificación Id" />
+    <field name="Layout_HTML_Id" type="Int32" allowNulls="false" default="((0))" label="Layout HTML Id">
+      <items style="Lookup" dataController="Layout_HTML" dataValueField="Layout_HTML_Id" dataTextField="Layout_HTML_Nombre" dataView="Layout_HTML_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Layout_HTML_Layout_HTML_Nombre" type="String" readOnly="true" label="Layout HTML Nombre" length="150" />
+    <field name="Re_Intentar" type="Boolean" allowNulls="false" default="((0))" label="Re Intentar" />
+    <field name="Numero_Intentos" type="Int16" allowNulls="false" default="((0))" label="Número de Intentos" />
+    <field name="Estatus_Buzon_Correo_Electronico_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Buzon Correo Electronico Id">
+      <items style="Lookup" dataController="Estatus_Buzon_Correo_Electronico" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Buzon_Correo_Electronico_Id" dataTextField="Estatus_Buzon_Correo_Electronico" />
+    </field>
+    <field name="Estatus_Buzon_Correo_Electronico" type="String" readOnly="true" label="Estatus de Buzón de Correo Electrónico" length="150" />
+    <field name="Estatus_Procesamiento_Id" type="Int32" allowNulls="false" default="((0))" label="Estatus Procesamiento Id">
+      <items style="Lookup" dataController="Estatus_Procesamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Estatus_Procesamiento_Id" dataTextField="Estatus_Procesamiento" />
+    </field>
+    <field name="Estatus_Procesamiento" type="String" readOnly="true" label="Estatus Procesamiento" length="150" />
+    <field name="Mensaje_Sistema_Id" type="Int32" allowNulls="false" default="((0))" label="Mensaje Sistema Id">
+      <items style="Lookup" dataController="Mensaje_Sistema" newDataView="createForm1" searchOnStart="true" dataValueField="Mensaje_Sistema_Id" dataTextField="Mensaje_Sistema" />
+    </field>
+    <field name="Mensaje_Sistema" type="String" readOnly="true" label="Mensaje de Sistema" length="250" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Buzón de Correo Electrónico" filter="Estatus_Registro_Id &lt;&gt; 0" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="De_Nombre" />
+        <dataField fieldName="De_Correo_Electronico" />
+        <dataField fieldName="Para_Nombre" />
+        <dataField fieldName="Para_Correo_Electronico" />
+        <dataField fieldName="Cc_Nombre" />
+        <dataField fieldName="Cc_Correo_Electronico" />
+        <dataField fieldName="Bcc" />
+        <dataField fieldName="Asunto" rows="5" />
+        <dataField fieldName="Cuerpo" rows="5" />
+        <dataField fieldName="Tipo_Notificacion_Id" columns="15" />
+        <dataField fieldName="Layout_HTML_Id" aliasFieldName="Layout_HTML_Layout_HTML_Nombre" hyperlinkFormatString="~/pages/Layout_HTML?Layout_HTML_Id={Layout_HTML_Id}&amp;_controller=Layout_HTML&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Re_Intentar" />
+        <dataField fieldName="Numero_Intentos" columns="15" />
+        <dataField fieldName="Estatus_Buzon_Correo_Electronico_Id" aliasFieldName="Estatus_Buzon_Correo_Electronico" hyperlinkFormatString="~/pages/Estatus_Buzon_Correo_Electronico?Estatus_Buzon_Correo_Electronico_Id={Estatus_Buzon_Correo_Electronico_Id}&amp;_controller=Estatus_Buzon_Correo_Electronico&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Buzón de Correo Electrónico">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Buzón de Correo Electrónico" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="De_Nombre" />
+            <dataField fieldName="De_Correo_Electronico" />
+            <dataField fieldName="Para_Nombre" />
+            <dataField fieldName="Para_Correo_Electronico" />
+            <dataField fieldName="Cc_Nombre" />
+            <dataField fieldName="Cc_Correo_Electronico" />
+            <dataField fieldName="Bcc" />
+            <dataField fieldName="Asunto" rows="5" />
+            <dataField fieldName="Cuerpo" rows="5" />
+            <dataField fieldName="Tipo_Notificacion_Id" columns="15" />
+            <dataField fieldName="Layout_HTML_Id" aliasFieldName="Layout_HTML_Layout_HTML_Nombre" hyperlinkFormatString="~/pages/Layout_HTML?Layout_HTML_Id={Layout_HTML_Id}&amp;_controller=Layout_HTML&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Re_Intentar" />
+            <dataField fieldName="Numero_Intentos" columns="15" />
+            <dataField fieldName="Estatus_Buzon_Correo_Electronico_Id" aliasFieldName="Estatus_Buzon_Correo_Electronico" hyperlinkFormatString="~/pages/Estatus_Buzon_Correo_Electronico?Estatus_Buzon_Correo_Electronico_Id={Estatus_Buzon_Correo_Electronico_Id}&amp;_controller=Estatus_Buzon_Correo_Electronico&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" hyperlinkFormatString="~/pages/Estatus_Procesamiento?Estatus_Procesamiento_Id={Estatus_Procesamiento_Id}&amp;_controller=Estatus_Procesamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" hyperlinkFormatString="~/pages/Mensaje_Sistema?Mensaje_Sistema_Id={Mensaje_Sistema_Id}&amp;_controller=Mensaje_Sistema&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Buzon Correo Electronico">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Buzón de Correo Electrónico" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="De_Nombre" />
+            <dataField fieldName="De_Correo_Electronico" />
+            <dataField fieldName="Para_Nombre" />
+            <dataField fieldName="Para_Correo_Electronico" />
+            <dataField fieldName="Cc_Nombre" />
+            <dataField fieldName="Cc_Correo_Electronico" />
+            <dataField fieldName="Bcc" />
+            <dataField fieldName="Asunto" rows="5" />
+            <dataField fieldName="Cuerpo" rows="5" />
+            <dataField fieldName="Tipo_Notificacion_Id" columns="15" />
+            <dataField fieldName="Layout_HTML_Id" aliasFieldName="Layout_HTML_Layout_HTML_Nombre" />
+            <dataField fieldName="Re_Intentar" />
+            <dataField fieldName="Numero_Intentos" columns="15" />
+            <dataField fieldName="Estatus_Buzon_Correo_Electronico_Id" aliasFieldName="Estatus_Buzon_Correo_Electronico" />
+            <dataField fieldName="Estatus_Procesamiento_Id" aliasFieldName="Estatus_Procesamiento" />
+            <dataField fieldName="Mensaje_Sistema_Id" aliasFieldName="Mensaje_Sistema" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Actualizado_Por" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

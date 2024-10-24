@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Orden_Detalle1" label="Orden_Detalle1" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Orden_Detalle"."Orden_Detalle_Id" "Orden_Detalle_Id"
+	,"Orden_Detalle"."Orden_Id" "Orden_Id"
+	,"Orden_"."Numero_Orden" "Numero_Orden"
+	,"Orden_Detalle"."Material_Id" "Material_Id"
+	,"Material_"."Material_Descripcion" "Material_Descripcion"
+	,"Material_"."Stock" "Material_Stock"
+	,"Orden_Detalle"."Familia_Id" "Familia_Id"
+	,"Familia_"."Familia_Descripcion" "Familia_Descripcion"
+	,"Orden_Detalle"."Unidad_Material_Id" "Unidad_Material_Id"
+	,"Unidad_Material_"."Unidad_Material" "Unidad_Material"
+	,"Orden_Detalle"."Cantidad" "Cantidad"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Orden_Detalle"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Orden_Detalle"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Orden_Detalle"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Orden_Detalle"."Descripcion" "Descripcion"
+from "dbo"."Orden_Detalle" "Orden_Detalle"
+	left join "dbo"."Orden" "Orden_" on "Orden_Detalle"."Orden_Id" = "Orden_"."Orden_Id"
+	left join "APP"."Material" "Material_" on "Orden_Detalle"."Material_Id" = "Material_"."Material_Id"
+	left join "APP"."Familia" "Familia_" on "Orden_Detalle"."Familia_Id" = "Familia_"."Familia_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material_" on "Orden_Detalle"."Unidad_Material_Id" = "Unidad_Material_"."Unidad_Material_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Orden_Detalle"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Orden_Detalle"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Orden_Detalle"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Orden_Detalle_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Orden_Detalle_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Detalle_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Orden Detalle Id" readOnly="true" />
+    <field name="Orden_Id" type="Int32" allowNulls="false" default="((0))" label="Orden Id" showInSummary="true">
+      <items style="Lookup" dataController="Orden" dataValueField="Orden_Id" dataTextField="Numero_Orden" dataView="Orden_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Numero_Orden" type="Int32" label="Numero Orden" readOnly="true" />
+    <field name="Material_Id" type="Int32" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material_Descripcion" copy="Material_Stock=Stock" dataView="Material_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Material_Descripcion" type="String" readOnly="true" label="Material Descripcion" length="250" />
+    <field name="Material_Stock" type="Decimal" readOnly="true" label="Material Stock" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" default="((0))" label="Familia Id" showInSummary="true">
+      <items style="Lookup" dataController="Familia" newDataView="createForm1" dataValueField="Familia_Id" dataTextField="Familia_Descripcion" dataView="Familia_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Familia_Descripcion" type="String" readOnly="true" label="Familia Descripcion" length="250" />
+    <field name="Unidad_Material_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" dataView="Unidad_Material_LookUp_List" />
+    </field>
+    <field name="Unidad_Material" type="String" readOnly="true" label="Unidad Material" length="250" />
+    <field name="Cantidad" type="Decimal" allowNulls="false" default="((0))" label="Cantidad" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+    <field name="Descripcion" type="String" label="Descripcion" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Orden Detalle">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Orden_Id" aliasFieldName="Numero_Orden" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Descripcion" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Material_Stock" columns="15" />
+        <dataField fieldName="Familia_Id" aliasFieldName="Familia_Descripcion" hyperlinkFormatString="~/pages/Familia?Familia_Id={Familia_Id}&amp;_controller=Familia&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Unidad_Material_Id" aliasFieldName="Unidad_Material" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Cantidad" columns="15" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Descripcion" />
+        <dataField fieldName="Numero_Orden" columns="15" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Orden Detalle">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Orden Detalle" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Id" aliasFieldName="Numero_Orden" hyperlinkFormatString="~/pages/Orden?Orden_Id={Orden_Id}&amp;_controller=Orden&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Descripcion" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material_Stock" columns="15" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Descripcion" hyperlinkFormatString="~/pages/Familia?Familia_Id={Familia_Id}&amp;_controller=Familia&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Unidad_Material_Id" aliasFieldName="Unidad_Material" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Descripcion" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Orden Detalle">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New Orden Detalle" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Id" aliasFieldName="Numero_Orden" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Descripcion" />
+            <dataField fieldName="Material_Stock" columns="15" />
+            <dataField fieldName="Familia_Id" aliasFieldName="Familia_Descripcion" />
+            <dataField fieldName="Unidad_Material_Id" aliasFieldName="Unidad_Material" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+            <dataField fieldName="Descripcion" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Custom" commandArgument="ExecCS01" headerText="Crear Solicitud" id="a100" cssClass="material-icon-list-all" />
+    </actionGroup>
+  </actions>
+</dataController>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Area_Servicio_Familia" alias="Area_Servicio_Familia" created="2019-03-12T10:30:54" modified="2021-11-12T13:46:18" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Area_Servicio_" parentTableSchema="APP" parentTableName="Area_Servicio" x="1207" y="27">
+      <foreignKeyColumn columnName="Area_Servicio_Id" parentColumnName="Area_Servicio_Id" />
+    </foreignKey>
+    <foreignKey id="Familia_" parentTableSchema="APP" parentTableName="Familia" x="913" y="84">
+      <foreignKeyColumn columnName="Familia_Id" parentColumnName="Familia_Id" />
+    </foreignKey>
+    <foreignKey id="Categoria_" parentTableSchema="APP" parentTableName="Categoria" x="914" y="284">
+      <foreignKeyColumn columnName="Categoria_Id" parentColumnName="Categoria_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="907" y="777">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="913" y="513">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="912" y="644">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Area_Servicio_Familia_Id" fieldName="Area_Servicio_Familia_Id" label="Área Servicio Familia Id" />
+    <column name="Area_Servicio_Id" fieldName="Area_Servicio_Id" label="Área Servicio Id" aliasColumnName="Area_Servicio" aliasForeignKey="Area_Servicio_" />
+    <column name="Area_Servicio" fieldName="Area_Servicio" label="Área de Servicio" foreignKey="Area_Servicio_" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" aliasColumnName="Familia_Clave" aliasForeignKey="Familia_" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" foreignKey="Familia_" />
+    <column name="Familia_Descripcion" fieldName="Familia_Descripcion" label="Familia_Descripcion" foreignKey="Familia_" />
+    <column name="Categoria_Id" fieldName="Categoria_Id" label="Categoria Id" aliasColumnName="Categoria_Clave" aliasForeignKey="Categoria_" />
+    <column name="Categoria_Clave" fieldName="Categoria_Clave" label="Categoría Clave" foreignKey="Categoria_" />
+    <column name="Categoria_Descripcion" fieldName="Categoria_Descripcion" label="Categoría Descripción" foreignKey="Categoria_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

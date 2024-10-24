@@ -1,0 +1,9 @@
+*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Grid_Orden_Produccion_V.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^Custom1^Lista 2^Custom1^
+

@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Motivo_Solicitud" conflictDetection="overwriteChanges" label="Motivo Solicitud" handler="eaton.Rules.Motivo_SolicitudBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Motivo_Solicitud"."Motivo_Solicitud_Id" "Motivo_Solicitud_Id"
+	,"Motivo_Solicitud"."Motivo_Solicitud" "Motivo_Solicitud"
+	,"Motivo_Solicitud"."Es_Otro" "Es_Otro"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Motivo_Solicitud"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Motivo_Solicitud"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Motivo_Solicitud"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+	,"Motivo_Solicitud"."Es_Frame" "Es_Frame"
+	,"Motivo_Solicitud"."Es_Error_De_Aplicacion" "Es_Error_De_Aplicacion"
+	,"Motivo_Solicitud"."Es_Material_Danado_Almacen" "Es_Material_Danado_Almacen"
+	,"Motivo_Solicitud"."Es_Material_Danado_En_Proceso" "Es_Material_Danado_En_Proceso"
+	,"Motivo_Solicitud"."Es_Material_Incompleto" "Es_Material_Incompleto"
+	,"Motivo_Solicitud"."Es_Material_No_Aparece_En_Sistema" "Es_Material_No_Aparece_En_Sistema"
+	,"Motivo_Solicitud"."Es_Material_Rechazado_Calidad" "Es_Material_Rechazado_Calidad"
+	,"Motivo_Solicitud"."Es_Motivo_De_Prueba" "Es_Motivo_De_Prueba"
+	,"Motivo_Solicitud"."Es_No_Aparece_En_Orden" "Es_No_Aparece_En_Orden"
+	,"Motivo_Solicitud"."Es_No_Viene_En_Boom_Coois" "Es_No_Viene_En_Boom_Coois"
+	,"Motivo_Solicitud"."Es_Error_De_Boom" "Es_Error_De_Boom"
+	,"Motivo_Solicitud"."Es_Phantom" "Es_Phantom"
+	,"Motivo_Solicitud"."Es_Refrescado_De_Ordenes" "Es_Refrescado_De_Ordenes"
+	,"Motivo_Solicitud"."Es_Kanban" "Es_Kanban"
+	,"Motivo_Solicitud"."Es_Material_No_Aparece_En_Orden" "Es_Material_No_Aparece_En_Orden"
+	,"Motivo_Solicitud"."Es_Material_Orden_Pdr" "Es_Material_Orden_Pdr"
+from "APP"."Motivo_Solicitud" "Motivo_Solicitud"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Motivo_Solicitud"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Motivo_Solicitud"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Motivo_Solicitud"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Motivo_Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Motivo_Solicitud_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Motivo_Solicitud_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Motivo Solicitud Id" readOnly="true" />
+    <field name="Motivo_Solicitud" type="String" allowNulls="false" label="Motivo de Solicitud" length="250" showInSummary="true" />
+    <field name="Es_Otro" type="Boolean" allowNulls="false" default="((0))" label="Es Otro?" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" showInSummary="true" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Última Actualización" showInSummary="true" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id" showInSummary="true">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus de Registro" length="150" />
+    <field name="Es_Frame" type="Boolean" allowNulls="false" default="((0))" label="Es Frame?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Error_De_Aplicacion" type="Boolean" allowNulls="false" default="((0))" label="Es Error De Aplicacion?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_Danado_Almacen" type="Boolean" allowNulls="false" default="((0))" label="Es Material Danado Almacen?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_Danado_En_Proceso" type="Boolean" allowNulls="false" default="((0))" label="Es Material Danado En Proceso?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_Incompleto" type="Boolean" allowNulls="false" default="((0))" label="Es Material Incompleto?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_No_Aparece_En_Sistema" type="Boolean" allowNulls="false" default="((0))" label="Es Material No Aparece En Sistema?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_Rechazado_Calidad" type="Boolean" allowNulls="false" default="((0))" label="Es Material Rechazado Calidad?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Motivo_De_Prueba" type="Boolean" allowNulls="false" default="((0))" label="Es Motivo De Prueba?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_No_Aparece_En_Orden" type="Boolean" allowNulls="false" default="((0))" label="Es No Aparece En Orden?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_No_Viene_En_Boom_Coois" type="Boolean" allowNulls="false" default="((0))" label="Es No Viene En Boom Coois?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Error_De_Boom" type="Boolean" allowNulls="false" default="((0))" label="Es Error De Boom?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Phantom" type="Boolean" allowNulls="false" default="((0))" label="Es Phantom?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Refrescado_De_Ordenes" type="Boolean" allowNulls="false" default="((0))" label="Es Refrescado De Ordenes?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Kanban" type="Boolean" allowNulls="false" default="((0))" label="Es Kanban?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_No_Aparece_En_Orden" type="Boolean" allowNulls="false" default="((0))" label="Es Material No Aparece En Orden?">
+      <items style="CheckBox" />
+    </field>
+    <field name="Es_Material_Orden_Pdr" type="Boolean" allowNulls="false" default="((0))" label="Es Material Orden PDR?">
+      <items style="CheckBox" />
+    </field>
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Motivo de Solicitud" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Motivo_Solicitud" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Motivo de Solicitud">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Motivo de Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Motivo_Solicitud" />
+            <dataField fieldName="Es_Frame" />
+            <dataField fieldName="Es_Error_De_Aplicacion" />
+            <dataField fieldName="Es_Material_Danado_Almacen" />
+            <dataField fieldName="Es_Material_Danado_En_Proceso" />
+            <dataField fieldName="Es_Material_Incompleto" />
+            <dataField fieldName="Es_Material_No_Aparece_En_Sistema" />
+            <dataField fieldName="Es_Material_Rechazado_Calidad" />
+            <dataField fieldName="Es_Motivo_De_Prueba" />
+            <dataField fieldName="Es_No_Aparece_En_Orden" />
+            <dataField fieldName="Es_No_Viene_En_Boom_Coois" />
+            <dataField fieldName="Es_Error_De_Boom" />
+            <dataField fieldName="Es_Phantom" />
+            <dataField fieldName="Es_Refrescado_De_Ordenes" />
+            <dataField fieldName="Es_Kanban" />
+            <dataField fieldName="Es_Material_No_Aparece_En_Orden" />
+            <dataField fieldName="Es_Material_Orden_Pdr" />
+            <dataField fieldName="Es_Otro" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Motivo de Solicitud">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Nuevo Motivo de Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Motivo_Solicitud" />
+            <dataField fieldName="Es_Frame" />
+            <dataField fieldName="Es_Error_De_Aplicacion" />
+            <dataField fieldName="Es_Material_Danado_Almacen" />
+            <dataField fieldName="Es_Material_Danado_En_Proceso" />
+            <dataField fieldName="Es_Material_Incompleto" />
+            <dataField fieldName="Es_Material_No_Aparece_En_Sistema" />
+            <dataField fieldName="Es_Material_Rechazado_Calidad" />
+            <dataField fieldName="Es_Motivo_De_Prueba" />
+            <dataField fieldName="Es_No_Aparece_En_Orden" />
+            <dataField fieldName="Es_No_Viene_En_Boom_Coois" />
+            <dataField fieldName="Es_Error_De_Boom" />
+            <dataField fieldName="Es_Phantom" />
+            <dataField fieldName="Es_Refrescado_De_Ordenes" />
+            <dataField fieldName="Es_Kanban" />
+            <dataField fieldName="Es_Material_No_Aparece_En_Orden" />
+            <dataField fieldName="Es_Material_Orden_Pdr" />
+            <dataField fieldName="Es_Otro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Motivo_Solicitud_LookUp_List" type="Grid" commandId="command1" label="Motivo de Solicitud" filter="Estatus_Registro_Id = 1" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Motivo_Solicitud" />
+        <dataField fieldName="Es_Otro" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a3" commandName="SQL" roles="Administrators,administrador" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete">
+        <data><![CDATA[UPDATE 
+   APP.Motivo_Solicitud
+SET   
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Motivo_Solicitud_Id = @Motivo_Solicitud_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="Administrators,administrador" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="Administrators,administrador" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="Administrators,administrador" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Motivo_Solicitud
+SET   
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Motivo_Solicitud_Id = @Motivo_Solicitud_Id]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="Administrators,administrador" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="Administrators,administrador" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="Administrators,administrador" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="Administrators,administrador" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete" whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Motivo_Solicitud
+SET   
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Motivo_Solicitud_Id = @Motivo_Solicitud_Id]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete" roles="Administrators,administrador">
+        <data><![CDATA[UPDATE 
+   APP.Motivo_Solicitud
+SET   
+    Estatus_Registro_Id = 3
+    ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Motivo_Solicitud_Id = @Motivo_Solicitud_Id]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Motivo_Solicitud
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Motivo_Solicitud))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Motivo_Solicitud))
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](191,1,49,@Motivo_Solicitud)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT
+
+SET @Already_Exists = 0
+
+SELECT
+   TOP 1 @Already_Exists  = 1
+FROM
+   APP.Motivo_Solicitud
+WHERE
+	dbo.fn_Sustituir_Caracteres_Especiales(Lower(Motivo_Solicitud))=dbo.fn_Sustituir_Caracteres_Especiales(Lower(@Motivo_Solicitud))
+AND Motivo_Solicitud_Id <> @Motivo_Solicitud_Id
+
+IF @Already_Exists = 1
+BEGIN
+   SET @BusinessRules_PreventDefault = 1
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](192,1,49,@Motivo_Solicitud)
+   SET @Result_ShowAlert = @Result_ShowViewMessage
+   RETURN
+END 
+]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Motivo_Solicitud
+SET
+    Creado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+   ,Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Motivo_Solicitud_Id = @Motivo_Solicitud_Id]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE 
+   APP.Motivo_Solicitud
+SET   
+    Actualizado_Por_Id = @BusinessRules_UserId
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL)
+WHERE
+   Motivo_Solicitud_Id = @Motivo_Solicitud_Id]]></rule>
+  </businessRules>
+</dataController>

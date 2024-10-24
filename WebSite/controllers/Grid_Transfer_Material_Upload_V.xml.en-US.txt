@@ -1,0 +1,21 @@
+﻿*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Grid_Transfer_Material_Upload_V.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^Download^Descargar^Download^
+
+^DownloadFile^Descargar Archivo^DownloadFile^
+
+^DownloadUploadFile^Descargar Archivo de Carga^DownloadUploadFile^
+
+^FileUpload^CargarArchivo^FileUpload^
+
+^Import^Importar^Import^
+
+^ProcessMaterials^Procesar Materiales^ProcessMaterials^
+
+^UploadFile^Cargar Archivo^UploadFile^
+

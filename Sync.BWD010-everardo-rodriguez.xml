@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?><logs><log type="Controllers"><c y="NodeSet" t="2019-07-10T22:36:32"><controller name="Motivo_Movimiento" />
+<field name="Motivo_Movimiento" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault>0</CodeDefault>
+</update></c><c y="NodeSet" t="2019-07-10T22:36:47"><controller name="Motivo_Movimiento" />
+<field name="Aplica_A_Devolucion" />
+<update>
+  <CodeDefault>0</CodeDefault>
+</update></c><c y="NodeSet" t="2019-07-10T22:36:55"><controller name="Motivo_Movimiento" />
+<field name="Aplica_A_Transferencia" />
+<update>
+  <CodeDefault>0</CodeDefault>
+</update></c><c y="NodeSet" t="2019-07-10T22:42:01"><controller name="Movimiento_Detalle" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Detalle_Iniciado_Por_Id" />
+<update>
+  <Alias>Movimiento_Det_Iniciado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-10T22:43:12"><controller name="Movimiento_Detalle" />
+<field name="Movimiento_Detalle_Iniciado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsDataTextField>Usuario_Sistema</ItemsDataTextField>
+  <ItemsNewDataView />
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-10T22:44:55"><controller name="Movimiento_Detalle" />
+<field name="Estatus_Movimiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-10T23:25:45"><controller name="Motivo_Movimiento" />
+<field name="Aplica_A_Transferencia" />
+<update>
+  <Default>((1))</Default>
+</update></c><c y="NodeSet" t="2019-07-10T23:25:58"><controller name="Motivo_Movimiento" />
+<field name="Aplica_A_Devolucion" />
+<update>
+  <Default>((1))</Default>
+</update></c><c y="NodeSet" t="2019-07-10T23:26:11"><controller name="Motivo_Movimiento" />
+<field name="Motivo_Movimiento" />
+<update>
+  <Default>((1))</Default>
+</update></c><c y="NodeSet" t="2019-07-10T23:31:00"><controller name="Motivo_Movimiento" />
+<field name="Motivo_Movimiento" />
+<update>
+  <Default />
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-10T23:31:08"><controller name="Motivo_Movimiento" />
+<field name="Aplica_A_Devolucion" />
+<update>
+  <Default />
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-10T23:31:14"><controller name="Motivo_Movimiento" />
+<field name="Aplica_A_Transferencia" />
+<update>
+  <Default />
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-10T23:38:30"><controller name="Estatus_Movimiento" />
+<field name="Significa_Pendiente" />
+<update>
+  <Label>Significa Pendiente?</Label>
+</update></c><c y="NodeSet" t="2019-07-10T23:40:45"><controller name="Estatus_Movimiento" />
+<field name="Significa_Pendiente" />
+<update>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:41:06"><controller name="Estatus_Movimiento" />
+<field name="Significa_Cancelado" />
+<update>
+  <Label>Significa Cancelado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:41:17"><controller name="Estatus_Movimiento" />
+<field name="Significa_Recibido_En_Proceso_Dev" />
+<update>
+  <Label>Significa Recibido En Proceso Dev?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:41:27"><controller name="Estatus_Movimiento" />
+<field name="Es_Devolucion_Completa" />
+<update>
+  <Label>Es Devolución Completa?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:41:38"><controller name="Estatus_Movimiento" />
+<field name="Es_Devolucion_Parcial" />
+<update>
+  <Label>Es Devolución Parcial?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:41:46"><controller name="Estatus_Movimiento" />
+<field name="Es_Devolucion_Cancelado" />
+<update>
+  <Label>Es Devolución Cancelado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:41:57"><controller name="Estatus_Movimiento" />
+<field name="Significa_Devuelto" />
+<update>
+  <Label>Significa Devuelto?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:42:10"><controller name="Estatus_Movimiento" />
+<field name="Significa_Recibido_En_Proceso_Transf" />
+<update>
+  <Label>Significa Recibido En Proceso Transf?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:42:34"><controller name="Estatus_Movimiento" />
+<field name="Es_Transferencia_Completa" />
+<update>
+  <Label>Es Transferencia Completa?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:42:45"><controller name="Estatus_Movimiento" />
+<field name="Es_Transferencia_Parcial" />
+<update>
+  <Label>Es Transferencia Parcial?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:43:00"><controller name="Estatus_Movimiento" />
+<field name="Es_Transferencia_Cancelado" />
+<update>
+  <Label>Es Transferencia Cancelado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:43:07"><controller name="Estatus_Movimiento" />
+<field name="Significa_Transferido" />
+<update>
+  <Label>Significa Transferido?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:43:14"><controller name="Estatus_Movimiento" />
+<field name="Aplica_A_Devolucion" />
+<update>
+  <Label>Aplica A Devolución?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:43:28"><controller name="Estatus_Movimiento" />
+<field name="Aplica_A_Transferencia" />
+<update>
+  <Label>Aplica A Transferencia?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:44:57"><controller name="Tipo_Movimiento" />
+<field name="Es_Solicitud_Devolucion" />
+<update>
+  <Label>Es Solicitud De Devolución?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:45:10"><controller name="Tipo_Movimiento" />
+<field name="Es_Solicitud_Transferencia" />
+<update>
+  <Label>Es Solicitud De Transferencia?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:47:55"><controller name="Estatus_Movimiento_Ruta_Optima" />
+<field name="Significa_Pendiente" />
+<update>
+  <Label>Significa Pendiente?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:48:02"><controller name="Estatus_Movimiento_Ruta_Optima" />
+<field name="Significa_Realizado" />
+<update>
+  <Label>Significa Realizado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:48:08"><controller name="Estatus_Movimiento_Ruta_Optima" />
+<field name="Significa_Terminado" />
+<update>
+  <Label>Significa Terminado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:48:15"><controller name="Estatus_Movimiento_Ruta_Optima" />
+<field name="Significa_Cancelado" />
+<update>
+  <Label>Significa Cancelado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:48:22"><controller name="Estatus_Movimiento_Ruta_Optima" />
+<field name="Aplica_A_Devolucion" />
+<update>
+  <Label>Aplica A Devolución?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:48:28"><controller name="Estatus_Movimiento_Ruta_Optima" />
+<field name="Aplica_A_Transferencia" />
+<update>
+  <Label>Aplica A Transferencia?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-10T23:54:06"><controller name="Movimiento_Ruta_Optima" />
+<field name="Tipo_Movimiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-10T23:58:57"><controller name="Movimiento_Ruta_Optima" />
+<field name="Devolucion_Material_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:00:53"><controller name="Movimiento_Ruta_Optima" />
+<field name="Devolucion_Material_Id" />
+<update>
+  <ItemsNewDataView />
+</update></c><c y="NodeSet" t="2019-07-11T00:05:41"><controller name="Movimiento_Ruta_Optima" />
+<field name="Devolucion_En_Ubicacion_Almacenamiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:06:19"><controller name="Movimiento_Ruta_Optima" />
+<field name="Devolucion_Ubicacion_Almacenamiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:07:03"><controller name="Movimiento_Ruta_Optima" />
+<field name="Unidad_Material_A_Devolver_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:07:37"><controller name="Movimiento_Ruta_Optima" />
+<field name="Unidad_Material_Devuelto_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:08:51"><controller name="Movimiento_Ruta_Optima" />
+<field name="Transferencia_Material_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+  <ItemsNewDataView />
+</update></c><c y="NodeSet" t="2019-07-11T00:11:30"><controller name="Movimiento_Ruta_Optima" />
+<field name="Transferencia_En_Ubicacion_Almacenamiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:12:04"><controller name="Movimiento_Ruta_Optima" />
+<field name="Transferencia_Ubicacion_Almacenamiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:12:42"><controller name="Movimiento_Ruta_Optima" />
+<field name="Unidad_Material_A_Transferir_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:13:01"><controller name="Movimiento_Ruta_Optima" />
+<field name="Unidad_Material_Transferido_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:25:53"><controller name="Movimiento_Ruta_Optima" />
+<field name="Estatus_Movimiento_Ruta_Optima_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:26:35"><controller name="Movimiento_Ruta_Optima" />
+<field name="Estatus_Movimiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:27:39"><controller name="Movimiento_Ruta_Optima" />
+<field name="Es_Capturado" />
+<update>
+  <Label>Es Capturado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-11T00:29:31"><controller name="Movimiento_Ruta_Optima" />
+<field name="Movimiento_Iniciado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsDataTextField>Usuario_Sistema</ItemsDataTextField>
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:30:07"><controller name="Movimiento_Ruta_Optima" />
+<field name="Movimiento_Capturado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsDataTextField>Usuario_Sistema</ItemsDataTextField>
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:33:27"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Fecha_Transferencia" />
+<after>
+  <controller name="Movimiento_Ruta_Optima" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:33:33"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Tmp_Mo_Ruta_Optima_Transaccion_Id" />
+<after>
+  <controller name="Movimiento_Ruta_Optima" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:33:42"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:33:46"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Capturado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:34:16"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<update>
+  <Alias>Movimiento_Iniciado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:34:38"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<update>
+  <Alias>Movimiento_Capturado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:35:00"><controller name="Movimiento_Ruta_Optima" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:35:55"><controller name="Movimiento" />
+<field name="Area_Servicio_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:36:12"><controller name="Movimiento" />
+<field name="Tipo_Movimiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:36:25"><controller name="Movimiento" />
+<field name="Estatus_Movimiento_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:36:45"><controller name="Movimiento" />
+<field name="Area_Entrega_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:38:03"><controller name="Movimiento" />
+<field name="Devolucion_Ubicacion_Origen_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:39:32"><controller name="Movimiento" />
+<field name="Devolucion_Ubicacion_Destino_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:41:31"><controller name="Movimiento" />
+<field name="Estatus_Devolucion_Id" />
+<update>
+  <ItemsDataView>Estatus_Movimiento_LookUp_List</ItemsDataView>
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:41:47"><controller name="Movimiento" />
+<field name="Transferencia_Ubicacion_Origen_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:42:05"><controller name="Movimiento" />
+<field name="Transferencia_Ubicacion_Destino_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:42:45"><controller name="Movimiento" />
+<field name="Estatus_Transferencia_Id" />
+<update>
+  <ItemsDataView>Estatus_Movimiento_LookUp_List</ItemsDataView>
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:43:09"><controller name="Movimiento" />
+<field name="Movimiento_Ruta_Optima_Id" />
+<update>
+  <Default>((0))</Default>
+  <CodeDefault />
+</update></c><c y="NodeSet" t="2019-07-11T00:43:46"><controller name="Movimiento" />
+<field name="Es_Capturado" />
+<update>
+  <Label>Es Capturado?</Label>
+  <ItemsStyle>CheckBox</ItemsStyle>
+</update></c><c y="NodeSet" t="2019-07-11T00:45:46"><controller name="Movimiento" />
+<field name="Movimiento_Solicitado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsDataTextField>Usuario_Sistema</ItemsDataTextField>
+  <ItemsNewDataView />
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:46:07"><controller name="Movimiento" />
+<field name="Movimiento_Iniciado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsNewDataView />
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:46:20"><controller name="Movimiento" />
+<field name="Movimiento_Realizado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsNewDataView />
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:46:39"><controller name="Movimiento" />
+<field name="Movimiento_Cancelado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <ItemsNewDataView />
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:46:52"><controller name="Movimiento" />
+<field name="Movimiento_Capturado_Por_Id" />
+<update>
+  <ItemsDataView>grid1</ItemsDataView>
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:47:54"><controller name="Movimiento" />
+<field name="Movimiento_Motivo_Cancelacion_Id" />
+<update>
+  <ItemsDataView>Motivo_Movimiento_LookUp_List</ItemsDataView>
+  <ItemsDataTextField>Motivo_Movimiento</ItemsDataTextField>
+  <SearchOnStart>false</SearchOnStart>
+  <ItemsPageSize>15</ItemsPageSize>
+</update></c><c y="NodeSet" t="2019-07-11T00:49:18"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Ruta_Optima_Id" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:49:27"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Solicitado_Por_Id" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:49:38"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:49:38"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:49:38"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:49:38"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:49:44"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Capturado_Por" />
+<after>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion" />
+</after></c><c y="NodeSet" t="2019-07-11T00:50:04"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Solicitado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:50:04"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:50:04"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Realizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:50:04"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Cancelado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:50:04"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Capturado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:50:04"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:50:47"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Solicitado_Por_Id" />
+<update>
+  <Alias>Movimiento_Solicitado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:51:10"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<update>
+  <Alias>Movimiento_Iniciado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:51:23"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Realizado_Por_Id" />
+<update>
+  <Alias>Movimiento_Realizado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:51:41"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Cancelado_Por_Id" />
+<update>
+  <Alias>Movimiento_Cancelado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:52:07"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<update>
+  <Alias>Movimiento_Capturado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:52:30"><controller name="Movimiento" />
+<view id="grid1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+<update>
+  <Alias>Movimiento_Motivo_Cancelacion</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T00:53:01"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Solicitado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:01"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:01"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Realizado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:01"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Cancelado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:01"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:01"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:02"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Ruta_Optima_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:53:36"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="grid1" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:08"><controller name="Movimiento" />
+<view id="Movimiento_LookUp_List" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Ruta_Optima_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:54:30"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Solicitado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:54:30"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:54:30"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Realizado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:54:31"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Cancelado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:54:31"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:54:31"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:54:31"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Ruta_Optima_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:27"><controller name="Movimiento" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:56:38"><controller name="Movimiento" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="editForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Ruta_Optima_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:57:03"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Solicitado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:03"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Iniciado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:03"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Realizado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:03"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Cancelado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:03"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Capturado_Por" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:21"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Solicitado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:21"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:22"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Realizado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:22"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Cancelado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:22"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:22"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:22"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Motivo_Cancelacion" />
+<delete /></c><c y="NodeSet" t="2019-07-11T00:57:44"><controller name="Movimiento" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:57:44"><controller name="Movimiento" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:57:44"><controller name="Movimiento" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:57:44"><controller name="Movimiento" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:57:44"><controller name="Movimiento" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:57:44"><controller name="Movimiento" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento" />
+  <view id="Movimiento_LookUp_List" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T00:57:53"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Motivo_Cancelacion_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:57:53"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:57:53"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Cancelado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:57:53"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Realizado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:57:53"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T00:57:53"><controller name="Movimiento" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Transferencia_Fecha_Cancelacion" />
+<after>
+  <controller name="Movimiento" />
+  <view id="createForm1" />
+  <category id="c1" />
+  <dataField fieldName="Movimiento_Solicitado_Por_Id" />
+</after></c><c y="NodeSet" t="2019-07-11T01:00:46"><controller name="Movimiento_Ruta_Optima" />
+<view id="Movimiento_Ruta_Optima_LookUp_List" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<update>
+  <Alias>Movimiento_Iniciado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T01:01:05"><controller name="Movimiento_Ruta_Optima" />
+<view id="Movimiento_Ruta_Optima_LookUp_List" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<update>
+  <Alias>Movimiento_Capturado_Por</Alias>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-11T01:01:41"><controller name="Movimiento_Ruta_Optima" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T01:01:41"><controller name="Movimiento_Ruta_Optima" />
+<view id="editForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T01:01:45"><controller name="Movimiento_Ruta_Optima" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento_Ruta_Optima" />
+  <view id="Movimiento_Ruta_Optima_LookUp_List" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T01:01:45"><controller name="Movimiento_Ruta_Optima" />
+<view id="editForm1" />
+<copy>
+  <controller name="Movimiento_Ruta_Optima" />
+  <view id="Movimiento_Ruta_Optima_LookUp_List" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T01:02:07"><controller name="Movimiento_Ruta_Optima" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Iniciado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T01:02:08"><controller name="Movimiento_Ruta_Optima" />
+<view id="createForm1" />
+<category id="c1" />
+<dataField fieldName="Movimiento_Capturado_Por_Id" />
+<delete /></c><c y="NodeSet" t="2019-07-11T01:02:12"><controller name="Movimiento_Ruta_Optima" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento_Ruta_Optima" />
+  <view id="Movimiento_Ruta_Optima_LookUp_List" />
+  <dataField fieldName="Movimiento_Iniciado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-11T01:02:12"><controller name="Movimiento_Ruta_Optima" />
+<view id="createForm1" />
+<copy>
+  <controller name="Movimiento_Ruta_Optima" />
+  <view id="Movimiento_Ruta_Optima_LookUp_List" />
+  <dataField fieldName="Movimiento_Capturado_Por_Id" />
+</copy></c><c y="NodeSet" t="2019-07-27T21:03:28"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:03:34"><controller name="Bitacora_Captura_Sap1" />
+<view id="grid1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:04:22"><controller name="Bitacora_Captura_Sap1" />
+<view id="editForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:04:28"><controller name="Bitacora_Captura_Sap1" />
+<view id="editForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:04:38"><controller name="Bitacora_Captura_Sap1" />
+<view id="createForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:04:44"><controller name="Bitacora_Captura_Sap1" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:06:12"><controller name="Bitacora_Captura_Sap1_1" />
+<view id="grid1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:06:25"><controller name="Bitacora_Captura_Sap1_1" />
+<view id="editForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:06:37"><controller name="Bitacora_Captura_Sap1_1" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:07:34"><controller name="Bitacora_Captura_Sap1_2" />
+<view id="grid1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:07:46"><controller name="Bitacora_Captura_Sap1_2" />
+<view id="editForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:08:02"><controller name="Bitacora_Captura_Sap1_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:08:40"><controller name="Bitacora_Captura_Sap1_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:09:06"><controller name="Bitacora_Captura_Sap2" />
+<view id="grid1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:09:11"><controller name="Bitacora_Captura_Sap2" />
+<view id="grid1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:09:22"><controller name="Bitacora_Captura_Sap2" />
+<view id="editForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:09:27"><controller name="Bitacora_Captura_Sap2" />
+<view id="editForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:09:42"><controller name="Bitacora_Captura_Sap2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:09:47"><controller name="Bitacora_Captura_Sap2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:10:16"><controller name="Bitacora_Captura_Sap2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:11:24"><controller name="Bitacora_Captura_Sap2_1" />
+<view id="grid1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:11:34"><controller name="Bitacora_Captura_Sap2_1" />
+<view id="editForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:11:45"><controller name="Bitacora_Captura_Sap2_1" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:13:43"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="grid1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:13:57"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="editForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:14:09"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:15:14"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="grid1" />
+<dataField fieldName="Es_Transferencia_De_Material" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:15:27"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="editForm1" />
+<dataField fieldName="Es_Transferencia_De_Material" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:15:48"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:15:54"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:17:32"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadDevuelto" />
+<update>
+  <Hidden>true</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:17:38"><controller name="Bitacora_Captura_Sap2_2" />
+<view id="createForm1" />
+<dataField fieldName="CantidadTransferido" />
+<update>
+  <Hidden>false</Hidden>
+  <DataViewShowInSummary>false</DataViewShowInSummary>
+</update></c><c y="NodeSet" t="2019-07-27T21:46:38"><controller name="Grid_Transfer_Material_Upload_V" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id</Data>
+</update></c><c y="NodeSet" t="2019-07-27T21:47:07"><controller name="Grid_Transfer_Material_Upload_V" />
+<actionGroup id="ag1" />
+<action id="a3" />
+<update>
+  <Data>UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2019-07-27T21:47:55"><controller name="Grid_Transfer_Material_Upload_V" />
+<actionGroup id="ag2" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2019-07-27T21:48:38"><controller name="Grid_Transfer_Material_Upload_V" />
+<actionGroup id="ag4" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c><c y="NodeSet" t="2019-07-27T21:49:10"><controller name="Grid_Transfer_Material_Upload_V" />
+<actionGroup id="ag9" />
+<action id="a2" />
+<update>
+  <CommandName>SQL</CommandName>
+  <HeaderText>"Borrar"</HeaderText>
+  <Data>UPDATE 
+dbo.Movimiento_Material_Upload
+SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE Movimiento_Material_Upload_Id = @Movimiento_Material_Upload_Id</Data>
+  <CssClass>material-icon-delete</CssClass>
+</update></c></log><log type="Application"></log></logs>

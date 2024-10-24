@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Configuracion_Sistema" alias="Configuracion_Sistema" created="2019-01-22T09:16:36" modified="2019-01-22T10:25:55" x="20" y="32" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Categoria_Configuracion_Sistema_" parentTableSchema="dbo" parentTableName="Categoria_Configuracion_Sistema" x="969" y="20">
+      <foreignKeyColumn columnName="Categoria_Configuracion_Sistema_Id" parentColumnName="Categoria_Configuracion_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="38" y="347">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="643" y="142">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="640" y="281">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Configuracion_Sistema_Id" fieldName="Configuracion_Sistema_Id" label="Configuracion Sistema Id" />
+    <column name="Configuracion_Sistema" fieldName="Configuracion_Sistema" label="Configuracion Sistema" />
+    <column name="Valor_Cuantitativo" fieldName="Valor_Cuantitativo" label="Valor Cuantitativo" />
+    <column name="Valor_Cualitativo" fieldName="Valor_Cualitativo" label="Valor Cualitativo" />
+    <column name="Categoria_Configuracion_Sistema_Id" fieldName="Categoria_Configuracion_Sistema_Id" label="Categoría Configuración Sistema Id" aliasColumnName="Categoria_Configuracion_Sistema" aliasForeignKey="Categoria_Configuracion_Sistema_" />
+    <column name="Categoria_Configuracion_Sistema" fieldName="Categoria_Configuracion_Sistema" label="Categoría Configuración de Sistema" foreignKey="Categoria_Configuracion_Sistema_" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+  </columns>
+</dataModel>

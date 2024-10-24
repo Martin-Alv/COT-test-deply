@@ -1,0 +1,18 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reporte de Modelo</title>
+  </head>
+  <body data-authorize-roles="Adminstartstop,Userstartstop">
+    <div data-flow="row">
+      <div id="view1" data-controller="Listado_Orden_Produccion_V1" data-view="grid1" data-show-in-summary="true" data-selection-mode="multiple"> </div>
+    </div>
+    <div data-flow="row">
+      <div id="view2" data-controller="Orden_Produccion_Modelo_V" data-view="grid1" data-filter-source="view1" data-filter-fields="Orden_produccion_Id"> </div>
+    </div>
+    <div data-flow="row">
+      <div id="view3" data-controller="Modelo_Razon_Tiempo_Muerto_V" data-view="grid1" data-filter-source="view2" data-filter-fields="Orden_Produccion_Id,Turno_laboral_Id,Celda_Id,Partida_Id"> </div>
+    </div>
+  </body>
+</html>

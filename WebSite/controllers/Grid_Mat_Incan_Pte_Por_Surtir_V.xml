@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Mat_Incan_Pte_Por_Surtir_V" conflictDetection="overwriteChanges" label="Grid Mat Incan Pte Por Surtir V" handler="eaton.Rules.Grid_Mat_Incan_Pte_Por_Surtir_VBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Mat_Incan_Pte_Por_Surtir_V"."Usuario_Id" "Usuario_Id"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Orden_Solicitud" "Orden_Solicitud"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Orden_Material" "Orden_Material"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Orden_Solicitado_Por" "Orden_Solicitado_Por"
+	,"Grid_Mat_Incan_Pte_Por_Surtir_V"."Orden_Material_Id" "Orden_Material_Id"
+from "dbo"."Grid_Mat_Incan_Pte_Por_Surtir_V" "Grid_Mat_Incan_Pte_Por_Surtir_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Usuario_Id" type="Guid" allowNulls="false" label="Usuario Id" readOnly="true" showInSummary="true" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" isPrimaryKey="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id" showInSummary="true" />
+    <field name="Orden_Solicitud" type="String" allowQBE="false" allowSorting="false" label="Orden Solicitud" readOnly="true" showInSummary="true" />
+    <field name="Orden_Material" type="String" allowQBE="false" allowSorting="false" label="Orden Material" readOnly="true" />
+    <field name="Orden_Solicitado_Por" type="String" allowQBE="false" allowSorting="false" label="Orden Solicitado Por" readOnly="true" />
+    <field name="Orden_Material_Id" type="String" allowQBE="false" allowSorting="false" label="Orden Material Id" readOnly="true" />
+    <field name="Tmp_Ruta_Optima_Transaccion_Id" type="String" label="Tmp Ruta Optima Transaccion Id" isVirtual="true" allowNulls="false" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Pendiente por Surtir" filter="Usuario_Id = @BusinessRules_UserId">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Usuario_Id" columns="15" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Orden_Solicitud" rows="5" />
+        <dataField fieldName="Orden_Material" rows="5" />
+        <dataField fieldName="Orden_Solicitado_Por" rows="5" />
+        <dataField fieldName="Orden_Material_Id" rows="5" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Material Pendiente por Surtir">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material Pendiente por Surtir" flow="NewColumn">
+          <description />
+          <dataFields>
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Orden_Solicitud" rows="5" />
+            <dataField fieldName="Orden_Material" rows="5" />
+            <dataField fieldName="Orden_Solicitado_Por" rows="5" />
+            <dataField fieldName="Orden_Material_Id" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Mat Incan Pte Por Surtir V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Usuario_Id" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Orden_Solicitud" rows="5" />
+            <dataField fieldName="Orden_Material" rows="5" />
+            <dataField fieldName="Orden_Solicitado_Por" rows="5" />
+            <dataField fieldName="Orden_Material_Id" rows="5" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" roles="hidden" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" roles="hidden" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Iniciar Surtido" id="a100" cssClass="material-icon-play-arrow" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="Before"><![CDATA[IniciarSurtidoIncan($app.touch.dataView()._selectedKeyList);]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecCS01" type="Code" phase="After" name="Generar_Tmp_Ruta_Optima" />
+    <rule id="r102" commandName="Custom" commandArgument="ExecCS02" type="Code" phase="After" name="Generar_Ruta_Optima" />
+  </businessRules>
+</dataController>

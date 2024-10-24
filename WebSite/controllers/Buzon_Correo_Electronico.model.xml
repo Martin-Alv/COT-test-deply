@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Buzon_Correo_Electronico" alias="Buzon_Correo_Electronico" created="2019-05-28T17:13:34" modified="2019-05-28T19:11:16" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Layout_HTML_" parentTableSchema="dbo" parentTableName="Layout_HTML" x="458" y="20">
+      <foreignKeyColumn columnName="Layout_HTML_Id" parentColumnName="Layout_HTML_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Buzon_Correo_Electronico_" parentTableSchema="dbo" parentTableName="Estatus_Buzon_Correo_Electronico" x="1084" y="244">
+      <foreignKeyColumn columnName="Estatus_Buzon_Correo_Electronico_Id" parentColumnName="Estatus_Buzon_Correo_Electronico_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Procesamiento_" parentTableSchema="dbo" parentTableName="Estatus_Procesamiento" x="984" y="498">
+      <foreignKeyColumn columnName="Estatus_Procesamiento_Id" parentColumnName="Estatus_Procesamiento_Id" />
+    </foreignKey>
+    <foreignKey id="Mensaje_Sistema_" parentTableSchema="dbo" parentTableName="Mensaje_Sistema" x="458" y="658">
+      <foreignKeyColumn columnName="Mensaje_Sistema_Id" parentColumnName="Mensaje_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="458" y="911">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="554" y="235">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="494" y="505">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Buzon_Correo_Electronico_Id" fieldName="Buzon_Correo_Electronico_Id" label="Buzon Correo Electronico Id" />
+    <column name="De_Nombre" fieldName="De_Nombre" label="De Nombre" />
+    <column name="De_Correo_Electronico" fieldName="De_Correo_Electronico" label="De Correo Electrónico" />
+    <column name="Para_Nombre" fieldName="Para_Nombre" label="Para Nombre" />
+    <column name="Para_Correo_Electronico" fieldName="Para_Correo_Electronico" label="Para Correo Electrónico" />
+    <column name="Cc_Nombre" fieldName="Cc_Nombre" label="Cc Nombre" />
+    <column name="Cc_Correo_Electronico" fieldName="Cc_Correo_Electronico" label="Cc Correo Electrónico" />
+    <column name="Bcc" fieldName="Bcc" label="Bcc" />
+    <column name="Asunto" fieldName="Asunto" label="Asunto" />
+    <column name="Cuerpo" fieldName="Cuerpo" label="Cuerpo" />
+    <column name="Tipo_Notificacion_Id" fieldName="Tipo_Notificacion_Id" label="Tipo de Notificación Id" />
+    <column name="Layout_HTML_Id" fieldName="Layout_HTML_Id" label="Layout HTML Id" aliasColumnName="Layout_HTML_Nombre" aliasForeignKey="Layout_HTML_" />
+    <column name="Layout_HTML_Nombre" fieldName="Layout_HTML_Layout_HTML_Nombre" label="Layout HTML Nombre" foreignKey="Layout_HTML_" />
+    <column name="Re_Intentar" fieldName="Re_Intentar" label="Re Intentar" />
+    <column name="Numero_Intentos" fieldName="Numero_Intentos" label="Número de Intentos" />
+    <column name="Estatus_Buzon_Correo_Electronico_Id" fieldName="Estatus_Buzon_Correo_Electronico_Id" label="Estatus Buzon Correo Electronico Id" aliasColumnName="Estatus_Buzon_Correo_Electronico" aliasForeignKey="Estatus_Buzon_Correo_Electronico_" />
+    <column name="Estatus_Buzon_Correo_Electronico" fieldName="Estatus_Buzon_Correo_Electronico" label="Estatus de Buzón de Correo Electrónico" foreignKey="Estatus_Buzon_Correo_Electronico_" />
+    <column name="Estatus_Procesamiento_Id" fieldName="Estatus_Procesamiento_Id" label="Estatus Procesamiento Id" aliasColumnName="Estatus_Procesamiento" aliasForeignKey="Estatus_Procesamiento_" />
+    <column name="Estatus_Procesamiento" fieldName="Estatus_Procesamiento" label="Estatus Procesamiento" foreignKey="Estatus_Procesamiento_" />
+    <column name="Mensaje_Sistema_Id" fieldName="Mensaje_Sistema_Id" label="Mensaje Sistema Id" aliasColumnName="Mensaje_Sistema" aliasForeignKey="Mensaje_Sistema_" />
+    <column name="Mensaje_Sistema" fieldName="Mensaje_Sistema" label="Mensaje de Sistema" foreignKey="Mensaje_Sistema_" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+  </columns>
+</dataModel>

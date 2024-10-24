@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />    
+    <script src="../js/sys/jquery-2.2.4.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        console.log("url:");
+        console.log(url);
+        var datos = url.searchParams.get("datos");
+        console.log("datos");
+        console.log(datos);
+        var arrdatos = datos.split("-");
+        console.log(arrdatos[0]);
+        var Material = arrdatos[0]; //url.searchParams.get("Material");
+        var Cantidad = arrdatos[1]; //url.searchParams.get("Cantidad");
+        var UbicacionOrigen = arrdatos[2]; //url.searchParams.get("UbicacionOrigen");
+        var UbicacionDestino = arrdatos[3]; //url.searchParams.get("UbicacionDestino");
+        console.log("Material:" + Material);
+        console.log("Cantidad:" + Cantidad);
+        console.log("UbicacionOrigen:" + UbicacionOrigen);
+        console.log("UbicacionDestino:" + UbicacionDestino);
+        $("#Material").val(Material);
+        $("#Cantidad").val(Cantidad);
+        $("#UbicacionOrigen").val(UbicacionOrigen);
+        $("#UbicacionDestino").val(UbicacionDestino);
+    })
+    </script>
+</head>
+    <body>
+        <div class="container-fluid table-responsive">
+            <div data-container="row"><h2>Datos:</h2></div>
+                <div data-container="row" >
+                    <div data-container="column">
+                        <span>Material</span>
+                    </div>
+                    <div data-container="column">
+                        <input id="Material" type="text" />
+                    </div>
+                </div>
+                <div data-container="row">
+                    <span>Cantidad</span>
+                    <input id="Cantidad" type="text" />
+                </div>
+                <div data-container="row">
+                    <span>UbicacionOrigen</span>
+                    <input id="UbicacionOrigen" type="text" />
+                </div>
+                <div data-container="row">
+                    <span>UbicacionDestino</span>
+                    <input id="UbicacionDestino" type="text" />
+                </div>
+            </div>
+        <br />
+    </body>
+</html>

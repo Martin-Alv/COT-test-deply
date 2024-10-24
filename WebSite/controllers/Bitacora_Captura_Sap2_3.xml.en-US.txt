@@ -1,0 +1,13 @@
+﻿*******************************************************************************
+Your application uses this file to locate resource strings defined
+in Bitacora_Captura_Sap2_3.xml project item. 
+
+Replace the text between localization brackets as needed.
+*******************************************************************************
+
+^DownloadFile^Descargar Archivo de Carga^DownloadFile^
+
+^Operations^Operaciones^Operations^
+
+^UploadFile^Cargar Archivo^UploadFile^
+

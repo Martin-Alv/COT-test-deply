@@ -1,0 +1,109 @@
+﻿{
+  "name": "Salexperts",
+  "color": "#000",
+  "header": {
+    "background": "#000",
+    "border": "#000",
+    "paddingTop": 0,
+    "icon": {
+      "default": "red",
+      "hover": "#e81313",
+      "selected": null,
+      "backgroundOpacity": "0"
+    },
+    "text": {
+      "default": "#fff",
+      "hover": "red",
+      "logo": "#e81313",
+      "hoverBackground": "rgba(255,255,255,0.15)",
+      "selectedBackground": "rgba(255,255,255,0.2)"
+    },
+    "split": {
+      "background": null,
+      "icon": { 
+	  "default": "#e81313"
+	  }
+    }
+  },
+  "panel": {
+    "icon": {
+      "default": "#e81313",
+      "hover": "#333",
+      "selected": null
+    },
+    "tile": {
+      "selected": "#38c"
+    }
+  },
+  "form": {
+    "header": {
+      "background": "transparent", "border": "transparent"
+    }
+  },
+  "modal": {
+    "header": {
+      "background": "#333"
+    }
+  },
+  "buttons": {
+    "promo": {
+      "background": "#000",
+      "icon": { "default": null }
+    }
+  },
+  "sidebar": {
+    "full": {
+      "background": "#000",
+      "border": "#000",
+      "hoverBackground": "rgba(255,255,255,0.15)",
+      "icon": {
+        "default": "#e81313",
+        "hover": "#e81313",
+        "active": null
+      },
+      "text": {
+        "default": "#e81313",
+        "hover": "#eee",
+        "active": null,
+        "static": "#aaa"
+      },
+      "toolbar": {
+        "background": null,
+        "icon": {
+          "default": "#e81313",
+          "hover": "#e81313",
+          "active": null
+        },
+        "border": null
+      }
+    },
+    "mini": {
+      "background": "#000",
+      "border": "#000",
+      "icon": {
+        "default": "#e81313",
+        "hover": "#e81313",
+        "active": null
+      },
+      "text": {
+        "default": "#e81313",
+        "hover": "#eee",
+        "active": null,
+        "static": null
+      },
+      "toolbar": {
+        "background": null,
+        "icon": {
+          "default": "#e81313",
+          "hover": "#e81313",
+          "active": null
+        },
+        "border": null
+      }
+    }
+  },
+  "system": {
+    "selected": null,
+    "active": null
+  }
+}

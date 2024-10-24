@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Solicitudes_Pendientes_Por_Entregar_Cadista_V" alias="Grid_Solicitudes_Pendientes_Por_Entregar_Cadista_V" created="2020-12-01T11:39:12" modified="2020-12-02T11:15:11" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Orden_Produccion_Detalle_Id" fieldName="Orden_Produccion_Detalle_Id" label="Orden Produccion Detalle Id" />
+    <column name="Ruta_Optima_Id" fieldName="Ruta_Optima_Id" label="Ruta Optima Id" />
+    <column name="Material_Surtido_Id" fieldName="Material_Surtido_Id" label="Material Surtido Id" />
+    <column name="Solicitado_Por_Id" fieldName="Solicitado_Por_Id" label="Solicitado Por Id" />
+    <column name="Solicitado_Por" fieldName="Solicitado_Por" label="Solicitado Por" />
+    <column name="Material_Solicitado_Id" fieldName="Material_Solicitado_Id" label="Material Solicitado Id" />
+    <column name="Material_Solicitado" fieldName="Material_Solicitado" label="Material Solicitado" />
+    <column name="Material_Descripcion_Solicitado" fieldName="Material_Descripcion_Solicitado" label="Material Descripcion Solicitado" />
+    <column name="Cantidad_Solicitado" fieldName="Cantidad_Solicitado" label="Cantidad Solicitado" />
+    <column name="Unidad_Material_Solicitado_Id" fieldName="Unidad_Material_Solicitado_Id" label="Unidad Material Solicitado Id" />
+    <column name="Unidad_Material_Solicitado" fieldName="Unidad_Material_Solicitado" label="Unidad Material Solicitado" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha Solicitud" format="g" />
+    <column name="Estatus_Solicitud_Id" fieldName="Estatus_Solicitud_Id" label="Estatus Solicitud Id" />
+    <column name="Estatus_Solicitud" fieldName="Estatus_Solicitud" label="Estatus Solicitud" />
+    <column name="Fecha_Surtido" fieldName="Fecha_Surtido" label="Fecha Surtido" format="g" />
+    <column name="Bitacora_Captura_Sap_Id" fieldName="Bitacora_Captura_Sap_Id" label="Bitacora Captura Sap Id" />
+    <column name="Material_Surtido" fieldName="Material_Surtido" label="Material Surtido" />
+    <column name="Cantidad_Surtido" fieldName="Cantidad_Surtido" label="Cantidad Surtido" />
+    <column name="Unidad_Material_Surtido" fieldName="Unidad_Material_Surtido" label="Unidad de Material Surtido" />
+    <column name="Fecha_Captura" fieldName="Fecha_Captura" label="Fecha de Captura" format="g" />
+    <column name="Estatus_Captura_Sap" fieldName="Estatus_Captura_Sap" label="Estatus de Captura Sap" />
+    <column name="Tipo_Operacion_Sap" fieldName="Tipo_Operacion_Sap" label="Tipo Operación Sap" />
+    <column name="Etiqueta_Id" fieldName="Etiqueta_Id" label="Etiqueta Id" />
+    <column name="Numero_Etiqueta" fieldName="Numero_Etiqueta" label="Número Etiqueta" />
+    <column name="Estatus_Etiqueta" fieldName="Estatus_Etiqueta" label="Estatus Etiqueta" />
+    <column name="Fecha_Impresion" fieldName="Fecha_Impresion" label="Fecha de Impresión" format="g" />
+    <column name="Usuario_Cadista_Id" fieldName="Usuario_Cadista_Id" label="Usuario Cadista Id" />
+    <column name="Usuario_Cadista" fieldName="Usuario_Cadista" label="Usuario Cadista" />
+    <column name="Usuario_Surtidor_Id" fieldName="Usuario_Surtidor_Id" label="Usuario Surtidor Id" />
+    <column name="Usuario_Surtidor" fieldName="Usuario_Surtidor" label="Usuario Surtidor" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Área de Entrega" />
+    <column name="Fecha_Entrega_Cadista" fieldName="Fecha_Entrega_Cadista" label="Fecha Entrega Cadista" format="g" />
+    <column name="Entregado_Por_Usuario_Cadista_Id" fieldName="Entregado_Por_Usuario_Cadista_Id" label="Entregado Por Usuario Cadista Id" />
+    <column name="Entregado_Por_Usuario_Cadista" fieldName="Entregado_Por_Usuario_Cadista" label="Entregado Por Usuario Cadista" />
+  </columns>
+</dataModel>

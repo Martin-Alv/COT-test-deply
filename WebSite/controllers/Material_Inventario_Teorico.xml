@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Material_Inventario_Teorico" conflictDetection="overwriteChanges" label="Material Inventario Teorico" handler="eaton.Rules.Material_Inventario_TeoricoBusinessRules" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Material_Inventario_Teorico"."Material_Inventario_Teorico_Id" "Material_Inventario_Teorico_Id"
+	,"Material_Inventario_Teorico"."Material_Id" "Material_Id"
+	,"Material_"."Material" "Material_Material"
+	,"Material_Inventario_Teorico"."Tipo_Ubicacion_Id" "Tipo_Ubicacion_Id"
+	,"Tipo_Ubicacion_"."Clave_Tipo_Ubicacion" "Clave_Tipo_Ubicacion"
+	,"Material_Inventario_Teorico"."Stock_Teorico" "Stock_Teorico"
+	,"Material_Inventario_Teorico"."Fecha_Inicio" "Fecha_Inicio"
+	,"Material_Inventario_Teorico"."Fecha_Fin" "Fecha_Fin"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Material_Inventario_Teorico"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Material_Inventario_Teorico"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Material_Inventario_Teorico"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Material_Inventario_Teorico" "Material_Inventario_Teorico"
+	left join "APP"."Material" "Material_" on "Material_Inventario_Teorico"."Material_Id" = "Material_"."Material_Id"
+	left join "APP"."Tipo_Ubicacion" "Tipo_Ubicacion_" on "Material_Inventario_Teorico"."Tipo_Ubicacion_Id" = "Tipo_Ubicacion_"."Tipo_Ubicacion_Id"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Material_Inventario_Teorico"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Material_Inventario_Teorico"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Material_Inventario_Teorico"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Material_Inventario_Teorico_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Inventario_Teorico_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Material_Inventario_Teorico_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Material Inventario Teorico Id" readOnly="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" dataValueField="Material_Id" dataTextField="Material" dataView="Material_LookUp_List" />
+    </field>
+    <field name="Material_Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Tipo_Ubicacion_Id" type="Int32" allowNulls="false" default="((0))" label="Tipo Ubicacion Id" showInSummary="true">
+      <items style="Lookup" dataController="Tipo_Ubicacion" dataValueField="Tipo_Ubicacion_Id" dataTextField="Clave_Tipo_Ubicacion" dataView="Tipo_Ubicacion_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Clave_Tipo_Ubicacion" type="Int32" readOnly="true" label="Clave Tipo Ubicacion" />
+    <field name="Stock_Teorico" type="Decimal" allowNulls="false" label="Stock Físico" showInSummary="true" />
+    <field name="Fecha_Inicio" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Inicio" showInSummary="true" />
+    <field name="Fecha_Fin" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha de Fin" showInSummary="true" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Creación" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha de Ultima Actualización" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" dataView="Estatus_Registro_LookUp_List" pageSize="15" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material de Inventario Físico" filter="Estatus_Registro_Id &lt;&gt; 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+        <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+        <dataField fieldName="Stock_Teorico" columns="15" />
+        <dataField fieldName="Fecha_Inicio" columns="20" />
+        <dataField fieldName="Fecha_Fin" columns="20" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Actualizar Material de Inventario Físico">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Actualizar Material Inventario Físico" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Stock_Teorico" columns="15" />
+            <dataField fieldName="Fecha_Inicio" columns="20" />
+            <dataField fieldName="Fecha_Fin" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="Nuevo Material de Inventario Físico">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material de Inventario Físico" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Id" aliasFieldName="Material_Material" />
+            <dataField fieldName="Tipo_Ubicacion_Id" aliasFieldName="Clave_Tipo_Ubicacion" />
+            <dataField fieldName="Stock_Teorico" columns="15" />
+            <dataField fieldName="Fecha_Inicio" columns="20" />
+            <dataField fieldName="Fecha_Fin" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass=" material-icon-delete " roles="Administrators,SupervisorAlmacen,administrador">
+        <data><![CDATA[UPDATE APP.Material_Inventario_Teorico SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Material_Inventario_Teorico_Id = @Material_Inventario_Teorico_Id]]></data>
+      </action>
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete " roles="Administrators,SupervisorAlmacen,administrador">
+        <data><![CDATA[UPDATE APP.Material_Inventario_Teorico SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Material_Inventario_Teorico_Id = @Material_Inventario_Teorico_Id ]]></data>
+      </action>
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="SQL" cssClass="material-icon-delete " whenView="grid1" headerText="&quot;Borrar&quot;" roles="Administrators,SupervisorAlmacen,administrador">
+        <data><![CDATA[UPDATE APP.Material_Inventario_Teorico SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHERE Material_Inventario_Teorico_Id = @Material_Inventario_Teorico_Id ]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="SQL" headerText="&quot;Borrar&quot;" cssClass="material-icon-delete " roles="Administrators,SupervisorAlmacen,administrador">
+        <data><![CDATA[UPDATE APP.Material_Inventario_Teorico SET Estatus_Registro_Id = 3
+, Actualizado_Por_Id = @BusinessRules_UserId 
+,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE()
+,NULL) WHEREMaterial_Inventario_Teorico_Id = @Material_Inventario_Teorico_Id ]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Insert" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+   [APP].[Material_Inventario_Teorico]
+WHERE 
+  [Material_Id] = @Material_Id
+   AND [Tipo_Ubicacion_Id]= @Tipo_Ubicacion_Id 
+   AND CONVERT(DATE,[Fecha_Inicio]) = CONVERT(DATE,@Fecha_Inicio)
+   AND CONVERT(DATE,[Fecha_Fin]) = CONVERT(DATE,@Fecha_Fin)
+   
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](199,1,51,@Material_Material + ' vs. ' + CONVERT(VARCHAR(15),@Clave_Tipo_Ubicacion) + ' Con Fecha_Inicio ' + CONVERT(VARCHAR(25),@Fecha_Inicio) + ' Y Fecha_Fin ' + CONVERT(VARCHAR(25),@Fecha_Fin)) 
+   SET @Result_ShowAlert = @Result_ShowViewMessage 
+   RETURN 
+END ]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Before"><![CDATA[DECLARE @Already_Exists BIT 
+SET @Already_Exists = 0 
+SELECT 
+   TOP 1 @Already_Exists  = 1 
+FROM 
+    [APP].[Material_Inventario_Teorico]
+WHERE 
+  [Material_Id] = @Material_Id
+   AND [Tipo_Ubicacion_Id]= @Tipo_Ubicacion_Id 
+   AND CONVERT(DATE,[Fecha_Inicio]) = CONVERT(DATE,@Fecha_Inicio)
+   AND CONVERT(DATE,[Fecha_Fin]) = CONVERT(DATE,@Fecha_Fin)
+   AND Material_Inventario_Teorico_Id <> @Material_Inventario_Teorico_Id 
+   
+    
+IF @Already_Exists = 1 
+BEGIN 
+   SET @BusinessRules_PreventDefault = 1 
+   SET @Result_ShowViewMessage = [dbo].[fn_Obtener_Mensaje_Sistema](200,1,51,@Material_Material + ' vs. ' + CONVERT(VARCHAR(15),@Clave_Tipo_Ubicacion) + ' Con Fecha_Inicio ' + CONVERT(VARCHAR(25),@Fecha_Inicio) + ' Y Fecha_Fin ' + CONVERT(VARCHAR(25),@Fecha_Fin))
+   SET @Result_ShowAlert = @Result_ShowViewMessage 
+   RETURN 
+END 
+
+]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="After"><![CDATA[UPDATE  
+   [APP].[Material_Inventario_Teorico]
+SET 
+    Creado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Creacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+   ,Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+WHERE 
+   Material_Inventario_Teorico_Id = @Material_Inventario_Teorico_Id 
+   
+   ]]></rule>
+    <rule id="r103" commandName="Update" type="Sql" phase="After"><![CDATA[UPDATE  
+  [APP].[Material_Inventario_Teorico]
+SET 
+    Actualizado_Por_Id = @BusinessRules_UserId 
+   ,Fecha_Ultima_Actualizacion = dbo.fn_Convertir_UTC_A_Fecha_Hora_Local(GETDATE(),NULL) 
+
+WHERE 
+  Material_Inventario_Teorico_Id = @Material_Inventario_Teorico_Id ]]></rule>
+  </businessRules>
+</dataController>

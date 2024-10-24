@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="APP" baseTable="Tamanio_Etiqueta" alias="Tamanio_Etiqueta" created="2020-09-10T14:30:38" modified="2021-08-18T16:20:35" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="595" y="666">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="596" y="29">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="774" y="153">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Tamanio_Etiqueta_Id" fieldName="Tamanio_Etiqueta_Id" label="Tamanio Etiqueta Id" />
+    <column name="Tamanio_Etiqueta" fieldName="Tamanio_Etiqueta" label="Tamaño de Etiqueta" />
+    <column name="Base_En_Pulgadas" fieldName="Base_En_Pulgadas" label="Base En Pulgadas" />
+    <column name="Alto_En_Pulgadas" fieldName="Alto_En_Pulgadas" label="Alto En Pulgadas" />
+    <column name="Es_Default" fieldName="Es_Default" label="Es Default?" />
+    <column name="Base_Codigo_Barra" fieldName="Base_Codigo_Barra" label="Base de Codigo de Barra" />
+    <column name="Alto_Codigo_Barra" fieldName="Alto_Codigo_Barra" label="Alto de Codigo de Barra" />
+    <column name="Base_QR" fieldName="Base_QR" label="Base de QR" />
+    <column name="Tamanio_Fuente" fieldName="Tamanio_Fuente" label="Tamanio Fuente" />
+    <column name="Texto_Debajo_QR" fieldName="Texto_Debajo_QR" label="Texto Debajo QR" />
+    <column name="Texto_Debajo_Codigo_Barra" fieldName="Texto_Debajo_Codigo_Barra" label="Texto Debajo Codigo Barra" />
+    <column name="X_QR" fieldName="X_QR" label="X QR" />
+    <column name="Y_QR" fieldName="Y_QR" label="Y QR" />
+    <column name="X_Codigo_Barra" fieldName="X_Codigo_Barra" label="X Codigo Barra" />
+    <column name="Y_Codigo_Barra" fieldName="Y_Codigo_Barra" label="Y Codigo Barra" />
+    <column name="Texto_Hacia_Arriba" fieldName="Texto_Hacia_Arriba" label="Texto Hacia Arriba" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus de Registro" foreignKey="Estatus_Registro_" />
+    <column name="Aplica_Para_Etiqueta_proveedor" fieldName="Aplica_Para_Etiqueta_Proveedor" label="Aplica Para Etiqueta Proveedor" />
+    <column name="Aplica_Para_Captura" fieldName="Aplica_Para_Captura" label="Aplica Para Captura" />
+    <column name="Estilo_Configuracion_Impresion" fieldName="Estilo_Configuracion_Impresion" label="Configuración de estilos para Impresión" />
+    <column name="Landscape" fieldName="Landscape" label="Landscape" />
+    <column name="Aplica_Nuevo_Disenio" fieldName="Aplica_Nuevo_Disenio" label="Aplica Nuevo Disenio" />
+    <column name="Ancho_Area_Impresion_In" fieldName="Ancho_Area_Impresion_In" label="Ancho Área Impresión (In)" />
+    <column name="Alto_Area_Impresion_In" fieldName="Alto_Area_Impresion_In" label="Alto Área Impresión (In)" />
+    <column name="Base_Logo_In" fieldName="Base_Logo_In" label="Base Logo (In)" />
+    <column name="Alto_Logo_In" fieldName="Alto_Logo_In" label="Alto Logo (In)" />
+  </columns>
+</dataModel>

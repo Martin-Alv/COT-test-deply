@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Detalle_Orden_Produccion_V" alias="Detalle_Orden_Produccion_V" created="2019-07-30T00:31:03" modified="2019-07-31T19:44:28" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Fecha_Inicio" fieldName="Fecha_Inicio" label="Fecha Inicio" format="g" />
+    <column name="Fecha_Fin" fieldName="Fecha_Fin" label="Fecha Fin" format="g" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Número Orden Producción" />
+    <column name="Tiempo_Muerto" fieldName="Tiempo_Muerto" label="Tiempo Muerto" />
+    <column name="Turno_Laboral" fieldName="Turno_Laboral" label="Turno Laboral" />
+    <column name="Celda_Descripcion" fieldName="Celda_Descripcion" label="Celda Descripción" />
+    <column name="Orden_produccion_Id" fieldName="Orden_produccion_Id" label="Orden producción Id" />
+    <column name="Turno_Laboral_Id" fieldName="Turno_Laboral_Id" label="Turno Laboral Id" />
+    <column name="Celda_Id" fieldName="Celda_Id" label="Celda Id" />
+  </columns>
+</dataModel>

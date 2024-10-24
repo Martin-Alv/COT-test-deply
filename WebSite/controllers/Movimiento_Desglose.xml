@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Movimiento_Desglose" conflictDetection="overwriteChanges" label="Movimiento Desglose" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Movimiento_Desglose"."Movimiento_Desglose_Id" "Movimiento_Desglose_Id"
+	,"Movimiento_Desglose"."Material_Ubicacion_Almacenamiento_De_Surtido_Id" "Material_Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Movimiento_Desglose"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Movimiento_Desglose"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Movimiento_Desglose"."Material_Id" "Material_Id"
+	,"Material"."Material" "Material"
+	,"Material"."Material_Descripcion" "Material_Descripcion"
+	,"Movimiento_Desglose"."Material_Ubicacion_Stock_Origen_Id" "Material_Ubicacion_Stock_Origen_Id"
+	,"Movimiento_Desglose"."Ubicacion_Almacenamiento_De_Surtido_Id" "Ubicacion_Almacenamiento_De_Surtido_Id"
+	,"Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento"
+	,"Movimiento_Desglose"."Cantidad" "Cantidad"
+	,"Movimiento_Desglose"."Unidad_Material_Entregado_Id" "Unidad_Material_Entregado_Id"
+	,"Unidad_Material"."Unidad_Material" "Unidad_Material"
+	,"Movimiento_Desglose"."Solicitud_Id" "Solicitud_Id"
+	,"Movimiento_Desglose"."Material_Ubicacion_Stock_Destino_Id" "Material_Ubicacion_Stock_Destino_Id"
+	,"Movimiento_Desglose"."Destino_Id" "Destino_Id"
+	,"Movimiento_Desglose"."Destino" "Destino"
+	,"Movimiento_Desglose"."Caso" "Caso"
+	,"Creado_Por"."Usuario_Sistema" "Creado_Por"
+	,"Movimiento_Desglose"."Fecha_Creacion" "Fecha_Creacion"
+	,"Actualizado_Por"."Usuario_Sistema" "Actualizado_Por"
+	,"Movimiento_Desglose"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Movimiento_Desglose"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro"
+from "APP"."Movimiento_Desglose" "Movimiento_Desglose"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Movimiento_Desglose"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "APP"."Material" "Material" on "Movimiento_Desglose"."Material_Id" = "Material"."Material_Id"
+	left join "APP"."Ubicacion_Almacenamiento" "Ubicacion_Almacenamiento" on "Movimiento_Desglose"."Ubicacion_Almacenamiento_De_Surtido_Id" = "Ubicacion_Almacenamiento"."Ubicacion_Almacenamiento_Id"
+	left join "APP"."Unidad_Material" "Unidad_Material" on "Movimiento_Desglose"."Unidad_Material_Entregado_Id" = "Unidad_Material"."Unidad_Material_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Movimiento_Desglose"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+	left join "dbo"."Usuario_V" "Actualizado_Por" on "Movimiento_Desglose"."Actualizado_Por_Id" = "Actualizado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Movimiento_Desglose_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Movimiento_Desglose_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Movimiento_Desglose_Id" type="Int64" allowNulls="false" isPrimaryKey="true" label="Movimiento Desglose Id" readOnly="true" />
+    <field name="Material_Ubicacion_Almacenamiento_De_Surtido_Id" type="Int64" label="Material Ubicacion Almacenamiento De Surtido Id" showInSummary="true" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" default="((0))" label="Ruta Optima Id" showInSummary="true" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" default="((0))" label="Material Surtido Id" showInSummary="true" />
+    <field name="Material_Id" type="Int64" allowNulls="false" default="((0))" label="Material Id" showInSummary="true">
+      <items style="Lookup" dataController="Material" newDataView="createForm1" searchOnStart="true" dataValueField="Material_Id" dataTextField="Material" copy="Material_Descripcion=Material_Descripcion" />
+    </field>
+    <field name="Material" type="String" readOnly="true" label="Material" length="250" />
+    <field name="Material_Descripcion" type="String" readOnly="true" label="Material Descripcion" length="250" />
+    <field name="Material_Ubicacion_Stock_Origen_Id" type="Int64" label="Folio Material Ubicación Stock Origen" showInSummary="true" />
+    <field name="Ubicacion_Almacenamiento_De_Surtido_Id" type="Int32" allowNulls="false" default="((0))" label="Ubicacion Almacenamiento De Surtido Id">
+      <items style="Lookup" dataController="Ubicacion_Almacenamiento" newDataView="createForm1" searchOnStart="true" dataValueField="Ubicacion_Almacenamiento_Id" dataTextField="Ubicacion_Almacenamiento" />
+    </field>
+    <field name="Ubicacion_Almacenamiento" type="String" readOnly="true" label="Ubicacion Almacenamiento" length="150" />
+    <field name="Cantidad" type="Decimal" allowNulls="false" default="((0))" label="Cantidad" />
+    <field name="Unidad_Material_Entregado_Id" type="Int32" allowNulls="false" default="((0))" label="Unidad Material Entregado Id">
+      <items style="Lookup" dataController="Unidad_Material" newDataView="createForm1" searchOnStart="true" dataValueField="Unidad_Material_Id" dataTextField="Unidad_Material" />
+    </field>
+    <field name="Unidad_Material" type="String" readOnly="true" label="Unidad Material" length="250" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" default="((0))" label="Solicitud Id" />
+    <field name="Material_Ubicacion_Stock_Destino_Id" type="Int64" label="Folio Material Ubicación Stock Destino" />
+    <field name="Destino_Id" type="Int32" allowNulls="false" default="((0))" label="Destino Id" />
+    <field name="Destino" type="Int32" allowNulls="false" default="((0))" label="Destino" />
+    <field name="Caso" type="Int32" allowNulls="false" default="((0))" label="Caso" />
+    <field name="Creado_Por" type="String" readOnly="true" label="Creado Por" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por" type="String" readOnly="true" label="Actualizado Por" length="256" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" searchOnStart="true" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" />
+    </field>
+    <field name="Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Movimiento Desglose">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Movimiento_Desglose_Id" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" />
+        <dataField fieldName="Material_Id" aliasFieldName="Material" />
+        <dataField fieldName="Material_Descripcion" />
+        <dataField fieldName="Material_Ubicacion_Stock_Origen_Id" columns="15" />
+        <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento" />
+        <dataField fieldName="Cantidad" columns="15" />
+        <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material" />
+        <dataField fieldName="Solicitud_Id" columns="15" />
+        <dataField fieldName="Material_Ubicacion_Stock_Destino_Id" columns="15" />
+        <dataField fieldName="Destino_Id" columns="15" />
+        <dataField fieldName="Destino" columns="15" />
+        <dataField fieldName="Caso" columns="15" />
+        <dataField fieldName="Creado_Por" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Movimiento Desglose">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Movimiento Desglose" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material" hyperlinkFormatString="~/pages/Material?Material_Id={Material_Id}&amp;_controller=Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Material_Ubicacion_Stock_Origen_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento" hyperlinkFormatString="~/pages/Ubicacion_Almacenamiento?Ubicacion_Almacenamiento_Id={Ubicacion_Almacenamiento_De_Surtido_Id}&amp;_controller=Ubicacion_Almacenamiento&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material" hyperlinkFormatString="~/pages/Unidad_Material?Unidad_Material_Id={Unidad_Material_Entregado_Id}&amp;_controller=Unidad_Material&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Stock_Destino_Id" columns="15" />
+            <dataField fieldName="Destino_Id" columns="15" />
+            <dataField fieldName="Destino" columns="15" />
+            <dataField fieldName="Caso" columns="15" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Movimiento Desglose">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Material_Ubicacion_Almacenamiento_De_Surtido_Id" columns="15" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Material_Id" aliasFieldName="Material" />
+            <dataField fieldName="Material_Descripcion" />
+            <dataField fieldName="Material_Ubicacion_Stock_Origen_Id" columns="15" />
+            <dataField fieldName="Ubicacion_Almacenamiento_De_Surtido_Id" aliasFieldName="Ubicacion_Almacenamiento" />
+            <dataField fieldName="Cantidad" columns="15" />
+            <dataField fieldName="Unidad_Material_Entregado_Id" aliasFieldName="Unidad_Material" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Material_Ubicacion_Stock_Destino_Id" columns="15" />
+            <dataField fieldName="Destino_Id" columns="15" />
+            <dataField fieldName="Destino" columns="15" />
+            <dataField fieldName="Caso" columns="15" />
+            <dataField fieldName="Creado_Por" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" roles="hidden" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" roles="hidden" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" roles="hidden" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+  </actions>
+</dataController>

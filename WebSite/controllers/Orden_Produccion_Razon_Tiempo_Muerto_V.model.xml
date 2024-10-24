@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Orden_Produccion_Razon_Tiempo_Muerto_V" alias="Orden_Produccion_Razon_Tiempo_Muerto_V" created="2019-07-30T00:34:36" modified="2019-07-30T01:49:00" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Razon_Tiempo_Muerto_Id" fieldName="Razon_Tiempo_Muerto_Id" label="Razon Tiempo Muerto Id" />
+    <column name="Razon_Tiempo_Muerto" fieldName="Razon_Tiempo_Muerto" label="Razon Tiempo Muerto" />
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Producción Id" />
+    <column name="Celda_Id" fieldName="Celda_Id" label="Celda Id" />
+    <column name="Turno_laboral_Id" fieldName="Turno_laboral_Id" label="Turno laboral Id" />
+  </columns>
+</dataModel>

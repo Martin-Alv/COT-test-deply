@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Cant_Solic_Por_Tipo_Solicitud_V" conflictDetection="overwriteChanges" label="Grid Cant Solic Por Tipo Solic V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Cant_Solic_Por_Tipo_Solic_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Familia_Id" "Familia_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Categoria_Clave" "Categoria_Clave"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitud_Id" "Solicitud_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Material_Solicitado_Id" "Material_Solicitado_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Material" "Material"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Estatus_Solicitud_Id" "Estatus_Solicitud_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Estatus_Solicitud" "Estatus_Solicitud"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Fecha_Solicitud_Dia" "Fecha_Solicitud_Dia"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Fecha_Solicitud" "Fecha_Solicitud"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Fecha_Entrega" "Fecha_Entrega"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitud_Fecha_Ultima_Actualizacion" "Solicitud_Fecha_Ultima_Actualizacion"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Ruta_Optima_Id" "Ruta_Optima_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Material_Surtido_Id" "Material_Surtido_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Tiempo_Transcurrido" "Tiempo_Transcurrido"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Caso_Tiempo_Transcurrido" "Caso_Tiempo_Transcurrido"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitud_Antiguedad_Dia" "Solicitud_Antiguedad_Dia"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitud_Hora_De_Solicitud" "Solicitud_Hora_De_Solicitud"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitud_Hora" "Solicitud_Hora"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitud_Hora_Completa" "Solicitud_Hora_Completa"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Entregado_Por_Id" "Entregado_Por_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Entregado_Por" "Entregado_Por"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Area_Entrega_Id" "Area_Entrega_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Area_Entrega" "Area_Entrega"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Surtidor_Responsable_Id" "Surtidor_Responsable_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Surtidor_Responsable" "Surtidor_Responsable"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitado_Por_Id" "Solicitado_Por_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Solicitado_Por" "Solicitado_Por"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Tipo_Solicitud_Id" "Tipo_Solicitud_Id"
+	,"Grid_Cant_Solic_Por_Tipo_Solic_V"."Tipo_Solicitud" "Tipo_Solicitud"
+from "dbo"."Grid_Cant_Solic_Por_Tipo_Solic_V" "Grid_Cant_Solic_Por_Tipo_Solic_V"
+]]></text>
+    </command>
+    <command id="Familia_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Familia_Id" />
+      </output>
+    </command>
+    <command id="Categoria_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Categoria_Id" />
+      </output>
+    </command>
+    <command id="Estatus_Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Estatus_Solicitud_Id" />
+      </output>
+    </command>
+    <command id="Ruta_Optima_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Ruta_Optima_Id" />
+      </output>
+    </command>
+    <command id="Material_Surtido_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Material_Surtido_Id" />
+      </output>
+    </command>
+    <command id="Area_Entrega_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Area_Entrega_Id" />
+      </output>
+    </command>
+    <command id="Tipo_Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Tipo_Solicitud_Id" />
+      </output>
+    </command>
+    <command type="Text" id="Grid_Cant_Solic_Por_Tipo_Solic_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[Categoria_Clave]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Fecha_Solicitud_Dia]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Entrega]
+      ,[Solicitud_Fecha_Ultima_Actualizacion]
+      ,[Ruta_Optima_Id]
+      ,[Material_Surtido_Id]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Tiempo_Transcurrido]
+      ,[Caso_Tiempo_Transcurrido]
+      ,[Solicitud_Antiguedad_Dia]
+      ,[Solicitud_Hora_De_Solicitud]
+      ,[Solicitud_Hora]
+      ,[Solicitud_Hora_Completa]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+  FROM [dbo].[Grid_Cant_Solic_Por_Tipo_Solic_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Cant_Solic_Por_Tipo_Solic_Dia_Ant_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[Categoria_Clave]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Fecha_Solicitud_Dia]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Entrega]
+      ,[Solicitud_Fecha_Ultima_Actualizacion]
+      ,[Ruta_Optima_Id]
+      ,[Material_Surtido_Id]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Tiempo_Transcurrido]
+      ,[Caso_Tiempo_Transcurrido]
+      ,[Solicitud_Antiguedad_Dia]
+      ,[Solicitud_Hora_De_Solicitud]
+      ,[Solicitud_Hora]
+      ,[Solicitud_Hora_Completa]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+  FROM [dbo].[Grid_Cant_Solic_Por_Tipo_Solic_Dia_Ant_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Cant_Solic_Por_Tipo_Solic_Sem_Act_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[Categoria_Clave]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Fecha_Solicitud_Dia]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Entrega]
+      ,[Solicitud_Fecha_Ultima_Actualizacion]
+      ,[Ruta_Optima_Id]
+      ,[Material_Surtido_Id]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Tiempo_Transcurrido]
+      ,[Caso_Tiempo_Transcurrido]
+      ,[Solicitud_Antiguedad_Dia]
+      ,[Solicitud_Hora_De_Solicitud]
+      ,[Solicitud_Hora]
+      ,[Solicitud_Hora_Completa]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+  FROM [dbo].[Grid_Cant_Solic_Por_Tipo_Solic_Sem_Act_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Cant_Solic_Por_Tipo_Solic_Sem_Ant_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[Categoria_Clave]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Fecha_Solicitud_Dia]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Entrega]
+      ,[Solicitud_Fecha_Ultima_Actualizacion]
+      ,[Ruta_Optima_Id]
+      ,[Material_Surtido_Id]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Tiempo_Transcurrido]
+      ,[Caso_Tiempo_Transcurrido]
+      ,[Solicitud_Antiguedad_Dia]
+      ,[Solicitud_Hora_De_Solicitud]
+      ,[Solicitud_Hora]
+      ,[Solicitud_Hora_Completa]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+  FROM [dbo].[Grid_Cant_Solic_Por_Tipo_Solic_Sem_Ant_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Cant_Solic_Por_Tipo_Solic_Mes_Act_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[Categoria_Clave]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Fecha_Solicitud_Dia]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Entrega]
+      ,[Solicitud_Fecha_Ultima_Actualizacion]
+      ,[Ruta_Optima_Id]
+      ,[Material_Surtido_Id]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Tiempo_Transcurrido]
+      ,[Caso_Tiempo_Transcurrido]
+      ,[Solicitud_Antiguedad_Dia]
+      ,[Solicitud_Hora_De_Solicitud]
+      ,[Solicitud_Hora]
+      ,[Solicitud_Hora_Completa]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+  FROM [dbo].[Grid_Cant_Solic_Por_Tipo_Solic_Mes_Act_V]]]></text>
+    </command>
+    <command type="Text" id="Grid_Cant_Solic_Por_Tipo_Solic_Mes_Ant_V" custom="false">
+      <text><![CDATA[SELECT [Orden_Produccion_Id]
+      ,[Numero_Orden_Produccion]
+      ,[Familia_Id]
+      ,[Familia_Clave]
+      ,[Categoria_Id]
+      ,[Categoria_Clave]
+      ,[Solicitud_Id]
+      ,[Material_Solicitado_Id]
+      ,[Material]
+      ,[Estatus_Solicitud_Id]
+      ,[Estatus_Solicitud]
+      ,[Fecha_Solicitud_Dia]
+      ,[Fecha_Solicitud]
+      ,[Fecha_Entrega]
+      ,[Solicitud_Fecha_Ultima_Actualizacion]
+      ,[Ruta_Optima_Id]
+      ,[Material_Surtido_Id]
+      ,[Area_Servicio_Id]
+      ,[Area_Servicio]
+      ,[Tiempo_Transcurrido]
+      ,[Caso_Tiempo_Transcurrido]
+      ,[Solicitud_Antiguedad_Dia]
+      ,[Solicitud_Hora_De_Solicitud]
+      ,[Solicitud_Hora]
+      ,[Solicitud_Hora_Completa]
+      ,[Entregado_Por_Id]
+      ,[Entregado_Por]
+      ,[Area_Entrega_Id]
+      ,[Area_Entrega]
+      ,[Surtidor_Responsable_Id]
+      ,[Surtidor_Responsable]
+      ,[Solicitado_Por_Id]
+      ,[Solicitado_Por]
+      ,[Tipo_Solicitud_Id]
+      ,[Tipo_Solicitud]
+  FROM [dbo].[Grid_Cant_Solic_Por_Tipo_Solic_Mes_Ant_V]]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" showInSummary="true" />
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" readOnly="true" showInSummary="true" />
+    <field name="Familia_Clave" type="String" allowNulls="false" label="Familia Clave" readOnly="true" length="250" showInSummary="true" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" label="Categoria Id" readOnly="true" showInSummary="true" />
+    <field name="Categoria_Clave" type="String" allowNulls="false" label="Categoria Clave" readOnly="true" length="250" />
+    <field name="Solicitud_Id" type="Int64" allowNulls="false" label="Solicitud Id" />
+    <field name="Material_Solicitado_Id" type="Int64" allowNulls="false" label="Material Solicitado Id" />
+    <field name="Material" type="String" allowNulls="false" label="Material" length="250" />
+    <field name="Estatus_Solicitud_Id" type="Int32" allowNulls="false" label="Estatus Solicitud Id" readOnly="true" />
+    <field name="Estatus_Solicitud" type="String" allowNulls="false" label="Estatus Solicitud" length="250" />
+    <field name="Fecha_Solicitud_Dia" type="DateTime" label="Fecha Solicitud Dia" readOnly="true" />
+    <field name="Fecha_Solicitud" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Solicitud" />
+    <field name="Fecha_Entrega" type="DateTime" dataFormatString="g" label="Fecha Entrega" />
+    <field name="Solicitud_Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Solicitud Fecha Ultima Actualizacion" />
+    <field name="Ruta_Optima_Id" type="Int64" allowNulls="false" label="Ruta Optima Id" readOnly="true" />
+    <field name="Material_Surtido_Id" type="Int64" allowNulls="false" label="Material Surtido Id" readOnly="true" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" />
+    <field name="Area_Servicio" type="String" allowNulls="false" label="Area Servicio" readOnly="true" length="250" />
+    <field name="Tiempo_Transcurrido" type="Int32" allowNulls="false" label="Tiempo Transcurrido" readOnly="true" />
+    <field name="Caso_Tiempo_Transcurrido" type="String" allowNulls="false" label="Caso Tiempo Transcurrido" readOnly="true" length="17" />
+    <field name="Solicitud_Antiguedad_Dia" type="Int32" label="Solicitud Antiguedad Dia" readOnly="true" />
+    <field name="Solicitud_Hora_De_Solicitud" type="Int32" label="Solicitud Hora De Solicitud" readOnly="true" />
+    <field name="Solicitud_Hora" type="String" label="Solicitud Hora" readOnly="true" length="8" />
+    <field name="Solicitud_Hora_Completa" type="String" label="Solicitud Hora Completa" readOnly="true" length="30" />
+    <field name="Entregado_Por_Id" type="Guid" label="Entregado Por Id" />
+    <field name="Entregado_Por" type="String" label="Entregado Por" length="256" />
+    <field name="Area_Entrega_Id" type="Int32" allowNulls="false" label="Area Entrega Id" readOnly="true" />
+    <field name="Area_Entrega" type="String" allowNulls="false" label="Area Entrega" readOnly="true" length="250" />
+    <field name="Surtidor_Responsable_Id" type="Guid" label="Surtidor Responsable Id" readOnly="true" />
+    <field name="Surtidor_Responsable" type="String" label="Surtidor Responsable" readOnly="true" length="256" />
+    <field name="Solicitado_Por_Id" type="Guid" allowNulls="false" label="Solicitado Por Id" />
+    <field name="Solicitado_Por" type="String" allowNulls="false" label="Solicitado Por" length="256" />
+    <field name="Tipo_Solicitud_Id" type="Int32" allowNulls="false" label="Tipo Solicitud Id" readOnly="true" />
+    <field name="Tipo_Solicitud" type="String" allowNulls="false" label="Tipo Solicitud" length="150" />
+  </fields>
+  <views>
+    <view id="gridCantSolicPorTipoSolicDiaAct" type="Grid" commandId="Grid_Cant_Solic_Por_Tipo_Solic_V" label="Solicitudes por Tipo de Solicitud - Día Actual">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-row1-bar&#xD;&#xA;pivot1-title:&quot;Solicitudes por Tipo de Solicitud del Día Actual&quot;&#xD;&#xA;" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Cant Solic Por Tipo Solic V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Cant Solic Por Tipo Solic V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" columns="15" />
+            <dataField fieldName="Categoria_Clave" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+            <dataField fieldName="Estatus_Solicitud" />
+            <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Fecha_Entrega" columns="20" />
+            <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+            <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+            <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+            <dataField fieldName="Solicitud_Hora" columns="8" />
+            <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+            <dataField fieldName="Entregado_Por_Id" columns="15" />
+            <dataField fieldName="Entregado_Por" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+            <dataField fieldName="Surtidor_Responsable" />
+            <dataField fieldName="Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Tipo_Solicitud_Id" columns="15" />
+            <dataField fieldName="Tipo_Solicitud" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Cant Solic Por Tipo Solic V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" columns="15" />
+            <dataField fieldName="Categoria_Clave" />
+            <dataField fieldName="Solicitud_Id" columns="15" />
+            <dataField fieldName="Material_Solicitado_Id" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Estatus_Solicitud_Id" columns="15" />
+            <dataField fieldName="Estatus_Solicitud" />
+            <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+            <dataField fieldName="Fecha_Solicitud" columns="20" />
+            <dataField fieldName="Fecha_Entrega" columns="20" />
+            <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Ruta_Optima_Id" columns="15" />
+            <dataField fieldName="Material_Surtido_Id" columns="15" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+            <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+            <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+            <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+            <dataField fieldName="Solicitud_Hora" columns="8" />
+            <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+            <dataField fieldName="Entregado_Por_Id" columns="15" />
+            <dataField fieldName="Entregado_Por" />
+            <dataField fieldName="Area_Entrega_Id" columns="15" />
+            <dataField fieldName="Area_Entrega" />
+            <dataField fieldName="Surtidor_Responsable_Id" columns="15" />
+            <dataField fieldName="Surtidor_Responsable" />
+            <dataField fieldName="Solicitado_Por_Id" columns="15" />
+            <dataField fieldName="Solicitado_Por" />
+            <dataField fieldName="Tipo_Solicitud_Id" columns="15" />
+            <dataField fieldName="Tipo_Solicitud" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="gridCantSolicPorTipoSolicDiaAnt" type="Grid" commandId="Grid_Cant_Solic_Por_Tipo_Solic_Dia_Ant_V" label="Solicitudes por Tipo de Solicitud - Día Anterior">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-row1-bar&#xD;&#xA;pivot1-title:&quot;Solicitudes por Tipo de Solicitud del Día Anterior&quot;&#xD;&#xA;" />
+      </dataFields>
+    </view>
+    <view id="gridCantSolicPorTipoSolicSemAct" type="Grid" commandId="Grid_Cant_Solic_Por_Tipo_Solic_Sem_Act_V" label="Solicitudes por Tipo de Solicitud - Semana Actual">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-row1-bar&#xD;&#xA;pivot1-title:&quot;Solicitudes por Tipo de Solicitud de la Semana Actual&quot;&#xD;&#xA;" />
+      </dataFields>
+    </view>
+    <view id="gridCantSolicPorTipoSolicSemAnt" type="Grid" commandId="Grid_Cant_Solic_Por_Tipo_Solic_Sem_Ant_V" label="Solicitudes por Tipo de Solicitud - Semana Anterior">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-row1-bar&#xD;&#xA;pivot1-title:&quot;Solicitudes por Tipo de Solicitud de la Semana Anterior&quot;&#xD;&#xA;" />
+      </dataFields>
+    </view>
+    <view id="gridCantSolicPorTipoSolicMesAct" type="Grid" commandId="Grid_Cant_Solic_Por_Tipo_Solic_Mes_Act_V" label="Solicitudes por Tipo de Solicitud - Mes Actual">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-row1-bar&#xD;&#xA;pivot1-title:&quot;Solicitudes por Tipo de Solicitud del Mes Actual&quot;&#xD;&#xA;" />
+      </dataFields>
+    </view>
+    <view id="gridCantSolicPorTipoSolicMesAnt" type="Grid" commandId="Grid_Cant_Solic_Por_Tipo_Solic_Mes_Ant_V" label="Solicitudes por Tipo de Solicitud - Mes Anterior">
+      <headerText />
+      <dataFields>
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="Categoria_Clave" />
+        <dataField fieldName="Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Solicitado_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Estatus_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Solicitud" />
+        <dataField fieldName="Fecha_Solicitud_Dia" columns="10" />
+        <dataField fieldName="Fecha_Solicitud" columns="20" />
+        <dataField fieldName="Fecha_Entrega" columns="20" />
+        <dataField fieldName="Solicitud_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Ruta_Optima_Id" columns="15" hidden="true" />
+        <dataField fieldName="Material_Surtido_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Tiempo_Transcurrido" columns="15" />
+        <dataField fieldName="Caso_Tiempo_Transcurrido" columns="17" />
+        <dataField fieldName="Solicitud_Antiguedad_Dia" columns="15" />
+        <dataField fieldName="Solicitud_Hora_De_Solicitud" columns="15" />
+        <dataField fieldName="Solicitud_Hora" columns="8" />
+        <dataField fieldName="Solicitud_Hora_Completa" columns="30" />
+        <dataField fieldName="Entregado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Entregado_Por" />
+        <dataField fieldName="Area_Entrega_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Entrega" />
+        <dataField fieldName="Surtidor_Responsable_Id" columns="15" hidden="true" />
+        <dataField fieldName="Surtidor_Responsable" />
+        <dataField fieldName="Solicitado_Por_Id" columns="15" hidden="true" />
+        <dataField fieldName="Solicitado_Por" />
+        <dataField fieldName="Tipo_Solicitud_Id" columns="15" hidden="true" />
+        <dataField fieldName="Tipo_Solicitud" tag="pivot1-row1-bar&#xD;&#xA;pivot1-title:&quot;Solicitudes por Tipo de Solicitud del Mes Anterior&quot;&#xD;&#xA;" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="gridCantSolicPorTipoSolicDiaAct" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="gridCantSolicPorTipoSolicDiaAct" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="gridCantSolicPorTipoSolicDiaAct" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

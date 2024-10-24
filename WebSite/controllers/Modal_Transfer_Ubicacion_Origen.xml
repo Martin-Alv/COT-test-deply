@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Modal_Transfer_Ubicacion_Origen" conflictDetection="overwriteChanges" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <fields>
+    <field name="Ubicacion_Almacenamiento_Id" type="Int32" label="Ubicación Origen" allowNulls="false">
+      <items style="Lookup" dataController="Ubicacion_Origen_Transfer_V" dataView="Ubicacion_Origen_Transferencia_LookUp_List" dataTextField="Ubicacion_Almacenamiento" dataValueField="Ubicacion_Almacenamiento_Id" pageSize="15" />
+    </field>
+  </fields>
+</dataController>

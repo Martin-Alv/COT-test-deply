@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="MRO" baseTable="Rol_Logico" alias="Rol_Logico" created="2020-12-01T19:36:32" modified="2021-01-14T14:12:14" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Estatus_Registro_" parentTableSchema="dbo" parentTableName="Estatus_Registro" x="743" y="371">
+      <foreignKeyColumn columnName="Estatus_Registro_Id" parentColumnName="Estatus_Registro_Id" />
+    </foreignKey>
+    <foreignKey id="Creado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="541" y="59">
+      <foreignKeyColumn columnName="Creado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+    <foreignKey id="Actualizado_Por" parentTableSchema="dbo" parentTableName="Usuario_V" x="1060" y="91">
+      <foreignKeyColumn columnName="Actualizado_Por_Id" parentColumnName="Usuario_Sistema_Id" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="Rol_Logico_Id" fieldName="Rol_Logico_Id" label="Rol Logico Id" />
+    <column name="Rol_Logico" fieldName="Rol_Logico" label="Rol Logico" />
+    <column name="Es_Supervisor_Lider" fieldName="Es_Supervisor_Lider" label="Es Supervisor Líder" />
+    <column name="Es_Gerente_Area" fieldName="Es_Gerente_Area" label="Es Gerente de Área" />
+    <column name="Es_Gerente_Planta" fieldName="Es_Gerente_Planta" label="Es Gerente de Planta" />
+    <column name="Es_Contralor" fieldName="Es_Contralor" label="Es Contralor" />
+    <column name="Es_Administrador_It" fieldName="Es_Administrador_It" label="Es Administrador It" />
+    <column name="Es_Administrador_Almacen" fieldName="Es_Administrador_Almacen" label="Es Administrador Almacén" />
+    <column name="Es_Despachador" fieldName="Es_Despachador" label="Es Despachador" />
+    <column name="Es_Empleado_Planta" fieldName="Es_Empleado_Planta" label="Es Empleado de Planta" />
+    <column name="Es_Cadista" fieldName="Es_Cadista" label="Es Cadista" />
+    <column name="Es_Personal_QA" fieldName="Es_Personal_QA" label="Es Personal QA" />
+    <column name="Es_Comprador" fieldName="Es_Comprador" label="Es Comprador" />
+    <column name="Usuario_Sistema" fieldName="Creado_Por" label="Creado Por" foreignKey="Creado_Por" />
+    <column name="Fecha_Creacion" fieldName="Fecha_Creacion" label="Fecha de Creación" format="g" />
+    <column name="Usuario_Sistema" fieldName="Actualizado_Por" label="Actualizado Por" foreignKey="Actualizado_Por" />
+    <column name="Fecha_Ultima_Actualizacion" fieldName="Fecha_Ultima_Actualizacion" label="Fecha de Última Actualización" format="g" />
+    <column name="Estatus_Registro_Id" fieldName="Estatus_Registro_Id" label="Estatus Registro Id" aliasColumnName="Estatus_Registro" aliasForeignKey="Estatus_Registro_" />
+    <column name="Estatus_Registro" fieldName="Estatus_Registro" label="Estatus Registro" foreignKey="Estatus_Registro_" />
+    <column name="Comprador_ERSL" fieldName="Comprador_ERSL" label="Comprador ERSL" />
+  </columns>
+</dataModel>

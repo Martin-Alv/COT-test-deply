@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Subtipo_Solicitud" conflictDetection="overwriteChanges" label="Subtipo Solicitud" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Subtipo_Solicitud"."Subtipo_Solicitud_Id" "Subtipo_Solicitud_Id"
+	,"Subtipo_Solicitud"."Subtipo_Solicitud" "Subtipo_Solicitud"
+	,"Subtipo_Solicitud"."Es_Solicitud_Mat_Normal" "Es_Solicitud_Mat_Normal"
+	,"Subtipo_Solicitud"."Es_Solicitud_Mat_Pickeo_Incan" "Es_Solicitud_Mat_Pickeo_Incan"
+	,"Subtipo_Solicitud"."Transaccion_Id" "Transaccion_Id"
+	,"Subtipo_Solicitud"."Creado_Por_Id" "Creado_Por_Id"
+	,"Creado_Por"."Usuario_Sistema" "CreadoPorusuarioSistema"
+	,"Subtipo_Solicitud"."Fecha_Creacion" "Fecha_Creacion"
+	,"Subtipo_Solicitud"."Actualizado_Por_Id" "Actualizado_Por_Id"
+	,"Subtipo_Solicitud"."Fecha_Ultima_Actualizacion" "Fecha_Ultima_Actualizacion"
+	,"Subtipo_Solicitud"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Estatus_Registro_"."Estatus_Registro" "Estatus_Registro_Estatus_Registro"
+from "APP"."Subtipo_Solicitud" "Subtipo_Solicitud"
+	left join "dbo"."Estatus_Registro" "Estatus_Registro_" on "Subtipo_Solicitud"."Estatus_Registro_Id" = "Estatus_Registro_"."Estatus_Registro_Id"
+	left join "dbo"."Usuario_V" "Creado_Por" on "Subtipo_Solicitud"."Creado_Por_Id" = "Creado_Por"."Usuario_Sistema_Id"
+]]></text>
+    </command>
+    <command id="Subtipo_Solicitud_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Subtipo_Solicitud_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Subtipo_Solicitud_Id" type="Int32" allowNulls="false" isPrimaryKey="true" label="Subtipo Solicitud Id" readOnly="true" />
+    <field name="Subtipo_Solicitud" type="String" allowNulls="false" label="Subtipo Solicitud" length="250" showInSummary="true" />
+    <field name="Es_Solicitud_Mat_Normal" type="Boolean" allowNulls="false" default="((0))" label="Es Solicitud Mat Normal" showInSummary="true" />
+    <field name="Es_Solicitud_Mat_Pickeo_Incan" type="Boolean" allowNulls="false" default="((0))" label="Es Solicitud Mat Pickeo Incan" showInSummary="true" />
+    <field name="Transaccion_Id" type="String" allowNulls="false" default="(newid())" label="Transaccion Id" length="50" showInSummary="true" />
+    <field name="Creado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Creado Por Id" showInSummary="true">
+      <items style="Lookup" dataController="Usuario_V" newDataView="createForm1" searchOnStart="true" dataValueField="Usuario_Sistema_Id" dataTextField="Usuario_Sistema" />
+    </field>
+    <field name="CreadoPorusuarioSistema" type="String" readOnly="true" label="Creado Porusuario Sistema" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Creacion" />
+    <field name="Actualizado_Por_Id" type="Guid" allowNulls="false" default="(CONVERT([uniqueidentifier],'5C7568FD-6412-474E-A099-006FAD27CD02',(0)))" label="Actualizado Por Id" />
+    <field name="Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" default="(getdate())" label="Fecha Ultima Actualizacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" default="((1))" label="Estatus Registro Id">
+      <items style="Lookup" dataController="Estatus_Registro" searchOnStart="true" dataValueField="Estatus_Registro_Id" dataTextField="Estatus_Registro" />
+    </field>
+    <field name="Estatus_Registro_Estatus_Registro" type="String" readOnly="true" label="Estatus Registro" length="150" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Subtipo Solicitud" showInSelector="false">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Subtipo_Solicitud" />
+        <dataField fieldName="Es_Solicitud_Mat_Normal" />
+        <dataField fieldName="Es_Solicitud_Mat_Pickeo_Incan" />
+        <dataField fieldName="Transaccion_Id" columns="50" />
+        <dataField fieldName="Creado_Por_Id" aliasFieldName="CreadoPorusuarioSistema" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por_Id" columns="15" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Subtipo Solicitud">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Subtipo Solicitud" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Subtipo_Solicitud" />
+            <dataField fieldName="Es_Solicitud_Mat_Normal" />
+            <dataField fieldName="Es_Solicitud_Mat_Pickeo_Incan" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Creado_Por_Id" aliasFieldName="CreadoPorusuarioSistema" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por_Id" columns="15" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Subtipo Solicitud">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Subtipo_Solicitud" />
+            <dataField fieldName="Es_Solicitud_Mat_Normal" />
+            <dataField fieldName="Es_Solicitud_Mat_Pickeo_Incan" />
+            <dataField fieldName="Transaccion_Id" columns="50" />
+            <dataField fieldName="Creado_Por_Id" aliasFieldName="CreadoPorusuarioSistema" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Actualizado_Por_Id" columns="15" />
+            <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="Subtipo_Solicitud_Look_Up_List" type="Grid" commandId="command1" label="Subtipo Solicitud" showInSelector="false" filter="Estatus_Registro_Id IN (0,1)" tags="view-style-grid,  &#xD;&#xA;view-style-list-disabled,  &#xD;&#xA;view-style-cards-disabled, &#xD;&#xA;view-style-charts-disabled, &#xD;&#xA;view-style-calendar-disabled, &#xD;&#xA;inline-editing-none, &#xD;&#xA;inline-editing-option-none">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Subtipo_Solicitud" />
+        <dataField fieldName="Es_Solicitud_Mat_Normal" />
+        <dataField fieldName="Es_Solicitud_Mat_Pickeo_Incan" />
+        <dataField fieldName="Transaccion_Id" columns="50" />
+        <dataField fieldName="Creado_Por_Id" aliasFieldName="CreadoPorusuarioSistema" hyperlinkFormatString="~/pages/Usuario_V?&amp;_controller=Usuario_V&amp;_command=Select&amp;_argument=editForm1" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Actualizado_Por_Id" columns="15" />
+        <dataField fieldName="Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" aliasFieldName="Estatus_Registro_Estatus_Registro" hyperlinkFormatString="~/pages/Estatus_Registro?Estatus_Registro_Id={Estatus_Registro_Id}&amp;_controller=Estatus_Registro&amp;_command=Select&amp;_argument=editForm1" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>

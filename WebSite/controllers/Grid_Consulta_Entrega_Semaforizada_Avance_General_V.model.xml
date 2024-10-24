@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Grid_Consulta_Entrega_Semaforizada_Avance_General_V" alias="Grid_Consulta_Entrega_Semaforizada_Avance_General_V" created="2019-02-11T15:08:35" modified="2019-05-15T14:15:43" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="Orden_Produccion_Id" fieldName="Orden_Produccion_Id" label="Orden Produccion Id" />
+    <column name="Numero_Orden_Produccion" fieldName="Numero_Orden_Produccion" label="Numero Orden Produccion" />
+    <column name="Estatus_Orden_Produccion_Id" fieldName="Estatus_Orden_Produccion_Id" label="Estatus Orden Produccion Id" />
+    <column name="Estatus_Orden_Produccion" fieldName="Estatus_Orden_Produccion" label="Estatus Orden Produccion" />
+    <column name="Familia_Id" fieldName="Familia_Id" label="Familia Id" />
+    <column name="Familia_Clave" fieldName="Familia_Clave" label="Familia Clave" />
+    <column name="Familia_Descripcion" fieldName="Familia_Descripcion" label="Familia Descripcion" />
+    <column name="Solicitud_Id" fieldName="Solicitud_Id" label="Solicitud Id" />
+    <column name="Material_Solicitado_Id" fieldName="Material_Solicitado_Id" label="Material Solicitado Id" />
+    <column name="Material_Id" fieldName="Material_Id" label="Material Id" />
+    <column name="Material" fieldName="Material" label="Material" />
+    <column name="Material_Descripcion" fieldName="Material_Descripcion" label="Material Descripcion" />
+    <column name="Estatus_Solicitud_Id" fieldName="Estatus_Solicitud_Id" label="Estatus Solicitud Id" />
+    <column name="Estatus_Solicitud" fieldName="Estatus_Solicitud" label="Estatus Solicitud" />
+    <column name="Motivo_Cancelacion" fieldName="Motivo_Cancelacion" label="Motivo Cancelacion" />
+    <column name="Ultimo_Comentario_Surtidor" fieldName="Ultimo_Comentario_Surtidor" label="Ultimo Comentario Surtidor" />
+    <column name="Area_Entrega_Id" fieldName="Area_Entrega_Id" label="Area Entrega Id" />
+    <column name="Fecha_Solicitud" fieldName="Fecha_Solicitud" label="Fecha Solicitud" format="g" />
+    <column name="Tiempo_Transcurrido" fieldName="Tiempo_Transcurrido" label="Tiempo Transcurrido" />
+    <column name="Surtidor_Responsable_Id" fieldName="Surtidor_Responsable_Id" label="Surtidor Responsable Id" />
+    <column name="Surtidor_Responsable" fieldName="Surtidor_Responsable" label="Surtidor Responsable" />
+    <column name="Solicitado_Por_Id" fieldName="Solicitado_Por_Id" label="Solicitado Por Id" />
+    <column name="Solicitado_Por" fieldName="Solicitado_Por" label="Solicitado Por" />
+    <column name="Ultimo_Comentario_Solicitante" fieldName="Ultimo_Comentario_Solicitante" label="Ultimo Comentario Solicitante" />
+    <column name="Anio_Mes_Fecha_Solicitud" fieldName="Anio_Mes_Fecha_Solicitud" label="Anio Mes Fecha Solicitud" />
+    <column name="Mes_Fecha_Solicitud" fieldName="Mes_Fecha_Solicitud" label="Mes Fecha Solicitud" />
+    <column name="Anio_Fecha_Solicitud" fieldName="Anio_Fecha_Solicitud" label="Anio Fecha Solicitud" />
+    <column name="Dia_Fecha_Solicitud" fieldName="Dia_Fecha_Solicitud" label="Dia Fecha Solicitud" />
+    <column name="Mes_Dia_Fecha_Solicitud" fieldName="Mes_Dia_Fecha_Solicitud" label="Mes Dia Fecha Solicitud" />
+    <column name="Area_Entrega" fieldName="Area_Entrega" label="Area Entrega" />
+    <column name="Motivo_Solicitud" fieldName="Motivo_Solicitud" label="Motivo Solicitud" />
+  </columns>
+</dataModel>

@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V" conflictDetection="overwriteChanges" label="Grid Orden Produccion Relacion Familia Sub Familia V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Numero_Orden_Produccion" "Numero_Orden_Produccion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Producto_Id" "Producto_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Producto_Clave" "Producto_Clave"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Familia_Id" "Familia_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Familia_Clave" "Familia_Clave"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Categoria_Id" "Categoria_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."SubFamilia" "SubFamilia"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Fecha_Produccion" "Fecha_Produccion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Area_Servicio_Id" "Area_Servicio_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Area_Servicio" "Area_Servicio"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Rel_Asignado_A_Area_Servicio" "Rel_Asignado_A_Area_Servicio"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Areas_Servicio" "Areas_Servicio"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Rel_Asignado_A_Area_Entrega" "Rel_Asignado_A_Area_Entrega"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Areas_Entrega" "Areas_Entrega"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Estatus_Orden_Produccion_Id" "Estatus_Orden_Produccion_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Estatus_Orden_Produccion" "Estatus_Orden_Produccion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Estatus_Registro_Id" "Estatus_Registro_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Orden_Produccion_Id" "Orden_Produccion_Id"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Familia_Fecha_Creacion" "Familia_Fecha_Creacion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."Familia_Fecha_Ultima_Actualizacion" "Familia_Fecha_Ultima_Actualizacion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."SubFamilia_Fecha_Creacion" "SubFamilia_Fecha_Creacion"
+	,"Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"."SubFamilia_Fecha_Ultima_Actualizacion" "SubFamilia_Fecha_Ultima_Actualizacion"
+from "dbo"."Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V" "Grid_Orden_Produccion_Relacion_Familia_SubFamilia_V"
+]]></text>
+    </command>
+    <command id="Familia_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Familia_Id" />
+      </output>
+    </command>
+    <command id="Categoria_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Categoria_Id" />
+      </output>
+    </command>
+    <command id="Area_Servicio_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Area_Servicio_Id" />
+      </output>
+    </command>
+    <command id="Estatus_Orden_Produccion_IdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="Estatus_Orden_Produccion_Id" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="Numero_Orden_Produccion" type="Int64" allowNulls="false" label="Numero Orden Produccion" showInSummary="true" />
+    <field name="Producto_Id" type="Int32" allowNulls="false" label="Producto Id" showInSummary="true" />
+    <field name="Producto_Clave" type="String" label="Producto Clave" length="50" showInSummary="true" />
+    <field name="Familia_Id" type="Int32" allowNulls="false" label="Familia Id" readOnly="true" showInSummary="true" isPrimaryKey="true" />
+    <field name="Familia_Clave" type="String" label="Familia Clave" length="250" showInSummary="true" />
+    <field name="Categoria_Id" type="Int32" allowNulls="false" label="Categoria Id" readOnly="true" isPrimaryKey="true" />
+    <field name="SubFamilia" type="String" allowNulls="false" label="Sub Familia" length="250" />
+    <field name="Fecha_Produccion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Produccion" />
+    <field name="Area_Servicio_Id" type="Int32" allowNulls="false" label="Area Servicio Id" readOnly="true" />
+    <field name="Area_Servicio" type="String" allowNulls="false" label="Area Servicio" length="250" />
+    <field name="Rel_Asignado_A_Area_Servicio" type="Boolean" label="Relación Asignado a Área de Servicio?" allowNulls="false" showInSummary="true">
+      <items style="CheckBox" />
+    </field>
+    <field name="Areas_Servicio" type="String" allowQBE="false" allowSorting="false" label="Áreas de Servicio Relacionadas" readOnly="true" />
+    <field name="Rel_Asignado_A_Area_Entrega" type="Boolean" label="Relación Asignado a Área de Entrega?" allowNulls="false">
+      <items style="CheckBox" />
+    </field>
+    <field name="Areas_Entrega" type="String" allowQBE="false" allowSorting="false" label="Áreas de Entrega Relacionadas" readOnly="true" />
+    <field name="Estatus_Orden_Produccion_Id" type="Int32" allowNulls="false" label="Estatus Orden Produccion Id" readOnly="true" />
+    <field name="Estatus_Orden_Produccion" type="String" allowNulls="false" label="Estatus Orden Produccion" length="250" />
+    <field name="Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Fecha Creacion" />
+    <field name="Estatus_Registro_Id" type="Int32" allowNulls="false" label="Estatus Registro Id" />
+    <field name="Orden_Produccion_Id" type="Int64" allowNulls="false" label="Orden Produccion Id" isPrimaryKey="true" />
+    <field name="Familia_Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Familia Fecha Creacion" />
+    <field name="Familia_Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Familia Fecha Ultima Actualizacion" />
+    <field name="SubFamilia_Fecha_Creacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Subfamilia Fecha Creacion" />
+    <field name="SubFamilia_Fecha_Ultima_Actualizacion" type="DateTime" allowNulls="false" dataFormatString="g" label="Subfamilia Fecha Ultima Actualizacion" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Orden Produccion Relacion Familia vs. Sub Familia">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Producto_Clave" columns="50" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Fecha_Creacion" columns="20" />
+        <dataField fieldName="Familia_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia" />
+        <dataField fieldName="SubFamilia_Fecha_Creacion" columns="20" />
+        <dataField fieldName="SubFamilia_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Fecha_Produccion" columns="20" hidden="true" />
+        <dataField fieldName="Rel_Asignado_A_Area_Servicio" />
+        <dataField fieldName="Areas_Servicio" rows="5" />
+        <dataField fieldName="Rel_Asignado_A_Area_Entrega" />
+        <dataField fieldName="Areas_Entrega" rows="5" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion" hidden="true" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Orden Produccion Relacion Familia Sub Familia V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Orden Produccion Relacion Familia Sub Familia V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Producto_Clave" columns="50" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" columns="15" />
+            <dataField fieldName="SubFamilia" />
+            <dataField fieldName="Fecha_Produccion" columns="20" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Rel_Asignado_A_Area_Servicio" />
+            <dataField fieldName="Areas_Servicio" rows="5" />
+            <dataField fieldName="Rel_Asignado_A_Area_Entrega" />
+            <dataField fieldName="Areas_Entrega" rows="5" />
+            <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Familia_Fecha_Creacion" columns="20" />
+            <dataField fieldName="Familia_Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="SubFamilia_Fecha_Creacion" columns="20" />
+            <dataField fieldName="SubFamilia_Fecha_Ultima_Actualizacion" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Orden Produccion Relacion Familia Sub Familia V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+            <dataField fieldName="Producto_Id" columns="15" />
+            <dataField fieldName="Producto_Clave" columns="50" />
+            <dataField fieldName="Familia_Id" columns="15" />
+            <dataField fieldName="Familia_Clave" />
+            <dataField fieldName="Categoria_Id" columns="15" />
+            <dataField fieldName="SubFamilia" />
+            <dataField fieldName="Fecha_Produccion" columns="20" />
+            <dataField fieldName="Area_Servicio_Id" columns="15" />
+            <dataField fieldName="Area_Servicio" />
+            <dataField fieldName="Rel_Asignado_A_Area_Servicio" />
+            <dataField fieldName="Areas_Servicio" rows="5" />
+            <dataField fieldName="Rel_Asignado_A_Area_Entrega" />
+            <dataField fieldName="Areas_Entrega" rows="5" />
+            <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Estatus_Orden_Produccion" />
+            <dataField fieldName="Fecha_Creacion" columns="20" />
+            <dataField fieldName="Estatus_Registro_Id" columns="15" />
+            <dataField fieldName="Orden_Produccion_Id" columns="15" />
+            <dataField fieldName="Familia_Fecha_Creacion" columns="20" />
+            <dataField fieldName="Familia_Fecha_Ultima_Actualizacion" columns="20" />
+            <dataField fieldName="SubFamilia_Fecha_Creacion" columns="20" />
+            <dataField fieldName="SubFamilia_Fecha_Ultima_Actualizacion" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="RelacionFamSubFamSinAreaServicio" type="Grid" commandId="command1" label="Orden Produccion Relacion Familia vs. Sub Familia sin Área de Servicio" filter="[Rel_Asignado_A_Area_Servicio] = 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Producto_Clave" columns="50" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Fecha_Creacion" columns="20" />
+        <dataField fieldName="Familia_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia" />
+        <dataField fieldName="SubFamilia_Fecha_Creacion" columns="20" />
+        <dataField fieldName="SubFamilia_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Fecha_Produccion" columns="20" hidden="true" />
+        <dataField fieldName="Rel_Asignado_A_Area_Servicio" />
+        <dataField fieldName="Areas_Servicio" rows="5" />
+        <dataField fieldName="Rel_Asignado_A_Area_Entrega" />
+        <dataField fieldName="Areas_Entrega" rows="5" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion" hidden="true" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="RelacionFamSubFamSinAreaEntrega" type="Grid" commandId="command1" label="Orden Produccion Relacion Familia vs. Sub Familia sin Área de Entrega" filter="[Rel_Asignado_A_Area_Entrega] = 0">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Area_Servicio_Id" columns="15" hidden="true" />
+        <dataField fieldName="Area_Servicio" />
+        <dataField fieldName="Numero_Orden_Produccion" columns="15" />
+        <dataField fieldName="Producto_Id" columns="15" hidden="true" />
+        <dataField fieldName="Producto_Clave" columns="50" />
+        <dataField fieldName="Familia_Id" columns="15" hidden="true" />
+        <dataField fieldName="Familia_Clave" />
+        <dataField fieldName="Familia_Fecha_Creacion" columns="20" />
+        <dataField fieldName="Familia_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Categoria_Id" columns="15" hidden="true" />
+        <dataField fieldName="SubFamilia" />
+        <dataField fieldName="SubFamilia_Fecha_Creacion" columns="20" />
+        <dataField fieldName="SubFamilia_Fecha_Ultima_Actualizacion" columns="20" />
+        <dataField fieldName="Fecha_Produccion" columns="20" hidden="true" />
+        <dataField fieldName="Rel_Asignado_A_Area_Servicio" />
+        <dataField fieldName="Areas_Servicio" rows="5" />
+        <dataField fieldName="Rel_Asignado_A_Area_Entrega" />
+        <dataField fieldName="Areas_Entrega" rows="5" />
+        <dataField fieldName="Estatus_Orden_Produccion_Id" columns="15" hidden="true" />
+        <dataField fieldName="Estatus_Orden_Produccion" hidden="true" />
+        <dataField fieldName="Fecha_Creacion" columns="20" />
+        <dataField fieldName="Estatus_Registro_Id" columns="15" hidden="true" />
+        <dataField fieldName="Orden_Produccion_Id" columns="15" hidden="true" />
+      </dataFields>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="createForm1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" roles="hidden" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" roles="hidden" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" roles="hidden" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" roles="hidden" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" roles="hidden" />
+      <action id="a2" commandName="Delete" roles="hidden" />
+    </actionGroup>
+    <actionGroup id="ag100" scope="ActionBar" headerText="Operaciones" flat="true">
+      <action commandName="Custom" commandArgument="ExecJS01" headerText="Crear Relación con Área de Servicio" id="a100" cssClass="material-icon-add-circle" whenKeySelected="true" whenClientScript="[Rel_Asignado_A_Area_Servicio]== 0" />
+      <action commandName="Custom" commandArgument="ExecJS02" headerText="Crear Relación con Área de Entrega" id="a101" cssClass="material-icon-add-circle" whenKeySelected="true" whenClientScript="[Rel_Asignado_A_Area_Entrega]==0" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ExecJS01" type="JavaScript" phase="After" name="CrearRelacionAreaServFamSubFam"><![CDATA[//this.preventDefault();
+$app.touch.show({
+    controller: 'Area_Servicio_Familia',
+    startCommand: 'New',
+    startArgument: 'createForm1',
+    defaultValues: [
+      { name: 'Familia_Id', value:[Familia_Id]}            
+      ,{ name: 'Categoria_Id', value:[Categoria_Id]}            
+    ]  
+  	,filter:[
+      { name: 'Familia_Id', value:[Familia_Id]}
+      ,{ name: 'Categoria_Id', value:[Categoria_Id]}            
+  ]
+});
+]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ExecJS02" type="JavaScript" phase="After" name="CrearRelacionAreaEntregaFamSubFam"><![CDATA[//this.preventDefault();
+$app.touch.show({
+    controller: 'Area_Entrega_Familia',
+    startCommand: 'New',
+    startArgument: 'createForm1',
+    defaultValues: [
+      { name: 'Familia_Id', value:[Familia_Id]}            
+      ,{ name: 'Categoria_Id', value:[Categoria_Id]}            
+    ]  
+  	,filter:[
+      { name: 'Familia_Id', value:[Familia_Id]}
+      ,{ name: 'Categoria_Id', value:[Categoria_Id]}            
+  ]
+});
+]]></rule>
+  </businessRules>
+</dataController>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="Grid_Bcs_Duplicado_V" conflictDetection="overwriteChanges" label="Grid Bcs Duplicado V" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"Grid_Bcs_Duplicado_V"."Cantidad_Duplicado" "Cantidad_Duplicado"
+	,"Grid_Bcs_Duplicado_V"."Material" "Material"
+	,"Grid_Bcs_Duplicado_V"."Ubicacion_Origen" "Ubicacion_Origen"
+	,"Grid_Bcs_Duplicado_V"."Ubicacion_Destino" "Ubicacion_Destino"
+	,"Grid_Bcs_Duplicado_V"."Cantidad_Entregado" "Cantidad_Entregado"
+	,"Grid_Bcs_Duplicado_V"."Usuario_Surtidor_Id" "Usuario_Surtidor_Id"
+	,"Grid_Bcs_Duplicado_V"."Usuario_Sistema" "Usuario_Sistema"
+	,"Grid_Bcs_Duplicado_V"."Fecha_Creacion" "Fecha_Creacion"
+	,"Grid_Bcs_Duplicado_V"."Estatus_Captura_Sap" "Estatus_Captura_Sap"
+from "dbo"."Grid_Bcs_Duplicado_V" "Grid_Bcs_Duplicado_V"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="Cantidad_Duplicado" type="Int32" label="Cantidad Duplicado" showInSummary="true" />
+    <field name="Material" type="String" label="Material" length="250" showInSummary="true" />
+    <field name="Ubicacion_Origen" type="String" label="Ubicacion Origen" length="150" showInSummary="true" />
+    <field name="Ubicacion_Destino" type="Int32" allowNulls="false" label="Ubicacion Destino" showInSummary="true" />
+    <field name="Cantidad_Entregado" type="Decimal" allowNulls="false" label="Cantidad Entregado" showInSummary="true" />
+    <field name="Usuario_Surtidor_Id" type="Guid" allowNulls="false" label="Usuario Surtidor Id" />
+    <field name="Usuario_Sistema" type="String" allowNulls="false" label="Usuario Sistema" length="256" />
+    <field name="Fecha_Creacion" type="DateTime" label="Fecha Creacion" />
+    <field name="Estatus_Captura_Sap" type="String" allowNulls="false" label="Estatus Captura Sap" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Bitácora Captura SAP Duplicado">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Cantidad_Duplicado" columns="15" />
+        <dataField fieldName="Material" />
+        <dataField fieldName="Ubicacion_Origen" />
+        <dataField fieldName="Ubicacion_Destino" columns="15" />
+        <dataField fieldName="Cantidad_Entregado" columns="15" />
+        <dataField fieldName="Usuario_Surtidor_Id" columns="15" />
+        <dataField fieldName="Usuario_Sistema" />
+        <dataField fieldName="Fecha_Creacion" columns="10" />
+        <dataField fieldName="Estatus_Captura_Sap" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Grid Bcs Duplicado V">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Grid Bcs Duplicado V" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Cantidad_Duplicado" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Ubicacion_Origen" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Usuario_Surtidor_Id" columns="15" />
+            <dataField fieldName="Usuario_Sistema" />
+            <dataField fieldName="Fecha_Creacion" columns="10" />
+            <dataField fieldName="Estatus_Captura_Sap" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Grid Bcs Duplicado V">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Cantidad_Duplicado" columns="15" />
+            <dataField fieldName="Material" />
+            <dataField fieldName="Ubicacion_Origen" />
+            <dataField fieldName="Ubicacion_Destino" columns="15" />
+            <dataField fieldName="Cantidad_Entregado" columns="15" />
+            <dataField fieldName="Usuario_Surtidor_Id" columns="15" />
+            <dataField fieldName="Usuario_Sistema" />
+            <dataField fieldName="Fecha_Creacion" columns="10" />
+            <dataField fieldName="Estatus_Captura_Sap" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" roles="hidden" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a9" />
+      <action id="a10" commandName="BatchEdit" commandArgument="editForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag9" scope="ActionColumn">
+      <action id="a1" commandName="Edit" commandArgument="editForm1" />
+      <action id="a2" commandName="Delete" />
+    </actionGroup>
+  </actions>
+</dataController>
