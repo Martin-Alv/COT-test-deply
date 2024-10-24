@@ -6,7 +6,7 @@ on:
       - dev
 
 env:
-  AZURE_REGION: '"East US"'  # Cambia a tu región de Azure preferida
+  AZURE_REGION: '"West US"'  # Cambia a tu región de Azure preferida
   RESOURCE_GROUP: 'github-actions'  # Nombre del grupo de recursos
   WEB_APP_NAME: 'test-cot-web-app'  # Nombre de la Web App
   SERVICE_PLAN: 'test-cot-plan'  # Nombre del Plan de Servicio para App Service
